@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\Pascal\Workspace\01 HSLU\Projekt Feukora\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1116939121.index
+638100760.index
+1212992975.index
+612248708.index
+770728394.index
+3953550799.index
