@@ -2,6 +2,7 @@ package projekt.feukora.server.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,7 +20,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Customer,findByCustomerid", query = "SELECT c FROM Customer c WHERE c.customerid=:customerid"),
+	@NamedQuery(name = "Customer.findByCustomerid", query = "SELECT c FROM Customer c WHERE c.customerid=:customerid"),
 	@NamedQuery(name = "Customer.findByLastname", query = "SELECT c FROM Customer c WHERE c.lastname=:lastname"),
 	@NamedQuery(name = "Customer.findByFirstname", query = "SELECT c FROM Customer c WHERE c.firstname=:firstname"),
 	@NamedQuery(name = "Customer.findByLastnameAndFirstname", query = "SELECT c FROM Customer c WHERE c.lastname=:lastname AND c.firstname=:firstname"),
@@ -27,31 +28,34 @@ import javax.persistence.NamedQuery;
 public class Customer implements Serializable{
 	
 	@Id
-	//@GeneratedValue
+	@GeneratedValue
 	private int customerid;
-	//@ManyToOne
-	//private int fi_customerfunctionid;
+	@Embedded
+	@ManyToOne
+	private Customerfunction fi_customerfunctionid;
 	private String companyname;
 	private String firstname;
 	private String lastname;
 	private String adress;
-	private String phone;		//Should that be a string?
+	private String phone;
 	private String email;
-	//@ManyToOne
-	//private int fi_zip;
-	
+	@Embedded
+	@ManyToOne
+	private Town fi_zip;
+	 
 	public Customer() {
 		
 	}
 	
-	public Customer (int customerid, String companyname, String lastname, String firstname, String adress, String phone, String email) {
-		this.customerid = customerid;
+	public Customer (String companyname, String lastname, String firstname, String adress, String phone, String email, Customerfunction fi_customerfunctionid, Town fi_zip) {
 		this.companyname = companyname;
 		this.lastname = lastname;
 		this.firstname = firstname;
 		this.adress = adress;
 		this.phone = phone;
 		this.email = email;
+		this.fi_customerfunctionid = fi_customerfunctionid;
+		this.fi_zip = fi_zip;
 	}
 
 	public int getCustomerid() {
@@ -61,14 +65,6 @@ public class Customer implements Serializable{
 	public void setCustomerid(int customerid) {
 		this.customerid = customerid;
 	}
-
-//	public int getFi_customerfunctionid() {
-//		return fi_customerfunctionid;
-//	}
-//
-//	public void setFi_customerfunctionid(int fi_customerfunctionid) {
-//		this.fi_customerfunctionid = fi_customerfunctionid;
-//	}
 
 	public String getCompanyname() {
 		return companyname;
@@ -117,12 +113,4 @@ public class Customer implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-//	public int getFi_zip() {
-//		return fi_zip;
-//	}
-//
-//	public void setFi_zip(int fi_zip) {
-//		this.fi_zip = fi_zip;
-//	}
 }
