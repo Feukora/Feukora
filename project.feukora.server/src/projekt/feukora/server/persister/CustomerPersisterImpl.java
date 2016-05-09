@@ -90,14 +90,14 @@ public class CustomerPersisterImpl implements CustomerPersister {
 	}
 
 	@Override
-	public List<Customer> findCustomerByAdress(String adress) {
+	public List<Customer> findCustomerByCompanyname(String companyname) {
 
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Customer> tQuery = em.createNamedQuery(
-				"Customer.findByAdress", Customer.class);
+				"Customer.findByCompanyname", Customer.class);
 
-		tQuery.setParameter("adress", adress);
+		tQuery.setParameter("companyname", companyname);
 
 		List<Customer> customerlist = tQuery.getResultList();
 

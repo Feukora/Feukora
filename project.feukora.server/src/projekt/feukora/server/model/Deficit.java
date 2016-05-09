@@ -9,6 +9,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name = "Deficit.findByDeficitid", query = "SELECT d FROM Deficit d WHERE d.deficitid=:deficitid"),
+	@NamedQuery(name = "Deficit.findByName", query = "SELECT d FROM Deficit d WHERE d.name=:name") })
 
 
 public class Deficit implements Serializable {
