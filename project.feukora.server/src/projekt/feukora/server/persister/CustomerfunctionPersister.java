@@ -53,8 +53,14 @@ import projekt.feukora.server.model.Customerfunction;
 		 * @return
 		 */
 		List<Customerfunction> findAllCustomerfunction();
-
-
 		
+		/**
+		 * Return a list with cusomerts with this firstname
+		 * 
+		 * @param vorname
+		 * @return
+		 */
+		public List<Customerfunction> findCustomerfunctionByFirstname(String firstname);
+
 	}
 
