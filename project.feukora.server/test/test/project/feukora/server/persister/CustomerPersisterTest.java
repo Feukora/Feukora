@@ -31,6 +31,8 @@ public class CustomerPersisterTest {
 		
 		List<Customer> customerlist = customerTest.findAllCustomers();
 		assertTrue(customerlist.size() == 2);
+		
+		// Zip und Customerfunction noch erzeugen und dann im Konstruktor übergeben.
 
 		Customer c = new Customer(3, "Firmenname", "Nachname", "Vorname", "Ort", "Telefonnummer", "Email");
 
