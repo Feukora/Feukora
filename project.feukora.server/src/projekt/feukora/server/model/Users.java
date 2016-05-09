@@ -19,11 +19,11 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Customer.findByUserid", query = "SELECT u FROM Users u WHERE u.userid=:userid"),
-	@NamedQuery(name = "Customer.findByLastname", query = "SELECT u FROM Users u WHERE u.lastname=:lastname"),
-	@NamedQuery(name = "Customer.findByFirstname", query = "SELECT u FROM Users u WHERE u.firstname=:firstname"),
-	@NamedQuery(name = "Customer.findByLastnameAndFirstname", query = "SELECT u FROM Users u WHERE u.lastname=:lastname AND u.firstname=:firstname"),
-	@NamedQuery(name = "Customer.findByUsername", query = "SELECT u FROM Users u WHERE u.username=:username") })
+	@NamedQuery(name = "Users.findByUserid", query = "SELECT u FROM Users u WHERE u.userid=:userid"),
+	@NamedQuery(name = "Users.findByLastname", query = "SELECT u FROM Users u WHERE u.lastname=:lastname"),
+	@NamedQuery(name = "Users.findByFirstname", query = "SELECT u FROM Users u WHERE u.firstname=:firstname"),
+	@NamedQuery(name = "Users.findByLastnameAndFirstname", query = "SELECT u FROM Users u WHERE u.lastname=:lastname AND u.firstname=:firstname"),
+	@NamedQuery(name = "Users.findByUsername", query = "SELECT u FROM Users u WHERE u.username=:username") })
 public class Users implements Serializable {
 
 	
