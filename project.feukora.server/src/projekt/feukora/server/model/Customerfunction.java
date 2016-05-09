@@ -17,9 +17,12 @@ import javax.persistence.NamedQuery;
  */
 
 // dadurch kommmt es in die DB // embeddable wenn die id als Fremdschlüssel woanders genutzt wird
-@Embeddable
-
-
+@Entity
+@NamedQueries({
+	@NamedQuery(name = "Customerfunction.Customerfunctionid", query = "SELECT cf FROM Customerfunction cf WHERE cf.customerfunctionid=:customerfunctionid"),
+	@NamedQuery(name = "Customerfunction.findByname", query = "SELECT cf FROM Customer cf WHERE cf.lastname=:name"),
+})
+// Fremdschlüssel mit manyto many
 // implements dazuschreiben
 public class Customerfunction implements Serializable {
 
@@ -29,7 +32,9 @@ public class Customerfunction implements Serializable {
 	private int customerfunctionid;
 	private String name;
 	
-	// leeren Konstruktor machen
+	/**
+	 * 
+	 */ // leeren Konstruktor machen
 	public Customerfunction(){
 	}
 	

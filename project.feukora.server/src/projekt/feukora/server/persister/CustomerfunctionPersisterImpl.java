@@ -1,6 +1,10 @@
 package projekt.feukora.server.persister;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
@@ -40,5 +44,25 @@ public class CustomerfunctionPersisterImpl implements CustomerfunctionPersister 
 		return new GenericPersisterImpl<Customerfunction>(Customerfunction.class).findAll();
 		
 	}
+
+	@Override
+	public List<Customerfunction> findCustomerfunctionByFirstname(String firstname) {
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Customerfunction> tQuery = em.createNamedQuery("Customerfunction.findByFirstname",
+				Customerfunction.class);
+
+		tQuery.setParameter("firstname", firstname);
+
+		List<Customerfunction> customerfunctionlist = tQuery.getResultList();
+
+		em.close();
+
+		return customerfunctionlist != null ? customerfunctionlist : new ArrayList<Customerfunction>();
+	}
+
+	// die fünf Grundmethoden 
+	
+	
 
 }
