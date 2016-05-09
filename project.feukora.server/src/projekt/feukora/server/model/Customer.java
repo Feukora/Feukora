@@ -24,13 +24,12 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Customer.findByLastname", query = "SELECT c FROM Customer c WHERE c.lastname=:lastname"),
 	@NamedQuery(name = "Customer.findByFirstname", query = "SELECT c FROM Customer c WHERE c.firstname=:firstname"),
 	@NamedQuery(name = "Customer.findByLastnameAndFirstname", query = "SELECT c FROM Customer c WHERE c.lastname=:lastname AND c.firstname=:firstname"),
-	@NamedQuery(name = "Customer.findByAdress", query = "SELECT c FROM Customer c WHERE c.adress=:adress") })
+	@NamedQuery(name = "Customer.findByCompanyname", query = "SELECT c FROM Customer c WHERE c.companyname=:companyname") })
 public class Customer implements Serializable{
 	
 	@Id
 	@GeneratedValue
 	private int customerid;
-	@Embedded
 	@ManyToOne
 	private Customerfunction fi_customerfunctionid;
 	private String companyname;
@@ -39,7 +38,6 @@ public class Customer implements Serializable{
 	private String adress;
 	private String phone;
 	private String email;
-	@Embedded
 	@ManyToOne
 	private Town fi_zip;
 	 
