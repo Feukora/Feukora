@@ -4,6 +4,11 @@ import java.util.List;
 
 import projekt.feukora.server.model.Town;
 
+/**
+ * This class refers to a Town
+ * @author Robin
+ * @version 1.0
+ */
 public interface TownPersister {
 	/**
 	 * Save the given entity
