@@ -1,0 +1,41 @@
+Overview the Model classes
+
+Appointment		Version 1.1 on 10.05.2016 at 14:40 by Pascal
+					Fix bugs, fix Javadoc, delete setId
+Blower			Version 1.1 on 10.05.2016 at 14:45 by Pascal
+					Fix bugs, fix Javadoc, delete @Emmbedded, delete setId
+Blowertype		Version 1.1 on 10.05.2016 at 14:50 by Pascal
+					Add Javadoc, delete setId
+Company			Version 1.1 on 10.05.2016 at 14:50 by Pascal
+					Delete @Embedded, fix Javadoc, delete setId
+Controltype		Version 1.1 on 10.05.2016 at 14:55 by Pascal
+					Fix constructor, fix Javadoc, delete setId
+Customer		Version 1.1 on 09.05.2016 at 19.36 by Pascal
+					Add Javadoc
+				Version 1.2 on 10.05.2016 at 15:00 by Pascal
+					Delete setId
+CustomerfunctionVersion 1.1 on 10.05.2016 at 15:00 by Pascal
+					Fix Javadoc, delete comments, fix constructor, add Javadoc, delete setId
+Customerheater 	Version 1.1 on 09.05.2015 at 19.48 by Pascal
+					Add Javadoc
+				Version 1.2 on 10.05.2016 at 15:05 by Pascal
+					Fix constructor, delete setId
+Facilitymanager	Version 1.1 on 10.05.2015 at 15:10 by Pascal
+					Change into Entity, delete @Embeddable, create Javadoc, add @NamedQueries, delete setId
+Fuel			Version 1.1 on 10.05.2016 at 15:30 by Pascal
+					Fix constructor, delete setId
+Heater			Version 1.1 on 10.05.2016 at 15:35 by Pascal
+					Add javadoc, delete setId
+Measuringresult	Version 1.1 on 10.05.2016 at 15:35 by Pascal
+					Delete @Embedded, add Javadoc, delete setId
+Rapport			Version 1.1 on 10.05.2016 at 15:40 by Pascal
+					Delete @NamedQueries, fix Javadoc, fix bugs, delete setId
+Town			Version 1.1 on 10.05.2016 at 12:15 by Pascal
+					Delete everything with municipality
+				Version 1.2 on 10.05.2016 at 15:40 by Pascal
+					Fix Javadoc, delete setId
+Usergroup		Version 1.1 on 10.05.2016 at 15:45 by Pascal
+					Fix Javadoc, fix bugs, delete setId
+Users			Version 1.1 on 10.05.2016 at 15:50 by Pascal
+					Fix Javadoc, delete @Embedded, fix bugs, delete setId
+
