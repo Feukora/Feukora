@@ -26,13 +26,13 @@ public class Usergroup implements Serializable {
 
 	
 	/**
-	 * 
+	 * default constructor
 	 */
 	public Usergroup() {
 
 	}
 	/**
-	 * 
+	 * constructor for the class Usergroup
 	 * @param usergroupid
 	 * @param name
 	 */
