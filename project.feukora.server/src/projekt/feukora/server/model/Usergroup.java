@@ -8,6 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
+/**
+ * This class refers to a usergroup.
+ * @author Tamara
+ * @version 1.0
+ */
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "Usergroup.findByUsergroupid", query = "SELECT ug FROM Usergroup ug WHERE ug.usergroupid=:usergroupid"),
@@ -20,10 +25,17 @@ public class Usergroup implements Serializable {
 	private String name;
 
 	
+	/**
+	 * 
+	 */
 	public Usergroup() {
 
 	}
-	
+	/**
+	 * 
+	 * @param usergroupid
+	 * @param name
+	 */
 	public Usergroup(int usergroupid, String name) {
 		this.usergroupid = usergroupid;
 		this.name = name;

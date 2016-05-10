@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 
 
 /**
- * This class refers to a user
+ * This class refers to a user.
  * @author Tamara
  * version 1.0
  *

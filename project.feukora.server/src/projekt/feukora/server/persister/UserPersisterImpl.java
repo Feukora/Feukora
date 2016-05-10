@@ -12,7 +12,7 @@ import projekt.feukora.server.model.Users;
 /**
  * 
  * @author Tamara
- * version 1.0
+ * @version 1.0
  */
 public class UserPersisterImpl implements UserPersister{
 
@@ -24,8 +24,8 @@ public class UserPersisterImpl implements UserPersister{
 
 	@Override
 	public Users updateUser(Users entity) throws Exception {
-		new GenericPersisterImpl<Users>(Users.class).update(entity);
-		return null;
+		return new GenericPersisterImpl<Users>(Users.class).update(entity);
+		
 	}
 
 	@Override
@@ -42,14 +42,14 @@ public class UserPersisterImpl implements UserPersister{
 
 	@Override
 	public Users findUserByUserid(Integer userid) {
-		new GenericPersisterImpl<Users>(Users.class).findById(userid);
-		return null;
+		return new GenericPersisterImpl<Users>(Users.class).findById(userid);
+		
 	}
 
 	@Override
 	public List<Users> findAllUsers() {
-		new GenericPersisterImpl<Users>(Users.class).findAll();
-		return null;
+		return new GenericPersisterImpl<Users>(Users.class).findAll();
+		
 	}
 
 	@Override
