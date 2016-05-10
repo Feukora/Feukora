@@ -5,11 +5,14 @@ import java.util.List;
 import projekt.feukora.server.model.Blower;
 
 /**
- * This class refers to a Blower
+ * This interface refers to a BlowerPersister
+ * 
+ * @version 1.1
  * @author Robin
- * @version 1.0
+ * 
  */
 public interface BlowerPersister {
+	
 	/**
 	 * Save the given entity
 	 * 
@@ -22,7 +25,7 @@ public interface BlowerPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Blower
 	 * @throws Exception
 	 */
 	Blower updateBlower(Blower entity) throws Exception;
@@ -47,14 +50,14 @@ public interface BlowerPersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Blower
 	 */
 	Blower findByBlowerid(Integer blowerid);
 
 	/**
 	 * Return a list with all entities
 	 * 
-	 * @return
+	 * @return List with Blowers
 	 */
 	List<Blower> findAllBlowers();
 
@@ -65,5 +68,4 @@ public interface BlowerPersister {
 	 * @return
 	 */
 	public List<Blower> findBlowerByName(String name);
-	
 }

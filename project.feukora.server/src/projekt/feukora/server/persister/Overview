@@ -1,0 +1,42 @@
+AppointmentPersister					Version 1.1 on 10.05.2016 at 16:25 by Pascal
+											Fix Javadoc, fix bugs, delete findByAppointmentId
+AppointmentPersisterImpl				Version 1.1 on 10.05.2016 at 16:35 by Pascal
+											Add Javadoc, delete unused imports, fix bugs
+BlowerPersister							Version 1.1 on 10.05.2016 at 16:45 by Pascal
+											Add Javadoc
+BlowerPersisterImpl						Version 1.1 on 10.05.2016 at 16:45 by Pascal
+											Fix Javadoc
+BlowertypePersister						Version 1.1 on 10.05.2016 at 16:50 by Pascal
+											Add Javadoc
+BlowertypePersisterImpl					Version 1.1 on 10.05.2016 at 16:50 by Pascal
+											Delete unused import, add Javadoc, fix bug
+CompanyPersister						Version 1.1
+CompanyPersisterImpl					Version 1.1
+ControltypePersister					Version 1.1
+ControltypePersisterImpl				Version 1.1
+CustomerfunctionPersister				Version 1.1
+CustomerfunctionPersisterImpl			Version 1.1
+CustomerheaterPersister					Version 1.1
+CustomerheaterPersisterImpl				Version 1.1
+CustomerPersister						Version 1.1 on 10.05.2016 at 16:15 by Pascal
+											Add Javadoc
+CustomerPersisterImpl					Version 1.1 on 10.05.2016 at 16:35 by Pascal
+											Add Javadoc
+FacilitymanagerPersister				Version 1.1
+FacilitymanagerPersisterImpl			Version 1.1
+FuelPersister							Version 1.1
+FuelPersisterImpl						Version 1.1
+GenericPersister						Version 1.1
+GenericPersisterImpl					Version 1.1
+HeaterPersister							Version 1.1
+HeaterPersisterImpl						Version 1.1
+MeasuringresultPersister				Version 1.1
+MeasuringresultPersisterImpl			Version 1.1	
+RapportPersister						Version 1.1
+RapportPersisterImpl					Version 1.1
+TownPersister							Version 1.1
+TownPersisterImpl						Version 1.1
+UsergroupPersister						Version 1.1
+UsergroupPersisterImpl					Version 1.1
+UserPersister							Version 1.1
+UserPersisterImpl						Version 1.1

@@ -8,6 +8,14 @@ import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.model.Customer;
 
+/**
+ * This class implements the interface CustomerPersister
+ * 
+ * @version 1.1
+ * @author Pascal
+ *
+ */
+
 public class CustomerPersisterImpl implements CustomerPersister {
 
 	@Override

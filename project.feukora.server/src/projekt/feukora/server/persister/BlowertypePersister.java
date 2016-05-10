@@ -4,6 +4,14 @@ import java.util.List;
 
 import projekt.feukora.server.model.Blowertype;
 
+
+/**
+ * This interface refers to a BlowertypePersister
+ * 
+ * Version 1.1
+ * @author Patrick
+ *
+ */
 public interface BlowertypePersister {
 	
 	/**
@@ -18,7 +26,7 @@ public interface BlowertypePersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Blowertype
 	 * @throws Exception
 	 */
 	Blowertype updateBlowertype(Blowertype entity) throws Exception;
@@ -43,14 +51,14 @@ public interface BlowertypePersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Blowertye
 	 */
 	Blowertype findBlowertypeByBlowertypeid(Integer blowertypeid);
 
 	/**
 	 * Return all entities
 	 * 
-	 * @return
+	 * @return List with Blowertypes
 	 */
 	List<Blowertype> findAllBlowertypes();
 
@@ -58,9 +66,7 @@ public interface BlowertypePersister {
 	 * Return a list with blowertype with this name
 	 * 
 	 * @param name
-	 * @return
+	 * @return List with Blowertypes
 	 */
 	public List<Blowertype> findBlowertypeByName(String name);
-
-
 }
