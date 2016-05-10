@@ -9,6 +9,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
+/**
+ * This class refers to a customerheater.
+ * 
+ * @Version 1.1
+ * @author Pascal
+ *
+ */
+
 @Entity
 @NamedQueries ({
 	@NamedQuery(name = "Customerheater.findByCustomerheaterid", query = "SELECT ch FROM Customerheater ch WHERE ch.customerheaterid=:customerheaterid")})
@@ -29,9 +37,24 @@ public class Customerheater implements Serializable{
 	private int heateryear;
 	private int performance;
 	
-	public Customerheater() {
-		
+	/**
+	 * Default constructor
+	 */
+	public Customerheater() {	
 	}
+	
+	/**
+	 * Customerheater constructor
+	 * 
+	 * @param customerheaterid
+	 * @param fi_customerid
+	 * @param fi_heaterid
+	 * @param fi_blowerid
+	 * @param fi_facilitymanagerid
+	 * @param bloweryear
+	 * @param heateryear
+	 * @param performance
+	 */
 	
 	public Customerheater(int customerheaterid, Customer fi_customerid, Heater fi_heaterid, Blower fi_blowerid, Facilitymanager fi_facilitymanagerid, int bloweryear, int heateryear, int performance) {
 		this.customerheaterid = customerheaterid;
@@ -43,7 +66,6 @@ public class Customerheater implements Serializable{
 		this.heateryear = heateryear;
 		this.performance = performance;
 	}
-	
 	
 	public int getCustomerheaterid() {
 		return customerheaterid;
@@ -69,6 +91,4 @@ public class Customerheater implements Serializable{
 	public void setPerformance(int performance) {
 		this.performance = performance;
 	}
-
-	
 }
