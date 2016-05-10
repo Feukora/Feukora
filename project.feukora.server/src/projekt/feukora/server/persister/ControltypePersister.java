@@ -3,8 +3,14 @@ package projekt.feukora.server.persister;
 import java.util.List;
 
 import projekt.feukora.server.model.Controltype;
-import projekt.feukora.server.model.Customer;
 
+/**
+ * This interface refers to a ControltypePersister
+ * 
+ * @version 1.1
+ * @author Allan
+ *
+ */
 public interface ControltypePersister {
 	
 	/**
@@ -19,7 +25,7 @@ public interface ControltypePersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Controltype
 	 * @throws Exception
 	 */
 	Controltype updateControltype(Controltype entity) throws Exception;
@@ -33,7 +39,7 @@ public interface ControltypePersister {
 	void deleteControltype(Controltype entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -44,24 +50,22 @@ public interface ControltypePersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Controltype
 	 */
 	Controltype findControltypeByControltypeid(Integer controltypeid);
 
 	/**
 	 * Return all entities
 	 * 
-	 * @return
+	 * @return List with all Controltypes
 	 */
 	List<Controltype> findAllControltypes();
 
 	/**
-	 * Return a list with cusomerts with this name
+	 * Return the entity with this name
 	 * 
 	 * @param name
-	 * @return
+	 * @return Controltype
 	 */
-	public List<Controltype> findControltypeByName(String name);
-
-
+	String findControltypeByName(String name);
 }

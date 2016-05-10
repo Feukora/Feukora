@@ -2,9 +2,15 @@ package projekt.feukora.server.persister;
 
 import java.util.List;
 
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 
+/**
+ * This class implements the interface CustomerheaterPersister
+ * 
+ * @version 1.1
+ * @author Pascal
+ *
+ */
 public class CustomerheaterPersisterImpl implements CustomerheaterPersister {
 
 	@Override
@@ -38,5 +44,4 @@ public class CustomerheaterPersisterImpl implements CustomerheaterPersister {
 	public List<Customerheater> findAllCustomerheaters() {
 		return new GenericPersisterImpl<Customerheater>(Customerheater.class).findAll();
 	}
-
 }

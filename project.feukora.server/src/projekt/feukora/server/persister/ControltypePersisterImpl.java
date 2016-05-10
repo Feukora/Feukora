@@ -1,20 +1,25 @@
 package projekt.feukora.server.persister;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.model.Controltype;
-import projekt.feukora.server.model.Customer;
+
+/**
+ * This class implements the interface ControltypePersister
+ * 
+ * @version 1.1
+ * @author Allan
+ *
+ */
 
 public class ControltypePersisterImpl implements ControltypePersister {
 
 	@Override
 	public void saveControltype(Controltype entity) throws Exception {
 		new GenericPersisterImpl<Controltype>(Controltype.class).save(entity);
-		
 	}
 
 	@Override
@@ -25,13 +30,11 @@ public class ControltypePersisterImpl implements ControltypePersister {
 	@Override
 	public void deleteControltype(Controltype entity) throws Exception {
 		new GenericPersisterImpl<Controltype>(Controltype.class).delete(entity);
-		
 	}
 
 	@Override
 	public void deleteControltypeByControltypeid(Integer controltypeid) throws Exception {
 		new GenericPersisterImpl<Controltype>(Controltype.class).deleteById(controltypeid);
-		
 	}
 
 	@Override
@@ -45,7 +48,7 @@ public class ControltypePersisterImpl implements ControltypePersister {
 	}
 
 	@Override
-	public List<Controltype> findControltypeByName(String name) {
+	public String findControltypeByName(String name) {
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Controltype> tQuery = em.createNamedQuery("Controltype.findByName",
@@ -53,11 +56,8 @@ public class ControltypePersisterImpl implements ControltypePersister {
 
 		tQuery.setParameter("name", name);
 
-		List<Controltype> controltypelist = tQuery.getResultList();
-
 		em.close();
 
-		return controltypelist != null ? controltypelist : new ArrayList<Controltype>();
+		return name;
 	}
-
 }

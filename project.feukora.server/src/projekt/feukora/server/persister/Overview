@@ -10,14 +10,22 @@ BlowertypePersister						Version 1.1 on 10.05.2016 at 16:50 by Pascal
 											Add Javadoc
 BlowertypePersisterImpl					Version 1.1 on 10.05.2016 at 16:50 by Pascal
 											Delete unused import, add Javadoc, fix bug
-CompanyPersister						Version 1.1
-CompanyPersisterImpl					Version 1.1
-ControltypePersister					Version 1.1
-ControltypePersisterImpl				Version 1.1
-CustomerfunctionPersister				Version 1.1
-CustomerfunctionPersisterImpl			Version 1.1
-CustomerheaterPersister					Version 1.1
-CustomerheaterPersisterImpl				Version 1.1
+CompanyPersister						Version 1.1 on 10.05.2016 at 17:15 by Pascal
+											Fix Javadoc
+CompanyPersisterImpl					Version 1.1 on 10.05.2016 at 17:15 by Pascal
+											Fix Javadoc
+ControltypePersister					Version 1.1 on 10.05.2016 at 17:20 by Pascal
+											Fix Javadoc, change findByName Method
+ControltypePersisterImpl				Version 1.1 on 10.05.2016 at 1:25 by Pascal
+											Add Javadoc, fix bugs
+CustomerfunctionPersister				Version 1.1 on 10.05.2016 at 17:30 by Pascal
+											Fix Javadoc, change findByName Method
+CustomerfunctionPersisterImpl			Version 1.1 on 10.05.2016 at 17:30 by Pascal
+											Add Javadoc, fix bugs
+CustomerheaterPersister					Version 1.1 on 10.05.2016 at 17:35 by Pascal
+											Add Javadoc
+CustomerheaterPersisterImpl				Version 1.1 on 10.05.2016 at 17:35 by Pascal
+											Add Javadoc
 CustomerPersister						Version 1.1 on 10.05.2016 at 16:15 by Pascal
 											Add Javadoc
 CustomerPersisterImpl					Version 1.1 on 10.05.2016 at 16:35 by Pascal

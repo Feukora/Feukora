@@ -8,7 +8,7 @@ import projekt.feukora.server.model.Blowertype;
 /**
  * This interface refers to a BlowertypePersister
  * 
- * Version 1.1
+ * @version 1.1
  * @author Patrick
  *
  */
@@ -40,7 +40,7 @@ public interface BlowertypePersister {
 	void deleteBlowertype(Blowertype entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception

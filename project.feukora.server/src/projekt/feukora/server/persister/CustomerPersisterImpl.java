@@ -113,5 +113,4 @@ public class CustomerPersisterImpl implements CustomerPersister {
 
 		return customerlist != null ? customerlist : new ArrayList<Customer>();
 	} 
-
 }

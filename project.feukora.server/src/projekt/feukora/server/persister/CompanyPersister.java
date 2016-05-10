@@ -1,11 +1,13 @@
 package projekt.feukora.server.persister;
+
 import java.util.List;
 
 import projekt.feukora.server.model.Company;
  /**
-  * This class refers to a Company.
-  * @author Robin
-  * @version 1.0
+ * This interface refers to a CompanyPersister
+ * 
+ * @version 1.1
+ * @author Robin
   */
 public interface CompanyPersister {
 
@@ -21,7 +23,7 @@ public interface CompanyPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Company
 	 * @throws Exception
 	 */
 	Company updateCompany(Company entity) throws Exception;
@@ -46,14 +48,14 @@ public interface CompanyPersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Company
 	 */
 	Company findByCompanyid(Integer companyid);
 
 	/**
 	 * Return a list with all entities
 	 * 
-	 * @return
+	 * @return List with Companies
 	 */
 	List<Company> findAllCompanies();
 
@@ -61,7 +63,7 @@ public interface CompanyPersister {
 	 * Return a list with entities with this name
 	 * 
 	 * @param name
-	 * @return
+	 * @return List with Companies
 	 */
 	public List<Company> findCompanyByName(String name);
 	

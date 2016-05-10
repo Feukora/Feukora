@@ -6,15 +6,21 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
+
+/**
+ * This class implements the interface CustomerfunctionPersister
+ * 
+ * @version 1.1
+ * @author Allan
+ *
+ */
 
 public class CustomerfunctionPersisterImpl implements CustomerfunctionPersister {
 
 	@Override
 	public void saveCustomerfunction(Customerfunction entity) throws Exception {
 		new GenericPersisterImpl<Customerfunction>(Customerfunction.class).save(entity);
-		
 	}
 
 	@Override
@@ -25,13 +31,11 @@ public class CustomerfunctionPersisterImpl implements CustomerfunctionPersister 
 	@Override
 	public void deleteCustomerfunction(Customerfunction entity) throws Exception {
 		new GenericPersisterImpl<Customerfunction>(Customerfunction.class).delete(entity);
-		
 	}
 
 	@Override
 	public void deleteCustomerfunctionByCustomerfunctionid(Integer customerfunctionid) throws Exception {
 		new GenericPersisterImpl<Customerfunction>(Customerfunction.class).deleteById(customerfunctionid);
-		
 	}
 
 	@Override
@@ -42,27 +46,19 @@ public class CustomerfunctionPersisterImpl implements CustomerfunctionPersister 
 	@Override
 	public List<Customerfunction> findAllCustomerfunction() {
 		return new GenericPersisterImpl<Customerfunction>(Customerfunction.class).findAll();
-		
 	}
 
 	@Override
-	public List<Customerfunction> findCustomerfunctionByFirstname(String firstname) {
+	public String findCustomerfunctionByName(String name) {
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Customerfunction> tQuery = em.createNamedQuery("Customerfunction.findByFirstname",
+		TypedQuery<Customerfunction> tQuery = em.createNamedQuery("Customerfunction.findByName",
 				Customerfunction.class);
 
-		tQuery.setParameter("firstname", firstname);
-
-		List<Customerfunction> customerfunctionlist = tQuery.getResultList();
+		tQuery.setParameter("name", name);
 
 		em.close();
 
-		return customerfunctionlist != null ? customerfunctionlist : new ArrayList<Customerfunction>();
+		return name;
 	}
-
-	// die fünf Grundmethoden 
-	
-	
-
 }

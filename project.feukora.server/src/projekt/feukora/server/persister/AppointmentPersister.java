@@ -40,7 +40,7 @@ public interface AppointmentPersister {
 	void deleteAppointment(Appointment entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception

@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Customer;
 /**
  * This interface refers to a CustomerPersister
  * 
- * Version 1.1
+ * @version 1.1
  * @author Pascal
  *
  */
@@ -39,7 +39,7 @@ public interface CustomerPersister {
 	void deleteCustomer(Customer entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception

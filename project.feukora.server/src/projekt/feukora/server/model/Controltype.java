@@ -19,7 +19,7 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Controltype.findByControltypeid", query = "SELECT ct FROM Controltype ct WHERE ct.controltypeid=:controltypeid"),
-	@NamedQuery(name = "Controltype.findByname", query = "SELECT ct FROM Controltype ct WHERE ct.name=:name"),
+	@NamedQuery(name = "Controltype.findByName", query = "SELECT ct FROM Controltype ct WHERE ct.name=:name"),
 })
 
 public class Controltype implements Serializable {
