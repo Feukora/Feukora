@@ -8,20 +8,19 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 
 /**
- * This class refers to a appointment
+ * This class refers to an appointment
  * 
- * @version
+ * @version 1.1
  * @author Allan
  *
  */
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Appointment.findByAppointmentid", query = "SELECT a FROM Customer a WHERE a.appointmentid=:appointmentid"),
-	@NamedQuery(name = "Appointment.findByAppointmentdate", query = "SELECT a FROM Customer a WHERE a.appointmentdate=:appointmentdate"),
+	@NamedQuery(name = "Appointment.findByAppointmentid", query = "SELECT a FROM Appointment a WHERE a.appointmentid=:appointmentid"),
+	@NamedQuery(name = "Appointment.findByAppointmentdate", query = "SELECT a FROM Appointment a WHERE a.appointmentdate=:appointmentdate")
  })
 
 public class Appointment {
@@ -40,14 +39,14 @@ public class Appointment {
 	private String comments;
 	
 	/**
-	 * standard constructor
+	 * Default constructor
 	 */
 	public Appointment(){
 	}
 	
 	/**
-	 * constructor 
-	 * @param appointmentid
+	 * Appointment constructor 
+	 * 
 	 * @param fi_costumerheaterid
 	 * @param fi_userid
 	 * @param fi_createdby
@@ -55,10 +54,9 @@ public class Appointment {
 	 * @param appointmentdate
 	 * @param comments
 	 */
-	public Appointment(int appointmentid, Customerheater fi_costumerheaterid, User fi_userid, Rapport fi_createdby, GregorianCalendar created,
+	public Appointment(Customerheater fi_costumerheaterid, Users fi_userid, Users fi_createdby, GregorianCalendar created,
 			GregorianCalendar appointmentdate, String comments){
 		this.appointmentdate = appointmentdate;
-		this.appointmentid = appointmentid;
 		this.comments = comments;
 		this.created = created;
 		this.fi_costumerheaterid = fi_costumerheaterid;
@@ -68,10 +66,6 @@ public class Appointment {
 
 	public int getAppointmentid() {
 		return appointmentid;
-	}
-
-	public void setAppointmentid(int appointmentid) {
-		this.appointmentid = appointmentid;
 	}
 
 	public GregorianCalendar getCreated() {
@@ -96,9 +90,5 @@ public class Appointment {
 
 	public void setComments(String comments) {
 		this.comments = comments;
-	}
-	
-	
-	
+	}	
 }
-

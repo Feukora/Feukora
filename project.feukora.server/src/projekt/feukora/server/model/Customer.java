@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a customer.
  * 
- * @version 1.1
+ * @version 1.2
  * @author Pascal
  *
  */
@@ -70,13 +70,8 @@ public class Customer implements Serializable{
 		this.fi_zip = fi_zip;
 	}
 
-	
 	public int getCustomerid() {
 		return customerid;
-	}
-
-	public void setCustomerid(int customerid) {
-		this.customerid = customerid;
 	}
 
 	public String getCompanyname() {

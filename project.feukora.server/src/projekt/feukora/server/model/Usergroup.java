@@ -10,8 +10,10 @@ import javax.persistence.NamedQuery;
 
 /**
  * This class refers to a usergroup.
+ * 
+ * @version 1.1
  * @author Tamara
- * @version 1.0
+ * 
  */
 @Entity
 @NamedQueries({
@@ -26,28 +28,22 @@ public class Usergroup implements Serializable {
 
 	
 	/**
-	 * default constructor
+	 * Default constructor
 	 */
 	public Usergroup() {
 
 	}
 	/**
-	 * constructor for the class Usergroup
-	 * @param usergroupid
+	 * Usergroup constructor
+	 * 
 	 * @param name
 	 */
-	public Usergroup(int usergroupid, String name) {
-		this.usergroupid = usergroupid;
-		this.name = name;
-		
+	public Usergroup(String name) {
+		this.name = name;	
 	}
 
 	public int getUsergroupid() {
 		return usergroupid;
-	}
-
-	public void setUsergroupid(int usergroupid) {
-		this.usergroupid = usergroupid;
 	}
 
 	public String getName() {
@@ -57,7 +53,4 @@ public class Usergroup implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
-
 }

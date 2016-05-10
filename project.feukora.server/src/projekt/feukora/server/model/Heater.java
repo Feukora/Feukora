@@ -11,8 +11,8 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a heater.
  * 
- * @version 1.0
- * @author Patrick Duarte Pereira
+ * @version 1.1
+ * @author Patrick
  *
  */
 
@@ -29,20 +29,24 @@ public class Heater implements Serializable{
 	private int heaterid;
 	private String name;
 	
+	/**
+	 * Default constructor
+	 */
 	public Heater(){
 		
 	}
 	
+	/**
+	 * Heater constructor
+	 * 
+	 * @param name
+	 */
 	public Heater(String name){
 		this.name = name;
 	}
 
 	public int getHeaterid() {
 		return heaterid;
-	}
-
-	public void setHeaterid(int heaterid) {
-		this.heaterid = heaterid;
 	}
 
 	public String getName() {
@@ -52,6 +56,4 @@ public class Heater implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 }

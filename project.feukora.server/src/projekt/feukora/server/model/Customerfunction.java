@@ -2,7 +2,6 @@ package projekt.feukora.server.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,41 +9,38 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 /**
+ * This class refers to a customerfunction
  * 
- * @version 1.0
+ * @version 1.1
  * @author Allan
  *
  */
 
-// dadurch kommmt es in die DB // embeddable wenn die id als Fremdschlüssel woanders genutzt wird
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Customerfunction.Customerfunctionid", query = "SELECT cf FROM Customerfunction cf WHERE cf.customerfunctionid=:customerfunctionid"),
-	@NamedQuery(name = "Customerfunction.findByname", query = "SELECT cf FROM Customer cf WHERE cf.lastname=:name"),
+	@NamedQuery(name = "Customerfunction.findByName", query = "SELECT cf FROM Customer cf WHERE cf.lastname=:name")
 })
-// Fremdschlüssel mit manyto many
-// implements dazuschreiben
 public class Customerfunction implements Serializable {
 
-// Alle Attribute reinholen private und gleich schreiben wie im ERD
-	@Id // immer schreiben vor den attribute
-	@GeneratedValue // immer schreiben vor den attribute
+	@Id
+	@GeneratedValue
 	private int customerfunctionid;
 	private String name;
 	
 	/**
+	 * Default constructor
 	 * 
-	 */ // leeren Konstruktor machen
+	 */
 	public Customerfunction(){
 	}
 	
 	/**
+	 * Customerfunction constructor
 	 * 
-	 * @param customerfunctionid
 	 * @param name
-	 */ // konstruktor mit allen Attributen
-	public Customerfunction(int customerfunctionid, String name){
-		this.customerfunctionid = customerfunctionid;
+	 */
+	public Customerfunction(String name){
 		this.name = name;
 	}
 	
@@ -52,16 +48,12 @@ public class Customerfunction implements Serializable {
 	public int getCustomerfunctionid() {
 		return customerfunctionid;
 	}
-	public void setCustomerfunctionid(int customerfunctionid) {
-		this.customerfunctionid = customerfunctionid;
-	}
+
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
-
 }

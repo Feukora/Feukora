@@ -8,8 +8,9 @@ import javax.persistence.NamedQuery;
 
 /**
  * This class refers to a fuel.
+ * 
  * @author Tamara
- * @version 1.0
+ * @version 1.1
  */
 @Entity
 @NamedQueries({
@@ -23,28 +24,23 @@ public class Fuel {
 	private String name;
 	
 	/**
-	 * default constructor
+	 * Default constructor
 	 */
 	public Fuel(){
 		
 	}
 	
 	/**
-	 * constructor for the class Fuel
-	 * @param fuelid
+	 * Fuel constructor
+	 * 
 	 * @param name
 	 */
-	public Fuel(int fuelid, String name){
-		this.fuelid = fuelid;
+	public Fuel(String name){
 		this.name = name;
 	}
 
 	public int getFuelid() {
 		return fuelid;
-	}
-
-	public void setFuelid(int fuelid) {
-		this.fuelid = fuelid;
 	}
 
 	public String getName() {
@@ -53,7 +49,5 @@ public class Fuel {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	
+	}	
 }
