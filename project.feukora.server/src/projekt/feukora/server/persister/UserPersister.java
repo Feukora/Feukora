@@ -4,7 +4,7 @@ import java.util.List;
 
 import projekt.feukora.server.model.Users;
 /**
- * 
+ * This is the interface for the class UserPersisterImpl.
  * @author Tamara
  * version 1.0
  *
