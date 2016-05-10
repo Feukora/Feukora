@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
  * This class refers to a measuringresult.
  * 
  * @version 1.0
- * @author Patrick Duarte Pereira
+ * @author Patrick Duarte Pereiraaa
  *
  */
 
