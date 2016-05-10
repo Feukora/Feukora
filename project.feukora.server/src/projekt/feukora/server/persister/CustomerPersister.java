@@ -85,5 +85,5 @@ public interface CustomerPersister {
 	 * @param ort
 	 * @return
 	 */
-	public List<Customer> findCustomerByAdress(String adress);
+	public List<Customer> findCustomerByCompanyname(String companyname);
 }
