@@ -11,7 +11,9 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Town;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
+import projekt.feukora.server.persister.TownPersisterImpl;
 
 public class CustomerPersisterTest {
 
@@ -32,10 +34,10 @@ public class CustomerPersisterTest {
 		List<Customer> customerlist = customerTest.findAllCustomers();
 		assertTrue(customerlist.size() == 2);
 		
-		Town town1 = new Town(6000, "Luzern");
-		Customerfunction cf1 = new Customerfunction(1, "Eigentümer");
+		TownPersisterImpl tp = new TownPersisterImpl();
+		Town plz = tp.findbyTownzip(6000);
 
-		Customer c = new Customer("Firmenname", "Nachname", "Vorname", "Ort", "Telefonnummer", "Email", town1, cf1);
+		Customer c = new Customer("Firmenname", "Nachname", "Vorname", "Ort", "Telefonnummer", "Email", plz, cf1);
 
 		customerTest.saveCustomer(c);
 

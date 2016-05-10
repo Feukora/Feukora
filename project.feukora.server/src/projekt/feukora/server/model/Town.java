@@ -11,15 +11,13 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Town.findByTownzip", query = "SELECT t FROM Town t WHERE t.zip=:zip"),
 	@NamedQuery(name = "Town.findByName", query = "SELECT t FROM Town t WHERE t.name=:name"),
-	@NamedQuery(name = "Town.findByCanton", query = "SELECT t FROM Town t WHERE t.canton=:canton"),
-	@NamedQuery(name = "Town.findByMunicipality", query = "SELECT t FROM Town t WHERE t.municipality=:municipality"),
-	
+	@NamedQuery(name = "Town.findByCanton", query = "SELECT t FROM Town t WHERE t.canton=:canton")
 })
 
 /**
  * This class describes a town.
  * @author Robin
- * @version 1.0
+ * @version 1.1
  */
 public class Town implements Serializable {
 
@@ -28,11 +26,10 @@ public class Town implements Serializable {
 	private int zip;
 	private String name;
 	private String canton;
-	private int municipality;
 	
 	
 	/**
-	 * This ist the standard constructor
+	 * This is the standard constructor
 	 */
 	public Town(){
 		
@@ -45,10 +42,9 @@ public class Town implements Serializable {
 	 * @param municipality
 	 */
 	
-	public Town (String name, String canton, int municipality){
+	public Town (String name, String canton){
 	this.name = name;
 	this.canton = canton;
-	this.municipality = municipality;
 	
 	}
 
@@ -74,16 +70,5 @@ public class Town implements Serializable {
 
 	public void setCanton(String canton) {
 		this.canton = canton;
-	}
-
-	public int getMunicipality() {
-		return municipality;
-	}
-
-	public void setMunicipality(int municipality) {
-		this.municipality = municipality;
-	}
-	
-	
-	
+	}	
 }
