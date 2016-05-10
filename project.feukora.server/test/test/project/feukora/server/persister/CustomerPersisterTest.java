@@ -32,9 +32,10 @@ public class CustomerPersisterTest {
 		List<Customer> customerlist = customerTest.findAllCustomers();
 		assertTrue(customerlist.size() == 2);
 		
-		// Zip und Customerfunction noch erzeugen und dann im Konstruktor übergeben.
+		Town town1 = new Town(6000, "Luzern");
+		Customerfunction cf1 = new Customerfunction(1, "Eigentümer");
 
-		Customer c = new Customer(3, "Firmenname", "Nachname", "Vorname", "Ort", "Telefonnummer", "Email");
+		Customer c = new Customer("Firmenname", "Nachname", "Vorname", "Ort", "Telefonnummer", "Email", town1, cf1);
 
 		customerTest.saveCustomer(c);
 
@@ -49,7 +50,7 @@ public class CustomerPersisterTest {
 		List<Customer> customerlist = customerTest.findAllCustomers();
 		assertTrue(customerlist.size() == 2);
 
-		Customer c = new Customer(4, "Burri AG", "Burri", "Pascal", "Schachen", "04112345456", "sfasg@afgafg.ch");
+		Customer c = new Customer("Burri AG", "Burri", "Pascal", "Schachen", "04112345456", "sfasg@afgafg.ch");
 
 		customerTest.saveCustomer(c);
 
@@ -116,13 +117,13 @@ public class CustomerPersisterTest {
 	@Test
 	public void testFindByAdress() {
 		
-		String adress = "Aargau";
+		String companyname = "Perry AG";
 
-		assertTrue(customerTest.findCustomerByAdress(adress).size() == 1);
+		assertTrue(customerTest.findCustomerByCompanyname(companyname).size() == 1);
 		
-		adress = "Luzern";
+		companyname = "Fasser AG";
 
-		assertTrue(customerTest.findCustomerByAdress(adress)
+		assertTrue(customerTest.findCustomerByCompanyname(companyname)
 				.isEmpty());
 
 	}
@@ -144,8 +145,8 @@ public class CustomerPersisterTest {
 
 		CustomerPersisterTest.deleteAll();
 
-		Customer c1 = new Customer(1, "Fasser AG", "Fasser", "Sandro", "Bergün", "1234", "sf@sf.ch");
-		Customer c2 = new Customer(2, "Perry AG", "Pereira", "Patrick", "Aargau", "5678", "pdp@pdp.ch");
+		Customer c1 = new Customer("Fasser AG", "Fasser", "Sandro", "Bergün", "1234", "sf@sf.ch");
+		Customer c2 = new Customer("Perry AG", "Pereira", "Patrick", "Aargau", "5678", "pdp@pdp.ch");
 
 		customerTest.saveCustomer(c1);
 		customerTest.saveCustomer(c2);

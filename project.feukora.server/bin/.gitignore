@@ -7,4 +7,9 @@
 /test/
 =======
 
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
+=======
+/fincalc.properties
+/rmiserver.properties
 >>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git

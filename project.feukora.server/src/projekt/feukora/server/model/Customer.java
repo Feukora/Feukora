@@ -2,7 +2,6 @@ package projekt.feukora.server.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +12,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a customer.
  * 
- * @version 1.0
+ * @version 1.1
  * @author Pascal
  *
  */
@@ -21,16 +20,15 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Customer.findByCustomerid", query = "SELECT c FROM Customer c WHERE c.customerid=:customerid"),
+	@NamedQuery(name = "Customer.findByCompanyname", query = "SELECT c FROM Customer c WHERE c.companyname=:companyname"),
 	@NamedQuery(name = "Customer.findByLastname", query = "SELECT c FROM Customer c WHERE c.lastname=:lastname"),
 	@NamedQuery(name = "Customer.findByFirstname", query = "SELECT c FROM Customer c WHERE c.firstname=:firstname"),
-	@NamedQuery(name = "Customer.findByLastnameAndFirstname", query = "SELECT c FROM Customer c WHERE c.lastname=:lastname AND c.firstname=:firstname"),
-	@NamedQuery(name = "Customer.findByAdress", query = "SELECT c FROM Customer c WHERE c.adress=:adress") })
+	@NamedQuery(name = "Customer.findByLastnameAndFirstname", query = "SELECT c FROM Customer c WHERE c.lastname=:lastname AND c.firstname=:firstname")})
 public class Customer implements Serializable{
 	
 	@Id
 	@GeneratedValue
 	private int customerid;
-	@Embedded
 	@ManyToOne
 	private Customerfunction fi_customerfunctionid;
 	private String companyname;
@@ -39,18 +37,32 @@ public class Customer implements Serializable{
 	private String adress;
 	private String phone;
 	private String email;
-	@Embedded
 	@ManyToOne
 	private Town fi_zip;
 	 
+	/**
+	 * Default constructor
+	 */
 	public Customer() {
 		
 	}
 	
-	public Customer (String companyname, String lastname, String firstname, String adress, String phone, String email, Customerfunction fi_customerfunctionid, Town fi_zip) {
+	/**
+	 * Customer constructor
+	 * 
+	 * @param companyname
+	 * @param firstname
+	 * @param lastname
+	 * @param adress
+	 * @param phone
+	 * @param email
+	 * @param fi_customerfunctionid
+	 * @param fi_zip
+	 */
+	public Customer (String companyname, String firstname, String lastname, String adress, String phone, String email, Customerfunction fi_customerfunctionid, Town fi_zip) {
 		this.companyname = companyname;
-		this.lastname = lastname;
 		this.firstname = firstname;
+		this.lastname = lastname;
 		this.adress = adress;
 		this.phone = phone;
 		this.email = email;
@@ -58,6 +70,7 @@ public class Customer implements Serializable{
 		this.fi_zip = fi_zip;
 	}
 
+	
 	public int getCustomerid() {
 		return customerid;
 	}
