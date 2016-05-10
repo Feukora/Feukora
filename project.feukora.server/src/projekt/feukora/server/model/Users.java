@@ -52,14 +52,14 @@ public class Users implements Serializable {
 	
 	
 	/**
-	 * 
+	 * default constructor
 	 */
 	public Users(){
 		
 	}
 	
 	/**
-	 * 
+	 * constructor for the class Users
 	 * @param userid
 	 * @param fi_usergroupid
 	 * @param lastname
