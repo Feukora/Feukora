@@ -1,5 +1,6 @@
 package projekt.feukora.server.rmi;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.MalformedURLException;
@@ -14,6 +15,8 @@ import javax.swing.JOptionPane;
 import org.eclipse.persistence.sessions.server.Server;
 
 /**
+ * This Class starts the RMI-Server on this machine, also it instances Remote Objects, 
+ * binds them and also unbinds
  * 
  * @version 1.0
  * @author Sandro Fasser
@@ -29,14 +32,17 @@ public class RMIServer {
 		/* Konfigurationsdaten einlesen */
 		Properties props = new Properties();
 		InputStream is = Server.class.getClassLoader().getResourceAsStream("rmiserver.properties");
-		props.load(is);
+		try {
+			props.load(is);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		int port = Integer.parseInt(props.getProperty("server_port"));
 		String hostIP = props.getProperty("server_ip");
 		
 
-		String studentROName = "studentRO";
-		String dozentROName = "dozentRO";
-		String modulROName = "modulRO";
+		String customerRMIName = "customerRMI";
 
 		Registry registry = null;
 
@@ -78,13 +84,11 @@ public class RMIServer {
 			if (registry != null) {
 
 				// Entfernte Objekte erstellen
-				StudentRO studentRO = new StudentROImpl();
-				DozentRO dozentRO = new DozentROImpl();
-				ModulRO modulRO = new ModulROImpl();
+				CustomerRMI customerRMI = new CustomerRMIImpl();
 
-				registry.rebind(studentROName, studentRO);
-				registry.rebind(dozentROName, dozentRO);
-				registry.rebind(modulROName, modulRO);
+
+				registry.rebind(customerRMIName, customerRMI);
+				
 
 				String msg = "RMI-Server ist bereit fuer Client-Anfragen.\n\n"
 						+ "Server herunterfahren?";
@@ -92,9 +96,7 @@ public class RMIServer {
 						+ hostIP + ":" + port + "]",
 						JOptionPane.QUESTION_MESSAGE);
 
-				registry.unbind(studentROName);
-				registry.unbind(dozentROName);
-				registry.unbind(modulROName);
+				registry.unbind(customerRMIName);
 
 				System.out.println("RMI Server wird heruntergefahren!\n");
 
