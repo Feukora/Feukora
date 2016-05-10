@@ -3,10 +3,10 @@ package projekt.feukora.server.persister;
 import java.util.List;
 
 import projekt.feukora.server.model.Usergroup;
-import projekt.feukora.server.model.Users;
+
 
 /**
- * 
+ * This is the interface for the class UsergroupPersisterImpl.
  * @author Tamara
  * @version 1.0
  */
