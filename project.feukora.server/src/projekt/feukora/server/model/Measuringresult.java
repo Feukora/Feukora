@@ -21,7 +21,6 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Measuringresult.findByMeasuringresultid", query = "SELECT mr FROM Measuringresult mr WHERE mr.measuringresultid=:measuringid"),
 })
-
 public class Measuringresult implements Serializable{
 	
 	@Id
@@ -50,6 +49,7 @@ public class Measuringresult implements Serializable{
 	
 	/**
 	 * Measuringresult constructor
+	 * 
 	 * @param position
 	 * @param measuringgrade
 	 * @param smokenumber
@@ -62,7 +62,8 @@ public class Measuringresult implements Serializable{
 	 * @param oxygen
 	 * @param exhaustgasloss
 	 */
-	public Measuringresult(int position, int measuringgrade, int smokenumber, int carbonmonoxide, boolean oilpart, int nitrogendioxide, int exhaustgastemp, int heatertemp, int blowertemp, double oxygen, double exhaustgasloss){
+	public Measuringresult(int fi_rapportid, int position, int measuringgrade, int smokenumber, int carbonmonoxide, boolean oilpart, int nitrogendioxide, int exhaustgastemp, int heatertemp, int blowertemp, double oxygen, double exhaustgasloss){
+		this.fi_rapportid = fi_rapportid;
 		this.position = position;
 		this.measuringgrade = measuringgrade;
 		this.smokenumber = smokenumber;

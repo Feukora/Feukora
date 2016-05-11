@@ -1,5 +1,6 @@
 package projekt.feukora.server.model;
 
+
 import java.util.GregorianCalendar;
 
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * This class refers to an appointment
@@ -34,7 +37,9 @@ public class Appointment {
 	private Users fi_userid;
 	@ManyToOne
 	private Users fi_createdby;
+	@Temporal (TemporalType.TIMESTAMP)
 	private GregorianCalendar created;
+	@Temporal (TemporalType.TIMESTAMP)
 	private GregorianCalendar appointmentdate;
 	private String comments;
 	

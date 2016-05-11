@@ -37,7 +37,7 @@ public class TownPersisterImpl implements TownPersister {
 	}
 
 	@Override
-	public List<Town> findbyTownzip(Integer zip) {
+	public Town findbyTownzip(Integer zip) {
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Town> tQuery = em.createNamedQuery("Tonw.findByzip",
@@ -45,11 +45,11 @@ public class TownPersisterImpl implements TownPersister {
 
 		tQuery.setParameter("zip", zip);
 
-		List<Town> townlist = tQuery.getResultList();
+		Town town = new Town();
 
 		em.close();
 
-		return townlist != null ? townlist : new ArrayList<Town>();
+		return town;
 	}
 
 	@Override

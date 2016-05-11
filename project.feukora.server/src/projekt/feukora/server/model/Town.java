@@ -3,6 +3,7 @@ package projekt.feukora.server.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -22,6 +23,7 @@ import javax.persistence.NamedQuery;
 })
 public class Town implements Serializable {
 
+	@Id
 	private int zip;
 	private String name;
 	private String canton;

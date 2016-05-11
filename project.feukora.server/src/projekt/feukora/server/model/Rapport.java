@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * This class refers to a rapport
@@ -37,6 +39,7 @@ public class Rapport implements Serializable {
 	private Users fi_userid;
 	@ManyToOne
 	private Appointment fi_appointmentid;
+	@Temporal (TemporalType.TIMESTAMP)
 	private GregorianCalendar measuringdate;
 	private Boolean results;
 	private Boolean additionalsteps;

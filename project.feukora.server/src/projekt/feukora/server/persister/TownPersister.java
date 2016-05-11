@@ -53,7 +53,7 @@ public interface TownPersister {
 	 * @param id
 	 * @return List of Towns
 	 */
-	List<Town> findbyTownzip(Integer zip);
+	Town findbyTownzip(Integer zip);
 
 	/**
 	 * Return a list with all entities
