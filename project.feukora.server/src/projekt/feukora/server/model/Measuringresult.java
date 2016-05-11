@@ -27,7 +27,7 @@ public class Measuringresult implements Serializable{
 	@GeneratedValue
 	private int measuringresultid;
 	@ManyToOne
-	private int fi_rapportid;
+	private Rapport fi_rapportid;
 	private int position;
 	private int measuringgrade;
 	private int smokenumber;
@@ -62,7 +62,7 @@ public class Measuringresult implements Serializable{
 	 * @param oxygen
 	 * @param exhaustgasloss
 	 */
-	public Measuringresult(int fi_rapportid, int position, int measuringgrade, int smokenumber, int carbonmonoxide, boolean oilpart, int nitrogendioxide, int exhaustgastemp, int heatertemp, int blowertemp, double oxygen, double exhaustgasloss){
+	public Measuringresult(Rapport fi_rapportid, int position, int measuringgrade, int smokenumber, int carbonmonoxide, boolean oilpart, int nitrogendioxide, int exhaustgastemp, int heatertemp, int blowertemp, double oxygen, double exhaustgasloss){
 		this.fi_rapportid = fi_rapportid;
 		this.position = position;
 		this.measuringgrade = measuringgrade;

@@ -40,16 +40,18 @@ public class TownPersisterImpl implements TownPersister {
 	public Town findbyTownzip(Integer zip) {
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Town> tQuery = em.createNamedQuery("Tonw.findByzip",
+		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByTownzip",
 				Town.class);
 
 		tQuery.setParameter("zip", zip);
 
-		Town town = new Town();
+		List<Town> townlist = tQuery.getResultList();
 
 		em.close();
+		
+		return townlist.get(0);
 
-		return town;
+//		return townlist != null ? townlist : new ArrayList<Town>();
 	}
 
 	@Override

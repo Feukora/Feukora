@@ -3,6 +3,7 @@ package projekt.feukora.server.model;
 
 import java.util.GregorianCalendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,7 +32,7 @@ public class Appointment {
 	@Id
 	@GeneratedValue
 	private int appointmentid;
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Customerheater fi_costumerheaterid;
 	@ManyToOne
 	private Users fi_userid;
