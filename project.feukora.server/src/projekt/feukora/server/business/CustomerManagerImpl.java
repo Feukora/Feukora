@@ -9,111 +9,81 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.persister.CustomerPersister;
+import projekt.feukora.server.persister.CustomerPersisterImpl;
 import projekt.feukora.server.persister.GenericPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
 /**
+ * This Class implements the methods of the interface CustomerManager.
+ * 
  * @author Sandro Fasser
- * @version 1.0
+ * @version 1.1
  */
-public class CustomerManagerImpl implements CustomerManager {
 
+public class CustomerManagerImpl implements CustomerManager {
+	
+	private CustomerPersister customerPersister = new CustomerPersisterImpl();
 
 	@Override
 	public void saveCustomer(Customer entity) throws Exception {
-		new GenericPersisterImpl<Customer>(Customer.class).save(entity);	
+		if(entity.getCustomerid() == null){
+			customerPersister.saveCustomer(entity);
+		}else{
+			throw new Exception("Der Kunde (id = "+ entity.getCustomerid() + ") ist bereits vorhanden");
+		}
 	}
 
 	@Override
 	public Customer updateCustomer(Customer entity) throws Exception {
-		return new GenericPersisterImpl<Customer>(Customer.class).update(entity);
+		if(entity.getCustomerid() == null){
+			saveCustomer(entity);
+			return null;
+		} else {
+			return customerPersister.updateCustomer(entity);
+		}		
 	}
-
+	
+	
 	@Override
 	public void deleteCustomer(Customer entity) throws Exception {
-		new GenericPersisterImpl<Customer>(Customer.class).delete(entity);
+		customerPersister.deleteCustomer(entity);
 	}
 
 	@Override
 	public void deleteCustomerByCustomerid(Integer customerid) throws Exception {
-		new GenericPersisterImpl<Customer>(Customer.class).deleteById(customerid);	
+		customerPersister.deleteCustomerByCustomerid(customerid);	
 	}
 
 	@Override
 	public Customer findCustomerByCustomerid(Integer customerid) {
-		return new GenericPersisterImpl<Customer>(Customer.class).findById(customerid);
+		return customerPersister.findCustomerByCustomerid(customerid);
 	}
 
 	@Override
 	public List<Customer> findAllCustomers() {
-		return new GenericPersisterImpl<Customer>(Customer.class).findAll();
+		return customerPersister.findAllCustomers();
 	}
 
 	@Override
 	public List<Customer> findCustomerByLastname(String lastname) {
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Customer> tQuery = em.createNamedQuery("Customer.findByLastname",
-				Customer.class);
-
-		tQuery.setParameter("lastname", lastname);
-
-		List<Customer> customerlist = tQuery.getResultList();
-
-		em.close();
-
-		return customerlist != null ? customerlist : new ArrayList<Customer>();
+		return customerPersister.findCustomerByLastname(lastname);
 	}
 
 	@Override
 	public List<Customer> findCustomerByFirstname(String firstname) {
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Customer> tQuery = em.createNamedQuery("Customer.findByFirstname",
-				Customer.class);
-
-		tQuery.setParameter("firstname", firstname);
-
-		List<Customer> customerlist = tQuery.getResultList();
-
-		em.close();
-
-		return customerlist != null ? customerlist : new ArrayList<Customer>();
+		return customerPersister.findCustomerByFirstname(firstname);
 	}
 
 	@Override
 	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) {
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Customer> tQuery = em.createNamedQuery(
-				"Customer.findByLastnameAndFirstname", Customer.class);
-
-		tQuery.setParameter("lastname", lastname);
-		tQuery.setParameter("firstname", firstname);
-
-		List<Customer> customerlist = tQuery.getResultList();
-
-		em.close();
-
-		return customerlist != null ? customerlist : new ArrayList<Customer>();
+		return customerPersister.findCustomerByLastnameAndFirstname(lastname, firstname);
 	}
 
 	@Override
 	public List<Customer> findCustomerByCompanyname(String companyname) {
-
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Customer> tQuery = em.createNamedQuery(
-				"Customer.findByCompanyname", Customer.class);
-
-		tQuery.setParameter("companyname", companyname);
-
-		List<Customer> customerlist = tQuery.getResultList();
-
-		em.close();
-
-		return customerlist != null ? customerlist : new ArrayList<Customer>();
-	} 
+		return customerPersister.findCustomerByCompanyname(companyname);
+	}
 
 
 }

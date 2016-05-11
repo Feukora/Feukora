@@ -5,7 +5,14 @@ import java.util.List;
 
 import projekt.feukora.server.model.Customer;
 
-public interface CustomerManager extends Remote{
+/**
+ * Interface to handle customer entities.
+ * 
+ * @author Sandro Fasser
+ * @version 1.1
+ *
+ */
+public interface CustomerManager {
 	/**
 	 * Save the given entity
 	 * 
@@ -32,7 +39,7 @@ public interface CustomerManager extends Remote{
 	void deleteCustomer(Customer entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the customer entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -55,7 +62,7 @@ public interface CustomerManager extends Remote{
 	List<Customer> findAllCustomers();
 
 	/**
-	 * Return a list with cusomerts with this lastname
+	 * Return a list with customers with this lastname
 	 * 
 	 * @param name
 	 * @return
@@ -63,7 +70,7 @@ public interface CustomerManager extends Remote{
 	public List<Customer> findCustomerByLastname(String lastname);
 
 	/**
-	 * Return a list with cusomerts with this firstname
+	 * Return a list with customers with this firstname
 	 * 
 	 * @param vorname
 	 * @return
@@ -71,7 +78,7 @@ public interface CustomerManager extends Remote{
 	public List<Customer> findCustomerByFirstname(String firstname);
 
 	/**
-	 * Return a list with cusomerts with this lastname and firstname
+	 * Return a list with customers with this lastname and firstname
 	 * 
 	 * @param name
 	 * @param vorname
@@ -80,7 +87,7 @@ public interface CustomerManager extends Remote{
 	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname);
 
 	/**
-	 * Return a list with cusomerts with this adress
+	 * Return a list with customers with this adress
 	 * 
 	 * @param ort
 	 * @return
