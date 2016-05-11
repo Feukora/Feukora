@@ -2,7 +2,6 @@ package projekt.feukora.server.model;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -30,7 +29,7 @@ public class Customer implements Serializable{
 	@Id
 	@GeneratedValue
 	private int customerid;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	private Customerfunction fi_customerfunctionid;
 	private String companyname;
 	private String firstname;
@@ -38,7 +37,7 @@ public class Customer implements Serializable{
 	private String adress;
 	private String phone;
 	private String email;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	private Town fi_zip;
 	 
 	/**

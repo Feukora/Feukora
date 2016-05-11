@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Town;
 
 /**
@@ -16,10 +18,10 @@ import projekt.feukora.server.model.Town;
  */
 public class TownPersisterImpl implements TownPersister {
 
-	@Override
-	public void saveTown(Town entity) throws Exception {
-		new GenericPersisterImpl<Town>(Town.class).save(entity);	
-	}
+//	@Override
+//	public void saveTown(Town entity) throws Exception {
+//		new GenericPersisterImpl<Town>(Town.class).save(entity);	
+//	}
 
 	@Override
 	public Town updateTown(Town entity) throws Exception {
@@ -38,18 +40,20 @@ public class TownPersisterImpl implements TownPersister {
 
 	@Override
 	public Town findbyTownzip(Integer zip) {
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByTownzip",
-				Town.class);
-
-		tQuery.setParameter("zip", zip);
-
-		List<Town> townlist = tQuery.getResultList();
-
-		em.close();
+		return new GenericPersisterImpl<Town>(Town.class).findById(zip);
 		
-		return townlist.get(0);
+//		EntityManager em = JpaUtil.createEntityManager();
+//
+//		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByTownzip",
+//				Town.class);
+//
+//		tQuery.setParameter("zip", zip);
+//
+//		List<Town> townlist = tQuery.getResultList();
+//
+//		em.close();
+//		
+//		return townlist.get(0);
 
 //		return townlist != null ? townlist : new ArrayList<Town>();
 	}
