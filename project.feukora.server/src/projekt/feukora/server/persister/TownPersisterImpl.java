@@ -8,16 +8,17 @@ import javax.persistence.TypedQuery;
 import projekt.feukora.server.model.Town;
 
 /**
- * This class implements the TownPersister class.
+ * This class implements the interface TownPersister
+ * 
+ * @version 1.1
  * @author Robin
- * @verison 1.0
+ *
  */
 public class TownPersisterImpl implements TownPersister {
 
 	@Override
 	public void saveTown(Town entity) throws Exception {
-		new GenericPersisterImpl<Town>(Town.class).save(entity);
-		
+		new GenericPersisterImpl<Town>(Town.class).save(entity);	
 	}
 
 	@Override
@@ -27,14 +28,12 @@ public class TownPersisterImpl implements TownPersister {
 
 	@Override
 	public void deleteTown(Town entity) throws Exception {
-		new GenericPersisterImpl<Town>(Town.class).delete(entity);
-		
+		new GenericPersisterImpl<Town>(Town.class).delete(entity);	
 	}
-	
+
 	@Override
-	public void deleteTownByTownzip(Town zip) throws Exception {
-		new GenericPersisterImpl<Town>(Town.class).deleteByzip(zip);
-		
+	public void deleteTownByTownzip(Integer zip) throws Exception {
+		new GenericPersisterImpl<Town>(Town.class).deleteById(zip);
 	}
 
 	@Override
@@ -51,61 +50,42 @@ public class TownPersisterImpl implements TownPersister {
 		em.close();
 
 		return townlist != null ? townlist : new ArrayList<Town>();
-		}
+	}
 
 	@Override
 	public List<Town> findAllTowns() {
 		return new GenericPersisterImpl<Town>(Town.class).findAll();
 	}
-	
-		@Override
-		public List<Town> findTownByName(String name) {
-			EntityManager em = JpaUtil.createEntityManager();
-
-			TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByName",
-					Town.class);
-
-			tQuery.setParameter("name", name);
-
-			List<Town> townlist = tQuery.getResultList();
-
-			em.close();
-
-			return townlist != null ? townlist : new ArrayList<Town>();
-			}
-	
-		@Override
-		public List<Town> findTownByCanton(String canton) {
-			EntityManager em = JpaUtil.createEntityManager();
-
-			TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByCanton",
-					Town.class);
-
-			tQuery.setParameter("canton", canton);
-
-			List<Town> cantonlist = tQuery.getResultList();
-
-			em.close();
-
-			return cantonlist != null ? cantonlist : new ArrayList<Town>();
-			}
 
 	@Override
-	public List<Town> findTownByMunicipality(String municipality) {
+	public List<Town> findTownByName(String name) {
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByMunicipality",
+		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByName",
 				Town.class);
 
-		tQuery.setParameter("municipality", municipality);
+		tQuery.setParameter("name", name);
 
-		List<Town> municipalitylist = tQuery.getResultList();
+		List<Town> townlist = tQuery.getResultList();
 
 		em.close();
 
-		return municipalitylist != null ? municipalitylist : new ArrayList<Town>();
-		}
+		return townlist != null ? townlist : new ArrayList<Town>();
+	}
 
-	
+	@Override
+	public List<Town> findTownByCanton(String canton) {
+		EntityManager em = JpaUtil.createEntityManager();
 
+		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByCanton",
+				Town.class);
+
+		tQuery.setParameter("canton", canton);
+
+		List<Town> cantonlist = tQuery.getResultList();
+
+		em.close();
+
+		return cantonlist != null ? cantonlist : new ArrayList<Town>();
+	}
 }

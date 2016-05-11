@@ -4,6 +4,13 @@ import java.util.List;
 
 import projekt.feukora.server.model.Measuringresult;
 
+/**
+ * This interface refers to a MeasuringresultPersiser
+ * 
+ * @version 1.1
+ * @author Patrick
+ *
+ */
 public interface MeasuringresultPersister {
 
 	/**
@@ -18,7 +25,7 @@ public interface MeasuringresultPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Measuringresult
 	 * @throws Exception
 	 */
 	Measuringresult updateMeasuringresult(Measuringresult entity) throws Exception;
@@ -32,7 +39,7 @@ public interface MeasuringresultPersister {
 	void deleteMeasuringresult(Measuringresult entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception

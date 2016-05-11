@@ -3,10 +3,12 @@ package projekt.feukora.server.persister;
 import java.util.List;
 
 import projekt.feukora.server.model.Users;
+
 /**
- * This is the interface for the class UserPersisterImpl.
+ * This interface refers to a UserPersister
+ * 
+ * @version 1.1
  * @author Tamara
- * version 1.0
  *
  */
 public interface UserPersister {
@@ -23,7 +25,7 @@ public interface UserPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Users
 	 * @throws Exception
 	 */
 	Users updateUser(Users entity) throws Exception;
@@ -37,7 +39,7 @@ public interface UserPersister {
 	void deleteUser(Users entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -48,14 +50,14 @@ public interface UserPersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Useres
 	 */
 	Users findUserByUserid(Integer userid);
 
 	/**
 	 * Return all entities
 	 * 
-	 * @return
+	 * @return List with Users
 	 */
 	List<Users> findAllUsers();
 
@@ -63,7 +65,7 @@ public interface UserPersister {
 	 * Return a list of users with this lastname
 	 * 
 	 * @param name
-	 * @return
+	 * @return List with Users
 	 */
 	public List<Users> findUserByLastname(String lastname);
 
@@ -71,26 +73,24 @@ public interface UserPersister {
 	 * Return a list of users with this firstname
 	 * 
 	 * @param vorname
-	 * @return
+	 * @return List with Users
 	 */
 	public List<Users> findUserByFirstname(String firstname);
 
 	/**
 	 * Return a list of users with this lastname and firstname
 	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
+	 * @param lastname
+	 * @param firstname
+	 * @return List with users
 	 */
 	public List<Users> findUserByLastnameAndFirstname(String lastname, String firstname);
 	
 	/**
 	 * Return a list of users with this username
 	 * 
-	 * @param vorname
-	 * @return
+	 * @param username
+	 * @return List with users
 	 */
 	public List<Users> findUserByUsername(String username);
-
-	
 }

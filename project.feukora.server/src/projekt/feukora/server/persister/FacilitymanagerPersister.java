@@ -4,6 +4,13 @@ import java.util.List;
 
 import projekt.feukora.server.model.Facilitymanager;
 
+/**
+ * This interface refers to a Facilitymanager
+ * 
+ * @version 1.1
+ * @author Pascal
+ *
+ */
 public interface FacilitymanagerPersister {
 	/**
 	 * Save the given entity
@@ -17,7 +24,7 @@ public interface FacilitymanagerPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Facilitymanager
 	 * @throws Exception
 	 */
 	Facilitymanager updateFacilitymanager(Facilitymanager entity) throws Exception;
@@ -31,18 +38,18 @@ public interface FacilitymanagerPersister {
 	void deleteFacilitymanager(Facilitymanager entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
 	 */
-	void deleteFacilitymanagerByFacilitymanagerid(Integer Facilitymanager) throws Exception;
+	void deleteFacilitymanagerByFacilitymanagerid(Integer Facilitymanagerid) throws Exception;
 
 	/**
 	 * Return the entity with this id
 	 * 
-	 * @param id
-	 * @return
+	 * @param id 
+	 * @return Facilitymanager
 	 */
 	Facilitymanager findFacilitymanagerByFacilitymanagerid(Integer Facilitymanagerid);
 
@@ -52,4 +59,20 @@ public interface FacilitymanagerPersister {
 	 * @return
 	 */
 	List<Facilitymanager> findAllFacilitymanagers();
+	
+	/**
+	 * Return a list with Facilitymanager with this lastname
+	 * 
+	 * @param name
+	 * @return List with Facilitymanager
+	 */
+	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname);
+
+	/**
+	 * Return a list with Facilitymanager with this firstname
+	 * 
+	 * @param firstname
+	 * @return List with Customers
+	 */
+	public List<Facilitymanager> findFacilitymanagerByFirstname(String firstname);
 }

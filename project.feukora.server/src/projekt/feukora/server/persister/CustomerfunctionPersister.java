@@ -65,8 +65,8 @@ public interface CustomerfunctionPersister {
 	 * Return the entity with this name
 	 * 
 	 * @param name
-	 * @return
+	 * @return Customerfunction
 	 */
-	String findCustomerfunctionByName(String name);
+	Customerfunction findCustomerfunctionByName(String name);
 }
 

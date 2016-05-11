@@ -30,21 +30,35 @@ CustomerPersister						Version 1.1 on 10.05.2016 at 16:15 by Pascal
 											Add Javadoc
 CustomerPersisterImpl					Version 1.1 on 10.05.2016 at 16:35 by Pascal
 											Add Javadoc
-FacilitymanagerPersister				Version 1.1
-FacilitymanagerPersisterImpl			Version 1.1
-FuelPersister							Version 1.1
-FuelPersisterImpl						Version 1.1
-GenericPersister						Version 1.1
-GenericPersisterImpl					Version 1.1
-HeaterPersister							Version 1.1
-HeaterPersisterImpl						Version 1.1
-MeasuringresultPersister				Version 1.1
-MeasuringresultPersisterImpl			Version 1.1	
-RapportPersister						Version 1.1
-RapportPersisterImpl					Version 1.1
-TownPersister							Version 1.1
-TownPersisterImpl						Version 1.1
-UsergroupPersister						Version 1.1
-UsergroupPersisterImpl					Version 1.1
-UserPersister							Version 1.1
-UserPersisterImpl						Version 1.1
+FacilitymanagerPersister				Version 1.1 on 11.05.2106 at 08:20 by Pascal
+											Add unimplemented methods, add Javadoc
+FacilitymanagerPersisterImpl			Version 1.1 on 11.05.2106 at 08:20 by Pascal
+											Add unimplemented methods, add Javadoc
+FuelPersister							Version 1.1 on 11.05.2016 at 08:20 by Pascal
+											Fix Javadoc, Add unimplemented methods
+FuelPersisterImpl						Version 1.1 on 11.05.2016 at 08:20 by Pascal
+											Fix Javadoc, Add unimplemented methods
+HeaterPersister							Version 1.1 on 11.05.2016 at 08:35 by Pascal
+											Fix Javadoc
+HeaterPersisterImpl						Version 1.1 on 11.05.2016 at 08:40 by Pascal
+											Add Javadoc, fix bug
+MeasuringresultPersister				Version 1.1 on 11.05.2016 at 08:45 by Pascal
+											Add Javadoc
+MeasuringresultPersisterImpl			Version 1.1 on 11.05.2016 at 08:45 by Pascal
+											Add Javadoc, delete unused Import
+RapportPersister						Version 1.1 on 11.05.2016 at 08:50 by Pascal
+											Add Javadoc
+RapportPersisterImpl					Version 1.1 on 11.05.2016 at 08:50 by Pascal
+											Add Javadoc, delete unused Import
+TownPersister							Version 1.1 on 11.052016 at 08:55 by Pascal
+											Fix Javadoc, delete unused method
+TownPersisterImpl						Version 1.1 on 11.052016 at 08:55 by Pascal
+											Fix Javadoc, delete unused method, fix bugs
+UsergroupPersister						Version 1.1 on 11.05.2016 at 09:05 by Pascal
+											Fix Javadoc, add unimplemented method
+UsergroupPersisterImpl					Version 1.1 on 11.05.2016 at 09:05 by Pascal
+											Fix Javadoc, add unimplemented method
+UserPersister							Version 1.1 on 11.05.2016 at 09:15 by Pascal
+											Fix Javadoc, 
+UserPersisterImpl						Version 1.1 on 11.05.2016 at 09:15 by Pascal
+											Fix Javadoc, delete unused Import, 

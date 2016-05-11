@@ -6,50 +6,45 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Users;
 
 /**
+ * This class implements the interface UserPersister
  * 
+ * @version 1.1
  * @author Tamara
- * @version 1.0
+ *
  */
 public class UserPersisterImpl implements UserPersister{
 
 	@Override
 	public void saveUser(Users entity) throws Exception {
 		new GenericPersisterImpl<Users>(Users.class).save(entity);
-		
 	}
 
 	@Override
 	public Users updateUser(Users entity) throws Exception {
-		return new GenericPersisterImpl<Users>(Users.class).update(entity);
-		
+		return new GenericPersisterImpl<Users>(Users.class).update(entity);	
 	}
 
 	@Override
 	public void deleteUser(Users entity) throws Exception {
-		new GenericPersisterImpl<Users>(Users.class).delete(entity);
-		
+		new GenericPersisterImpl<Users>(Users.class).delete(entity);	
 	}
 
 	@Override
 	public void deleteUserByUserid(Integer userid) throws Exception {
-		new GenericPersisterImpl<Users>(Users.class).deleteById(userid);
-		
+		new GenericPersisterImpl<Users>(Users.class).deleteById(userid);	
 	}
 
 	@Override
 	public Users findUserByUserid(Integer userid) {
-		return new GenericPersisterImpl<Users>(Users.class).findById(userid);
-		
+		return new GenericPersisterImpl<Users>(Users.class).findById(userid);	
 	}
 
 	@Override
 	public List<Users> findAllUsers() {
-		return new GenericPersisterImpl<Users>(Users.class).findAll();
-		
+		return new GenericPersisterImpl<Users>(Users.class).findAll();	
 	}
 
 	@Override
@@ -116,10 +111,4 @@ public class UserPersisterImpl implements UserPersister{
 
 		return userlist != null ? userlist : new ArrayList<Users>();
 	}
-
-	
-
-	
-	
-
 }

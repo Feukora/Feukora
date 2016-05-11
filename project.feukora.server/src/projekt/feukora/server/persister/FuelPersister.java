@@ -2,12 +2,15 @@ package projekt.feukora.server.persister;
 
 import java.util.List;
 
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Fuel;
 
 /**
- * This is the interface for the class FuelPersisterImpl
+ * This interface refers to a FuelPersister
+ * 
+ * @version 1.1
  * @author Tamara
- * @version
+ * 
  */
 public interface FuelPersister {
 	
@@ -23,7 +26,7 @@ public interface FuelPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Fuel
 	 * @throws Exception
 	 */
 	Fuel updateFuel(Fuel entity) throws Exception;
@@ -37,7 +40,7 @@ public interface FuelPersister {
 	void deleteFuel(Fuel entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -48,7 +51,7 @@ public interface FuelPersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Fuel
 	 */
 	Fuel findFuelByFuelid(Integer fuelid);
 
@@ -58,5 +61,12 @@ public interface FuelPersister {
 	 * @return
 	 */
 	List<Fuel> findAllFuel();
-
+	
+	/**
+	 * Return the fuel with this name
+	 * 
+	 * @param name
+	 * @return Fuel
+	 */
+	Fuel findFuelByName(String name);
 }

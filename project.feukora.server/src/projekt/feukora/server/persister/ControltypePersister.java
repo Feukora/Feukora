@@ -67,5 +67,5 @@ public interface ControltypePersister {
 	 * @param name
 	 * @return Controltype
 	 */
-	String findControltypeByName(String name);
+	Controltype findControltypeByName(String name);
 }

@@ -2,8 +2,16 @@ package projekt.feukora.server.persister;
 
 import java.util.GregorianCalendar;
 import java.util.List;
+
 import projekt.feukora.server.model.Rapport;
 
+/**
+ * This interface refers to a RapportPersister
+ * 
+ * @version 1.1
+ * @author Sandro
+ *
+ */
 public interface RapportPersister {
 	/**
 	 * Save the given entity
@@ -17,7 +25,7 @@ public interface RapportPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Rapport
 	 * @throws Exception
 	 */
 	Rapport updateRapport(Rapport entity) throws Exception;
@@ -31,7 +39,7 @@ public interface RapportPersister {
 	void deleteRapport(Rapport entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -42,7 +50,7 @@ public interface RapportPersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Rapport
 	 */
 	Rapport findRapportByRapportid(Integer rapportid);
 
@@ -57,7 +65,7 @@ public interface RapportPersister {
 	 * Return a list with rapports with this results
 	 * 
 	 * @param name
-	 * @return
+	 * @return List with Rapports
 	 */
 	public List<Rapport> findRapportByResults(Boolean results);
 	
@@ -65,7 +73,7 @@ public interface RapportPersister {
 	 * Return a list with rapports with this measuringdate
 	 * 
 	 * @param name
-	 * @return
+	 * @return List with Rapports
 	 */
 	public List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate);
 

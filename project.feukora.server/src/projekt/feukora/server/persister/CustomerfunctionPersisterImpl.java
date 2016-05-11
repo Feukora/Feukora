@@ -49,7 +49,7 @@ public class CustomerfunctionPersisterImpl implements CustomerfunctionPersister 
 	}
 
 	@Override
-	public String findCustomerfunctionByName(String name) {
+	public Customerfunction findCustomerfunctionByName(String name) {
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Customerfunction> tQuery = em.createNamedQuery("Customerfunction.findByName",
@@ -57,8 +57,10 @@ public class CustomerfunctionPersisterImpl implements CustomerfunctionPersister 
 
 		tQuery.setParameter("name", name);
 
+		Customerfunction customerfunction = new Customerfunction();
+		
 		em.close();
 
-		return name;
+		return customerfunction;
 	}
 }

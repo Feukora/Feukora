@@ -2,13 +2,16 @@ package projekt.feukora.server.persister;
 
 import java.util.List;
 
+import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
 
 
 /**
- * This is the interface for the class UsergroupPersisterImpl.
+ * This interface refers to a UsergroupPersister
+ * 
+ * @version 1.1
  * @author Tamara
- * @version 1.0
+ *
  */
 public interface UsergroupPersister {
 	
@@ -24,7 +27,7 @@ public interface UsergroupPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Usergroup
 	 * @throws Exception
 	 */
 	Usergroup updateUsergroup(Usergroup entity) throws Exception;
@@ -38,7 +41,7 @@ public interface UsergroupPersister {
 	void deleteUsergroup(Usergroup entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -49,7 +52,7 @@ public interface UsergroupPersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Usergroup
 	 */
 	Usergroup findUsergroupByUsergroupid(Integer usergroupid);
 
@@ -60,6 +63,11 @@ public interface UsergroupPersister {
 	 */
 	List<Usergroup> findAllUsergroup();
 	
-	
-
+	/**
+	 * Return a list with entities with this name
+	 * 
+	 * @param name
+	 * @return Usergroup
+	 */
+	public Usergroup findUsergroupByName(String name);
 }

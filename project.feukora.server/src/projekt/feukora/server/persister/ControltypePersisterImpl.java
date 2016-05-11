@@ -48,7 +48,7 @@ public class ControltypePersisterImpl implements ControltypePersister {
 	}
 
 	@Override
-	public String findControltypeByName(String name) {
+	public Controltype findControltypeByName(String name) {
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Controltype> tQuery = em.createNamedQuery("Controltype.findByName",
@@ -56,8 +56,10 @@ public class ControltypePersisterImpl implements ControltypePersister {
 
 		tQuery.setParameter("name", name);
 
+		Controltype controltype = new Controltype();
+		
 		em.close();
 
-		return name;
+		return controltype;
 	}
 }

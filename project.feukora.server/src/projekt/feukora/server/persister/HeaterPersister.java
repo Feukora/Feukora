@@ -4,6 +4,13 @@ import java.util.List;
 
 import projekt.feukora.server.model.Heater;
 
+/**
+ * This interface refers to a HeaterPersister
+ * 
+ * @version 1.1
+ * @author Patrick
+ *
+ */
 public interface HeaterPersister {
 	
 	/**
@@ -18,7 +25,7 @@ public interface HeaterPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Heater
 	 * @throws Exception
 	 */
 	Heater updateHeater(Heater entity) throws Exception;
@@ -32,7 +39,7 @@ public interface HeaterPersister {
 	void deleteHeater(Heater entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -43,7 +50,7 @@ public interface HeaterPersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Heater
 	 */
 	Heater findHeaterByHeaterid(Integer heaterid);
 
@@ -58,10 +65,8 @@ public interface HeaterPersister {
 	 * Return a list with heaters with this name
 	 * 
 	 * @param name
-	 * @return
+	 * @return List of Heaters
 	 */
-	public List<Heater> findHeaterByName(String name);
-
-	
+	public List<Heater> findHeaterByName(String name);	
 }
 

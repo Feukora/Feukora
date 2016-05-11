@@ -6,15 +6,20 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Heater;
 
+/**
+ * This class implements the interface HeaterPersister
+ * 
+ * @version 1.1
+ * @author Patrick
+ *
+ */
 public class HeaterPersisterImpl implements HeaterPersister {
 
 	@Override
 	public void saveHeater(Heater entity) throws Exception {
 		new GenericPersisterImpl<Heater>(Heater.class).save(entity);
-		
 	}
 
 	@Override
@@ -25,13 +30,11 @@ public class HeaterPersisterImpl implements HeaterPersister {
 	@Override
 	public void deleteHeater(Heater entity) throws Exception {
 		new GenericPersisterImpl<Heater>(Heater.class).delete(entity);
-		
 	}
 
 	@Override
 	public void deleteHeaterByHeaterid(Integer heaterid) throws Exception {
-		new GenericPersisterImpl<Heater>(Heater.class).deleteById(heaterid);
-		
+		new GenericPersisterImpl<Heater>(Heater.class).deleteById(heaterid);	
 	}
 
 	@Override
@@ -51,7 +54,7 @@ public class HeaterPersisterImpl implements HeaterPersister {
 		TypedQuery<Heater> tQuery = em.createNamedQuery("Heater.findByName",
 				Heater.class);
 
-		tQuery.setParameter("firstname", name);
+		tQuery.setParameter("name", name);
 
 		List<Heater> heaterlist = tQuery.getResultList();
 

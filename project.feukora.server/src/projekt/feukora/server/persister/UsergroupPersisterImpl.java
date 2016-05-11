@@ -1,13 +1,20 @@
 package projekt.feukora.server.persister;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
 
 /**
+ * This class implements the interface UsergroupPersister
  * 
+ * @version 1.1
  * @author Tamara
- * @version 1.0
+ *
  */
 public class UsergroupPersisterImpl implements UsergroupPersister {
 
@@ -45,5 +52,19 @@ public class UsergroupPersisterImpl implements UsergroupPersister {
 		
 	}
 
-	
+	@Override
+	public Usergroup findUsergroupByName(String name) {
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Usergroup> tQuery = em.createNamedQuery("Usergroup.findByName",
+				Usergroup.class);
+
+		tQuery.setParameter("name", name);
+
+		Usergroup usergroup = new Usergroup();
+
+		em.close();
+
+		return usergroup;
+	}	
 }

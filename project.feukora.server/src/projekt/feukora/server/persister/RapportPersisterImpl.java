@@ -7,15 +7,20 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Rapport;
 
+/**
+ * This class implements the interface RapportPersister
+ * 
+ * @version 1.1
+ * @author Sandro
+ *
+ */
 public class RapportPersisterImpl implements RapportPersister {
 
 	@Override
 	public void saveRapport(Rapport entity) throws Exception {
-		new GenericPersisterImpl<Rapport>(Rapport.class).save(entity);
-		
+		new GenericPersisterImpl<Rapport>(Rapport.class).save(entity);	
 	}
 
 	@Override
@@ -25,14 +30,12 @@ public class RapportPersisterImpl implements RapportPersister {
 
 	@Override
 	public void deleteRapport(Rapport entity) throws Exception {
-		new GenericPersisterImpl<Rapport>(Rapport.class).delete(entity);
-		
+		new GenericPersisterImpl<Rapport>(Rapport.class).delete(entity);	
 	}
 
 	@Override
 	public void deleteRapportByRapportid(Integer rapportid) throws Exception {
-		new GenericPersisterImpl<Rapport>(Rapport.class).deleteById(rapportid);	
-		
+		new GenericPersisterImpl<Rapport>(Rapport.class).deleteById(rapportid);			
 	}
 
 	@Override
@@ -76,7 +79,5 @@ public class RapportPersisterImpl implements RapportPersister {
 		em.close();
 
 		return rapportlist != null ? rapportlist : new ArrayList<Rapport>();
-	
 	}
-
 }
