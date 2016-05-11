@@ -2,9 +2,11 @@ package projekt.feukora.server.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -28,16 +30,25 @@ public class Customer implements Serializable{
 	
 	@Id
 	@GeneratedValue
+	@Column(name = "CustomerID")
 	private int customerid;
 	@ManyToOne
+	@JoinColumn(name = "Function")
 	private Customerfunction fi_customerfunctionid;
+	@Column(name = "Companyname")
 	private String companyname;
+	@Column(name = "Firstname")
 	private String firstname;
+	@Column(name = "Lastname")
 	private String lastname;
+	@Column(name = "Adress")
 	private String adress;
+	@Column(name = "Phone")
 	private String phone;
+	@Column(name = "Email")
 	private String email;
 	@ManyToOne
+	@JoinColumn(name = "ZIP")
 	private Town fi_zip;
 	 
 	/**
