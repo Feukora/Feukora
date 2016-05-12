@@ -19,7 +19,7 @@ public class FacilitymanagerPersisterTest {
 
 	@Before
 	public void setUp() throws Exception {
-		facilitymanagerTest.init();
+		FacilitymanagerPersisterTest.init();
 	}
 
 	@After
@@ -66,53 +66,54 @@ public class FacilitymanagerPersisterTest {
 	@Test
 	public void testDelete() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 2);
+		List<Facilitymanager> facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
+		assertTrue(facilitymanagerlist.size() == 2);
 
-		entityTest.deleteEntity(entitylist.get(0));
+		facilitymanagerTest.deleteFacilitymanager(facilitymanagerlist.get(0));
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 1);
+		facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
+		assertTrue(facilitymanagerlist.size() == 1);
 
 	}
-	//Ab hier müsst ihr das testen, was ihr in den NamedQueries hingeschrieben habt
+
 	@Test
 	public void testFindByLastname() {
 
 		String lastname = "Fasser";
 
-		assertTrue(entityTest.findEntityByLastname(lastname).size() == 1);
+		assertTrue(facilitymanagerTest.findFacilitymanagerByLastname(lastname).size() == 1);
 	}
 
-	public static List<Entity> init() throws Exception {
+	@Test
+	public void testFindByFirstname() {
 
-		EntityPersisterTest.deleteAll();
+		String firstname = "Allen";
+
+		assertTrue(facilitymanagerTest.findFacilitymanagerByLastname(firstname).size() == 1);
+	}
+	
+	public static List<Facilitymanager> init() throws Exception {
+
+		FacilitymanagerPersisterTest.deleteAll();
 		
-		TownPersister tp = new TownPersisterImpl();
-		Town plz1 = tp.findbyTownzip(6000);
-		Town plz2 = tp.findbyTownzip(6005);
-		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function1 = cf.findCustomerfunctionByCustomerfunctionid(0);
-		Customerfunction function2 = cf.findCustomerfunctionByCustomerfunctionid(1);
 
-		Entity e1 = new new Entity("Konstruktor von Entity");
-		Entity e2 = new new Entity("Konstruktor von Entity");
+		Facilitymanager fm1 = new Facilitymanager("Fasser", "Sandro", "565656565", "sandro@fasser.ch");
+		Facilitymanager fm2 = new Facilitymanager("Blessing", "Allan", "123456", "allan@blessing.ch");
 
-		entityTest.saveEntity(e1);
-		entityTest.saveEntity(e2);
+		facilitymanagerTest.saveFacilitymanager(fm1);
+		facilitymanagerTest.saveFacilitymanager(fm2);
 
-		List<Entity> entitylist = new ArrayList<>();
-		entitylist.add(e1);
-		entitylist.add(e2);
+		List<Facilitymanager> facilitymanagerlist = new ArrayList<>();
+		facilitymanagerlist.add(fm1);
+		facilitymanagerlist.add(fm2);
 
-		return entitylist;
+		return facilitymanagerlist;
 	}
 
 	private static void deleteAll() throws Exception {
 
-		for (Entity e : entityTest.findAllEntities()) {
-			entityTest.deleteEntity(e);
+		for (Facilitymanager fm : facilitymanagerTest.findAllFacilitymanagers()) {
+			facilitymanagerTest.deleteFacilitymanager(fm);
 		}
 	}
 }
