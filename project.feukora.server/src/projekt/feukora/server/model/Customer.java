@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a customer.
  * 
- * @version 1.2
+ * @version 1.3
  * @author Pascal
  *
  */
@@ -30,25 +30,16 @@ public class Customer implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	@Column(name = "CustomerID")
 	private int customerid;
 	@ManyToOne
-	@JoinColumn(name = "Function")
 	private Customerfunction fi_customerfunctionid;
-	@Column(name = "Companyname")
 	private String companyname;
-	@Column(name = "Firstname")
 	private String firstname;
-	@Column(name = "Lastname")
 	private String lastname;
-	@Column(name = "Adress")
 	private String adress;
-	@Column(name = "Phone")
 	private String phone;
-	@Column(name = "Email")
 	private String email;
 	@ManyToOne
-	@JoinColumn(name = "ZIP")
 	private Town fi_zip;
 	 
 	/**

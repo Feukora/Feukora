@@ -18,7 +18,7 @@ public interface CustomerheaterPersister {
 	 * @param entity
 	 * @throws Exception
 	 */
-	void saveCustomer(Customerheater entity) throws Exception;
+	void saveCustomerheater(Customerheater entity) throws Exception;
 
 	/**
 	 * Update the given entity
@@ -27,7 +27,7 @@ public interface CustomerheaterPersister {
 	 * @return Customerheater
 	 * @throws Exception
 	 */
-	Customerheater updateCustomer(Customerheater entity) throws Exception;
+	Customerheater updateCustomerheater(Customerheater entity) throws Exception;
 
 	/**
 	 * Delete the given entity

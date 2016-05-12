@@ -14,12 +14,12 @@ import projekt.feukora.server.model.Customerheater;
 public class CustomerheaterPersisterImpl implements CustomerheaterPersister {
 
 	@Override
-	public void saveCustomer(Customerheater entity) throws Exception {
+	public void saveCustomerheater(Customerheater entity) throws Exception {
 		new GenericPersisterImpl<Customerheater>(Customerheater.class).save(entity);	
 	}
 
 	@Override
-	public Customerheater updateCustomer(Customerheater entity) throws Exception {
+	public Customerheater updateCustomerheater(Customerheater entity) throws Exception {
 		return new GenericPersisterImpl<Customerheater>(Customerheater.class).update(entity);
 	}
 

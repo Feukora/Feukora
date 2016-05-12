@@ -38,7 +38,8 @@ public class CustomerPersisterTest {
 		assertTrue(customerlist.size() == 2);
 		
 		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
+		Town plz = tp.findbyTownzip(6000); // läuft durch, auch wenn es die PLZ gar nicht gibt
+		System.out.println(plz);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(0);
@@ -48,6 +49,9 @@ public class CustomerPersisterTest {
 		customerTest.saveCustomer(c);
 
 		customerlist = customerTest.findAllCustomers();
+		for (Customer customer : customerlist) {
+			System.out.println(customer.getCompanyname());
+		}
 		assertTrue(customerlist.size() == 3);
 
 	}
