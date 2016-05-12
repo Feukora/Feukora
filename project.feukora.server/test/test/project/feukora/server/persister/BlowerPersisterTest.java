@@ -9,23 +9,31 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import projekt.feukora.server.model.Blower;
+import projekt.feukora.server.model.Blowertype;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
+import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Town;
+import projekt.feukora.server.persister.BlowerPersisterImpl;
+import projekt.feukora.server.persister.BlowertypePersister;
+import projekt.feukora.server.persister.BlowertypePersisterImpl;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
 import projekt.feukora.server.persister.CustomerfunctionPersister;
 import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
+import projekt.feukora.server.persister.FuelPersister;
+import projekt.feukora.server.persister.FuelPersisterImpl;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
 public class BlowerPersisterTest {
 
 
-	private static EntityPersisterImpl entityTest = new EntityPersisterImpl();
+	private static BlowerPersisterImpl blowerTest = new BlowerPersisterImpl();
 
 	@Before
 	public void setUp() throws Exception {
-		EntityPersisterTest.init();
+		BlowerPersisterTest.init();
 	}
 
 	@After
@@ -35,106 +43,115 @@ public class BlowerPersisterTest {
 	@Test
 	public void testSave() throws Exception {
 		
-		List<Entity> entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 2);
+		List<Blower> blowerlist = blowerTest.findAllBlowers();
+		assertTrue(blowerlist.size() == 2);
 		
 		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
 		TownPersister tp = new TownPersisterImpl();
 		Town plz = tp.findbyTownzip(6000);
 		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(0);
+		FuelPersister fp = new FuelPersisterImpl();
+		Fuel fuelid = fp.findFuelByFuelid(0);
+		
+		BlowertypePersister bp = new BlowertypePersisterImpl();
+		Blowertype blowertypeid = bp.findBlowertypeByBlowertypeid(0);
+		
+		Blower b = new Blower(blowertypeid, fuelid, "Name");
 
-		Entity e = new Entity("Konstruktor von Entity");
+		blowerTest.saveBlower(b);
 
-		entityTest.saveEntity(e);
-
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		blowerlist = blowerTest.findAllBlowers();
+		assertTrue(blowerlist.size() == 3);
 
 	}
 	
 	@Test
 	public void testUpdate() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntites();
-		assertTrue(entitylist.size() == 2);
+		List<Blower> blowerlist = blowerTest.findAllBlowers();
+		assertTrue(blowerlist.size() == 2);
 		
 		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
 		TownPersister tp = new TownPersisterImpl();
 		Town plz = tp.findbyTownzip(6000);
 		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
+		FuelPersister fp = new FuelPersisterImpl();
+		Fuel fuelid = fp.findFuelByFuelid(0);
+		
+		BlowertypePersister bp = new BlowertypePersisterImpl();
+		Blowertype blowertypeid = bp.findBlowertypeByBlowertypeid(0);
+		
+		Blower b = new Blower(blowertypeid, fuelid, "Name");
 
-		Entity e = new Entity("Konstruktor von Entity");
+		blowerTest.saveBlower(b);
 
-		entityTest.saveEntity(e);
+		blowerlist = blowerTest.findAllBlowers();
+		assertTrue(blowerlist.size() == 3);
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		b.setName("Blower");
 
-		e.setLastname("Irrub");
+		blowerTest.updateBlower(b);
 
-		entityTest.updateEntity(e);
-
-		Entity entityFromDB = entityTest.findEntityByWasAuchImmerIhrHierHabt("Irrub",
-				"Pascal").get(0);
-		assertNotNull(entityFromDB);
+		Blower blowerFromDB = blowerTest.findBlowerByName("Blower").get(0);
+		assertNotNull(blowerFromDB);
 
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 2);
+		List<Blower> blowerlist = blowerTest.findAllBlowers();
+		assertTrue(blowerlist.size() == 2);
 
-		entityTest.deleteEntity(entitylist.get(0));
+		blowerTest.deleteBlower(blowerlist.get(0));
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 1);
+		blowerlist = blowerTest.findAllBlowers();
+		assertTrue(blowerlist.size() == 1);
 
 	}
 	//Ab hier müsst ihr das testen, was ihr in den NamedQueries hingeschrieben habt
 	@Test
-	public void testFindByLastname() {
+	public void testFindByName() {
 
-		String lastname = "Fasser";
+		String name = "Blower";
 
-		assertTrue(entityTest.findEntityByLastname(lastname).size() == 1);
+		assertTrue(blowerTest.findBlowerByName(name).size() == 1);
 	}
 
 	//Das brauchen wieder alle
-	public static List<Entity> init() throws Exception {
+	public static List<Blower> init() throws Exception {
 
-		EntityPersisterTest.deleteAll();
+		BlowerPersisterTest.deleteAll();
 		
 		TownPersister tp = new TownPersisterImpl();
 		Town plz1 = tp.findbyTownzip(6000);
 		Town plz2 = tp.findbyTownzip(6005);
 		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function1 = cf.findCustomerfunctionByCustomerfunctionid(0);
-		Customerfunction function2 = cf.findCustomerfunctionByCustomerfunctionid(1);
+		FuelPersister fp = new FuelPersisterImpl();
+		Fuel fuelid1 = fp.findFuelByFuelid(0);
+		Fuel fuelid2 = fp.findFuelByFuelid(1);
+		
+		BlowertypePersister bp = new BlowertypePersisterImpl();
+		Blowertype blowertype1 = bp.findBlowertypeByBlowertypeid(0);
+		Blowertype blowertype2 = bp.findBlowertypeByBlowertypeid(1);
+		
+		Blower b1 = new Blower(blowertype1, fuelid1,"Name");
+		Blower b2 = new Blower(blowertype2,fuelid2,"Name2");
 
-		Entity e1 = new new Entity("Konstruktor von Entity");
-		Entity e2 = new new Entity("Konstruktor von Entity");
+		blowerTest.saveBlower(b1);
+		blowerTest.saveBlower(b2);
 
-		entityTest.saveEntity(e1);
-		entityTest.saveEntity(e2);
+		List<Blower> blowerlist = new ArrayList<>();
+		blowerlist.add(b1);
+		blowerlist.add(b2);
 
-		List<Entity> entitylist = new ArrayList<>();
-		entitylist.add(e1);
-		entitylist.add(e2);
-
-		return entitylist;
+		return blowerlist;
 	}
 
 	private static void deleteAll() throws Exception {
 
-		for (Entity e : entityTest.findAllEntities()) {
-			entityTest.deleteEntity(e);
+		for (Blower b : blowerTest.findAllBlowers()) {
+			blowerTest.deleteBlower(b);
 		}
 	}
 }
