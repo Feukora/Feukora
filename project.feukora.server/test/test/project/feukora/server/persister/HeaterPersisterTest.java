@@ -11,21 +11,23 @@ import org.junit.Test;
 
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
+import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
 import projekt.feukora.server.persister.CustomerfunctionPersister;
 import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
+import projekt.feukora.server.persister.HeaterPersisterImpl;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
 public class HeaterPersisterTest {
 
 
-	private static EntityPersisterImpl entityTest = new EntityPersisterImpl();
+	private static HeaterPersisterImpl heaterTest = new HeaterPersisterImpl();
 
 	@Before
 	public void setUp() throws Exception {
-		EntityPersisterTest.init();
+		HeaterPersisterTest.init();
 	}
 
 	@After
@@ -35,81 +37,84 @@ public class HeaterPersisterTest {
 	@Test
 	public void testSave() throws Exception {
 		
-		List<Entity> entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 2);
+		List<Heater> heaterlist = heaterTest.findAllHeaters();
+		assertTrue(heaterlist.size() == 2);
 		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
+		/* Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
 		TownPersister tp = new TownPersisterImpl();
 		Town plz = tp.findbyTownzip(6000);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(0);
+		
+		*/
 
-		Entity e = new Entity("Konstruktor von Entity");
+		Heater h = new Heater("Konstruktor von Heater");
 
-		entityTest.saveEntity(e);
+		heaterTest.saveHeater(h);
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		heaterlist = heaterTest.findAllHeaters();
+		assertTrue(heaterlist.size() == 3);
 
 	}
 	
 	@Test
 	public void testUpdate() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntites();
-		assertTrue(entitylist.size() == 2);
+		List<Heater> heaterlist = heaterTest.findAllHeaters();
+		assertTrue(heaterlist.size() == 2);
 		
 		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		TownPersister tp = new TownPersisterImpl();
+		/*TownPersister tp = new TownPersisterImpl();
 		Town plz = tp.findbyTownzip(6000);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
+		*/
 
-		Entity e = new Entity("Konstruktor von Entity");
+		Heater h = new Heater("Konstruktor von Heater");
 
-		entityTest.saveEntity(e);
+		heaterTest.saveHeater(h);
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		heaterlist = heaterTest.findAllHeaters();
+		assertTrue(heaterlist.size() == 3);
 
-		e.setLastname("Irrub");
+		h.setName("Heater1");
 
-		entityTest.updateEntity(e);
+		heaterTest.updateHeater(h);
 
-		Entity entityFromDB = entityTest.findEntityByWasAuchImmerIhrHierHabt("Irrub",
-				"Pascal").get(0);
-		assertNotNull(entityFromDB);
+		Heater heaterFromDB = heaterTest.findHeaterByName("I").get(0);
+		assertNotNull(heaterFromDB);
 
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 2);
+		List<Heater> heaterlist = heaterTest.findAllHeaters();
+		assertTrue(heaterlist.size() == 2);
 
-		entityTest.deleteEntity(entitylist.get(0));
+		heaterTest.deleteHeater(heaterlist.get(0));
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 1);
+		heaterlist = heaterTest.findAllHeaters();
+		assertTrue(heaterlist.size() == 1);
 
 	}
 	//Ab hier müsst ihr das testen, was ihr in den NamedQueries hingeschrieben habt
 	@Test
-	public void testFindByLastname() {
+	public void testFindByName() {
 
-		String lastname = "Fasser";
+		String name = "Heater";
 
-		assertTrue(entityTest.findEntityByLastname(lastname).size() == 1);
+		assertTrue(heaterTest.findHeaterByName(name).size() == 1);
 	}
 
 	//Das brauchen wieder alle
-	public static List<Entity> init() throws Exception {
+	public static List<Heater> init() throws Exception {
 
-		EntityPersisterTest.deleteAll();
+		HeaterPersisterTest.deleteAll();
 		
+		/*
 		TownPersister tp = new TownPersisterImpl();
 		Town plz1 = tp.findbyTownzip(6000);
 		Town plz2 = tp.findbyTownzip(6005);
@@ -117,24 +122,25 @@ public class HeaterPersisterTest {
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function1 = cf.findCustomerfunctionByCustomerfunctionid(0);
 		Customerfunction function2 = cf.findCustomerfunctionByCustomerfunctionid(1);
+		*/
 
-		Entity e1 = new new Entity("Konstruktor von Entity");
-		Entity e2 = new new Entity("Konstruktor von Entity");
+		Heater h1 = new Heater("Konstruktor von Heater");
+		Heater h2 = new Heater("Konstruktor von Heater");
 
-		entityTest.saveEntity(e1);
-		entityTest.saveEntity(e2);
+		heaterTest.saveHeater(h1);
+		heaterTest.saveHeater(h2);
 
-		List<Entity> entitylist = new ArrayList<>();
-		entitylist.add(e1);
-		entitylist.add(e2);
+		List<Heater> heaterlist = new ArrayList<>();
+		heaterlist.add(h1);
+		heaterlist.add(h2);
 
-		return entitylist;
+		return heaterlist;
 	}
 
 	private static void deleteAll() throws Exception {
 
-		for (Entity e : entityTest.findAllEntities()) {
-			entityTest.deleteEntity(e);
+		for (Heater h : heaterTest.findAllHeaters()) {
+			heaterTest.deleteHeater(h);
 		}
 	}
 }
