@@ -13,13 +13,13 @@ import projekt.feukora.server.model.Town;
  */
 public interface TownPersister {
 	
-//	/**
-//	 * Save the given entity
-//	 * 
-//	 * @param entity
-//	 * @throws Exception
-//	 */
-//	void saveTown(Town entity) throws Exception;
+	/**
+	 * Save the given entity
+	 * 
+	 * @param entity
+	 * @throws Exception
+	 */
+	void saveTown(Town entity) throws Exception;
 
 	/**
 	 * Update the given entity
