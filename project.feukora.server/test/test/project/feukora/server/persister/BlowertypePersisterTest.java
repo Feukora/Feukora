@@ -22,6 +22,9 @@ import projekt.feukora.server.persister.TownPersisterImpl;
 
 private static EntityPersisterImpl entityTest = new EntityPersisterImpl();
 
+
+private static EntityPersisterImpl entityTest = new EntityPersisterImpl();
+
 @Before
 public void setUp() throws Exception {
 	EntityPersisterTest.init();
@@ -34,7 +37,7 @@ public void tearDown() throws Exception {
 @Test
 public void testSave() throws Exception {
 	
-	List<Entity> entitylist = entityTest.findAllCustomers();
+	List<Entity> entitylist = entityTest.findAllEntities();
 	assertTrue(entitylist.size() == 2);
 	
 	// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
@@ -68,14 +71,14 @@ public void testUpdate() throws Exception {
 
 	Entity e = new Entity("Konstruktor von Entity");
 
-	customerTest.saveCustomer(c);
+	entityTest.saveEntity(e);
 
 	entitylist = entityTest.findAllEntities();
 	assertTrue(entitylist.size() == 3);
 
 	e.setLastname("Irrub");
 
-	entityTest.updateCustomer(e);
+	entityTest.updateEntity(e);
 
 	Entity entityFromDB = entityTest.findEntityByWasAuchImmerIhrHierHabt("Irrub",
 			"Pascal").get(0);
@@ -104,6 +107,7 @@ public void testFindByLastname() {
 	assertTrue(entityTest.findEntityByLastname(lastname).size() == 1);
 }
 
+//Das brauchen wieder alle
 public static List<Entity> init() throws Exception {
 
 	EntityPersisterTest.deleteAll();

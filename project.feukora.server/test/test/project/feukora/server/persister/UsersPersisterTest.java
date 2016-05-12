@@ -35,7 +35,7 @@ public class UsersPersisterTest {
 	@Test
 	public void testSave() throws Exception {
 		
-		List<Entity> entitylist = entityTest.findAllCustomers();
+		List<Entity> entitylist = entityTest.findAllEntities();
 		assertTrue(entitylist.size() == 2);
 		
 		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
@@ -69,14 +69,14 @@ public class UsersPersisterTest {
 
 		Entity e = new Entity("Konstruktor von Entity");
 
-		customerTest.saveCustomer(c);
+		entityTest.saveEntity(e);
 
 		entitylist = entityTest.findAllEntities();
 		assertTrue(entitylist.size() == 3);
 
 		e.setLastname("Irrub");
 
-		entityTest.updateCustomer(e);
+		entityTest.updateEntity(e);
 
 		Entity entityFromDB = entityTest.findEntityByWasAuchImmerIhrHierHabt("Irrub",
 				"Pascal").get(0);
@@ -105,6 +105,7 @@ public class UsersPersisterTest {
 		assertTrue(entityTest.findEntityByLastname(lastname).size() == 1);
 	}
 
+	//Das brauchen wieder alle
 	public static List<Entity> init() throws Exception {
 
 		EntityPersisterTest.deleteAll();

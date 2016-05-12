@@ -9,23 +9,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.Customerfunction;
-import projekt.feukora.server.model.Town;
-import projekt.feukora.server.persister.CustomerPersisterImpl;
-import projekt.feukora.server.persister.CustomerfunctionPersister;
-import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
-import projekt.feukora.server.persister.TownPersister;
-import projekt.feukora.server.persister.TownPersisterImpl;
+import projekt.feukora.server.model.Facilitymanager;
+import projekt.feukora.server.persister.FacilitymanagerPersisterImpl;
 
 public class FacilitymanagerPersisterTest {
 
 
-	private static EntityPersisterImpl entityTest = new EntityPersisterImpl();
+	private static FacilitymanagerPersisterImpl facilitymanagerTest = new FacilitymanagerPersisterImpl();
 
 	@Before
 	public void setUp() throws Exception {
-		EntityPersisterTest.init();
+		facilitymanagerTest.init();
 	}
 
 	@After
@@ -35,52 +29,37 @@ public class FacilitymanagerPersisterTest {
 	@Test
 	public void testSave() throws Exception {
 		
-		List<Entity> entitylist = entityTest.findAllCustomers();
-		assertTrue(entitylist.size() == 2);
-		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
-		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(0);
+		List<Facilitymanager> facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
+		assertTrue(facilitymanagerlist.size() == 2);
 
-		Entity e = new Entity("Konstruktor von Entity");
+		Facilitymanager fm = new Facilitymanager("Hauswart", "Werner", "12345678", "hauswart@hauswart.ch");
 
-		entityTest.saveEntity(e);
+		facilitymanagerTest.saveFacilitymanager(fm);
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
+		assertTrue(facilitymanagerlist.size() == 3);
 
 	}
 	
 	@Test
 	public void testUpdate() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntites();
-		assertTrue(entitylist.size() == 2);
+		List<Facilitymanager> facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
+		assertTrue(facilitymanagerlist.size() == 2);
 		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
-		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
+		Facilitymanager fm = new Facilitymanager("Burri", "Pascal", "98765432", "pascal@burri.ch");
 
-		Entity e = new Entity("Konstruktor von Entity");
+		facilitymanagerTest.saveFacilitymanager(fm);
 
-		customerTest.saveCustomer(c);
+		facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
+		assertTrue(facilitymanagerlist.size() == 3);
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		fm.setLastname("Irrub");
 
-		e.setLastname("Irrub");
+		facilitymanagerTest.updateFacilitymanager(fm);
 
-		entityTest.updateCustomer(e);
-
-		Entity entityFromDB = entityTest.findEntityByWasAuchImmerIhrHierHabt("Irrub",
-				"Pascal").get(0);
-		assertNotNull(entityFromDB);
+		Facilitymanager facilitymanagerFromDB = facilitymanagerTest.findFacilitymanagerByLastname("Irrub").get(0);
+		assertNotNull(facilitymanagerFromDB);
 
 	}
 
