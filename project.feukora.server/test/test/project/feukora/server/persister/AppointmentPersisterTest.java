@@ -3,29 +3,38 @@ package test.project.feukora.server.persister;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
+import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.model.Town;
+import projekt.feukora.server.model.Users;
+import projekt.feukora.server.persister.AppointmentPersisterImpl;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
 import projekt.feukora.server.persister.CustomerfunctionPersister;
 import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
+import projekt.feukora.server.persister.CustomerheaterPersister;
+import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
+import projekt.feukora.server.persister.UserPersister;
+import projekt.feukora.server.persister.UserPersisterImpl;
 
 public class AppointmentPersisterTest {
 
 
-	private static EntityPersisterImpl entityTest = new EntityPersisterImpl();
+	private static AppointmentPersisterImpl appointmentTest = new AppointmentPersisterImpl();
 
 	@Before
 	public void setUp() throws Exception {
-		EntityPersisterTest.init();
+		AppointmentPersisterTest.init();
 	}
 
 	@After
@@ -35,106 +44,118 @@ public class AppointmentPersisterTest {
 	@Test
 	public void testSave() throws Exception {
 		
-		List<Entity> entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 2);
+		List<Appointment> appointmentlist = appointmentTest.findAllAppointments();
+		assertTrue(appointmentlist.size() == 2);
 		
 		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
+		// fi_costumerheaterid 
+		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
+		ch.findCustomerheaterByCustomerheaterid(null);
 		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(0);
+		// Users fi_userid 
+		UserPersister usid = new UserPersisterImpl();
+		usid.findUserByUserid(null);
 
-		Entity e = new Entity("Konstruktor von Entity");
+		//nicht fertig
+		Appointment a = new Appointment(ch, usid, usid, GregorianCalendar created,
+				GregorianCalendar appointmentdate, "Kommentar");
 
-		entityTest.saveEntity(e);
+		appointmentTest.saveAppointment(a);
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		// weiss nicht was machen
+		appointmentlist = appointmentTest.findAllAppointments();
+		for (Appointment appointment : appointmentlist)
+		assertTrue(appointmentlist.size() == 3);
 
 	}
 	
 	@Test
 	public void testUpdate() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntites();
-		assertTrue(entitylist.size() == 2);
+		List<Appointment> appointmentlist = appointmentTest.findAllAppointments();
+		assertTrue(appointmentlist.size() == 2);
 		
 		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
+		// fi_costumerheaterid 
+		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
+		ch.findCustomerheaterByCustomerheaterid(null);
 		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
+		// Users fi_userid 
+		UserPersister usid = new UserPersisterImpl();
+		usid.findUserByUserid(null);
 
-		Entity e = new Entity("Konstruktor von Entity");
+		//nicht fertig
+		Appointment a = new Appointment(ch, usid, usid, GregorianCalendar created,
+				GregorianCalendar appointmentdate, "Kommentar");
 
-		entityTest.saveEntity(e);
+		appointmentTest.updateAppointment(a);
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		// weiss nicht was machen
+		appointmentlist = appointmentTest.findAllAppointments();
+		assertTrue(appointmentlist.size() == 3);
 
-		e.setLastname("Irrub");
+		appointmentTest.updateAppointment(a);
 
-		entityTest.updateEntity(e);
-
-		Entity entityFromDB = entityTest.findEntityByWasAuchImmerIhrHierHabt("Irrub",
-				"Pascal").get(0);
-		assertNotNull(entityFromDB);
+		Appointment appointmentFromDB = appointmentTest.deleteAppointmentByAppointmentid
+				(appointmentid).get(0);
+		assertNotNull(appointmentFromDB);
 
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 2);
+		List<Appointment> appointmentlist = appointmentTest.findAllAppointments();
+		assertTrue(appointmentlist.size() == 2);
 
-		entityTest.deleteEntity(entitylist.get(0));
+		appointmentTest.deleteAppointment(appointmentlist.get(0));
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 1);
+		appointmentlist = appointmentTest.findAllAppointments();
+		assertTrue(appointmentlist.size() == 1);
 
 	}
-	//Ab hier müsst ihr das testen, was ihr in den NamedQueries hingeschrieben habt
+	
+	// "Appointment.findByAppointmentdate" ist der Query (ID Query nicht gemacht)
 	@Test
-	public void testFindByLastname() {
+	public void testFindByAppointmentdate() {
 
-		String lastname = "Fasser";
-
-		assertTrue(entityTest.findEntityByLastname(lastname).size() == 1);
+		GregorianCalendar appointmentdate;
+		// Gregorian Kalender reinholen
+		assertTrue(appointmentTest.findAppointmentByAppointmentdate(appointmentdate.size() == 1);
 	}
 
 	//Das brauchen wieder alle
-	public static List<Entity> init() throws Exception {
+	public static List<Appointment> init() throws Exception {
 
-		EntityPersisterTest.deleteAll();
+		AppointmentPersisterTest.deleteAll();
 		
-		TownPersister tp = new TownPersisterImpl();
-		Town plz1 = tp.findbyTownzip(6000);
-		Town plz2 = tp.findbyTownzip(6005);
+		// fi_costumerheaterid 
+		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
+		ch.findCustomerheaterByCustomerheaterid(null);
 		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function1 = cf.findCustomerfunctionByCustomerfunctionid(0);
-		Customerfunction function2 = cf.findCustomerfunctionByCustomerfunctionid(1);
+		// Users fi_userid 
+		UserPersister usid = new UserPersisterImpl();
+		usid.findUserByUserid(null);
 
-		Entity e1 = new new Entity("Konstruktor von Entity");
-		Entity e2 = new new Entity("Konstruktor von Entity");
+		Appointment a1 = new Appointment(ch, usid, usid, GregorianCalendar created,
+				GregorianCalendar appointmentdate, "Kommentar");
+		Appointment a2 = new Appointment(ch, usid, usid, GregorianCalendar created,
+				GregorianCalendar appointmentdate, "Kommentar");
 
-		entityTest.saveEntity(e1);
-		entityTest.saveEntity(e2);
+		appointmentTest.saveAppointment(a1);
+		appointmentTest.saveAppointment(a2);
 
-		List<Entity> entitylist = new ArrayList<>();
-		entitylist.add(e1);
-		entitylist.add(e2);
+		List<Appointment> appointmentlist = new ArrayList<>();
+		appointmentlist.add(a1);
+		appointmentlist.add(a2);
 
-		return entitylist;
+		return appointmentlist;
 	}
 
 	private static void deleteAll() throws Exception {
 
-		for (Entity e : entityTest.findAllEntities()) {
-			entityTest.deleteEntity(e);
+		for (Appointment a : appointmentTest.findAllAppointments()) {
+			appointmentTest.deleteAppointment(a);
 		}
 	}
 }

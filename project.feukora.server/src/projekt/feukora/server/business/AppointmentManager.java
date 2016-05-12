@@ -1,20 +1,19 @@
-package projekt.feukora.server.persister;
+package projekt.feukora.server.business;
 
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.Customer;
 
 /**
- * This interface refers to a AppointmentPersister
+ * Interface to handle appointments entities
  * 
- * @version 1.1
  * @author Allan
+ * @version 1.0
  *
  */
-
-public interface AppointmentPersister {
+public interface AppointmentManager {
 	/**
 	 * Save the given entity
 	 * 
@@ -27,7 +26,7 @@ public interface AppointmentPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return Appointment
+	 * @return
 	 * @throws Exception
 	 */
 	Appointment updateAppointment(Appointment entity) throws Exception;
@@ -41,9 +40,9 @@ public interface AppointmentPersister {
 	void deleteAppointment(Appointment entity) throws Exception;
 
 	/**
-	 * Delete the entity with this id
+	 * Delete the appointment entity with this id
 	 * 
-	 * @param id
+	 * @param appointmentid
 	 * @throws Exception
 	 */
 	void deleteAppointmentByAppointmentid(Integer appointmentid) throws Exception;
@@ -51,15 +50,15 @@ public interface AppointmentPersister {
 	/**
 	 * Return the entity with this id
 	 * 
-	 * @param id
-	 * @return Appointment
+	 * @param appointmentid
+	 * @return
 	 */
 	Appointment findAppointmentByAppointmentid(Integer appointmentid);
 
 	/**
 	 * Return all entities
 	 * 
-	 * @return List with Appointments
+	 * @return
 	 */
 	List<Appointment> findAllAppointments();
 
@@ -70,5 +69,5 @@ public interface AppointmentPersister {
 	 * @return
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
-}
 
+}
