@@ -81,7 +81,7 @@ public class Customer implements Serializable{
 		this.fi_zip = fi_zip;
 	}
 
-	public int getCustomerid() {
+	public Integer getCustomerid() {
 		return customerid;
 	}
 
