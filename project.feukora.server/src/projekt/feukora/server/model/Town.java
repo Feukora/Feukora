@@ -11,21 +11,41 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a town.
  * 
- * @version 1.2
- * @author Robin
+ * @version 1.3
+ * @author Sandro Fasser
  * 
  */
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Town.findByTownzip", query = "SELECT t FROM Town t WHERE t.zip=:zip"),
+	@NamedQuery(name = "Town.findByZip", query = "SELECT t FROM Town t WHERE t.zip=:zip"),
 	@NamedQuery(name = "Town.findByName", query = "SELECT t FROM Town t WHERE t.name=:name"),
 	@NamedQuery(name = "Town.findByCanton", query = "SELECT t FROM Town t WHERE t.canton=:canton")
 })
 public class Town implements Serializable {
 
 	@Id
+	@GeneratedValue
+	private int id;
 	private int zip;
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int get() {
+		return zip;
+	}
+
+	public void setzip(int zip) {
+		this.zip = zip;
+	}
+
 	private String name;
 	private String canton;
 	
@@ -49,9 +69,6 @@ public class Town implements Serializable {
 	
 	}
 
-	public int getZip() {
-		return zip;
-	}
 
 	public String getName() {
 		return name;

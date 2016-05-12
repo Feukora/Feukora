@@ -45,7 +45,7 @@ public interface TownPersister {
 	 * @throws Exception
 	 */
 	
-	void deleteTownByTownzip(Integer zip) throws Exception;
+	void deleteTownByZip(Integer zip) throws Exception;
 
 	/**
 	 * Return the entity with this zip number
@@ -53,7 +53,7 @@ public interface TownPersister {
 	 * @param id
 	 * @return List of Towns
 	 */
-	Town findbyTownzip(Integer zip);
+	Town findbyZip(Integer zip);
 
 	/**
 	 * Return a list with all entities

@@ -20,8 +20,8 @@ public class TownPersisterImpl implements TownPersister {
 
 	@Override
 	public void saveTown(Town entity) throws Exception {
-		//new GenericPersisterImpl<Town>(Town.class).save(entity);
-		TownData.loadTownData("ZIP.txt");
+		new GenericPersisterImpl<Town>(Town.class).save(entity);
+		
 	}
 
 	@Override
@@ -35,12 +35,12 @@ public class TownPersisterImpl implements TownPersister {
 	}
 
 	@Override
-	public void deleteTownByTownzip(Integer zip) throws Exception {
+	public void deleteTownByZip(Integer zip) throws Exception {
 		new GenericPersisterImpl<Town>(Town.class).deleteById(zip);
 	}
 
 	@Override
-	public Town findbyTownzip(Integer zip) {
+	public Town findbyZip(Integer zip) {
 		return new GenericPersisterImpl<Town>(Town.class).findById(zip);
 		
 //		EntityManager em = JpaUtil.createEntityManager();

@@ -15,15 +15,17 @@ import projekt.feukora.server.model.Town;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
 import projekt.feukora.server.persister.CustomerfunctionPersister;
 import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
+import projekt.feukora.server.persister.TownData;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
 public class CustomerPersisterTest {
 
 	private static CustomerPersisterImpl customerTest = new CustomerPersisterImpl();
-
+	
 	@Before
 	public void setUp() throws Exception {
+		
 		CustomerPersisterTest.init();
 	}
 
@@ -38,13 +40,13 @@ public class CustomerPersisterTest {
 		assertTrue(customerlist.size() == 2);
 		
 		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000); // läuft durch, auch wenn es die PLZ gar nicht gibt
-		System.out.println(plz);
+		Town zip = tp.findbyZip(6000); // läuft durch, auch wenn es die PLZ gar nicht gibt
+		System.out.println(zip);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(0);
 
-		Customer c = new Customer("Firmenname", "Vorname", "Nachname", "Ort", "Telefonnummer", "Email", function, plz);
+		Customer c = new Customer("Firmenname", "Vorname", "Nachname", "Ort", "Telefonnummer", "Email", function, zip);
 
 		customerTest.saveCustomer(c);
 
@@ -63,13 +65,13 @@ public class CustomerPersisterTest {
 		assertTrue(customerlist.size() == 2);
 		
 		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
-		assertNotNull(plz);
+		Town zip = tp.findbyZip(6000);
+		assertNotNull(zip);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
 
-		Customer c = new Customer("Burri AG", "Pascal", "Burri",  "Schachen", "04112345456", "sfasg@afgafg.ch", function, plz);
+		Customer c = new Customer("Burri AG", "Pascal", "Burri",  "Schachen", "04112345456", "sfasg@afgafg.ch", function, zip);
 
 		customerTest.saveCustomer(c);
 
@@ -149,18 +151,20 @@ public class CustomerPersisterTest {
 
 	public static List<Customer> init() throws Exception {
 
+		TownData.loadTownData("resources/ZIP.txt");
 		CustomerPersisterTest.deleteAll();
 		
+		
 		TownPersister tp = new TownPersisterImpl();
-		Town plz1 = tp.findbyTownzip(6000);
-		Town plz2 = tp.findbyTownzip(6005);
+		Town zip1 = tp.findbyZip(6000);
+		Town zip2 = tp.findbyZip(6005);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function1 = cf.findCustomerfunctionByCustomerfunctionid(0);
 		Customerfunction function2 = cf.findCustomerfunctionByCustomerfunctionid(1);
 
-		Customer c1 = new Customer("Fasser AG", "Sandro", "Fasser",  "Bergün", "1234", "sf@sf.ch", function1, plz1);
-		Customer c2 = new Customer("Perry AG", "Patrick", "Pereira",  "Aargau", "5678", "pdp@pdp.ch", function2, plz2);
+		Customer c1 = new Customer("Fasser AG", "Sandro", "Fasser",  "Bergün", "1234", "sf@sf.ch", function1, zip1);
+		Customer c2 = new Customer("Perry AG", "Patrick", "Pereira",  "Aargau", "5678", "pdp@pdp.ch", function2, zip2);
 
 		customerTest.saveCustomer(c1);
 		customerTest.saveCustomer(c2);
