@@ -37,7 +37,7 @@ public class HeaterManagerImpl implements HeaterManager {
 
 	@Override
 	public void deleteHeater(Heater entity) throws Exception {
-		// TODO Auto-generated method stub
+		heaterPersister.deleteHeater(entity);
 		
 	}
 
