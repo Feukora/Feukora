@@ -27,15 +27,10 @@ public class Facilitymanager implements Serializable {
 	
 	@Id
 	@GeneratedValue
-	@Column(name = "FacilitymanagerID")
 	private int facilitymanagerid;
-	@Column(name = "Lastname")
 	private String lastname;
-	@Column(name = "Firstname")
 	private String firstname;
-	@Column(name = "Phone Number")
 	private String phone;
-	@Column(name = "Email")
 	private String email;
 	
 	/**

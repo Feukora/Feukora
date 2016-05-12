@@ -16,12 +16,13 @@ import org.eclipse.persistence.sessions.server.Server;
 
 /**
  * This Class starts the RMI-Server on this machine, also it instances Remote Objects, 
- * binds them and also unbinds
+ * binds and also unbinds them
  * 
  * @version 1.0
  * @author Sandro Fasser
  *
  */
+
 
 public class RMIServer {
 

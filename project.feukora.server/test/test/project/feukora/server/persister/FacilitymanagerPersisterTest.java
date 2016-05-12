@@ -87,9 +87,9 @@ public class FacilitymanagerPersisterTest {
 	@Test
 	public void testFindByFirstname() {
 
-		String firstname = "Allen";
+		String firstname = "Allan";
 
-		assertTrue(facilitymanagerTest.findFacilitymanagerByLastname(firstname).size() == 1);
+		assertTrue(facilitymanagerTest.findFacilitymanagerByFirstname(firstname).size() == 1);
 	}
 	
 	public static List<Facilitymanager> init() throws Exception {
