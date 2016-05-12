@@ -1,5 +1,14 @@
 package projekt.feukora.server.business;
 
+import java.util.List;
+
+import projekt.feukora.server.model.Heater;
+import projekt.feukora.server.model.Measuringresult;
+import projekt.feukora.server.persister.HeaterPersister;
+import projekt.feukora.server.persister.HeaterPersisterImpl;
+import projekt.feukora.server.persister.MeasuringresultPersister;
+import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
+
 /**
  * This Class implements the methods of the interface HeaterManager
  * 
@@ -7,6 +16,45 @@ package projekt.feukora.server.business;
  * @version 1.0
  */
 
-public class MeasuringresultManagerImpl {
+public class MeasuringresultManagerImpl implements MeasuringresultManager {
+	
+	private MeasuringresultPersister measuringresultPersister = new MeasuringresultPersisterImpl();
+
+	@Override
+	public void saveMeasuringresult(Measuringresult entity) throws Exception {
+		if((Integer) entity.getMeasuringresultid() == null){
+			measuringresultPersister.saveMeasuringresult(entity);
+		}else{
+			throw new Exception("Das Measuringresultat (id = "+ entity.getMeasuringresultid() + ") ist bereits vorhanden");
+		}
+		
+	}
+
+	@Override
+	public Measuringresult updateMeasuringresult(Measuringresult entity) throws Exception {
+		return measuringresultPersister.updateMeasuringresult(entity);
+	}
+
+	@Override
+	public void deleteMeasuringresult(Measuringresult entity) throws Exception {
+		measuringresultPersister.deleteMeasuringresult(entity);
+		
+	}
+
+	@Override
+	public void deleteMeasuringresultByMeasuringresultid(Integer measuringresultid) throws Exception {
+		measuringresultPersister.deleteMeasuringresultByMeasuringresultid(measuringresultid);
+		
+	}
+
+	@Override
+	public Measuringresult findMeasuringresultByMeasuringresultid(Integer measuringresultid) {
+		return measuringresultPersister.findMeasuringresultByMeasuringresultid(measuringresultid);
+	}
+
+	@Override
+	public List<Measuringresult> findAllMeasuringresults() {
+		return measuringresultPersister.findAllMeasuringresult();
+	}
 
 }
