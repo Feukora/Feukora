@@ -19,7 +19,6 @@ public class FacilitymanagerPersisterTest {
 
 	@Before
 	public void setUp() throws Exception {
-		ResetDatabase.resetDatabase();
 		FacilitymanagerPersisterTest.init();
 	}
 

@@ -24,7 +24,6 @@ public class CustomerPersisterTest {
 
 	@Before
 	public void setUp() throws Exception {
-		ResetDatabase.resetDatabase();
 		CustomerPersisterTest.init();
 	}
 
