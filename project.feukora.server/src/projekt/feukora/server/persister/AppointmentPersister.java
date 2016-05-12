@@ -64,10 +64,10 @@ public interface AppointmentPersister {
 	List<Appointment> findAllAppointments();
 
 	/**
-	 * Return a list with Appointments with this Date
+	 * Return a list with appointments with this appointmentdate
 	 * 
-	 * @param vorname
-	 * @return List with Appointments
+	 * @param appointmentdate
+	 * @return
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
 }

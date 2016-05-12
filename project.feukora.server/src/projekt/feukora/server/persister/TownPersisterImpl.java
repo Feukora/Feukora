@@ -18,10 +18,11 @@ import projekt.feukora.server.model.Town;
  */
 public class TownPersisterImpl implements TownPersister {
 
-//	@Override
-//	public void saveTown(Town entity) throws Exception {
-//		new GenericPersisterImpl<Town>(Town.class).save(entity);	
-//	}
+	@Override
+	public void saveTown(Town entity) throws Exception {
+		//new GenericPersisterImpl<Town>(Town.class).save(entity);
+		TownData.loadTownData("ZIP.txt");
+	}
 
 	@Override
 	public Town updateTown(Town entity) throws Exception {
