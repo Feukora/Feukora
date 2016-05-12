@@ -10,16 +10,17 @@ import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Company;
  
 /**
- * This class implements the BlowerPersister class
+ * This class implements the interface BlowerPersister
+ * 
+ * @version 1.1
  * @author Robin
- * @version 1.0
+ * 
  */
 public class BlowerPersisterImpl implements BlowerPersister {
 
 	@Override
 	public void saveBlower(Blower entity) throws Exception {
-		new GenericPersisterImpl<Blower>(Blower.class).save(entity);
-		
+		new GenericPersisterImpl<Blower>(Blower.class).save(entity);	
 	}
 
 	@Override
@@ -29,14 +30,12 @@ public class BlowerPersisterImpl implements BlowerPersister {
 
 	@Override
 	public void deleteBlower(Blower entity) throws Exception {
-		new GenericPersisterImpl<Blower>(Blower.class).delete(entity);
-		
+		new GenericPersisterImpl<Blower>(Blower.class).delete(entity);	
 	}
 
 	@Override
 	public void deleteBlowerByBlowerid(Integer blowerid) throws Exception {
-		new GenericPersisterImpl<Blower>(Blower.class).deleteById(blowerid);
-		
+		new GenericPersisterImpl<Blower>(Blower.class).deleteById(blowerid);	
 	}
 
 	@Override
@@ -64,5 +63,4 @@ public class BlowerPersisterImpl implements BlowerPersister {
 
 		return blowerlist != null ? blowerlist : new ArrayList<Blower>();
 		}
-
 }

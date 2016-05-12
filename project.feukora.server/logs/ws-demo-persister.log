@@ -429,3 +429,984 @@ Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert ve
 2016-05-08 17:34:51 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@70e13fa]  wird gelöscht
 2016-05-08 17:34:51 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ff415ad]  wird gelöscht
 2016-05-08 17:34:51 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@280d9edc]  wird gelöscht
+2016-05-11 11:13:20 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@5c20aab9]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Town@6009bea.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.saveCustomer(CustomerPersisterImpl.java:23)
+	at test.project.feukora.server.persister.CustomerPersisterTest.init(CustomerPersisterTest.java:180)
+	at test.project.feukora.server.persister.CustomerPersisterTest.setUp(CustomerPersisterTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Town@6009bea.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+2016-05-11 11:17:30 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@62a4417]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(0)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@43f61afb)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.saveCustomer(CustomerPersisterImpl.java:23)
+	at test.project.feukora.server.persister.CustomerPersisterTest.init(CustomerPersisterTest.java:181)
+	at test.project.feukora.server.persister.CustomerPersisterTest.setUp(CustomerPersisterTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(0)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@43f61afb)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(0)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-11 11:43:47 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@6ab4ba9f]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@77a2aa4a)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.saveCustomer(CustomerPersisterImpl.java:23)
+	at test.project.feukora.server.persister.CustomerPersisterTest.init(CustomerPersisterTest.java:180)
+	at test.project.feukora.server.persister.CustomerPersisterTest.setUp(CustomerPersisterTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@77a2aa4a)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-11 11:52:11 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@5626d18c]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@123d7057)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.saveCustomer(CustomerPersisterImpl.java:23)
+	at test.project.feukora.server.persister.CustomerPersisterTest.init(CustomerPersisterTest.java:180)
+	at test.project.feukora.server.persister.CustomerPersisterTest.setUp(CustomerPersisterTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@123d7057)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-11 12:00:54 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@329548d0]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@123d7057)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.saveCustomer(CustomerPersisterImpl.java:23)
+	at test.project.feukora.server.persister.CustomerPersisterTest.init(CustomerPersisterTest.java:180)
+	at test.project.feukora.server.persister.CustomerPersisterTest.setUp(CustomerPersisterTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@123d7057)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-11 12:06:33 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@6ab4ba9f]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@77a2aa4a)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.saveCustomer(CustomerPersisterImpl.java:23)
+	at test.project.feukora.server.persister.CustomerPersisterTest.init(CustomerPersisterTest.java:180)
+	at test.project.feukora.server.persister.CustomerPersisterTest.setUp(CustomerPersisterTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@77a2aa4a)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-11 12:30:06 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@6ab4ba9f]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@77a2aa4a)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.saveCustomer(CustomerPersisterImpl.java:23)
+	at test.project.feukora.server.persister.CustomerPersisterTest.init(CustomerPersisterTest.java:180)
+	at test.project.feukora.server.persister.CustomerPersisterTest.setUp(CustomerPersisterTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO TOWN (ZIP, CANTON, NAME) VALUES (?, ?, ?)
+	bind => [3 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Town@77a2aa4a)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „town_pkey“
+  Detail: Schlüssel „(zip)=(6000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-11 12:36:08 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@68217d41]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „customerfunction_pkey“
+  Detail: Schlüssel „(customerfunctionid)=(1)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO CUSTOMERFUNCTION (CUSTOMERFUNCTIONID, NAME) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Customerfunction@4aaae508)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.saveCustomer(CustomerPersisterImpl.java:23)
+	at test.project.feukora.server.persister.CustomerPersisterTest.init(CustomerPersisterTest.java:181)
+	at test.project.feukora.server.persister.CustomerPersisterTest.setUp(CustomerPersisterTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „customerfunction_pkey“
+  Detail: Schlüssel „(customerfunctionid)=(1)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO CUSTOMERFUNCTION (CUSTOMERFUNCTIONID, NAME) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Customerfunction@4aaae508)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „customerfunction_pkey“
+  Detail: Schlüssel „(customerfunctionid)=(1)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-11 15:22:27 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@41f4fe5
+2016-05-11 15:23:24 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@41f4fe5
+2016-05-11 17:33:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3d6a6bee]  wird gelöscht
+2016-05-11 17:33:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@36ddaebf]  wird gelöscht
+2016-05-11 17:33:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@213c3543]  wird gelöscht
+2016-05-11 17:33:47 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@7aa9e414
+2016-05-11 17:36:02 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-11 17:36:02 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@514cd540]  wird gelöscht
+2016-05-11 17:36:02 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@221dad51]  wird gelöscht
+2016-05-11 17:36:02 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-11 17:36:02 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@4da9f723]  wird gelöscht
+2016-05-11 17:36:02 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3b2f4a93]  wird gelöscht
+2016-05-11 17:36:02 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@213bd3d5]  wird gelöscht
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@1460c81d]  wird gelöscht
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@327ed9f5]  wird gelöscht
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@23382f76]  wird gelöscht
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3d8b319e]  wird gelöscht
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5017e1]  wird gelöscht
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@5cb042da
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@188b6035]  wird gelöscht
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@4a34e9f]  wird gelöscht
+2016-05-11 17:36:03 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6f6621e3]  wird gelöscht
+2016-05-11 17:37:59 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3d6a6bee]  wird gelöscht
+2016-05-11 17:37:59 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@36ddaebf]  wird gelöscht
+2016-05-11 17:37:59 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@213c3543]  wird gelöscht
+2016-05-11 17:37:59 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@7aa9e414
+2016-05-11 17:40:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3d6a6bee]  wird gelöscht
+2016-05-11 17:40:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@36ddaebf]  wird gelöscht
+2016-05-11 17:40:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@213c3543]  wird gelöscht
+2016-05-11 17:40:54 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@7aa9e414
+2016-05-11 17:43:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3d6a6bee]  wird gelöscht
+2016-05-11 17:43:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@36ddaebf]  wird gelöscht
+2016-05-11 17:43:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@213c3543]  wird gelöscht
+2016-05-11 17:43:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3ec2ecea]  wird gelöscht
+2016-05-11 17:43:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@338cc75f]  wird gelöscht
+2016-05-11 17:43:47 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@6b2e0f78
+2016-05-11 17:44:14 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@30e6a763]  wird gelöscht
+2016-05-11 17:44:14 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@732c9b5c]  wird gelöscht
+2016-05-11 17:44:14 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7aa9e414]  wird gelöscht
+2016-05-11 17:44:14 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@53a5e217]  wird gelöscht
+2016-05-11 17:44:14 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@624a24f6]  wird gelöscht
+2016-05-11 17:44:14 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@240f6c41]  wird gelöscht
+2016-05-11 17:44:14 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@73a19967]  wird gelöscht
+2016-05-11 17:44:14 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@3b2f4a93
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@30e6a763]  wird gelöscht
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@732c9b5c]  wird gelöscht
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7aa9e414]  wird gelöscht
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@53a5e217]  wird gelöscht
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@624a24f6]  wird gelöscht
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@117bcfdc]  wird gelöscht
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5e746d37]  wird gelöscht
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@213bd3d5]  wird gelöscht
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7bebcd65]  wird gelöscht
+2016-05-11 17:44:34 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@74db12c2
+2016-05-11 17:44:55 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@30e6a763]  wird gelöscht
+2016-05-11 17:44:55 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@732c9b5c]  wird gelöscht
+2016-05-11 17:44:55 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7aa9e414]  wird gelöscht
+2016-05-11 17:44:55 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@53a5e217]  wird gelöscht
+2016-05-11 17:44:55 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@624a24f6]  wird gelöscht
+2016-05-11 17:44:55 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5ec46cdd]  wird gelöscht
+2016-05-11 17:44:55 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2324bfe7]  wird gelöscht
+2016-05-11 17:44:56 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@263bbfeb]  wird gelöscht
+2016-05-11 17:44:56 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@67d86804]  wird gelöscht
+2016-05-11 17:44:56 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-11 17:44:56 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@68b58644]  wird gelöscht
+2016-05-11 17:44:56 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@61e7bf2f
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@30e6a763]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@732c9b5c]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7aa9e414]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@53a5e217]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@624a24f6]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5ec46cdd]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2324bfe7]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@263bbfeb]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@67d86804]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@68b58644]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3d8b319e]  wird gelöscht
+2016-05-11 17:45:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@27a97e08]  wird gelöscht
+2016-05-11 17:45:33 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@10acd6
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@30e6a763]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@732c9b5c]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7aa9e414]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@53a5e217]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@624a24f6]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5ec46cdd]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2324bfe7]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@263bbfeb]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@67d86804]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@68b58644]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@23382f76]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7c551ad4]  wird gelöscht
+2016-05-11 17:45:52 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@3d7b1f1c
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@514cd540]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@221dad51]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@4da9f723]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3b2f4a93]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@213bd3d5]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@38b5f25]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@327ed9f5]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@23382f76]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3d8b319e]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5017e1]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2f651f93]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ffa56fa]  wird gelöscht
+2016-05-11 17:46:38 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@51a8313b
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@10bd9df0]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@55e3d6c3]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3ec2ecea]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@440eaa07]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7fc7c4a]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5e746d37]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6e1b9411]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7bebcd65]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7afb1741]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7ea899a9]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@67594471]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@1a28b346]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-11 17:49:24 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@27a97e08
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@10bd9df0]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@55e3d6c3]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3ec2ecea]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@440eaa07]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7fc7c4a]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5e746d37]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6e1b9411]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7bebcd65]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7afb1741]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7ea899a9]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@67594471]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@1a28b346]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-11 17:55:16 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@27a97e08
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@10bd9df0]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@55e3d6c3]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3ec2ecea]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@440eaa07]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7fc7c4a]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5e746d37]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6e1b9411]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7bebcd65]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7afb1741]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7ea899a9]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@67594471]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@1a28b346]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-11 17:59:33 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@27a97e08
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@55e3d6c3]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@4c48fe92]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7fc7c4a]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7aa9e414]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@53a5e217]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@21d1b321]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5ec46cdd]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7afb1741]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@31edeac]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@b174a73]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2cc04358]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7f7af971]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@23382f76]  wird gelöscht
+2016-05-11 18:02:16 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@5918c260
+2016-05-12 09:01:23 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@fca387]  wird gelöscht
+2016-05-12 09:01:23 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@10bd9df0]  wird gelöscht
+2016-05-12 09:01:23 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@39e43310]  wird gelöscht
+2016-05-12 09:01:23 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@eb507b9]  wird gelöscht
+2016-05-12 09:01:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@390877d2]  wird gelöscht
+2016-05-12 09:01:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@2f98635e]  wird gelöscht
+2016-05-12 09:01:24 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@771cbb1a]  wird gelöscht
+2016-05-12 09:01:24 INFO  GenericPersisterImpl:65 - Entity vom Typ Facilitymanager wird updatet: projekt.feukora.server.model.Facilitymanager@73a19967
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@fca387]  wird gelöscht
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@10bd9df0]  wird gelöscht
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@39e43310]  wird gelöscht
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@eb507b9]  wird gelöscht
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@390877d2]  wird gelöscht
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@2015b2cd]  wird gelöscht
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@3bdb2c78]  wird gelöscht
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@3d49fd31]  wird gelöscht
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:99 - Entity vom Typ Facilitymanager [projekt.feukora.server.model.Facilitymanager@213bd3d5]  wird gelöscht
+2016-05-12 09:02:38 INFO  GenericPersisterImpl:65 - Entity vom Typ Facilitymanager wird updatet: projekt.feukora.server.model.Facilitymanager@263bbfeb
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3effd4f3]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2416498e]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6b2e0f78]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6fca5907]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ec65b5e]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@38b5f25]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@58516c91]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@77e7246b]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5918c260]  wird gelöscht
+2016-05-12 12:07:53 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@b25b095
+2016-05-12 12:08:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3effd4f3]  wird gelöscht
+2016-05-12 12:08:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-12 12:08:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-12 12:08:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2416498e]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6b2e0f78]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6fca5907]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ec65b5e]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@38b5f25]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@58516c91]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@77e7246b]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5918c260]  wird gelöscht
+2016-05-12 12:08:34 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@b25b095
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3effd4f3]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2416498e]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6b2e0f78]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6fca5907]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ec65b5e]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@38b5f25]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@58516c91]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@77e7246b]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5918c260]  wird gelöscht
+2016-05-12 12:11:32 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@b25b095
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3effd4f3]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2416498e]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6b2e0f78]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6fca5907]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ec65b5e]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@38b5f25]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@58516c91]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@77e7246b]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5918c260]  wird gelöscht
+2016-05-12 12:12:00 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@b25b095
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3effd4f3]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2416498e]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6b2e0f78]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6fca5907]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ec65b5e]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@38b5f25]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@58516c91]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@77e7246b]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5918c260]  wird gelöscht
+2016-05-12 12:14:32 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@b25b095
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3effd4f3]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2416498e]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6b2e0f78]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6fca5907]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ec65b5e]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@38b5f25]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@58516c91]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@77e7246b]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5918c260]  wird gelöscht
+2016-05-12 12:15:18 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@b25b095
+2016-05-12 12:17:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3effd4f3]  wird gelöscht
+2016-05-12 12:17:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2416498e]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6b2e0f78]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6fca5907]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ec65b5e]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@38b5f25]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@58516c91]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@77e7246b]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5918c260]  wird gelöscht
+2016-05-12 12:17:13 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@b25b095
+2016-05-12 12:17:46 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3effd4f3]  wird gelöscht
+2016-05-12 12:17:46 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@15f8701f]  wird gelöscht
+2016-05-12 12:17:46 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@771cbb1a]  wird gelöscht
+2016-05-12 12:17:46 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2416498e]  wird gelöscht
+2016-05-12 12:17:46 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6b2e0f78]  wird gelöscht
+2016-05-12 12:17:46 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6fca5907]  wird gelöscht
+2016-05-12 12:17:46 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6ec65b5e]  wird gelöscht
+2016-05-12 12:17:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2e3f79a2]  wird gelöscht
+2016-05-12 12:17:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@38b5f25]  wird gelöscht
+2016-05-12 12:17:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@58516c91]  wird gelöscht
+2016-05-12 12:17:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@25e49cb2]  wird gelöscht
+2016-05-12 12:17:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@77e7246b]  wird gelöscht
+2016-05-12 12:17:47 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5918c260]  wird gelöscht
+2016-05-12 12:17:47 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@b25b095

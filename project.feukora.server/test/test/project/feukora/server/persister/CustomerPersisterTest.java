@@ -7,12 +7,15 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
+import projekt.feukora.server.persister.CustomerfunctionPersister;
+import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
+import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
 public class CustomerPersisterTest {
@@ -34,14 +37,21 @@ public class CustomerPersisterTest {
 		List<Customer> customerlist = customerTest.findAllCustomers();
 		assertTrue(customerlist.size() == 2);
 		
-		TownPersisterImpl tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
+		TownPersister tp = new TownPersisterImpl();
+		Town plz = tp.findbyTownzip(6000); // läuft durch, auch wenn es die PLZ gar nicht gibt
+		System.out.println(plz);
+		
+		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
+		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(0);
 
-		Customer c = new Customer("Firmenname", "Nachname", "Vorname", "Ort", "Telefonnummer", "Email", plz, cf1);
+		Customer c = new Customer("Firmenname", "Vorname", "Nachname", "Ort", "Telefonnummer", "Email", function, plz);
 
 		customerTest.saveCustomer(c);
 
 		customerlist = customerTest.findAllCustomers();
+		for (Customer customer : customerlist) {
+			System.out.println(customer.getCompanyname());
+		}
 		assertTrue(customerlist.size() == 3);
 
 	}
@@ -51,8 +61,14 @@ public class CustomerPersisterTest {
 
 		List<Customer> customerlist = customerTest.findAllCustomers();
 		assertTrue(customerlist.size() == 2);
+		
+		TownPersister tp = new TownPersisterImpl();
+		Town plz = tp.findbyTownzip(6000);
+		
+		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
+		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
 
-		Customer c = new Customer("Burri AG", "Burri", "Pascal", "Schachen", "04112345456", "sfasg@afgafg.ch");
+		Customer c = new Customer("Burri AG", "Pascal", "Burri",  "Schachen", "04112345456", "sfasg@afgafg.ch", function, plz);
 
 		customerTest.saveCustomer(c);
 
@@ -117,38 +133,33 @@ public class CustomerPersisterTest {
 	}
 
 	@Test
-	public void testFindByAdress() {
+	public void testFindByCompanyname() {
 		
 		String companyname = "Perry AG";
 
 		assertTrue(customerTest.findCustomerByCompanyname(companyname).size() == 1);
 		
-		companyname = "Fasser AG";
+		companyname = "Parry AG";
 
 		assertTrue(customerTest.findCustomerByCompanyname(companyname)
 				.isEmpty());
 
 	}
 
-	@Ignore
-	@Test
-	public void testDeleteByCustomerid() throws Exception {
-
-		List<Customer> customerlist = customerTest.findAllCustomers();
-		assertTrue(customerlist.size() == 2);
-				
-		customerTest.deleteCustomerByCustomerid(1);
-
-		customerlist = customerTest.findAllCustomers();
-		assertTrue(customerlist.size() == 1);
-	}
-
 	public static List<Customer> init() throws Exception {
 
 		CustomerPersisterTest.deleteAll();
+		
+		TownPersister tp = new TownPersisterImpl();
+		Town plz1 = tp.findbyTownzip(6000);
+		Town plz2 = tp.findbyTownzip(6005);
+		
+		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
+		Customerfunction function1 = cf.findCustomerfunctionByCustomerfunctionid(0);
+		Customerfunction function2 = cf.findCustomerfunctionByCustomerfunctionid(1);
 
-		Customer c1 = new Customer("Fasser AG", "Fasser", "Sandro", "Bergün", "1234", "sf@sf.ch");
-		Customer c2 = new Customer("Perry AG", "Pereira", "Patrick", "Aargau", "5678", "pdp@pdp.ch");
+		Customer c1 = new Customer("Fasser AG", "Sandro", "Fasser",  "Bergün", "1234", "sf@sf.ch", function1, plz1);
+		Customer c2 = new Customer("Perry AG", "Patrick", "Pereira",  "Aargau", "5678", "pdp@pdp.ch", function2, plz2);
 
 		customerTest.saveCustomer(c1);
 		customerTest.saveCustomer(c2);

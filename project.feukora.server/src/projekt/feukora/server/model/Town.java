@@ -3,9 +3,18 @@ package projekt.feukora.server.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
+/**
+ * This class refers to a town.
+ * 
+ * @version 1.2
+ * @author Robin
+ * 
+ */
 
 @Entity
 @NamedQueries({
@@ -13,33 +22,25 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Town.findByName", query = "SELECT t FROM Town t WHERE t.name=:name"),
 	@NamedQuery(name = "Town.findByCanton", query = "SELECT t FROM Town t WHERE t.canton=:canton")
 })
-
-/**
- * This class describes a town.
- * @author Robin
- * @version 1.1
- */
 public class Town implements Serializable {
 
-	
-	
+	@Id
 	private int zip;
 	private String name;
 	private String canton;
 	
-	
 	/**
-	 * This is the standard constructor
+	 * Default constructor
 	 */
 	public Town(){
 		
 	}
 	
 	/**
-	 * This constructor refers to the attributes of the town class
+	 * Town constructor
+	 * 
 	 * @param name
 	 * @param canton
-	 * @param municipality
 	 */
 	
 	public Town (String name, String canton){
@@ -50,10 +51,6 @@ public class Town implements Serializable {
 
 	public int getZip() {
 		return zip;
-	}
-
-	public void setZip(int zip) {
-		this.zip = zip;
 	}
 
 	public String getName() {

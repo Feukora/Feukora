@@ -7,14 +7,20 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.model.Blowertype;
-import projekt.feukora.server.model.Heater;
 
+
+/**
+ * This class implements the interface BlowertypePersister
+ * 
+ * @version 1.1
+ * @author Patrick
+ * 
+ */
 public class BlowertypePersisterImpl implements BlowertypePersister{
 
 	@Override
 	public void saveBlowertype(Blowertype entity) throws Exception {
 		new GenericPersisterImpl<Blowertype>(Blowertype.class).save(entity);
-		
 	}
 
 	@Override
@@ -24,14 +30,12 @@ public class BlowertypePersisterImpl implements BlowertypePersister{
 
 	@Override
 	public void deleteBlowertype(Blowertype entity) throws Exception {
-		new GenericPersisterImpl<Blowertype>(Blowertype.class).delete(entity);
-		
+		new GenericPersisterImpl<Blowertype>(Blowertype.class).delete(entity);	
 	}
 
 	@Override
 	public void deleteBlowertypeByBlowertypeid(Integer blowertypeid) throws Exception {
-		new GenericPersisterImpl<Blowertype>(Blowertype.class).deleteById(blowertypeid);
-		
+		new GenericPersisterImpl<Blowertype>(Blowertype.class).deleteById(blowertypeid);	
 	}
 
 	@Override
@@ -51,7 +55,7 @@ public class BlowertypePersisterImpl implements BlowertypePersister{
 		TypedQuery<Blowertype> tQuery = em.createNamedQuery("Blowertype.findByName",
 				Blowertype.class);
 
-		tQuery.setParameter("firstname", name);
+		tQuery.setParameter("name", name);
 
 		List<Blowertype> blowertypelist = tQuery.getResultList();
 

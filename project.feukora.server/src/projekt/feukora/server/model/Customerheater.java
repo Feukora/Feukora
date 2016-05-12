@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a customerheater.
  * 
- * @Version 1.1
+ * @Version 1.2
  * @author Pascal
  *
  */
@@ -46,7 +46,6 @@ public class Customerheater implements Serializable{
 	/**
 	 * Customerheater constructor
 	 * 
-	 * @param customerheaterid
 	 * @param fi_customerid
 	 * @param fi_heaterid
 	 * @param fi_blowerid
@@ -56,8 +55,7 @@ public class Customerheater implements Serializable{
 	 * @param performance
 	 */
 	
-	public Customerheater(int customerheaterid, Customer fi_customerid, Heater fi_heaterid, Blower fi_blowerid, Facilitymanager fi_facilitymanagerid, int bloweryear, int heateryear, int performance) {
-		this.customerheaterid = customerheaterid;
+	public Customerheater(Customer fi_customerid, Heater fi_heaterid, Blower fi_blowerid, Facilitymanager fi_facilitymanagerid, int bloweryear, int heateryear, int performance) {
 		this.fi_customerid = fi_customerid;
 		this.fi_heaterid = fi_heaterid;
 		this.fi_blowerid = fi_blowerid;
@@ -70,24 +68,27 @@ public class Customerheater implements Serializable{
 	public int getCustomerheaterid() {
 		return customerheaterid;
 	}
-	public void setCustomerheaterid(int customerheaterid) {
-		this.customerheaterid = customerheaterid;
-	}
+
 	public int getBloweryear() {
 		return bloweryear;
 	}
+	
 	public void setBloweryear(int bloweryear) {
 		this.bloweryear = bloweryear;
 	}
+	
 	public int getHeateryear() {
 		return heateryear;
 	}
+	
 	public void setHeateryear(int heateryear) {
 		this.heateryear = heateryear;
 	}
+	
 	public int getPerformance() {
 		return performance;
 	}
+	
 	public void setPerformance(int performance) {
 		this.performance = performance;
 	}

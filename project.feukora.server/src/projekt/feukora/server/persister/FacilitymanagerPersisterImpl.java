@@ -1,10 +1,20 @@
 package projekt.feukora.server.persister;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import projekt.feukora.server.model.Customer;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
 import projekt.feukora.server.model.Facilitymanager;
 
+/**
+ * This class implements the interface FacilitymanagerPersister
+ * 
+ * @version 1.1
+ * @author Pascal
+ *
+ */
 public class FacilitymanagerPersisterImpl implements FacilitymanagerPersister{
 
 	@Override
@@ -39,4 +49,35 @@ public class FacilitymanagerPersisterImpl implements FacilitymanagerPersister{
 		return new GenericPersisterImpl<Facilitymanager>(Facilitymanager.class).findAll();
 	}
 
+	@Override
+	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname) {
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Facilitymanager> tQuery = em.createNamedQuery("Facilitymanager.findByLastname",
+				Facilitymanager.class);
+
+		tQuery.setParameter("lastname", lastname);
+
+		List<Facilitymanager> facilitymanagerlist = tQuery.getResultList();
+
+		em.close();
+
+		return facilitymanagerlist != null ? facilitymanagerlist : new ArrayList<Facilitymanager>();
+	}
+
+	@Override
+	public List<Facilitymanager> findFacilitymanagerByFirstname(String firstname) {
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Facilitymanager> tQuery = em.createNamedQuery("Facilitymanager.findByFirstname",
+				Facilitymanager.class);
+
+		tQuery.setParameter("firstname", firstname);
+
+		List<Facilitymanager> facilitymanagerlist = tQuery.getResultList();
+
+		em.close();
+
+		return facilitymanagerlist != null ? facilitymanagerlist : new ArrayList<Facilitymanager>();
+	}
 }

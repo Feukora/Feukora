@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a controltype
  * 
- * @version 1.0
+ * @version 1.1
  * @author Allan
  *
  */
@@ -19,7 +19,7 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Controltype.findByControltypeid", query = "SELECT ct FROM Controltype ct WHERE ct.controltypeid=:controltypeid"),
-	@NamedQuery(name = "Controltype.findByname", query = "SELECT ct FROM Controltype ct WHERE ct.name=:name"),
+	@NamedQuery(name = "Controltype.findByName", query = "SELECT ct FROM Controltype ct WHERE ct.name=:name"),
 })
 
 public class Controltype implements Serializable {
@@ -29,20 +29,23 @@ public class Controltype implements Serializable {
 	private int controltypeid;
 	private String name;
 	
+	/**
+	 * Default constructor
+	 */
 	public Controltype(){
 	}
 	
-	public Controltype(int controltypeid, String name){
-		this.controltypeid = controltypeid;
+	/**
+	 * Controltype constructor
+	 * 
+	 * @param name
+	 */
+	public Controltype(String name){
 		this.name = name;
 	}
 
 	public int getControltypeid() {
 		return controltypeid;
-	}
-
-	public void setControltypeid(int controltypeid) {
-		this.controltypeid = controltypeid;
 	}
 
 	public String getName() {
@@ -51,8 +54,5 @@ public class Controltype implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	
-	
+	}	
 }

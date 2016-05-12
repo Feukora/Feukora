@@ -1,8 +1,6 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,9 +15,10 @@ import javax.persistence.NamedQuery;
 	 })
 
 /**
- * This class describes a Company.
+ * This class refers to a company.
+ * 
  * @author Robin
- * @version 1.0
+ * @version 1.1
  */
 
 public class Company implements Serializable {
@@ -31,19 +30,19 @@ public class Company implements Serializable {
 	private String adress;
 	private String phone;
 	private String email;
-	@Embedded
 	@ManyToOne
 	private Town fi_zip;
 	
 	/**
-	 * This is the standard constructor
+	 * Default constructor
 	 */
 	public Company(){
 		
 	}
 	
 	/**
-	 * This constructor refers to the attributes of the company class
+	 * Company constructor
+	 * 
 	 * @param name
 	 * @param adress
 	 * @param phone
@@ -64,49 +63,35 @@ public class Company implements Serializable {
 		return companyid;
 	}
 
-
-	public void setCompanyid(int companyid) {
-		this.companyid = companyid;
-	}
-
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public String getAdress() {
 		return adress;
 	}
-
 
 	public void setAdress(String adress) {
 		this.adress = adress;
 	}
 
-
 	public String getPhone() {
 		return phone;
 	}
-
 
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
-
 	public String getEmail() {
 		return email;
 	}
 
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 }

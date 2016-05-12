@@ -10,8 +10,8 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a blowertype.
  * 
- * @version 1.0
- * @author Patrick Duarte Pereira
+ * @version 1.1
+ * @author Patrick
  *
  */
 
@@ -28,20 +28,23 @@ public class Blowertype implements Serializable {
 	private int blowertypeid;
 	private String name;
 	
+	/**
+	 *Default constructor
+	 */
 	public Blowertype(){
 		
 	}
-	
+	/**
+	 * Blowertype constructor
+	 * 
+	 * @param name
+	 */
 	public Blowertype(String name){
 		this.name = name;
 	}
 
 	public int getBlowertypeid() {
 		return blowertypeid;
-	}
-
-	public void setBlowertypeid(int blowertypeid) {
-		this.blowertypeid = blowertypeid;
 	}
 
 	public String getName() {
@@ -51,6 +54,4 @@ public class Blowertype implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	
 }

@@ -2,7 +2,6 @@ package projekt.feukora.server.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,8 +12,8 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a measuringresult.
  * 
- * @version 1.0
- * @author Patrick Duarte Pereira
+ * @version 1.1
+ * @author Patrick
  *
  */
 
@@ -22,17 +21,13 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Measuringresult.findByMeasuringresultid", query = "SELECT mr FROM Measuringresult mr WHERE mr.measuringresultid=:measuringid"),
 })
-
 public class Measuringresult implements Serializable{
 	
 	@Id
 	@GeneratedValue
 	private int measuringresultid;
-	
-	@Embedded
 	@ManyToOne
-	private int fi_rapportid;
-	
+	private Rapport fi_rapportid;
 	private int position;
 	private int measuringgrade;
 	private int smokenumber;
@@ -45,11 +40,30 @@ public class Measuringresult implements Serializable{
 	private double oxygen;
 	private double exhaustgasloss;
 	
+	/**
+	 * Defaul constructor
+	 */
 	public Measuringresult(){
 		
 	}
 	
-	public Measuringresult(int position, int measuringgrade, int smokenumber, int carbonmonoxide, boolean oilpart, int nitrogendioxide, int exhaustgastemp, int heatertemp, int blowertemp, double oxygen, double exhaustgasloss){
+	/**
+	 * Measuringresult constructor
+	 * 
+	 * @param position
+	 * @param measuringgrade
+	 * @param smokenumber
+	 * @param carbonmonoxide
+	 * @param oilpart
+	 * @param nitrogendioxide
+	 * @param exhaustgastemp
+	 * @param heatertemp
+	 * @param blowertemp
+	 * @param oxygen
+	 * @param exhaustgasloss
+	 */
+	public Measuringresult(Rapport fi_rapportid, int position, int measuringgrade, int smokenumber, int carbonmonoxide, boolean oilpart, int nitrogendioxide, int exhaustgastemp, int heatertemp, int blowertemp, double oxygen, double exhaustgasloss){
+		this.fi_rapportid = fi_rapportid;
 		this.position = position;
 		this.measuringgrade = measuringgrade;
 		this.smokenumber = smokenumber;
@@ -65,10 +79,6 @@ public class Measuringresult implements Serializable{
 
 	public int getMeasuringresultid() {
 		return measuringresultid;
-	}
-
-	public void setMeasuringresultid(int measuringresultid) {
-		this.measuringresultid = measuringresultid;
 	}
 
 	public int getPosition() {
@@ -158,8 +168,4 @@ public class Measuringresult implements Serializable{
 	public void setExhaustgasloss(double exhaustgasloss) {
 		this.exhaustgasloss = exhaustgasloss;
 	}
-	
-	
-	
-
 }

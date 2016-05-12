@@ -4,6 +4,13 @@ import java.util.List;
 
 import projekt.feukora.server.model.Customer;
 
+/**
+ * This interface refers to a CustomerPersister
+ * 
+ * @version 1.1
+ * @author Pascal
+ *
+ */
 public interface CustomerPersister {
 
 	/**
@@ -18,7 +25,7 @@ public interface CustomerPersister {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Customer
 	 * @throws Exception
 	 */
 	Customer updateCustomer(Customer entity) throws Exception;
@@ -32,7 +39,7 @@ public interface CustomerPersister {
 	void deleteCustomer(Customer entity) throws Exception;
 
 	/**
-	 * Save the entity with this id
+	 * Delete the entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -43,47 +50,47 @@ public interface CustomerPersister {
 	 * Return the entity with this id
 	 * 
 	 * @param id
-	 * @return
+	 * @return Customer
 	 */
 	Customer findCustomerByCustomerid(Integer customerid);
 
 	/**
 	 * Return all entities
 	 * 
-	 * @return
+	 * @return List with Customers
 	 */
 	List<Customer> findAllCustomers();
 
 	/**
-	 * Return a list with cusomerts with this lastname
+	 * Return a list with customers with this lastname
 	 * 
-	 * @param name
-	 * @return
+	 * @param lastname
+	 * @return List with Customers
 	 */
 	public List<Customer> findCustomerByLastname(String lastname);
 
 	/**
-	 * Return a list with cusomerts with this firstname
+	 * Return a list with customers with this firstname
 	 * 
-	 * @param vorname
-	 * @return
+	 * @param firstname
+	 * @return List with Customers
 	 */
 	public List<Customer> findCustomerByFirstname(String firstname);
 
 	/**
-	 * Return a list with cusomerts with this lastname and firstname
+	 * Return a list with customers with this lastname and firstname
 	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
+	 * @param lastname
+	 * @param firstname
+	 * @return List with Customers
 	 */
 	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname);
 
 	/**
-	 * Return a list with cusomerts with this adress
+	 * Return a list with customers with this Companyname
 	 * 
-	 * @param ort
-	 * @return
+	 * @param companyname
+	 * @return List with Customers
 	 */
 	public List<Customer> findCustomerByCompanyname(String companyname);
 }

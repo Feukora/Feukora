@@ -5,20 +5,23 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Town;
 
 /**
- * This class implements the TownPersister class.
+ * This class implements the interface TownPersister
+ * 
+ * @version 1.1
  * @author Robin
- * @verison 1.0
+ *
  */
 public class TownPersisterImpl implements TownPersister {
 
-	@Override
-	public void saveTown(Town entity) throws Exception {
-		new GenericPersisterImpl<Town>(Town.class).save(entity);
-		
-	}
+//	@Override
+//	public void saveTown(Town entity) throws Exception {
+//		new GenericPersisterImpl<Town>(Town.class).save(entity);	
+//	}
 
 	@Override
 	public Town updateTown(Town entity) throws Exception {
@@ -27,85 +30,68 @@ public class TownPersisterImpl implements TownPersister {
 
 	@Override
 	public void deleteTown(Town entity) throws Exception {
-		new GenericPersisterImpl<Town>(Town.class).delete(entity);
-		
-	}
-	
-	@Override
-	public void deleteTownByTownzip(Town zip) throws Exception {
-		new GenericPersisterImpl<Town>(Town.class).deleteByzip(zip);
-		
+		new GenericPersisterImpl<Town>(Town.class).delete(entity);	
 	}
 
 	@Override
-	public List<Town> findbyTownzip(Integer zip) {
+	public void deleteTownByTownzip(Integer zip) throws Exception {
+		new GenericPersisterImpl<Town>(Town.class).deleteById(zip);
+	}
+
+	@Override
+	public Town findbyTownzip(Integer zip) {
+		return new GenericPersisterImpl<Town>(Town.class).findById(zip);
+		
+//		EntityManager em = JpaUtil.createEntityManager();
+//
+//		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByTownzip",
+//				Town.class);
+//
+//		tQuery.setParameter("zip", zip);
+//
+//		List<Town> townlist = tQuery.getResultList();
+//
+//		em.close();
+//		
+//		return townlist.get(0);
+
+//		return townlist != null ? townlist : new ArrayList<Town>();
+	}
+
+	@Override
+	public List<Town> findAllTowns() {
+		return new GenericPersisterImpl<Town>(Town.class).findAll();
+	}
+
+	@Override
+	public List<Town> findTownByName(String name) {
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Town> tQuery = em.createNamedQuery("Tonw.findByzip",
+		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByName",
 				Town.class);
 
-		tQuery.setParameter("zip", zip);
+		tQuery.setParameter("name", name);
 
 		List<Town> townlist = tQuery.getResultList();
 
 		em.close();
 
 		return townlist != null ? townlist : new ArrayList<Town>();
-		}
-
-	@Override
-	public List<Town> findAllTowns() {
-		return new GenericPersisterImpl<Town>(Town.class).findAll();
 	}
-	
-		@Override
-		public List<Town> findTownByName(String name) {
-			EntityManager em = JpaUtil.createEntityManager();
-
-			TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByName",
-					Town.class);
-
-			tQuery.setParameter("name", name);
-
-			List<Town> townlist = tQuery.getResultList();
-
-			em.close();
-
-			return townlist != null ? townlist : new ArrayList<Town>();
-			}
-	
-		@Override
-		public List<Town> findTownByCanton(String canton) {
-			EntityManager em = JpaUtil.createEntityManager();
-
-			TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByCanton",
-					Town.class);
-
-			tQuery.setParameter("canton", canton);
-
-			List<Town> cantonlist = tQuery.getResultList();
-
-			em.close();
-
-			return cantonlist != null ? cantonlist : new ArrayList<Town>();
-			}
 
 	@Override
-	public List<Town> findTownByMunicipality(String municipality) {
+	public List<Town> findTownByCanton(String canton) {
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByMunicipality",
+		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByCanton",
 				Town.class);
 
-		tQuery.setParameter("municipality", municipality);
+		tQuery.setParameter("canton", canton);
 
-		List<Town> municipalitylist = tQuery.getResultList();
+		List<Town> cantonlist = tQuery.getResultList();
 
 		em.close();
 
-		return municipalitylist != null ? municipalitylist : new ArrayList<Town>();
-		}
-
-	
-
+		return cantonlist != null ? cantonlist : new ArrayList<Town>();
+	}
 }

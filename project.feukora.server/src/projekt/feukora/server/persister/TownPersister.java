@@ -5,24 +5,27 @@ import java.util.List;
 import projekt.feukora.server.model.Town;
 
 /**
- * This class refers to a Town
+ * This interface refers to a TownPersister
+ * 
+ * @version 1.1
  * @author Robin
- * @version 1.0
+ *
  */
 public interface TownPersister {
-	/**
-	 * Save the given entity
-	 * 
-	 * @param entity
-	 * @throws Exception
-	 */
-	void saveTown(Town entity) throws Exception;
+	
+//	/**
+//	 * Save the given entity
+//	 * 
+//	 * @param entity
+//	 * @throws Exception
+//	 */
+//	void saveTown(Town entity) throws Exception;
 
 	/**
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Town
 	 * @throws Exception
 	 */
 	Town updateTown(Town entity) throws Exception;
@@ -42,20 +45,20 @@ public interface TownPersister {
 	 * @throws Exception
 	 */
 	
-	void deleteTownByTownzip(Town zip) throws Exception;
+	void deleteTownByTownzip(Integer zip) throws Exception;
 
 	/**
 	 * Return the entity with this zip number
 	 * 
 	 * @param id
-	 * @return
+	 * @return List of Towns
 	 */
-	List<Town> findbyTownzip(Integer zip);
+	Town findbyTownzip(Integer zip);
 
 	/**
 	 * Return a list with all entities
 	 * 
-	 * @return
+	 * @return List of Towns
 	 */
 	List<Town> findAllTowns();
 
@@ -63,7 +66,7 @@ public interface TownPersister {
 	 * Return a list with entities with this name
 	 * 
 	 * @param name
-	 * @return
+	 * @return List of Towns
 	 */
 	public List<Town> findTownByName(String name);
 	
@@ -71,21 +74,7 @@ public interface TownPersister {
 	 * Return a list with entities with this canton
 	 * 
 	 * @param name
-	 * @return
+	 * @return List of Towns
 	 */
 	public List<Town> findTownByCanton(String canton);
-	
-	/**
-	 * Return a list with entities with this municipality
-	 * 
-	 * @param name
-	 * @return
-	 */
-	public List<Town> findTownByMunicipality (String municipality);
-
-
-
-	
-	
-
 }
