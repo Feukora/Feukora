@@ -64,6 +64,7 @@ public class CustomerPersisterTest {
 		
 		TownPersister tp = new TownPersisterImpl();
 		Town plz = tp.findbyTownzip(6000);
+		assertNotNull(plz);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
