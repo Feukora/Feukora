@@ -1,0 +1,22 @@
+Overview the Model classes
+
+Appointment
+Blower
+Blowertype
+Company
+Controltype
+Customer	Version 1.1 on 09.05.2016 at 19.36 by Pascal
+	Add Javadoc
+Customerfunction 
+Customerheater Version 1.1 on 09.05.2015 at 19.48 by Pascal
+	Add Javadoc
+Deficit
+Facilitymanager
+Fuel
+Heater
+Measuringresult
+Rapport
+Town	Version 1.1 on 10.05.2016 at 12:15 by Pascal
+	Delete everything with municipality
+Users
+Usergroup
