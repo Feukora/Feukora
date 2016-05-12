@@ -2,6 +2,7 @@ package projekt.feukora.server.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,7 +12,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a facilitymanager
  * 
- * @version 1.1
+ * @version 1.2
  * @author Pascal
  *
  */
@@ -26,10 +27,15 @@ public class Facilitymanager implements Serializable {
 	
 	@Id
 	@GeneratedValue
+	@Column(name = "FacilitymanagerID")
 	private int facilitymanagerid;
+	@Column(name = "Lastname")
 	private String lastname;
+	@Column(name = "Firstname")
 	private String firstname;
+	@Column(name = "Phone Number")
 	private String phone;
+	@Column(name = "Email")
 	private String email;
 	
 	/**
