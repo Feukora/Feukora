@@ -11,21 +11,27 @@ import org.junit.Test;
 
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
+import projekt.feukora.server.model.Measuringresult;
+import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
 import projekt.feukora.server.persister.CustomerfunctionPersister;
 import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
+import projekt.feukora.server.persister.MeasuringresultPersister;
+import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
+import projekt.feukora.server.persister.RapportPersister;
+import projekt.feukora.server.persister.RapportPersisterImpl;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
 public class MeasuringresultPersisterTest {
 
 
-	private static EntityPersisterImpl entityTest = new EntityPersisterImpl();
+	private static MeasuringresultPersisterImpl measuringresultTest = new MeasuringresultPersisterImpl();
 
 	@Before
 	public void setUp() throws Exception {
-		EntityPersisterTest.init();
+		MeasuringresultPersisterTest.init();
 	}
 
 	@After
@@ -35,106 +41,105 @@ public class MeasuringresultPersisterTest {
 	@Test
 	public void testSave() throws Exception {
 		
-		List<Entity> entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 2);
+		List<Measuringresult> measuringresultlist = measuringresultTest.findAllMeasuringresult();
+		assertTrue(measuringresultlist.size() == 2);
 		
 		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
-		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(0);
+		RapportPersister rp = new RapportPersisterImpl();
+		Rapport id = rp.findRapportByRapportid(0);
 
-		Entity e = new Entity("Konstruktor von Entity");
+		Measuringresult mr = new Measuringresult();
 
-		entityTest.saveEntity(e);
+		measuringresultTest.saveMeasuringresult(mr);
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		measuringresultlist = measuringresultTest.findAllMeasuringresult();
+		assertTrue(measuringresultlist.size() == 3);
 
 	}
 	
-	@Test
+	// Nach Absprache mit Team, lassen wir die testUpdate() Methode weg
+	/*@Test
 	public void testUpdate() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntites();
-		assertTrue(entitylist.size() == 2);
+		List<Measuringresult> measuringresultlist = measuringresultTest.findAllMeasuringresult();
+		assertTrue(measuringresultlist.size() == 2);
 		
 		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
 		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
+		//TownPersister tp = new TownPersisterImpl();
+		//Town plz = tp.findbyTownzip(6000);
+		
+		//CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
+		//Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
+		
 
-		Entity e = new Entity("Konstruktor von Entity");
+		Measuringresult mr = new Measuringresult();
 
-		entityTest.saveEntity(e);
+		measuringresultTest.saveMeasuringresult(mr);
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 3);
+		measuringresultlist = measuringresultTest.findAllMeasuringresult();
+		assertTrue(measuringresultlist.size() == 3);
 
-		e.setLastname("Irrub");
+		mr.setCarbonmonoxide(3);
 
-		entityTest.updateEntity(e);
+		measuringresultTest.updateMeasuringresult(mr);
 
-		Entity entityFromDB = entityTest.findEntityByWasAuchImmerIhrHierHabt("Irrub",
-				"Pascal").get(0);
-		assertNotNull(entityFromDB);
+		//Measuringresult measuringresultFromDB = measuringresultTest.findMeasuringresultByMeasuringresultid("Irrub",
+		//		"Pascal").get(0);
+		Measuringresult measuringresultFromDB = measuringresultTest.findMeasuringresultByMeasuringresultid(1).get(0);
+		assertNotNull(measuringresultFromDB);
 
 	}
+	*/
 
 	@Test
 	public void testDelete() throws Exception {
 
-		List<Entity> entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 2);
+		List<Measuringresult> measuringresultlist = measuringresultTest.findAllMeasuringresult();
+		assertTrue(measuringresultlist.size() == 2);
 
-		entityTest.deleteEntity(entitylist.get(0));
+		measuringresultTest.deleteMeasuringresult(measuringresultlist.get(0));
 
-		entitylist = entityTest.findAllEntities();
-		assertTrue(entitylist.size() == 1);
+		measuringresultlist = measuringresultTest.findAllMeasuringresult();
+		assertTrue(measuringresultlist.size() == 1);
 
 	}
 	//Ab hier müsst ihr das testen, was ihr in den NamedQueries hingeschrieben habt
 	@Test
-	public void testFindByLastname() {
+	public void testFindByMeasuringresultid() {
 
-		String lastname = "Fasser";
+		//String lastname = "Fasser";
+		int measuringresultid = 1;
 
-		assertTrue(entityTest.findEntityByLastname(lastname).size() == 1);
+		assertTrue(measuringresultTest.findMeasuringresultByMeasuringresultid(measuringresultid).equals(1));
 	}
 
 	//Das brauchen wieder alle
-	public static List<Entity> init() throws Exception {
+	public static List<Measuringresult> init() throws Exception {
 
-		EntityPersisterTest.deleteAll();
+		MeasuringresultPersisterTest.deleteAll();
 		
-		TownPersister tp = new TownPersisterImpl();
-		Town plz1 = tp.findbyTownzip(6000);
-		Town plz2 = tp.findbyTownzip(6005);
-		
-		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function1 = cf.findCustomerfunctionByCustomerfunctionid(0);
-		Customerfunction function2 = cf.findCustomerfunctionByCustomerfunctionid(1);
+		RapportPersister rp = new RapportPersisterImpl();
+		Rapport rapport1 = rp.findRapportByRapportid(0);
+		Rapport rapport2 = rp.findRapportByRapportid(1);
 
-		Entity e1 = new new Entity("Konstruktor von Entity");
-		Entity e2 = new new Entity("Konstruktor von Entity");
+		Measuringresult mr1 = new Measuringresult();
+		Measuringresult mr2 = new Measuringresult();
 
-		entityTest.saveEntity(e1);
-		entityTest.saveEntity(e2);
+		measuringresultTest.saveMeasuringresult(mr1);
+		measuringresultTest.saveMeasuringresult(mr2);
 
-		List<Entity> entitylist = new ArrayList<>();
-		entitylist.add(e1);
-		entitylist.add(e2);
+		List<Measuringresult> measuringresultlist = new ArrayList<>();
+		measuringresultlist.add(mr1);
+		measuringresultlist.add(mr2);
 
-		return entitylist;
+		return measuringresultlist;
 	}
 
 	private static void deleteAll() throws Exception {
 
-		for (Entity e : entityTest.findAllEntities()) {
-			entityTest.deleteEntity(e);
+		for (Measuringresult mr : measuringresultTest.findAllMeasuringresult()) {
+			measuringresultTest.deleteMeasuringresult(mr);
 		}
 	}
 }
