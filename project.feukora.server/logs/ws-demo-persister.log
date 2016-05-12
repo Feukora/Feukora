@@ -3554,6 +3554,7 @@ Caused by: java.lang.IllegalStateException: During synchronization a new object 
 2016-05-12 16:55:37 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@51ce6f85]  wird gelöscht
 2016-05-12 16:55:37 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@1f44ddab]  wird gelöscht
 <<<<<<< HEAD
+<<<<<<< HEAD
 2016-05-12 17:42:39 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@72af90e8]  wird gelöscht
 2016-05-12 17:42:39 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7faa0680]  wird gelöscht
 2016-05-12 17:42:43 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@36453773]  wird gelöscht
@@ -10302,6 +10303,8 @@ Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert ve
 2016-05-12 17:47:22 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5f5ab1ad]  wird gelöscht
 2016-05-12 17:47:22 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@23358a67]  wird gelöscht
 2016-05-12 17:47:22 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@2090d3d1
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 =======
 >>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 >>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git

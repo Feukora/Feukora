@@ -65,13 +65,10 @@ public class CustomerPersisterTest {
 		assertTrue(customerlist.size() == 2);
 		
 		TownPersister tp = new TownPersisterImpl();
-<<<<<<< HEAD
 		Town zip = tp.findbyZip(6000);
 		assertNotNull(zip);
-=======
-		Town plz = tp.findbyTownzip(6000);
+		Town plz = tp.findbyZip(6000);
 //		assertNotNull(plz);
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
