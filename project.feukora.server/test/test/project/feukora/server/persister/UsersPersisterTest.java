@@ -26,6 +26,12 @@ import projekt.feukora.server.persister.UserPersisterImpl;
 import projekt.feukora.server.persister.UsergroupPersister;
 import projekt.feukora.server.persister.UsergroupPersisterImpl;
 
+/**
+ * 
+ * @author Tamara
+ * @version 1.0
+ *
+ */
 public class UsersPersisterTest {
 
 
