@@ -10,73 +10,66 @@ import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.business.CustomerManager;
 import projekt.feukora.server.business.CustomerManagerImpl;
+import projekt.feukora.server.business.HeaterManager;
+import projekt.feukora.server.business.HeaterManagerImpl;
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.persister.GenericPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
 /**
- *  This Class implements the methods of the interface CustomerRMI
- * @author Sandro Fasser
+ *  This Class implements the methods of the interface HeaterRMI
+ * @author Patrick Pereira
  * @version 1.0
  */
-public class HeaterRMIImpl extends UnicastRemoteObject implements CustomerRMI {
 
-	private static final long serialVersionUID = 724994631535546964L;
+public class HeaterRMIImpl extends UnicastRemoteObject implements HeaterRMI {
+
+	private static final long serialVersionUID = -2323293563629986879L;
 	
-	private CustomerManager customerManager;
+	private HeaterManager heaterManager;
 
 	public HeaterRMIImpl() throws RemoteException {
-		customerManager = new CustomerManagerImpl();
+		heaterManager = new HeaterManagerImpl();
+	}
+
+	
+	@Override
+	public void saveHeater(Heater entity) throws RemoteException, Exception {
+		heaterManager.saveHeater(entity);
+		
 	}
 
 	@Override
-	public void saveCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.saveCustomer(entity);	
+	public Heater updateHeater(Heater entity) throws RemoteException, Exception {
+		return heaterManager.updateHeater(entity);
 	}
 
 	@Override
-	public Customer updateCustomer(Customer entity) throws RemoteException, Exception {
-		return customerManager.updateCustomer(entity);
+	public void deleteHeater(Heater entity) throws RemoteException, Exception {
+		heaterManager.deleteHeater(entity);
+		
 	}
 
 	@Override
-	public void deleteCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.deleteCustomer(entity);
+	public void deleteHeaterByHeaterid(Integer heaterid) throws RemoteException, Exception {
+		heaterManager.deleteHeaterByHeaterid(heaterid);	
+		
 	}
 
 	@Override
-	public void deleteCustomerByCustomerid(Integer customerid) throws RemoteException, Exception {
-		customerManager.deleteCustomerByCustomerid(customerid);	
+	public Heater findHeaterByheaterid(Integer heaterid) throws RemoteException {
+		return heaterManager.findHeaterByHeaterid(heaterid);
 	}
 
 	@Override
-	public Customer findCustomerByCustomerid(Integer customerid) throws RemoteException {
-		return customerManager.findCustomerByCustomerid(customerid);
+	public List<Heater> findAllHeaters() throws RemoteException {
+		return heaterManager.findAllHeaters();
 	}
 
 	@Override
-	public List<Customer> findAllCustomers() throws RemoteException {
-		return customerManager.findAllCustomers();
-	}
-
-	@Override
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException  {
-		return customerManager.findCustomerByLastname(lastname);
-	}
-
-	@Override
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException {
-		return customerManager.findCustomerByFirstname(firstname);	
-	}
-
-	@Override
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException  {
-		return customerManager.findCustomerByLastnameAndFirstname(lastname, firstname);
-	}
-
-	@Override
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException  {
-		return customerManager.findCustomerByCompanyname(companyname);
+	public List<Heater> findHeaterByName(String name) throws RemoteException {
+		return heaterManager.findHeaterByName(name);
 	} 
 
 

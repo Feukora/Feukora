@@ -5,16 +5,14 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Heater;
 
 /**
- * RMI interface for handling customer entities
- * @author Sandro Fasser
+ * RMI interface for handling heater entities
+ * @author Patrick Pereira
  * @version 1.0
  */
-/**
- * @author Sandro Fasser
- *
- */
+
 public interface HeaterRMI extends Remote{
 	/**
 	 * Save the given entity
@@ -23,7 +21,7 @@ public interface HeaterRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void saveCustomer(Customer entity) throws RemoteException, Exception;
+	void saveHeater(Heater entity) throws RemoteException, Exception;
 
 	/**
 	 * Update the given entity
@@ -33,7 +31,7 @@ public interface HeaterRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	Customer updateCustomer(Customer entity) throws RemoteException, Exception;
+	Heater updateHeater(Heater entity) throws RemoteException, Exception;
 
 	/**
 	 * Delete the given entity
@@ -42,7 +40,7 @@ public interface HeaterRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void deleteCustomer(Customer entity) throws RemoteException, Exception;
+	void deleteHeater(Heater entity) throws RemoteException, Exception;
 
 	/**
 	 * Save the entity with this id
@@ -51,7 +49,7 @@ public interface HeaterRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void deleteCustomerByCustomerid(Integer customerid) throws RemoteException, Exception;
+	void deleteHeaterByHeaterid(Integer heaterid) throws RemoteException, Exception;
 
 	/**
 	 * Return the entity with this id
@@ -60,7 +58,7 @@ public interface HeaterRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	Customer findCustomerByCustomerid(Integer customerid) throws RemoteException;
+	Heater findHeaterByheaterid(Integer heaterid) throws RemoteException;
 
 	/**
 	 * Return all entities
@@ -68,39 +66,15 @@ public interface HeaterRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	List<Customer> findAllCustomers() throws RemoteException;
+	List<Heater> findAllHeaters() throws RemoteException;
 
 	/**
-	 * Return a list with customers with this lastname
+	 * Return a list with heaters with this name
 	 * 
 	 * @param name
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException;
+	public List<Heater> findHeaterByName(String name) throws RemoteException;
 
-	/**
-	 * Return a list with customers with this firstname
-	 * 
-	 * @param vorname
-	 * @return
-	 */
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException ;
-
-	/**
-	 * Return a list with customers with this lastname and firstname
-	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
-	 */
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
-
-	/**
-	 * Return a list with customers with this adress
-	 * 
-	 * @param ort
-	 * @return
-	 */
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException ;
 }

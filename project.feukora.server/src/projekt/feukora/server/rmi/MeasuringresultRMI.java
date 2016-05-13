@@ -5,16 +5,14 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Measuringresult;
 
 /**
- * RMI interface for handling customer entities
- * @author Sandro Fasser
+ * RMI interface for handling measuringresult entities
+ * @author Patrick Pereira
  * @version 1.0
  */
-/**
- * @author Sandro Fasser
- *
- */
+
 public interface MeasuringresultRMI extends Remote{
 	/**
 	 * Save the given entity
@@ -23,7 +21,7 @@ public interface MeasuringresultRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void saveCustomer(Customer entity) throws RemoteException, Exception;
+	void saveMeasuringresult(Measuringresult entity) throws RemoteException, Exception;
 
 	/**
 	 * Update the given entity
@@ -33,7 +31,7 @@ public interface MeasuringresultRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	Customer updateCustomer(Customer entity) throws RemoteException, Exception;
+	Measuringresult updateMeasuringresult(Measuringresult entity) throws RemoteException, Exception;
 
 	/**
 	 * Delete the given entity
@@ -42,7 +40,7 @@ public interface MeasuringresultRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void deleteCustomer(Customer entity) throws RemoteException, Exception;
+	void deleteMeasuringresult(Measuringresult entity) throws RemoteException, Exception;
 
 	/**
 	 * Save the entity with this id
@@ -51,7 +49,7 @@ public interface MeasuringresultRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void deleteCustomerByCustomerid(Integer customerid) throws RemoteException, Exception;
+	void deleteMeasuringresultByMeasuringresultid(Integer measuringresultid) throws RemoteException, Exception;
 
 	/**
 	 * Return the entity with this id
@@ -60,7 +58,7 @@ public interface MeasuringresultRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	Customer findCustomerByCustomerid(Integer customerid) throws RemoteException;
+	Measuringresult findMeasuringresultByMeasuringresultid(Integer measuringresultid) throws RemoteException;
 
 	/**
 	 * Return all entities
@@ -68,39 +66,5 @@ public interface MeasuringresultRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	List<Customer> findAllCustomers() throws RemoteException;
-
-	/**
-	 * Return a list with customers with this lastname
-	 * 
-	 * @param name
-	 * @return
-	 * @throws RemoteException 
-	 */
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException;
-
-	/**
-	 * Return a list with customers with this firstname
-	 * 
-	 * @param vorname
-	 * @return
-	 */
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException ;
-
-	/**
-	 * Return a list with customers with this lastname and firstname
-	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
-	 */
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
-
-	/**
-	 * Return a list with customers with this adress
-	 * 
-	 * @param ort
-	 * @return
-	 */
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException ;
+	List<Measuringresult> findAllMeasuringresult() throws RemoteException;
 }

@@ -10,74 +10,58 @@ import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.business.CustomerManager;
 import projekt.feukora.server.business.CustomerManagerImpl;
+import projekt.feukora.server.business.MeasuringresultManager;
+import projekt.feukora.server.business.MeasuringresultManagerImpl;
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Measuringresult;
 import projekt.feukora.server.persister.GenericPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
 /**
- *  This Class implements the methods of the interface CustomerRMI
- * @author Sandro Fasser
+ *  This Class implements the methods of the interface MeasuringresultRMI
+ * @author Patrick Pereira
  * @version 1.0
  */
-public class MeasuringresultRMIImpl extends UnicastRemoteObject implements CustomerRMI {
-
-	private static final long serialVersionUID = 724994631535546964L;
+public class MeasuringresultRMIImpl extends UnicastRemoteObject implements MeasuringresultRMI {
 	
-	private CustomerManager customerManager;
+	private static final long serialVersionUID = -8183938237869692194L;
+	
+	private MeasuringresultManager measuringresultManager;
 
 	public MeasuringresultRMIImpl() throws RemoteException {
-		customerManager = new CustomerManagerImpl();
+		measuringresultManager = new MeasuringresultManagerImpl();
 	}
 
 	@Override
-	public void saveCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.saveCustomer(entity);	
+	public void saveMeasuringresult(Measuringresult entity) throws RemoteException, Exception {
+		measuringresultManager.saveMeasuringresult(entity);	
 	}
 
 	@Override
-	public Customer updateCustomer(Customer entity) throws RemoteException, Exception {
-		return customerManager.updateCustomer(entity);
+	public Measuringresult updateMeasuringresult(Measuringresult entity) throws RemoteException, Exception {
+		return measuringresultManager.updateMeasuringresult(entity);
 	}
 
 	@Override
-	public void deleteCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.deleteCustomer(entity);
+	public void deleteMeasuringresult(Measuringresult entity) throws RemoteException, Exception {
+		measuringresultManager.deleteMeasuringresult(entity);
+		
 	}
 
 	@Override
-	public void deleteCustomerByCustomerid(Integer customerid) throws RemoteException, Exception {
-		customerManager.deleteCustomerByCustomerid(customerid);	
+	public void deleteMeasuringresultByMeasuringresultid(Integer measuringresultid) throws RemoteException, Exception {
+		measuringresultManager.deleteMeasuringresultByMeasuringresultid(measuringresultid);	
+		
 	}
 
 	@Override
-	public Customer findCustomerByCustomerid(Integer customerid) throws RemoteException {
-		return customerManager.findCustomerByCustomerid(customerid);
+	public Measuringresult findMeasuringresultByMeasuringresultid(Integer measuringresultid) throws RemoteException {
+		return measuringresultManager.findMeasuringresultByMeasuringresultid(measuringresultid);
 	}
 
 	@Override
-	public List<Customer> findAllCustomers() throws RemoteException {
-		return customerManager.findAllCustomers();
+	public List<Measuringresult> findAllMeasuringresult() throws RemoteException {
+		return measuringresultManager.findAllMeasuringresults();
 	}
-
-	@Override
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException  {
-		return customerManager.findCustomerByLastname(lastname);
-	}
-
-	@Override
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException {
-		return customerManager.findCustomerByFirstname(firstname);	
-	}
-
-	@Override
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException  {
-		return customerManager.findCustomerByLastnameAndFirstname(lastname, firstname);
-	}
-
-	@Override
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException  {
-		return customerManager.findCustomerByCompanyname(companyname);
-	} 
-
 
 }
