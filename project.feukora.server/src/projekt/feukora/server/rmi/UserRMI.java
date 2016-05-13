@@ -5,6 +5,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Users;
 
 /**
  * RMI interface for handling customer entities
@@ -12,7 +13,8 @@ import projekt.feukora.server.model.Customer;
  * @version 1.0
  */
 /**
- * @author Sandro Fasser
+ * @author Tamara Tomic
+ * @version 1.0
  *
  */
 public interface UserRMI extends Remote{
@@ -23,7 +25,7 @@ public interface UserRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void saveCustomer(Customer entity) throws RemoteException, Exception;
+	void saveUsers(Users entity) throws RemoteException, Exception;
 
 	/**
 	 * Update the given entity
@@ -33,7 +35,7 @@ public interface UserRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	Customer updateCustomer(Customer entity) throws RemoteException, Exception;
+	Users updateUsers(Users entity) throws RemoteException, Exception;
 
 	/**
 	 * Delete the given entity
@@ -42,7 +44,7 @@ public interface UserRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void deleteCustomer(Customer entity) throws RemoteException, Exception;
+	void deleteUsers(Users entity) throws RemoteException, Exception;
 
 	/**
 	 * Save the entity with this id
@@ -51,7 +53,7 @@ public interface UserRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void deleteCustomerByCustomerid(Integer customerid) throws RemoteException, Exception;
+	void deleteUserByUserid(Integer usersid) throws RemoteException, Exception;
 
 	/**
 	 * Return the entity with this id
@@ -60,7 +62,7 @@ public interface UserRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	Customer findCustomerByCustomerid(Integer customerid) throws RemoteException;
+	Users findUsersByUserid(Integer usersid) throws RemoteException;
 
 	/**
 	 * Return all entities
@@ -68,39 +70,39 @@ public interface UserRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	List<Customer> findAllCustomers() throws RemoteException;
+	List<Users> findAllUsers() throws RemoteException;
 
 	/**
-	 * Return a list with customers with this lastname
+	 * Return a list with users with this lastname
 	 * 
 	 * @param name
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException;
+	public List<Users> findUsersByLastname(String lastname) throws RemoteException;
 
 	/**
-	 * Return a list with customers with this firstname
+	 * Return a list with users with this firstname
 	 * 
 	 * @param vorname
 	 * @return
 	 */
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException ;
+	public List<Users> findUsersByFirstname(String firstname) throws RemoteException ;
 
 	/**
-	 * Return a list with customers with this lastname and firstname
+	 * Return a list with users with this lastname and firstname
 	 * 
 	 * @param name
 	 * @param vorname
 	 * @return
 	 */
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
+	public List<Users> findUsersByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
 
 	/**
-	 * Return a list with customers with this adress
+	 * Return a list with users with this username
 	 * 
 	 * @param ort
 	 * @return
 	 */
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException ;
+	public List<Users> findUsersByUsername(String username) throws RemoteException ;
 }
