@@ -29,7 +29,7 @@ public class TownData {
 				Town t = new Town();
 				int zip = Integer.parseInt(splited[0]);
 				String name = splited[1];
-				t.setzip(zip);;
+				t.setZip(zip);;
 				t.setName(name);
 				
 				try {

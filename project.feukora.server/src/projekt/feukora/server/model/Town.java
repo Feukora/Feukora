@@ -28,27 +28,9 @@ public class Town implements Serializable {
 	@GeneratedValue
 	private int id;
 	private int zip;
-	
-	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int get() {
-		return zip;
-	}
-
-	public void setzip(int zip) {
-		this.zip = zip;
-	}
-
 	private String name;
 	private String canton;
-	
+
 	/**
 	 * Default constructor
 	 */
@@ -66,10 +48,24 @@ public class Town implements Serializable {
 	public Town (String name, String canton){
 	this.name = name;
 	this.canton = canton;
+	}
 	
+	public int getId() {
+		return id;
 	}
 
+	public int getZip() {
+		return zip;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setZip(int zip) {
+		this.zip = zip;
+	}
+		
 	public String getName() {
 		return name;
 	}

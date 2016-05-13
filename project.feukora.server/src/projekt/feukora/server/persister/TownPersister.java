@@ -51,7 +51,7 @@ public interface TownPersister {
 	 * Return the entity with this zip number
 	 * 
 	 * @param id
-	 * @return List of Towns
+	 * @return Town
 	 */
 	Town findbyZip(Integer zip);
 
