@@ -8,76 +8,70 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import projekt.feukora.server.business.CustomerManager;
-import projekt.feukora.server.business.CustomerManagerImpl;
-import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.persister.GenericPersisterImpl;
+import projekt.feukora.server.business.CompanyManager;
+import projekt.feukora.server.business.CompanyManagerImpl;
+import projekt.feukora.server.model.Company;
 import projekt.feukora.server.persister.JpaUtil;
 
 /**
- *  This Class implements the methods of the interface CustomerRMI
- * @author Sandro Fasser
+ *  This Class implements the methods of the interface CompanyRMI
+ * @author Robin Purtschert
  * @version 1.0
  */
-public class CompanyRMIImpl extends UnicastRemoteObject implements CustomerRMI {
+public class CompanyRMIImpl extends UnicastRemoteObject implements CompanyRMI {
 
 	private static final long serialVersionUID = 724994631535546964L;
 	
-	private CustomerManager customerManager;
+	private CompanyManager companyManager;
 
 	public CompanyRMIImpl() throws RemoteException {
-		customerManager = new CustomerManagerImpl();
+		companyManager = new CompanyManagerImpl();
 	}
 
 	@Override
-	public void saveCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.saveCustomer(entity);	
+	public void saveCompany(Company entity) throws RemoteException, Exception {
+		companyManager.saveCompany(entity);	
 	}
 
 	@Override
-	public Customer updateCustomer(Customer entity) throws RemoteException, Exception {
-		return customerManager.updateCustomer(entity);
+	public Company updateCompany(Company entity) throws RemoteException, Exception {
+		return companyManager.updateCompany(entity);
 	}
 
 	@Override
-	public void deleteCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.deleteCustomer(entity);
+	public void deleteCompany(Company entity) throws RemoteException, Exception {
+		companyManager.deleteCompany(entity);
 	}
 
 	@Override
-	public void deleteCustomerByCustomerid(Integer customerid) throws RemoteException, Exception {
-		customerManager.deleteCustomerByCustomerid(customerid);	
+	public void deleteCompanyByCompanyid(Integer companyid) throws RemoteException, Exception {
+		companyManager.deleteCompanyByCompanyid(companyid);	
 	}
 
 	@Override
-	public Customer findCustomerByCustomerid(Integer customerid) throws RemoteException {
-		return customerManager.findCustomerByCustomerid(customerid);
+	public Company findCompanyByCompanyid(Integer companyid) throws RemoteException {
+		return companyManager.findCompanyByCompanyid(companyid);
 	}
 
 	@Override
-	public List<Customer> findAllCustomers() throws RemoteException {
-		return customerManager.findAllCustomers();
+	public List<Company> findAllCompanies() throws RemoteException {
+		return companyManager.findAllCompanies();
 	}
 
 	@Override
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException  {
-		return customerManager.findCustomerByLastname(lastname);
+	public List<Company> findCompanyByName(String name)throws RemoteException {
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Company> tQuery = em.createNamedQuery("Company.findByName",
+				Company.class);
+
+		tQuery.setParameter("name", name);
+
+		List<Company> companylist = tQuery.getResultList();
+
+		em.close();
+
+		return companylist != null ? companylist : new ArrayList<Company>();
 	}
-
-	@Override
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException {
-		return customerManager.findCustomerByFirstname(firstname);	
-	}
-
-	@Override
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException  {
-		return customerManager.findCustomerByLastnameAndFirstname(lastname, firstname);
-	}
-
-	@Override
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException  {
-		return customerManager.findCustomerByCompanyname(companyname);
-	} 
-
 
 }
