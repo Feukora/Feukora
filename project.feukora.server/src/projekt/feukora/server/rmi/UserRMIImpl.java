@@ -8,76 +8,85 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import projekt.feukora.server.business.CustomerManager;
-import projekt.feukora.server.business.CustomerManagerImpl;
-import projekt.feukora.server.model.Customer;
+
+import projekt.feukora.server.business.UserManager;
+import projekt.feukora.server.business.UserManagerImpl;
+import projekt.feukora.server.model.Users;
 import projekt.feukora.server.persister.GenericPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
 /**
- *  This Class implements the methods of the interface CustomerRMI
+ *  This Class implements the methods of the interface UserRMI
  * @author Sandro Fasser
  * @version 1.0
  */
-public class UserRMIImpl extends UnicastRemoteObject implements CustomerRMI {
+public class UserRMIImpl extends UnicastRemoteObject implements UserRMI {
 
-	private static final long serialVersionUID = 724994631535546964L;
+	private static final long serialVersionUID = 784171184659353831L;
 	
-	private CustomerManager customerManager;
+	private UserManager userManager;
 
 	public UserRMIImpl() throws RemoteException {
-		customerManager = new CustomerManagerImpl();
+		userManager = new UserManagerImpl();
 	}
 
 	@Override
-	public void saveCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.saveCustomer(entity);	
+	public void saveUsers(Users entity) throws RemoteException, Exception {
+		userManager.saveUsers(entity);	
 	}
 
 	@Override
-	public Customer updateCustomer(Customer entity) throws RemoteException, Exception {
-		return customerManager.updateCustomer(entity);
+	public Users updateUsers(Users entity) throws RemoteException, Exception {
+		return userManager.updateUsers(entity);
 	}
 
 	@Override
-	public void deleteCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.deleteCustomer(entity);
+	public void deleteUsers(Users entity) throws RemoteException, Exception {
+		userManager.deleteUsers(entity);
 	}
 
 	@Override
-	public void deleteCustomerByCustomerid(Integer customerid) throws RemoteException, Exception {
-		customerManager.deleteCustomerByCustomerid(customerid);	
+	public void deleteUserByUserid(Integer usersid) throws RemoteException, Exception {
+		userManager.deleteUsersByUsersid(usersid);
+		
 	}
 
 	@Override
-	public Customer findCustomerByCustomerid(Integer customerid) throws RemoteException {
-		return customerManager.findCustomerByCustomerid(customerid);
+	public Users findUsersByUserid(Integer usersid) throws RemoteException {
+		return userManager.findUsersByUsersid(usersid);
 	}
 
 	@Override
-	public List<Customer> findAllCustomers() throws RemoteException {
-		return customerManager.findAllCustomers();
+	public List<Users> findAllUsers() throws RemoteException {
+		return userManager.findAllUsers();
 	}
 
 	@Override
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException  {
-		return customerManager.findCustomerByLastname(lastname);
+	public List<Users> findUsersByLastname(String lastname) throws RemoteException {
+		return userManager.findUsersByLastname(lastname);
 	}
 
 	@Override
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException {
-		return customerManager.findCustomerByFirstname(firstname);	
+	public List<Users> findUsersByFirstname(String firstname) throws RemoteException {
+		return userManager.findUsersByFirstname(firstname);
 	}
 
 	@Override
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException  {
-		return customerManager.findCustomerByLastnameAndFirstname(lastname, firstname);
+	public List<Users> findUsersByLastnameAndFirstname(String lastname, String firstname) throws RemoteException {
+		return userManager.findUsersByLastnameAndFirstname(lastname, firstname);
 	}
 
 	@Override
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException  {
-		return customerManager.findCustomerByCompanyname(companyname);
-	} 
+	public List<Users> findUsersByUsername(String username) throws RemoteException {
+		return userManager.findUserByUsername(username);
+	}
+
+
+
+	
+
+
+
 
 
 }

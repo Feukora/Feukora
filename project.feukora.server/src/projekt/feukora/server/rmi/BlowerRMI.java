@@ -4,17 +4,14 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Blower;
 
 /**
- * RMI interface for handling customer entities
- * @author Sandro Fasser
+ * RMI interface for handling blower entities
+ * @author Robin Purtschert
  * @version 1.0
  */
-/**
- * @author Sandro Fasser
- *
- */
+
 public interface BlowerRMI extends Remote{
 	/**
 	 * Save the given entity
@@ -23,7 +20,7 @@ public interface BlowerRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void saveCustomer(Customer entity) throws RemoteException, Exception;
+	void saveBlower(Blower entity) throws RemoteException, Exception;
 
 	/**
 	 * Update the given entity
@@ -33,7 +30,7 @@ public interface BlowerRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	Customer updateCustomer(Customer entity) throws RemoteException, Exception;
+	Blower updateBlower(Blower entity) throws RemoteException, Exception;
 
 	/**
 	 * Delete the given entity
@@ -42,7 +39,7 @@ public interface BlowerRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void deleteCustomer(Customer entity) throws RemoteException, Exception;
+	void deleteBlower(Blower entity) throws RemoteException, Exception;
 
 	/**
 	 * Save the entity with this id
@@ -51,7 +48,7 @@ public interface BlowerRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void deleteCustomerByCustomerid(Integer customerid) throws RemoteException, Exception;
+	void deleteBlowerByBlowerid(Integer blowerid) throws RemoteException, Exception;
 
 	/**
 	 * Return the entity with this id
@@ -60,7 +57,7 @@ public interface BlowerRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	Customer findCustomerByCustomerid(Integer customerid) throws RemoteException;
+	Blower findBlowerByBlowerid(Integer blowerid) throws RemoteException;
 
 	/**
 	 * Return all entities
@@ -68,39 +65,15 @@ public interface BlowerRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	List<Customer> findAllCustomers() throws RemoteException;
+	List<Blower> findAllBlowers() throws RemoteException;
 
 	/**
-	 * Return a list with customers with this lastname
+	 * Return a list with blowers with this name
 	 * 
 	 * @param name
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException;
+	public List<Blower> findBlowerByName(String name) throws RemoteException, Exception;
 
-	/**
-	 * Return a list with customers with this firstname
-	 * 
-	 * @param vorname
-	 * @return
-	 */
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException ;
-
-	/**
-	 * Return a list with customers with this lastname and firstname
-	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
-	 */
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
-
-	/**
-	 * Return a list with customers with this adress
-	 * 
-	 * @param ort
-	 * @return
-	 */
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException ;
 }

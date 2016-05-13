@@ -50,7 +50,7 @@ public interface UserManager {
 	 * @param id
 	 * @return
 	 */
-	Users findUsersByusersid(Integer usersid);
+	Users findUsersByUsersid(Integer usersid);
 
 	/**
 	 * Return all entities

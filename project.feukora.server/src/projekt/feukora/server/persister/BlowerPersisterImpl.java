@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.model.Blower;
-import projekt.feukora.server.model.Company;
  
 /**
  * This class implements the interface BlowerPersister
