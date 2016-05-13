@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a facilitymanager
  * 
- * @version 1.2
+ * @version 1.3
  * @author Pascal
  *
  */
@@ -30,8 +30,6 @@ public class Facilitymanager implements Serializable {
 	private int facilitymanagerid;
 	private String lastname;
 	private String firstname;
-	private String phone;
-	private String email;
 	
 	/**
 	 * Default constructor
@@ -45,14 +43,10 @@ public class Facilitymanager implements Serializable {
 	 * 
 	 * @param lastname
 	 * @param firstname
-	 * @param phone
-	 * @param email
 	 */
 	public Facilitymanager(String lastname, String firstname, String phone, String email) {
 		this.lastname = lastname;
 		this.firstname = firstname;
-		this.phone = phone;
-		this.email = email;
 	}
 	
 	public int getFacilitymanagerid() {
@@ -73,21 +67,5 @@ public class Facilitymanager implements Serializable {
 	
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
-	}
-	
-	public String getPhone() {
-		return phone;
-	}
-	
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-	
-	public String getEmail() {
-		return email;
-	}
-	
-	public void setEmail(String email) {
-		this.email = email;
 	}
 }

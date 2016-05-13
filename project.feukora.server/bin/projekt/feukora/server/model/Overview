@@ -26,6 +26,8 @@ Facilitymanager	Version 1.1 on 10.05.2015 at 15:10 by Pascal
 					Change into Entity, delete @Embeddable, create Javadoc, add @NamedQueries, delete setId
 				Version 1.2 on 12.05.2016 at 09:05 by Pascal
 					Add Column Names
+				Version 1.3 on 13.05.2016 at 09:30 by Pascal
+					Delete attributes phone and email
 Fuel			Version 1.1 on 10.05.2016 at 15:30 by Pascal
 					Fix constructor, delete setId
 Heater			Version 1.1 on 10.05.2016 at 15:35 by Pascal

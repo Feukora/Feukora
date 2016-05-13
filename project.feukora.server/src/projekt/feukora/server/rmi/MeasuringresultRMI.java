@@ -15,7 +15,7 @@ import projekt.feukora.server.model.Customer;
  * @author Sandro Fasser
  *
  */
-public interface CustomerRMI extends Remote{
+public interface MeasuringresultRMI extends Remote{
 	/**
 	 * Save the given entity
 	 * 

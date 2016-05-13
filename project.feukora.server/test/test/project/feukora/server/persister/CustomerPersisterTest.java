@@ -153,9 +153,9 @@ public class CustomerPersisterTest {
 
 	public static List<Customer> init() throws Exception {
 
-		TownData.loadTownData("resources/ZIP.txt");
-		CustomerPersisterTest.deleteAll();
-		
+		//CustomerPersisterTest.deleteAll();
+		//TownData.loadTownData("resources/ZIP.txt");
+		//Testdata.loadTestdata();
 		
 		TownPersister tp = new TownPersisterImpl();
 		Town zip1 = tp.findbyZip(6000);

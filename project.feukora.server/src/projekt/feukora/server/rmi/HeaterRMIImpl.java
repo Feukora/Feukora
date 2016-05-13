@@ -19,13 +19,13 @@ import projekt.feukora.server.persister.JpaUtil;
  * @author Sandro Fasser
  * @version 1.0
  */
-public class CustomerRMIImpl extends UnicastRemoteObject implements CustomerRMI {
+public class HeaterRMIImpl extends UnicastRemoteObject implements CustomerRMI {
 
 	private static final long serialVersionUID = 724994631535546964L;
 	
 	private CustomerManager customerManager;
 
-	public CustomerRMIImpl() throws RemoteException {
+	public HeaterRMIImpl() throws RemoteException {
 		customerManager = new CustomerManagerImpl();
 	}
 

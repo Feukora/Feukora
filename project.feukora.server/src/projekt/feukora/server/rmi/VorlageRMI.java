@@ -15,7 +15,14 @@ import projekt.feukora.server.model.Customer;
  * @author Sandro Fasser
  *
  */
-public interface CustomerRMI extends Remote{
+
+// Muss Remote extenden -> fürs RMI
+// Es müssen alle Methden RemoteException throwen
+
+ 
+public interface VorlageRMI extends Remote{
+	
+//Überall die Javadoc auf das jeweilige Interface anpassen 
 	/**
 	 * Save the given entity
 	 * 
@@ -23,6 +30,9 @@ public interface CustomerRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
+	
+	// HIER unten müssen mindestens alle Methoden implementiert werden die im Manager auch vorhanden
+	// sind und von aussen zugänglich sein müssen
 	void saveCustomer(Customer entity) throws RemoteException, Exception;
 
 	/**

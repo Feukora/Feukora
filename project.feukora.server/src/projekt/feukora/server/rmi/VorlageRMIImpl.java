@@ -19,18 +19,30 @@ import projekt.feukora.server.persister.JpaUtil;
  * @author Sandro Fasser
  * @version 1.0
  */
-public class CustomerRMIImpl extends UnicastRemoteObject implements CustomerRMI {
 
-	private static final long serialVersionUID = 724994631535546964L;
+//Muss UnicastRemoteObject extenden -> fürs RMI und CustomerRMI implementieren
+//Es müssen alle Methden RemoteException throwen (dieselben wie bei VorlageRMI
+//Zuerst VorlageRMI erstellen dann hier mit Rechtsklick auf Source -> Override/Implement Methods
+//damit alle sicher vorhanden sind
+
+public class VorlageRMIImpl extends UnicastRemoteObject implements CustomerRMI {
+
+	// ACHTUNG: Für jede neue Implementation muss diese Zeile hier unten gelöscht, dann gespeichert und 
+	// dann "Add generated serial version ID" klicken, Meldung bei public class VorlageRMIImpl.........
+
+	private static final long serialVersionUID = -5699727667136274431L;
 	
 	private CustomerManager customerManager;
 
-	public CustomerRMIImpl() throws RemoteException {
+	public VorlageRMIImpl() throws RemoteException {
 		customerManager = new CustomerManagerImpl();
 	}
-
+	
+	// HIER unten müssen mindestens alle Methoden die in VorlageRMI.java implementiert sind auch
+	// vorhanden sind
 	@Override
 	public void saveCustomer(Customer entity) throws RemoteException, Exception {
+		//customerManager der oben mit new instanziert wird hier die richtige Methode mit . hinzufügen
 		customerManager.saveCustomer(entity);	
 	}
 

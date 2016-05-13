@@ -38,7 +38,7 @@ public class UserManagerImpl implements UserManager {
 	}
 
 	@Override
-	public Users findUsersByusersid(Integer userid) {
+	public Users findUsersByUsersid(Integer userid) {
 		return  userPersister.findUserByUserid(userid);
 	}
 
