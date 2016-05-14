@@ -29,6 +29,7 @@ import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
 import projekt.feukora.server.persister.CustomerheaterPersister;
 import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
 import projekt.feukora.server.persister.RapportPersisterImpl;
+import projekt.feukora.server.persister.TownData;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 import projekt.feukora.server.persister.UserPersister;
@@ -168,7 +169,9 @@ public class RapportPersisterTest {
 	
 	public static List<Rapport> init() throws Exception {
 
-		RapportPersisterTest.deleteAll();
+		//RapportPersisterTest.deleteAll();
+		//TownData.loadTownData("resources/ZIP.txt");
+		//Testdata.loadTestdata();
 		
 		ControltypePersister ct = new ControltypePersisterImpl();
 		Controltype controltype1 = ct.findControltypeByControltypeid(0);
