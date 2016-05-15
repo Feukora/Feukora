@@ -33,7 +33,7 @@ public class Testdata {
 		
 		
 		Customerfunction function1 = new Customerfunction("Verwaltung");
-		Customerfunction function2 = new Customerfunction("Eingentümer");
+		Customerfunction function2 = new Customerfunction("Eigentümer");
 		
 		Usergroup group1 = new Usergroup("Administrator");
 		Usergroup group2 = new Usergroup("Feuerungskontrolleur");

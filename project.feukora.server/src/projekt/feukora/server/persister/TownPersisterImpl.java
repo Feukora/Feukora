@@ -41,20 +41,20 @@ public class TownPersisterImpl implements TownPersister {
 
 	@Override
 	public Town findbyZip(Integer zip) {
-		return new GenericPersisterImpl<Town>(Town.class).findById(zip);
+//		return new GenericPersisterImpl<Town>(Town.class).findById(zip);
 		
-//		EntityManager em = JpaUtil.createEntityManager();
-//
-//		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByTownzip",
-//				Town.class);
-//
-//		tQuery.setParameter("zip", zip);
-//
-//		List<Town> townlist = tQuery.getResultList();
-//
-//		em.close();
-//		
-//		return townlist.get(0);
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByZip",
+				Town.class);
+
+		tQuery.setParameter("zip", zip);
+
+		List<Town> townlist = tQuery.getResultList();
+
+		em.close();
+		
+		return townlist.get(0);
 
 //		return townlist != null ? townlist : new ArrayList<Town>();
 	}

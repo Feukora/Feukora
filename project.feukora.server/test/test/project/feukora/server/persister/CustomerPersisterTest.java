@@ -40,11 +40,11 @@ public class CustomerPersisterTest {
 		assertTrue(customerlist.size() == 2);
 		
 		TownPersister tp = new TownPersisterImpl();
-		Town zip = tp.findbyZip(6000); // läuft durch, auch wenn es die PLZ gar nicht gibt
+		Town zip = tp.findbyZip(6000);
 		System.out.println(zip);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(0);
+		Customerfunction function = cf.findCustomerfunctionByName("Verwaltung");
 
 		Customer c = new Customer("Firmenname", "Vorname", "Nachname", "Ort", "Telefonnummer", "Email", function, zip);
 
@@ -71,7 +71,7 @@ public class CustomerPersisterTest {
 //		assertNotNull(plz);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
+		Customerfunction function = cf.findCustomerfunctionByName("Eigentüer");
 
 		Customer c = new Customer("Burri AG", "Pascal", "Burri",  "Schachen", "04112345456", "sfasg@afgafg.ch", function, zip);
 
@@ -153,17 +153,19 @@ public class CustomerPersisterTest {
 
 	public static List<Customer> init() throws Exception {
 
-		//CustomerPersisterTest.deleteAll();
-		//TownData.loadTownData("resources/ZIP.txt");
-		//Testdata.loadTestdata();
+		CustomerPersisterTest.deleteAll();
+		TownData.loadTownData("resources/ZIP.txt");
+		Testdata.loadTestdata();
 		
 		TownPersister tp = new TownPersisterImpl();
 		Town zip1 = tp.findbyZip(6000);
 		Town zip2 = tp.findbyZip(6005);
+		assertNotNull(zip1);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function1 = cf.findCustomerfunctionByCustomerfunctionid(0);
-		Customerfunction function2 = cf.findCustomerfunctionByCustomerfunctionid(1);
+		Customerfunction function1 = cf.findCustomerfunctionByName("Verwaltung"); //Das hier geht noch nicht.
+		Customerfunction function2 = cf.findCustomerfunctionByName("Eigentümer");
+//		assertNotNull(function1);
 
 		Customer c1 = new Customer("Fasser AG", "Sandro", "Fasser",  "Bergün", "1234", "sf@sf.ch", function1, zip1);
 		Customer c2 = new Customer("Perry AG", "Patrick", "Pereira",  "Aargau", "5678", "pdp@pdp.ch", function2, zip2);

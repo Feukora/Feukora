@@ -4777,3 +4777,57 @@ Caused by: org.postgresql.util.PSQLException: FEHLER: Relation „sequence“ existi
 	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
 	... 59 more
+2016-05-15 22:34:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3b57dba4]  wird gelöscht
+2016-05-15 22:34:16 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3404e5c4]  wird gelöscht
+2016-05-15 22:34:21 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@54e18a46]  wird gelöscht
+2016-05-15 22:34:21 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@58e5fbe5]  wird gelöscht
+2016-05-15 22:34:21 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@6b33892a]  wird gelöscht
+2016-05-15 22:34:25 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@29088d3d]  wird gelöscht
+2016-05-15 22:34:25 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5390862e]  wird gelöscht
+2016-05-15 22:34:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3a89f2a0]  wird gelöscht
+2016-05-15 22:34:33 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@70bbc163]  wird gelöscht
+2016-05-15 22:34:41 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@61d9da53]  wird gelöscht
+2016-05-15 22:34:41 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@1b7bab7e]  wird gelöscht
+2016-05-15 22:34:46 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@47cb3171]  wird gelöscht
+2016-05-15 22:34:46 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@5f0669d9]  wird gelöscht
+2016-05-15 22:34:49 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@5ac9ae05
+2016-05-15 22:47:23 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@65db548]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Customerfunction@6e364f1f.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.saveCustomer(CustomerPersisterImpl.java:23)
+	at test.project.feukora.server.persister.CustomerPersisterTest.init(CustomerPersisterTest.java:173)
+	at test.project.feukora.server.persister.CustomerPersisterTest.setUp(CustomerPersisterTest.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Customerfunction@6e364f1f.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
