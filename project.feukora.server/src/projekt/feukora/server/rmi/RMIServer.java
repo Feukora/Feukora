@@ -18,7 +18,7 @@ import org.eclipse.persistence.sessions.server.Server;
  * This Class starts the RMI-Server on this machine, also it instances Remote Objects, 
  * binds and also unbinds them
  * 
- * @version 1.0
+ * @version 1.1
  * @author Sandro Fasser
  *
  */
@@ -44,53 +44,49 @@ public class RMIServer {
 		
 
 		String customerRMIName = "customerRMI";
-
+		String companyRMIName = "companyRMI";
+		String appointmentRMIName = "appointmentRMI";
+		String blowerRMIName = "blowerRMI";
+		String heaterRMIName = "heaterRMI";
+		String measuringresultRMIName = "measuringresultRMI";
+		String rapportRMIName = "rapportRMI";
+		String userRMIName = "userRMI";
+		
 		Registry registry = null;
+		
+		try{
 
-		try {
-
-			if (args.length == 1) {
-				// Port auslesen
-				try {
-					port = Integer.parseInt(args[0]);
-				} catch (NumberFormatException e) {
-					System.out.println(e.getMessage());
-					return;
-				}
-			} else if (args.length == 2) {
-
-				// hostIp auslesen
-				hostIP = args[0];
-
-				// Port auslesen
-				try {
-					port = Integer.parseInt(args[1]);
-				} catch (NumberFormatException e) {
-					System.out.println(e.getMessage());
-					return;
-				}
-			}
 
 			InetAddress.getLocalHost();
 
-			/*
-			 * Die NIC-IP nach 'aussen' kommunizieren (falls die Namensaufl�sung
-			 * probleme bereiten sollte)
-			 */
+			
 			System.setProperty("java.rmi.server.hostname", hostIP);
 
-			// Registry starten
 			registry = LocateRegistry.createRegistry(port, null, null);
 
 			if (registry != null) {
 
 				// Entfernte Objekte erstellen
 				CustomerRMI customerRMI = new CustomerRMIImpl();
-
-
-				registry.rebind(customerRMIName, customerRMI);
+				CompanyRMI companyRMI = new CompanyRMIImpl();
+				AppointmentRMI appointmentRMI = new AppointmentRMIImpl();
+				BlowerRMI blowerRMI = new BlowerRMIImpl();
+				HeaterRMI heaterRMI = new HeaterRMIImpl();
+				MeasuringresultRMI measuringresultRMI = new MeasuringresultRMIImpl();
+				RapportRMI rapportRMI = new RapportRMIImpl();
+				UserRMI userRMI = new UserRMIImpl();
 				
 
+				registry.rebind(customerRMIName, customerRMI);
+				registry.rebind(companyRMIName, companyRMI);
+				registry.rebind(appointmentRMIName, appointmentRMI);
+				registry.rebind(blowerRMIName, blowerRMI);
+				registry.rebind(heaterRMIName, heaterRMI);
+				registry.rebind(measuringresultRMIName, measuringresultRMI);
+				registry.rebind(rapportRMIName, rapportRMI);
+				registry.rebind(userRMIName, userRMI);
+				
+			
 				String msg = "RMI-Server ist bereit fuer Client-Anfragen.\n\n"
 						+ "Server herunterfahren?";
 				JOptionPane.showMessageDialog(null, msg, "ServerName ["
@@ -98,6 +94,13 @@ public class RMIServer {
 						JOptionPane.QUESTION_MESSAGE);
 
 				registry.unbind(customerRMIName);
+				registry.unbind(companyRMIName);
+				registry.unbind(appointmentRMIName);
+				registry.unbind(blowerRMIName);
+				registry.unbind(heaterRMIName);
+				registry.unbind(measuringresultRMIName);
+				registry.unbind(rapportRMIName);
+				registry.unbind(userRMIName);
 
 				System.out.println("RMI Server wird heruntergefahren!\n");
 
