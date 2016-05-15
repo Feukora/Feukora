@@ -37,7 +37,7 @@ import projekt.feukora.server.persister.UserPersisterImpl;
 
 /**
  * @author Sandro Fasser
- * @version 1.0
+ * @version 1.1
  */
 
 public class RapportPersisterTest {
@@ -169,9 +169,9 @@ public class RapportPersisterTest {
 	
 	public static List<Rapport> init() throws Exception {
 
-		//RapportPersisterTest.deleteAll();
-		//TownData.loadTownData("resources/ZIP.txt");
-		//Testdata.loadTestdata();
+		RapportPersisterTest.deleteAll();
+		TownData.loadTownData("resources/ZIP.txt");
+		Testdata.loadTestdata();
 		
 		ControltypePersister ct = new ControltypePersisterImpl();
 		Controltype controltype1 = ct.findControltypeByControltypeid(0);
