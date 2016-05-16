@@ -67,10 +67,4 @@ public interface BlowerManager {
 	 */
 	public List<Blower> findBlowerByName(String name);
 
-	/**
-	 * Return a list with customers with this firstname
-	 * 
-	 * @param vorname
-	 * @return
-	 */
 }
