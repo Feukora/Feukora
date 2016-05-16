@@ -8,6 +8,8 @@ import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
 
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
@@ -23,9 +25,14 @@ public class CustomerPersisterTest {
 
 	private static CustomerPersisterImpl customerTest = new CustomerPersisterImpl();
 	
+	@BeforeClass
+	public static void start() throws Exception {
+		TownData.loadTownData("resources/ZIP.txt");
+		Testdata.loadTestdata();
+	}
+	
 	@Before
 	public void setUp() throws Exception {
-		
 		CustomerPersisterTest.init();
 	}
 
@@ -68,10 +75,9 @@ public class CustomerPersisterTest {
 		Town zip = tp.findbyZip(6000);
 		assertNotNull(zip);
 		Town plz = tp.findbyZip(6000);
-//		assertNotNull(plz);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function = cf.findCustomerfunctionByName("Eigentüer");
+		Customerfunction function = cf.findCustomerfunctionByName("Eigentümer");
 
 		Customer c = new Customer("Burri AG", "Pascal", "Burri",  "Schachen", "04112345456", "sfasg@afgafg.ch", function, zip);
 
@@ -89,7 +95,7 @@ public class CustomerPersisterTest {
 		assertNotNull(customerFromDB);
 
 	}
-
+	
 	@Test
 	public void testDelete() throws Exception {
 
@@ -154,8 +160,6 @@ public class CustomerPersisterTest {
 	public static List<Customer> init() throws Exception {
 
 		CustomerPersisterTest.deleteAll();
-		TownData.loadTownData("resources/ZIP.txt");
-		Testdata.loadTestdata();
 		
 		TownPersister tp = new TownPersisterImpl();
 		Town zip1 = tp.findbyZip(6000);
@@ -163,9 +167,9 @@ public class CustomerPersisterTest {
 		assertNotNull(zip1);
 		
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		Customerfunction function1 = cf.findCustomerfunctionByName("Verwaltung"); //Das hier geht noch nicht.
+		Customerfunction function1 = cf.findCustomerfunctionByName("Verwaltung");
 		Customerfunction function2 = cf.findCustomerfunctionByName("Eigentümer");
-//		assertNotNull(function1);
+		assertNotNull(function1);
 
 		Customer c1 = new Customer("Fasser AG", "Sandro", "Fasser",  "Bergün", "1234", "sf@sf.ch", function1, zip1);
 		Customer c2 = new Customer("Perry AG", "Patrick", "Pereira",  "Aargau", "5678", "pdp@pdp.ch", function2, zip2);

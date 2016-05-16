@@ -57,10 +57,12 @@ public class CustomerfunctionPersisterImpl implements CustomerfunctionPersister 
 
 		tQuery.setParameter("name", name);
 
-		Customerfunction customerfunction = new Customerfunction();
+//		Customerfunction customerfunction = new Customerfunction();
+		
+		List<Customerfunction> customerfunctionlist = tQuery.getResultList();
 		
 		em.close();
 
-		return customerfunction;
+		return customerfunctionlist.get(0);
 	}
 }
