@@ -10,7 +10,7 @@ import projekt.feukora.server.model.Measuringresult;
 /**
  * RMI interface for handling measuringresult entities
  * @author Patrick Pereira
- * @version 1.0
+ * @version 1.1
  */
 
 public interface MeasuringresultRMI extends Remote{

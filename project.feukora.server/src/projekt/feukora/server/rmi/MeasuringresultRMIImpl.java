@@ -20,7 +20,7 @@ import projekt.feukora.server.persister.JpaUtil;
 /**
  *  This Class implements the methods of the interface MeasuringresultRMI
  * @author Patrick Pereira
- * @version 1.0
+ * @version 1.1
  */
 public class MeasuringresultRMIImpl extends UnicastRemoteObject implements MeasuringresultRMI {
 	

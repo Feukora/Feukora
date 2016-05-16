@@ -10,7 +10,7 @@ import projekt.feukora.server.model.Heater;
 /**
  * RMI interface for handling heater entities
  * @author Patrick Pereira
- * @version 1.0
+ * @version 1.1
  */
 
 public interface HeaterRMI extends Remote{

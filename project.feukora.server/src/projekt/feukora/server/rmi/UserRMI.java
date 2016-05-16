@@ -8,13 +8,9 @@ import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Users;
 
 /**
- * RMI interface for handling customer entities
- * @author Sandro Fasser
- * @version 1.0
- */
-/**
+ * RMI interface for handling User entities
  * @author Tamara Tomic
- * @version 1.0
+ * @version 1.1
  *
  */
 public interface UserRMI extends Remote{
