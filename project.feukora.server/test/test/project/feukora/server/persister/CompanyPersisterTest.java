@@ -7,16 +7,13 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Company;
-import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.persister.CompanyPersisterImpl;
-import projekt.feukora.server.persister.CustomerPersisterImpl;
-import projekt.feukora.server.persister.CustomerfunctionPersister;
-import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
+import projekt.feukora.server.persister.TownData;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
@@ -25,6 +22,12 @@ public class CompanyPersisterTest {
 
 	private static CompanyPersisterImpl companyTest = new CompanyPersisterImpl();
 
+	@BeforeClass
+	public static void start() throws Exception {
+		TownData.loadTownData("resources/ZIP.txt");
+		Testdata.loadTestdata();
+	}
+	
 	@Before
 	public void setUp() throws Exception {
 		CompanyPersisterTest.init();
@@ -40,9 +43,8 @@ public class CompanyPersisterTest {
 		List<Company> companylist = companyTest.findAllCompanies();
 		assertTrue(companylist.size() == 2);
 		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
 		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
+		Town plz = tp.findbyZip(6000);
 		
 
 		Company com = new Company("Name", "Ort", "Telefon", "Email", plz);
@@ -60,9 +62,8 @@ public class CompanyPersisterTest {
 		List<Company> companylist = companyTest.findAllCompanies();
 		assertTrue(companylist.size() == 2);
 		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
 		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
+		Town plz = tp.findbyZip(6000);
 		
 		Company com = new Company("Name", "Ort", "Telefon", "Email", plz);
 
@@ -92,27 +93,26 @@ public class CompanyPersisterTest {
 		assertTrue(companylist.size() == 1);
 
 	}
-	//Ab hier müsst ihr das testen, was ihr in den NamedQueries hingeschrieben habt
 	@Test
 	public void testFindByName() {
 
-		String name = "Robin AG";
+		String name = "Name1";
 
 		assertTrue(companyTest.findCompanyByName(name).size() == 1);
 	}
 
-	//Das brauchen wieder alle
 	public static List<Company> init() throws Exception {
 
 		CompanyPersisterTest.deleteAll();
 		
 		TownPersister tp = new TownPersisterImpl();
-		Town plz1 = tp.findbyTownzip(6000);
-		Town plz2 = tp.findbyTownzip(6005);
+		Town plz1 = tp.findbyZip(6000);
+		Town plz2 = tp.findbyZip(6005);
 		
 		Company com1 = new Company("Name1", "Ort1", "Telefon1", "Email1", plz1);
 		Company com2 = new Company("Name2", "Ort2", "Telefon2", "Email2", plz2);
 
+		companyTest.saveCompany(com1);
 		companyTest.saveCompany(com2);
 
 		List<Company> companylist = new ArrayList<>();
