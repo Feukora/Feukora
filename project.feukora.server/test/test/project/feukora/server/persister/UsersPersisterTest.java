@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Company;
@@ -20,6 +21,7 @@ import projekt.feukora.server.persister.CompanyPersisterImpl;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
 import projekt.feukora.server.persister.CustomerfunctionPersister;
 import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
+import projekt.feukora.server.persister.TownData;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 import projekt.feukora.server.persister.UserPersisterImpl;
@@ -37,6 +39,12 @@ public class UsersPersisterTest {
 
 	private static UserPersisterImpl userTest = new UserPersisterImpl();
 
+	@BeforeClass
+	public static void start() throws Exception {
+		TownData.loadTownData("resources/ZIP.txt");
+		TestdataUsers.loadTestdata();
+	}
+	
 	@Before
 	public void setUp() throws Exception {
 		UsersPersisterTest.init();
@@ -52,17 +60,15 @@ public class UsersPersisterTest {
 		List<Users> userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 2);
 		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
 		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
+		Town plz = tp.findbyZip(6000);
 		
 		UsergroupPersister ug = new UsergroupPersisterImpl();
 		Usergroup usergroup = ug.findUsergroupByUsergroupid(0);
 		
 		CompanyPersister c = new CompanyPersisterImpl();
-		Company company = (Company) c.findCompanyByName("Feukora");
+		Company company = c.findCompanyByName("Firma 1").get(0);
 		
-
 		Users u = new Users(usergroup,"Nachname","Vorname", "Ort",plz,company, "Username","Passwort","Telefon","Email");
 
 		userTest.saveUser(u);
@@ -78,16 +84,14 @@ public class UsersPersisterTest {
 		List<Users> userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 2);
 		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
 		TownPersister tp = new TownPersisterImpl();
-		Town plz = tp.findbyTownzip(6000);
+		Town plz = tp.findbyZip(6000);
 		
 		UsergroupPersister ug = new UsergroupPersisterImpl();
 		Usergroup usergroup = ug.findUsergroupByUsergroupid(0);
 		
 		CompanyPersister c = new CompanyPersisterImpl();
-		Company company = (Company) c.findCompanyByName("Feukora");
-		
+		Company company = c.findCompanyByName("Firma 2").get(0);
 
 		Users u = new Users(usergroup,"Nachname","Vorname", "Ort",plz,company, "Username","Passwort","Telefon","Email");
 
@@ -96,11 +100,11 @@ public class UsersPersisterTest {
 		userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 3);
 
-		u.setLastname("Nachname");
+		u.setLastname("Name");
 
 		userTest.updateUser(u);
 
-		Users userFromDB = userTest.findUserByLastname("Nachname").get(0);
+		Users userFromDB = userTest.findUserByLastname("Name").get(0);
 		assertNotNull(userFromDB);
 
 	}
@@ -117,11 +121,10 @@ public class UsersPersisterTest {
 		assertTrue(userlist.size() == 1);
 
 	}
-	//Ab hier müsst ihr das testen, was ihr in den NamedQueries hingeschrieben habt
 	@Test
 	public void testFindByLastname() {
 
-		String lastname = "Nachname";
+		String lastname = "Nachname1";
 
 		assertTrue(userTest.findUserByLastname(lastname).size() == 1);
 	}
@@ -129,19 +132,16 @@ public class UsersPersisterTest {
 	@Test
 	public void testByFirstname(){
 		
-		String firstname = "Vorname";
+		String firstname = "Vorname2";
 		
-		assertTrue(userTest.findUserByFirstname(firstname).size()==1);
-		
-		
-		
+		assertTrue(userTest.findUserByFirstname(firstname).size()==1);	
 	}
 	
 	@Test
 	public void testByLastnameAndFirstname(){
 		
-		String lastname ="Nachname";
-		String firstname = "Firstname";
+		String lastname ="Nachname1";
+		String firstname = "Vorname1";
 		
 		assertTrue(userTest.findUserByLastnameAndFirstname(lastname, firstname).size()==1
 				);
@@ -156,31 +156,30 @@ public class UsersPersisterTest {
 	@Test
 	public void testByUsername(){
 		
-		String username = "Username";
+		String username = "Username1";
 		
 		assertTrue(userTest.findUserByUsername(username).size() ==1);
 	}
 
-	//Das brauchen wieder alle
 	public static List<Users> init() throws Exception {
 
 		UsersPersisterTest.deleteAll();
 		
 		TownPersister tp = new TownPersisterImpl();
-		Town plz1 = tp.findbyTownzip(6000);
-		Town plz2 = tp.findbyTownzip(6005);
+		Town plz1 = tp.findbyZip(6000);
+		Town plz2 = tp.findbyZip(6005);
 		
 		UsergroupPersister ug = new UsergroupPersisterImpl();
 		Usergroup ug1 = ug.findUsergroupByName("Feuerungskontrolleur");
-		Usergroup ug2 = ug.findUsergroupByName("Sachbearbeiter");
+		Usergroup ug2 = ug.findUsergroupByName("Backoffice");
 		
 		CompanyPersister c = new CompanyPersisterImpl();
-		Company c1 = (Company) c.findCompanyByName("Feuko");
-		Company c2 = (Company) c.findCompanyByName("Kora");
+		Company c1 = c.findCompanyByName("Firma 1").get(0);
+		Company c2 = c.findCompanyByName("Firma 2").get(0);
 		
 
-		Users u1 = new Users(ug1,"Nachname","Vorname", "Ort",plz1,c1, "Username","Passwort","Telefon","Email");
-		Users u2 = new Users(ug2,"Nachname","Vorname", "Ort",plz2,c2, "Username","Passwort","Telefon","Email");
+		Users u1 = new Users(ug1, "Nachname1", "Vorname1", "Ort1", plz1, c1, "Username1", "Passwort1", "Telefon1", "Email1");
+		Users u2 = new Users(ug2, "Nachname2", "Vorname2", "Ort2", plz2, c2, "Username2", "Passwort2", "Telefon2", "Email2");
 
 		userTest.saveUser(u1);
 		userTest.saveUser(u2);

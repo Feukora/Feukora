@@ -1,12 +1,10 @@
 package projekt.feukora.server.persister;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
 
 /**
@@ -61,10 +59,10 @@ public class UsergroupPersisterImpl implements UsergroupPersister {
 
 		tQuery.setParameter("name", name);
 
-		Usergroup usergroup = new Usergroup();
+		List <Usergroup> usergroupfunction = tQuery.getResultList();
 
 		em.close();
 
-		return usergroup;
+		return usergroupfunction.get(0);
 	}	
 }
