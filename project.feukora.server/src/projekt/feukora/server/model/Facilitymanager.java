@@ -44,7 +44,7 @@ public class Facilitymanager implements Serializable {
 	 * @param lastname
 	 * @param firstname
 	 */
-	public Facilitymanager(String lastname, String firstname, String phone, String email) {
+	public Facilitymanager(String lastname, String firstname) {
 		this.lastname = lastname;
 		this.firstname = firstname;
 	}

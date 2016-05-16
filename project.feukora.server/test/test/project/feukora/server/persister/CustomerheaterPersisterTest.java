@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -24,11 +25,18 @@ import projekt.feukora.server.persister.FacilitymanagerPersister;
 import projekt.feukora.server.persister.FacilitymanagerPersisterImpl;
 import projekt.feukora.server.persister.HeaterPersister;
 import projekt.feukora.server.persister.HeaterPersisterImpl;
+import projekt.feukora.server.persister.TownData;
 
 public class CustomerheaterPersisterTest {
 
 	private static CustomerheaterPersisterImpl customerheaterTest = new CustomerheaterPersisterImpl();
 
+	@BeforeClass
+	public static void start() throws Exception {
+		TownData.loadTownData("resources/ZIP.txt");
+		TestdataCustomerheater.loadTestdata();
+	}
+	
 	@Before
 	public void setUp() throws Exception {
 		CustomerheaterPersisterTest.init();
@@ -45,16 +53,16 @@ public class CustomerheaterPersisterTest {
 		assertTrue(customerheaterlist.size() == 2);
 		
 		CustomerPersister cp = new CustomerPersisterImpl();
-		Customer c = cp.findCustomerByCustomerid(0);
+		Customer c = cp.findCustomerByLastname("Fasser").get(0);
 		
 		HeaterPersister hp = new HeaterPersisterImpl();
-		Heater h = hp.findHeaterByHeaterid(0);
+		Heater h = hp.findHeaterByName("Heizung 2").get(0);
 		
 		BlowerPersister bp = new BlowerPersisterImpl();
-		Blower b = bp.findByBlowerid(1);
+		Blower b = bp.findBlowerByName("Blower 2").get(0);
 		
 		FacilitymanagerPersister fmp = new FacilitymanagerPersisterImpl();
-		Facilitymanager fm = fmp.findFacilitymanagerByFacilitymanagerid(1);
+		Facilitymanager fm = fmp.findFacilitymanagerByLastname("Meister").get(0);
 
 		Customerheater ch = new Customerheater (c, h, b, fm, 2006, 2010, 280);
 
@@ -65,7 +73,6 @@ public class CustomerheaterPersisterTest {
 
 	}
 	
-	@Ignore
 	@Test
 	public void testUpdate() throws Exception {
 
@@ -73,16 +80,16 @@ public class CustomerheaterPersisterTest {
 		assertTrue(customerheaterlist.size() == 2);
 		
 		CustomerPersister cp = new CustomerPersisterImpl();
-		Customer c = cp.findCustomerByCustomerid(0);
+		Customer c = cp.findCustomerByLastname("Fasser").get(0);
 		
 		HeaterPersister hp = new HeaterPersisterImpl();
-		Heater h = hp.findHeaterByHeaterid(0);
+		Heater h = hp.findHeaterByName("Heizung 2").get(0);
 		
 		BlowerPersister bp = new BlowerPersisterImpl();
-		Blower b = bp.findByBlowerid(1);
+		Blower b = bp.findBlowerByName("Blower 2").get(0);
 		
 		FacilitymanagerPersister fmp = new FacilitymanagerPersisterImpl();
-		Facilitymanager fm = fmp.findFacilitymanagerByFacilitymanagerid(1);
+		Facilitymanager fm = fmp.findFacilitymanagerByLastname("Meister").get(0);
 
 		Customerheater ch = new Customerheater (c, h, b, fm, 2006, 2010, 280);
 
@@ -97,7 +104,6 @@ public class CustomerheaterPersisterTest {
 
 	}
 
-	@Ignore
 	@Test
 	public void testDelete() throws Exception {
 
@@ -116,20 +122,20 @@ public class CustomerheaterPersisterTest {
 		CustomerheaterPersisterTest.deleteAll();
 		
 		CustomerPersister cp = new CustomerPersisterImpl();
-		Customer c1 = cp.findCustomerByCustomerid(0);
-		Customer c2 = cp.findCustomerByCustomerid(1);
+		Customer c1 = cp.findCustomerByLastname("Fasser").get(0);
+		Customer c2 = cp.findCustomerByLastname("Pereira").get(0);
 		
 		HeaterPersister hp = new HeaterPersisterImpl();
-		Heater h1 = hp.findHeaterByHeaterid(0);
-		Heater h2 = hp.findHeaterByHeaterid(1);
+		Heater h1 = hp.findHeaterByName("Heizung 1").get(0);
+		Heater h2 = hp.findHeaterByName("Heizung 2").get(0);
 		
 		BlowerPersister bp = new BlowerPersisterImpl();
-		Blower b1 = bp.findByBlowerid(1);
-		Blower b2 = bp.findByBlowerid(0);
+		Blower b1 = bp.findBlowerByName("Blower 1").get(0);
+		Blower b2 = bp.findBlowerByName("Blower 2").get(0);
 		
 		FacilitymanagerPersister fmp = new FacilitymanagerPersisterImpl();
-		Facilitymanager fm1 = fmp.findFacilitymanagerByFacilitymanagerid(1);
-		Facilitymanager fm2 = fmp.findFacilitymanagerByFacilitymanagerid(0);
+		Facilitymanager fm1 = fmp.findFacilitymanagerByLastname("Hausmeister").get(0);
+		Facilitymanager fm2 = fmp.findFacilitymanagerByLastname("Meister").get(0);
 
 		Customerheater ch1 = new Customerheater (c1, h1, b1, fm1, 1000, 1000, 5);
 		Customerheater ch2 = new Customerheater (c2, h2, b2, fm2, 2000, 2000, 200);
