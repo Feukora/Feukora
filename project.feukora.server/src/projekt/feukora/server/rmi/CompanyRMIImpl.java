@@ -20,7 +20,8 @@ import projekt.feukora.server.persister.JpaUtil;
  */
 public class CompanyRMIImpl extends UnicastRemoteObject implements CompanyRMI {
 
-	private static final long serialVersionUID = 724994631535546964L;
+
+	private static final long serialVersionUID = 5688064118469483727L;
 	
 	private CompanyManager companyManager;
 
@@ -60,18 +61,8 @@ public class CompanyRMIImpl extends UnicastRemoteObject implements CompanyRMI {
 
 	@Override
 	public List<Company> findCompanyByName(String name)throws RemoteException {
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Company> tQuery = em.createNamedQuery("Company.findByName",
-				Company.class);
-
-		tQuery.setParameter("name", name);
-
-		List<Company> companylist = tQuery.getResultList();
-
-		em.close();
-
-		return companylist != null ? companylist : new ArrayList<Company>();
+			return companyManager.findCompanyByName(name);
+			
 	}
 
 }

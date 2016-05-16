@@ -21,7 +21,8 @@ import projekt.feukora.server.persister.JpaUtil;
  */
 public class BlowerRMIImpl extends UnicastRemoteObject implements BlowerRMI {
 
-	private static final long serialVersionUID = 724994631535546964L;
+
+	private static final long serialVersionUID = 8782682640987666627L;
 	
 	private BlowerManager blowerManager;
 
@@ -61,18 +62,7 @@ public class BlowerRMIImpl extends UnicastRemoteObject implements BlowerRMI {
 
 	@Override
 	public List<Blower> findBlowerByName(String name) throws RemoteException {
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Blower> tQuery = em.createNamedQuery("Blower.findByName",
-				Blower.class);
-
-		tQuery.setParameter("name", name);
-
-		List<Blower> blowerlist = tQuery.getResultList();
-
-		em.close();
-
-		return blowerlist != null ? blowerlist : new ArrayList<Blower>();
+		return blowerManager.findBlowerByName(name);
 		}
 
 }

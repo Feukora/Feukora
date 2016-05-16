@@ -13,7 +13,7 @@ import projekt.feukora.server.model.Customer;
  */
 /**
  * @author Sandro Fasser
- *
+ * @version 1.1
  */
 public interface CustomerRMI extends Remote{
 	/**

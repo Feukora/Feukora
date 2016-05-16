@@ -13,7 +13,7 @@ import projekt.feukora.server.model.Company;
  */
 /**
  * @author Robin Purtschert
- * @version 1.0
+ * @version 1.1
  */
 public interface CompanyRMI extends Remote{
 	/**
