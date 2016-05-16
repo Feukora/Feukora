@@ -68,5 +68,5 @@ public interface BlowertypePersister {
 	 * @param name
 	 * @return List with Blowertypes
 	 */
-	public List<Blowertype> findBlowertypeByName(String name);
+	public Blowertype findBlowertypeByName(String name);
 }

@@ -49,7 +49,7 @@ public class BlowertypePersisterImpl implements BlowertypePersister{
 	}
 
 	@Override
-	public List<Blowertype> findBlowertypeByName(String name) {
+	public Blowertype findBlowertypeByName(String name) {
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Blowertype> tQuery = em.createNamedQuery("Blowertype.findByName",
@@ -61,7 +61,7 @@ public class BlowertypePersisterImpl implements BlowertypePersister{
 
 		em.close();
 
-		return blowertypelist != null ? blowertypelist : new ArrayList<Blowertype>();
+		return blowertypelist.get(0);
 	}
 
 }

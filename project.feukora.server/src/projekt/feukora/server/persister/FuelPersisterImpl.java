@@ -57,11 +57,11 @@ public class FuelPersisterImpl implements FuelPersister{
 
 		tQuery.setParameter("name", name);
 
-		Fuel fuel = new Fuel();
+		List<Fuel> fuellist = tQuery.getResultList();
 
 		em.close();
 
-		return fuel;
+		return fuellist.get(0);
 	}
 
 }

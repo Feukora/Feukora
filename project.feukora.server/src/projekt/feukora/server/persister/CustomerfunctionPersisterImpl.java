@@ -56,8 +56,6 @@ public class CustomerfunctionPersisterImpl implements CustomerfunctionPersister 
 				Customerfunction.class);
 
 		tQuery.setParameter("name", name);
-
-//		Customerfunction customerfunction = new Customerfunction();
 		
 		List<Customerfunction> customerfunctionlist = tQuery.getResultList();
 		

@@ -7,15 +7,23 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Facilitymanager;
 import projekt.feukora.server.persister.FacilitymanagerPersisterImpl;
+import projekt.feukora.server.persister.TownData;
 
 public class FacilitymanagerPersisterTest {
 
 
 	private static FacilitymanagerPersisterImpl facilitymanagerTest = new FacilitymanagerPersisterImpl();
+	
+	@BeforeClass
+	public static void start() throws Exception {
+		TownData.loadTownData("resources/ZIP.txt");
+		Testdata.loadTestdata();
+	}
 
 	@Before
 	public void setUp() throws Exception {
