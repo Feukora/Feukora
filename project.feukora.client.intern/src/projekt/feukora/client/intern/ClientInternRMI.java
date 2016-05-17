@@ -12,11 +12,9 @@ import projekt.feukora.server.rmi.UserRMI;
 
 
 /**
- * Diese Klasse stellt das Userinterface fuer die Modulverwaltung via RMI zur
- * Verfuegung
- * This Class 
+ * This Class implements the rmi connection 
  * 
- * @version 1.0
+ * @version 1.1
  * @author Sandro Fasser
  *
  */
