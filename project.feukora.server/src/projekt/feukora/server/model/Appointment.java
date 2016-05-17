@@ -32,10 +32,10 @@ public class Appointment {
 	@Id
 	@GeneratedValue
 	private int appointmentid;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	private Customerheater costumerheaterid;
 	@ManyToOne
-	private Users userid;
+	private Users user;
 	@ManyToOne
 	private Users createdby;
 	@Temporal (TemporalType.TIMESTAMP)
@@ -54,20 +54,20 @@ public class Appointment {
 	 * Appointment constructor 
 	 * 
 	 * @param costumerheaterid
-	 * @param userid
+	 * @param user
 	 * @param createdby
 	 * @param created
 	 * @param appointmentdate
 	 * @param comments
 	 */
-	public Appointment(Customerheater costumerheaterid, Users userid, Users createdby, GregorianCalendar created,
+	public Appointment(Customerheater costumerheaterid, Users user, Users createdby, GregorianCalendar created,
 			GregorianCalendar appointmentdate, String comments){
 		this.appointmentdate = appointmentdate;
 		this.comments = comments;
 		this.created = created;
 		this.costumerheaterid = costumerheaterid;
 		this.createdby = createdby;
-		this.userid = userid;
+		this.user = user;
 	}
 
 	public int getAppointmentid() {
