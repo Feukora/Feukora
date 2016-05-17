@@ -5,6 +5,8 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import projekt.feukora.server.business.RapportManager;
+import projekt.feukora.server.business.RapportManagerImpl;
 import projekt.feukora.server.model.Rapport;
 
 /**
@@ -33,7 +35,7 @@ public class RapportRMIImpl extends UnicastRemoteObject implements RapportRMI {
 
 	@Override
 	public Rapport updateRapport(Rapport entity) throws RemoteException, Exception {
-		rapportManager.updateRapport(entity);
+		return rapportManager.updateRapport(entity);
 	}
 
 	@Override
@@ -50,22 +52,22 @@ public class RapportRMIImpl extends UnicastRemoteObject implements RapportRMI {
 
 	@Override
 	public Rapport findRapportByRapportid(Integer rapportid) throws RemoteException {
-		rapportManager.findRapportByRapportid(rapportid);
+		return rapportManager.findRapportByRapportid(rapportid);
 	}
 
 	@Override
 	public List<Rapport> findAllRapports() throws RemoteException {
-		rapportManager.findAllRapports();
+		return rapportManager.findAllRapports();
 	}
 
 	@Override
 	public List<Rapport> findRapportByResults(Boolean results) throws RemoteException {
-		rapportManager.findRapportByResults(results);
+		return rapportManager.findRapportByResults(results);
 	}
 
 	@Override
 	public List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate) throws RemoteException {
-		rapportManager.findRapportByMeasuringdate(measuringdate);
+		return rapportManager.findRapportByMeasuringdate(measuringdate);
 	}
 	
 	
