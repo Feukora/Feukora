@@ -4344,3 +4344,280 @@ Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert ve
 2016-05-17 13:18:40 INFO  GenericPersisterImpl:99 - Entity vom Typ Appointment [projekt.feukora.server.model.Appointment@2a484710]  wird gelöscht
 2016-05-17 13:18:40 INFO  GenericPersisterImpl:99 - Entity vom Typ Appointment [projekt.feukora.server.model.Appointment@28989415]  wird gelöscht
 2016-05-17 13:18:40 INFO  GenericPersisterImpl:65 - Entity vom Typ Appointment wird updatet: projekt.feukora.server.model.Appointment@7b91d9f
+2016-05-17 15:13:14 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Rapport': [projekt.feukora.server.model.Rapport@1537c744]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@50122012.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.RapportPersisterImpl.saveRapport(RapportPersisterImpl.java:23)
+	at test.project.feukora.server.persister.RapportPersisterTest.init(RapportPersisterTest.java:206)
+	at test.project.feukora.server.persister.RapportPersisterTest.setUp(RapportPersisterTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@50122012.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 30 more
+2016-05-17 15:13:14 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Rapport': [projekt.feukora.server.model.Rapport@677349fb]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@2c60ce47.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.RapportPersisterImpl.saveRapport(RapportPersisterImpl.java:23)
+	at test.project.feukora.server.persister.RapportPersisterTest.init(RapportPersisterTest.java:206)
+	at test.project.feukora.server.persister.RapportPersisterTest.setUp(RapportPersisterTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@2c60ce47.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 30 more
+2016-05-17 15:13:14 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Rapport': [projekt.feukora.server.model.Rapport@2b441e56]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@3a109ff7.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.RapportPersisterImpl.saveRapport(RapportPersisterImpl.java:23)
+	at test.project.feukora.server.persister.RapportPersisterTest.init(RapportPersisterTest.java:206)
+	at test.project.feukora.server.persister.RapportPersisterTest.setUp(RapportPersisterTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@3a109ff7.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 30 more
+2016-05-17 15:13:14 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Rapport': [projekt.feukora.server.model.Rapport@7caf1e5]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@7ddeb27f.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.RapportPersisterImpl.saveRapport(RapportPersisterImpl.java:23)
+	at test.project.feukora.server.persister.RapportPersisterTest.init(RapportPersisterTest.java:206)
+	at test.project.feukora.server.persister.RapportPersisterTest.setUp(RapportPersisterTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@7ddeb27f.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 30 more
+2016-05-17 15:13:14 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Rapport': [projekt.feukora.server.model.Rapport@7f12094d]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@200d1a3d.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.RapportPersisterImpl.saveRapport(RapportPersisterImpl.java:23)
+	at test.project.feukora.server.persister.RapportPersisterTest.init(RapportPersisterTest.java:206)
+	at test.project.feukora.server.persister.RapportPersisterTest.setUp(RapportPersisterTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@200d1a3d.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 30 more
+2016-05-17 15:13:14 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Rapport': [projekt.feukora.server.model.Rapport@6b832551]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@63124022.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.RapportPersisterImpl.saveRapport(RapportPersisterImpl.java:23)
+	at test.project.feukora.server.persister.RapportPersisterTest.init(RapportPersisterTest.java:206)
+	at test.project.feukora.server.persister.RapportPersisterTest.setUp(RapportPersisterTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: projekt.feukora.server.model.Controltype@63124022.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 30 more
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@19002b34]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@6ef4cbe1]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@3751acd7]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@727986ad]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@3f0ce0d1]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@44641d6c]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@69a373fd]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@394a6d2b]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@58164e9a]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@3e151e1f]  wird gelöscht
+2016-05-17 15:24:54 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@25a290ee]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@18c880ea]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@6f315b08]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@48cdb156]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@b56ec6c]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@36551e97]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@2e45a357]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@1af677f8]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@f03ee8f]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@11c7a0b4]  wird gelöscht
+2016-05-17 15:28:13 INFO  GenericPersisterImpl:65 - Entity vom Typ Rapport wird updatet: projekt.feukora.server.model.Rapport@68fc9167
+2016-05-17 15:29:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@18c880ea]  wird gelöscht
+2016-05-17 15:29:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@6f315b08]  wird gelöscht
+2016-05-17 15:29:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@48cdb156]  wird gelöscht
+2016-05-17 15:29:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@b56ec6c]  wird gelöscht
+2016-05-17 15:29:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@36551e97]  wird gelöscht
+2016-05-17 15:29:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@2e45a357]  wird gelöscht
+2016-05-17 15:29:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@1af677f8]  wird gelöscht
+2016-05-17 15:29:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@f03ee8f]  wird gelöscht
+2016-05-17 15:29:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@11c7a0b4]  wird gelöscht
+2016-05-17 15:29:13 INFO  GenericPersisterImpl:65 - Entity vom Typ Rapport wird updatet: projekt.feukora.server.model.Rapport@68fc9167

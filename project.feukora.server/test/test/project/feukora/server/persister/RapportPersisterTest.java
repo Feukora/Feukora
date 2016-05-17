@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Appointment;
@@ -45,6 +46,12 @@ public class RapportPersisterTest {
 
 	private static RapportPersisterImpl rapportTest = new RapportPersisterImpl();
 
+	@BeforeClass
+	public static void start() throws Exception {
+		TownData.loadTownData("resources/ZIP.txt");
+		TestdataRapport.loadTestdata();
+	}
+	
 	@Before
 	public void setUp() throws Exception {
 		RapportPersisterTest.init();
@@ -61,21 +68,22 @@ public class RapportPersisterTest {
 		assertTrue(rapportlist.size() == 2);
 		
 		ControltypePersister ct = new ControltypePersisterImpl();
-		Controltype controltype = ct.findControltypeByControltypeid(0);
-				
-		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
-		Customerheater customerheater = ch.findCustomerheaterByCustomerheaterid(0);
+		Controltype controltype1 = ct.findControltypeByName("Abnahmekontrolle");
 		
+		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
+		Customerheater customerheater1 = ch.findCustomerheaterByPerformance(200).get(0);
+
 		UserPersister us = new UserPersisterImpl();
-		Users user = us.findUserByUserid(1);
+		Users user1 = us.findUserByLastname("Nachname").get(0);
+		
+		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		
 		AppointmentPersister ap = new AppointmentPersisterImpl();
-		Appointment appointment = ap.findAppointmentByAppointmentid(0);
+		Appointment appointment1 = ap.findAppointmentByAppointmentdate(date2).get(0);
+	
+		GregorianCalendar cal1 = new GregorianCalendar(2016, 3, 3);
 		
-		GregorianCalendar cal = new GregorianCalendar(2015, 3, 3);
-		
-		Rapport r = new Rapport(controltype, customerheater, user, appointment, cal, false, false, "Kommentar des Tests Save", true, true,true, true, true);
-		
+		Rapport r = new Rapport(controltype1, customerheater1, user1, appointment1, cal1, true, false, "Kommentar Nummer 1", true, true,false, false, true);
 
 		rapportTest.saveRapport(r);
 
@@ -94,25 +102,22 @@ public class RapportPersisterTest {
 		assertTrue(rapportlist.size() == 2);
 		
 		ControltypePersister ct = new ControltypePersisterImpl();
-		Controltype controltype = ct.findControltypeByControltypeid(0);
-		assertNotNull(controltype);
+		Controltype controltype1 = ct.findControltypeByName("Abnahmekontrolle");
 		
 		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
-		Customerheater customerheater = ch.findCustomerheaterByCustomerheaterid(0);
-		assertNotNull(customerheater);
-		
+		Customerheater customerheater1 = ch.findCustomerheaterByPerformance(200).get(0);
+
 		UserPersister us = new UserPersisterImpl();
-		Users user = us.findUserByUserid(1);
-		assertNotNull(user);
+		Users user1 = us.findUserByLastname("Nachname").get(0);
+		
+		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		
 		AppointmentPersister ap = new AppointmentPersisterImpl();
-		Appointment appointment = ap.findAppointmentByAppointmentid(0);
-		assertNotNull(appointment);
+		Appointment appointment1 = ap.findAppointmentByAppointmentdate(date2).get(0);
+	
+		GregorianCalendar cal1 = new GregorianCalendar(2016, 3, 3);
 		
-		GregorianCalendar cal = new GregorianCalendar(2015, 3, 3);
-		assertNotNull(cal);
-		
-		Rapport r = new Rapport(controltype, customerheater, user, appointment, cal, true, false, "Kommentar des Tests Update", true, true,true, true, true);
+		Rapport r = new Rapport(controltype1, customerheater1, user1, appointment1, cal1, true, false, "Kommentar Nummer 2", true, true,false, false, true);
 
 		rapportTest.saveRapport(r);
 
@@ -124,7 +129,7 @@ public class RapportPersisterTest {
 
 		rapportTest.updateRapport(r);
 
-		Rapport rapportFromDB = (Rapport) rapportTest.findRapportByMeasuringdate(calup);
+		Rapport rapportFromDB = rapportTest.findRapportByMeasuringdate(calup).get(0);
 		assertNotNull(rapportFromDB);
 
 	}
@@ -140,14 +145,6 @@ public class RapportPersisterTest {
 		rapportlist = rapportTest.findAllRapports();
 		assertTrue(rapportlist.size() == 1);
 
-	}
-	
-	@Test
-	public void testFindByRapportid() {
-
-		Integer id = 0;
-
-		assertTrue(rapportTest.findRapportByRapportid(id).getComments() == "Kein Kommentar");
 	}
 	
 	@Test
@@ -170,24 +167,25 @@ public class RapportPersisterTest {
 	public static List<Rapport> init() throws Exception {
 
 		RapportPersisterTest.deleteAll();
-		TownData.loadTownData("resources/ZIP.txt");
-		Testdata.loadTestdata();
 		
 		ControltypePersister ct = new ControltypePersisterImpl();
-		Controltype controltype1 = ct.findControltypeByControltypeid(0);
-		Controltype controltype2 = ct.findControltypeByControltypeid(1);
+		Controltype controltype1 = ct.findControltypeByName("Abnahmekontrolle");
+		Controltype controltype2 = ct.findControltypeByName("Routinekontrolle");
 		
 		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
-		Customerheater customerheater1 = ch.findCustomerheaterByCustomerheaterid(0);
-		Customerheater customerheater2 = ch.findCustomerheaterByCustomerheaterid(1);
+		Customerheater customerheater1 = ch.findCustomerheaterByPerformance(200).get(0);
+		Customerheater customerheater2 = ch.findCustomerheaterByPerformance(78).get(0);
 
 		UserPersister us = new UserPersisterImpl();
-		Users user1 = us.findUserByUserid(1);
-		Users user2 = us.findUserByUserid(1);
+		Users user1 = us.findUserByLastname("Nachname").get(0);
+		Users user2 = us.findUserByLastname("Lastname").get(0);
+		
+		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
+		GregorianCalendar date4 = new GregorianCalendar(2016, 05, 16, 10, 0);
 		
 		AppointmentPersister ap = new AppointmentPersisterImpl();
-		Appointment appointment1 = ap.findAppointmentByAppointmentid(0);
-		Appointment appointment2 = ap.findAppointmentByAppointmentid(1);
+		Appointment appointment1 = ap.findAppointmentByAppointmentdate(date2).get(0);
+		Appointment appointment2 = ap.findAppointmentByAppointmentdate(date4).get(0);
 	
 		GregorianCalendar cal1 = new GregorianCalendar(2016, 3, 3);
 		GregorianCalendar cal2 = new GregorianCalendar(2016, 1, 4);
