@@ -5,11 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
 public class ControllerViewAdministrator {
@@ -21,7 +21,7 @@ public class ControllerViewAdministrator {
     private MenuBar mBar;
 
     @FXML
-    private Menu calenderMenuBar;
+    private MenuItem calendarMenuBar;
     
     @FXML
     private MenuItem closeWelcome;
@@ -183,8 +183,17 @@ public class ControllerViewAdministrator {
     }
 
     @FXML
-    void ActionCalenderMenuBar(ActionEvent event) {
+    void ActionCalendarMenuBar(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
+			mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML

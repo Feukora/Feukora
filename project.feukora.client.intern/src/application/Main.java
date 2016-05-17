@@ -14,7 +14,7 @@ public class Main extends Application {
 		primaryStage.setTitle("Feukora");
 
 		try {
-			final  Pane root =  FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+			final  Pane root =  FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();
