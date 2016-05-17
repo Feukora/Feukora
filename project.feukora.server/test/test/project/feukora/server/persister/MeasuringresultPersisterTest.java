@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Customer;
@@ -21,6 +22,7 @@ import projekt.feukora.server.persister.MeasuringresultPersister;
 import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
 import projekt.feukora.server.persister.RapportPersister;
 import projekt.feukora.server.persister.RapportPersisterImpl;
+import projekt.feukora.server.persister.TownData;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
@@ -29,6 +31,12 @@ public class MeasuringresultPersisterTest {
 
 	private static MeasuringresultPersisterImpl measuringresultTest = new MeasuringresultPersisterImpl();
 
+	@BeforeClass
+	public static void start() throws Exception {
+		TownData.loadTownData("resources/ZIP.txt");
+		TestdataMeasuringresult.loadTestdata();
+	}
+	
 	@Before
 	public void setUp() throws Exception {
 		MeasuringresultPersisterTest.init();
@@ -44,53 +52,16 @@ public class MeasuringresultPersisterTest {
 		List<Measuringresult> measuringresultlist = measuringresultTest.findAllMeasuringresult();
 		assertTrue(measuringresultlist.size() == 2);
 		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
 		RapportPersister rp = new RapportPersisterImpl();
-		Rapport id = rp.findRapportByRapportid(0);
+		Rapport rapport1 = rp.findRapportByResults(false).get(0);
 
-		Measuringresult mr = new Measuringresult();
-
+		Measuringresult mr = new Measuringresult(rapport1, 2, 2, 45, 10, true, 5, 34, 44, 6, 5.6, 34.9);
 		measuringresultTest.saveMeasuringresult(mr);
 
 		measuringresultlist = measuringresultTest.findAllMeasuringresult();
 		assertTrue(measuringresultlist.size() == 3);
 
 	}
-	
-	// Nach Absprache mit Team, lassen wir die testUpdate() Methode weg
-	/*@Test
-	public void testUpdate() throws Exception {
-
-		List<Measuringresult> measuringresultlist = measuringresultTest.findAllMeasuringresult();
-		assertTrue(measuringresultlist.size() == 2);
-		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		
-		//TownPersister tp = new TownPersisterImpl();
-		//Town plz = tp.findbyTownzip(6000);
-		
-		//CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
-		//Customerfunction function = cf.findCustomerfunctionByCustomerfunctionid(1);
-		
-
-		Measuringresult mr = new Measuringresult();
-
-		measuringresultTest.saveMeasuringresult(mr);
-
-		measuringresultlist = measuringresultTest.findAllMeasuringresult();
-		assertTrue(measuringresultlist.size() == 3);
-
-		mr.setCarbonmonoxide(3);
-
-		measuringresultTest.updateMeasuringresult(mr);
-
-		//Measuringresult measuringresultFromDB = measuringresultTest.findMeasuringresultByMeasuringresultid("Irrub",
-		//		"Pascal").get(0);
-		Measuringresult measuringresultFromDB = measuringresultTest.findMeasuringresultByMeasuringresultid(1).get(0);
-		assertNotNull(measuringresultFromDB);
-
-	}
-	*/
 
 	@Test
 	public void testDelete() throws Exception {
@@ -104,27 +75,17 @@ public class MeasuringresultPersisterTest {
 		assertTrue(measuringresultlist.size() == 1);
 
 	}
-	//Ab hier müsst ihr das testen, was ihr in den NamedQueries hingeschrieben habt
-	@Test
-	public void testFindByMeasuringresultid() {
 
-		//String lastname = "Fasser";
-		int measuringresultid = 1;
-
-		assertTrue(measuringresultTest.findMeasuringresultByMeasuringresultid(measuringresultid).equals(1));
-	}
-
-	//Das brauchen wieder alle
 	public static List<Measuringresult> init() throws Exception {
 
 		MeasuringresultPersisterTest.deleteAll();
 		
 		RapportPersister rp = new RapportPersisterImpl();
-		Rapport rapport1 = rp.findRapportByRapportid(0);
-		Rapport rapport2 = rp.findRapportByRapportid(1);
+		Rapport rapport1 = rp.findRapportByResults(false).get(0);
+		Rapport rapport2 = rp.findRapportByResults(true).get(0);
 
-		Measuringresult mr1 = new Measuringresult();
-		Measuringresult mr2 = new Measuringresult();
+		Measuringresult mr1 = new Measuringresult(rapport1, 1, 2, 45, 10, true, 5, 34, 44, 6, 5.6, 12.8);
+		Measuringresult mr2 = new Measuringresult(rapport2, 2, 1, 23, 18, false, 7, 23, 55, 9, 7.1, 15.7);
 
 		measuringresultTest.saveMeasuringresult(mr1);
 		measuringresultTest.saveMeasuringresult(mr2);
