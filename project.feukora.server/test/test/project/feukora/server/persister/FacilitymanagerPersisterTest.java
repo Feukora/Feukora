@@ -40,7 +40,7 @@ public class FacilitymanagerPersisterTest {
 		List<Facilitymanager> facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
 		assertTrue(facilitymanagerlist.size() == 2);
 
-		Facilitymanager fm = new Facilitymanager("Hauswart", "Werner", "12345678", "hauswart@hauswart.ch");
+		Facilitymanager fm = new Facilitymanager("Hauswart", "Werner");
 
 		facilitymanagerTest.saveFacilitymanager(fm);
 
@@ -55,7 +55,7 @@ public class FacilitymanagerPersisterTest {
 		List<Facilitymanager> facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
 		assertTrue(facilitymanagerlist.size() == 2);
 		
-		Facilitymanager fm = new Facilitymanager("Burri", "Pascal", "98765432", "pascal@burri.ch");
+		Facilitymanager fm = new Facilitymanager("Burri", "Pascal");
 
 		facilitymanagerTest.saveFacilitymanager(fm);
 
@@ -105,8 +105,8 @@ public class FacilitymanagerPersisterTest {
 		FacilitymanagerPersisterTest.deleteAll();
 		
 
-		Facilitymanager fm1 = new Facilitymanager("Fasser", "Sandro", "565656565", "sandro@fasser.ch");
-		Facilitymanager fm2 = new Facilitymanager("Blessing", "Allan", "123456", "allan@blessing.ch");
+		Facilitymanager fm1 = new Facilitymanager("Fasser", "Sandro");
+		Facilitymanager fm2 = new Facilitymanager("Blessing", "Allan");
 
 		facilitymanagerTest.saveFacilitymanager(fm1);
 		facilitymanagerTest.saveFacilitymanager(fm2);
