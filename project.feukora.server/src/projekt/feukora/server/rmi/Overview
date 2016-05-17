@@ -1,7 +1,7 @@
-AppointmentRMI					Version 1.x on 16.05.2016 at xx:xx by Sandro
-											
-AppointmentRMIImpl				Version 1.x on 16.05.2016 at xx:xx by Sandro
-											
+AppointmentRMI					Version 1.1 on 17.05.2016 at 07:07 by Sandro
+											-	
+AppointmentRMIImpl				Version 1.1 on 17.05.2016 at 07:07 by Sandro
+											Fix Serialversion UID, Letzte Methode falsch
 BlowerRMI							Version 1.1 on 16.05.2016 at 13:56 by Sandro
 											-
 BlowerRMIImpl						Version 1.1 on 16.05.2016 at 13:56 by Sandro

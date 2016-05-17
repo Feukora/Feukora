@@ -2,82 +2,67 @@ package projekt.feukora.server.rmi;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-
-import projekt.feukora.server.business.CustomerManager;
-import projekt.feukora.server.business.CustomerManagerImpl;
-import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.persister.GenericPersisterImpl;
-import projekt.feukora.server.persister.JpaUtil;
+import projekt.feukora.server.business.AppointmentManager;
+import projekt.feukora.server.business.AppointmentManagerImpl;
+import projekt.feukora.server.model.Appointment;
 
 /**
- *  This Class implements the methods of the interface CustomerRMI
- * @author Sandro Fasser
+ *  This Class implements the methods of the interface AppointmentRMI
+ *  
+ * @author Allan Blessing
  * @version 1.0
  */
-public class AppointmentRMIImpl extends UnicastRemoteObject implements CustomerRMI {
+public class AppointmentRMIImpl extends UnicastRemoteObject implements AppointmentRMI {
 
-	private static final long serialVersionUID = 724994631535546964L;
 	
-	private CustomerManager customerManager;
+	private static final long serialVersionUID = -1675223100958250005L;
+	/**
+	 * 
+	 */
+	private AppointmentManager appointmentManager;
 
 	public AppointmentRMIImpl() throws RemoteException {
-		customerManager = new CustomerManagerImpl();
+		appointmentManager = new AppointmentManagerImpl();
+	}
+	
+	/**
+	 * 
+	 */
+	@Override
+	public void saveAppointment(Appointment entity) throws RemoteException, Exception {
+		appointmentManager.saveAppointment(entity);	
 	}
 
 	@Override
-	public void saveCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.saveCustomer(entity);	
+	public Appointment updateAppointment(Appointment entity) throws RemoteException, Exception {
+		return appointmentManager.updateAppointment(entity);
 	}
 
 	@Override
-	public Customer updateCustomer(Customer entity) throws RemoteException, Exception {
-		return customerManager.updateCustomer(entity);
+	public void deleteAppointment(Appointment entity) throws RemoteException, Exception {
+		appointmentManager.deleteAppointment(entity);
 	}
 
 	@Override
-	public void deleteCustomer(Customer entity) throws RemoteException, Exception {
-		customerManager.deleteCustomer(entity);
+	public void deleteAppointmentByAppointmentid(Integer appointmentid) throws RemoteException, Exception {
+		appointmentManager.deleteAppointmentByAppointmentid(appointmentid);	
 	}
 
 	@Override
-	public void deleteCustomerByCustomerid(Integer customerid) throws RemoteException, Exception {
-		customerManager.deleteCustomerByCustomerid(customerid);	
+	public Appointment findAppointmentByAppointmentid(Integer appointmentid) throws RemoteException {
+		return appointmentManager.findAppointmentByAppointmentid(appointmentid);
 	}
 
 	@Override
-	public Customer findCustomerByCustomerid(Integer customerid) throws RemoteException {
-		return customerManager.findCustomerByCustomerid(customerid);
+	public List<Appointment> findAllAppointments() throws RemoteException {
+		return appointmentManager.findAllAppointments();
 	}
 
 	@Override
-	public List<Customer> findAllCustomers() throws RemoteException {
-		return customerManager.findAllCustomers();
+	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate) throws RemoteException {
+		return appointmentManager.findAppointmentByAppointmentdate(appointmentdate);
 	}
-
-	@Override
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException  {
-		return customerManager.findCustomerByLastname(lastname);
-	}
-
-	@Override
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException {
-		return customerManager.findCustomerByFirstname(firstname);	
-	}
-
-	@Override
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException  {
-		return customerManager.findCustomerByLastnameAndFirstname(lastname, firstname);
-	}
-
-	@Override
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException  {
-		return customerManager.findCustomerByCompanyname(companyname);
-	} 
-
-
 }
