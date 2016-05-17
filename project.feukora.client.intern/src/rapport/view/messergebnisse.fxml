@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="320.0" layoutY="80.0">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="364.0" layoutY="253.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
+      <Button layoutX="647.0" layoutY="581.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" text="Weiter &gt;" />
+      <Label layoutX="32.0" layoutY="80.0" prefHeight="40.0" prefWidth="216.0" text="Messergebnisse">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
