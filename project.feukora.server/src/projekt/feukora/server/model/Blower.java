@@ -28,9 +28,9 @@ public class Blower implements Serializable {
 	@GeneratedValue
 	private int blowerid;
 	@ManyToOne
-	private Blowertype fi_blowertypeid;
+	private Blowertype blowertypeid;
 	@ManyToOne
-	private Fuel fi_fuelid;
+	private Fuel fuelid;
 	private String name;
 	
 	/**
@@ -42,13 +42,13 @@ public class Blower implements Serializable {
 	 /**
 	  * Blower constructor
 	  * 
-	  * @param fi_blowertypeid
-	  * @param fi_fuelid
+	  * @param blowertypeid
+	  * @param fuelid
 	  * @param name
 	  */
-	public Blower(Blowertype fi_blowertypeid, Fuel fi_fuelid, String name){
-		this.fi_blowertypeid = fi_blowertypeid;
-		this.fi_fuelid = fi_fuelid;
+	public Blower(Blowertype blowertypeid, Fuel fuelid, String name){
+		this.blowertypeid = blowertypeid;
+		this.fuelid = fuelid;
 		this.name = name;
 		
 	}
