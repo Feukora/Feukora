@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="mainRoot" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerViewAssistant">
+   <top>
+      <MenuBar fx:id="mBar" prefHeight="50.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Datei">
+               <items>
+                  <MenuItem fx:id="loginWelcome" mnemonicParsing="false" onAction="#ActionLoginMenuBar" text="Login" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu fx:id="calenderMenuBar" mnemonicParsing="false" onAction="#ActionCalenderMenuBar" text="Terminkalender">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Feurungskontrolleur">
+               <items>
+                  <MenuItem fx:id="inspectorMenuBar" mnemonicParsing="false" onAction="#ActionInspectorMenuBar" text="Übersicht" />
+                  <MenuItem fx:id="inspectorNewMenuItem" mnemonicParsing="false" onAction="#ActionInspectorNewMenuItem" text="Neu" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Kunde">
+               <items>
+                  <MenuItem fx:id="customerMenuBar" mnemonicParsing="false" onAction="#ActionCustomerMenuBar" text="Übersicht" />
+                  <MenuItem fx:id="customerNewMenuItem" mnemonicParsing="false" onAction="#ActionCustomerNewMenuItem" text="Neu" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Brenner">
+
+               <items>
+                  <MenuItem fx:id="blowerMenuBar" mnemonicParsing="false" onAction="#ActionBlowerMenuBar" text="Übersicht" />
+                  <MenuItem fx:id="blowerNewMenuItem" mnemonicParsing="false" onAction="#ActionBlowerNewMenuItem" text="Neu" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Heizkörper">
+              
+               <items>
+                  <MenuItem fx:id="heaterMenuBar" mnemonicParsing="false" onAction="#ActionHeaterMenuBar" text="Übersicht" />
+                  <MenuItem fx:id="heaterNewMenuItem" mnemonicParsing="false" onAction="#ActionHeaterNewMenuItem" text="Neu" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Rapporte">
+               <items>
+                  <MenuItem fx:id="rapportMenuBar" mnemonicParsing="false" onAction="#ActionRapportMenuBar" text="Übersicht" />
+                  <MenuItem fx:id="rapportNewMenuItem" mnemonicParsing="false" onAction="#ActionRapportNewMenuItem" text="Neu" />
+               </items></Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="exitWelcome" layoutX="799.0" layoutY="430.0" mnemonicParsing="false" onAction="#ActionExitWelcome" prefHeight="40.0" prefWidth="140.0" text="Exit" />
+            <HBox layoutX="150.0" layoutY="216.0" prefHeight="131.0" prefWidth="858.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0">
+               <children>
+                  <VBox prefHeight="131.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="inspectorWelcome" mnemonicParsing="false" onAction="#ActionInspectorWelcome" prefHeight="40.0" prefWidth="200.0" text="Feurungskontrolleur">
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </Button>
+                        <MenuButton mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Kalender">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Action 1" />
+                              <MenuItem mnemonicParsing="false" text="Action 2" />
+                           </items>
+                        </MenuButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="150.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="131.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="customerWelcome" mnemonicParsing="false" onAction="#ActionCustomerWelcome" prefHeight="40.0" prefWidth="200.0" text="Kunde">
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="rapportWelcome" mnemonicParsing="false" onAction="#ActionRapportWelcome" prefHeight="40.0" prefWidth="200.0" text="Rapporte" />
+                     </children>
+                     <HBox.margin>
+                        <Insets right="150.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="131.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="heaterWelcome" mnemonicParsing="false" onAction="#ActionHeaterWelcome" prefHeight="40.0" prefWidth="200.0" text="Heizkörper">
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="blowerWelcome" mnemonicParsing="false" onAction="#ActionBlowerWelcome" prefHeight="40.0" prefWidth="200.0" text="Brenner" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label layoutX="450.0" layoutY="89.0" prefHeight="40.0" prefWidth="200.0" text="Welcome">
+               <font>
+                  <Font name="Arabic Typesetting" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

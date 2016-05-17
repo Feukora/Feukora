@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="320.0" layoutY="80.0">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Button layoutX="32.0" layoutY="727.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" text="&lt; Zurück" />
+      <Label layoutX="32.0" layoutY="88.0" prefHeight="40.0" prefWidth="179.0" text="Beurteilung">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <CheckBox layoutX="32.0" layoutY="141.0" mnemonicParsing="false" text="Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+      <CheckBox layoutX="32.0" layoutY="183.0" mnemonicParsing="false" text="Die Anlage wird beanstandet wegen Überschreitung von:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+      <CheckBox layoutX="107.0" layoutY="223.0" mnemonicParsing="false" text="Russzahl">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+      <CheckBox layoutX="238.0" layoutY="223.0" mnemonicParsing="false" text="Ölanteilen">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+      <CheckBox layoutX="381.0" layoutY="223.0" mnemonicParsing="false" text="CO in mg/m³">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+      <CheckBox layoutX="548.0" layoutY="223.0" mnemonicParsing="false" text="NO2 in mg/m³">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+      <CheckBox layoutX="725.0" layoutY="223.0" mnemonicParsing="false" text="Abgasverluste">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="32.0" layoutY="296.0" prefHeight="40.0" prefWidth="267.0" text="Weiteres Vorgehen">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <CheckBox layoutX="32.0" layoutY="345.0" mnemonicParsing="false" text="Die Anlage muss innert 30 Tagen einreguliert werden. Die erfolgte Einregulierung ist durch den">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+      <CheckBox layoutX="32.0" layoutY="409.0" mnemonicParsing="false" text="Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+      <Text layoutX="72.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brennmonteur mit der beiliegenden Rükmeldekarte zu bestätigen." wrappingWidth="709.80078125">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Label layoutX="32.0" layoutY="482.0" prefHeight="40.0" prefWidth="206.0" text="Bemerkungen">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <TextField layoutX="32.0" layoutY="522.0" prefHeight="51.0" prefWidth="910.0" />
+      <Label layoutX="32.0" layoutY="589.0" prefHeight="40.0" prefWidth="567.0" text="Unterschrift des ausführenden Kontrolleur">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <TextField layoutX="32.0" layoutY="629.0" prefHeight="51.0" prefWidth="558.0" />
+      <Label layoutX="631.0" layoutY="589.0" prefHeight="40.0" prefWidth="206.0" text="Pers. Code">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <TextField layoutX="633.0" layoutY="629.0" />
+      <Text layoutX="220.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Bei Abnahmemessungen muss die Zulassungsnummer in diesem Feld eingetragen werden)" wrappingWidth="729.8007798194885">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
