@@ -19,20 +19,21 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries ({
-	@NamedQuery(name = "Customerheater.findByCustomerheaterid", query = "SELECT ch FROM Customerheater ch WHERE ch.customerheaterid=:customerheaterid")})
+	@NamedQuery(name = "Customerheater.findByCustomerheaterid", query = "SELECT ch FROM Customerheater ch WHERE ch.customerheaterid=:customerheaterid"),
+	@NamedQuery(name = "Customerheater.findByPerformance", query = "SELECT ch FROM Customerheater ch WHERE ch.performance=:performance")})
 public class Customerheater implements Serializable{
 	
 	@Id
 	@GeneratedValue
 	private int customerheaterid;
 	@ManyToOne
-	private Customer fi_customerid;
+	private Customer customerid;
 	@ManyToOne
-	private Heater fi_heaterid;
+	private Heater heaterid;
 	@ManyToOne
-	private Blower fi_blowerid;
+	private Blower blowerid;
 	@ManyToOne
-	private Facilitymanager fi_facilitymanagerid;
+	private Facilitymanager facilitymanagerid;
 	private int bloweryear;
 	private int heateryear;
 	private int performance;
@@ -46,20 +47,20 @@ public class Customerheater implements Serializable{
 	/**
 	 * Customerheater constructor
 	 * 
-	 * @param fi_customerid
-	 * @param fi_heaterid
-	 * @param fi_blowerid
-	 * @param fi_facilitymanagerid
+	 * @param customerid
+	 * @param heaterid
+	 * @param blowerid
+	 * @param facilitymanagerid
 	 * @param bloweryear
 	 * @param heateryear
 	 * @param performance
 	 */
 	
-	public Customerheater(Customer fi_customerid, Heater fi_heaterid, Blower fi_blowerid, Facilitymanager fi_facilitymanagerid, int bloweryear, int heateryear, int performance) {
-		this.fi_customerid = fi_customerid;
-		this.fi_heaterid = fi_heaterid;
-		this.fi_blowerid = fi_blowerid;
-		this.fi_facilitymanagerid = fi_facilitymanagerid;
+	public Customerheater(Customer customerid, Heater heaterid, Blower blowerid, Facilitymanager facilitymanagerid, int bloweryear, int heateryear, int performance) {
+		this.customerid = customerid;
+		this.heaterid = heaterid;
+		this.blowerid = blowerid;
+		this.facilitymanagerid = facilitymanagerid;
 		this.bloweryear = bloweryear;
 		this.heateryear = heateryear;
 		this.performance = performance;

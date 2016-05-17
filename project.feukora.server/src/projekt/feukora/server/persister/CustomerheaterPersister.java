@@ -2,6 +2,7 @@ package projekt.feukora.server.persister;
 
 import java.util.List;
 
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 
 /**
@@ -59,4 +60,13 @@ public interface CustomerheaterPersister {
 	 * @return List with all Customerheaters
 	 */
 	List<Customerheater> findAllCustomerheaters();
+	
+	/**
+	 * 
+	 * Return the entity with this performance
+	 * 
+	 * @param performance
+	 * @return List with Customereaters
+	 */
+	public List<Customerheater> findCustomerheaterByPerformance(Integer performance);
 }

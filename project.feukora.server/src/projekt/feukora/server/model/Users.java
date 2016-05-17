@@ -29,14 +29,14 @@ public class Users implements Serializable {
 	@GeneratedValue
 	private int userid;
 	@ManyToOne
-	private Usergroup fi_usergroupid;
+	private Usergroup usergroupid;
 	private String lastname;
 	private String firstname;
 	private String adress;
 	@ManyToOne
-	private Town fi_zip;
+	private Town zip;
 	@ManyToOne
-	private Company fi_companyid;
+	private Company companyid;
 	private String username;
 	private String password;
 	private String phone;
@@ -53,24 +53,24 @@ public class Users implements Serializable {
 	/**
 	 * Users Constructor
 	 * 
-	 * @param fi_usergroupid
+	 * @param usergroupid
 	 * @param lastname
 	 * @param firstname
 	 * @param adress
-	 * @param fi_zip
-	 * @param fi_companyid
+	 * @param zip
+	 * @param companyid
 	 * @param username
 	 * @param password
 	 * @param phone
 	 * @param email
 	 */
-	public Users(Usergroup fi_usergroupid, String lastname, String firstname,String adress,Town fi_zip,Company fi_companyid,String username, String password,String phone, String email) {
-		this.fi_usergroupid = fi_usergroupid;
+	public Users(Usergroup usergroupid, String lastname, String firstname,String adress,Town zip,Company companyid,String username, String password,String phone, String email) {
+		this.usergroupid = usergroupid;
 		this.lastname = lastname;
 		this.firstname = firstname;
 		this.adress = adress;
-		this.fi_zip = fi_zip;
-		this.fi_companyid = fi_companyid;
+		this.zip = zip;
+		this.companyid = companyid;
 		this.username = username;
 		this.password = password;
 		this.phone = phone;

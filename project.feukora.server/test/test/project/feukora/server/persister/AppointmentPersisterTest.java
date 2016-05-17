@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Appointment;
@@ -22,6 +23,7 @@ import projekt.feukora.server.persister.CustomerfunctionPersister;
 import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
 import projekt.feukora.server.persister.CustomerheaterPersister;
 import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
+import projekt.feukora.server.persister.TownData;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 import projekt.feukora.server.persister.UserPersister;
@@ -32,6 +34,12 @@ public class AppointmentPersisterTest {
 
 	private static AppointmentPersisterImpl appointmentTest = new AppointmentPersisterImpl();
 
+	@BeforeClass
+	public static void start() throws Exception {
+		TownData.loadTownData("resources/ZIP.txt");
+		TestdataAppointment.loadTestdata();
+	}
+	
 	@Before
 	public void setUp() throws Exception {
 		AppointmentPersisterTest.init();
@@ -47,24 +55,18 @@ public class AppointmentPersisterTest {
 		List<Appointment> appointmentlist = appointmentTest.findAllAppointments();
 		assertTrue(appointmentlist.size() == 2);
 		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		// fi_costumerheaterid 
-		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
-		ch.findCustomerheaterByCustomerheaterid(null);
+		CustomerheaterPersister chp = new CustomerheaterPersisterImpl();
+		Customerheater ch = chp.findCustomerheaterByPerformance(200).get(0);
 		
-		// Users fi_userid 
-		UserPersister usid = new UserPersisterImpl();
-		usid.findUserByUserid(null);
+		UserPersister up = new UserPersisterImpl();
+		Users user = up.findUserByLastname("Nachname").get(0);
 
-		//nicht fertig
-		Appointment a = new Appointment(ch, usid, usid, GregorianCalendar created,
-				GregorianCalendar appointmentdate, "Kommentar");
-
+		Appointment a = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 13, 8, 0),
+				new GregorianCalendar(2016, 05, 14, 13, 0), "Neuer Termin");
+		
 		appointmentTest.saveAppointment(a);
 
-		// weiss nicht was machen
 		appointmentlist = appointmentTest.findAllAppointments();
-		for (Appointment appointment : appointmentlist)
 		assertTrue(appointmentlist.size() == 3);
 
 	}
@@ -75,31 +77,21 @@ public class AppointmentPersisterTest {
 		List<Appointment> appointmentlist = appointmentTest.findAllAppointments();
 		assertTrue(appointmentlist.size() == 2);
 		
-		// Die nächsten vier Zeilen braucht es nur, wenn ihr im Konstruktor Objekte von anderen Tabellen habt
-		// fi_costumerheaterid 
-		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
-		ch.findCustomerheaterByCustomerheaterid(null);
+		CustomerheaterPersister chp = new CustomerheaterPersisterImpl();
+		Customerheater ch = chp.findCustomerheaterByPerformance(200).get(0);
 		
-		// Users fi_userid 
-		UserPersister usid = new UserPersisterImpl();
-		usid.findUserByUserid(null);
+		UserPersister up = new UserPersisterImpl();
+		Users user = up.findUserByLastname("Nachname").get(0);
 
-		//nicht fertig
-		Appointment a = new Appointment(ch, usid, usid, GregorianCalendar created,
-				GregorianCalendar appointmentdate, "Kommentar");
+		Appointment a = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 13, 8, 0),
+				new GregorianCalendar(2016, 05, 13, 8, 0), "Update Test");
 
-		appointmentTest.updateAppointment(a);
-
-		// weiss nicht was machen
 		appointmentlist = appointmentTest.findAllAppointments();
 		assertTrue(appointmentlist.size() == 3);
+		
+		a.setComments("Ganz neuer Kommentar");
 
 		appointmentTest.updateAppointment(a);
-
-		Appointment appointmentFromDB = appointmentTest.deleteAppointmentByAppointmentid
-				(appointmentid).get(0);
-		assertNotNull(appointmentFromDB);
-
 	}
 
 	@Test
@@ -115,32 +107,28 @@ public class AppointmentPersisterTest {
 
 	}
 	
-	// "Appointment.findByAppointmentdate" ist der Query (ID Query nicht gemacht)
 	@Test
 	public void testFindByAppointmentdate() {
 
-		GregorianCalendar appointmentdate;
-		// Gregorian Kalender reinholen
-		assertTrue(appointmentTest.findAppointmentByAppointmentdate(appointmentdate.size() == 1);
-	}
+		GregorianCalendar appointmentdate = new GregorianCalendar(2016, 05, 13, 8, 0);
+		
+		assertTrue(appointmentTest.findAppointmentByAppointmentdate(appointmentdate).size() == 1);
+	}	
 
-	//Das brauchen wieder alle
 	public static List<Appointment> init() throws Exception {
 
 		AppointmentPersisterTest.deleteAll();
 		
-		// fi_costumerheaterid 
-		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
-		ch.findCustomerheaterByCustomerheaterid(null);
+		CustomerheaterPersister chp = new CustomerheaterPersisterImpl();
+		Customerheater ch = chp.findCustomerheaterByPerformance(200).get(0);
 		
-		// Users fi_userid 
-		UserPersister usid = new UserPersisterImpl();
-		usid.findUserByUserid(null);
+		UserPersister up = new UserPersisterImpl();
+		Users user = up.findUserByLastname("Nachname").get(0);
 
-		Appointment a1 = new Appointment(ch, usid, usid, GregorianCalendar created,
-				GregorianCalendar appointmentdate, "Kommentar");
-		Appointment a2 = new Appointment(ch, usid, usid, GregorianCalendar created,
-				GregorianCalendar appointmentdate, "Kommentar");
+		Appointment a1 = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 13, 8, 0),
+				new GregorianCalendar(2016, 05, 13, 8, 0), "Kommentar");
+		Appointment a2 = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 16, 10, 0),
+				new GregorianCalendar(2016, 05, 16, 10, 0), "Kein Kommentar");
 
 		appointmentTest.saveAppointment(a1);
 		appointmentTest.saveAppointment(a2);

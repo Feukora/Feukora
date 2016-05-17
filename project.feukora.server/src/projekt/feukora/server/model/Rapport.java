@@ -32,13 +32,13 @@ public class Rapport implements Serializable {
 	@GeneratedValue 
 	private int rapportid;
 	@ManyToOne
-	private Controltype fi_controltypeid;
+	private Controltype controltypeid;
 	@ManyToOne
-	private Customerheater fi_customerheaterid;
+	private Customerheater customerheaterid;
 	@ManyToOne
-	private Users fi_userid;
+	private Users userid;
 	@ManyToOne
-	private Appointment fi_appointmentid;
+	private Appointment appointmentid;
 	@Temporal (TemporalType.TIMESTAMP)
 	private GregorianCalendar measuringdate;
 	private Boolean results;
@@ -61,10 +61,10 @@ public class Rapport implements Serializable {
 	 * 
 	 * Rapport Constructor
 	 * 
-	 * @param fi_controltypeid
-	 * @param fi_customerheaterid
-	 * @param fi_userid
-	 * @param fi_appointmentid
+	 * @param controltypeid
+	 * @param customerheaterid
+	 * @param userid
+	 * @param appointmentid
 	 * @param measuringdate
 	 * @param results
 	 * @param additionalsteps
@@ -75,11 +75,11 @@ public class Rapport implements Serializable {
 	 * @param nitrogendioxide
 	 * @param carbonmonoxide
 	 */
-	public Rapport(Controltype fi_controltypeid, Customerheater fi_customerheaterid, Users fi_userid, Appointment fi_appointmentid, GregorianCalendar measuringdate, Boolean results, Boolean additionalsteps, String comments, Boolean transgression_smokenumber, Boolean transgression_oilpart, Boolean exhaustgaslost, Boolean nitrogendioxide, Boolean carbonmonoxide){
-		this.fi_controltypeid = fi_controltypeid;
-		this.fi_customerheaterid = fi_customerheaterid;
-		this.fi_userid = fi_userid;
-		this.fi_appointmentid = fi_appointmentid;
+	public Rapport(Controltype controltypeid, Customerheater customerheaterid, Users userid, Appointment appointmentid, GregorianCalendar measuringdate, Boolean results, Boolean additionalsteps, String comments, Boolean transgression_smokenumber, Boolean transgression_oilpart, Boolean exhaustgaslost, Boolean nitrogendioxide, Boolean carbonmonoxide){
+		this.controltypeid = controltypeid;
+		this.customerheaterid = customerheaterid;
+		this.userid = userid;
+		this.appointmentid = appointmentid;
 		this.measuringdate = measuringdate;
 		this.results = results;
 		this.additionalsteps = additionalsteps;

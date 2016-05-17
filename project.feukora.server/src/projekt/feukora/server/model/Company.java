@@ -31,7 +31,7 @@ public class Company implements Serializable {
 	private String phone;
 	private String email;
 	@ManyToOne
-	private Town fi_zip;
+	private Town zip;
 	
 	/**
 	 * Default constructor
@@ -47,15 +47,15 @@ public class Company implements Serializable {
 	 * @param adress
 	 * @param phone
 	 * @param email
-	 * @param fi_zip
+	 * @param zip
 	 */
 	
-	public Company(String name, String adress,String phone, String email, Town fi_zip){
+	public Company(String name, String adress,String phone, String email, Town zip){
 		this.name = name;
 		this.adress = adress;
 		this.phone = phone;
 		this.email = email;
-		this.fi_zip = fi_zip;
+		this.zip = zip;
 	}
 
 

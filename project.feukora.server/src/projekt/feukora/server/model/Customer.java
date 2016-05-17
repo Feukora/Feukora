@@ -32,7 +32,7 @@ public class Customer implements Serializable{
 	@GeneratedValue
 	private int customerid;
 	@ManyToOne
-	private Customerfunction fi_customerfunctionid;
+	private Customerfunction customerfunctionid;
 	private String companyname;
 	private String firstname;
 	private String lastname;
@@ -40,7 +40,7 @@ public class Customer implements Serializable{
 	private String phone;
 	private String email;
 	@ManyToOne
-	private Town fi_zip;
+	private Town zip;
 	 
 	/**
 	 * Default constructor
@@ -58,18 +58,18 @@ public class Customer implements Serializable{
 	 * @param adress
 	 * @param phone
 	 * @param email
-	 * @param fi_customerfunctionid
-	 * @param fi_zip
+	 * @param customerfunctionid
+	 * @param zip
 	 */
-	public Customer (String companyname, String firstname, String lastname, String adress, String phone, String email, Customerfunction fi_customerfunctionid, Town fi_zip) {
+	public Customer (String companyname, String firstname, String lastname, String adress, String phone, String email, Customerfunction customerfunctionid, Town zip) {
 		this.companyname = companyname;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.adress = adress;
 		this.phone = phone;
 		this.email = email;
-		this.fi_customerfunctionid = fi_customerfunctionid;
-		this.fi_zip = fi_zip;
+		this.customerfunctionid = customerfunctionid;
+		this.zip = zip;
 	}
 
 	public Integer getCustomerid() {
