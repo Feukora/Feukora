@@ -85,6 +85,8 @@ public class AppointmentPersisterTest {
 
 		Appointment a = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 13, 8, 0),
 				new GregorianCalendar(2016, 05, 13, 8, 0), "Update Test");
+		
+		appointmentTest.saveAppointment(a);
 
 		appointmentlist = appointmentTest.findAllAppointments();
 		assertTrue(appointmentlist.size() == 3);
@@ -124,11 +126,14 @@ public class AppointmentPersisterTest {
 		
 		UserPersister up = new UserPersisterImpl();
 		Users user = up.findUserByLastname("Nachname").get(0);
+		
+		GregorianCalendar date1 = new GregorianCalendar(2016, 05, 13, 8, 0);
+		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
+		GregorianCalendar date3 = new GregorianCalendar(2016, 05, 16, 10, 0);
+		GregorianCalendar date4 = new GregorianCalendar(2016, 05, 16, 10, 0);
 
-		Appointment a1 = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 13, 8, 0),
-				new GregorianCalendar(2016, 05, 13, 8, 0), "Kommentar");
-		Appointment a2 = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 16, 10, 0),
-				new GregorianCalendar(2016, 05, 16, 10, 0), "Kein Kommentar");
+		Appointment a1 = new Appointment(ch, user, user, date1, date2, "Kommentar");
+		Appointment a2 = new Appointment(ch, user, user, date3, date4, "Kein Kommentar");
 
 		appointmentTest.saveAppointment(a1);
 		appointmentTest.saveAppointment(a2);
