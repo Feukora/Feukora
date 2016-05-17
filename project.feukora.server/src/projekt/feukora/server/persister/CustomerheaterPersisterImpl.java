@@ -1,7 +1,12 @@
 package projekt.feukora.server.persister;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 
 /**
@@ -43,5 +48,21 @@ public class CustomerheaterPersisterImpl implements CustomerheaterPersister {
 	@Override
 	public List<Customerheater> findAllCustomerheaters() {
 		return new GenericPersisterImpl<Customerheater>(Customerheater.class).findAll();
+	}
+	
+	@Override
+	public List<Customerheater> findCustomerheaterByPerformance(Integer performance) {
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Customerheater> tQuery = em.createNamedQuery("Customerheater.findByPerformance",
+				Customerheater.class);
+
+		tQuery.setParameter("performance", performance);
+
+		List<Customerheater> customerheaterlist = tQuery.getResultList();
+
+		em.close();
+
+		return customerheaterlist != null ? customerheaterlist : new ArrayList<Customerheater>();
 	}
 }

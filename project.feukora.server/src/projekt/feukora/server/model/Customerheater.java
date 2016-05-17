@@ -19,7 +19,8 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries ({
-	@NamedQuery(name = "Customerheater.findByCustomerheaterid", query = "SELECT ch FROM Customerheater ch WHERE ch.customerheaterid=:customerheaterid")})
+	@NamedQuery(name = "Customerheater.findByCustomerheaterid", query = "SELECT ch FROM Customerheater ch WHERE ch.customerheaterid=:customerheaterid"),
+	@NamedQuery(name = "Customerheater.findByPerformance", query = "SELECT ch FROM Customerheater ch WHERE ch.performance=:performance")})
 public class Customerheater implements Serializable{
 	
 	@Id
