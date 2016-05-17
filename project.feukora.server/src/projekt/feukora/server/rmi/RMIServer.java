@@ -1,11 +1,10 @@
 package projekt.feukora.server.rmi;
 
+
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Properties;

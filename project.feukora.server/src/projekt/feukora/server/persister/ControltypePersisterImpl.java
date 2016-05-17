@@ -1,5 +1,6 @@
 package projekt.feukora.server.persister;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -56,10 +57,10 @@ public class ControltypePersisterImpl implements ControltypePersister {
 
 		tQuery.setParameter("name", name);
 
-		Controltype controltype = new Controltype();
+		List<Controltype> controltypelist = tQuery.getResultList();
 		
 		em.close();
 
-		return controltype;
+		return controltypelist.get(0);
 	}
 }
