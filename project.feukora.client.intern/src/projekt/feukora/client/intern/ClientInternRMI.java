@@ -4,6 +4,8 @@ import java.rmi.Naming;
 
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Customerfunction;
+import projekt.feukora.server.model.Town;
 import projekt.feukora.server.rmi.AppointmentRMI;
 import projekt.feukora.server.rmi.BlowerRMI;
 import projekt.feukora.server.rmi.CompanyRMI;
@@ -78,12 +80,17 @@ public class ClientInternRMI {
 	}
 	
 	/**
-	 * Instantiates a new modulverwaltung client rmi.
+	 * 
 	 *
 	 * @throws Exception
 	 */
 	public void saveCustomer(String lastname, String adress, String phone, Integer zip, String firstname, String email) throws Exception {
-		Customer c1 = new Customer(null, firstname, lastname, adress, phone, email, null, null);
+		Customerfunction function = new Customerfunction("Verwaltung");
+		String companyname = "Firma";
+		Town zipi = new Town("Luzern", "Luzern");
+		
+		
+		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, function, zipi);
 		customerRMI.saveCustomer(c1);
 		
 		

@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
 
 import org.eclipse.persistence.sessions.server.Server;
 
+import test.project.feukora.server.persister.Testdata;
+
 /**
  * This Class starts the RMI-Server on this machine, also it instances Remote Objects, 
  * binds and also unbinds them
@@ -100,6 +102,8 @@ public class RMIServer {
 				registry.unbind(measuringresultRMIName);
 				registry.unbind(rapportRMIName);
 				registry.unbind(userRMIName);
+				
+//				Testdata.loadTestdata();
 
 				System.out.println("RMI Server wird heruntergefahren!\n");
 
