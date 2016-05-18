@@ -45,11 +45,11 @@ public class ControllerLogin {
     		Boolean successfull = feukora.login(username, password);
     		
     		if(successfull == true){
-    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
     		}else{
-    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("login.controller/loginPane.fxml"));
-//    			usernameLoginTextfield.clear();
-//    			passwordLoginTextfield.clear();
+    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
+    			usernameLoginTextfield.clear();
+    			passwordLoginTextfield.clear();
     		}
     		
 			} catch (Exception e) {

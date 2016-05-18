@@ -88,8 +88,7 @@ public class ClientInternRMI {
 	public Boolean login(String username, String password) throws Exception {
 		
 			Users user = userRMI.findUsersByUsername(username).get(0);
-			
-			if(username == user.getUsername() && password == user.getPassword()){
+			if(username.equals(user.getUsername()) && password.equals(user.getPassword())){
 				return true;
 			}else{
 				return false;
