@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.BorderPane;
 
 //singleton
 public class Main extends Application {
@@ -14,7 +14,7 @@ public class Main extends Application {
 		primaryStage.setTitle("Feukora");
 
 		try {
-			final  Pane root =  FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+			final  BorderPane root =  FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();
