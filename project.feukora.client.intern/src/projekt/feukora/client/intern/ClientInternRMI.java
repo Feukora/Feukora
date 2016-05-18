@@ -73,15 +73,6 @@ public class ClientInternRMI {
 		
 	}
 	
-	/**
-	 * Creates a Blower.
-	 *
-	 * @throws Exception
-	 */
-	public void createBlower(t1, t2, t3) throws Exception {
-		
-		Blower newblower = new Blower(t1, t2, t3);
-		this.blowerRMI.saveBlower(newblower);
-	}
+
 	
 }
