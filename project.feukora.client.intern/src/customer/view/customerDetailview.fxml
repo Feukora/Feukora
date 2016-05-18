@@ -56,7 +56,7 @@
             <Label prefHeight="25.0" prefWidth="60.0" text="Email" GridPane.rowIndex="4" />
             <Label prefHeight="25.0" prefWidth="60.0" text="Nummer" GridPane.rowIndex="5" />
             <TextField fx:id="customerNameField" onAction="#ActionCustomerNameField" GridPane.columnIndex="1" />
-            <TextField fx:id="customerFistNameField" onAction="#ActionCustomerFistNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="customerFirstNameField" onAction="#ActionCustomerFirstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="customerAddressField" onAction="#ActionCustomerAddressField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="customerEmailField" onAction="#ActionCustomerEmailField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="customerNumberField" onAction="#ActionCustomerNumberField" GridPane.columnIndex="1" GridPane.rowIndex="5" />

@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Town;
 
 public class ControllerDetailview {
 
@@ -23,7 +25,7 @@ public class ControllerDetailview {
     private TextField customerZipField;
 
     @FXML
-    private TextField customerFistNameField;
+    private TextField customerFirstNameField;
 
     @FXML
     private TextField customerEmailField;
@@ -39,7 +41,7 @@ public class ControllerDetailview {
     }
 
     @FXML
-    void ActionCustomerFistNameField(ActionEvent event) {
+    void ActionCustomerFirstNameField(ActionEvent event) {
 
     }
 
@@ -60,6 +62,22 @@ public class ControllerDetailview {
 
     @FXML
     void ActionDetailviewSaveCustomer(ActionEvent event) {
+    	String lastname = customerNameField.getText();
+    	String adress = customerAddressField.getText();
+    	String phone = customerNumberField.getText();
+    	String plz = customerZipField.getText();
+    	String firstname = customerFirstNameField.getText();
+    	String email = customerEmailField.getText();
+    	Integer zip = Integer.parseInt(plz);
+    	
+    	try {
+			ClientInternRMI feukora = new ClientInternRMI();
+			feukora.saveCustomer(lastname, adress, phone, zip, firstname, email);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
 
     }
 

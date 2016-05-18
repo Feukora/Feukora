@@ -3,6 +3,7 @@ package projekt.feukora.client.intern;
 import java.rmi.Naming;
 
 import projekt.feukora.server.model.Blower;
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.rmi.AppointmentRMI;
 import projekt.feukora.server.rmi.BlowerRMI;
 import projekt.feukora.server.rmi.CompanyRMI;
@@ -31,6 +32,7 @@ public class ClientInternRMI {
 	RapportRMI rapportRMI;
 	UserRMI userRMI;
 
+
 	
 	public static void main(String[] args) {
 		System.out
@@ -51,7 +53,9 @@ public class ClientInternRMI {
 	 */
 	public ClientInternRMI() throws Exception {
 
-
+		System.setProperty("java.security.policy", "feukora.policy");
+		// SecurityManager installieren
+		System.setSecurityManager(new SecurityManager());
 		// init rmi connection
 		String url = "rmi://localhost:9009/";
 		String customerRMIName = "customerRMI";
@@ -73,6 +77,17 @@ public class ClientInternRMI {
 		
 	}
 	
+	/**
+	 * Instantiates a new modulverwaltung client rmi.
+	 *
+	 * @throws Exception
+	 */
+	public void saveCustomer(String lastname, String adress, String phone, Integer zip, String firstname, String email) throws Exception {
+		Customer c1 = new Customer(null, firstname, lastname, adress, phone, email, null, null);
+		customerRMI.saveCustomer(c1);
+		
+		
+	}
 
 	
 }
