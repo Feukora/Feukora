@@ -1,6 +1,8 @@
 package projekt.feukora.client.intern;
 
 import java.rmi.Naming;
+
+import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.rmi.AppointmentRMI;
 import projekt.feukora.server.rmi.BlowerRMI;
 import projekt.feukora.server.rmi.CompanyRMI;
@@ -69,6 +71,17 @@ public class ClientInternRMI {
 		this.rapportRMI = (RapportRMI) Naming.lookup(url + rapportRMIName);
 		this.userRMI = (UserRMI) Naming.lookup(url + userRMIName);
 		
+	}
+	
+	/**
+	 * Creates a Blower.
+	 *
+	 * @throws Exception
+	 */
+	public void createBlower(t1, t2, t3) throws Exception {
+		
+		Blower newblower = new Blower(t1, t2, t3);
+		this.blowerRMI.saveBlower(newblower);
 	}
 	
 }
