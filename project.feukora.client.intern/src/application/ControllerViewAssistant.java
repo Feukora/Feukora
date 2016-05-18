@@ -1,15 +1,10 @@
 package application;
 
-
-
-
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
@@ -33,7 +28,7 @@ public class ControllerViewAssistant {
     private MenuItem closeWelcome;
     
     @FXML
-    private Menu calenderMenuBar;
+    private MenuItem calenderMenuBar;
     
     @FXML
     private MenuItem customerMenuBar;
@@ -183,7 +178,16 @@ public class ControllerViewAssistant {
 
     @FXML
     void ActionCalenderMenuBar(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
+			mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML

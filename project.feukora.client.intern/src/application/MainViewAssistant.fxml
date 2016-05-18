@@ -16,9 +16,9 @@
                   <MenuItem mnemonicParsing="false" text="Close" />
                </items>
             </Menu>
-            <Menu fx:id="calenderMenuBar" mnemonicParsing="false" onAction="#ActionCalenderMenuBar" text="Terminkalender">
+            <Menu  mnemonicParsing="false" text="Terminkalender" >
                <items>
-                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <MenuItem fx:id="calenderMenuBar" mnemonicParsing="false" onAction="#ActionCalenderMenuBar" text="Terminkalender"/>
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Feurungskontrolleur">
