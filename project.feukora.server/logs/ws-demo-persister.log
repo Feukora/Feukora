@@ -4621,3 +4621,89 @@ Caused by: java.lang.IllegalStateException: During synchronization a new object 
 2016-05-17 15:29:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@f03ee8f]  wird gelöscht
 2016-05-17 15:29:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Rapport [projekt.feukora.server.model.Rapport@11c7a0b4]  wird gelöscht
 2016-05-17 15:29:13 INFO  GenericPersisterImpl:65 - Entity vom Typ Rapport wird updatet: projekt.feukora.server.model.Rapport@68fc9167
+2016-05-17 21:44:01 ERROR GenericPersisterImpl:44 - Fehler beim Speichern der Entity vom Typ 'projekt.feukora.server.model.Rapport': [projekt.feukora.server.model.Rapport@47569167]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „rapport_pkey“
+  Detail: Schlüssel „(rapportid)=(3532)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO RAPPORT (RAPPORTID, ADDITIONALSTEPS, CARBONMONOXIDE, COMMENTS, EXHAUSTGASLOST, MEASURINGDATE, NITROGENDIOXIDE, RESULTS, TRANSGRESSION_OILPART, TRANSGRESSION_SMOKENUMBER, APPOINTMENTID_APPOINTMENTID, CONTROLTYPEID_CONTROLTYPEID, CUSTOMERHEATERID_CUSTOMERHEATERID, USERID_USERID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [14 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Rapport@47569167)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.save(GenericPersisterImpl.java:39)
+	at projekt.feukora.server.persister.RapportPersisterImpl.saveRapport(RapportPersisterImpl.java:23)
+	at test.project.feukora.server.persister.TestdataMeasuringresult.loadTestdata(TestdataMeasuringresult.java:178)
+	at test.project.feukora.server.persister.MeasuringresultPersisterTest.start(MeasuringresultPersisterTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „rapport_pkey“
+  Detail: Schlüssel „(rapportid)=(3532)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO RAPPORT (RAPPORTID, ADDITIONALSTEPS, CARBONMONOXIDE, COMMENTS, EXHAUSTGASLOST, MEASURINGDATE, NITROGENDIOXIDE, RESULTS, TRANSGRESSION_OILPART, TRANSGRESSION_SMOKENUMBER, APPOINTMENTID_APPOINTMENTID, CONTROLTYPEID_CONTROLTYPEID, CUSTOMERHEATERID_CUSTOMERHEATERID, USERID_USERID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [14 parameters bound]
+Query: InsertObjectQuery(projekt.feukora.server.model.Rapport@47569167)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:123)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 20 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „rapport_pkey“
+  Detail: Schlüssel „(rapportid)=(3532)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 52 more
+2016-05-17 21:46:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Measuringresult [projekt.feukora.server.model.Measuringresult@10618775]  wird gelöscht
+2016-05-17 21:46:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Measuringresult [projekt.feukora.server.model.Measuringresult@4466cf5d]  wird gelöscht
+2016-05-17 21:46:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Measuringresult [projekt.feukora.server.model.Measuringresult@7f2b39a]  wird gelöscht
+2016-05-17 21:46:13 INFO  GenericPersisterImpl:99 - Entity vom Typ Measuringresult [projekt.feukora.server.model.Measuringresult@1510b9a2]  wird gelöscht
