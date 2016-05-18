@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
@@ -34,7 +33,7 @@ public class ControllerViewInspector {
     private MenuBar mBar;
 
     @FXML
-    private Menu calenderMenuBar;
+    private MenuItem calenderMenuBar;
 
     @FXML
     private MenuItem loginWelcome;
@@ -124,7 +123,16 @@ public class ControllerViewInspector {
 
     @FXML
     void ActionCalenderMenuBar(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
+			mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML
