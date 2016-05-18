@@ -13,7 +13,10 @@ import javax.swing.JOptionPane;
 
 import org.eclipse.persistence.sessions.server.Server;
 
+import projekt.feukora.server.persister.TownData;
 import test.project.feukora.server.persister.Testdata;
+import test.project.feukora.server.persister.TestdataAppointment;
+import test.project.feukora.server.persister.TestdataUsers;
 
 /**
  * This Class starts the RMI-Server on this machine, also it instances Remote Objects, 
@@ -66,7 +69,9 @@ public class RMIServer {
 			registry = LocateRegistry.createRegistry(port, null, null);
 
 			if (registry != null) {
-
+				
+				TownData.loadTownData("resources/ZIP.txt");
+				TestdataAppointment.loadTestdata();
 				// Entfernte Objekte erstellen
 				CustomerRMI customerRMI = new CustomerRMIImpl();
 				CompanyRMI companyRMI = new CompanyRMIImpl();
@@ -103,7 +108,7 @@ public class RMIServer {
 				registry.unbind(rapportRMIName);
 				registry.unbind(userRMIName);
 				
-//				Testdata.loadTestdata();
+				
 
 				System.out.println("RMI Server wird heruntergefahren!\n");
 

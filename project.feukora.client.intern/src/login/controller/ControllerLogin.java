@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import projekt.feukora.client.intern.ClientInternRMI;
 
 public class ControllerLogin {
 
@@ -35,9 +36,22 @@ public class ControllerLogin {
     void ActionLoginLogin(ActionEvent event) {
 		BorderPane pane = new BorderPane();
     	
+		String username = usernameLoginTextfield.getText();
+		String password = passwordLoginTextfield.getText();
+		
+		
     	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
-
+    		ClientInternRMI feukora = new ClientInternRMI();
+    		Boolean successfull = feukora.login(username, password);
+    		
+    		if(successfull == true){
+    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+    		}else{
+    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("login.controller/loginPane.fxml"));
+//    			usernameLoginTextfield.clear();
+//    			passwordLoginTextfield.clear();
+    		}
+    		
 			} catch (Exception e) {
 			e.printStackTrace();
 		}	

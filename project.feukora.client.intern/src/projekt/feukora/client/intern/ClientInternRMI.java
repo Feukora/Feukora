@@ -6,6 +6,7 @@ import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.model.Town;
+import projekt.feukora.server.model.Users;
 import projekt.feukora.server.rmi.AppointmentRMI;
 import projekt.feukora.server.rmi.BlowerRMI;
 import projekt.feukora.server.rmi.CompanyRMI;
@@ -77,6 +78,25 @@ public class ClientInternRMI {
 		this.rapportRMI = (RapportRMI) Naming.lookup(url + rapportRMIName);
 		this.userRMI = (UserRMI) Naming.lookup(url + userRMIName);
 		
+	}
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	public Boolean login(String username, String password) throws Exception {
+		
+			Users user = userRMI.findUsersByUsername(username).get(0);
+			
+			if(username == user.getUsername() && password == user.getPassword()){
+				return true;
+			}else{
+				return false;
+			}
+
+		
+
 	}
 	
 	/**
