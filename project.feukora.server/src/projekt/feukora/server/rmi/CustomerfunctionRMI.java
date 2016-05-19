@@ -1,5 +1,6 @@
 package projekt.feukora.server.rmi;
 
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import projekt.feukora.server.model.Customerfunction;
  * @version 1.0
  */
 
-public interface CustomerfunctionRMI {
+public interface CustomerfunctionRMI extends Remote {
 	
 	/**
 	 * Save the given entity
