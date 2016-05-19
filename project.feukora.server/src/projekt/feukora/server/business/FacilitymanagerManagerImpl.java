@@ -9,7 +9,7 @@ import projekt.feukora.server.persister.FacilitymanagerPersisterImpl;
 /**
  * This class implements the interface FacilitymanagerManagerImpl
  * 
- * @version 1.0
+ * @version 1.1
  * @author Pascal
  *
  */

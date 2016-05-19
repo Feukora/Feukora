@@ -9,7 +9,7 @@ import projekt.feukora.server.persister.BlowerPersisterImpl;
 /**
  * This Class implements the methods of the interface BlowerManager.
  * @author Robin
- * @version 1.0
+ * @version 1.1
  */
 public class BlowerManagerImpl implements BlowerManager {
 	private BlowerPersister blowerPersister = new BlowerPersisterImpl();
@@ -19,7 +19,7 @@ public class BlowerManagerImpl implements BlowerManager {
 		if((Integer) entity.getBlowerid() == null){
 			blowerPersister.saveBlower(entity);
 		}else{
-			throw new Exception("Der Blower (id = "+ entity.getBlowerid() + ") ist bereits vorhanden");
+			throw new Exception("Der Brenner (id = "+ entity.getBlowerid() + ") ist bereits vorhanden");
 		}
 	}
 
