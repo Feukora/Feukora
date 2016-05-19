@@ -2,14 +2,11 @@ package projekt.feukora.server.business;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.persister.CustomerheaterPersister;
 import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
-import projekt.feukora.server.persister.GenericPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
 public class CustomerheaterManagerImpl implements CustomerheaterManager {
@@ -21,36 +18,36 @@ public class CustomerheaterManagerImpl implements CustomerheaterManager {
 		if((Integer) entity.getCustomerheaterid() == null){
 			customerheaterPersister.saveCustomerheater(entity);
 		}else{
-			throw new Exception("Der Customerheater (id = "+ entity.getCustomerheaterid() + ") ist bereits vorhanden");
+			throw new Exception("Die Kundenheizung (id = "+ entity.getCustomerheaterid() + ") ist bereits vorhanden");
 		}
 		
 	}
 
 	@Override
 	public Customerheater updateCustomerheater(Customerheater entity) throws Exception {
-		return new GenericPersisterImpl<Customerheater>(Customerheater.class).update(entity);
+		return customerheaterPersister.updateCustomerheater(entity);
 	}
 
 	@Override
 	public void deleteCustomerheater(Customerheater entity) throws Exception {
-		new GenericPersisterImpl<Customerheater>(Customerheater.class).delete(entity);
+		customerheaterPersister.deleteCustomerheater(entity);
 		
 	}
 
 	@Override
 	public void deleteCustomerheaterByCustomerheaterid(Integer customerheaterid) throws Exception {
-		new GenericPersisterImpl<Customerheater>(Customerheater.class).deleteById(customerheaterid);
+		customerheaterPersister.deleteCustomerheaterByCustomerheaterid(customerheaterid);
 		
 	}
 
 	@Override
 	public Customerheater findCustomerheaterByCustomerheaterid(Integer customerheaterid) {
-		return new GenericPersisterImpl<Customerheater>(Customerheater.class).findById(customerheaterid);
+		return customerheaterPersister.findCustomerheaterByCustomerheaterid(customerheaterid);
 	}
 
 	@Override
 	public List<Customerheater> findAllCustomerheaters() {
-		return new GenericPersisterImpl<Customerheater>(Customerheater.class).findAll();
+		return customerheaterPersister.findAllCustomerheaters();
 	}
 
 	@Override
