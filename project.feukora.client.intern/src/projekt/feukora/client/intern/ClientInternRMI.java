@@ -2,7 +2,9 @@ package projekt.feukora.client.intern;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.List;
 
+import javafx.collections.ObservableList;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
@@ -118,4 +120,16 @@ public class ClientInternRMI {
 		return town1.getName();
 		
 	}	
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<Customer> showCustomer() throws Exception {
+		
+		ObservableList<Customer> customerlist = (ObservableList<Customer>) customerRMI.findAllCustomers();
+		return customerlist;
+		
+	}
 }
