@@ -4,12 +4,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 
 /**
@@ -25,7 +27,9 @@ public class ControllerOverview {
 
     @FXML // fx:id="overviewDeleteCustomer"
     private Button overviewDeleteCustomer; // Value injected by FXMLLoader
-
+    
+    @FXML // fx:id="overviewDeleteCustomer"
+    private Button overviewUpdateCustomer; // Value injected by FXMLLoader
     
     @FXML // fx:id="overviewTableCustomer"
     private TableView<Customer> overviewTableCustomer; // Value injected by FXMLLoader
@@ -113,6 +117,22 @@ public class ControllerOverview {
     @FXML
     void ActionOverviewRefreshCustomer(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void ActionOverviewUpdateCustomer(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
+
+			// mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+    	overviewUpdateCustomer.getScene().setRoot(pane);
     }
 
 }

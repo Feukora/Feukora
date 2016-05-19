@@ -15,6 +15,7 @@ public class Main extends Application {
 
 		try {
 			final  BorderPane root =  FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
+			// login/view/loginPane
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();
