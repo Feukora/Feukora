@@ -1,13 +1,16 @@
 package customer.controller;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Town;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 
 /**
@@ -16,7 +19,7 @@ import javafx.scene.control.TableView;
 
 public class ControllerOverview {
 
-	public ObservableList<Customer> customers;
+	public ObservableList<Customer> customers = FXCollections.observableArrayList();
 	
     @FXML // fx:id="overviewRefreshCustomer"
     private Button overviewRefreshCustomer; // Value injected by FXMLLoader
@@ -26,28 +29,28 @@ public class ControllerOverview {
 
     
     @FXML // fx:id="overviewTableCustomer"
-    private TableView<?> overviewTableCustomer; // Value injected by FXMLLoader
+    private TableView<Customer> overviewTableCustomer; // Value injected by FXMLLoader
     
 	@FXML // fx:id="columnCompanynameCostumer"
-    private TableColumn<?, ?> columnCompanynameCostumer; // Value injected by FXMLLoader
+    private TableColumn<Customer, String> columnCompanynameCostumer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnEmailCustomer"
-    private TableColumn<?, ?> columnEmailCustomer; // Value injected by FXMLLoader
+    private TableColumn<Customer, String> columnEmailCustomer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnPhoneCustomer"
-    private TableColumn<?, ?> columnPhoneCustomer; // Value injected by FXMLLoader
+    private TableColumn<Customer, String> columnPhoneCustomer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnNameCustomer"
-    private TableColumn<?, ?> columnNameCustomer; // Value injected by FXMLLoader
+    private TableColumn<Customer, String> columnNameCustomer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnAddressCustomer"
-    private TableColumn<?, ?> columnAddressCustomer; // Value injected by FXMLLoader
+    private TableColumn<Customer, String> columnAddressCustomer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnZIPCustomer"
-    private TableColumn<?, ?> columnZIPCustomer; // Value injected by FXMLLoader
+    private TableColumn<Customer, String> columnZIPCustomer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnFirstnameCustomer"
-    private TableColumn<?, ?> columnFirstnameCustomer; // Value injected by FXMLLoader
+    private TableColumn<Customer, String> columnFirstnameCustomer; // Value injected by FXMLLoader
 
     @FXML // Methode für die Tabelle
     void ActionOverviewTableCustomer(ActionEvent event) {
@@ -58,9 +61,34 @@ public class ControllerOverview {
 	public void initialize() {
 		 try {
 				ClientInternRMI feukora = new ClientInternRMI();
-				customers = feukora.showCustomer();
+				customers = feukora.getCustomers();
+				
+				columnCompanynameCostumer.setCellValueFactory(
+						new PropertyValueFactory<Customer, String>("companyname")
+				);
+				
+				columnEmailCustomer.setCellValueFactory(
+						new PropertyValueFactory<Customer, String>("email")
+				);
+				columnPhoneCustomer.setCellValueFactory(
+						new PropertyValueFactory<Customer, String>("phone")
+				);
+				columnNameCustomer.setCellValueFactory(
+						new PropertyValueFactory<Customer, String>("lastname")
+				);
+				columnAddressCustomer.setCellValueFactory(
+						new PropertyValueFactory<Customer, String>("adress")
+				);
+				columnZIPCustomer.setCellValueFactory(
+						new PropertyValueFactory<Customer, String>("zip")
+				);
+				columnFirstnameCustomer.setCellValueFactory(
+						new PropertyValueFactory<Customer, String>("firstname")
+				);
 				
 				overviewTableCustomer.setItems(customers);
+				
+				//overviewTableCustomer.getSelectionModel().get
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
