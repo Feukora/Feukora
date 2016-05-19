@@ -117,7 +117,15 @@ public class ClientInternRMI {
 	}
 	
 	public void deleteCustomer(Customer entity) {
-		
+		try {
+			customerRMI.deleteCustomer(entity);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public String getTown(Integer zip) throws RemoteException {

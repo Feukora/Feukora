@@ -8358,3 +8358,243 @@ Caused by: java.lang.IllegalStateException: During synchronization a new object 
 	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
 	... 22 more
+2016-05-19 16:18:50 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@13e1d95a]  wird gelöscht
+2016-05-19 16:18:50 ERROR GenericPersisterImpl:108 - Fehler beim Löschen der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@13e1d95a]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen in Tabelle „customer“ verletzt Fremdschlüssel-Constraint „fk_customerheater_customerid_customerid“ von Tabelle „customerheater“
+  Detail: Auf Schlüssel (customerid)=(3522) wird noch aus Tabelle „customerheater“ verwiesen.
+Error Code: 0
+Call: DELETE FROM CUSTOMER WHERE (CUSTOMERID = ?)
+	bind => [1 parameter bound]
+Query: DeleteObjectQuery(projekt.feukora.server.model.Customer@4236f361)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.delete(GenericPersisterImpl.java:102)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.deleteCustomer(CustomerPersisterImpl.java:33)
+	at projekt.feukora.server.business.CustomerManagerImpl.deleteCustomer(CustomerManagerImpl.java:36)
+	at projekt.feukora.server.rmi.CustomerRMIImpl.deleteCustomer(CustomerRMIImpl.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen in Tabelle „customer“ verletzt Fremdschlüssel-Constraint „fk_customerheater_customerid_customerid“ von Tabelle „customerheater“
+  Detail: Auf Schlüssel (customerid)=(3522) wird noch aus Tabelle „customerheater“ verwiesen.
+Error Code: 0
+Call: DELETE FROM CUSTOMER WHERE (CUSTOMERID = ?)
+	bind => [1 parameter bound]
+Query: DeleteObjectQuery(projekt.feukora.server.model.Customer@4236f361)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.deleteObject(DatasourceCallQueryMechanism.java:184)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.deleteObject(StatementQueryMechanism.java:101)
+	at org.eclipse.persistence.queries.DeleteObjectQuery.executeDatabaseQuery(DeleteObjectQuery.java:218)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.DeleteObjectQuery.executeInUnitOfWorkObjectLevelModifyQuery(DeleteObjectQuery.java:119)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.deleteAllObjects(CommitManager.java:334)
+	at org.eclipse.persistence.internal.sessions.CommitManager.deleteAllObjects(CommitManager.java:283)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1418)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen in Tabelle „customer“ verletzt Fremdschlüssel-Constraint „fk_customerheater_customerid_customerid“ von Tabelle „customerheater“
+  Detail: Auf Schlüssel (customerid)=(3522) wird noch aus Tabelle „customerheater“ verwiesen.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 49 more
+2016-05-19 16:19:19 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3490971d]  wird gelöscht
+2016-05-19 16:19:19 ERROR GenericPersisterImpl:108 - Fehler beim Löschen der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@3490971d]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen in Tabelle „customer“ verletzt Fremdschlüssel-Constraint „fk_customerheater_customerid_customerid“ von Tabelle „customerheater“
+  Detail: Auf Schlüssel (customerid)=(3522) wird noch aus Tabelle „customerheater“ verwiesen.
+Error Code: 0
+Call: DELETE FROM CUSTOMER WHERE (CUSTOMERID = ?)
+	bind => [1 parameter bound]
+Query: DeleteObjectQuery(projekt.feukora.server.model.Customer@450f1fe1)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.delete(GenericPersisterImpl.java:102)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.deleteCustomer(CustomerPersisterImpl.java:33)
+	at projekt.feukora.server.business.CustomerManagerImpl.deleteCustomer(CustomerManagerImpl.java:36)
+	at projekt.feukora.server.rmi.CustomerRMIImpl.deleteCustomer(CustomerRMIImpl.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen in Tabelle „customer“ verletzt Fremdschlüssel-Constraint „fk_customerheater_customerid_customerid“ von Tabelle „customerheater“
+  Detail: Auf Schlüssel (customerid)=(3522) wird noch aus Tabelle „customerheater“ verwiesen.
+Error Code: 0
+Call: DELETE FROM CUSTOMER WHERE (CUSTOMERID = ?)
+	bind => [1 parameter bound]
+Query: DeleteObjectQuery(projekt.feukora.server.model.Customer@450f1fe1)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.deleteObject(DatasourceCallQueryMechanism.java:184)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.deleteObject(StatementQueryMechanism.java:101)
+	at org.eclipse.persistence.queries.DeleteObjectQuery.executeDatabaseQuery(DeleteObjectQuery.java:218)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.DeleteObjectQuery.executeInUnitOfWorkObjectLevelModifyQuery(DeleteObjectQuery.java:119)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.deleteAllObjects(CommitManager.java:334)
+	at org.eclipse.persistence.internal.sessions.CommitManager.deleteAllObjects(CommitManager.java:283)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1418)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen in Tabelle „customer“ verletzt Fremdschlüssel-Constraint „fk_customerheater_customerid_customerid“ von Tabelle „customerheater“
+  Detail: Auf Schlüssel (customerid)=(3522) wird noch aus Tabelle „customerheater“ verwiesen.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 49 more
+2016-05-19 16:23:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@138bd2ef]  wird gelöscht
+2016-05-19 16:23:32 ERROR GenericPersisterImpl:108 - Fehler beim Löschen der Entity vom Typ 'projekt.feukora.server.model.Customer': [projekt.feukora.server.model.Customer@138bd2ef]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen in Tabelle „customer“ verletzt Fremdschlüssel-Constraint „fk_customerheater_customerid_customerid“ von Tabelle „customerheater“
+  Detail: Auf Schlüssel (customerid)=(3522) wird noch aus Tabelle „customerheater“ verwiesen.
+Error Code: 0
+Call: DELETE FROM CUSTOMER WHERE (CUSTOMERID = ?)
+	bind => [1 parameter bound]
+Query: DeleteObjectQuery(projekt.feukora.server.model.Customer@3782025a)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at projekt.feukora.server.persister.GenericPersisterImpl.delete(GenericPersisterImpl.java:102)
+	at projekt.feukora.server.persister.CustomerPersisterImpl.deleteCustomer(CustomerPersisterImpl.java:33)
+	at projekt.feukora.server.business.CustomerManagerImpl.deleteCustomer(CustomerManagerImpl.java:36)
+	at projekt.feukora.server.rmi.CustomerRMIImpl.deleteCustomer(CustomerRMIImpl.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen in Tabelle „customer“ verletzt Fremdschlüssel-Constraint „fk_customerheater_customerid_customerid“ von Tabelle „customerheater“
+  Detail: Auf Schlüssel (customerid)=(3522) wird noch aus Tabelle „customerheater“ verwiesen.
+Error Code: 0
+Call: DELETE FROM CUSTOMER WHERE (CUSTOMERID = ?)
+	bind => [1 parameter bound]
+Query: DeleteObjectQuery(projekt.feukora.server.model.Customer@3782025a)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.deleteObject(DatasourceCallQueryMechanism.java:184)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.deleteObject(StatementQueryMechanism.java:101)
+	at org.eclipse.persistence.queries.DeleteObjectQuery.executeDatabaseQuery(DeleteObjectQuery.java:218)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.DeleteObjectQuery.executeInUnitOfWorkObjectLevelModifyQuery(DeleteObjectQuery.java:119)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.deleteAllObjects(CommitManager.java:334)
+	at org.eclipse.persistence.internal.sessions.CommitManager.deleteAllObjects(CommitManager.java:283)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1418)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen in Tabelle „customer“ verletzt Fremdschlüssel-Constraint „fk_customerheater_customerid_customerid“ von Tabelle „customerheater“
+  Detail: Auf Schlüssel (customerid)=(3522) wird noch aus Tabelle „customerheater“ verwiesen.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 49 more

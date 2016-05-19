@@ -98,7 +98,17 @@ public class ControllerOverview {
 
     @FXML
     void ActionOverviewDeleteCustomer(ActionEvent event) {
-
+    	ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+	    	Customer entity = overviewTableCustomer.getSelectionModel().getSelectedItem();
+	    	feukora.deleteCustomer(entity);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
     }
 
     @FXML
