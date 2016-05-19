@@ -29,6 +29,9 @@ public class ControllerDetailview {
 
     @FXML
     private TextField customerZipField;
+    
+    @FXML
+    private TextField customerMunicipalityField;
 
     @FXML
     private TextField customerFirstNameField;
@@ -45,6 +48,11 @@ public class ControllerDetailview {
 
     @FXML
     void ActionCustomerFirstNameField(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ActionCustomerMunicipalityField(ActionEvent event) {
 
     }
 
