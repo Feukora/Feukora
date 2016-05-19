@@ -19,7 +19,7 @@ public class BlowerManagerImpl implements BlowerManager {
 		if((Integer) entity.getBlowerid() == null){
 			blowerPersister.saveBlower(entity);
 		}else{
-			throw new Exception("Die Firma (id = "+ entity.getBlowerid() + ") ist bereits vorhanden");
+			throw new Exception("Der Blower (id = "+ entity.getBlowerid() + ") ist bereits vorhanden");
 		}
 	}
 

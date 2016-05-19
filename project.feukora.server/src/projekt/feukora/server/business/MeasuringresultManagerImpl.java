@@ -1,11 +1,7 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
-import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Measuringresult;
-import projekt.feukora.server.persister.HeaterPersister;
-import projekt.feukora.server.persister.HeaterPersisterImpl;
 import projekt.feukora.server.persister.MeasuringresultPersister;
 import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
 
@@ -25,7 +21,7 @@ public class MeasuringresultManagerImpl implements MeasuringresultManager {
 		if((Integer) entity.getMeasuringresultid() == null){
 			measuringresultPersister.saveMeasuringresult(entity);
 		}else{
-			throw new Exception("Das Measuringresultat (id = "+ entity.getMeasuringresultid() + ") ist bereits vorhanden");
+			throw new Exception("Das Messresultat (id = "+ entity.getMeasuringresultid() + ") ist bereits vorhanden");
 		}
 		
 	}

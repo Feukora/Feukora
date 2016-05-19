@@ -2,7 +2,6 @@ package projekt.feukora.server.business;
 
 import java.util.GregorianCalendar;
 import java.util.List;
-
 import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.persister.AppointmentPersister;
 import projekt.feukora.server.persister.AppointmentPersisterImpl;

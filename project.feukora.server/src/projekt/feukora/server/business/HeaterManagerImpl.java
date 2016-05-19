@@ -1,10 +1,7 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Heater;
-import projekt.feukora.server.persister.CustomerPersister;
-import projekt.feukora.server.persister.CustomerPersisterImpl;
 import projekt.feukora.server.persister.HeaterPersister;
 import projekt.feukora.server.persister.HeaterPersisterImpl;
 

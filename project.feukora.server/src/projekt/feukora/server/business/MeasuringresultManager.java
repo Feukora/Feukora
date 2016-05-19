@@ -1,8 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
-import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Measuringresult;
 
 /**

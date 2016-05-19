@@ -3,13 +3,7 @@ package projekt.feukora.server.business;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import projekt.feukora.server.model.Heater;
-import projekt.feukora.server.model.Measuringresult;
 import projekt.feukora.server.model.Rapport;
-import projekt.feukora.server.persister.HeaterPersister;
-import projekt.feukora.server.persister.HeaterPersisterImpl;
-import projekt.feukora.server.persister.MeasuringresultPersister;
-import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
 import projekt.feukora.server.persister.RapportPersister;
 import projekt.feukora.server.persister.RapportPersisterImpl;
 
@@ -29,7 +23,7 @@ public class RapportManagerImpl implements RapportManager {
 		if((Integer) entity.getRapportid() == null){
 			rapportPersister.saveRapport(entity);;
 		}else{
-			throw new Exception("Das Measuringresultat (id = "+ entity.getRapportid() + ") ist bereits vorhanden");
+			throw new Exception("Der Rapport (id = "+ entity.getRapportid() + ") ist bereits vorhanden");
 		}
 		
 	}

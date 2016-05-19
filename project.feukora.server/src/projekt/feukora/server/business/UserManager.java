@@ -37,7 +37,7 @@ public interface UserManager {
 	void deleteUsers(Users entity) throws Exception;
 
 	/**
-	 * Delete the customer entity with this id
+	 * Delete the user entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
