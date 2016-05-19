@@ -1,6 +1,7 @@
 package projekt.feukora.client.intern;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Customer;
@@ -14,6 +15,7 @@ import projekt.feukora.server.rmi.CustomerRMI;
 import projekt.feukora.server.rmi.HeaterRMI;
 import projekt.feukora.server.rmi.MeasuringresultRMI;
 import projekt.feukora.server.rmi.RapportRMI;
+import projekt.feukora.server.rmi.TownRMI;
 import projekt.feukora.server.rmi.UserRMI;
 
 
@@ -34,6 +36,7 @@ public class ClientInternRMI {
 	MeasuringresultRMI measuringresultRMI;
 	RapportRMI rapportRMI;
 	UserRMI userRMI;
+	TownRMI townRMI;
 
 
 	
@@ -68,6 +71,7 @@ public class ClientInternRMI {
 		String measuringresultRMIName = "measuringresultRMI";
 		String rapportRMIName = "rapportRMI";
 		String userRMIName = "userRMI";
+		String townRMIName = "townRMI";
 		this.customerRMI = (CustomerRMI) Naming.lookup(url + customerRMIName);
 		this.companyRMI = (CompanyRMI) Naming.lookup(url + companyRMIName);
 		this.appointmentRMI = (AppointmentRMI) Naming.lookup(url + appointmentRMIName);
@@ -76,6 +80,7 @@ public class ClientInternRMI {
 		this.measuringresultRMI = (MeasuringresultRMI) Naming.lookup(url + measuringresultRMIName);
 		this.rapportRMI = (RapportRMI) Naming.lookup(url + rapportRMIName);
 		this.userRMI = (UserRMI) Naming.lookup(url + userRMIName);	
+		this.townRMI = (TownRMI) Naming.lookup(url + townRMIName);
 	}
 	
 	/**
@@ -99,12 +104,18 @@ public class ClientInternRMI {
 	 * @throws Exception
 	 */
 	public void saveCustomer(String lastname, String adress, String phone, Integer zip, String firstname, String email) throws Exception {
-		Customerfunction function = new Customerfunction("Verwaltung");
+		Customerfunction function = new Customerfunction();
+		function.setName("Verwaltung");
 		String companyname = "Firma";
-		Town zipi = new Town("Luzern", "Luzern");
+		Town town1 = townRMI.findTownByZip(zip);
 		
+		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, null, town1);
+		customerRMI.saveCustomer(c1);
+	}
+
+	public String getTown(Integer zip) throws RemoteException {
+		Town town1 = townRMI.findTownByZip(zip);
+		return town1.getName();
 		
-		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, function, null);
-		customerRMI.saveCustomer(c1);	
 	}	
 }

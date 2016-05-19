@@ -56,6 +56,7 @@ public class RMIServer {
 		String measuringresultRMIName = "measuringresultRMI";
 		String rapportRMIName = "rapportRMI";
 		String userRMIName = "userRMI";
+		String townRMIName = "townRMI";
 		
 		Registry registry = null;
 		
@@ -82,6 +83,7 @@ public class RMIServer {
 				MeasuringresultRMI measuringresultRMI = new MeasuringresultRMIImpl();
 				RapportRMI rapportRMI = new RapportRMIImpl();
 				UserRMI userRMI = new UserRMIImpl();
+				TownRMI townRMI = new TownRMIImpl();
 				
 
 				registry.rebind(customerRMIName, customerRMI);
@@ -92,6 +94,7 @@ public class RMIServer {
 				registry.rebind(measuringresultRMIName, measuringresultRMI);
 				registry.rebind(rapportRMIName, rapportRMI);
 				registry.rebind(userRMIName, userRMI);
+				registry.rebind(townRMIName, townRMI);
 				
 			
 				String msg = "RMI-Server ist bereit fuer Client-Anfragen.\n\n"
@@ -108,6 +111,7 @@ public class RMIServer {
 				registry.unbind(measuringresultRMIName);
 				registry.unbind(rapportRMIName);
 				registry.unbind(userRMIName);
+				registry.unbind(townRMIName);
 				
 				
 

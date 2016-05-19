@@ -32,6 +32,18 @@ public class ControllerDetailview {
 
     @FXML
     void ActionCustomerZipField(ActionEvent event) {
+    	
+//    	Bringt nichts, wenn ich das Feld daneben nicht ansprechen kann.
+//    	String plz = customerZipField.getText();
+//    	Integer zip = Integer.parseInt(plz);
+//    	
+//    	try {
+//			ClientInternRMI feukora = new ClientInternRMI();
+//			String town = feukora.getTown(zip);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
     }
 
