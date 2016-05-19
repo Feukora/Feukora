@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Measuringresult;
  * Interface to handle measuringresult entities.
  * 
  * @author Patrick
- * @version 1.0
+ * @version 1.1
  *
  */
 

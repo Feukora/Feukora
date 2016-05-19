@@ -9,6 +9,12 @@ import projekt.feukora.server.persister.CustomerheaterPersister;
 import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
+/**
+ * This Class implements the methods of the interface CustomerheaterManager.
+ * @author Robin
+ * @version 1.1
+ */
+
 public class CustomerheaterManagerImpl implements CustomerheaterManager {
 
 	private CustomerheaterPersister customerheaterPersister = new CustomerheaterPersisterImpl();

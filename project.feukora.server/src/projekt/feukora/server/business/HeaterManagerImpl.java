@@ -9,7 +9,7 @@ import projekt.feukora.server.persister.HeaterPersisterImpl;
  * This Class implements the methods of the interface HeaterManager.
  * 
  * @author Patrick
- * @version 1.0
+ * @version 1.1
  */
 
 public class HeaterManagerImpl implements HeaterManager {

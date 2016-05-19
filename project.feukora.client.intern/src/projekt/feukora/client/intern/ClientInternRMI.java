@@ -112,7 +112,11 @@ public class ClientInternRMI {
 		Town town1 = townRMI.findTownByZip(zip);
 		
 		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, null, town1);
-		customerRMI.saveCustomer(c1);
+		customerRMI.saveCustomer(c1);	
+	}
+	
+	public void deleteCustomer(Customer entity) {
+		
 	}
 
 	public String getTown(Integer zip) throws RemoteException {

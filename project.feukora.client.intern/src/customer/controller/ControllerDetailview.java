@@ -30,6 +30,23 @@ public class ControllerDetailview {
     @FXML
     private TextField customerEmailField;
 
+
+
+    @FXML
+    void ActionCustomerNameField(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ActionCustomerFirstNameField(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ActionCustomerAddressField(ActionEvent event) {
+
+    }
+    
     @FXML
     void ActionCustomerZipField(ActionEvent event) {
     	
@@ -44,21 +61,6 @@ public class ControllerDetailview {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-
-    }
-
-    @FXML
-    void ActionCustomerNameField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionCustomerFirstNameField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionCustomerAddressField(ActionEvent event) {
 
     }
 
@@ -90,7 +92,11 @@ public class ControllerDetailview {
 			e.printStackTrace();
 		}
     	
-
+    	customerNameField.clear();
+    	customerAddressField.clear();
+    	customerNumberField.clear();
+    	customerZipField.clear();
+    	customerFirstNameField.clear();
+    	customerEmailField.clear();
     }
-
 }
