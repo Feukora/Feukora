@@ -137,12 +137,11 @@ public class ClientInternRMI {
 	 * @throws Exception
 	 */
 	public void saveCustomer(String lastname, String adress, String phone, Integer zip, String firstname, String email) throws Exception {
-		Customerfunction function = new Customerfunction();
-		function.setName("Verwaltung");
+		Customerfunction function = customerfunctionRMI.findCustomerfunctionByName("Verwaltung");
 		String companyname = "Firma";
 		Town town1 = townRMI.findTownByZip(zip);
 		
-		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, null, town1);
+		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, function, town1);
 		customerRMI.saveCustomer(c1);	
 	}
 	

@@ -79,7 +79,7 @@ public class ControllerOverview {
 						new PropertyValueFactory<Customer, String>("adress")
 				);
 				columnZIPCustomer.setCellValueFactory(
-						new PropertyValueFactory<Customer, String>("zip")
+						new PropertyValueFactory<Customer, String>("town")
 				);
 				columnFirstnameCustomer.setCellValueFactory(
 						new PropertyValueFactory<Customer, String>("firstname")
