@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Town;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -46,7 +47,7 @@ public class ControllerOverview {
     private TableColumn<Customer, String> columnAddressCustomer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnZIPCustomer"
-    private TableColumn<Customer, String> columnZIPCustomer; // Value injected by FXMLLoader
+    private TableColumn<Customer, Town> columnZIPCustomer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnFirstnameCustomer"
     private TableColumn<Customer, String> columnFirstnameCustomer; // Value injected by FXMLLoader
@@ -79,7 +80,7 @@ public class ControllerOverview {
 						new PropertyValueFactory<Customer, String>("adress")
 				);
 				columnZIPCustomer.setCellValueFactory(
-						new PropertyValueFactory<Customer, String>("zip")
+						new PropertyValueFactory<Customer, Town>("zip")
 				);
 				columnFirstnameCustomer.setCellValueFactory(
 						new PropertyValueFactory<Customer, String>("firstname")
