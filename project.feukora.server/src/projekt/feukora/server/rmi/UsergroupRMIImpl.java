@@ -13,6 +13,10 @@ import projekt.feukora.server.model.Usergroup;
 public class UsergroupRMIImpl extends UnicastRemoteObject implements UsergroupRMI{
 
 	
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = -371551722376955090L;
 private UsergroupManager usergroupManager;
 	
 	public UsergroupRMIImpl() throws RemoteException {

@@ -15,6 +15,10 @@ import projekt.feukora.server.model.Fuel;
  */
 public class FuelRMIImpl extends UnicastRemoteObject implements FuelRMI {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2534220880779514943L;
 	private FuelManager fuelManager;
 	
 	public FuelRMIImpl() throws RemoteException{
