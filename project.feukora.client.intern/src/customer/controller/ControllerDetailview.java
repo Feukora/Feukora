@@ -90,7 +90,11 @@ public class ControllerDetailview {
 			e.printStackTrace();
 		}
     	
-
+    	customerNameField.clear();
+    	customerAddressField.clear();
+    	customerNumberField.clear();
+    	customerZipField.clear();
+    	customerFirstNameField.clear();
+    	customerEmailField.clear();
     }
-
 }

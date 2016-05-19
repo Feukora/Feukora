@@ -111,6 +111,8 @@ public class ClientInternRMI {
 		
 		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, null, town1);
 		customerRMI.saveCustomer(c1);
+		
+		
 	}
 
 	public String getTown(Integer zip) throws RemoteException {
