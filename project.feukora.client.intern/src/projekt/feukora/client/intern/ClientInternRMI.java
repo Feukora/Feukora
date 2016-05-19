@@ -45,7 +45,6 @@ public class ClientInternRMI {
 			ClientInternRMI feukora = new ClientInternRMI();
 		} catch (Exception e) {
 			e.printStackTrace();
-
 		}
 	}
 	
@@ -76,8 +75,7 @@ public class ClientInternRMI {
 		this.heaterRMI = (HeaterRMI) Naming.lookup(url + heaterRMIName);
 		this.measuringresultRMI = (MeasuringresultRMI) Naming.lookup(url + measuringresultRMIName);
 		this.rapportRMI = (RapportRMI) Naming.lookup(url + rapportRMIName);
-		this.userRMI = (UserRMI) Naming.lookup(url + userRMIName);
-		
+		this.userRMI = (UserRMI) Naming.lookup(url + userRMIName);	
 	}
 	
 	/**
@@ -86,18 +84,15 @@ public class ClientInternRMI {
 	 * @throws Exception
 	 */
 	public Boolean login(String username, String password) throws Exception {
-		
-			Users user = userRMI.findUsersByUsername(username).get(0);
-			if(username.equals(user.getUsername()) && password.equals(user.getPassword())){
-				return true;
-			}else{
-				return false;
-			}
 
-		
-
+		Users user = userRMI.findUsersByUsername(username).get(0);
+		if(username.equals(user.getUsername()) && password.equals(user.getPassword())){
+			return true;
+		}else{
+			return false;
+		}
 	}
-	
+
 	/**
 	 * 
 	 *
@@ -109,11 +104,7 @@ public class ClientInternRMI {
 		Town zipi = new Town("Luzern", "Luzern");
 		
 		
-		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, function, zipi);
-		customerRMI.saveCustomer(c1);
-		
-		
-	}
-
-	
+		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, function, null);
+		customerRMI.saveCustomer(c1);	
+	}	
 }

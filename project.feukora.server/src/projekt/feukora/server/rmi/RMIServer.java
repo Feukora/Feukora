@@ -16,6 +16,7 @@ import org.eclipse.persistence.sessions.server.Server;
 import projekt.feukora.server.persister.TownData;
 import test.project.feukora.server.persister.Testdata;
 import test.project.feukora.server.persister.TestdataAppointment;
+import test.project.feukora.server.persister.TestdataMeasuringresult;
 import test.project.feukora.server.persister.TestdataUsers;
 
 /**
@@ -71,7 +72,7 @@ public class RMIServer {
 			if (registry != null) {
 				
 				TownData.loadTownData("resources/ZIP.txt");
-				TestdataAppointment.loadTestdata();
+				TestdataMeasuringresult.loadTestdata();
 				// Entfernte Objekte erstellen
 				CustomerRMI customerRMI = new CustomerRMIImpl();
 				CompanyRMI companyRMI = new CompanyRMIImpl();
