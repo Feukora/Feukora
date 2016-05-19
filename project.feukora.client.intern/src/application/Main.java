@@ -14,7 +14,7 @@ public class Main extends Application {
 		primaryStage.setTitle("Feukora");
 
 		try {
-			final  BorderPane root =  FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+			final  BorderPane root =  FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();

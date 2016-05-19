@@ -2,16 +2,10 @@ package projekt.feukora.server.rmi;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-
 import projekt.feukora.server.business.BlowerManager;
 import projekt.feukora.server.business.BlowerManagerImpl;
 import projekt.feukora.server.model.Blower;
-import projekt.feukora.server.persister.JpaUtil;
 
 
 /**
