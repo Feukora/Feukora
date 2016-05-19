@@ -3,6 +3,7 @@ package projekt.feukora.client.intern;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.List;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import projekt.feukora.server.model.Blower;
@@ -12,20 +13,13 @@ import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Users;
 import projekt.feukora.server.rmi.AppointmentRMI;
 import projekt.feukora.server.rmi.BlowerRMI;
-import projekt.feukora.server.rmi.BlowertypeRMI;
 import projekt.feukora.server.rmi.CompanyRMI;
-import projekt.feukora.server.rmi.ControltypeRMI;
 import projekt.feukora.server.rmi.CustomerRMI;
-import projekt.feukora.server.rmi.CustomerfunctionRMI;
-import projekt.feukora.server.rmi.CustomerheaterRMI;
-import projekt.feukora.server.rmi.FacilitymanagerRMI;
-import projekt.feukora.server.rmi.FuelRMI;
 import projekt.feukora.server.rmi.HeaterRMI;
 import projekt.feukora.server.rmi.MeasuringresultRMI;
 import projekt.feukora.server.rmi.RapportRMI;
 import projekt.feukora.server.rmi.TownRMI;
 import projekt.feukora.server.rmi.UserRMI;
-import projekt.feukora.server.rmi.UsergroupRMI;
 
 
 /**
@@ -46,14 +40,6 @@ public class ClientInternRMI {
 	RapportRMI rapportRMI;
 	UserRMI userRMI;
 	TownRMI townRMI;
-	BlowertypeRMI blowertypeRMI;
-	ControltypeRMI controltypeRMI;
-	CustomerfunctionRMI customerfunctionRMI;
-	CustomerheaterRMI customerheaterRMI;
-	FacilitymanagerRMI facilitymanagerRMI;
-	FuelRMI fuelRMI;
-	UsergroupRMI usergroupRMI;
-	
 
 
 	
@@ -89,14 +75,6 @@ public class ClientInternRMI {
 		String rapportRMIName = "rapportRMI";
 		String userRMIName = "userRMI";
 		String townRMIName = "townRMI";
-		String blowertypeRMIName = "blowertypeRMI";
-		String controltypeRMIName = "controltypeRMI";
-		String customerfunctionRMIName = "customerfunctionRMI";
-		String customerheaterRMIName = "customerheaterRMI";
-		String facilitymanagerRMIName = "facilitymanagerRMI";
-		String fuelRMIName = "fuelRMI";
-		String usergroupRMIName = "usergroupRMI";
-		
 		this.customerRMI = (CustomerRMI) Naming.lookup(url + customerRMIName);
 		this.companyRMI = (CompanyRMI) Naming.lookup(url + companyRMIName);
 		this.appointmentRMI = (AppointmentRMI) Naming.lookup(url + appointmentRMIName);
@@ -106,14 +84,6 @@ public class ClientInternRMI {
 		this.rapportRMI = (RapportRMI) Naming.lookup(url + rapportRMIName);
 		this.userRMI = (UserRMI) Naming.lookup(url + userRMIName);	
 		this.townRMI = (TownRMI) Naming.lookup(url + townRMIName);
-		this.blowertypeRMI = (BlowertypeRMI) Naming.lookup(url + blowertypeRMIName);
-		this.controltypeRMI = (ControltypeRMI) Naming.lookup(url + controltypeRMIName);
-		this.customerfunctionRMI = (CustomerfunctionRMI) Naming.lookup(url + customerfunctionRMIName);
-		this.customerheaterRMI = (CustomerheaterRMI) Naming.lookup(url + customerheaterRMIName);
-		this.facilitymanagerRMI = (FacilitymanagerRMI) Naming.lookup(url + facilitymanagerRMIName);
-		this.fuelRMI = (FuelRMI) Naming.lookup(url + fuelRMIName);
-		this.usergroupRMI = (UsergroupRMI) Naming.lookup(url + usergroupRMIName);
-		
 	}
 	
 	/**
