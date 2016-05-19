@@ -1,12 +1,11 @@
 package projekt.feukora.server.rmi;
 
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
-
-import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Usergroup;
 
-public interface UsergroupRMI {
+public interface UsergroupRMI extends Remote {
 	
 	/**
 	 * Save the given entity

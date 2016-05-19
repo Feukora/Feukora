@@ -1,9 +1,8 @@
 package projekt.feukora.server.rmi;
 
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
-
-import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Blowertype;
 
 /**
@@ -12,7 +11,7 @@ import projekt.feukora.server.model.Blowertype;
  * @version 1.0
  */
 
-public interface BlowertypeRMI {
+public interface BlowertypeRMI extends Remote {
 
 	/**
 	 * Save the given entity

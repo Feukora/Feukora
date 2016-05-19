@@ -57,6 +57,13 @@ public class RMIServer {
 		String rapportRMIName = "rapportRMI";
 		String userRMIName = "userRMI";
 		String townRMIName = "townRMI";
+		String blowertypeRMIName = "blowertypeRMI";
+		String controltypeRMIName = "controltypeRMI";
+		String customerfunctionRMIName = "customerfunctionRMI";
+		String customerheaterRMIName = "customerheaterRMI";
+		String facilitymanagerRMIName = "facilitymanagerRMI";
+		String fuelRMIName = "fuelRMI";
+		String usergroupRMIName = "usergroupRMI";
 		
 		Registry registry = null;
 		
@@ -84,6 +91,13 @@ public class RMIServer {
 				RapportRMI rapportRMI = new RapportRMIImpl();
 				UserRMI userRMI = new UserRMIImpl();
 				TownRMI townRMI = new TownRMIImpl();
+				BlowertypeRMI blowertypeRMI = new BlowertypeRMIImpl();
+				ControltypeRMI controltypeRMI = new ControltypeRMIImpl();
+				CustomerfunctionRMI customerfunctionRMI = new CustomerfunctionRMIImpl();
+				CustomerheaterRMI customerheaterRMI = new CustomerheaterRMIImpl();
+				FacilitymanagerRMI facilitymanagerRMI = new FacilitymanagerRMIImpl();
+				FuelRMI fuelRMI = new FuelRMIImpl();
+				UsergroupRMI usergroupRMI = new UsergroupRMIImpl();
 				
 
 				registry.rebind(customerRMIName, customerRMI);
@@ -95,6 +109,13 @@ public class RMIServer {
 				registry.rebind(rapportRMIName, rapportRMI);
 				registry.rebind(userRMIName, userRMI);
 				registry.rebind(townRMIName, townRMI);
+				registry.rebind(blowertypeRMIName, blowertypeRMI);
+				registry.rebind(controltypeRMIName, controltypeRMI);
+				registry.rebind(customerfunctionRMIName, customerfunctionRMI);
+				registry.rebind(customerheaterRMIName, customerheaterRMI);
+				registry.rebind(facilitymanagerRMIName, facilitymanagerRMI);
+				registry.rebind(fuelRMIName, fuelRMI);
+				registry.rebind(usergroupRMIName, usergroupRMI);
 				
 			
 				String msg = "RMI-Server ist bereit fuer Client-Anfragen.\n\n"
@@ -112,6 +133,13 @@ public class RMIServer {
 				registry.unbind(rapportRMIName);
 				registry.unbind(userRMIName);
 				registry.unbind(townRMIName);
+				registry.unbind(blowertypeRMIName);
+				registry.unbind(controltypeRMIName);
+				registry.unbind(customerfunctionRMIName);
+				registry.unbind(customerheaterRMIName);
+				registry.unbind(facilitymanagerRMIName);
+				registry.unbind(fuelRMIName);
+				registry.unbind(usergroupRMIName);
 				
 				
 
