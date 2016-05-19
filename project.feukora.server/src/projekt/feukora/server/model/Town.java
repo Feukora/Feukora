@@ -81,4 +81,9 @@ public class Town implements Serializable {
 	public void setCanton(String canton) {
 		this.canton = canton;
 	}	
+	
+	@Override
+	public String toString() {
+		return zip + " " + name;
+	}
 }
