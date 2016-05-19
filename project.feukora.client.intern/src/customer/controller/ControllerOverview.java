@@ -116,7 +116,7 @@ public class ControllerOverview {
 
     @FXML
     void ActionOverviewRefreshCustomer(ActionEvent event) {
-
+    	initialize();
     }
     
     @FXML
