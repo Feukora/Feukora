@@ -136,8 +136,13 @@ public class ClientInternRMI {
 	 *
 	 * @throws Exception
 	 */
-	public void saveCustomer(String lastname, String adress, String phone, Integer zip, String firstname, String email) throws Exception {
-		Customerfunction function = customerfunctionRMI.findCustomerfunctionByName("Verwaltung");
+	public void saveCustomer(String lastname, String adress, String phone, Integer zip, String firstname, String email, Boolean isOwner) throws Exception {
+		Customerfunction function;
+		if(isOwner = true) {
+			function = customerfunctionRMI.findCustomerfunctionByName("Eingentümer");
+		} else {
+			function = customerfunctionRMI.findCustomerfunctionByName("Verwaltung");
+		}
 		String companyname = "Firma";
 		Town town1 = townRMI.findTownByZip(zip);
 		

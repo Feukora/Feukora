@@ -97,10 +97,16 @@ public class ControllerDetailview {
     	String firstname = customerFirstNameField.getText();
     	String email = customerEmailField.getText();
     	Integer zip = Integer.parseInt(plz);
+    	Boolean isOwner = false;
+    	if(radioButtonOwner.isSelected()) {
+    		isOwner = true;
+    	} else if(radioButtonAdministration.isSelected()) {
+    		isOwner = false;
+    	}
     	
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			feukora.saveCustomer(lastname, adress, phone, zip, firstname, email);
+			feukora.saveCustomer(lastname, adress, phone, zip, firstname, email, isOwner);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -116,6 +122,7 @@ public class ControllerDetailview {
     
     @FXML
     void ActionRadioButtonOwner(ActionEvent event) {
+    	
 
     }
 
