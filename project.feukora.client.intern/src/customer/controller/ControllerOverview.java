@@ -1,9 +1,11 @@
 package customer.controller;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Customer;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -14,19 +16,8 @@ import javafx.scene.control.TableView;
 
 public class ControllerOverview {
 
-	 @FXML
-	public void initialize() {
-		 try {
-				ClientInternRMI feukora = new ClientInternRMI();
-				feukora.showCustomer();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	}
-
-
-
+	public ObservableList<Customer> customers;
+	
     @FXML // fx:id="overviewRefreshCustomer"
     private Button overviewRefreshCustomer; // Value injected by FXMLLoader
 
@@ -62,6 +53,20 @@ public class ControllerOverview {
     void ActionOverviewTableCustomer(ActionEvent event) {
 
     }
+    
+	@FXML
+	public void initialize() {
+		 try {
+				ClientInternRMI feukora = new ClientInternRMI();
+				customers = feukora.showCustomer();
+				
+				overviewTableCustomer.setItems(customers);
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}
 
     @FXML
     void ActionOverviewDeleteCustomer(ActionEvent event) {
