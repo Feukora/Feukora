@@ -11,6 +11,8 @@ import projekt.feukora.server.model.Fuel;
 
 public class ControltypeRMIImpl extends UnicastRemoteObject implements ControltypeRMI{
 	
+	private static final long serialVersionUID = 1813253292411198528L;
+	
 	private ControltypeManager controltypeManager;
 	
 	public ControltypeRMIImpl() throws RemoteException {
