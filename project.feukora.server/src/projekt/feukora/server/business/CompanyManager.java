@@ -68,10 +68,4 @@ public interface CompanyManager {
 	 */
 	public List<Company> findCompanyByName(String name);
 
-	/**
-	 * Return a list with customers with this firstname
-	 * 
-	 * @param vorname
-	 * @return
-	 */
 }

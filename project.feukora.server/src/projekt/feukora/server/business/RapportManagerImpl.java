@@ -29,7 +29,7 @@ public class RapportManagerImpl implements RapportManager {
 		if((Integer) entity.getRapportid() == null){
 			rapportPersister.saveRapport(entity);;
 		}else{
-			throw new Exception("Das Measuringresultat (id = "+ entity.getRapportid() + ") ist bereits vorhanden");
+			throw new Exception("Der Rapport (id = "+ entity.getRapportid() + ") ist bereits vorhanden");
 		}
 		
 	}

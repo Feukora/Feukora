@@ -26,7 +26,7 @@ public interface AppointmentManager {
 	 * Update the given entity
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Appointment
 	 * @throws Exception
 	 */
 	Appointment updateAppointment(Appointment entity) throws Exception;
@@ -51,19 +51,19 @@ public interface AppointmentManager {
 	 * Return the entity with this id
 	 * 
 	 * @param appointmentid
-	 * @return
+	 * @return Appointment
 	 */
 	Appointment findAppointmentByAppointmentid(Integer appointmentid);
 
 	/**
 	 * Return all entities
 	 * 
-	 * @return
+	 * @return Appointments
 	 */
 	List<Appointment> findAllAppointments();
 
 	/**
-	 * Return a list with appointments with this appointmentdate
+	 * Return a list with appointments with this appointment date
 	 * 
 	 * @param appointmentdate
 	 * @return

@@ -21,7 +21,7 @@ public class CustomerheaterManagerImpl implements CustomerheaterManager {
 		if((Integer) entity.getCustomerheaterid() == null){
 			customerheaterPersister.saveCustomerheater(entity);
 		}else{
-			throw new Exception("Der Kunde (id = "+ entity.getCustomerheaterid() + ") ist bereits vorhanden");
+			throw new Exception("Der Customerheater (id = "+ entity.getCustomerheaterid() + ") ist bereits vorhanden");
 		}
 		
 	}

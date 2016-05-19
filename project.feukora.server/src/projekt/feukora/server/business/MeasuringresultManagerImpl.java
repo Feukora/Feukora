@@ -25,7 +25,7 @@ public class MeasuringresultManagerImpl implements MeasuringresultManager {
 		if((Integer) entity.getMeasuringresultid() == null){
 			measuringresultPersister.saveMeasuringresult(entity);
 		}else{
-			throw new Exception("Das Measuringresultat (id = "+ entity.getMeasuringresultid() + ") ist bereits vorhanden");
+			throw new Exception("Das Messresultat (id = "+ entity.getMeasuringresultid() + ") ist bereits vorhanden");
 		}
 		
 	}
