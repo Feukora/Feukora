@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 public class ControllerDetailview {
 
@@ -117,10 +118,10 @@ public class ControllerDetailview {
 
     @FXML
     void ActionDetailviewCancelAppointment(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
+		BorderPane pane = new BorderPane();
     	
     	try { // Funktioniert noch nicht
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/MainViewAdministration.fxml"));
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -2,8 +2,10 @@ package calendar.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.layout.AnchorPane;
 
 public class ControllerCalendarPane {
 
@@ -87,7 +89,15 @@ public class ControllerCalendarPane {
 
     @FXML
     void ActionSetAppointment(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+    	tues1517.getScene().setRoot(pane);
     }
 
     @FXML
