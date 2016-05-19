@@ -43,7 +43,7 @@ public class ControltypeRMIImpl extends UnicastRemoteObject implements Controlty
 	}
 
 	@Override
-	public Controltype findControltypeByControltypeid(Integer controltypelid) throws RemoteException {
+	public Controltype findControltypeByControltypeid(Integer controltypeid) throws RemoteException {
 		return controltypeManager.findControltypeByControltypeid(controltypeid);
 	}
 
