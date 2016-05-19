@@ -3,14 +3,20 @@ package customer.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import projekt.feukora.client.intern.ClientInternRMI;
-import projekt.feukora.server.model.Town;
 
 public class ControllerDetailview {
 
     @FXML
     private Button detailviewSaveCustomer;
+    
+    @FXML
+    private RadioButton radioButtonOwner;
+
+    @FXML
+    private RadioButton radioButtonAdministration;
 
     @FXML
     private TextField customerNameField;
@@ -99,4 +105,15 @@ public class ControllerDetailview {
     	customerFirstNameField.clear();
     	customerEmailField.clear();
     }
+    
+    @FXML
+    void ActionRadioButtonOwner(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ActionRadioButtonAdministration(ActionEvent event) {
+
+    }
+
 }
