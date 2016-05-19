@@ -11,6 +11,9 @@ public class ControllerDetailview {
     private Button detailviewSaveAssistent;
     
     @FXML
+    private Button detailviewCancelAssistent;
+    
+    @FXML
     private TextField assistantAddressField;
 
     @FXML
@@ -35,6 +38,11 @@ public class ControllerDetailview {
     void ActionDetailviewSaveAssistent(ActionEvent event) {
 
 //    	String name = assistantUsernameField.getText()
+    }
+    
+    @FXML
+    void ActionDetailviewCancelAssistent(ActionEvent event) {
+    	//application.ControllerViewAdministrator.ActionAssistantMenuBar(event);
     }
 
     @FXML

@@ -61,10 +61,5 @@ public class ControllerDetailview {
         bm.setName(blowerModel);
         
  		ClientInternRMI test = new ClientInternRMI();
-			
-        
-
-        
-    
-
+    }
 }

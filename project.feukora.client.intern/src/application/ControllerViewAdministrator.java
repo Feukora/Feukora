@@ -347,7 +347,7 @@ public class ControllerViewAdministrator {
     }
 
     @FXML
-    void ActionAssistantMenuBar(ActionEvent event) {
+    public void ActionAssistantMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
     	
     	try {

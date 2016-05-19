@@ -58,6 +58,7 @@
             <TextField fx:id="customerNameField" onAction="#ActionCustomerNameField" GridPane.columnIndex="1" />
             <TextField fx:id="customerFirstNameField" onAction="#ActionCustomerFirstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="customerAddressField" onAction="#ActionCustomerAddressField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="customerZipField" onAction="#ActionCustomerZipField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="customerEmailField" onAction="#ActionCustomerEmailField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="customerNumberField" onAction="#ActionCustomerNumberField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
