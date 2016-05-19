@@ -49,7 +49,7 @@ public class ControllerDetailview {
     
     @FXML
     void ActionCustomerZipField(ActionEvent event) {
-    	
+//    	Das sollte nun gehen, weil nun das Feld zur Verfügung steht
 //    	Bringt nichts, wenn ich das Feld daneben nicht ansprechen kann.
 //    	String plz = customerZipField.getText();
 //    	Integer zip = Integer.parseInt(plz);

@@ -9,17 +9,18 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.ControllerOverview">
    <children>
       <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="164.0" text="Übersicht Kunde" AnchorPane.leftAnchor="80.0" />
-      <TableView layoutX="76.0" layoutY="123.0" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+      <TableView fx:id="overviewTableCustomer" layoutX="76.0" layoutY="123.0" onSort="#ActionOverviewTableCustomer" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
         <columns>
-          <TableColumn prefWidth="150.0" text="Firmenname" />
-          <TableColumn minWidth="0.0" prefWidth="156.0" text="Name" />
-            <TableColumn prefWidth="151.0" text="Vorname" />
-            <TableColumn prefWidth="213.0" text="Adresse" />
-            <TableColumn minWidth="0.0" prefWidth="63.0" text="PLZ" />
-            <TableColumn prefWidth="108.0" text="Telefon " />
-            <TableColumn prefWidth="138.0" text="Email" />
+          <TableColumn fx:id="columnCompanynameCostumer" prefWidth="150.0" text="Firmenname" />
+          <TableColumn fx:id="columnNameCustomer" minWidth="0.0" prefWidth="156.0" text="Name" />
+            <TableColumn fx:id="columnFirstnameCustomer" prefWidth="151.0" text="Vorname" />
+            <TableColumn fx:id="columnAddressCustomer" prefWidth="213.0" text="Adresse" />
+            <TableColumn fx:id="columnZIPCustomer" minWidth="0.0" prefWidth="63.0" text="PLZ" />
+            <TableColumn fx:id="columnPhoneCustomer" prefWidth="108.0" text="Telefon " />
+            <TableColumn fx:id="columnEmailCustomer" prefWidth="138.0" text="Email" />
         </columns>
       </TableView>
       <Button fx:id="overviewDeleteCustomer" layoutX="950.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewDeleteCustomer" prefHeight="20.0" prefWidth="90.0" text="Löschen" />
+      <Button fx:id="overviewRefreshCustomer" layoutX="860.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewRefreshCustomer" text="Refresh" />
    </children>
 </AnchorPane>
