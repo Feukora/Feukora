@@ -2,8 +2,10 @@ package blower.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Blowertype;
@@ -14,6 +16,9 @@ public class ControllerDetailview {
 
     @FXML
     private Button detailviewSaveBlower;
+    
+    @FXML
+    private Button detailviewCancelBlower;
 
     @FXML
     private TextField blowerYearManufactureField;
@@ -61,5 +66,19 @@ public class ControllerDetailview {
         bm.setName(blowerModel);
         
  		ClientInternRMI test = new ClientInternRMI();
+    }
+    
+    @FXML
+    void ActionDetailviewCancelBlower(ActionEvent event) {
+		BorderPane pane = new BorderPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+    	detailviewCancelBlower.getScene().setRoot(pane);
     }
 }

@@ -17,7 +17,7 @@
         </columns>
       </TableView>
       <Button fx:id="overviewDeleteBlower" layoutX="950.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewDeleteBlower" prefHeight="20.0" prefWidth="90.0" text="Löschen" />
-      <Button fx:id="overviewRefreshBlower" layoutX="860.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewRefreshBlower" text="Refresh" />
+      <Button fx:id="overviewRefreshBlower" layoutX="830.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewRefreshBlower" prefHeight="20.0" prefWidth="90.0" text="Refresh" />
       <Button fx:id="overviewUpdateBlower" layoutX="710.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewUpdateBlower" prefHeight="20.0" prefWidth="90.0" text="Ändern" />
    </children>
 </AnchorPane>

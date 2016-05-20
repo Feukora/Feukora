@@ -123,9 +123,6 @@ public class ControllerOverview {
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("inspector/view/inspectorDetailview.fxml"));
-
-			// mainRoot.setCenter(pane);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	

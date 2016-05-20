@@ -2,13 +2,18 @@ package inspector.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 
 public class ControllerDetailview {
 
     @FXML
     private Button detailviewSaveInspector;
+    
+    @FXML
+    private Button detailviewCancelInspector;
 
     @FXML
     private TextField inspectorNameField;
@@ -69,6 +74,20 @@ public class ControllerDetailview {
     @FXML
     void ActionDetailviewSaveInspector(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void ActionDetailviewCancelInspector(ActionEvent event) {
+		BorderPane pane = new BorderPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+    	detailviewCancelInspector.getScene().setRoot(pane);
     }
 
 }

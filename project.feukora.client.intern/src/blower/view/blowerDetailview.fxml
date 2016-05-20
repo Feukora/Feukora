@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blower.controller.ControllerDetailview">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blower.controller.ControllerDetailview">
    <children>
       <Label layoutX="50.0" layoutY="37.0" prefHeight="38.0" prefWidth="348.0" text="Detail Brenner">
          <font>
@@ -36,5 +36,6 @@
          </rowConstraints>
       </GridPane>
       <Button fx:id="detailviewSaveBlower" layoutX="334.0" layoutY="326.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveBlower" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
+      <Button fx:id="detailviewCancelBlower" layoutX="164.0" layoutY="326.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelBlower" prefHeight="25.0" prefWidth="100.0" text="Abbrechen" />
    </children>
-</Pane>
+</AnchorPane>
