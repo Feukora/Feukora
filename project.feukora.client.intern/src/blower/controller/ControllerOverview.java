@@ -1,6 +1,8 @@
 package blower.controller;
 
 
+import org.apache.log4j.Logger;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -21,6 +23,9 @@ import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Users;
 
 public class ControllerOverview {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerOverview.class);
 	
 	
     @FXML // fx:id="overviewTableBlower"
@@ -65,7 +70,8 @@ public class ControllerOverview {
 			overviewTableBlower.setItems(blowers);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
     
@@ -82,7 +88,8 @@ public class ControllerOverview {
     		Blower entity = overviewTableBlower.getSelectionModel().getSelectedItem();
     		feukora.deleteBlower(entity);
     	}catch(Exception e){
-    		e.printStackTrace();
+    		logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
     	}
 
     }
@@ -103,7 +110,8 @@ public class ControllerOverview {
 			// mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
     	overviewUpdateBlower.getScene().setRoot(pane);

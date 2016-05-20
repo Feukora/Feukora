@@ -1,5 +1,9 @@
 package calendar.controller;
 
+import org.apache.log4j.Logger;
+
+import blower.controller.ControllerOverview;
+
 /**
  * Sample Skeleton for 'calendarDetailview.fxml' Controller Class
  */
@@ -13,6 +17,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 public class ControllerDetailview {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerDetailview.class);
 
     @FXML // fx:id="detailviewCancelAppointment"
     private Button detailviewCancelAppointment; // Value injected by FXMLLoader
@@ -124,7 +131,8 @@ public class ControllerDetailview {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
     	detailviewCancelAppointment.getScene().setRoot(pane);

@@ -1,5 +1,8 @@
 package assistant.controller;
 
+import org.apache.log4j.Logger;
+
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +12,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 public class ControllerDetailview {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerDetailview.class);
 
     @FXML
     private Button detailviewSaveAssistant;
@@ -51,7 +57,8 @@ public class ControllerDetailview {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
     	detailviewCancelAssistant.getScene().setRoot(pane);

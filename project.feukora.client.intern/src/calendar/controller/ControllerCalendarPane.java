@@ -1,5 +1,8 @@
 package calendar.controller;
 
+import org.apache.log4j.Logger;
+
+import blower.controller.ControllerOverview;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +11,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 
 public class ControllerCalendarPane {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerCalendarPane.class);
 
     @FXML
     private Button sat1315;
@@ -95,7 +101,8 @@ public class ControllerCalendarPane {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     	tues1517.getScene().setRoot(pane);
     }

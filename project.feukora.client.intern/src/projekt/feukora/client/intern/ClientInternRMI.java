@@ -3,8 +3,12 @@ package projekt.feukora.client.intern;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.List;
+
+import org.apache.log4j.Logger;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import login.controller.ControllerLogin;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
@@ -38,6 +42,9 @@ import projekt.feukora.server.rmi.UsergroupRMI;
  */
 public class ClientInternRMI {
 	
+	private static final Logger logger = Logger
+			.getLogger(ClientInternRMI.class);
+	
 	CustomerRMI customerRMI;
 	CompanyRMI companyRMI;
 	AppointmentRMI appointmentRMI;
@@ -65,7 +72,8 @@ public class ClientInternRMI {
 			// Init Application over RMI
 			ClientInternRMI feukora = new ClientInternRMI();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 	
@@ -156,10 +164,12 @@ public class ClientInternRMI {
 			customerRMI.deleteCustomer(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 	
@@ -186,10 +196,12 @@ public class ClientInternRMI {
 			userRMI.deleteUsers(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 	
@@ -215,10 +227,12 @@ public void saveHeater(Heater entity){
 			heaterRMI.deleteHeater(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 	
@@ -245,10 +259,12 @@ public void saveBlower(Blower entity){
 			blowerRMI.deleteBlower(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 	

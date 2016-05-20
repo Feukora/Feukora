@@ -1,5 +1,7 @@
 package customer.controller;
 
+import org.apache.log4j.Logger;
+
 import application.Context;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +16,9 @@ import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
 
 public class ControllerDetailview {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerDetailview.class);
 
 	final ToggleGroup group = new ToggleGroup();
 	
@@ -91,7 +96,8 @@ public class ControllerDetailview {
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 
     }
@@ -154,7 +160,8 @@ public class ControllerDetailview {
 			feukora.saveCustomer(lastname, adress, phone, zip, firstname, email, isOwner);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
     	
     	customerNameField.clear();
@@ -178,7 +185,8 @@ public class ControllerDetailview {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
     	detailviewCancelCustomer.getScene().setRoot(pane);

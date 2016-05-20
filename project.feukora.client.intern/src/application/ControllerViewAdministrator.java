@@ -109,7 +109,7 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Fehler bei Applikationsstart \'",
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
 		
@@ -126,7 +126,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
 		//customerWelcome.getScene().setRoot(pane);
@@ -142,7 +143,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     	//rapportWelcome.getScene().setRoot(pane);
     	
@@ -158,7 +160,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
     }
 		
@@ -174,7 +177,8 @@ public class ControllerViewAdministrator {
     			mainRoot.setCenter(pane);
 
     		} catch (Exception e) {
-    			e.printStackTrace();
+    			logger.error("Aktion konnte nicht durchgeführt werden\'",
+    					e);
     		}	
     		
     		//calendarWelcome.getScene().setRoot(pane);
@@ -191,7 +195,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
 		//blowerWelcome.getScene().setRoot(pane);
@@ -217,7 +222,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
     }
 
@@ -231,7 +237,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
 
@@ -245,7 +252,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 	}
 
@@ -259,7 +267,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 	}
     
@@ -273,7 +282,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 	}
 
@@ -287,7 +297,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 	}
     
@@ -300,7 +311,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     
     }
@@ -314,7 +326,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
 
@@ -327,7 +340,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
     
@@ -340,7 +354,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
     
@@ -352,7 +367,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
 
@@ -366,7 +382,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
 		//assistantWelcome.getScene().setRoot(pane);
@@ -382,7 +399,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
     }
 
@@ -394,7 +412,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
   

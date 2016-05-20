@@ -2,6 +2,8 @@ package inspector.controller;
 
 import java.rmi.RemoteException;
 
+import org.apache.log4j.Logger;
+
 import javafx.collections.ObservableList;
 
 /**
@@ -21,6 +23,9 @@ import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Users;
 
 public class ControllerOverview {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerDetailview.class);
 
     @FXML // fx:id="overviewDeleteInspector"
     private Button overviewDeleteInspector; // Value injected by FXMLLoader
@@ -95,7 +100,8 @@ public class ControllerOverview {
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Aktion konnte nicht durchgeführt werden\'",
+						e);
 			}
 	}
     @FXML
@@ -107,7 +113,8 @@ public class ControllerOverview {
 	    	feukora.deleteUser(entity);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
     }
 
@@ -124,7 +131,8 @@ public class ControllerOverview {
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("inspector/view/inspectorDetailview.fxml"));
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
     	overviewUpdateInspector.getScene().setRoot(pane);

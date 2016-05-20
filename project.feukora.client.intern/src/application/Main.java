@@ -1,5 +1,7 @@
 package application;
 	
+import org.apache.log4j.Logger;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -8,6 +10,10 @@ import javafx.scene.layout.BorderPane;
 
 //singleton
 public class Main extends Application {
+	
+	private static final Logger logger = Logger
+			.getLogger(Main.class);
+	
 	@Override
 	public void start(Stage primaryStage) {
 
@@ -22,7 +28,8 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Fehler bei Applikationsstart \'",
+					e);
 		}	
 	}
 	

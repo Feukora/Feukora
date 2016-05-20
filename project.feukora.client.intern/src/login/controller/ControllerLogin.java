@@ -1,5 +1,8 @@
 package login.controller;
 
+import org.apache.log4j.Logger;
+
+import inspector.controller.ControllerDetailview;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,6 +17,10 @@ import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 
 public class ControllerLogin {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerLogin.class);
+
 
     @FXML
     private TextField usernameLoginTextfield;
@@ -54,7 +61,8 @@ public class ControllerLogin {
     		}
     		
 			} catch (Exception e) {
-			e.printStackTrace();
+				logger.error("Login fehlgeschlagen\'",
+						e);
 		}	
     	
     	loginLogin.getScene().setRoot(pane);
@@ -82,7 +90,8 @@ public class ControllerLogin {
     		}
     		
 			} catch (Exception e) {
-			e.printStackTrace();
+				logger.error("Login fehlgeschlagen\'",
+						e);
 		}	
     	
     	loginLogin.getScene().setRoot(pane);

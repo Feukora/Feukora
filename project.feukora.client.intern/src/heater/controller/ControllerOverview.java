@@ -4,6 +4,8 @@
 
 package heater.controller;
 
+import org.apache.log4j.Logger;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +21,9 @@ import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Heater;
 
 public class ControllerOverview {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerOverview.class);
 	
 
     @FXML // fx:id="overviewRefreshHeater"
@@ -61,7 +66,8 @@ public class ControllerOverview {
     		overviewTableHeater.setItems(heaters);
     			
     	}catch(Exception e){
-    		e.printStackTrace();
+    		logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
     	}
     }
 
@@ -78,7 +84,8 @@ public class ControllerOverview {
     		Heater entity = overviewTableHeater.getSelectionModel().getSelectedItem();
     		feukora.deleteHeater(entity);
     	}catch(Exception e){
-    		e.printStackTrace();
+    		logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
     	}
 
     }
@@ -99,7 +106,8 @@ public class ControllerOverview {
 			// mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
     	overviewUpdateHeater.getScene().setRoot(pane);

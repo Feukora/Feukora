@@ -1,5 +1,7 @@
 package customer.controller;
 
+import org.apache.log4j.Logger;
+
 import application.Context;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,6 +24,9 @@ import javafx.scene.layout.AnchorPane;
  */
 
 public class ControllerOverview {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerOverview.class);
 
 	public ObservableList<Customer> customers = FXCollections.observableArrayList();
 	
@@ -101,7 +106,8 @@ public class ControllerOverview {
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Aktion konnte nicht durchgeführt werden\'",
+						e);
 			}
 	}
 
@@ -114,7 +120,8 @@ public class ControllerOverview {
 	    	feukora.deleteCustomer(entity);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
     	
     	
@@ -137,7 +144,8 @@ public class ControllerOverview {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
     	overviewUpdateCustomer.getScene().setRoot(pane);

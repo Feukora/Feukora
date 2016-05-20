@@ -1,5 +1,7 @@
 package application;
 
+import org.apache.log4j.Logger;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +15,8 @@ import javafx.scene.layout.Pane;
 
 public class ControllerViewInspector {
 
+	private static final Logger logger = Logger
+			.getLogger(ControllerViewInspector.class);
 
     @FXML
     private BorderPane mainRoot;
@@ -86,7 +90,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     	rapportWelcome.getScene().setRoot(pane);
     }
@@ -101,7 +106,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     	rapportWelcome.getScene().setRoot(pane);
     }
@@ -116,7 +122,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
     }
 
@@ -140,7 +147,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
     }
 
@@ -154,7 +162,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
 
@@ -168,7 +177,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 	}
 
@@ -182,7 +192,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 	}
 
@@ -196,7 +207,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 	}
     
@@ -211,7 +223,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
     
@@ -224,7 +237,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     
     }
@@ -238,7 +252,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
     
@@ -251,7 +266,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
     
@@ -264,7 +280,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
 
@@ -277,7 +294,8 @@ public class ControllerViewInspector {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
     }
 

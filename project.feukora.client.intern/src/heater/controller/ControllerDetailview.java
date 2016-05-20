@@ -1,5 +1,8 @@
 package heater.controller;
 
+import org.apache.log4j.Logger;
+
+import customer.controller.ControllerOverview;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 
 public class ControllerDetailview {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerDetailview.class);
 
     @FXML
     private Button detailviewSaveHeater;
@@ -60,7 +66,8 @@ public class ControllerDetailview {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}	
 		
     	detailviewCancelHeater.getScene().setRoot(pane);

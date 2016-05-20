@@ -1,5 +1,8 @@
 package assistant.controller;
 
+import org.apache.log4j.Logger;
+
+import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +22,9 @@ import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Users;
 
 public class ControllerOverview {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerOverview.class);
 
 	public ObservableList<Users> users = FXCollections.observableArrayList();
 
@@ -99,7 +105,8 @@ public class ControllerOverview {
 			overviewTableAssistant.setItems(users);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 
@@ -116,7 +123,8 @@ public class ControllerOverview {
 			Users entity = overviewTableAssistant.getSelectionModel().getSelectedItem();
 			feukora.deleteUser(entity);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 
 	}
@@ -137,7 +145,8 @@ public class ControllerOverview {
 			// mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 
 		overviewUpdateAssistant.getScene().setRoot(pane);
