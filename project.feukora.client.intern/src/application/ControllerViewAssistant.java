@@ -73,6 +73,9 @@ public class ControllerViewAssistant {
     private Button rapportWelcome;
     
     @FXML
+    private Button calendarWelcome;
+    
+    @FXML
     private Button inspectorWelcome;
 
     @FXML
@@ -147,6 +150,22 @@ public class ControllerViewAssistant {
 		}	
 		
 		heaterWelcome.getScene().setRoot(pane);
+    }
+    
+    @FXML
+    void ActionCalendarWelcome(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
+
+			mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+    	
+		//calendarWelcome.getScene().setRoot(pane);
     }
 
     @FXML

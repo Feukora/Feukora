@@ -108,7 +108,16 @@ public class ControllerViewInspector {
 
     @FXML
     void ActionCalendarWelcome(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
+			mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML

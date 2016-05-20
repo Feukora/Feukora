@@ -69,6 +69,9 @@ public class ControllerViewAdministrator {
 
     @FXML
     private Button blowerWelcome;
+    
+    @FXML
+    private Button calendarWelcome;
 
     @FXML
     private Button heaterWelcome;
@@ -149,9 +152,25 @@ public class ControllerViewAdministrator {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}	
+		}
+    }
 		
 		//heaterWelcome.getScene().setRoot(pane);
+    	
+        @FXML
+        void ActionCalendarWelcome(ActionEvent event) {
+    		AnchorPane pane = new AnchorPane();
+        	
+        	try {
+    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
+
+    			mainRoot.setCenter(pane);
+
+    		} catch (Exception e) {
+    			e.printStackTrace();
+    		}	
+    		
+    		//calendarWelcome.getScene().setRoot(pane);
     }
 
     @FXML
