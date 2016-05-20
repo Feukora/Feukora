@@ -75,7 +75,7 @@ public class TestdataMeasuringresult {
 		
 		
 		Customerfunction function1 = new Customerfunction("Verwaltung");
-		Customerfunction function2 = new Customerfunction("Eigentümer");
+		Customerfunction function2 = new Customerfunction("Eigentuemer");
 		
 		Usergroup group1 = new Usergroup("Administrator");
 		Usergroup group2 = new Usergroup("Feuerungskontrolleur");
