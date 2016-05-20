@@ -59,8 +59,10 @@ public class ControllerOverview {
     				new PropertyValueFactory<Heater,String>("name")
     		);
     		
-    		
-    		
+    		overviewTableHeater.setItems(heaters);
+    			
+    	}catch(Exception e){
+    		e.printStackTrace();
     	}
     }
 
