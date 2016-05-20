@@ -122,6 +122,8 @@ public class ControllerDetailview {
     	customerMunicipalityField.clear();
     	customerFirstNameField.clear();
     	customerEmailField.clear();
+    	radioButtonOwner.setSelected(false);
+    	radioButtonAdministration.setSelected(false);
     	
     	
     }
