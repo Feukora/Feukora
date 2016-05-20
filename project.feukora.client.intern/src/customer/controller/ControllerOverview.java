@@ -30,7 +30,7 @@ public class ControllerOverview {
     @FXML // fx:id="overviewDeleteCustomer"
     private Button overviewDeleteCustomer; // Value injected by FXMLLoader
     
-    @FXML // fx:id="overviewDeleteCustomer"
+    @FXML // fx:id="overviewUpdateCustomer"
     private Button overviewUpdateCustomer; // Value injected by FXMLLoader
     
     @FXML // fx:id="overviewTableCustomer"
@@ -38,6 +38,9 @@ public class ControllerOverview {
     
 	@FXML // fx:id="columnCompanynameCostumer"
     private TableColumn<Customer, String> columnCompanynameCostumer; // Value injected by FXMLLoader
+	
+	@FXML // fx:id="columnCCustomerfunctionCostumer"
+    private TableColumn<Customer, String> columnCostumerFunctionCostumer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnEmailCustomer"
     private TableColumn<Customer, String> columnEmailCustomer; // Value injected by FXMLLoader
@@ -124,33 +127,21 @@ public class ControllerOverview {
     @FXML
     void ActionOverviewUpdateCustomer(ActionEvent event) {
 		
+AnchorPane pane = new AnchorPane();
     	
     	try {
-    		Customer entity = overviewTableCustomer.getSelectionModel().getSelectedItem();
-			if(entity  != null){
-				AnchorPane pane = new AnchorPane();
-				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
-				overviewUpdateCustomer.getScene().setRoot(pane);
-				
-				//ClientInternRMI feukora = new ClientInternRMI();
-				//feukora.
-			}else{
-				String titleBar = "Achtung";
-				String headerMessage = "Nichts ausgewählt";
-				String infoMessage = "Bitte wählen Sie einen Benutzer aus";
-				Alert alert = new Alert(AlertType.INFORMATION);
-		        alert.setTitle(titleBar);
-		        alert.setHeaderText(headerMessage);
-		        alert.setContentText(infoMessage);
-		        alert.showAndWait();
-			}
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
+
 			// mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
 		
+    	overviewUpdateCustomer.getScene().setRoot(pane);
+    }	
+		
     	
-    }
-
 }
+
+

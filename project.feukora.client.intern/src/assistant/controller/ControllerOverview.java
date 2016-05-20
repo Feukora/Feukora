@@ -7,9 +7,11 @@ import javafx.event.ActionEvent;
  */
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 public class ControllerOverview {
 
@@ -18,6 +20,9 @@ public class ControllerOverview {
     
     @FXML // fx:id="overviewRefreshAssistant"
     private Button overviewRefreshAssistant; // Value injected by FXMLLoader
+    
+    @FXML // fx:id="overviewUpdateAssistant"
+    private Button overviewUpdateAssistant; // Value injected by FXMLLoader
     
     @FXML // fx:id="overviewTableAssistant"
     private TableView<?> overviewTableAssistant; // Value injected by FXMLLoader
@@ -56,6 +61,22 @@ public class ControllerOverview {
     @FXML
     void ActionOverviewRefreshAssistant(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void ActionOverviewUpdateAssistant(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("assistant/view/assistantDetailview.fxml"));
+
+			// mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+    	overviewUpdateAssistant.getScene().setRoot(pane);
     }
 
 }

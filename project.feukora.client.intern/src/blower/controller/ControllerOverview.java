@@ -7,9 +7,11 @@ package blower.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 public class ControllerOverview {
 
@@ -21,6 +23,9 @@ public class ControllerOverview {
 
     @FXML // fx:id="overviewRefreshBlower"
     private Button overviewRefreshBlower; // Value injected by FXMLLoader
+    
+    @FXML // fx:id="overviewUpdateBlower"
+    private Button overviewUpdateBlower; // Value injected by FXMLLoader
     
     @FXML // fx:id="columnNameBlower"
     private TableColumn<?, ?> columnNameBlower; // Value injected by FXMLLoader
@@ -45,6 +50,22 @@ public class ControllerOverview {
     @FXML
     void ActionOverviewRefreshBlower(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void ActionOverviewUpdateBlower(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("blower/view/blowerDetailview.fxml"));
+
+			// mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+    	overviewUpdateBlower.getScene().setRoot(pane);
     }
 
 }
