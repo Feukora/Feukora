@@ -162,6 +162,19 @@ public class ClientInternRMI {
 		}
 	}
 	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<Customer> getCustomers() throws Exception {
+		
+		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
+		customerlist.addAll(customerRMI.findAllCustomers());
+		return customerlist;
+		
+	}
+	
 	
 	public void saveUser(Users entity){
 		
@@ -178,6 +191,19 @@ public class ClientInternRMI {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<Users> getUsers() throws Exception {
+		
+		ObservableList<Users> userlist = FXCollections.observableArrayList();
+		userlist.addAll(userRMI.findAllUsers());
+		return userlist;
+		
+	}
 
 	public String getTown(Integer zip) throws RemoteException {
 		Town town1 = townRMI.findTownByZip(zip);
@@ -185,16 +211,5 @@ public class ClientInternRMI {
 		
 	}	
 	
-	/**
-	 * 
-	 *
-	 * @throws Exception
-	 */
-	public ObservableList<Customer> getCustomers() throws Exception {
-		
-		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
-		customerlist.addAll(customerRMI.findAllCustomers());
-		return customerlist;
-		
-	}
+
 }

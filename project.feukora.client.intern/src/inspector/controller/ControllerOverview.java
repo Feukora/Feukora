@@ -2,6 +2,8 @@ package inspector.controller;
 
 import java.rmi.RemoteException;
 
+import javafx.collections.ObservableList;
+
 /**
  * Sample Skeleton for 'inspectorOverview.fxml' Controller Class
  */
@@ -11,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Users;
@@ -53,6 +56,44 @@ public class ControllerOverview {
     }
 
     @FXML
+	public void initialize() {
+		 try {
+				ClientInternRMI feukora = new ClientInternRMI();
+				ObservableList<Users> users = feukora.getUsers();
+				
+				columnUsernameInspector.setCellValueFactory(
+						new PropertyValueFactory<Users, String>("username")
+				);
+				
+				columnNameInspector.setCellValueFactory(
+						new PropertyValueFactory<Users, String>("lastname")
+				);
+				columnFirstnameInspector.setCellValueFactory(
+						new PropertyValueFactory<Users, String>("firstname")
+				);
+				columnZIPInspector.setCellValueFactory(
+						new PropertyValueFactory<Users, String>("town")
+				);
+				columnAddressInspector.setCellValueFactory(
+						new PropertyValueFactory<Users, String>("adress")
+				);
+				columnPhoneInspector.setCellValueFactory(
+						new PropertyValueFactory<Users, String>("phone")
+				);
+				columnEmailInspector.setCellValueFactory(
+						new PropertyValueFactory<Users, String>("email")
+				);
+				
+				overviewTableInspector.setItems(users);
+				
+				//overviewTableCustomer.getSelectionModel().get
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}
+    @FXML
     void ActionOverviewDeleteInspector(ActionEvent event) {
     	ClientInternRMI feukora;
 		try {
@@ -67,7 +108,7 @@ public class ControllerOverview {
 
     @FXML
     void ActionOverviewRefreshInspector(ActionEvent event) {
-
+    	initialize();
     }
 
 }
