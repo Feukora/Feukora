@@ -138,8 +138,8 @@ public class ClientInternRMI {
 	 */
 	public void saveCustomer(String lastname, String adress, String phone, Integer zip, String firstname, String email, Boolean isOwner) throws Exception {
 		Customerfunction function;
-		if(isOwner = true) {
-			function = customerfunctionRMI.findCustomerfunctionByName("Eingentümer");
+		if(isOwner == true) {
+			function = customerfunctionRMI.findCustomerfunctionByName("Eingentuemer");
 		} else {
 			function = customerfunctionRMI.findCustomerfunctionByName("Verwaltung");
 		}
