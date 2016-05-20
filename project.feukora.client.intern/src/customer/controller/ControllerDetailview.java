@@ -5,12 +5,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
 
 public class ControllerDetailview {
 
+	final ToggleGroup group = new ToggleGroup();
+	
     @FXML
     private Button detailviewSaveCustomer;
     
@@ -90,9 +93,16 @@ public class ControllerDetailview {
     void ActionCustomerNumberField(ActionEvent event) {
 
     }
+    
+    public void initialize() {
+    	radioButtonOwner.setToggleGroup(group);
+    	radioButtonAdministration.setToggleGroup(group);
+    	radioButtonOwner.setSelected(true);
+    }
 
     @FXML
     void ActionDetailviewSaveCustomer(ActionEvent event) {
+    	
     	String lastname = customerNameField.getText();
     	String adress = customerAddressField.getText();
     	String phone = customerNumberField.getText();
@@ -122,7 +132,7 @@ public class ControllerDetailview {
     	customerMunicipalityField.clear();
     	customerFirstNameField.clear();
     	customerEmailField.clear();
-    	radioButtonOwner.setSelected(false);
+    	radioButtonOwner.setSelected(true);
     	radioButtonAdministration.setSelected(false);
     	
     	
