@@ -1,12 +1,15 @@
 package customer.controller;
 
+import application.Context;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
 
@@ -18,11 +21,17 @@ public class ControllerDetailview {
     private Button detailviewSaveCustomer;
     
     @FXML
+    private Button detailviewCancelCustomer;
+    
+    @FXML
     private RadioButton radioButtonOwner;
 
     @FXML
     private RadioButton radioButtonAdministration;
 
+    @FXML
+    private TextField customerCompanyNameField;
+    
     @FXML
     private TextField customerNameField;
 
@@ -44,8 +53,11 @@ public class ControllerDetailview {
     @FXML
     private TextField customerEmailField;
 
+    @FXML
+    void ActionCustomerCompanyNameField(ActionEvent event) {
 
-
+    }
+    
     @FXML
     void ActionCustomerNameField(ActionEvent event) {
 
@@ -95,9 +107,24 @@ public class ControllerDetailview {
     }
     
     public void initialize() {
+    	
+    	if(Context.getCustomerName().isEmpty() == false){
+    	customerNameField.setText(Context.getCustomerName());
+    	customerFirstNameField.setText(Context.getCustomerFirstname());
+    	customerAddressField.setText(Context.getCustomerAdress());
+    	customerNumberField.setText(Context.getCustomerPhone());
+    	customerEmailField.setText(Context.getCustomerEmail());
+    	customerZipField.setText(Context.getCustomerTown());
+    	customerNameField.setText(Context.getCustomerName());
+    	if(Context.getCustomerCustomerfunction() == "Eigentümer"){
+    		radioButtonOwner.setSelected(true);
+    	}
+    	}
+    	//}
     	radioButtonOwner.setToggleGroup(group);
     	radioButtonAdministration.setToggleGroup(group);
     	radioButtonOwner.setSelected(true);
+    	
     }
 
     @FXML
@@ -139,6 +166,20 @@ public class ControllerDetailview {
     }
     
     @FXML
+    void ActionDetailviewCancelCustomer(ActionEvent event) {
+		BorderPane pane = new BorderPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+    	detailviewCancelCustomer.getScene().setRoot(pane);
+    }
+    
+    @FXML
     void ActionRadioButtonOwner(ActionEvent event) {
     	
 
@@ -148,6 +189,4 @@ public class ControllerDetailview {
     void ActionRadioButtonAdministration(ActionEvent event) {
 
     }
-    
-
 }

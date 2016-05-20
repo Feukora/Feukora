@@ -120,6 +120,11 @@ public class Customer implements Serializable{
 		return email;
 	}
 
+
+	public String getCustomerfunction() {
+		return customerfunctionid.toString();
+	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
