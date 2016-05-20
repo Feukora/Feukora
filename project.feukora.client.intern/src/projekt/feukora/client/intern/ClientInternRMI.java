@@ -161,6 +161,23 @@ public class ClientInternRMI {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	public void saveUser(Users entity){
+		
+	}
+	
+	public void deleteUser(Users entity) {
+		try {
+			userRMI.deleteUsers(entity);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public String getTown(Integer zip) throws RemoteException {
 		Town town1 = townRMI.findTownByZip(zip);
