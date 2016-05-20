@@ -1,5 +1,7 @@
 package application;
 
+import org.apache.log4j.Logger;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +13,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
+
 public class ControllerViewAdministrator {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerViewAdministrator.class);
 
     @FXML
     private BorderPane mainRoot;
@@ -103,7 +109,8 @@ public class ControllerViewAdministrator {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Fehler bei Applikationsstart \'",
+					e);
 		}	
 		
     	//inspectorWelcome.getScene().setRoot(pane);
