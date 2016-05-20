@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Customer;
 
 public class ControllerDetailview {
 
@@ -130,5 +132,6 @@ public class ControllerDetailview {
     void ActionRadioButtonAdministration(ActionEvent event) {
 
     }
+    
 
 }
