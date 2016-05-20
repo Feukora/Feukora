@@ -1,5 +1,6 @@
 package customer.controller;
 
+import application.Context;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -127,11 +128,13 @@ public class ControllerOverview {
     @FXML
     void ActionOverviewUpdateCustomer(ActionEvent event) {
 		
-AnchorPane pane = new AnchorPane();
+    		
+    	AnchorPane pane = new AnchorPane();
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
-
+//			Customer customer = overviewTableCustomer.getSelectionModel().getSelectedItem();
+//			Context.getInstance().setCustomer(customer);
 			// mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
