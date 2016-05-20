@@ -119,8 +119,11 @@ public class ControllerDetailview {
     	customerAddressField.clear();
     	customerNumberField.clear();
     	customerZipField.clear();
+    	customerMunicipalityField.clear();
     	customerFirstNameField.clear();
     	customerEmailField.clear();
+    	
+    	
     }
     
     @FXML
