@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assistant.controller.ControllerDetailview">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assistant.controller.ControllerDetailview">
    <children>
       <Label layoutX="50.0" layoutY="37.0" prefHeight="38.0" prefWidth="435.0" text="Detail Sachbearbeiter/In">
          <font>
@@ -64,4 +64,4 @@
       </GridPane>
       <Button fx:id="detailviewSaveAssistent" layoutX="334.0" layoutY="325.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveAssistent" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
    </children>
-</Pane>
+</AnchorPane>
