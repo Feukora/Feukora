@@ -103,7 +103,7 @@ public class ControllerViewAdministrator {
 			e.printStackTrace();
 		}	
 		
-    	inspectorWelcome.getScene().setRoot(pane);
+    	//inspectorWelcome.getScene().setRoot(pane);
     }
 
     @FXML
@@ -119,7 +119,7 @@ public class ControllerViewAdministrator {
 			e.printStackTrace();
 		}	
 		
-		customerWelcome.getScene().setRoot(pane);
+		//customerWelcome.getScene().setRoot(pane);
     }
 
     @FXML
@@ -134,7 +134,7 @@ public class ControllerViewAdministrator {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
-    	rapportWelcome.getScene().setRoot(pane);
+    	//rapportWelcome.getScene().setRoot(pane);
     	
     }
 
@@ -151,7 +151,7 @@ public class ControllerViewAdministrator {
 			e.printStackTrace();
 		}	
 		
-		heaterWelcome.getScene().setRoot(pane);
+		//heaterWelcome.getScene().setRoot(pane);
     }
 
     @FXML
@@ -168,7 +168,7 @@ public class ControllerViewAdministrator {
 			e.printStackTrace();
 		}	
 		
-		blowerWelcome.getScene().setRoot(pane);
+		//blowerWelcome.getScene().setRoot(pane);
 		}
     
     @FXML
@@ -343,7 +343,7 @@ public class ControllerViewAdministrator {
 			e.printStackTrace();
 		}	
 		
-		assistantWelcome.getScene().setRoot(pane);
+		//assistantWelcome.getScene().setRoot(pane);
     }
 
     @FXML
