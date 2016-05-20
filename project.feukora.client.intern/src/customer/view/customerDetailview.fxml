@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.ControllerDetailview">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.ControllerDetailview">
    <children>
       <Label layoutX="45.0" layoutY="37.0" prefHeight="38.0" prefWidth="456.0" text="Detail Kunde">
          <font>
@@ -27,6 +27,15 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
+            <Label prefHeight="25.0" prefWidth="60.0" text="Name" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Vorname" GridPane.rowIndex="1" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Adresse" GridPane.rowIndex="2" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="PLZ / Ort" GridPane.rowIndex="3" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Email" GridPane.rowIndex="4" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Nummer" GridPane.rowIndex="5" />
+            <TextField fx:id="customerNameField" onAction="#ActionCustomerNameField" GridPane.columnIndex="1" />
+            <TextField fx:id="customerFirstNameField" onAction="#ActionCustomerFirstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="customerAddressField" onAction="#ActionCustomerAddressField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <HBox prefHeight="19.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
                   <TextField fx:id="customerZipField" onAction="#ActionCustomerZipField" prefHeight="25.0" prefWidth="92.0" />
@@ -48,15 +57,6 @@
                   <Insets top="4.0" />
                </GridPane.margin>
             </HBox>
-            <Label prefHeight="25.0" prefWidth="60.0" text="Name" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Vorname" GridPane.rowIndex="1" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Adresse" GridPane.rowIndex="2" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="PLZ / Ort" GridPane.rowIndex="3" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Email" GridPane.rowIndex="4" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Nummer" GridPane.rowIndex="5" />
-            <TextField fx:id="customerNameField" onAction="#ActionCustomerNameField" GridPane.columnIndex="1" />
-            <TextField fx:id="customerFirstNameField" onAction="#ActionCustomerFirstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="customerAddressField" onAction="#ActionCustomerAddressField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="customerEmailField" onAction="#ActionCustomerEmailField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="customerNumberField" onAction="#ActionCustomerNumberField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
