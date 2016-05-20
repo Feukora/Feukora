@@ -13,6 +13,8 @@ public class Main extends Application {
 
 		primaryStage.setTitle("Feukora");
 
+		
+		
 		try {
 			final  BorderPane root =  FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
 			// login/view/loginPane

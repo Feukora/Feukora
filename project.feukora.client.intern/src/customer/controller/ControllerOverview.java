@@ -132,10 +132,9 @@ public class ControllerOverview {
     	AnchorPane pane = new AnchorPane();
     	
     	try {
+			Customer customer = overviewTableCustomer.getSelectionModel().getSelectedItem();
+			Context.setCustomer(customer);
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
-//			Customer customer = overviewTableCustomer.getSelectionModel().getSelectedItem();
-//			Context.getInstance().setCustomer(customer);
-			// mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
 			e.printStackTrace();

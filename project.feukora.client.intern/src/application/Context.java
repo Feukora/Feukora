@@ -4,28 +4,57 @@ import projekt.feukora.server.model.Customer;
 
 public class Context {
 	
-	private static Context INSTANCE = new Context();
 	
 	private Customer customer;
 	
-	private Context() {
+	public static String lastname;
+	public static String adress;
+	public static String phone;
+	public static String plz;
+	public static String firstname;
+	public static String email;
+	public static String customerfunction;
+	
+	public Context() {
 		
 	}
 	
-	public Customer getCustomer() {
-		return customer;
-	}
+	public static void setCustomer(Customer customer) {
+		lastname = customer.getLastname();
+    	adress = customer.getAdress();
+		phone = customer.getPhone();
+    	plz = customer.getTown();
+    	firstname = customer.getFirstname();
+    	email = customer.getEmail();   	
+    	customerfunction = customer.getCustomerfunction();
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-
-	public static Context getInstance() {
-		return INSTANCE;
 	}
 	
-	public static void setInstance(Context instance) {
-		INSTANCE = instance;
+	public static String getCustomerName() {
+		return lastname;
+	}
+	
+	public static String getCustomerAdress() {
+		return adress;
 	}
 
+	public static String getCustomerPhone() {
+		return phone;
+	}
+	
+	public static String getCustomerTown() {
+		return plz;
+	}
+	
+	public static String getCustomerFirstname() {
+		return firstname;
+	}
+	
+	public static String getCustomerEmail() {
+		return email;
+	}
+	
+	public static String getCustomerCustomerfunction() {
+		return customerfunction;
+	}
 }
