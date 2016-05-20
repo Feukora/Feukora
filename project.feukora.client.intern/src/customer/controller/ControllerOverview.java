@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
@@ -124,8 +126,19 @@ public class ControllerOverview {
 		AnchorPane pane = new AnchorPane();
     	
     	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
-
+    		Customer entity = overviewTableCustomer.getSelectionModel().getSelectedItem();
+			if(entity  != null){
+    		pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
+			}else{
+				String titleBar = "Achtung";
+				String headerMessage = "Nichts ausgewählt";
+				String infoMessage = "Bitte wählen Sie einen Benutzer aus";
+				Alert alert = new Alert(AlertType.INFORMATION);
+		        alert.setTitle(titleBar);
+		        alert.setHeaderText(headerMessage);
+		        alert.setContentText(infoMessage);
+		        alert.showAndWait();
+			}
 			// mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
