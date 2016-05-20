@@ -130,6 +130,7 @@ public class ControllerOverview {
 			if(entity  != null){
 				AnchorPane pane = new AnchorPane();
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
+				overviewUpdateCustomer.getScene().setRoot(pane);
 			}else{
 				String titleBar = "Achtung";
 				String headerMessage = "Nichts ausgewählt";
@@ -146,7 +147,7 @@ public class ControllerOverview {
 			e.printStackTrace();
 		}	
 		
-    	overviewUpdateCustomer.getScene().setRoot(pane);
+    	
     }
 
 }
