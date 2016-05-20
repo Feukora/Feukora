@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assistant.controller.ControllerOverview">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assistant.controller.ControllerOverview">
    <children>
-      <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="164.0" text="Übersicht Sachbearbeiter" AnchorPane.leftAnchor="80.0" />
+      <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="228.0" text="Übersicht Sachbearbeiter" AnchorPane.leftAnchor="80.0" />
       <TableView fx:id="overviewTableAssistant" layoutX="76.0" layoutY="123.0" onSort="#ActionOverviewTableAssistant" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
         <columns>
           <TableColumn fx:id="columnUsernameAssistant" prefWidth="150.0" text="Username" />
