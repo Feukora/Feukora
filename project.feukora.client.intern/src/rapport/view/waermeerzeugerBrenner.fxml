@@ -5,108 +5,104 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="23.0" layoutY="127.0" text="Wärmeerzeuger">
+      <Label layoutX="21.0" layoutY="61.0" text="Wärmeerzeuger">
          <font>
-            <Font name="System Bold" size="28.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="167.0" prefHeight="35.0" prefWidth="108.0" text="Baujahr">
+      <Label layoutX="21.0" layoutY="101.0" prefHeight="35.0" prefWidth="108.0" text="Baujahr">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="21.0" layoutY="136.0" prefHeight="30.0" prefWidth="65.0" />
+      <Label layoutX="116.0" layoutY="101.0" prefHeight="35.0" prefWidth="125.0" text="Fabrikat / Typ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="101.0" prefHeight="35.0" prefWidth="108.0" text="Brennstoff">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="424.0" layoutY="61.0" text="Kontrollart">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="238.0" text="Brenner">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="284.0" prefHeight="35.0" prefWidth="108.0" text="Baujahr">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="21.0" layoutY="319.0" prefHeight="51.0" prefWidth="65.0" />
+      <Label layoutX="118.0" layoutY="281.0" prefHeight="35.0" prefWidth="125.0" text="Fabrikat / Typ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="342.0" layoutY="281.0" prefHeight="35.0" prefWidth="108.0" text="Brennstoff">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="23.0" layoutY="202.0" prefHeight="51.0" prefWidth="108.0" />
-      <Label layoutX="158.0" layoutY="167.0" prefHeight="35.0" prefWidth="125.0" text="Fabrikat / Typ">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField layoutX="158.0" layoutY="202.0" prefHeight="51.0" prefWidth="377.0" />
-      <Label layoutX="550.0" layoutY="167.0" prefHeight="35.0" prefWidth="108.0" text="Brennstoff">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField layoutX="550.0" layoutY="202.0" prefHeight="51.0" prefWidth="40.0" />
-      <Label layoutX="597.0" layoutY="202.0" prefHeight="26.0" prefWidth="54.0" text="1 = Öl">
+      <TextField layoutX="453.0" layoutY="320.0" prefHeight="51.0" prefWidth="125.0" />
+      <Label layoutX="450.0" layoutY="284.0" prefHeight="35.0" prefWidth="166.0" text="Feuerungswärmeleistung">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="597.0" layoutY="215.0" prefHeight="26.0" prefWidth="75.0" text="2 = Erdgas">
+      <Button layoutX="481.0" layoutY="461.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" text="Weiter &gt;" />
+      <Button layoutX="21.0" layoutY="461.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" text="&lt; Zurück" />
+      <ComboBox layoutX="118.0" layoutY="136.0" prefHeight="51.0" prefWidth="125.0" />
+      <RadioButton layoutX="270.0" layoutY="130.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="109.0" text="Öl">
          <font>
             <Font size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="597.0" layoutY="228.0" prefHeight="26.0" prefWidth="98.0" text="3 = Flüssiggas">
+      </RadioButton>
+      <RadioButton layoutX="270.0" layoutY="185.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Flüssiggas">
          <font>
             <Font size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="722.0" layoutY="127.0" text="Kontrollart">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <TextField layoutX="722.0" layoutY="203.0" prefHeight="51.0" prefWidth="40.0" />
-      <Label layoutX="765.0" layoutY="209.0" prefHeight="26.0" prefWidth="144.0" text="1 = Routinekontrolle">
+      </RadioButton>
+      <RadioButton layoutX="270.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Erdgas">
          <font>
             <Font size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="765.0" layoutY="223.0" prefHeight="26.0" prefWidth="144.0" text="2 = Abnahmekontrolle">
+      </RadioButton>
+      <RadioButton layoutX="424.0" layoutY="130.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Routinekontrolle">
          <font>
             <Font size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="23.0" layoutY="304.0" text="Brenner">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="23.0" layoutY="350.0" prefHeight="35.0" prefWidth="108.0" text="Baujahr">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField layoutX="23.0" layoutY="385.0" prefHeight="51.0" prefWidth="108.0" />
-      <Label layoutX="159.0" layoutY="350.0" prefHeight="35.0" prefWidth="125.0" text="Fabrikat / Typ">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField layoutX="159.0" layoutY="385.0" prefHeight="51.0" prefWidth="377.0" />
-      <Label layoutX="550.0" layoutY="350.0" prefHeight="35.0" prefWidth="108.0" text="Brennstoff">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField layoutX="550.0" layoutY="385.0" prefHeight="51.0" prefWidth="40.0" />
-      <Label layoutX="597.0" layoutY="385.0" prefHeight="26.0" prefWidth="86.0" text="1 = Gebläse">
+      </RadioButton>
+      <RadioButton layoutX="424.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="177.0" text="Abnahmekontrolle">
          <font>
             <Font size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="597.0" layoutY="398.0" prefHeight="26.0" prefWidth="125.0" text="2 = athmosphärisch">
+      </RadioButton>
+      <ComboBox layoutX="118.0" layoutY="316.0" prefHeight="51.0" prefWidth="203.0" />
+      <RadioButton layoutX="342.0" layoutY="310.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Gebläse">
          <font>
             <Font size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="597.0" layoutY="411.0" prefHeight="26.0" prefWidth="98.0" text="3 = Verdampfer">
+      </RadioButton>
+      <RadioButton layoutX="342.0" layoutY="359.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Verdampfer">
          <font>
             <Font size="14.0" />
          </font>
-      </Label>
-      <TextField layoutX="722.0" layoutY="385.0" prefHeight="51.0" prefWidth="200.0" />
-      <Label layoutX="722.0" layoutY="348.0" prefHeight="35.0" prefWidth="211.0" text="Feuerungswärmeleistung">
+      </RadioButton>
+      <RadioButton layoutX="342.0" layoutY="335.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Athmosphäre">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
-      </Label>
-      <Button layoutX="812.0" layoutY="727.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" text="Weiter &gt;" />
-      <Button layoutX="23.0" layoutY="727.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" text="&lt; Zurück" />
+      </RadioButton>
    </children>
 </AnchorPane>
