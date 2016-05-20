@@ -123,12 +123,13 @@ public class ControllerOverview {
     
     @FXML
     void ActionOverviewUpdateCustomer(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
+		
     	
     	try {
     		Customer entity = overviewTableCustomer.getSelectionModel().getSelectedItem();
 			if(entity  != null){
-    		pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
+				AnchorPane pane = new AnchorPane();
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
 			}else{
 				String titleBar = "Achtung";
 				String headerMessage = "Nichts ausgewählt";
