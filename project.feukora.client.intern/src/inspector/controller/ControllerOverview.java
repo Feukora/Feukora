@@ -10,10 +10,12 @@ import javafx.collections.ObservableList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Users;
@@ -22,6 +24,9 @@ public class ControllerOverview {
 
     @FXML // fx:id="overviewDeleteInspector"
     private Button overviewDeleteInspector; // Value injected by FXMLLoader
+    
+    @FXML // fx:id="overviewUpdateInspector"
+    private Button overviewUpdateInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="overviewRefreshInspector"
     private Button overviewRefreshInspector; // Value injected by FXMLLoader
@@ -109,6 +114,23 @@ public class ControllerOverview {
     @FXML
     void ActionOverviewRefreshInspector(ActionEvent event) {
     	initialize();
+    }
+    
+    
+    @FXML
+    void ActionOverviewUpdateInspector(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("inspector/view/inspectorDetailview.fxml"));
+
+			// mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+    	overviewUpdateInspector.getScene().setRoot(pane);
     }
 
 }

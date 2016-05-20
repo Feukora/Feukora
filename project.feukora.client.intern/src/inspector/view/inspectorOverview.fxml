@@ -22,5 +22,6 @@
       </TableView>
       <Button fx:id="overviewDeleteInspector" layoutX="950.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewDeleteInspector" prefHeight="20.0" prefWidth="90.0" text="Löschen" />
       <Button fx:id="overviewRefreshInspector" layoutX="860.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewRefreshInspector" text="Refresh" />
+      <Button fx:id="overviewUpdateInspector" layoutX="710.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewUpdateInspector" prefHeight="20.0" prefWidth="90.0" text="Ändern" />
    </children>
 </AnchorPane>
