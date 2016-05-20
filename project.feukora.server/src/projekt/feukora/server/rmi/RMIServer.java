@@ -1,7 +1,5 @@
 package projekt.feukora.server.rmi;
 
-
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
@@ -154,7 +152,4 @@ public class RMIServer {
 			e.printStackTrace();
 		}
 	}
-
-
-
 }
