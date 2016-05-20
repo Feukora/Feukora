@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
+import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Users;
 import projekt.feukora.server.rmi.AppointmentRMI;
@@ -31,7 +32,7 @@ import projekt.feukora.server.rmi.UsergroupRMI;
 /**
  * This Class implements the rmi connection 
  * 
- * @version 1.1
+ * @version 1.2
  * @author Sandro Fasser
  *
  */
@@ -183,6 +184,65 @@ public class ClientInternRMI {
 	public void deleteUser(Users entity) {
 		try {
 			userRMI.deleteUsers(entity);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<Heater> getHeaters() throws Exception {
+		
+		ObservableList<Heater> heaterlist = FXCollections.observableArrayList();
+		heaterlist.addAll(heaterRMI.findAllHeaters());
+		return heaterlist;
+		
+	}
+	
+public void saveHeater(Heater entity){
+		
+	}
+	
+	public void deleteHeater(Heater entity) {
+		try {
+			heaterRMI.deleteHeater(entity);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<Blower> getBlowers() throws Exception {
+		
+		ObservableList<Blower> blowerlist = FXCollections.observableArrayList();
+		blowerlist.addAll(blowerRMI.findAllBlowers());
+		return blowerlist;
+		
+	}
+	
+public void saveBlower(Blower entity){
+		
+	}
+	
+	public void deleteBlower(Blower entity) {
+		try {
+			blowerRMI.deleteBlower(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

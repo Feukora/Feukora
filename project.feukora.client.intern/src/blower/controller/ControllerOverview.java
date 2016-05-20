@@ -22,10 +22,9 @@ import projekt.feukora.server.model.Users;
 
 public class ControllerOverview {
 	
-	public ObservableList<Blower> blowers = FXCollections.observableArrayList();
-
+	
     @FXML // fx:id="overviewTableBlower"
-    private TableView<?> overviewTableBlower; // Value injected by FXMLLoader
+    private TableView<Blower> overviewTableBlower; // Value injected by FXMLLoader
   
     @FXML // fx:id="overviewDeleteBlower"
     private Button overviewDeleteBlower; // Value injected by FXMLLoader
@@ -37,20 +36,20 @@ public class ControllerOverview {
     private Button overviewUpdateBlower; // Value injected by FXMLLoader
     
     @FXML // fx:id="columnNameBlower"
-    private TableColumn<?, ?> columnNameBlower; // Value injected by FXMLLoader
+    private TableColumn<Blower, String> columnNameBlower; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnTypeBlower"
-    private TableColumn<?, ?> columnTypeBlower; // Value injected by FXMLLoader
+    private TableColumn<Blower, String> columnTypeBlower; // Value injected by FXMLLoader
 
 
     @FXML // fx:id="columnYearOfManufacturBlower"
-    private TableColumn<?, ?> columnYearOfManufacturBlower; // Value injected by FXMLLoader
+    private TableColumn<Blower, String> columnYearOfManufacturBlower; // Value injected by FXMLLoader
 
     @FXML
 	public void initialize() {
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			blowers = feukora.getBlower();
+			ObservableList<Blower> blowers = feukora.getBlowers();
 
 			columnNameBlower.setCellValueFactory(
 					new PropertyValueFactory<Blower, String>("name")

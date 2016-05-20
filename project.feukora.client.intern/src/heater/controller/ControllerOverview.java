@@ -20,7 +20,6 @@ import projekt.feukora.server.model.Heater;
 
 public class ControllerOverview {
 	
-	public ObservableList<Heater> heaters = FXCollections.observableArrayList();
 
     @FXML // fx:id="overviewRefreshHeater"
     private Button overviewRefreshHeater; // Value injected by FXMLLoader
@@ -32,22 +31,22 @@ public class ControllerOverview {
     private Button overviewDeleteHeater; // Value injected by FXMLLoader
 
     @FXML // fx:id="overviewTableHeater"
-    private TableView<?> overviewTableHeater; // Value injected by FXMLLoader
+    private TableView<Heater> overviewTableHeater; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnTypeHeater"
-    private TableColumn<?, ?> columnTypeHeater; // Value injected by FXMLLoader
+    private TableColumn<Heater, String> columnTypeHeater; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnYearOfManifactureHeater"
-    private TableColumn<?, ?> columnYearOfManifactureHeater; // Value injected by FXMLLoader
+    private TableColumn<Heater, String> columnYearOfManifactureHeater; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnNameHeater"
-    private TableColumn<?, ?> columnNameHeater; // Value injected by FXMLLoader
+    private TableColumn<Heater, String> columnNameHeater; // Value injected by FXMLLoader
     
     @FXML
     public void initialize(){
     	try{
     		ClientInternRMI feukora = new ClientInternRMI();
-    		heaters = feukora.getHeaters();
+    		ObservableList<Heater> heaters = feukora.getHeaters();
     		
     		columnTypeHeater.setCellValueFactory(
     				new PropertyValueFactory<Heater, String>("heatertype")
@@ -76,7 +75,7 @@ public class ControllerOverview {
     	ClientInternRMI feukora;
     	try{
     		feukora = new ClientInternRMI();
-    		Blower entity = overviewTableHeater.getSelectionModel().getSelectedItem();
+    		Heater entity = overviewTableHeater.getSelectionModel().getSelectedItem();
     		feukora.deleteHeater(entity);
     	}catch(Exception e){
     		e.printStackTrace();
