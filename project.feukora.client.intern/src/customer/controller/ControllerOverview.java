@@ -131,6 +131,9 @@ public class ControllerOverview {
 				AnchorPane pane = new AnchorPane();
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
 				overviewUpdateCustomer.getScene().setRoot(pane);
+				
+				//ClientInternRMI feukora = new ClientInternRMI();
+				//feukora.
 			}else{
 				String titleBar = "Achtung";
 				String headerMessage = "Nichts ausgewählt";
