@@ -56,6 +56,7 @@ public class ControllerDetailview {
     @FXML
     void ActionCustomerMunicipalityField(ActionEvent event) {
 
+
     }
 
     @FXML
@@ -65,18 +66,18 @@ public class ControllerDetailview {
     
     @FXML
     void ActionCustomerZipField(ActionEvent event) {
-//    	Das sollte nun gehen, weil nun das Feld zur Verfügung steht
-//    	Bringt nichts, wenn ich das Feld daneben nicht ansprechen kann.
-//    	String plz = customerZipField.getText();
-//    	Integer zip = Integer.parseInt(plz);
-//    	
-//    	try {
-//			ClientInternRMI feukora = new ClientInternRMI();
-//			String town = feukora.getTown(zip);
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+    	String plz = customerZipField.getText();
+    	Integer zip = Integer.parseInt(plz);
+    	
+    	try {
+			ClientInternRMI feukora = new ClientInternRMI();
+			String town = feukora.getTown(zip);
+			customerMunicipalityField.setText(town);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
     }
 
