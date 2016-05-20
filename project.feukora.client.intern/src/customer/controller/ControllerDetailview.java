@@ -125,7 +125,6 @@ public class ControllerDetailview {
     	radioButtonAdministration.setToggleGroup(group);
     	radioButtonOwner.setSelected(true);
     	
-<<<<<<< HEAD
     	if(Context.getCustomerName().isEmpty() == false){
 	    	customerNameField.setText(Context.getCustomerName());
 	    	customerFirstNameField.setText(Context.getCustomerFirstname());
@@ -139,10 +138,7 @@ public class ControllerDetailview {
     	}
     	}
 
-    	
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
-    }
+    	   }
 
     @FXML
     void ActionDetailviewSaveCustomer(ActionEvent event) {
