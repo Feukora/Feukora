@@ -4,8 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
@@ -88,6 +90,13 @@ public class ControllerLogin {
     
     @FXML
     void ActionPasswordForgetLogin(ActionEvent event) {
-
+		String titleBar = "Passwort vergessen?";
+		String headerMessage = "Melden Sie sich fürs Zurücksetzen beim Administrator:";
+		String infoMessage = "Telefon: 081 407 11 11 Email: admin@test.ch";
+		Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(titleBar);
+        alert.setHeaderText(headerMessage);
+        alert.setContentText(infoMessage);
+        alert.showAndWait();
     }
 }
