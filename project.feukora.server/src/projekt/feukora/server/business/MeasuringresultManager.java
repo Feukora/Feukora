@@ -39,7 +39,7 @@ public interface MeasuringresultManager {
 	void deleteMeasuringresult(Measuringresult entity) throws Exception;
 
 	/**
-	 * Delete the entity with this id
+	 * Delete the measuringresult entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -47,7 +47,7 @@ public interface MeasuringresultManager {
 	void deleteMeasuringresultByMeasuringresultid(Integer measuringresultid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the measuringresult entity with this id
 	 * 
 	 * @param id
 	 * @return Heater

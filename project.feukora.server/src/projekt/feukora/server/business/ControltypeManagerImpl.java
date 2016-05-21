@@ -1,11 +1,17 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Controltype;
 import projekt.feukora.server.persister.ControltypePersister;
 import projekt.feukora.server.persister.ControltypePersisterImpl;
 
+/**
+ * The Class implements the methodes of the interface ControltypeManager.
+ * 
+ * @author Tamara
+ * @version 1.0
+ *
+ */
 public class ControltypeManagerImpl implements ControltypeManager{
 	
 	ControltypePersister controltypePersister = new ControltypePersisterImpl();

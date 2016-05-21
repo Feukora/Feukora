@@ -5,8 +5,10 @@ import java.util.List;
 import projekt.feukora.server.model.Users;
 
 /**
+ * Interface to handle user entities.
  * 
  * @author Tamara
+ * @version 1.0
  *
  */
 public interface UserManager {
@@ -45,7 +47,7 @@ public interface UserManager {
 	void deleteUsersByUsersid(Integer usersid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the user entity with this id
 	 * 
 	 * @param id
 	 * @return

@@ -1,10 +1,16 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Controltype;
 import projekt.feukora.server.model.Fuel;
 
+/**
+ * Interface to handle controltype entities.
+ * 
+ * @author Tamara
+ * @version 1.0
+ * 
+ */
 public interface ControltypeManager {
 	
 	/**
@@ -33,7 +39,7 @@ public interface ControltypeManager {
 	void deleteControltype(Controltype entity) throws Exception;
 
 	/**
-	 * Delete the entity with this id
+	 * Delete the controltype entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -41,7 +47,7 @@ public interface ControltypeManager {
 	void deleteControltypeByControltypeid(Integer controltypeid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the controltype entity with this id
 	 * 
 	 * @param id
 	 * @return
@@ -56,7 +62,7 @@ public interface ControltypeManager {
 	List<Controltype> findAllControltype();
 
 	/**
-	 * Return a list with controltypes with this name
+	 * Return controltype-objects with this name
 	 * 
 	 * @param name
 	 * @return

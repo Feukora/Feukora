@@ -5,10 +5,10 @@ import java.util.List;
 import projekt.feukora.server.model.Facilitymanager;
 
 /**
- * This interface refers to a FacilitymanagerManager
+ * Interface to handle facillitymanager entities.
  * 
- * @version 1.0
  * @author Pascal
+ * @version 1.0
  *
  */
 
@@ -39,7 +39,7 @@ public interface FacilitymanagerManager {
 	void deleteFacilitymanager(Facilitymanager entity) throws Exception;
 
 	/**
-	 * Delete the entity with this id
+	 * Delete the facilitymanager entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -47,7 +47,7 @@ public interface FacilitymanagerManager {
 	void deleteFacilitymanagerByFacilitymanagerid(Integer Facilitymanagerid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the facilitymanager entity with this id
 	 * 
 	 * @param id 
 	 * @return Facilitymanager

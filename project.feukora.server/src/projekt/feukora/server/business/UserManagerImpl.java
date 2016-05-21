@@ -6,6 +6,13 @@ import projekt.feukora.server.model.Users;
 import projekt.feukora.server.persister.UserPersister;
 import projekt.feukora.server.persister.UserPersisterImpl;
 
+/**
+ * This Class implement the methodes of the interface UserManager.
+ * 
+ * @author Tamara
+ * @version 1.0
+ *
+ */
 public class UserManagerImpl implements UserManager {
 
 	private UserPersister userPersister = new UserPersisterImpl();

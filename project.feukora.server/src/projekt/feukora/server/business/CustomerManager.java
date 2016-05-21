@@ -45,7 +45,7 @@ public interface CustomerManager {
 	void deleteCustomerByCustomerid(Integer customerid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the customer entity with this id
 	 * 
 	 * @param id
 	 * @return

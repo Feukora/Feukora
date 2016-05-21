@@ -6,7 +6,7 @@ import java.util.List;
 import projekt.feukora.server.model.Town;
 
 /**
- * Interface to handle customer entities.
+ * Interface to handle town entities.
  * 
  * @author Pascal
  * @version 1.0
@@ -46,7 +46,7 @@ public interface TownManager {
 	List<Town> findAllTowns();
 
 	/**
-	 * Return a list with customers with this lastname
+	 * Return town-objects with this zip
 	 * 
 	 * @param name
 	 * @return

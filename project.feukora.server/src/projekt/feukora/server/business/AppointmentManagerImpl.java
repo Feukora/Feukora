@@ -9,6 +9,7 @@ import projekt.feukora.server.persister.AppointmentPersisterImpl;
 
 /**
  * This Class implements the methods of the interface AppointmentManager.
+ * 
  * @author Allan
  * @version 1.0
  *

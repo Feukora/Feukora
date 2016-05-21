@@ -8,6 +8,7 @@ import projekt.feukora.server.persister.CompanyPersisterImpl;
 
 /**
  * This Class implements the methods of the interface CompanyManager.
+ * 
  * @author Robin
  * @version 1.0
  */

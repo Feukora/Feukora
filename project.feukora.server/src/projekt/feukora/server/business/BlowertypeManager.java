@@ -6,6 +6,7 @@ import projekt.feukora.server.model.Blowertype;
 
 /**
  * Interface to handle blowertype entities.
+ * 
  * @author Patrick
  * @version 1.0
  *
@@ -39,7 +40,7 @@ public interface BlowertypeManager {
 	void deleteBlowertype(Blowertype entity) throws Exception;
 
 	/**
-	 * Delete the entity with this id
+	 * Delete the blowertype entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -47,7 +48,7 @@ public interface BlowertypeManager {
 	void deleteBlowertypeByBlowertypeid(Integer blowertypeid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the blowertype entity with this id
 	 * 
 	 * @param id
 	 * @return Blowertye
@@ -62,7 +63,7 @@ public interface BlowertypeManager {
 	List<Blowertype> findAllBlowertypes();
 
 	/**
-	 * Return a list with blowertype with this name
+	 * Return blowertype-objects with this name
 	 * 
 	 * @param name
 	 * @return List with Blowertypes

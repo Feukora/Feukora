@@ -6,7 +6,7 @@ import java.util.List;
 import projekt.feukora.server.model.Rapport;
 
 /**
-* Interface for handling rapport entities
+* Interface for handling rapport entities.
 * 
 * @author Sandro Fasser
 * @version 1.1
@@ -40,7 +40,7 @@ public interface RapportManager {
 	void deleteRapport(Rapport entity) throws  Exception;
 
 	/**
-	 * Delete the entity with this id
+	 * Delete the rapport entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -48,7 +48,7 @@ public interface RapportManager {
 	void deleteRapportByRapportid(Integer rapportid) throws  Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the rapport entity with this id
 	 * 
 	 * @param id
 	 * @return Rapport

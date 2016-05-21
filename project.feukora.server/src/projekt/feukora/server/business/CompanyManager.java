@@ -5,6 +5,7 @@ import projekt.feukora.server.model.Company;
 
 /**
  * Interface to handle company entities.
+ * 
  * @author Robin
  * @version 1.1
  *
@@ -37,7 +38,7 @@ public interface CompanyManager {
 	void deleteCompany(Company entity) throws Exception;
 
 	/**
-	 * Delete the customer entity with this id
+	 * Delete the company entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -45,7 +46,7 @@ public interface CompanyManager {
 	void deleteCompanyByCompanyid(Integer companyid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the company entity with this id
 	 * 
 	 * @param id
 	 * @return

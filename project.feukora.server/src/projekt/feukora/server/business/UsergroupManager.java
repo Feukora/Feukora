@@ -4,6 +4,13 @@ import java.util.List;
 
 import projekt.feukora.server.model.Usergroup;
 
+/**
+ * Interface to handle usergroup entities.
+ * 
+ * @author Tamara
+ * @version 1.0
+ *
+ */
 public interface UsergroupManager {
 
 	/**
@@ -55,7 +62,7 @@ public interface UsergroupManager {
 	List<Usergroup> findAllUsergroup();
 
 	/**
-	 * Return a list with usergroup with this name
+	 * Return usergroup-objects with this name
 	 * 
 	 * @param name
 	 * @return

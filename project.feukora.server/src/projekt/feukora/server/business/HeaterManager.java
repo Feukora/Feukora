@@ -40,7 +40,7 @@ public interface HeaterManager {
 	void deleteHeater(Heater entity) throws Exception;
 
 	/**
-	 * Delete the entity with this id
+	 * Delete the heater entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -48,7 +48,7 @@ public interface HeaterManager {
 	void deleteHeaterByHeaterid(Integer heaterid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the heater entity with this id
 	 * 
 	 * @param id
 	 * @return Heater

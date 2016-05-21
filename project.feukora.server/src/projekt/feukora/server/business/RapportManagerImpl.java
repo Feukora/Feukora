@@ -8,7 +8,7 @@ import projekt.feukora.server.persister.RapportPersister;
 import projekt.feukora.server.persister.RapportPersisterImpl;
 
 /**
- * This Class implements the methods of the interface RapportManager
+ * This Class implements the methods of the interface RapportManager.
  * 
  * @author Sandro
  * @version 1.1

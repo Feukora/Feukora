@@ -6,11 +6,13 @@ import projekt.feukora.server.model.Blower;
 
 /**
  * Interface to handle blower entities.
+ * 
  * @author Robin
  * @version 1.0
  *
  */
 public interface BlowerManager {
+	
 	/**
 	 * Save the given entity
 	 * 
@@ -37,7 +39,7 @@ public interface BlowerManager {
 	void deleteBlower(Blower entity) throws Exception;
 
 	/**
-	 * Delete the customer entity with this id
+	 * Delete the blower entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -45,7 +47,7 @@ public interface BlowerManager {
 	void deleteBlowerByBlowerid(Integer blowerid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the blower entity with this id
 	 * 
 	 * @param id
 	 * @return

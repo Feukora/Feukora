@@ -6,13 +6,14 @@ import projekt.feukora.server.model.Appointment;
 
 
 /**
- * Interface to handle appointments entities
+ * Interface to handle appointment entities
  * 
  * @author Allan
  * @version 1.1
  *
  */
 public interface AppointmentManager {
+	
 	/**
 	 * Save the given entity
 	 * 
@@ -47,7 +48,7 @@ public interface AppointmentManager {
 	void deleteAppointmentByAppointmentid(Integer appointmentid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the appointment entity with this id
 	 * 
 	 * @param appointmentid
 	 * @return Appointment

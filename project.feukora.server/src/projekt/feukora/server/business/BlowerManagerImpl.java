@@ -8,6 +8,7 @@ import projekt.feukora.server.persister.BlowerPersisterImpl;
 
 /**
  * This Class implements the methods of the interface BlowerManager.
+ * 
  * @author Robin
  * @version 1.1
  */

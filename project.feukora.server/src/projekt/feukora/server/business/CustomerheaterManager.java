@@ -5,10 +5,10 @@ import java.util.List;
 import projekt.feukora.server.model.Customerheater;
 
 /**
- * This interface refers to a CustomerheaterManager
+ * Interface to handle customerheater entities.
  * 
- * @version 1.0
  * @author Pascal
+ * @version 1.0
  *
  */
 
@@ -40,7 +40,7 @@ public interface CustomerheaterManager {
 	void deleteCustomerheater(Customerheater entity) throws Exception;
 
 	/**
-	 * Delete the entity with this id
+	 * Delete the customerheater entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -48,7 +48,7 @@ public interface CustomerheaterManager {
 	void deleteCustomerheaterByCustomerheaterid(Integer customerheaterid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the customerheater entity with this id
 	 * 
 	 * @param id
 	 * @return Customerheater

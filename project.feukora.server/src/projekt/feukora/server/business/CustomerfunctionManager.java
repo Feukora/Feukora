@@ -6,6 +6,7 @@ import projekt.feukora.server.model.Customerfunction;
 
 /**
  * Interface to handle Customerfunction entities.
+ * 
  * @author Patrick
  * @version 1.0
  *
@@ -39,7 +40,7 @@ public interface CustomerfunctionManager {
 	void deleteCustomerfunction(Customerfunction entity) throws Exception;
 
 	/**
-	 * Delete the entity with this id
+	 * Delete the customerfunction entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -47,7 +48,7 @@ public interface CustomerfunctionManager {
 	void deleteCustomerfunctionByCustomerfunctionid(Integer customerfunctionid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the customerfunction entity with this id
 	 * 
 	 * @param id
 	 * @return Customerfunction

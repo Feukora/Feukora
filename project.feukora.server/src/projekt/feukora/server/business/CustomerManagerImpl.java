@@ -10,6 +10,7 @@ import projekt.feukora.server.persister.CustomerPersisterImpl;
  * 
  * @author Sandro Fasser
  * @version 1.1
+ * 
  */
 
 public class CustomerManagerImpl implements CustomerManager {

@@ -7,8 +7,8 @@ import projekt.feukora.server.model.Fuel;
 /**
  * Interface for handling fuel entities.
  * 
- * @version 1.0
  * @author Tamara
+ * @version 1.0
  *
  */
 public interface FuelManager {
@@ -39,7 +39,7 @@ public interface FuelManager {
 	void deleteFuel(Fuel entity) throws Exception;
 
 	/**
-	 * Delete the customer entity with this id
+	 * Delete the fuel entity with this id
 	 * 
 	 * @param id
 	 * @throws Exception
@@ -47,7 +47,7 @@ public interface FuelManager {
 	void deleteFuelByFuelid(Integer fuelid) throws Exception;
 
 	/**
-	 * Return the entity with this id
+	 * Return the fuel entity with this id
 	 * 
 	 * @param id
 	 * @return
@@ -62,7 +62,7 @@ public interface FuelManager {
 	List<Fuel> findAllFuel();
 
 	/**
-	 * Return a list with fuels with this name
+	 * Return fuel-objects with this name
 	 * 
 	 * @param name
 	 * @return
