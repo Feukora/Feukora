@@ -87,4 +87,15 @@ public class Context {
 	public static String getFuel() {
 		return fuel;
 	}
+	
+	public static void setNull() {
+		companyname = null;
+		lastname = null;
+    	adress = null;
+		phone = null;
+    	plz = null;
+    	firstname = null;
+    	email = null;   	
+    	customerfunction = null;
+	}
 }

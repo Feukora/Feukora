@@ -114,8 +114,14 @@ public class ControllerDetailview {
     
     public void initialize() {
     	
-    	Boolean test = Context.getCustomerName().isEmpty();
-    	if(test == false){
+    	TestNewOrUpdate();
+    	
+    
+    }
+    
+    public void TestNewOrUpdate(){
+    
+    	if(Context.getCustomerName().isEmpty() == false){
     		customerCompanyNameField.setText(Context.getCustomerCompanyName());
 	    	customerNameField.setText(Context.getCustomerName());
 	    	customerFirstNameField.setText(Context.getCustomerFirstname());
@@ -124,20 +130,19 @@ public class ControllerDetailview {
 	    	customerEmailField.setText(Context.getCustomerEmail());
 	    	customerZipField.setText(Context.getCustomerTown());
 	    	customerNameField.setText(Context.getCustomerName());
-	    	if(Context.getCustomerCustomerfunction().toString().equals("Eigentümer")){
-	    		radioButtonOwner.setSelected(true);
-	    	}else{
-	    		radioButtonOwner.setSelected(false);
-	    	}
-	    	
+//	    	if(Context.getCustomerCustomerfunction().toString().equals("Eigentümer")){
+//	    		radioButtonOwner.setSelected(true);
+//	    	}else{
+//	    		radioButtonOwner.setSelected(false);
+//	    	}
+	    	Context.setNull();
     	} else {
         	radioButtonOwner.setToggleGroup(group);
         	radioButtonAdministration.setToggleGroup(group);
         	radioButtonOwner.setSelected(true);
     	}
     	
-
-    
+    	
     }
 
     @FXML
