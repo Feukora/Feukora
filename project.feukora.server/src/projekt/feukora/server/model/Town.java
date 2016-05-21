@@ -84,6 +84,7 @@ public class Town implements Serializable {
 	
 	@Override
 	public String toString() {
-		return zip + " " + name;
+		return zip + "";
+		//return zip + " " + name;
 	}
 }
