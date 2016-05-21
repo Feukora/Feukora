@@ -114,10 +114,6 @@ public class ControllerDetailview {
     
     public void initialize() {
     	
-    	radioButtonOwner.setToggleGroup(group);
-    	radioButtonAdministration.setToggleGroup(group);
-    	radioButtonOwner.setSelected(true);
-    	
     	Boolean test = Context.getCustomerName().isEmpty();
     	if(test == false){
     		customerCompanyNameField.setText(Context.getCustomerCompanyName());
@@ -133,7 +129,12 @@ public class ControllerDetailview {
 	    	}else{
 	    		radioButtonOwner.setSelected(false);
 	    	}
-    		}
+	    	
+    	} else {
+        	radioButtonOwner.setToggleGroup(group);
+        	radioButtonAdministration.setToggleGroup(group);
+        	radioButtonOwner.setSelected(true);
+    	}
     	
 
     
@@ -175,7 +176,6 @@ public class ControllerDetailview {
     	customerFirstNameField.clear();
     	customerEmailField.clear();
     	radioButtonOwner.setSelected(true);
-    	radioButtonAdministration.setSelected(false);
     	
     	
     }

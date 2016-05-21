@@ -156,6 +156,8 @@ public class ControllerOverview {
 		        alert.showAndWait();
 			}
 			
+			
+			
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);

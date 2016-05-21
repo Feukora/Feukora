@@ -1,11 +1,13 @@
 package application;
 
+import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Customer;
 
 public class Context {
 	
 	
 	private Customer customer;
+	private Blower blower;
 	
 	public static String companyname;
 	public static String lastname;
@@ -15,6 +17,10 @@ public class Context {
 	public static String firstname;
 	public static String email;
 	public static String customerfunction;
+	
+	public static String blowername;
+	public static String blowertype;
+	public static String fuel;
 	
 	public Context() {
 		
@@ -62,5 +68,23 @@ public class Context {
 	
 	public static String getCustomerCustomerfunction() {
 		return customerfunction;
+	}
+	
+	public static void setBlower (Blower blower) {
+		blowername = blower.getName();
+		blowertype = blower.getBlowertype();
+		fuel = blower.getFuel();
+	}
+	
+	public static String getBlowername() {
+		return blowername;
+	}
+	
+	public static String getBlowerType() {
+		return blowertype;
+	}
+	
+	public static String getFuel() {
+		return fuel;
 	}
 }
