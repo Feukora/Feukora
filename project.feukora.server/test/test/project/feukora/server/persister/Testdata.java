@@ -1,5 +1,6 @@
 package test.project.feukora.server.persister;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Blowertype;
@@ -25,6 +26,9 @@ public class Testdata {
 	public static ControltypePersister controltype = new ControltypePersisterImpl();
 	public static FuelPersister fuel = new FuelPersisterImpl();
 	public static BlowertypePersister blowertype = new BlowertypePersisterImpl();
+	
+	private static final Logger logger = Logger
+			.getLogger(Testdata.class);
 	
 	@Test
 	public static void loadTestdata() {
@@ -68,8 +72,8 @@ public class Testdata {
 			blowertype.saveBlowertype(bTyp3);
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Testdaten konnten nicht geladen werden\'",
+					e);
 		}	
 	}
 }

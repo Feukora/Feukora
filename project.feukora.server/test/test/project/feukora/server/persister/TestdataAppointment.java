@@ -2,6 +2,7 @@ package test.project.feukora.server.persister;
 
 import static org.junit.Assert.assertNotNull;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Blower;
@@ -60,6 +61,8 @@ public class TestdataAppointment {
 	public static CompanyPersister company = new CompanyPersisterImpl();
 	public static UserPersister users = new UserPersisterImpl();
 	
+	private static final Logger logger = Logger
+			.getLogger(TestdataAppointment.class);
 	@Test
 	public static void loadTestdata() {
 		
@@ -153,8 +156,8 @@ public class TestdataAppointment {
 			
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Testdaten konnten nicht geladen werden\'",
+					e);
 		}	
 	}
 }

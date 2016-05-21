@@ -4,15 +4,21 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.apache.log4j.Logger;
+
+
 /**
  *This is a help-class, which creates the Entity-Manager.
  *
- *@version 1.0
+ * @version 1.1
  * @author Pascal
  *
  */
 
 public class JpaUtil {
+	
+	private static final Logger logger = Logger
+			.getLogger(JpaUtil.class);
 
 	private static EntityManagerFactory entityManagerFactory = null;
 
@@ -21,10 +27,9 @@ public class JpaUtil {
 			/* Create EntityManagerFactory */
 			entityManagerFactory = Persistence
 					.createEntityManagerFactory("Feukora");
-											
-		} catch (Throwable e) {
-			/* TODO - Ecxeption Handling … */
-			e.printStackTrace();
+		} catch (Exception e) {
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.GregorianCalendar;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Appointment;
@@ -69,6 +70,9 @@ public class TestdataMeasuringresult {
 	public static UserPersister users = new UserPersisterImpl();
 	public static AppointmentPersister appointment = new AppointmentPersisterImpl();
 	public static RapportPersister rapport = new RapportPersisterImpl();
+	
+	private static final Logger logger = Logger
+			.getLogger(TestdataMeasuringresult.class);
 	
 	@Test
 	public static void loadTestdata() {
@@ -178,8 +182,8 @@ public class TestdataMeasuringresult {
 			rapport.saveRapport(rap2);
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Testdaten konnten nicht geladen werden\'",
+					e);
 		}	
 	}
 }

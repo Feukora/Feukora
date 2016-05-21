@@ -1,15 +1,25 @@
 package projekt.feukora.server.persister;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import javax.persistence.EntityManager;
+import org.apache.log4j.Logger;
 
 import projekt.feukora.server.model.Town;
 
+/**
+ * This class includes Town data
+ * @version 1.1
+ * @author Robin
+ */
+
 public class TownData {
+	
+	private static final Logger logger = Logger
+			.getLogger(TownData.class);
 
 	public static void loadTownData(String fileName) {
 
@@ -35,8 +45,8 @@ public class TownData {
 				try {
 					p.saveTown(t);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("Aktion konnte nicht durchgeführt werden\'",
+							e);
 				}
 				
 			}

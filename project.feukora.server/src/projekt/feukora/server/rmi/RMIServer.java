@@ -9,19 +9,17 @@ import java.util.Properties;
 
 import javax.swing.JOptionPane;
 
+import org.apache.log4j.Logger;
 import org.eclipse.persistence.sessions.server.Server;
-
 import projekt.feukora.server.persister.TownData;
-import test.project.feukora.server.persister.Testdata;
-import test.project.feukora.server.persister.TestdataAppointment;
 import test.project.feukora.server.persister.TestdataMeasuringresult;
-import test.project.feukora.server.persister.TestdataUsers;
+
 
 /**
  * This Class starts the RMI-Server on this machine, also it instances Remote Objects, 
  * binds and also unbinds them
  * 
- * @version 1.1
+ * @version 1.2
  * @author Sandro Fasser
  *
  */
@@ -29,6 +27,8 @@ import test.project.feukora.server.persister.TestdataUsers;
 
 public class RMIServer {
 
+	private static final Logger logger = Logger
+			.getLogger(RMIServer.class);
 	
 	public static void main(String[] args) {
 		
@@ -38,9 +38,9 @@ public class RMIServer {
 		InputStream is = Server.class.getClassLoader().getResourceAsStream("rmiserver.properties");
 		try {
 			props.load(is);
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		} catch (Exception e) {
+			logger.error("Konfigurationsdaten konnten nicht eingelesen werden\'",
+					e);
 		}
 		int port = Integer.parseInt(props.getProperty("server_port"));
 		String hostIP = props.getProperty("server_ip");
@@ -149,7 +149,8 @@ public class RMIServer {
 						.println("Entferntes Objekt konnte nicht exportiert werden!");
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 }
