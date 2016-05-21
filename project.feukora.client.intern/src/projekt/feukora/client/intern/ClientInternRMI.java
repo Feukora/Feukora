@@ -279,6 +279,21 @@ public void saveBlower(Blower entity){
 		return userlist;
 		
 	}
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	// Do muass no d uslesig vu allna Calendardata wo 
+	public ObservableList<Customer> getCalendarData(String username) throws Exception {
+		
+		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
+		customerlist.addAll(customerRMI.findAllCustomers());
+		return customerlist;
+		
+	}
+	
 
 	public String getTown(Integer zip) throws RemoteException {
 		Town town1 = townRMI.findTownByZip(zip);

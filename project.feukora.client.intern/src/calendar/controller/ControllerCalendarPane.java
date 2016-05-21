@@ -3,12 +3,16 @@ package calendar.controller;
 import org.apache.log4j.Logger;
 
 import blower.controller.ControllerOverview;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
+import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Users;
 
 public class ControllerCalendarPane {
 	
@@ -82,7 +86,7 @@ public class ControllerCalendarPane {
     private Button thur0810;
 
     @FXML
-    private ComboBox<?> comboBoxSelectCalendar;
+    private ComboBox<String> comboBoxSelectCalendar;
 
     @FXML
     private Button tues1315;
@@ -109,12 +113,50 @@ public class ControllerCalendarPane {
 
     @FXML
     void ActionComboBoxSelectCalendar(ActionEvent event) {
-
+    	String activeUser = comboBoxSelectCalendar.getSelectionModel().getSelectedItem();
+    	initializeNew(activeUser);
+    	
     }
 
     @FXML
     void ActionPrintCalendar(ActionEvent event) {
 
+    }
+    
+    public void initialize(){
+    	ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+			ObservableList<String> usernames = FXCollections.observableArrayList();
+			ObservableList<Users> users = feukora.getUsers();
+			int i = 0;
+			while (i < users.size()) {
+				usernames.add(users.get(i).getUsername());
+				i++;
+			}
+			comboBoxSelectCalendar.setItems(usernames);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
+    
+    // Hier wird bei einer änderung des Activen users in der Combobox der Kalender neu geladen
+    public void initializeNew(String activeUser){
+    	ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+			//Kalenderdaten des activeUser 
+			feukora.getCalendarData(activeUser);
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
     }
 
 }
