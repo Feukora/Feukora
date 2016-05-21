@@ -4,7 +4,7 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,9 +42,9 @@ import projekt.feukora.server.rmi.UsergroupRMI;
  */
 public class ClientInternRMI {
 	
-	private static final Logger logger = Logger
-			.getLogger(ClientInternRMI.class);
-	
+//	private static final Logger logger = Logger
+//			.getLogger(ClientInternRMI.class);
+//	
 	CustomerRMI customerRMI;
 	CompanyRMI companyRMI;
 	AppointmentRMI appointmentRMI;
@@ -72,8 +72,8 @@ public class ClientInternRMI {
 			// Init Application over RMI
 			ClientInternRMI feukora = new ClientInternRMI();
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
 		}
 	}
 	
@@ -145,14 +145,13 @@ public class ClientInternRMI {
 	 *
 	 * @throws Exception
 	 */
-	public void saveCustomer(String lastname, String adress, String phone, Integer zip, String firstname, String email, Boolean isOwner) throws Exception {
+	public void saveCustomer(String companyname, String lastname, String adress, String phone, Integer zip, String firstname, String email, Boolean isOwner) throws Exception {
 		Customerfunction function;
 		if(isOwner == true) {
 			function = customerfunctionRMI.findCustomerfunctionByName("Eigentümer");
 		} else {
 			function = customerfunctionRMI.findCustomerfunctionByName("Verwaltung");
 		}
-		String companyname = "Firma";
 		Town town1 = townRMI.findTownByZip(zip);
 		
 		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, function, town1);
@@ -163,13 +162,13 @@ public class ClientInternRMI {
 		try {
 			customerRMI.deleteCustomer(entity);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+//			// TODO Auto-generated catch block
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
 		}
 	}
 	
@@ -196,12 +195,12 @@ public class ClientInternRMI {
 			userRMI.deleteUsers(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
 		}
 	}
 	
@@ -227,12 +226,12 @@ public void saveHeater(Heater entity){
 			heaterRMI.deleteHeater(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
 		}
 	}
 	
@@ -259,12 +258,12 @@ public void saveBlower(Blower entity){
 			blowerRMI.deleteBlower(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
 		}
 	}
 	

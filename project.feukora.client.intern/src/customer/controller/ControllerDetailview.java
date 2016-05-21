@@ -120,6 +120,7 @@ public class ControllerDetailview {
     	
     	Boolean test = Context.getCustomerName().isEmpty();
     	if(test == false){
+    		customerCompanyNameField.setText(Context.getCustomerCompanyName());
 	    	customerNameField.setText(Context.getCustomerName());
 	    	customerFirstNameField.setText(Context.getCustomerFirstname());
 	    	customerAddressField.setText(Context.getCustomerAdress());
@@ -141,6 +142,7 @@ public class ControllerDetailview {
     @FXML
     void ActionDetailviewSaveCustomer(ActionEvent event) {
     	
+    	String companyname = customerCompanyNameField.getText();
     	String lastname = customerNameField.getText();
     	String adress = customerAddressField.getText();
     	String phone = customerNumberField.getText();
@@ -157,13 +159,14 @@ public class ControllerDetailview {
     	
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			feukora.saveCustomer(lastname, adress, phone, zip, firstname, email, isOwner);
+			feukora.saveCustomer(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
     	
+    	customerCompanyNameField.clear();
     	customerNameField.clear();
     	customerAddressField.clear();
     	customerNumberField.clear();

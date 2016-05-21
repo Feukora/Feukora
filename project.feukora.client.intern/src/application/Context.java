@@ -7,6 +7,7 @@ public class Context {
 	
 	private Customer customer;
 	
+	public static String companyname;
 	public static String lastname;
 	public static String adress;
 	public static String phone;
@@ -20,6 +21,7 @@ public class Context {
 	}
 	
 	public static void setCustomer(Customer customer) {
+		companyname = customer.getCompanyname();
 		lastname = customer.getLastname();
     	adress = customer.getAdress();
 		phone = customer.getPhone();
@@ -28,6 +30,10 @@ public class Context {
     	email = customer.getEmail();   	
     	customerfunction = customer.getCustomerfunction();
 
+	}
+	
+	public static String getCustomerCompanyName() {
+		return companyname;
 	}
 	
 	public static String getCustomerName() {

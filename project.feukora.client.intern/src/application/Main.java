@@ -1,5 +1,5 @@
 package application;
-	
+
 import org.apache.log4j.Logger;
 
 import javafx.application.Application;
@@ -30,6 +30,7 @@ public class Main extends Application {
 		} catch (Exception e) {
 			logger.error("Fehler bei Applikationsstart \'",
 					e);
+			e.printStackTrace();
 		}	
 	}
 	
