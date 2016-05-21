@@ -21,7 +21,6 @@ public class ControllerMain implements Initializable{
 	private Button beurteilungzurueck;
 	private Button beurteilungspeichern;
 	
-	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
