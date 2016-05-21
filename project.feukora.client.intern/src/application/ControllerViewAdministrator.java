@@ -204,14 +204,14 @@ public class ControllerViewAdministrator {
     
     @FXML
     void ActionLoginMenuBar(ActionEvent event) {
-    	Platform.exit();;
-    	
+    	Platform.exit();
+    	Main.launch(null);
     }
     
     @FXML
     void ActionCloseMenuBar(ActionEvent event) {
     	Platform.exit();
-    	Main.launch(null);
+    	
     }
 
     @FXML
