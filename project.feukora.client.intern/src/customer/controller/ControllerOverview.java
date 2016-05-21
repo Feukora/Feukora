@@ -136,19 +136,33 @@ public class ControllerOverview {
     void ActionOverviewUpdateCustomer(ActionEvent event) {
 		
     		
-    	AnchorPane pane = new AnchorPane();
+    	
     	
     	try {
 			Customer customer = overviewTableCustomer.getSelectionModel().getSelectedItem();
-			Context.setCustomer(customer);
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
-
+			if(customer != null){
+				AnchorPane pane = new AnchorPane();
+				Context.setCustomer(customer);
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
+				overviewUpdateCustomer.getScene().setRoot(pane);
+			}else{
+				String titleBar = "Nichts ausgewählt";
+				String headerMessage = "Wählen Sie einen Benutzer aus";
+				String infoMessage = "";
+				Alert alert = new Alert(AlertType.INFORMATION);
+		        alert.setTitle(titleBar);
+		        alert.setHeaderText(headerMessage);
+		        alert.setContentText(infoMessage);
+		        alert.showAndWait();
+			}
+			
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
+			
 		}	
 		
-    	overviewUpdateCustomer.getScene().setRoot(pane);
+    	
     }	
 		
     	
