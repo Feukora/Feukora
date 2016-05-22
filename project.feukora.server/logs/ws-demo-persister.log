@@ -8681,3 +8681,30 @@ Caused by: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
 	... 49 more
 >>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
+2016-05-22 13:08:48 ERROR RMIServer:152 - Aktion konnte nicht durchgeführt werden'
+java.rmi.server.ExportException: Port already in use: 9009; nested exception is: 
+	java.net.BindException: Address already in use: JVM_Bind
+	at sun.rmi.transport.tcp.TCPTransport.listen(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.exportObject(Unknown Source)
+	at sun.rmi.transport.tcp.TCPEndpoint.exportObject(Unknown Source)
+	at sun.rmi.transport.LiveRef.exportObject(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.exportObject(Unknown Source)
+	at sun.rmi.registry.RegistryImpl.setup(Unknown Source)
+	at sun.rmi.registry.RegistryImpl.<init>(Unknown Source)
+	at java.rmi.registry.LocateRegistry.createRegistry(Unknown Source)
+	at projekt.feukora.server.rmi.RMIServer.main(RMIServer.java:76)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createServerSocket(Unknown Source)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createServerSocket(Unknown Source)
+	at sun.rmi.transport.tcp.TCPEndpoint.newServerSocket(Unknown Source)
+	... 9 more
+2016-05-22 14:33:25 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@7a7306c5]  wird gelöscht
+2016-05-22 14:40:00 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@2cd62fa6]  wird gelöscht
+2016-05-22 14:43:17 INFO  GenericPersisterImpl:99 - Entity vom Typ Customer [projekt.feukora.server.model.Customer@3581a47e]  wird gelöscht

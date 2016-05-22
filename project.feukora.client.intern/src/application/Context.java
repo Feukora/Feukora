@@ -9,6 +9,7 @@ public class Context {
 	private Customer customer;
 	private Blower blower;
 	
+	public static Integer customerid;
 	public static String companyname;
 	public static String lastname;
 	public static String adress;
@@ -27,6 +28,8 @@ public class Context {
 	}
 	
 	public static void setCustomer(Customer customer) {
+		
+		customerid = customer.getCustomerid();
 		companyname = customer.getCompanyname();
 		lastname = customer.getLastname();
     	adress = customer.getAdress();
@@ -36,6 +39,10 @@ public class Context {
     	email = customer.getEmail();   	
     	customerfunction = customer.getCustomerfunction();
 
+	}
+	
+	public static Integer getCustomerId() {
+		return customerid;
 	}
 	
 	public static String getCustomerCompanyName() {

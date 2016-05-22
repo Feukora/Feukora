@@ -114,14 +114,14 @@ public class ControllerDetailview {
     
     public void initialize() {
     	
-    	TestNewOrUpdate();
+    	NewOrUpdate();
     	
     
     }
     
-    public void TestNewOrUpdate(){
+    public void NewOrUpdate(){
     
-    	if(Context.getCustomerName().isEmpty() == false){
+    	if(Context.getCustomerName() != null){
     		customerCompanyNameField.setText(Context.getCustomerCompanyName());
 	    	customerNameField.setText(Context.getCustomerName());
 	    	customerFirstNameField.setText(Context.getCustomerFirstname());
@@ -129,18 +129,21 @@ public class ControllerDetailview {
 	    	customerNumberField.setText(Context.getCustomerPhone());
 	    	customerEmailField.setText(Context.getCustomerEmail());
 	    	customerZipField.setText(Context.getCustomerTown());
+	    	String town = feukora.getTown(zip);
+			customerMunicipalityField.setText(town);
 	    	customerNameField.setText(Context.getCustomerName());
-//	    	if(Context.getCustomerCustomerfunction().toString().equals("Eigentümer")){
-//	    		radioButtonOwner.setSelected(true);
-//	    	}else{
-//	    		radioButtonOwner.setSelected(false);
-//	    	}
+	    	if(Context.getCustomerCustomerfunction().toString().equals("Eigentümer")){
+	    		radioButtonOwner.setSelected(true);
+	    	}else{
+	    		radioButtonAdministration.setSelected(true);
+	    	}
 	    	Context.setNull();
     	} else {
         	radioButtonOwner.setToggleGroup(group);
         	radioButtonAdministration.setToggleGroup(group);
-        	radioButtonOwner.setSelected(true);
-    	}
+        	radioButtonOwner.setSelected(false);
+        	radioButtonAdministration.setSelected(false);
+      	}
     	
     	
     }
@@ -180,7 +183,8 @@ public class ControllerDetailview {
     	customerMunicipalityField.clear();
     	customerFirstNameField.clear();
     	customerEmailField.clear();
-    	radioButtonOwner.setSelected(true);
+    	radioButtonOwner.setSelected(false);
+    	radioButtonAdministration.setSelected(false);
     	
     	
     }

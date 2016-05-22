@@ -134,17 +134,15 @@ public class ControllerOverview {
     
     @FXML
     void ActionOverviewUpdateCustomer(ActionEvent event) {
-		
-    		
-    	
-    	
     	try {
+    		ClientInternRMI feukora = new ClientInternRMI();
 			Customer customer = overviewTableCustomer.getSelectionModel().getSelectedItem();
 			if(customer != null){
 				AnchorPane pane = new AnchorPane();
 				Context.setCustomer(customer);
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
 				overviewUpdateCustomer.getScene().setRoot(pane);
+				feukora.deleteCustomer(customer);
 			}else{
 				String titleBar = "Nichts ausgewählt";
 				String headerMessage = "Wählen Sie einen Benutzer aus";
@@ -155,19 +153,11 @@ public class ControllerOverview {
 		        alert.setContentText(infoMessage);
 		        alert.showAndWait();
 			}
-			
-			
-			
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-			
+					e);	
 		}	
-		
-    	
-    }	
-		
-    	
+	}	   	
 }
 
 
