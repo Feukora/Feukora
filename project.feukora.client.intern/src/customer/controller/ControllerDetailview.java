@@ -128,7 +128,8 @@ public class ControllerDetailview {
 	    	customerAddressField.setText(Context.getCustomerAdress());
 	    	customerNumberField.setText(Context.getCustomerPhone());
 	    	customerEmailField.setText(Context.getCustomerEmail());
-	    	customerZipField.setText(Context.getCustomerTown());
+	    	customerZipField.setText(Context.getCustomerTown().substring(0, 4));
+	    	customerMunicipalityField.setText(Context.getCustomerTown().substring(5));
 	    	customerNameField.setText(Context.getCustomerName());
 	    	if(Context.getCustomerCustomerfunction().toString().equals("Eigentümer")){
 	    		radioButtonOwner.setSelected(true);
