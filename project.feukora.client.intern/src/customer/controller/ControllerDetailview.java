@@ -22,6 +22,8 @@ public class ControllerDetailview {
 
 	final ToggleGroup group = new ToggleGroup();
 	
+	private Customer customer;
+	
     @FXML
     private Button detailviewSaveCustomer;
     
@@ -122,6 +124,7 @@ public class ControllerDetailview {
     public void NewOrUpdate(){
     
     	if(Context.getCustomerName() != null){
+    		customer = Context.getCustomer();
     		customerCompanyNameField.setText(Context.getCustomerCompanyName());
 	    	customerNameField.setText(Context.getCustomerName());
 	    	customerFirstNameField.setText(Context.getCustomerFirstname());
@@ -168,6 +171,7 @@ public class ControllerDetailview {
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			feukora.saveCustomer(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
+	    	feukora.deleteCustomer(customer);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
@@ -184,7 +188,6 @@ public class ControllerDetailview {
     	customerEmailField.clear();
     	radioButtonOwner.setSelected(false);
     	radioButtonAdministration.setSelected(false);
-    	
     	
     }
     

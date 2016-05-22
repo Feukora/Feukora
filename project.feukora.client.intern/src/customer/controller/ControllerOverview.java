@@ -40,7 +40,7 @@ public class ControllerOverview {
     private Button overviewUpdateCustomer; // Value injected by FXMLLoader
     
     @FXML // fx:id="overviewTableCustomer"
-    private TableView<Customer> overviewTableCustomer; // Value injected by FXMLLoader
+    public TableView<Customer> overviewTableCustomer; // Value injected by FXMLLoader
     
 	@FXML // fx:id="columnCompanynameCostumer"
     private TableColumn<Customer, String> columnCompanynameCostumer; // Value injected by FXMLLoader
@@ -142,7 +142,6 @@ public class ControllerOverview {
 				Context.setCustomer(customer);
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
 				overviewUpdateCustomer.getScene().setRoot(pane);
-				feukora.deleteCustomer(customer);
 			}else{
 				String titleBar = "Nichts ausgewählt";
 				String headerMessage = "Wählen Sie einen Benutzer aus";

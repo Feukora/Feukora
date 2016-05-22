@@ -6,7 +6,7 @@ import projekt.feukora.server.model.Customer;
 public class Context {
 	
 	
-	private Customer customer;
+	private static Customer customer;
 	private Blower blower;
 	
 	public static Integer customerid;
@@ -38,7 +38,11 @@ public class Context {
     	firstname = customer.getFirstname();
     	email = customer.getEmail();   	
     	customerfunction = customer.getCustomerfunction();
-
+    	Context.customer = customer;
+	}
+	
+	public static Customer getCustomer() {
+		return customer;
 	}
 	
 	public static Integer getCustomerId() {
