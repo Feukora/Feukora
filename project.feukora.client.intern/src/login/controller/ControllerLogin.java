@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
@@ -26,7 +27,7 @@ public class ControllerLogin {
     private TextField usernameLoginTextfield;
 
     @FXML
-    private TextField passwordLoginTextfield;
+    private PasswordField passwordLoginTextfield;
 
     @FXML
     private Button loginLogin;
@@ -63,9 +64,10 @@ public class ControllerLogin {
 			} catch (Exception e) {
 				logger.error("Login fehlgeschlagen\'",
 						e);
+				
 		}	
     	
-    	loginLogin.getScene().setRoot(pane);
+    	//loginLogin.getScene().setRoot(pane);
     }
 
     @FXML
