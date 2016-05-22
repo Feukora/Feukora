@@ -129,8 +129,6 @@ public class ControllerDetailview {
 	    	customerNumberField.setText(Context.getCustomerPhone());
 	    	customerEmailField.setText(Context.getCustomerEmail());
 	    	customerZipField.setText(Context.getCustomerTown());
-	    	String town = feukora.getTown(zip);
-			customerMunicipalityField.setText(town);
 	    	customerNameField.setText(Context.getCustomerName());
 	    	if(Context.getCustomerCustomerfunction().toString().equals("Eigentümer")){
 	    		radioButtonOwner.setSelected(true);

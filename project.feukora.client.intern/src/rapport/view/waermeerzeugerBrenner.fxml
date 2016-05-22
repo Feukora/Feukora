@@ -23,9 +23,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="270.0" layoutY="101.0" prefHeight="35.0" prefWidth="108.0" text="Brennstoff">
+      <Label layoutX="512.0" layoutY="280.0" prefHeight="35.0" prefWidth="108.0" text="Brennstoff">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Label>
       <Label layoutX="424.0" layoutY="61.0" text="Kontrollart">
@@ -54,8 +54,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="453.0" layoutY="320.0" prefHeight="51.0" prefWidth="125.0" />
-      <Label layoutX="450.0" layoutY="284.0" prefHeight="35.0" prefWidth="166.0" text="Feuerungswärmeleistung">
+      <TextField layoutX="795.0" layoutY="316.0" prefHeight="51.0" prefWidth="125.0" />
+      <Label layoutX="795.0" layoutY="281.0" prefHeight="35.0" prefWidth="166.0" text="Feuerungswärmeleistung">
          <font>
             <Font size="14.0" />
          </font>
@@ -63,17 +63,17 @@
       <Button layoutX="481.0" layoutY="461.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" text="Weiter &gt;" />
       <Button layoutX="21.0" layoutY="461.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" text="&lt; Zurück" />
       <ComboBox layoutX="118.0" layoutY="136.0" prefHeight="51.0" prefWidth="125.0" />
-      <RadioButton layoutX="270.0" layoutY="130.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="109.0" text="Öl">
+      <RadioButton layoutX="512.0" layoutY="310.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="109.0" text="Öl">
          <font>
             <Font size="14.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="270.0" layoutY="185.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Flüssiggas">
+      <RadioButton layoutX="512.0" layoutY="360.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Flüssiggas">
          <font>
             <Font size="14.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="270.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Erdgas">
+      <RadioButton layoutX="512.0" layoutY="335.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Erdgas">
          <font>
             <Font size="14.0" />
          </font>
