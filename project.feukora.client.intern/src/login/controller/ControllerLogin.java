@@ -89,6 +89,14 @@ public class ControllerLogin {
     			pane = FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
     			usernameLoginTextfield.clear();
     			passwordLoginTextfield.clear();
+    			String titleBar = "Uups!! Passwort falsch";
+    			String headerMessage = "Passwort oder Benutzename ist falsch";
+    			String infoMessage = "-";
+    			Alert alert = new Alert(AlertType.INFORMATION);
+    	        alert.setTitle(titleBar);
+    	        alert.setHeaderText(headerMessage);
+    	        alert.setContentText(infoMessage);
+    	        alert.showAndWait();
     		}
     		
 			} catch (Exception e) {

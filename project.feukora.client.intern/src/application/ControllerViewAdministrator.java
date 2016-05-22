@@ -205,7 +205,7 @@ public class ControllerViewAdministrator {
     @FXML
     void ActionLoginMenuBar(ActionEvent event) {
     	Platform.exit();
-    	Main.launch(null);
+    	Main.main(null);
     }
     
     @FXML
