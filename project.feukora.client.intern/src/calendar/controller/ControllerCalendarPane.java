@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.print.PrinterJob;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
@@ -120,7 +121,9 @@ public class ControllerCalendarPane {
 
     @FXML
     void ActionPrintCalendar(ActionEvent event) {
-
+    	   PrinterJob printerJob = PrinterJob.createPrinterJob();
+    	   printerJob.showPrintDialog(null);
+    	   printerJob.endJob();
     }
     
     public void initialize(){
