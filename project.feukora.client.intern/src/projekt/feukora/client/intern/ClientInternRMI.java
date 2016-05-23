@@ -255,6 +255,7 @@ public class ClientInternRMI {
 	}
 	
 	
+	
 	/**
 	 * 
 	 *
@@ -270,7 +271,15 @@ public class ClientInternRMI {
 	
 	
 	public void saveUser(Users entity){
-		
+		try {
+			userRMI.saveUsers(entity);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void deleteUser(Users entity) {
@@ -287,6 +296,10 @@ public class ClientInternRMI {
 		}
 	}
 	
+	public void updateUser(Users entity) throws Exception {
+		userRMI.updateUsers(entity);
+	}
+	
 	/**
 	 * 
 	 *
@@ -301,7 +314,15 @@ public class ClientInternRMI {
 	}
 
 	public void saveHeater(Heater entity){
-
+		try {
+			heaterRMI.saveHeater(entity);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void updateHeater(Heater entity) throws Exception {
