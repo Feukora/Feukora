@@ -39,8 +39,4 @@ public class ControllerMain implements Initializable{
 	void ActionBeurteilungSpeichern(ActionEvent event) {
     }
 	
-	
-	
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 }
