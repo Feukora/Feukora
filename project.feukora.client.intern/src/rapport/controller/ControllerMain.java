@@ -27,6 +27,9 @@ public class ControllerMain {
 	final ToggleGroup oilpart2 = new ToggleGroup();
 	final ToggleGroup oilpart3 = new ToggleGroup();
 	final ToggleGroup oilpart4 = new ToggleGroup();
+	final ToggleGroup result = new ToggleGroup();
+	final ToggleGroup additionalsteps = new ToggleGroup();
+	
 	
 	
 	public void initialize() {
@@ -81,7 +84,18 @@ public class ControllerMain {
        radiooilpartno4.setToggleGroup(oilpart4);
        radiooilpartyes4.setSelected(false);
        radiooilpartno4.setSelected(false);
+       
+       //Togglegroup handling for: Results
+       radiotransgression.setToggleGroup(result);
+       radionotransgression.setToggleGroup(result);
+       radiotransgression.setSelected(false);
+       radionotransgression.setSelected(false);
   
+       //Togglegroup handling for: Additional steps
+       radioadditionalstepsyes.setToggleGroup(additionalsteps);
+       radioadditionalstepsno.setToggleGroup(additionalsteps);
+       radioadditionalstepsyes.setSelected(false);
+       radioadditionalstepsno.setSelected(false);
        
     
 
@@ -269,10 +283,10 @@ public class ControllerMain {
     private TextField textfieldexhaustgasloss4;
 
     @FXML
-    private CheckBox checkboxnotransgression;
+    private RadioButton radionotransgression;
 
     @FXML
-    private CheckBox checkboxtransgression;
+    private RadioButton radiotransgression;
 
     @FXML
     private CheckBox checkboxsmokenumbertransgression;
@@ -290,10 +304,10 @@ public class ControllerMain {
     private CheckBox checkboxexhaustlosstransgression;
 
     @FXML
-    private CheckBox checkboxadditionalstepsno;
+    private RadioButton radioadditionalstepsno;
 
     @FXML
-    private CheckBox checkboxadditionalstepsyes;
+    private RadioButton radioadditionalstepsyes;
 
     @FXML
     private TextField textfieldpersonalcode;
