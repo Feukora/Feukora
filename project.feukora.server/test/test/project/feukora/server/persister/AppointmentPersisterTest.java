@@ -29,6 +29,12 @@ import projekt.feukora.server.persister.TownPersisterImpl;
 import projekt.feukora.server.persister.UserPersister;
 import projekt.feukora.server.persister.UserPersisterImpl;
 
+/**
+ * Class to test the methodes of the class AppointmentPersister.
+ * 
+ * @author Allan
+ * @version 1.0
+ */
 public class AppointmentPersisterTest {
 
 
@@ -49,6 +55,11 @@ public class AppointmentPersisterTest {
 	public void tearDown() throws Exception {
 	}
 	
+	/**
+	 * tests if the Appointment is saved
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testSave() throws Exception {
 		
@@ -71,6 +82,11 @@ public class AppointmentPersisterTest {
 
 	}
 	
+	/**
+	 * tests if the Appointment is updated
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testUpdate() throws Exception {
 
@@ -96,6 +112,11 @@ public class AppointmentPersisterTest {
 		appointmentTest.updateAppointment(a);
 	}
 
+	/**
+	 * test if the Appointment is deleted
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 
@@ -109,6 +130,9 @@ public class AppointmentPersisterTest {
 
 	}
 	
+	/**
+	 * tests if the Appointment is found by the date
+	 */
 	@Test
 	public void testFindByAppointmentdate() {
 
@@ -145,6 +169,11 @@ public class AppointmentPersisterTest {
 		return appointmentlist;
 	}
 
+	/**
+	 * tests if all Appointment are deleted
+	 * 
+	 * @throws Exception
+	 */
 	private static void deleteAll() throws Exception {
 
 		for (Appointment a : appointmentTest.findAllAppointments()) {

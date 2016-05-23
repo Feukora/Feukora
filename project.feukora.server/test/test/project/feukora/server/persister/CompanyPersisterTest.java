@@ -17,6 +17,13 @@ import projekt.feukora.server.persister.TownData;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
+/**
+ * Class to test the methodes of the class CompanyPersister.
+ * 
+ * @author Tamara
+ * @version 1.0
+ *
+ */
 public class CompanyPersisterTest {
 
 

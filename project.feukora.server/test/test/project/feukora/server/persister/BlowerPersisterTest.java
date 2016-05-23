@@ -20,6 +20,12 @@ import projekt.feukora.server.persister.FuelPersister;
 import projekt.feukora.server.persister.FuelPersisterImpl;
 import projekt.feukora.server.persister.TownData;
 
+/**
+ * Class to tests the methodes of the class BlowerPersister.
+ * 
+ * @author Tamara
+ * @version 1.0
+ */
 public class BlowerPersisterTest {
 
 
@@ -40,6 +46,10 @@ public class BlowerPersisterTest {
 	public void tearDown() throws Exception {
 	}
 	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testSave() throws Exception {
 		
@@ -61,6 +71,10 @@ public class BlowerPersisterTest {
 
 	}
 	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testUpdate() throws Exception {
 
@@ -89,6 +103,10 @@ public class BlowerPersisterTest {
 
 	}
 
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 
@@ -101,6 +119,9 @@ public class BlowerPersisterTest {
 		assertTrue(blowerlist.size() == 1);
 
 	}
+	/**
+	 * 
+	 */
 	@Test
 	public void testFindByName() {
 
