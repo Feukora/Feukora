@@ -8,10 +8,25 @@ public class ControllerOverview {
 
     @FXML
     private Button overviewDeleteRapport;
-
+    
+    @FXML
+    private Button overviewRefreshRapport;
+    
+    @FXML
+    private Button overviewUpdateRapport;
+        
     @FXML
     void ActionOverviewDeleteRapport(ActionEvent event) {
 
     }
 
+    @FXML
+    void ActionOverviewRefreshRapport(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ActionOverviewUpdateRapport(ActionEvent event) {
+
+    }
 }

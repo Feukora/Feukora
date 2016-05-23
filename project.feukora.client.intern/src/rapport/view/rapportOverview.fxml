@@ -8,7 +8,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rapport.controller.ControllerOverview">
    <children>
-      <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="164.0" text="Übersicht Rapporte" AnchorPane.leftAnchor="80.0" />
+      <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="300.0" text="Übersicht Rapporte" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
       <TableView layoutX="76.0" layoutY="123.0" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
         <columns>
           <TableColumn prefWidth="150.0" text="Vorname" />
@@ -21,5 +24,7 @@
         </columns>
       </TableView>
       <Button fx:id="overviewDeleteRapport" layoutX="950.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewDeleteRapport" prefHeight="20.0" prefWidth="90.0" text="Löschen" />
+      <Button fx:id="overviewRefreshRapport" layoutX="830.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewRefreshRapport" prefHeight="20.0" prefWidth="90.0" text="Refresh" />
+      <Button fx:id="overviewUpdateRapport" layoutX="710.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewUpdateRapport" prefHeight="20.0" prefWidth="90.0" text="Ändern" />
    </children>
 </AnchorPane>

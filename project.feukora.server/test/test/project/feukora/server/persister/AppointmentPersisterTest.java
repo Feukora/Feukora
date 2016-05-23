@@ -30,7 +30,7 @@ import projekt.feukora.server.persister.UserPersister;
 import projekt.feukora.server.persister.UserPersisterImpl;
 
 /**
- * Class to test the methodes of the class AppointmentPersister.
+ * Class to test the methods of the class AppointmentPersister.
  * 
  * @author Allan
  * @version 1.0

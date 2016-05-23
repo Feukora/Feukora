@@ -535,7 +535,6 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Text>
-                        <CheckBox fx:id="checkboxoilpartyes1" layoutX="324.0" layoutY="153.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartYes1" prefHeight="30.0" prefWidth="33.0" />
                         <DatePicker fx:id="measuringdate" layoutX="27.0" layoutY="66.0" minHeight="30.0" minWidth="75.0" onAction="#SetMeasuringDate" prefHeight="30.0" prefWidth="113.0" />
                         <Text layoutX="24.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datum">
                            <font>
@@ -746,13 +745,6 @@
                            </font>
                         </Text>
                         <TextField fx:id="textfieldnitrogendioxide1" layoutX="383.0" layoutY="153.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" onAction="#SetNitrogendioxide1" prefHeight="30.0" prefWidth="80.0" />
-                        <CheckBox fx:id="checkboxoilpartno4" layoutX="357.0" layoutY="243.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartNo4" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="checkboxoilpartno3" layoutX="357.0" layoutY="213.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartNo3" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="checkboxoilpartno2" layoutX="357.0" layoutY="183.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartNo2" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="checkboxoilpartno1" layoutX="357.0" layoutY="153.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartNo1" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="checkboxoilpartyes2" layoutX="324.0" layoutY="183.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartYes2" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="checkboxoilpartyes3" layoutX="324.0" layoutY="213.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartYes3" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="checkboxoilpartyes4" layoutX="324.0" layoutY="243.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartYes4" prefHeight="30.0" prefWidth="33.0" />
                         <TextField fx:id="textfieldnitrogendioxide2" layoutX="383.0" layoutY="183.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" onAction="#SetNitrogendioxide2" prefHeight="30.0" prefWidth="80.0" />
                         <TextField fx:id="textfieldnitrogendioxide3" layoutX="383.0" layoutY="213.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" onAction="#SetNitrogendioxide3" prefHeight="30.0" prefWidth="80.0" />
                         <TextField fx:id="textfieldnitrogendioxide4" layoutX="383.0" layoutY="243.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" onAction="#SetNitrogendioxide4" prefHeight="30.0" prefWidth="80.0" />
@@ -781,6 +773,14 @@
                               <Font size="13.0" />
                            </font>
                         </Text>
+                        <RadioButton layoutX="324.0" layoutY="153.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
+                        <RadioButton layoutX="357.0" layoutY="153.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
+                        <RadioButton layoutX="324.0" layoutY="183.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
+                        <RadioButton layoutX="357.0" layoutY="183.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
+                        <RadioButton layoutX="324.0" layoutY="213.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
+                        <RadioButton layoutX="357.0" layoutY="213.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
+                        <RadioButton layoutX="324.0" layoutY="243.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
+                        <RadioButton layoutX="357.0" layoutY="243.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
                      </children>
                   </Pane>
                </content>

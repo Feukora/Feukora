@@ -21,7 +21,7 @@ import projekt.feukora.server.persister.FuelPersisterImpl;
 import projekt.feukora.server.persister.TownData;
 
 /**
- * Class to tests the methodes of the class BlowerPersister.
+ * Class to tests the methods of the class BlowerPersister.
  * 
  * @author Tamara
  * @version 1.0
@@ -47,6 +47,7 @@ public class BlowerPersisterTest {
 	}
 	
 	/**
+	 * tests if the Blower is saved
 	 * 
 	 * @throws Exception
 	 */
@@ -72,6 +73,7 @@ public class BlowerPersisterTest {
 	}
 	
 	/**
+	 * tests if the Blower is updated
 	 * 
 	 * @throws Exception
 	 */
@@ -104,6 +106,7 @@ public class BlowerPersisterTest {
 	}
 
 	/**
+	 * tests if the Blower is deleted
 	 * 
 	 * @throws Exception
 	 */
@@ -120,7 +123,7 @@ public class BlowerPersisterTest {
 
 	}
 	/**
-	 * 
+	 * tests if the Blower can be found by name
 	 */
 	@Test
 	public void testFindByName() {

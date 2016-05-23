@@ -138,7 +138,7 @@ public class ControllerOverview {
 			if(inspector != null){
 				AnchorPane pane = new AnchorPane();
 				Context.setUser(inspector);
-				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/inspectorDetailview.fxml"));
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("inspector/view/inspectorDetailview.fxml"));
 				overviewUpdateInspector.getScene().setRoot(pane);
 			}else{
 				String titleBar = "Nichts ausgewählt";
