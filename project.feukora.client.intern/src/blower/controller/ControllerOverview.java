@@ -65,6 +65,13 @@ public class ControllerOverview {
 					new PropertyValueFactory<Blower, String>("name")
 			);	
 			
+			columnBlowerBlower.setCellValueFactory(
+					new PropertyValueFactory<Blower, String>("blowertypeid")
+			);
+			
+			columnFuelBlower.setCellValueFactory(
+					new PropertyValueFactory<Blower, String>("fuelid")
+			);
 			overviewTableBlower.setItems(blowers);
 			
 		} catch (Exception e) {

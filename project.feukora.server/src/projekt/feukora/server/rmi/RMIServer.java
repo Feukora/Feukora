@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import org.eclipse.persistence.sessions.server.Server;
 import projekt.feukora.server.persister.TownData;
+import test.project.feukora.server.persister.TestdataDB;
 import test.project.feukora.server.persister.TestdataMeasuringresult;
 
 
@@ -78,7 +79,7 @@ public class RMIServer {
 			if (registry != null) {
 				
 				TownData.loadTownData("resources/ZIP.txt");
-				TestdataMeasuringresult.loadTestdata();
+				TestdataDB.loadTestdata();
 				// Entfernte Objekte erstellen
 				CustomerRMI customerRMI = new CustomerRMIImpl();
 				CompanyRMI companyRMI = new CompanyRMIImpl();
