@@ -29,19 +29,19 @@
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <TextField fx:id="rapportkanton" layoutX="21.0" layoutY="164.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldCanton" layoutX="21.0" layoutY="164.0" minHeight="30.0" minWidth="66.0" onAction="#setCanton" prefHeight="30.0" prefWidth="66.0" />
                         <TabPane layoutX="364.0" layoutY="253.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
                         <Label layoutX="21.0" layoutY="233.0" text="Anlagestandort (Strasse, Haus-Nr., PLZ, Ort)">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <TextField fx:id="anlagestandort" layoutX="21.0" layoutY="253.0" minHeight="30.0" minWidth="270.0" prefHeight="30.0" prefWidth="270.0" />
-                        <RadioButton fx:id="radioeigentuemer" layoutX="21.0" layoutY="323.0" mnemonicParsing="false" text="Eigentümer">
+                        <TextField fx:id="textfieldaddress" layoutX="21.0" layoutY="253.0" minHeight="30.0" minWidth="270.0" onAction="#SetAdress" prefHeight="30.0" prefWidth="270.0" />
+                        <RadioButton fx:id="radioowner" layoutX="21.0" layoutY="323.0" mnemonicParsing="false" onAction="#SetOwner" text="Eigentümer">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="radioverwaltung" layoutX="127.0" layoutY="323.0" mnemonicParsing="false" text="Verwaltung">
+                        <RadioButton fx:id="radioadministration" layoutX="127.0" layoutY="323.0" mnemonicParsing="false" onAction="#SetAdministration" text="Verwaltung">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -51,8 +51,8 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="hauswart" layoutX="21.0" layoutY="435.0" minHeight="30.0" minWidth="270.0" prefHeight="30.0" prefWidth="270.0" />
-                        <ComboBox layoutX="21.0" layoutY="353.0" minHeight="30.0" minWidth="270.0" prefHeight="30.0" prefWidth="270.0" />
+                        <TextField fx:id="textfieldfacilitymanager" layoutX="21.0" layoutY="435.0" minHeight="30.0" minWidth="270.0" onAction="#SetFacilitymanager" prefHeight="30.0" prefWidth="270.0" />
+                        <ComboBox fx:id="comboboxOwnerAdministration" layoutX="21.0" layoutY="353.0" minHeight="30.0" minWidth="270.0" onAction="#ChoseOwnerAdministration" prefHeight="30.0" prefWidth="270.0" />
                         <Button fx:id="rapportstartforward" layoutX="395.0" layoutY="494.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionRapportStartForward" prefHeight="20.0" prefWidth="60.0" text="Weiter &gt;">
                            <font>
                               <Font size="10.0" />
@@ -76,7 +76,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="baujahrwaermeerz" layoutX="21.0" layoutY="100.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldheateryear" layoutX="21.0" layoutY="100.0" minHeight="30.0" minWidth="66.0" onAction="#SetHeaterYear" prefHeight="30.0" prefWidth="66.0" />
                         <Label layoutX="116.0" layoutY="65.0" prefHeight="35.0" prefWidth="125.0" text="Fabrikat / Typ">
                            <font>
                               <Font size="14.0" />
@@ -102,18 +102,18 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="baujahrbrenner" layoutX="21.0" layoutY="291.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldbloweryear" layoutX="21.0" layoutY="291.0" minHeight="30.0" minWidth="66.0" onAction="#SetBlowerYear" prefHeight="30.0" prefWidth="66.0" />
                         <Label layoutX="118.0" layoutY="253.0" prefHeight="35.0" prefWidth="125.0" text="Fabrikat / Typ">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="270.0" layoutY="252.0" prefHeight="35.0" prefWidth="108.0" text="Brennstoff">
+                        <Label layoutX="270.0" layoutY="252.0" prefHeight="35.0" prefWidth="108.0" text="Brenner">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="feuerungswaermeleistung" layoutX="395.0" layoutY="288.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldheatinput" layoutX="395.0" layoutY="288.0" minHeight="30.0" minWidth="66.0" onAction="#SetHeatinput" prefHeight="30.0" prefWidth="66.0" />
                         <Label layoutX="395.0" layoutY="253.0" prefHeight="35.0" prefWidth="166.0" text="Feuerungswärmeleistung">
                            <font>
                               <Font size="14.0" />
@@ -123,44 +123,44 @@
                            <font>
                               <Font size="10.0" />
                            </font></Button>
-                        <ComboBox fx:id="fabrikatwaermeerz" layoutX="118.0" layoutY="100.0" minHeight="30.0" prefHeight="30.0" prefWidth="127.0" />
-                        <RadioButton fx:id="radiooel" layoutX="270.0" layoutY="94.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="63.0" text="Öl">
+                        <ComboBox fx:id="comboboxheatertype" layoutX="118.0" layoutY="100.0" minHeight="30.0" onAction="#setHeaterType" prefHeight="30.0" prefWidth="127.0" />
+                        <RadioButton fx:id="radiofueloil" layoutX="270.0" layoutY="94.0" mnemonicParsing="false" onAction="#SetFuelOil" prefHeight="35.0" prefWidth="63.0" text="Öl">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="radiofluessiggas" layoutX="270.0" layoutY="149.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="107.0" text="Flüssiggas">
+                        <RadioButton fx:id="radiofuelliquidgas" layoutX="270.0" layoutY="149.0" mnemonicParsing="false" onAction="#SetFuelLiquidGas" prefHeight="35.0" prefWidth="107.0" text="Flüssiggas">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="radioerdgas" layoutX="270.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" text="Erdgas">
+                        <RadioButton fx:id="radiofuelnaturalgas" layoutX="270.0" layoutY="119.0" mnemonicParsing="false" onAction="#SetFuelNaturalGas" prefHeight="35.0" prefWidth="75.0" text="Erdgas">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="radioroutinekontrolle" layoutX="395.0" layoutY="94.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="133.0" text="Routinekontrolle">
+                        <RadioButton fx:id="radioroutinecontrol" layoutX="395.0" layoutY="94.0" mnemonicParsing="false" onAction="#SetRoutinecontrol" prefHeight="35.0" prefWidth="133.0" text="Routinekontrolle">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="radioabnahmekontrolle" layoutX="395.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="146.0" text="Abnahmekontrolle">
+                        <RadioButton fx:id="radioacceptanceinspection" layoutX="395.0" layoutY="119.0" mnemonicParsing="false" onAction="#SetAcceptanceinspection" prefHeight="35.0" prefWidth="146.0" text="Abnahmekontrolle">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <ComboBox fx:id="fabrikatbrenner" layoutX="118.0" layoutY="288.0" minHeight="30.0" minWidth="127.0" prefHeight="30.0" prefWidth="127.0" />
-                        <RadioButton fx:id="radiogeblaese" layoutX="270.0" layoutY="286.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Gebläse">
+                        <ComboBox fx:id="comboboxblowertype" layoutX="118.0" layoutY="288.0" minHeight="30.0" minWidth="127.0" onAction="#SetBlowerType" prefHeight="30.0" prefWidth="127.0" />
+                        <RadioButton fx:id="radioblowerfan" layoutX="270.0" layoutY="286.0" mnemonicParsing="false" onAction="#SetBlowerFan" prefHeight="35.0" prefWidth="80.0" text="Gebläse">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="radioverdampfer" layoutX="270.0" layoutY="341.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Verdampfer">
+                        <RadioButton fx:id="radioverdampfer" layoutX="270.0" layoutY="341.0" mnemonicParsing="false" onAction="#SetBlowerVaporizer" prefHeight="35.0" prefWidth="112.0" text="Verdampfer">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="radioathmosphaere" layoutX="270.0" layoutY="313.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" text="Athmosphäre">
+                        <RadioButton fx:id="radioathmosphaere" layoutX="270.0" layoutY="313.0" mnemonicParsing="false" onAction="#SetBlowerAtmosphere" prefHeight="35.0" prefWidth="111.0" text="Athmosphäre">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -549,8 +549,8 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Text>
-                        <CheckBox fx:id="oelanteile1ja" layoutX="324.0" layoutY="153.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
-                        <DatePicker fx:id="rapportdate" layoutX="27.0" layoutY="66.0" minHeight="30.0" minWidth="75.0" prefHeight="30.0" prefWidth="113.0" />
+                        <CheckBox fx:id="checkboxoilpartyes1" layoutX="324.0" layoutY="153.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartYes1" prefHeight="30.0" prefWidth="33.0" />
+                        <DatePicker fx:id="measuringdate" layoutX="27.0" layoutY="66.0" minHeight="30.0" minWidth="75.0" onAction="#SetMeasuringDate" prefHeight="30.0" prefWidth="113.0" />
                         <Text layoutX="24.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datum">
                            <font>
                               <Font size="12.0" />
@@ -630,15 +630,15 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="russzahl1" layoutX="189.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldsmokenumber1" layoutX="189.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetSmokenumber1" prefHeight="30.0" prefWidth="66.0" />
                         <Text layoutX="161.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="russzahl2" layoutX="189.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="russzahl3" layoutX="189.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="russzahl4" layoutX="189.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldsmokenumber2" layoutX="189.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetSmokenumber2" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldsmokenumber3" layoutX="189.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetSmokenumber3" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldsmokenumber4" layoutX="189.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetSmokenumber4" prefHeight="30.0" prefWidth="66.0" />
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" layoutX="143.0" layoutY="213.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
                         <Text layoutX="161.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                            <font>
@@ -694,10 +694,10 @@
                               <Font size="13.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="co1" layoutX="255.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="co2" layoutX="255.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="co3" layoutX="255.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="co4" layoutX="255.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfielcarbonmonoxide1" layoutX="255.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetCarbonmonoxide1" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfielcarbonmonoxide2" layoutX="255.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetCarbonmonoxide2" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfielcarbonmonoxide3" layoutX="255.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetCarbonmonoxide3" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfielcarbonmonoxide4" layoutX="255.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetCarbonmonoxide4" prefHeight="30.0" prefWidth="66.0" />
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" layoutX="595.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
                         <Text layoutX="603.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verbren-" textAlignment="JUSTIFY">
                            <font>
@@ -759,37 +759,37 @@
                               <Font size="13.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="nox1" layoutX="383.0" layoutY="153.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" prefHeight="30.0" prefWidth="80.0" />
-                        <CheckBox fx:id="oelanteile4nein" layoutX="357.0" layoutY="243.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="oelanteile3nein" layoutX="357.0" layoutY="213.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="oelanteile2nein" layoutX="357.0" layoutY="183.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="oelanteile1nein" layoutX="357.0" layoutY="153.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="oelanteile2ja" layoutX="324.0" layoutY="183.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="oelanteile3ja" layoutX="324.0" layoutY="213.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
-                        <CheckBox fx:id="oelanteile4ja" layoutX="324.0" layoutY="243.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" />
-                        <TextField fx:id="nox2" layoutX="383.0" layoutY="183.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" prefHeight="30.0" prefWidth="80.0" />
-                        <TextField fx:id="nox3" layoutX="383.0" layoutY="213.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" prefHeight="30.0" prefWidth="80.0" />
-                        <TextField fx:id="nox4" layoutX="383.0" layoutY="243.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" prefHeight="30.0" prefWidth="80.0" />
-                        <TextField fx:id="abgastemp1" layoutX="463.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="abgastemp2" layoutX="463.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="abgastemp3" layoutX="463.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="abgastemp4" layoutX="463.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="waermeerzegertemp1" layoutX="529.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="waermeerzeugertemp2" layoutX="529.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="waermeerzeugertemp3" layoutX="529.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="waermeerzeugertemp4" layoutX="529.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="verbrennungslufttemp1" layoutX="595.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="verbrennungslufttemp2" layoutX="595.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="verbrennungslufttemp3" layoutX="595.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="verbrennungslufttemp4" layoutX="595.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="o21" layoutX="661.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="o22" layoutX="661.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="o23" layoutX="661.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="os4" layoutX="661.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="abgasverl1" layoutX="727.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="abgasverl2" layoutX="727.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="abgasverl3" layoutX="727.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
-                        <TextField fx:id="abgasverl4" layoutX="727.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldnitrogendioxide1" layoutX="383.0" layoutY="153.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" onAction="#SetNitrogendioxide1" prefHeight="30.0" prefWidth="80.0" />
+                        <CheckBox fx:id="checkboxoilpartno4" layoutX="357.0" layoutY="243.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartNo4" prefHeight="30.0" prefWidth="33.0" />
+                        <CheckBox fx:id="checkboxoilpartno3" layoutX="357.0" layoutY="213.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartNo3" prefHeight="30.0" prefWidth="33.0" />
+                        <CheckBox fx:id="checkboxoilpartno2" layoutX="357.0" layoutY="183.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartNo2" prefHeight="30.0" prefWidth="33.0" />
+                        <CheckBox fx:id="checkboxoilpartno1" layoutX="357.0" layoutY="153.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartNo1" prefHeight="30.0" prefWidth="33.0" />
+                        <CheckBox fx:id="checkboxoilpartyes2" layoutX="324.0" layoutY="183.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartYes2" prefHeight="30.0" prefWidth="33.0" />
+                        <CheckBox fx:id="checkboxoilpartyes3" layoutX="324.0" layoutY="213.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartYes3" prefHeight="30.0" prefWidth="33.0" />
+                        <CheckBox fx:id="checkboxoilpartyes4" layoutX="324.0" layoutY="243.0" maxHeight="30.0" maxWidth="33.0" minHeight="30.0" minWidth="33.0" mnemonicParsing="false" onAction="#SetOilpartYes4" prefHeight="30.0" prefWidth="33.0" />
+                        <TextField fx:id="textfieldnitrogendioxide2" layoutX="383.0" layoutY="183.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" onAction="#SetNitrogendioxide2" prefHeight="30.0" prefWidth="80.0" />
+                        <TextField fx:id="textfieldnitrogendioxide3" layoutX="383.0" layoutY="213.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" onAction="#SetNitrogendioxide3" prefHeight="30.0" prefWidth="80.0" />
+                        <TextField fx:id="textfieldnitrogendioxide4" layoutX="383.0" layoutY="243.0" maxHeight="30.0" maxWidth="80.0" minHeight="30.0" minWidth="80.0" onAction="#SetNitrogendioxide4" prefHeight="30.0" prefWidth="80.0" />
+                        <TextField fx:id="textfieldexhaustgastemp1" layoutX="463.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetExhaustgastemp1" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldexhaustgastemp2" layoutX="463.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetExhaustgastemp2" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldexhaustgastemp3" layoutX="463.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetExhaustgastemp3" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldexhaustgastemp4" layoutX="463.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetExhaustgastemp4" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldheatertemp1" layoutX="529.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetHeatertemp1" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldheatertemp2" layoutX="529.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetHeatertemp2" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldheatertemp3" layoutX="529.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetHeatertemp3" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldheatertemp4" layoutX="529.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetHeatertemp4" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldblowertemp1" layoutX="595.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetBlowertemp1" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldblowertemp2" layoutX="595.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetBlowertemp2" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldblowertemp3" layoutX="595.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetBlowertemp3" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldblowertemp4" layoutX="595.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetBlowertemp4" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldoxygen1" layoutX="661.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetOxygen1" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldoxygen2" layoutX="661.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetOxygen2" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldoxygen3" layoutX="661.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetOxygen3" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldoxygen4" layoutX="661.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetOxygen4" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldexhaustgasloss1" layoutX="727.0" layoutY="153.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetExhaustgasloss1" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldexhaustgasloss2" layoutX="727.0" layoutY="183.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetExhaustgasloss2" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldexhaustgasloss3" layoutX="727.0" layoutY="213.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetExhaustgasloss3" prefHeight="30.0" prefWidth="66.0" />
+                        <TextField fx:id="textfieldexhaustgasloss4" layoutX="727.0" layoutY="243.0" maxHeight="30.0" maxWidth="66.0" minHeight="30.0" minWidth="66.0" onAction="#SetExhaustgasloss4" prefHeight="30.0" prefWidth="66.0" />
                         <Text layoutX="27.0" layoutY="704.0" strokeType="OUTSIDE" strokeWidth="0.0" text="gelten abweichend von LRV Anhang 3 Ziffer 61 die Stickoxyd-Grenzwerte nach LRV Anhang 3 Ziffer 411 (d.h. Grenzwertde analog Heizöl &quot;Extra leicht&quot;)." wrappingWidth="874.2734375">
                            <font>
                               <Font size="13.0" />
