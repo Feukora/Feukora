@@ -18,7 +18,7 @@ import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
 /**
- * Class to test the methodes of the class CompanyPersister.
+ * Class to test the methods of the class CompanyPersister.
  * 
  * @author Tamara
  * @version 1.0
@@ -44,6 +44,11 @@ public class CompanyPersisterTest {
 	public void tearDown() throws Exception {
 	}
 	
+	/**
+	 * tests if the Company is saved
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testSave() throws Exception {
 		
@@ -63,6 +68,11 @@ public class CompanyPersisterTest {
 
 	}
 	
+	/**
+	 * tests if the Company is updated
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testUpdate() throws Exception {
 
@@ -88,6 +98,11 @@ public class CompanyPersisterTest {
 
 	}
 
+	/**
+	 * tests if the Company is deleted
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 
@@ -100,6 +115,9 @@ public class CompanyPersisterTest {
 		assertTrue(companylist.size() == 1);
 
 	}
+	/**
+	 * tests if the Company can be found by name
+	 */
 	@Test
 	public void testFindByName() {
 

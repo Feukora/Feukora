@@ -27,6 +27,12 @@ import projekt.feukora.server.persister.HeaterPersister;
 import projekt.feukora.server.persister.HeaterPersisterImpl;
 import projekt.feukora.server.persister.TownData;
 
+/**
+ * Class to test methods of the class CustomerPersister.
+ * 
+ * @author Tamara
+ * @version 1.0
+ */
 public class CustomerheaterPersisterTest {
 
 	private static CustomerheaterPersisterImpl customerheaterTest = new CustomerheaterPersisterImpl();
@@ -46,6 +52,11 @@ public class CustomerheaterPersisterTest {
 	public void tearDown() throws Exception {
 	}
 	
+	/**
+	 * tests if the Customerheater is saved
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testSave() throws Exception {
 		
@@ -73,6 +84,11 @@ public class CustomerheaterPersisterTest {
 
 	}
 	
+	/**
+	 * tests if the Customerheater is updated
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testUpdate() throws Exception {
 
@@ -104,6 +120,11 @@ public class CustomerheaterPersisterTest {
 
 	}
 
+	/**
+	 * tests if the Customerheater is deleted
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 
