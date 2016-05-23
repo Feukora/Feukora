@@ -199,24 +199,37 @@ public class ClientInternRMI {
 		if(oil == true) {
 			fuel = fuelRMI.findFuelByName("Öl");
 		} else if (gas == true) {
-			fuel = fuelRMI.findFuelByName("Gas");
+			fuel = fuelRMI.findFuelByName("Erdgas");
 		} else {
-			fuel = fuelRMI.findFuelByName("Flüssig Gas");
+			fuel = fuelRMI.findFuelByName("Flüssiggas");
 		}
 		
 		if(blower == true) {
 			type = blowertypeRMI.findBlowertypeByName("Gebläse");
 		} else if(atmospheric == true) {
-			type = blowertypeRMI.findBlowertypeByName("atmosphärisch");
+			type = blowertypeRMI.findBlowertypeByName("Athmosphärisch");
 		} else {
 			type = blowertypeRMI.findBlowertypeByName("Verdampfer");
 		}
-		
-		Blower b1 = new Blower(type, fuel, name);
-		blowerRMI.saveBlower(b1);
+//		Context.se
+//		Blower b1 = new Blower(type, fuel, name);
+//		blowerRMI.saveBlower(b1);
 	}
 	
-	public void updateBlower(String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean blower, Boolean atmospheric, Boolean evaporator) throws Exception {
+	public void saveBlower(Blower entity) throws Exception {
+		try {
+			blowerRMI.saveBlower(entity);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+	public void updateBlower(Blower blower1, String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean blower, Boolean atmospheric, Boolean evaporator) throws Exception {
 		Blowertype type;
 		Fuel fuel;
 		if(oil == true) {
@@ -235,8 +248,7 @@ public class ClientInternRMI {
 			type = blowertypeRMI.findBlowertypeByName("Verdampfer");
 		}
 		
-		Blower b1 = new Blower(type, fuel, name);
-		blowerRMI.updateBlower(b1);
+		blowerRMI.updateBlower(blower1);
 	}
 	
 	

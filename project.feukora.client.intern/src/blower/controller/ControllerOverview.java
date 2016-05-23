@@ -114,6 +114,7 @@ public class ControllerOverview {
     			AnchorPane pane = new AnchorPane();
     			Context.setBlower(blower);
     			pane = FXMLLoader.load(getClass().getClassLoader().getResource("blower/view/blowerDetailview.fxml"));
+    			overviewUpdateBlower.getScene().setRoot(pane);
     		} else {
     			String titleBar = "Nichts ausgewählt";
 				String headerMessage = "Wählen Sie einen Brenner aus";

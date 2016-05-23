@@ -62,25 +62,30 @@ public class ControllerDetailview {
 
     
     public void initialize() {
+    	setToggleGroup();
     	if(Context.getBlowername() != null){
     		Update();
     	} else {
-    		radioButtonOil.setToggleGroup(fuel);
-    		radioButtonGas.setToggleGroup(fuel);
-    		radioButtonLiquidGas.setToggleGroup(fuel);
     		
-    		radioButtonBlowers.setToggleGroup(blowertype);
-    		radioButtonAtmospheric.setToggleGroup(blowertype);
-    		radioButtonEvaporator.setToggleGroup(blowertype);
-    		
-    		radioButtonOil.setSelected(false);
-    		radioButtonGas.setSelected(false);
-    		radioButtonLiquidGas.setSelected(false);
-    		
-    		radioButtonBlowers.setSelected(false);
-    		radioButtonAtmospheric.setSelected(false);
-    		radioButtonEvaporator.setSelected(false);
     	}
+    }
+    
+    public void setToggleGroup() {
+    	radioButtonOil.setToggleGroup(fuel);
+		radioButtonGas.setToggleGroup(fuel);
+		radioButtonLiquidGas.setToggleGroup(fuel);
+		
+		radioButtonBlowers.setToggleGroup(blowertype);
+		radioButtonAtmospheric.setToggleGroup(blowertype);
+		radioButtonEvaporator.setToggleGroup(blowertype);
+		
+		radioButtonOil.setSelected(false);
+		radioButtonGas.setSelected(false);
+		radioButtonLiquidGas.setSelected(false);
+		
+		radioButtonBlowers.setSelected(false);
+		radioButtonAtmospheric.setSelected(false);
+		radioButtonEvaporator.setSelected(false);
     }
     
     public void Update() {
@@ -115,6 +120,9 @@ public class ControllerDetailview {
         Boolean gas = false;
         Boolean liquidGas = false;
         
+        Blowertype type;
+        Fuel fuel;
+        
         if(radioButtonBlowers.isSelected()) {
         	bblower = true;
         } else if (radioButtonAtmospheric.isSelected()) {
@@ -134,15 +142,26 @@ public class ControllerDetailview {
  		try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if (blower1 == null) {
-				feukora.saveBlower(blowerName, oil, gas, liquidGas, bblower, atmospheric, evaporator);
+				feukora.saveBlower(blower1);
 			} else {
-				feukora.updateBlower(blowerName, oil, gas, liquidGas, bblower, atmospheric, evaporator);
+				feukora.updateBlower(blower, blowerName, oil, gas, liquidGas, bblower, atmospheric, evaporator);
 			}
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
+ 		
+
+		blowerNameField.clear();
+		radioButtonBlowers.setSelected(false);
+		radioButtonAtmospheric.setSelected(false);
+		radioButtonEvaporator.setSelected(false);
+		radioButtonOil.setSelected(false);
+		radioButtonGas.setSelected(false);
+		radioButtonLiquidGas.setSelected(false);
+		
     }
     
     @FXML

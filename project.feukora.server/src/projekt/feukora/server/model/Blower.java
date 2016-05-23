@@ -56,6 +56,12 @@ public class Blower implements Serializable {
 		return blowerid;
 	}
 	
+	public void setBlowertypeid(Blowertype blowertypeid) {
+		this.blowertypeid = blowertypeid;
+	}
+	public void setFuelid(Fuel fuelid) {
+		this.fuelid = fuelid;
+	}
 	public String getName() {
 		return name;
 	}
