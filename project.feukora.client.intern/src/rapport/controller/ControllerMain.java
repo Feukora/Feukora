@@ -13,12 +13,78 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
-public class ControllerMain implements Initializable{
+public class ControllerMain {
+	//Togglegroup for tab: Start
+	final ToggleGroup start = new ToggleGroup();
 	
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	//Togglegroup for tab: Heater/Blower
+	final ToggleGroup heaterfuel = new ToggleGroup();
+	final ToggleGroup controltype = new ToggleGroup();
+	final ToggleGroup blowertype = new ToggleGroup();
+	final ToggleGroup oilpart1 = new ToggleGroup();
+	final ToggleGroup oilpart2 = new ToggleGroup();
+	final ToggleGroup oilpart3 = new ToggleGroup();
+	final ToggleGroup oilpart4 = new ToggleGroup();
 	
+	
+	public void initialize() {
+	   //Togglegroup handling for: Start
+       radioowner.setToggleGroup(start);
+       radioadministration.setToggleGroup(start);
+       radioowner.setSelected(false);
+       radioadministration.setSelected(false);
+       
+       //Togglegroup handling for: Heater/Blower (Fuel)
+       radiofueloil.setToggleGroup(heaterfuel);
+       radiofuelnaturalgas.setToggleGroup(heaterfuel);
+       radiofuelliquidgas.setToggleGroup(heaterfuel);
+       radiofueloil.setSelected(false);
+       radiofuelnaturalgas.setSelected(false);
+       radiofuelliquidgas.setSelected(false);
+       
+       //Togglegroup handling for: Heater/Blower (Controltype)
+       radioroutinecontrol.setToggleGroup(controltype);
+       radioacceptanceinspection.setToggleGroup(controltype);
+       radioroutinecontrol.setSelected(false);
+       radioacceptanceinspection.setSelected(false);
+       
+       //Togglegroup handling for: Heater/Blower (Fuel)
+       radioblowerfan.setToggleGroup(blowertype);
+       radiobloweratmospheric.setToggleGroup(blowertype);
+       radioblowervaporizer.setToggleGroup(blowertype);
+       radiofueloil.setSelected(false);
+       radiofuelnaturalgas.setSelected(false);
+       radiofuelliquidgas.setSelected(false);
+       
+       //Togglegroup handling for: Oilpart measuring Step 1
+       radiooilpartyes1.setToggleGroup(oilpart1);
+       radiooilpartno1.setToggleGroup(oilpart1);
+       radiooilpartyes1.setSelected(false);
+       radiooilpartno1.setSelected(false);
+       
+       //Togglegroup handling for: Oilpart measuring Step 2
+       radiooilpartyes2.setToggleGroup(oilpart2);
+       radiooilpartno2.setToggleGroup(oilpart2);
+       radiooilpartyes2.setSelected(false);
+       radiooilpartno2.setSelected(false);
+       
+       //Togglegroup handling for: Oilpart measuring Step 3
+       radiooilpartyes3.setToggleGroup(oilpart3);
+       radiooilpartno3.setToggleGroup(oilpart3);
+       radiooilpartyes3.setSelected(false);
+       radiooilpartno3.setSelected(false);
+       
+       //Togglegroup handling for: Oilpart measuring Step 4
+       radiooilpartyes4.setToggleGroup(oilpart4);
+       radiooilpartno4.setToggleGroup(oilpart4);
+       radiooilpartyes4.setSelected(false);
+       radiooilpartno4.setSelected(false);
+  
+       
+    
+
 	}
 	
     @FXML
@@ -73,13 +139,10 @@ public class ControllerMain implements Initializable{
     private RadioButton radioblowerfan;
 
     @FXML
-    private RadioButton radioverdampfer;
+    private RadioButton radioblowervaporizer;
 
     @FXML
-    private RadioButton radioathmosphaere;
-
-    @FXML
-    private CheckBox checkboxoilpartyes1;
+    private RadioButton radiobloweratmospheric;
 
     @FXML
     private DatePicker measuringdate;
@@ -111,26 +174,30 @@ public class ControllerMain implements Initializable{
     @FXML
     private TextField textfieldnitrogendioxide1;
 
+    
     @FXML
-    private CheckBox checkboxoilpartno4;
+    private RadioButton radiooilpartno1;
 
     @FXML
-    private CheckBox checkboxoilpartno3;
+    private RadioButton radiooilpartno2;
 
     @FXML
-    private CheckBox checkboxoilpartno2;
+    private RadioButton radiooilpartno3;
 
     @FXML
-    private CheckBox checkboxoilpartno1;
+    private RadioButton radiooilpartno4;
+    
+    @FXML
+    private RadioButton radiooilpartyes1;
 
     @FXML
-    private CheckBox checkboxoilpartyes2;
+    private RadioButton radiooilpartyes2;
 
     @FXML
-    private CheckBox checkboxoilpartyes3;
+    private RadioButton radiooilpartyes3;
 
     @FXML
-    private CheckBox checkboxoilpartyes4;
+    private RadioButton radiooilpartyes4;
 
     @FXML
     private TextField textfieldnitrogendioxide2;
@@ -268,7 +335,7 @@ public class ControllerMain implements Initializable{
     }
 
     @FXML
-    void SetBlowerAtmosphere(ActionEvent event) {
+    void SetBlowerAtmospheric(ActionEvent event) {
 
     }
 
