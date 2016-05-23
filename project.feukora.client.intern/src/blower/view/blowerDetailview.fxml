@@ -24,7 +24,7 @@
                   <Insets top="40.0" />
                </GridPane.margin>
             </RadioButton>
-            <RadioButton fx:id="radioButtonGas" mnemonicParsing="false" onAction="#ActionRadioButtonGas" text="Gas" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <RadioButton fx:id="radioButtonGas" mnemonicParsing="false" onAction="#ActionRadioButtonGas" text="Erdgas" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <RadioButton fx:id="radioButtonOil" mnemonicParsing="false" onAction="#ActionRadioButtonOil" text="Öl" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="40.0" />

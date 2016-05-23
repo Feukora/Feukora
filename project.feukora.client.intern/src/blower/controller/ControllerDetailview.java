@@ -93,16 +93,16 @@ public class ControllerDetailview {
     	blowerNameField.setText(Context.getBlowername());
     	if(Context.getBlowerType().toString().equals("Gebläse")) {
     		radioButtonBlowers.setSelected(true);
-    	} else if (Context.getBlowerType().toString().equals("atmosphärisch")) {
+    	} else if (Context.getBlowerType().toString().equals("Athmosphärisch")) {
     		radioButtonAtmospheric.setSelected(true);
-    	} else {
+    	} else if (Context.getBlowerType().toString().equals("Verdampfer")){
     		radioButtonEvaporator.setSelected(true);
-    	}
+    	} 
     	if(Context.getFuel().toString().equals("Öl")) {
     		radioButtonOil.setSelected(true);
-    	} else if (Context.getFuel().toString().equals("Gas")) {
+    	} else if (Context.getFuel().toString().equals("Erdgas")) {
     		radioButtonGas.setSelected(true);
-    	} else {
+    	} else if (Context.getFuel().toString().equals("Flüssiggas")){
     		radioButtonLiquidGas.setSelected(true);
     	}
     	Context.setNull();

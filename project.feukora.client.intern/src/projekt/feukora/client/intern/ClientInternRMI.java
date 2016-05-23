@@ -200,20 +200,24 @@ public class ClientInternRMI {
 			fuel = fuelRMI.findFuelByName("Öl");
 		} else if (gas == true) {
 			fuel = fuelRMI.findFuelByName("Erdgas");
-		} else {
+		} else  if (liquidGas){
 			fuel = fuelRMI.findFuelByName("Flüssiggas");
+		} else {
+			fuel = null;
 		}
 		
 		if(blower == true) {
 			type = blowertypeRMI.findBlowertypeByName("Gebläse");
 		} else if(atmospheric == true) {
 			type = blowertypeRMI.findBlowertypeByName("Athmosphärisch");
-		} else {
+		} else if(evaporator == true) {
 			type = blowertypeRMI.findBlowertypeByName("Verdampfer");
+		} else {
+			type = null;
 		}
-//		Context.se
-//		Blower b1 = new Blower(type, fuel, name);
-//		blowerRMI.saveBlower(b1);
+		
+		Blower b1 = new Blower(type, fuel, name);
+		blowerRMI.saveBlower(b1);
 	}
 	
 	public void saveBlower(Blower entity) throws Exception {
@@ -237,17 +241,23 @@ public class ClientInternRMI {
 			fuel = fuelRMI.findFuelByName("Öl");
 		} else if (gas == true) {
 			fuel = fuelRMI.findFuelByName("Erdgas");
-		} else {
+		} else  if (liquidGas){
 			fuel = fuelRMI.findFuelByName("Flüssiggas");
+		} else {
+			fuel = null;
 		}
+		blower1.setFuelid(fuel);
 		
 		if(blower == true) {
 			type = blowertypeRMI.findBlowertypeByName("Gebläse");
 		} else if(atmospheric == true) {
 			type = blowertypeRMI.findBlowertypeByName("Athmosphärisch");
-		} else {
+		} else if(evaporator == true) {
 			type = blowertypeRMI.findBlowertypeByName("Verdampfer");
+		} else {
+			type = null;
 		}
+		blower1.setBlowertypeid(type);
 		
 		blowerRMI.updateBlower(blower1);
 	}
