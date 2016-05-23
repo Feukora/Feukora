@@ -120,9 +120,6 @@ public class ControllerDetailview {
         Boolean gas = false;
         Boolean liquidGas = false;
         
-        Blowertype type;
-        Fuel fuel;
-        
         if(radioButtonBlowers.isSelected()) {
         	bblower = true;
         } else if (radioButtonAtmospheric.isSelected()) {
@@ -153,7 +150,6 @@ public class ControllerDetailview {
 					e);
 		}
  		
-
 		blowerNameField.clear();
 		radioButtonBlowers.setSelected(false);
 		radioButtonAtmospheric.setSelected(false);
@@ -161,7 +157,6 @@ public class ControllerDetailview {
 		radioButtonOil.setSelected(false);
 		radioButtonGas.setSelected(false);
 		radioButtonLiquidGas.setSelected(false);
-		
     }
     
     @FXML
