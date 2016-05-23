@@ -28,26 +28,26 @@ public class ControllerMain implements Initializable{
 	}
 
 	@FXML
-    void Actionrapportstartweiter(ActionEvent event) {
+    void ActionRapportStartWeiter(ActionEvent event) {
     }
 	
-	void Actionwaermeerzeugerzurueck(ActionEvent event) {
+	void ActionWaermeerzeugerZurueck(ActionEvent event) {
 
     }
 	
-	void Actionwaermeerzeugerweiter(ActionEvent event) {
+	void ActionWaermeerzeugerWeiter(ActionEvent event) {
     }
 	
-	void Actionmessergebnissezurueck(ActionEvent event) {
+	void ActionMessergebnisseZurueck(ActionEvent event) {
     }
 	
-	void Actionmessergebnisseweiter(ActionEvent event) {
+	void ActionMessergebnisseWeiter(ActionEvent event) {
     }
 	
-	void Actionbeurteilungzurueck(ActionEvent event) {
+	void ActionBeurteilungZurueck(ActionEvent event) {
     }
 	
-	void Actionbeurteilungspeichern(ActionEvent event) {
+	void ActionBeurteilungSpeichern(ActionEvent event) {
     }
 	
 	
