@@ -19,14 +19,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 
 public class ControllerOverview {
 	
 	private static final Logger logger = Logger
 			.getLogger(ControllerOverview.class);
 
-	public ObservableList<Users> users = FXCollections.observableArrayList();
+	public ObservableList<User> users = FXCollections.observableArrayList();
 
 	@FXML // fx:id="overviewDeleteAssistant"
 	private Button overviewDeleteAssistant; // Value injected by FXMLLoader
@@ -38,31 +38,31 @@ public class ControllerOverview {
 	private Button overviewUpdateAssistant; // Value injected by FXMLLoader
 
 	@FXML // fx:id="overviewTableAssistant"
-	private TableView<?> overviewTableAssistant; // Value injected by FXMLLoader
+	private TableView<User> overviewTableAssistant; // Value injected by FXMLLoader
 
 	@FXML // fx:id="columnEmailAssistant"
-	private TableColumn<?, ?> columnEmailAssistant; // Value injected by
+	private TableColumn<User, String> columnEmailAssistant; // Value injected by
 													// FXMLLoader
 	@FXML // fx:id="columnUsernameAssistant"
-	private TableColumn<?, ?> columnUsernameAssistant; // Value injected by
+	private TableColumn<User, String> columnUsernameAssistant; // Value injected by
 														// FXMLLoader
 	@FXML // fx:id="columnPhoneAssistant"
-	private TableColumn<?, ?> columnPhoneAssistant; // Value injected by
+	private TableColumn<User, String> columnPhoneAssistant; // Value injected by
 
 	@FXML // fx:id="columnFirstnameAssistant"
-	private TableColumn<?, ?> columnFirstnameAssistant; // Value injected by
+	private TableColumn<User, String> columnFirstnameAssistant; // Value injected by
 														// FXMLLoader
 
 	@FXML // fx:id="columnZIPAssistant"
-	private TableColumn<?, ?> columnZIPAssistant; // Value injected by
+	private TableColumn<User, String> columnZIPAssistant; // Value injected by
 													// FXMLLoader
 
 	@FXML // fx:id="columnNameAssistant"
-	private TableColumn<?, ?> columnNameAssistant; // Value injected by
+	private TableColumn<User, String> columnNameAssistant; // Value injected by
 													// FXMLLoader
 
 	@FXML // fx:id="columnAddressAssistant"
-	private TableColumn<?, ?> columnAddressAssistant; // Value injected by
+	private TableColumn<User, String> columnAddressAssistant; // Value injected by
 														// FXMLLoader
 
 	@FXML
@@ -72,31 +72,31 @@ public class ControllerOverview {
 			users = feukora.getUsers();
 
 			columnEmailAssistant.setCellValueFactory(
-					new PropertyValueFactory<Users, String>("email")
+					new PropertyValueFactory<User, String>("email")
 			);
 
 			columnUsernameAssistant.setCellValueFactory(
-					new PropertyValueFactory<Users, String>("username")
+					new PropertyValueFactory<User, String>("username")
 			);
 
 			columnPhoneAssistant.setCellValueFactory(
-					new PropertyValueFactory<Users, String>("phone")
+					new PropertyValueFactory<User, String>("phone")
 			);
 
 			columnFirstnameAssistant.setCellValueFactory(
-					new PropertyValueFactory<Users, String>("firstname")
+					new PropertyValueFactory<User, String>("firstname")
 			);
 
 			columnZIPAssistant.setCellValueFactory(
-					new PropertyValueFactory<Users, String>("town")
+					new PropertyValueFactory<User, String>("town")
 			);
 
 			columnNameAssistant.setCellValueFactory(
-					new PropertyValueFactory<Users, String>("name")
+					new PropertyValueFactory<User, String>("name")
 			);
 
 			columnAddressAssistant.setCellValueFactory(
-					new PropertyValueFactory<Users, String>("adress")
+					new PropertyValueFactory<User, String>("adress")
 			);
 			
 			overviewTableAssistant.setItems(users);
@@ -117,7 +117,7 @@ public class ControllerOverview {
 		ClientInternRMI feukora;
 		try {
 			feukora = new ClientInternRMI();
-			Users entity = overviewTableAssistant.getSelectionModel().getSelectedItem();
+			User entity = overviewTableAssistant.getSelectionModel().getSelectedItem();
 			feukora.deleteUser(entity);
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",

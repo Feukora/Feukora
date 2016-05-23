@@ -23,7 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 
 public class ControllerOverview {
 	
@@ -40,31 +40,31 @@ public class ControllerOverview {
     private Button overviewRefreshInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="overviewTableInspector"
-    private TableView<Users> overviewTableInspector; // Value injected by FXMLLoader
+    private TableView<User> overviewTableInspector; // Value injected by FXMLLoader
     
     @FXML // fx:id="columnCompanyIdInspector"
-    private TableColumn<Users, String> columnCompanyIdInspector; // Value injected by FXMLLoader
+    private TableColumn<User, String> columnCompanyIdInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnUsernameInspector"
-    private TableColumn<Users, String> columnUsernameInspector; // Value injected by FXMLLoader
+    private TableColumn<User, String> columnUsernameInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnNameInspector"
-    private TableColumn<Users, String> columnNameInspector; // Value injected by FXMLLoader
+    private TableColumn<User, String> columnNameInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnFirstnameInspector"
-    private TableColumn<Users, String> columnFirstnameInspector; // Value injected by FXMLLoader
+    private TableColumn<User, String> columnFirstnameInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnZIPInspector"
-    private TableColumn<Users, String> columnZIPInspector; // Value injected by FXMLLoader
+    private TableColumn<User, String> columnZIPInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnAddressInspector"
-    private TableColumn<Users, String> columnAddressInspector; // Value injected by FXMLLoader
+    private TableColumn<User, String> columnAddressInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnPhoneInspector"
-    private TableColumn<Users, String> columnPhoneInspector; // Value injected by FXMLLoader
+    private TableColumn<User, String> columnPhoneInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnEmailInspector"
-    private TableColumn<Users, String> columnEmailInspector; // Value injected by FXMLLoader
+    private TableColumn<User, String> columnEmailInspector; // Value injected by FXMLLoader
 
     @FXML // Methode für die Tabelle
     void ActionOverviewTableInspector(ActionEvent event) {
@@ -75,29 +75,29 @@ public class ControllerOverview {
 	public void initialize() {
 		 try {
 				ClientInternRMI feukora = new ClientInternRMI();
-				ObservableList<Users> users = feukora.getUsers();
+				ObservableList<User> users = feukora.getUsers();
 				
 				columnUsernameInspector.setCellValueFactory(
-						new PropertyValueFactory<Users, String>("username")
+						new PropertyValueFactory<User, String>("username")
 				);
 				
 				columnNameInspector.setCellValueFactory(
-						new PropertyValueFactory<Users, String>("lastname")
+						new PropertyValueFactory<User, String>("lastname")
 				);
 				columnFirstnameInspector.setCellValueFactory(
-						new PropertyValueFactory<Users, String>("firstname")
+						new PropertyValueFactory<User, String>("firstname")
 				);
 				columnZIPInspector.setCellValueFactory(
-						new PropertyValueFactory<Users, String>("town")
+						new PropertyValueFactory<User, String>("town")
 				);
 				columnAddressInspector.setCellValueFactory(
-						new PropertyValueFactory<Users, String>("adress")
+						new PropertyValueFactory<User, String>("adress")
 				);
 				columnPhoneInspector.setCellValueFactory(
-						new PropertyValueFactory<Users, String>("phone")
+						new PropertyValueFactory<User, String>("phone")
 				);
 				columnEmailInspector.setCellValueFactory(
-						new PropertyValueFactory<Users, String>("email")
+						new PropertyValueFactory<User, String>("email")
 				);
 				
 				overviewTableInspector.setItems(users);
@@ -115,7 +115,7 @@ public class ControllerOverview {
     	ClientInternRMI feukora;
 		try {
 			feukora = new ClientInternRMI();
-	    	Users entity = overviewTableInspector.getSelectionModel().getSelectedItem();
+	    	User entity = overviewTableInspector.getSelectionModel().getSelectedItem();
 	    	feukora.deleteUser(entity);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -134,7 +134,7 @@ public class ControllerOverview {
     void ActionOverviewUpdateInspector(ActionEvent event) {
     	try {
     		ClientInternRMI feukora = new ClientInternRMI();
-			Users inspector = overviewTableInspector.getSelectionModel().getSelectedItem();
+			User inspector = overviewTableInspector.getSelectionModel().getSelectedItem();
 			if(inspector != null){
 				AnchorPane pane = new AnchorPane();
 				Context.setUser(inspector);
