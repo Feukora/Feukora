@@ -28,7 +28,9 @@ import projekt.feukora.server.persister.UserPersister;
 import projekt.feukora.server.persister.UserPersisterImpl;
 
 /**
- * @author Sandro Fasser
+ * Class to test the methods of the class RapportPersister.
+ * 
+ * @author Sandro 
  * @version 1.1
  */
 
@@ -52,6 +54,11 @@ public class RapportPersisterTest {
 	public void tearDown() throws Exception {
 	}
 	
+	/**
+	 * tests if the Rapport is saved
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testSave() throws Exception {
 		
@@ -86,6 +93,11 @@ public class RapportPersisterTest {
 
 	}
 	
+	/**
+	 * tests if the Rapport is updated
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testUpdate() throws Exception {
 
@@ -125,6 +137,11 @@ public class RapportPersisterTest {
 
 	}
 
+	/**
+	 * tests if the Rapport is saved
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 
@@ -138,6 +155,9 @@ public class RapportPersisterTest {
 
 	}
 	
+	/**
+	 * tests if the Rapport can be found by the Measuringdate
+	 */
 	@Test
 	public void testFindByMeasuringdate() {
 
@@ -146,6 +166,9 @@ public class RapportPersisterTest {
 		assertTrue(rapportTest.findRapportByMeasuringdate(caltest).size() == 1);
 	}
 	
+	/**
+	 * test if the Rapport can be found by the result
+	 */
 	@Test
 	public void testFindByResults() {
 

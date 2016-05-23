@@ -26,6 +26,13 @@ import projekt.feukora.server.persister.TownData;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
 
+/**
+ * Class to test the methods of the class MeasuringresultPersister.
+ * 
+ * @author Patrick
+ * @version 1.0
+ *
+ */
 public class MeasuringresultPersisterTest {
 
 
@@ -45,7 +52,11 @@ public class MeasuringresultPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+	/**
+	 * tests if the Measuringresult is saved
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testSave() throws Exception {
 		
@@ -63,6 +74,11 @@ public class MeasuringresultPersisterTest {
 
 	}
 
+	/**
+	 * tests if the Measuringresult is deleted
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 

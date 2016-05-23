@@ -14,6 +14,12 @@ import projekt.feukora.server.model.Facilitymanager;
 import projekt.feukora.server.persister.FacilitymanagerPersisterImpl;
 import projekt.feukora.server.persister.TownData;
 
+/**
+ * Class to test the methods of the class FacilitymanagerPersister.
+ * 
+ * @author Pascal
+ * @version 1.0
+ */
 public class FacilitymanagerPersisterTest {
 
 
@@ -34,6 +40,11 @@ public class FacilitymanagerPersisterTest {
 	public void tearDown() throws Exception {
 	}
 	
+	/**
+	 * tests if the Facilitymanager is saved
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testSave() throws Exception {
 		
@@ -49,6 +60,11 @@ public class FacilitymanagerPersisterTest {
 
 	}
 	
+	/**
+	 * tests if the Facilitymanager is saved
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testUpdate() throws Exception {
 
@@ -71,6 +87,11 @@ public class FacilitymanagerPersisterTest {
 
 	}
 
+	/**
+	 * tests if the Facilitymanager is saved
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 
@@ -84,6 +105,9 @@ public class FacilitymanagerPersisterTest {
 
 	}
 
+	/**
+	 * test if the Facilitymanager can be found by lastname
+	 */
 	@Test
 	public void testFindByLastname() {
 
@@ -92,6 +116,9 @@ public class FacilitymanagerPersisterTest {
 		assertTrue(facilitymanagerTest.findFacilitymanagerByLastname(lastname).size() == 1);
 	}
 
+	/**
+	 * test if the Facilitymanager can be found by firstname
+	 */
 	@Test
 	public void testFindByFirstname() {
 

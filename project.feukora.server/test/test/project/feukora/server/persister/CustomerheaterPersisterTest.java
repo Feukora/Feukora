@@ -30,7 +30,7 @@ import projekt.feukora.server.persister.TownData;
 /**
  * Class to test methods of the class CustomerPersister.
  * 
- * @author Tamara
+ * @author Pascal
  * @version 1.0
  */
 public class CustomerheaterPersisterTest {

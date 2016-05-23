@@ -20,7 +20,7 @@ import projekt.feukora.server.persister.TownPersisterImpl;
 /**
  * Class to test the methods of the class CompanyPersister.
  * 
- * @author Tamara
+ * @author Robin
  * @version 1.0
  *
  */

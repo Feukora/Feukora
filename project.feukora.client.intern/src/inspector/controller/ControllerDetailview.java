@@ -148,6 +148,7 @@ public class ControllerDetailview {
     
     @FXML
     void ActionDetailviewSaveInspector(ActionEvent event) {
+    	Users inspector1 = Context.getUser();
     	String companyname = inspectorCompanyIdField.getText();
     	String lastname = inspectorNameField.getText();
     	String adress = inspectorAddressField.getText();
@@ -162,24 +163,16 @@ public class ControllerDetailview {
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(inspector == null) {
-				inspector = new Users();
-				inspector.setFirstname(firstname);
-				inspector.setLastname(lastname);
-				inspector.setAdress(adress);
-				inspector.setPhone(phone);
-				inspector.setEmail(email);
-				inspector.setUsername(username);
-				inspector.setPassword(password);
-				feukora.saveUser(inspector);
+//				inspector.setFirstname(firstname);
+//				inspector.setLastname(lastname);
+//				inspector.setAdress(adress);
+//				inspector.setPhone(phone);
+//				inspector.setEmail(email);
+//				inspector.setUsername(username);
+//				inspector.setPassword(password);
+				feukora.saveUser(inspector1, zip, companyname, firstname, lastname, adress, phone, email, username, password);
 			} else {
-				inspector.setFirstname(firstname);
-				inspector.setLastname(lastname);
-				inspector.setAdress(adress);
-				inspector.setPhone(phone);
-				inspector.setEmail(email);
-				inspector.setUsername(username);
-				inspector.setPassword(password);
-				feukora.updateUser(inspector);
+				feukora.updateUser(inspector1, zip, companyname, firstname, lastname, adress, phone, email, username, password);
 			}
 			
 //	    	feukora.deleteCustomer(customer);
