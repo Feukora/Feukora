@@ -40,9 +40,6 @@ public class ControllerMain implements Initializable{
     private ComboBox<?> comboboxOwnerAdministration;
 
     @FXML
-    private Button rapportstartforward;
-
-    @FXML
     private TextField textfieldheateryear;
 
     @FXML
@@ -50,9 +47,6 @@ public class ControllerMain implements Initializable{
 
     @FXML
     private TextField textfieldheatinput;
-
-    @FXML
-    private Button heaterback;
 
     @FXML
     private ComboBox<?> comboboxheatertype;
@@ -83,9 +77,6 @@ public class ControllerMain implements Initializable{
 
     @FXML
     private RadioButton radioathmosphaere;
-
-    @FXML
-    private Button heaterforward;
 
     @FXML
     private CheckBox checkboxoilpartyes1;
@@ -211,12 +202,6 @@ public class ControllerMain implements Initializable{
     private TextField textfieldexhaustgasloss4;
 
     @FXML
-    private Button measuringresultback;
-
-    @FXML
-    private Button measuringresultforward;
-
-    @FXML
     private CheckBox checkboxnotransgression;
 
     @FXML
@@ -247,46 +232,13 @@ public class ControllerMain implements Initializable{
     private TextField textfieldpersonalcode;
 
     @FXML
-    private Button resultback;
-
-    @FXML
     private TextArea textareacomments;
 
     @FXML
     private Button rapportsave;
 
     @FXML
-    void ActionHeaterBack(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionHeaterForward(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionMeasuringresultBack(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionMeasuringresultForward(ActionEvent event) {
-
-    }
-
-    @FXML
     void ActionRapportSave(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionRapportStartForward(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionResultBack(ActionEvent event) {
 
     }
 
