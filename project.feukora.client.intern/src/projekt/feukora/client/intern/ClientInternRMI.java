@@ -10,8 +10,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import login.controller.ControllerLogin;
 import projekt.feukora.server.model.Blower;
+import projekt.feukora.server.model.Blowertype;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
+import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Users;
@@ -191,6 +193,73 @@ public class ClientInternRMI {
 	 *
 	 * @throws Exception
 	 */
+	public void saveBlower(String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean blower, Boolean atmospheric, Boolean evaporator) throws Exception {
+		Blowertype type;
+		Fuel fuel;
+		if(oil == true) {
+			fuel = fuelRMI.findFuelByName("Öl");
+		} else if (gas == true) {
+			fuel = fuelRMI.findFuelByName("Gas");
+		} else {
+			fuel = fuelRMI.findFuelByName("Flüssig Gas");
+		}
+		
+		if(blower == true) {
+			type = blowertypeRMI.findBlowertypeByName("Gebläse");
+		} else if(atmospheric == true) {
+			type = blowertypeRMI.findBlowertypeByName("atmosphärisch");
+		} else {
+			type = blowertypeRMI.findBlowertypeByName("Verdampfer");
+		}
+		
+		Blower b1 = new Blower(type, fuel, name);
+		blowerRMI.saveBlower(b1);
+	}
+	
+	public void updateBlower(String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean blower, Boolean atmospheric, Boolean evaporator) throws Exception {
+		Blowertype type;
+		Fuel fuel;
+		if(oil == true) {
+			fuel = fuelRMI.findFuelByName("Öl");
+		} else if (gas == true) {
+			fuel = fuelRMI.findFuelByName("Gas");
+		} else {
+			fuel = fuelRMI.findFuelByName("Flüssig Gas");
+		}
+		
+		if(blower == true) {
+			type = blowertypeRMI.findBlowertypeByName("Gebläse");
+		} else if(atmospheric == true) {
+			type = blowertypeRMI.findBlowertypeByName("atmosphärisch");
+		} else {
+			type = blowertypeRMI.findBlowertypeByName("Verdampfer");
+		}
+		
+		Blower b1 = new Blower(type, fuel, name);
+		blowerRMI.updateBlower(b1);
+	}
+	
+	
+	public void deleteBlower(Blower entity) {
+		try {
+			blowerRMI.deleteBlower(entity);
+		} catch (RemoteException e) {
+//			// TODO Auto-generated catch block
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
+		}
+	}
+	
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
 	public ObservableList<Customer> getCustomers() throws Exception {
 		
 		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
@@ -224,31 +293,36 @@ public class ClientInternRMI {
 	 * @throws Exception
 	 */
 	public ObservableList<Heater> getHeaters() throws Exception {
-		
+
 		ObservableList<Heater> heaterlist = FXCollections.observableArrayList();
 		heaterlist.addAll(heaterRMI.findAllHeaters());
 		return heaterlist;
-		
+
 	}
-	
-public void saveHeater(Heater entity){
-		
+
+	public void saveHeater(Heater entity){
+
 	}
-	
+
+	public void updateHeater(String name) throws Exception {
+		Heater h1 = new Heater(name);
+		heaterRMI.updateHeater(h1);
+	}
+
 	public void deleteHeater(Heater entity) {
 		try {
 			heaterRMI.deleteHeater(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
+			//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			//					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
+			//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			//					e);
 		}
 	}
-	
+
 	
 	/**
 	 * 
@@ -261,24 +335,6 @@ public void saveHeater(Heater entity){
 		blowerlist.addAll(blowerRMI.findAllBlowers());
 		return blowerlist;
 		
-	}
-	
-public void saveBlower(Blower entity){
-		
-	}
-	
-	public void deleteBlower(Blower entity) {
-		try {
-			blowerRMI.deleteBlower(entity);
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
-		}
 	}
 	
 	/**

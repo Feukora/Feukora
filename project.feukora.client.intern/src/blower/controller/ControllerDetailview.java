@@ -86,14 +86,56 @@ public class ControllerDetailview {
     public void Update() {
     	blower = Context.getBlower();
     	blowerNameField.setText(Context.getBlowername());
+    	if(Context.getBlowerType().toString().equals("Gebläse")) {
+    		radioButtonBlowers.setSelected(true);
+    	} else if (Context.getBlowerType().toString().equals("atmosphärisch")) {
+    		radioButtonAtmospheric.setSelected(true);
+    	} else {
+    		radioButtonEvaporator.setSelected(true);
+    	}
+    	if(Context.getFuel().toString().equals("Öl")) {
+    		radioButtonOil.setSelected(true);
+    	} else if (Context.getFuel().toString().equals("Gas")) {
+    		radioButtonGas.setSelected(true);
+    	} else {
+    		radioButtonLiquidGas.setSelected(true);
+    	}
     }
 
     @FXML
     void ActionDetailviewSaveBlower(ActionEvent event) {
         String blowerName = blowerNameField.getText();
+        Boolean blower = false;
+        Boolean atmospheric = false;
+        Boolean evaporator = false;
+        
+        Boolean oil = false;
+        Boolean gas = false;
+        Boolean liquidGas = false;
+        
+        if(radioButtonBlowers.isSelected()) {
+        	blower = true;
+        } else if (radioButtonAtmospheric.isSelected()) {
+        	atmospheric = true;
+        } else if (radioButtonEvaporator.isSelected()) {
+        	evaporator = true;
+        }
+        
+        if (radioButtonOil.isSelected()) {
+        	oil = true;
+        } else if(radioButtonGas.isSelected()) {
+        	gas = true; 
+        } else if (radioButtonLiquidGas.isSelected()) {
+        	liquidGas = true;
+        }
         
  		try {
 			ClientInternRMI feukora = new ClientInternRMI();
+			if (blower == null) {
+				feukora.saveBlower(asdfasdfasdf);
+			} else {
+				feukora.updateBlower(asdfasdf);
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
