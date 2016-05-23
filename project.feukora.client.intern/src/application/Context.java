@@ -140,7 +140,7 @@ public class Context {
     	password = null;
 	}
 	
-	public static void setUser() {
+	public static void setUser(Users user) {
 		companyname = null;
 		lastname = user.getLastname();
     	adress = user.getAdress();
@@ -151,6 +151,7 @@ public class Context {
     	username = user.getUsername();
     	password = user.getPassword();
     	userid = user.getUserid();
+    	Context.user = user;
 	}
 	
 	public static Users getUser() {
