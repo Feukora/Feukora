@@ -102,7 +102,7 @@ public class ControllerOverview {
 			if(heater != null){
 				AnchorPane pane = new AnchorPane();
 				Context.setHeater(heater);
-				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/heaterDetailview.fxml"));
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("heater/view/heaterDetailview.fxml"));
 				overviewUpdateHeater.getScene().setRoot(pane);
 			}else{
 				String titleBar = "Nichts ausgewählt";

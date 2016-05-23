@@ -9,6 +9,7 @@ public class Context {
 	
 	private static Customer customer;
 	private static Blower blower;
+	private static Heater heater;
 	
 	public static Integer customerid;
 	public static String companyname;
@@ -96,11 +97,16 @@ public class Context {
 	}
 	
 	public static void setHeater (Heater heater) {
+		Context.heater = heater;
 		heatername = heater.getName();
 	}
 	
-	public static String getHeater () {
+	public static String getHeaterName () {
 		return heatername;
+	}
+	
+	public static Heater getHeater () {
+		return heater;
 	}
 	
 	public static String getBlowername() {

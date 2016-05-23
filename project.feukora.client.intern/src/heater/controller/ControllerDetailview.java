@@ -2,6 +2,7 @@ package heater.controller;
 
 import org.apache.log4j.Logger;
 
+import application.Context;
 import customer.controller.ControllerOverview;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,12 +10,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Heater;
 
 public class ControllerDetailview {
 	
 	private static final Logger logger = Logger
 			.getLogger(ControllerDetailview.class);
 
+	private Heater heater;
     @FXML
     private Button detailviewSaveHeater;
     
@@ -31,7 +36,41 @@ public class ControllerDetailview {
 
     @FXML
     void ActionDetailviewSaveHeater(ActionEvent event) {
-
+    	String heatername = heaterNameField.getText();
+    	Heater heater = Context.getHeater();
+    	try {
+			ClientInternRMI feukora = new ClientInternRMI();
+			if(heater == null) {
+				feukora.saveHeater(heater);
+			} else {
+				feukora.updateHeater(heater);
+			}
+			
+//	    	feukora.deleteCustomer(customer);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+    	heaterNameField.clear();
+    }
+    
+    public void initialize() {
+    	
+    	if(Context.getHeater() != null) {
+    		NewOrUpdate();
+    	} else {
+    		
+    	}
+    	
+    	
+    
+    }
+    
+    public void NewOrUpdate(){
+    		heaterNameField.setText(Context.getHeater());
+	    	Context.setNull();
+    	
     }
     
     @FXML
