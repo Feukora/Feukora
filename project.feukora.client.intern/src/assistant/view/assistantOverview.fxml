@@ -11,8 +11,8 @@
       <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="228.0" text="Übersicht Sachbearbeiter" AnchorPane.leftAnchor="80.0" />
       <TableView fx:id="overviewTableAssistant" layoutX="76.0" layoutY="123.0" onSort="#ActionOverviewTableAssistant" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
         <columns>
-          <TableColumn fx:id="columnUsernameAssistant" prefWidth="150.0" text="Username" />
-          <TableColumn fx:id="columnNameAssistant" minWidth="0.0" prefWidth="156.0" text="Name" />
+       	   	<TableColumn fx:id="columnUsernameAssistant" prefWidth="150.0" text="Username" />
+        	<TableColumn fx:id="columnNameAssistant" minWidth="0.0" prefWidth="156.0" text="Name" />
             <TableColumn fx:id="columnFirstnameAssistant" prefWidth="151.0" text="Vorname" />
             <TableColumn fx:id="columnAddressAssistant" prefWidth="213.0" text="Adresse" />
             <TableColumn fx:id="columnZIPAssistant" minWidth="0.0" prefWidth="63.0" text="PLZ" />

@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
@@ -27,36 +28,31 @@ public class ControllerDetailview {
     private Button detailviewCancelBlower;
 
     @FXML
-    private TextField blowerYearManufactureField;
-
-    @FXML
-    private TextField blowerTypeField;
-
-    @FXML
     private TextField blowerNameField;
+    
+    @FXML
+    private RadioButton radioButtonOil;
 
     @FXML
-    private TextField blowerModellField;
+    private RadioButton radioButtonAtmospheric;
+
+    @FXML
+    private RadioButton radioButtonLiquidGas;
+
+    @FXML
+    private RadioButton radioButtonBlowers;
+
+    @FXML
+    private RadioButton radioButtonGas;
+    
+    @FXML
+    private RadioButton radioButtonEvaporator;
 
     @FXML
     void ActionBlowerNameField(ActionEvent event) {
 
     }
 
-    @FXML
-    void ActionBlowerModellField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionBlowerTypeField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionBlowerYearManufactureField(ActionEvent event) {
-
-    }
 
     @FXML
     void ActionDetailviewSaveBlower(ActionEvent event) {
@@ -93,5 +89,36 @@ public class ControllerDetailview {
 		}	
 		
     	detailviewCancelBlower.getScene().setRoot(pane);
+    }
+    
+
+    @FXML
+    void ActionRadioButtonLiquidGas(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ActionRadioButtonGas(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ActionRadioButtonOil(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ActionRadioButtonAtmospheric(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ActionRadioButtonBlowers(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ActionRadioButtonEvaporator(ActionEvent event) {
+
     }
 }

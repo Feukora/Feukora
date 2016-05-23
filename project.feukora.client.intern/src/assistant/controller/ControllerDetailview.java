@@ -30,7 +30,13 @@ public class ControllerDetailview {
 
     @FXML
     private TextField assistantZipField;
+    
+    @FXML
+    private TextField assistantPasswordField;
 
+    @FXML
+    private TextField assistantPhoneField;
+    
     @FXML
     private TextField assistantFirstNameField;
 
@@ -96,6 +102,16 @@ public class ControllerDetailview {
 
     @FXML
     void ActionAssistantUsernameField(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ActionAssistantPasswordField(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ActionAssistantPhoneField(ActionEvent event) {
 
     }
 

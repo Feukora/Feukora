@@ -166,22 +166,39 @@ public class ControllerViewAdministrator {
     }
 		
 		//heaterWelcome.getScene().setRoot(pane);
+	
+    @FXML
+    void ActionCalendarWelcome(ActionEvent event) {
+		AnchorPane pane = new AnchorPane();
     	
-        @FXML
-        void ActionCalendarWelcome(ActionEvent event) {
-    		AnchorPane pane = new AnchorPane();
-        	
-        	try {
-    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
-    			mainRoot.setCenter(pane);
+			mainRoot.setCenter(pane);
 
-    		} catch (Exception e) {
-    			logger.error("Aktion konnte nicht durchgeführt werden\'",
-    					e);
-    		}	
-    		
-    		//calendarWelcome.getScene().setRoot(pane);
+		} catch (Exception e) {
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}	
+		
+		//calendarWelcome.getScene().setRoot(pane);
+    }
+        
+    @FXML
+    void ActionAssistantWelcome(ActionEvent event) {
+    	AnchorPane pane = new AnchorPane();
+    	
+    	try {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("assistant/view/assistantOverview.fxml"));
+
+			mainRoot.setCenter(pane);
+
+		} catch (Exception e) {
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}	
+		
+		//assistantWelcome.getScene().setRoot(pane);
     }
 
     @FXML
@@ -372,23 +389,6 @@ public class ControllerViewAdministrator {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    }
-
-    @FXML
-    void ActionAssistantWelcome(ActionEvent event) {
-    	AnchorPane pane = new AnchorPane();
-    	
-    	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("assistant/view/assistantOverview.fxml"));
-
-			mainRoot.setCenter(pane);
-
-		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}	
-		
-		//assistantWelcome.getScene().setRoot(pane);
     }
 
     @FXML

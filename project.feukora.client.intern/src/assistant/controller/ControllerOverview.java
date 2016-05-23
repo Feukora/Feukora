@@ -43,14 +43,11 @@ public class ControllerOverview {
 	@FXML // fx:id="columnEmailAssistant"
 	private TableColumn<?, ?> columnEmailAssistant; // Value injected by
 													// FXMLLoader
-
 	@FXML // fx:id="columnUsernameAssistant"
 	private TableColumn<?, ?> columnUsernameAssistant; // Value injected by
 														// FXMLLoader
-
 	@FXML // fx:id="columnPhoneAssistant"
 	private TableColumn<?, ?> columnPhoneAssistant; // Value injected by
-													// FXMLLoader
 
 	@FXML // fx:id="columnFirstnameAssistant"
 	private TableColumn<?, ?> columnFirstnameAssistant; // Value injected by

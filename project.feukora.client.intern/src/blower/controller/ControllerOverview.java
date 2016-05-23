@@ -47,11 +47,11 @@ public class ControllerOverview {
     private TableColumn<Blower, String> columnNameBlower; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnTypeBlower"
-    private TableColumn<Blower, String> columnTypeBlower; // Value injected by FXMLLoader
+    private TableColumn<Blower, String> columnBlowerBlower; // Value injected by FXMLLoader
 
 
     @FXML // fx:id="columnYearOfManufacturBlower"
-    private TableColumn<Blower, String> columnYearOfManufacturBlower; // Value injected by FXMLLoader
+    private TableColumn<Blower, String> columnFuelBlower; // Value injected by FXMLLoader
 
     @FXML
 	public void initialize() {
@@ -63,8 +63,9 @@ public class ControllerOverview {
 					new PropertyValueFactory<Blower, String>("name")
 			);
 			
-			columnYearOfManufacturBlower.setCellValueFactory(
-					new PropertyValueFactory<Blower, String>("bloweryear"));
+			//HABE ICH AUSKOMMENTIERT DA BAUJAHR IM MODEL NICHT VORHANDEN UND NUN IM GUI ENTFERNT!!
+//			columnYearOfManufacturBlower.setCellValueFactory(
+//					new PropertyValueFactory<Blower, String>("bloweryear"));
 			
 			overviewTableBlower.setItems(blowers);
 			

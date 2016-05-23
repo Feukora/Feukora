@@ -11,6 +11,7 @@
       <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="209.0" text="Übersicht Feuerungskontrolleur" AnchorPane.leftAnchor="80.0" />
       <TableView fx:id="overviewTableInspector" layoutX="76.0" layoutY="123.0" onSort="#ActionOverviewTableInspector" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
         <columns>
+            <TableColumn fx:id="columnCompanyIdInspector" prefWidth="75.0" text="Firma" />
           <TableColumn fx:id="columnUsernameInspector" prefWidth="150.0" text="Username" />
           <TableColumn fx:id="columnNameInspector" minWidth="0.0" prefWidth="156.0" text="Name" />
             <TableColumn fx:id="columnFirstnameInspector" prefWidth="151.0" text="Vorname" />

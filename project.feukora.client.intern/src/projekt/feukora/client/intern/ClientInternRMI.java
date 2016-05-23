@@ -158,6 +158,20 @@ public class ClientInternRMI {
 		customerRMI.saveCustomer(c1);	
 	}
 	
+	public void updateCustomer(String companyname, String lastname, String adress, String phone, Integer zip, String firstname, String email, Boolean isOwner) throws Exception {
+		Customerfunction function;
+		if(isOwner == true) {
+			function = customerfunctionRMI.findCustomerfunctionByName("Eigentümer");
+		} else {
+			function = customerfunctionRMI.findCustomerfunctionByName("Verwaltung");
+		}
+		Town town1 = townRMI.findTownByZip(zip);
+		
+		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, function, town1);
+		customerRMI.updateCustomer(c1);
+	}
+	
+	
 	public void deleteCustomer(Customer entity) {
 		try {
 			customerRMI.deleteCustomer(entity);

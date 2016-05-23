@@ -7,14 +7,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inspector.controller.ControllerDetailview">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inspector.controller.ControllerDetailview">
    <children>
       <Label layoutX="45.0" layoutY="37.0" prefHeight="38.0" prefWidth="456.0" text="Detail Feuerungskontrolleur/In">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <GridPane layoutX="50.0" layoutY="100.0" prefHeight="190.0" prefWidth="384.0">
+      <GridPane layoutX="50.0" layoutY="100.0" prefHeight="265.0" prefWidth="384.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="157.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="10.0" prefWidth="317.0" />
@@ -25,7 +25,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <HBox prefHeight="19.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -53,16 +56,22 @@
             <Label prefHeight="25.0" prefWidth="60.0" text="Vorname" GridPane.rowIndex="1" />
             <Label prefHeight="25.0" prefWidth="60.0" text="Adresse" GridPane.rowIndex="2" />
             <Label prefHeight="25.0" prefWidth="60.0" text="PLZ / Ort" GridPane.rowIndex="3" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Email" GridPane.rowIndex="4" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Username" GridPane.rowIndex="5" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Email" GridPane.rowIndex="5" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Username" GridPane.rowIndex="7" />
             <TextField fx:id="inspectorNameField" onAction="#ActionInspectorNameField" GridPane.columnIndex="1" />
             <TextField fx:id="inspectorFirstNameField" onAction="#ActionInspectorFirstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="inspectorAddressField" onAction="#ActionInspectorAddressField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="inspectorEmailField" onAction="#ActionInspectorEmailField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="inspectorUsernameField" onAction="#ActionInspectorUsernameField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="inspectorEmailField" onAction="#ActionInspectorEmailField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="inspectorUsernameField" onAction="#ActionInspectorUsernameField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Nummer" GridPane.rowIndex="4" />
+            <TextField fx:id="inspectorPhoneField" onAction="#ActionInspectorPhoneField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Firma" GridPane.rowIndex="6" />
+            <TextField fx:id="inspectorCompanyIdField" onAction="#ActionInspectorCompanyIdField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Passwort" GridPane.rowIndex="8" />
+            <TextField fx:id="inspectorPasswordField" onAction="#ActionInspectorPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
          </children>
       </GridPane>
-      <Button fx:id="detailviewSaveInspector" layoutX="334.0" layoutY="325.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveInspector" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
-      <Button fx:id="detailviewCancelInspector" layoutX="163.0" layoutY="325.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelInspector" prefHeight="25.0" prefWidth="100.0" text="Abbrechen" />
+      <Button fx:id="detailviewSaveInspector" layoutX="334.0" layoutY="401.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveInspector" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
+      <Button fx:id="detailviewCancelInspector" layoutX="161.0" layoutY="401.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelInspector" prefHeight="25.0" prefWidth="100.0" text="Abbrechen" />
    </children>
 </AnchorPane>
