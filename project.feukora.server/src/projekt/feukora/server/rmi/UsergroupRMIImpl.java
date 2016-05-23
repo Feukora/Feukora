@@ -10,12 +10,15 @@ import projekt.feukora.server.business.UsergroupManagerImpl;
 import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Usergroup;
 
+
+/**
+ * This Class implements the methodes of the interface UsergroupRMI
+ * 
+ * @author Tamara
+ * @version 1.0
+ */
 public class UsergroupRMIImpl extends UnicastRemoteObject implements UsergroupRMI{
 
-	
-/**
-	 * 
-	 */
 	private static final long serialVersionUID = -371551722376955090L;
 private UsergroupManager usergroupManager;
 	

@@ -9,9 +9,10 @@ import projekt.feukora.server.business.FuelManagerImpl;
 import projekt.feukora.server.model.Fuel;
 
 /**
- * @version 1.0
+ * This Class implements the methodes of the interface FuelRMI.
+ * 
  * @author Tamara
- *
+ * @version 1.0
  */
 public class FuelRMIImpl extends UnicastRemoteObject implements FuelRMI {
 	

@@ -10,7 +10,7 @@ import projekt.feukora.server.model.Rapport;
 /**
 * RMI interface for handling rapport entities
 * 
-* @author Sandro Fasser
+* @author Sandro F
 * @version 1.0
 *
 */

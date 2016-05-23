@@ -119,7 +119,7 @@ public class ControllerDetailview {
 
  public void initialize() {
     	
-    	if(Context.getInspector != null) {
+    	if(Context.getUser() != null) {
     		Update();
     	} else {
 	}
@@ -130,19 +130,20 @@ public class ControllerDetailview {
     
     public void Update(){
     
-    		inspector = Context.getInspector();
-    		inspectorCompanyIdField.setText(Context.getCustomerCompanyName());
-	    	inspectorNameField.setText(Context.getCustomerName());
-	    	inspectorFirstNameField.setText(Context.getCustomerFirstname());
-	    	inspectorAddressField.setText(Context.getCustomerAdress());
-	    	inspectorPhoneField.setText(Context.getCustomerPhone());
-	    	inspectorEmailField.setText(Context.getCustomerEmail());
-	    	inspectorZipField.setText(Context.getCustomerTown().substring(0, 4));
-	    	inspectorMunicipalityField.setText(Context.getCustomerTown().substring(5));
-	    	inspectorNameField.setText(Context.getCustomerName());
-
+    		inspector = Context.getUser();
+    		inspectorCompanyIdField.setText("");
+	    	inspectorNameField.setText(inspector.getLastname());
+	    	inspectorFirstNameField.setText(inspector.getFirstname());
+	    	inspectorAddressField.setText(inspector.getAdress());
+	    	inspectorPhoneField.setText(inspector.getPhone());
+	    	inspectorEmailField.setText(inspector.getEmail());
+	    	inspectorZipField.setText(inspector.getTown().substring(0, 4));
+	    	inspectorMunicipalityField.setText(inspector.getTown().substring(5));
+	    	inspectorUsernameField.setText(inspector.getUsername());
+	    	inspectorPasswordField.setText(inspector.getPassword());
+	    	
 	    	Context.setNull();
-	
+	    	 	
     }
     
     @FXML
@@ -158,14 +159,20 @@ public class ControllerDetailview {
     	String password = inspectorPasswordField.getText();
     	Integer zip = Integer.parseInt(plz);
     	
-    	inspector = Context.getUser();
-    	
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(inspector == null) {
-				feukora.savUsers();
+				inspector = new Users();
+				inspector.setFirstname(firstname);
+				inspector.setLastname(lastname);
+				inspector.setAdress(adress);
+				inspector.setPhone(phone);
+				inspector.setEmail(email);
+				inspector.setUsername(username);
+				inspector.setPassword(password);
+				feukora.saveUser(inspector);
 			} else {
-				feukora.updateInspector(companyname, lastname, adress, phone, zip, firstname, email, username, password);
+				feukora.updateUser(inspector);
 			}
 			
 //	    	feukora.deleteCustomer(customer);

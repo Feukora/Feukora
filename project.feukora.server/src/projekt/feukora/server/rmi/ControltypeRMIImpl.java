@@ -9,6 +9,12 @@ import projekt.feukora.server.business.ControltypeManagerImpl;
 import projekt.feukora.server.model.Controltype;
 import projekt.feukora.server.model.Fuel;
 
+/**
+ * This Class implements the methodes of the Interface ControltypeRMI
+ * 
+ * @author Tamara
+ *
+ */
 public class ControltypeRMIImpl extends UnicastRemoteObject implements ControltypeRMI{
 	
 	private static final long serialVersionUID = 1813253292411198528L;

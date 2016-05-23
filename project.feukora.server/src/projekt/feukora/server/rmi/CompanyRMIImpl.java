@@ -15,7 +15,8 @@ import projekt.feukora.server.persister.JpaUtil;
 
 /**
  *  This Class implements the methods of the interface CompanyRMI
- * @author Robin Purtschert
+ *  
+ * @author Robin 
  * @version 1.1
  */
 public class CompanyRMIImpl extends UnicastRemoteObject implements CompanyRMI {

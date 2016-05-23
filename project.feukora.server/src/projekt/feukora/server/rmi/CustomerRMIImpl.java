@@ -15,7 +15,8 @@ import projekt.feukora.server.persister.GenericPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
 /**
- *  This Class implements the methods of the interface CustomerRMI
+ * This Class implements the methods of the interface CustomerRMI
+ * 
  * @author Sandro Fasser
  * @version 1.0
  */

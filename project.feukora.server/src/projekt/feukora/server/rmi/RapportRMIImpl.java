@@ -10,15 +10,13 @@ import projekt.feukora.server.business.RapportManagerImpl;
 import projekt.feukora.server.model.Rapport;
 
 /**
- * This Class implements the methods of the interface RapportRMI
- * @author Sandro Fasser
+ * This Class implements the methods of the interface RapportRMI.
+ * 
+ * @author Sandro 
  * @version 1.0
  */
 public class RapportRMIImpl extends UnicastRemoteObject implements RapportRMI {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8825604569434762933L;
 	
 	private RapportManager rapportManager;

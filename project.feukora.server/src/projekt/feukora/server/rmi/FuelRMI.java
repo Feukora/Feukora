@@ -6,6 +6,12 @@ import java.util.List;
 
 import projekt.feukora.server.model.Fuel;
 
+/**
+ * RMI interface for handling fuel entities.
+ * 
+ * @author Tamara
+ * @version 1.0
+ */
 public interface FuelRMI extends Remote {
 
 	/**

@@ -16,8 +16,9 @@ import projekt.feukora.server.persister.GenericPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
 /**
- *  This Class implements the methods of the interface UserRMI
- * @author Sandro Fasser
+ * This Class implements the methods of the interface UserRMI
+ *  
+ * @author Sandro 
  * @version 1.1
  */
 public class UserRMIImpl extends UnicastRemoteObject implements UserRMI {

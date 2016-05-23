@@ -9,6 +9,7 @@ import projekt.feukora.server.model.Customerfunction;
 
 /**
  *  This Class implements the methods of the interface CustomerfunctionRMI
+ *  
  * @author Patrick
  * @version 1.0
  */

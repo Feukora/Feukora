@@ -7,6 +7,12 @@ import java.util.List;
 import projekt.feukora.server.model.Controltype;
 import projekt.feukora.server.model.Fuel;
 
+/**
+ * RMI interface for handling controltype entities.
+ * 
+ * @author Tamara
+ *
+ */
 public interface ControltypeRMI extends Remote{
 	
 	/**
