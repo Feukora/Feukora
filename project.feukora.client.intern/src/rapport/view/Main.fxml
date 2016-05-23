@@ -53,7 +53,7 @@
                         </Label>
                         <TextField fx:id="hauswart" layoutX="21.0" layoutY="435.0" minHeight="30.0" minWidth="270.0" prefHeight="30.0" prefWidth="270.0" />
                         <ComboBox layoutX="21.0" layoutY="353.0" minHeight="30.0" minWidth="270.0" prefHeight="30.0" prefWidth="270.0" />
-                        <Button fx:id="rapportstartweiter" layoutX="395.0" layoutY="494.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionRapportStartWeiter" prefHeight="20.0" prefWidth="60.0" text="Weiter &gt;">
+                        <Button fx:id="rapportstartforward" layoutX="395.0" layoutY="494.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionRapportStartForward" prefHeight="20.0" prefWidth="60.0" text="Weiter &gt;">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -119,7 +119,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Button fx:id="waermeerzeugerzurueck" layoutX="21.0" layoutY="436.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionWaermeerzeugerZurueck" prefHeight="20.0" prefWidth="60.0" text="&lt; Zurück">
+                        <Button fx:id="heaterback" layoutX="21.0" layoutY="436.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionHeaterBack" prefHeight="20.0" prefWidth="60.0" text="&lt; Zurück">
                            <font>
                               <Font size="10.0" />
                            </font></Button>
@@ -165,7 +165,7 @@
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <Button fx:id="waermeerzeugerweiter" layoutX="395.0" layoutY="436.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionWaermeerzeugerWeiter" prefHeight="20.0" prefWidth="60.0" text="Weiter &gt;">
+                        <Button fx:id="heaterforward" layoutX="395.0" layoutY="436.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionHeaterForward" prefHeight="20.0" prefWidth="60.0" text="Weiter &gt;">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -795,12 +795,12 @@
                               <Font size="13.0" />
                            </font>
                         </Text>
-                        <Button fx:id="messergebnissezurueck" layoutX="27.0" layoutY="735.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionMessergebnisseZurueck" prefHeight="20.0" prefWidth="66.0" text="&lt; Zurück">
+                        <Button fx:id="measuringresultback" layoutX="27.0" layoutY="735.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionMeasuringresultBack" prefHeight="20.0" prefWidth="66.0" text="&lt; Zurück">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="messergebnisseweiter" layoutX="1089.0" layoutY="735.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionMessergebnisseWeiter" prefHeight="20.0" prefWidth="60.0" text="Weiter &gt;">
+                        <Button fx:id="measuringresultforward" layoutX="1089.0" layoutY="735.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionMeasuringresultForward" prefHeight="20.0" prefWidth="60.0" text="Weiter &gt;">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -894,13 +894,13 @@
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <Button fx:id="beurteilungzurueck" layoutX="21.0" layoutY="700.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionBeurteilungZurueck" prefHeight="20.0" prefWidth="66.0" text="&lt; Zurück">
+                        <Button fx:id="resultback" layoutX="21.0" layoutY="700.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionResultBack" prefHeight="20.0" prefWidth="66.0" text="&lt; Zurück">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
                         <TextArea fx:id="bemerkungentextarea" layoutX="21.0" layoutY="439.0" prefHeight="131.0" prefWidth="865.0" />
-                        <Button fx:id="beurteilungspeichern" layoutX="820.0" layoutY="700.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionBeurteilungSpeichern" prefHeight="20.0" prefWidth="66.0" text="Speichern">
+                        <Button fx:id="rapportsave" layoutX="820.0" layoutY="700.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionRapportSave" prefHeight="20.0" prefWidth="66.0" text="Speichern">
                            <font>
                               <Font size="10.0" />
                            </font>

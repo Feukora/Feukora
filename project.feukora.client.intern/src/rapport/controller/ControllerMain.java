@@ -6,37 +6,46 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 public class ControllerMain implements Initializable{
 
+	private Button rapportstartforward;
+	private Button heaterback;
+	private Button heaterforward;
+	private Button measuringresultback;
+	private Button measuringresultforward;
+	private Button resultback;
+	private Button rapportsave;
+	
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		
 	}
 
-
 	@FXML
-    void ActionRapportStartWeiter(ActionEvent event) {
+    void ActionRapportStartForward(ActionEvent event) {
     }
 	
-	void ActionWaermeerzeugerZurueck(ActionEvent event) {
+	void ActionHeaterBack(ActionEvent event) {
 
     }
 	
-	void ActionWaermeerzeugerWeiter(ActionEvent event) {
+	void ActionHeaterForward(ActionEvent event) {
     }
 	
-	void ActionMessergebnisseZurueck(ActionEvent event) {
+	void ActionMeasuringresultBack(ActionEvent event) {
     }
 	
-	void ActionMessergebnisseWeiter(ActionEvent event) {
+	void ActionMeasuringresultForward(ActionEvent event) {
     }
 	
-	void ActionBeurteilungZurueck(ActionEvent event) {
+	void ActionResultBack(ActionEvent event) {
     }
 	
-	void ActionBeurteilungSpeichern(ActionEvent event) {
+	void ActionRapportSave(ActionEvent event) {
     }
 	
 }
