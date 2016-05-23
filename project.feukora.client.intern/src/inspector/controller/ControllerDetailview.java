@@ -172,6 +172,13 @@ public class ControllerDetailview {
 				inspector.setPassword(password);
 				feukora.saveUser(inspector);
 			} else {
+				inspector.setFirstname(firstname);
+				inspector.setLastname(lastname);
+				inspector.setAdress(adress);
+				inspector.setPhone(phone);
+				inspector.setEmail(email);
+				inspector.setUsername(username);
+				inspector.setPassword(password);
 				feukora.updateUser(inspector);
 			}
 			
