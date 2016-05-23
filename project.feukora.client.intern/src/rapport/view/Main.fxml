@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1317.0" prefWidth="1845.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1388.0" prefWidth="1989.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TabPane layoutX="285.0" layoutY="214.0" prefHeight="1317.0" prefWidth="1845.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -871,7 +871,7 @@
                            </font>
                         </Text>
                         <TextArea fx:id="textareacomments" layoutX="21.0" layoutY="439.0" prefHeight="131.0" prefWidth="865.0" />
-                        <Button fx:id="rapportsave" layoutX="820.0" layoutY="700.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionRapportSave" prefHeight="20.0" prefWidth="66.0" text="Speichern">
+                        <Button fx:id="rapportsave" layoutX="820.0" layoutY="638.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionRapportSave" prefHeight="20.0" prefWidth="66.0" text="Speichern">
                            <font>
                               <Font size="10.0" />
                            </font>
