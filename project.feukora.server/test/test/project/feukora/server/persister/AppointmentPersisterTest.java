@@ -16,7 +16,7 @@ import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.model.Town;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.AppointmentPersisterImpl;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
 import projekt.feukora.server.persister.CustomerfunctionPersister;
@@ -70,7 +70,7 @@ public class AppointmentPersisterTest {
 		Customerheater ch = chp.findCustomerheaterByPerformance(200).get(0);
 		
 		UserPersister up = new UserPersisterImpl();
-		Users user = up.findUserByLastname("Nachname").get(0);
+		User user = up.findUserByLastname("Nachname").get(0);
 
 		Appointment a = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 13, 8, 0),
 				new GregorianCalendar(2016, 05, 14, 13, 0), "Neuer Termin");
@@ -97,7 +97,7 @@ public class AppointmentPersisterTest {
 		Customerheater ch = chp.findCustomerheaterByPerformance(200).get(0);
 		
 		UserPersister up = new UserPersisterImpl();
-		Users user = up.findUserByLastname("Nachname").get(0);
+		User user = up.findUserByLastname("Nachname").get(0);
 
 		Appointment a = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 13, 8, 0),
 				new GregorianCalendar(2016, 05, 13, 8, 0), "Update Test");
@@ -149,7 +149,7 @@ public class AppointmentPersisterTest {
 		Customerheater ch = chp.findCustomerheaterByPerformance(200).get(0);
 		
 		UserPersister up = new UserPersisterImpl();
-		Users user = up.findUserByLastname("Nachname").get(0);
+		User user = up.findUserByLastname("Nachname").get(0);
 		
 		GregorianCalendar date1 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);

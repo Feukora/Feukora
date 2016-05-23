@@ -20,7 +20,7 @@ public class RapportManagerImpl implements RapportManager {
 
 	@Override
 	public void saveRapport(Rapport entity) throws Exception {
-		if((Integer) entity.getRapportid() == null){
+		if( entity.getRapportid() == 0 ){
 			rapportPersister.saveRapport(entity);;
 		}else{
 			throw new Exception("Der Rapport (id = "+ entity.getRapportid() + ") ist bereits vorhanden");

@@ -21,7 +21,7 @@ import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.AppointmentPersister;
 import projekt.feukora.server.persister.AppointmentPersisterImpl;
 import projekt.feukora.server.persister.BlowerPersister;
@@ -120,8 +120,8 @@ public class TestdataMeasuringresult {
 		Company com1 = new Company("Firma1", "Strasse1", "1111111", "asdf@asdf.ch", zip1);
 		Company com2 = new Company("Firma2", "Strasse2", "2222222", "asdf@asdf.ch", zip2);
 		
-		Users user1 = new Users(group1, "Nachname", "Vorname", "Adresse", zip1, com1, "Username", "Passwort", "123445656", "asdf@asd.ch");
-		Users user2 = new Users(group2, "Lastname", "Firstname", "Adress", zip2, com2, "admin", "admin", "00000000", "email.com");
+		User user1 = new User(group1, "Nachname", "Vorname", "Adresse", zip1, com1, "Username", "Passwort", "123445656", "asdf@asd.ch");
+		User user2 = new User(group2, "Lastname", "Firstname", "Adress", zip2, com2, "admin", "admin", "00000000", "email.com");
 		
 		GregorianCalendar date1 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);

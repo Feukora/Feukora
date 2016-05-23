@@ -132,14 +132,11 @@ public class ClientInternRMI {
 	 *
 	 * @throws Exception
 	 */
-	public Boolean login(String username, String password) throws Exception {
+	public boolean login(String username, String password) throws Exception {
 
 		Users user = userRMI.findUsersByUsername(username).get(0);
-		if(username.equals(user.getUsername()) && password.equals(user.getPassword())){
-			return true;
-		}else{
-			return false;
-		}
+		
+		return user.login( password );
 	}
 
 	/**

@@ -1,6 +1,5 @@
 package projekt.feukora.server.rmi;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
 import java.rmi.registry.LocateRegistry;

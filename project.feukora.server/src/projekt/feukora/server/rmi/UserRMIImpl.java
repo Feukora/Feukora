@@ -11,7 +11,7 @@ import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.business.UserManager;
 import projekt.feukora.server.business.UserManagerImpl;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.GenericPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
@@ -32,17 +32,17 @@ public class UserRMIImpl extends UnicastRemoteObject implements UserRMI {
 	}
 
 	@Override
-	public void saveUsers(Users entity) throws RemoteException, Exception {
+	public void saveUsers(User entity) throws RemoteException, Exception {
 		userManager.saveUsers(entity);	
 	}
 
 	@Override
-	public Users updateUsers(Users entity) throws RemoteException, Exception {
+	public User updateUsers(User entity) throws RemoteException, Exception {
 		return userManager.updateUsers(entity);
 	}
 
 	@Override
-	public void deleteUsers(Users entity) throws RemoteException, Exception {
+	public void deleteUsers(User entity) throws RemoteException, Exception {
 		userManager.deleteUsers(entity);
 	}
 
@@ -53,32 +53,32 @@ public class UserRMIImpl extends UnicastRemoteObject implements UserRMI {
 	}
 
 	@Override
-	public Users findUsersByUserid(Integer usersid) throws RemoteException {
+	public User findUsersByUserid(Integer usersid) throws RemoteException {
 		return userManager.findUsersByUsersid(usersid);
 	}
 
 	@Override
-	public List<Users> findAllUsers() throws RemoteException {
+	public List<User> findAllUsers() throws RemoteException {
 		return userManager.findAllUsers();
 	}
 
 	@Override
-	public List<Users> findUsersByLastname(String lastname) throws RemoteException {
+	public List<User> findUsersByLastname(String lastname) throws RemoteException {
 		return userManager.findUsersByLastname(lastname);
 	}
 
 	@Override
-	public List<Users> findUsersByFirstname(String firstname) throws RemoteException {
+	public List<User> findUsersByFirstname(String firstname) throws RemoteException {
 		return userManager.findUsersByFirstname(firstname);
 	}
 
 	@Override
-	public List<Users> findUsersByLastnameAndFirstname(String lastname, String firstname) throws RemoteException {
+	public List<User> findUsersByLastnameAndFirstname(String lastname, String firstname) throws RemoteException {
 		return userManager.findUsersByLastnameAndFirstname(lastname, firstname);
 	}
 
 	@Override
-	public List<Users> findUsersByUsername(String username) throws RemoteException {
+	public User findUsersByUsername(String username) throws RemoteException {
 		return userManager.findUserByUsername(username);
 	}
 

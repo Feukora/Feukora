@@ -4,7 +4,6 @@ package projekt.feukora.server.model;
 import java.io.Serializable;
 import java.util.GregorianCalendar;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -36,9 +35,9 @@ public class Appointment implements Serializable{
 	@ManyToOne
 	private Customerheater costumerheaterid;
 	@ManyToOne
-	private Users user;
+	private User user;
 	@ManyToOne
-	private Users createdby;
+	private User createdby;
 	@Temporal (TemporalType.TIMESTAMP)
 	private GregorianCalendar created;
 	@Temporal (TemporalType.TIMESTAMP)
@@ -61,7 +60,7 @@ public class Appointment implements Serializable{
 	 * @param appointmentdate
 	 * @param comments
 	 */
-	public Appointment(Customerheater costumerheaterid, Users user, Users createdby, GregorianCalendar created,
+	public Appointment(Customerheater costumerheaterid, User user, User createdby, GregorianCalendar created,
 			GregorianCalendar appointmentdate, String comments){
 		this.appointmentdate = appointmentdate;
 		this.comments = comments;

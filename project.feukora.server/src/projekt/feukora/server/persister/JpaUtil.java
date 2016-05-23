@@ -28,7 +28,7 @@ public class JpaUtil {
 			entityManagerFactory = Persistence
 					.createEntityManagerFactory("Feukora");
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}
 	}

@@ -15,7 +15,7 @@ import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.CompanyPersister;
 import projekt.feukora.server.persister.CompanyPersisterImpl;
 import projekt.feukora.server.persister.CustomerPersisterImpl;
@@ -34,7 +34,7 @@ import projekt.feukora.server.persister.UsergroupPersisterImpl;
  * @version 1.0
  *
  */
-public class UsersPersisterTest {
+public class UserPersisterTest {
 
 
 	private static UserPersisterImpl userTest = new UserPersisterImpl();
@@ -47,7 +47,7 @@ public class UsersPersisterTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		UsersPersisterTest.init();
+		UserPersisterTest.init();
 	}
 
 	@After
@@ -57,7 +57,7 @@ public class UsersPersisterTest {
 	@Test
 	public void testSave() throws Exception {
 		
-		List<Users> userlist = userTest.findAllUsers();
+		List<User> userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 2);
 		
 		TownPersister tp = new TownPersisterImpl();
@@ -69,7 +69,7 @@ public class UsersPersisterTest {
 		CompanyPersister c = new CompanyPersisterImpl();
 		Company company = c.findCompanyByName("Firma 1").get(0);
 		
-		Users u = new Users(usergroup,"Nachname","Vorname", "Ort",plz,company, "Username","Passwort","Telefon","Email");
+		User u = new User(usergroup,"Nachname","Vorname", "Ort",plz,company, "Username","Passwort","Telefon","Email");
 
 		userTest.saveUser(u);
 
@@ -81,7 +81,7 @@ public class UsersPersisterTest {
 	@Test
 	public void testUpdate() throws Exception {
 
-		List<Users> userlist = userTest.findAllUsers();
+		List<User> userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 2);
 		
 		TownPersister tp = new TownPersisterImpl();
@@ -93,7 +93,7 @@ public class UsersPersisterTest {
 		CompanyPersister c = new CompanyPersisterImpl();
 		Company company = c.findCompanyByName("Firma 2").get(0);
 
-		Users u = new Users(usergroup,"Nachname","Vorname", "Ort",plz,company, "Username","Passwort","Telefon","Email");
+		User u = new User(usergroup,"Nachname","Vorname", "Ort",plz,company, "Username","Passwort","Telefon","Email");
 
 		userTest.saveUser(u);
 
@@ -104,7 +104,7 @@ public class UsersPersisterTest {
 
 		userTest.updateUser(u);
 
-		Users userFromDB = userTest.findUserByLastname("Name").get(0);
+		User userFromDB = userTest.findUserByLastname("Name").get(0);
 		assertNotNull(userFromDB);
 
 	}
@@ -112,7 +112,7 @@ public class UsersPersisterTest {
 	@Test
 	public void testDelete() throws Exception {
 
-		List<Users> userlist = userTest.findAllUsers();
+		List<User> userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 2);
 
 		userTest.deleteUser(userlist.get(0));
@@ -158,12 +158,12 @@ public class UsersPersisterTest {
 		
 		String username = "Username1";
 		
-		assertTrue(userTest.findUserByUsername(username).size() ==1);
+		assertTrue(userTest.findUserByUsername(username) != null);
 	}
 
-	public static List<Users> init() throws Exception {
+	public static List<User> init() throws Exception {
 
-		UsersPersisterTest.deleteAll();
+		UserPersisterTest.deleteAll();
 		
 		TownPersister tp = new TownPersisterImpl();
 		Town plz1 = tp.findbyZip(6000);
@@ -178,13 +178,13 @@ public class UsersPersisterTest {
 		Company c2 = c.findCompanyByName("Firma 2").get(0);
 		
 
-		Users u1 = new Users(ug1, "Nachname1", "Vorname1", "Ort1", plz1, c1, "Username1", "Passwort1", "Telefon1", "Email1");
-		Users u2 = new Users(ug2, "Nachname2", "Vorname2", "Ort2", plz2, c2, "Username2", "Passwort2", "Telefon2", "Email2");
+		User u1 = new User(ug1, "Nachname1", "Vorname1", "Ort1", plz1, c1, "Username1", "Passwort1", "Telefon1", "Email1");
+		User u2 = new User(ug2, "Nachname2", "Vorname2", "Ort2", plz2, c2, "Username2", "Passwort2", "Telefon2", "Email2");
 
 		userTest.saveUser(u1);
 		userTest.saveUser(u2);
 
-		List<Users> userlist = new ArrayList<>();
+		List<User> userlist = new ArrayList<>();
 		userlist.add(u1);
 		userlist.add(u2);
 
@@ -193,7 +193,7 @@ public class UsersPersisterTest {
 
 	private static void deleteAll() throws Exception {
 
-		for (Users u : userTest.findAllUsers()) {
+		for (User u : userTest.findAllUsers()) {
 			userTest.deleteUser(u);
 		}
 	}

@@ -1,20 +1,23 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+
+import projekt.feukora.server.business.CustomerheaterManager;
+import projekt.feukora.server.business.CustomerheaterManagerImpl;
 
 /**
  * This class refers to a customer.
  * 
- * @version 1.3
+ * @version 1.4
  * @author Pascal
  *
  */
@@ -41,6 +44,8 @@ public class Customer implements Serializable{
 	private String email;
 	@ManyToOne
 	private Town zip;
+	@OneToMany
+	private List<Customerheater> customerHeaters;
 	 
 	/**
 	 * Default constructor
@@ -131,5 +136,10 @@ public class Customer implements Serializable{
 	
 	public String getTown(){
 		return zip.toString();
+	}
+	
+	public List<Customerheater> getCustomerHeaters()
+	{
+		return customerHeaters;
 	}
 }

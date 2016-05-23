@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -36,7 +35,7 @@ public class Rapport implements Serializable {
 	@ManyToOne
 	private Customerheater customerheaterid;
 	@ManyToOne
-	private Users userid;
+	private User userid;
 	@ManyToOne
 	private Appointment appointmentid;
 	@Temporal (TemporalType.TIMESTAMP)
@@ -57,6 +56,12 @@ public class Rapport implements Serializable {
 		
 	}
 	
+	public Rapport( User user )
+	{
+		userid = user;
+		measuringdate = new GregorianCalendar();
+	}
+	
 	/**
 	 * 
 	 * Rapport Constructor
@@ -75,7 +80,7 @@ public class Rapport implements Serializable {
 	 * @param nitrogendioxide
 	 * @param carbonmonoxide
 	 */
-	public Rapport(Controltype controltypeid, Customerheater customerheaterid, Users userid, Appointment appointmentid, GregorianCalendar measuringdate, Boolean results, Boolean additionalsteps, String comments, Boolean transgression_smokenumber, Boolean transgression_oilpart, Boolean exhaustgaslost, Boolean nitrogendioxide, Boolean carbonmonoxide){
+	public Rapport(Controltype controltypeid, Customerheater customerheaterid, User userid, Appointment appointmentid, GregorianCalendar measuringdate, Boolean results, Boolean additionalsteps, String comments, Boolean transgression_smokenumber, Boolean transgression_oilpart, Boolean exhaustgaslost, Boolean nitrogendioxide, Boolean carbonmonoxide){
 		this.controltypeid = controltypeid;
 		this.customerheaterid = customerheaterid;
 		this.userid = userid;

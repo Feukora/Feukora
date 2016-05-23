@@ -17,7 +17,7 @@ import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.BlowerPersister;
 import projekt.feukora.server.persister.BlowerPersisterImpl;
 import projekt.feukora.server.persister.BlowertypePersister;
@@ -110,8 +110,8 @@ public class TestdataAppointment {
 		Company com2 = new Company("Firma2", "Strasse2", "2222222", "asdf@asdf.ch", zip2);
 		
 		
-		Users user1 = new Users(group1, "Nachname", "Vorname", "Adresse", zip1, com1, "Username", "Passwort", "123445656", "asdf@asd.ch");
-		Users user2 = new Users(group2, "Lastname", "Firstname", "Adress", zip2, com2, "username", "password", "00000000", "email.com");
+		User user1 = new User(group1, "Nachname", "Vorname", "Adresse", zip1, com1, "Username", "Passwort", "123445656", "asdf@asd.ch");
+		User user2 = new User(group2, "Lastname", "Firstname", "Adress", zip2, com2, "username", "password", "00000000", "email.com");
 
 		
 		try {

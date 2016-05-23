@@ -3,7 +3,6 @@ package test.project.feukora.server.persister;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -14,25 +13,17 @@ import org.junit.Test;
 
 import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.Controltype;
-import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.model.Rapport;
-import projekt.feukora.server.model.Town;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.AppointmentPersister;
 import projekt.feukora.server.persister.AppointmentPersisterImpl;
 import projekt.feukora.server.persister.ControltypePersister;
 import projekt.feukora.server.persister.ControltypePersisterImpl;
-import projekt.feukora.server.persister.CustomerPersisterImpl;
-import projekt.feukora.server.persister.CustomerfunctionPersister;
-import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
 import projekt.feukora.server.persister.CustomerheaterPersister;
 import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
 import projekt.feukora.server.persister.RapportPersisterImpl;
 import projekt.feukora.server.persister.TownData;
-import projekt.feukora.server.persister.TownPersister;
-import projekt.feukora.server.persister.TownPersisterImpl;
 import projekt.feukora.server.persister.UserPersister;
 import projekt.feukora.server.persister.UserPersisterImpl;
 
@@ -74,7 +65,7 @@ public class RapportPersisterTest {
 		Customerheater customerheater1 = ch.findCustomerheaterByPerformance(200).get(0);
 
 		UserPersister us = new UserPersisterImpl();
-		Users user1 = us.findUserByLastname("Nachname").get(0);
+		User user1 = us.findUserByLastname("Nachname").get(0);
 		
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		
@@ -108,7 +99,7 @@ public class RapportPersisterTest {
 		Customerheater customerheater1 = ch.findCustomerheaterByPerformance(200).get(0);
 
 		UserPersister us = new UserPersisterImpl();
-		Users user1 = us.findUserByLastname("Nachname").get(0);
+		User user1 = us.findUserByLastname("Nachname").get(0);
 		
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		
@@ -177,8 +168,8 @@ public class RapportPersisterTest {
 		Customerheater customerheater2 = ch.findCustomerheaterByPerformance(78).get(0);
 
 		UserPersister us = new UserPersisterImpl();
-		Users user1 = us.findUserByLastname("Nachname").get(0);
-		Users user2 = us.findUserByLastname("Lastname").get(0);
+		User user1 = us.findUserByLastname("Nachname").get(0);
+		User user2 = us.findUserByLastname("Lastname").get(0);
 		
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		GregorianCalendar date4 = new GregorianCalendar(2016, 05, 16, 10, 0);

@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 
 /**
  * RMI interface for handling User entities
@@ -23,7 +23,7 @@ public interface UserRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void saveUsers(Users entity) throws RemoteException, Exception;
+	void saveUsers(User entity) throws RemoteException, Exception;
 
 	/**
 	 * Update the given entity
@@ -33,7 +33,7 @@ public interface UserRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	Users updateUsers(Users entity) throws RemoteException, Exception;
+	User updateUsers(User entity) throws RemoteException, Exception;
 
 	/**
 	 * Delete the given entity
@@ -42,7 +42,7 @@ public interface UserRMI extends Remote{
 	 * @throws Exception
 	 * @throws RemoteException
 	 */
-	void deleteUsers(Users entity) throws RemoteException, Exception;
+	void deleteUsers(User entity) throws RemoteException, Exception;
 
 	/**
 	 * Save the entity with this id
@@ -60,7 +60,7 @@ public interface UserRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	Users findUsersByUserid(Integer usersid) throws RemoteException;
+	User findUsersByUserid(Integer usersid) throws RemoteException;
 
 	/**
 	 * Return all entities
@@ -68,7 +68,7 @@ public interface UserRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	List<Users> findAllUsers() throws RemoteException;
+	List<User> findAllUsers() throws RemoteException;
 
 	/**
 	 * Return a list with users with this lastname
@@ -77,7 +77,7 @@ public interface UserRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Users> findUsersByLastname(String lastname) throws RemoteException;
+	public List<User> findUsersByLastname(String lastname) throws RemoteException;
 
 	/**
 	 * Return a list with users with this firstname
@@ -85,7 +85,7 @@ public interface UserRMI extends Remote{
 	 * @param vorname
 	 * @return
 	 */
-	public List<Users> findUsersByFirstname(String firstname) throws RemoteException ;
+	public List<User> findUsersByFirstname(String firstname) throws RemoteException ;
 
 	/**
 	 * Return a list with users with this lastname and firstname
@@ -94,7 +94,7 @@ public interface UserRMI extends Remote{
 	 * @param vorname
 	 * @return
 	 */
-	public List<Users> findUsersByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
+	public List<User> findUsersByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
 
 	/**
 	 * Return a list with users with this username
@@ -102,5 +102,5 @@ public interface UserRMI extends Remote{
 	 * @param ort
 	 * @return
 	 */
-	public List<Users> findUsersByUsername(String username) throws RemoteException ;
+	public User findUsersByUsername(String username) throws RemoteException ;
 }

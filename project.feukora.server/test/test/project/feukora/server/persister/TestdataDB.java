@@ -22,7 +22,7 @@ import projekt.feukora.server.model.Measuringresult;
 import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.AppointmentPersister;
 import projekt.feukora.server.persister.AppointmentPersisterImpl;
 import projekt.feukora.server.persister.BlowerPersister;
@@ -121,8 +121,8 @@ public class TestdataDB {
 		Company com1 = new Company("Centralhof", "Zentralstrasse 24", "045 440 67 43", "centralhof@gmail.ch", zip1);
 		Company com2 = new Company("PHAdmin", "Zürichstrasse 13", "043 387 32 31", "phadmin@outlook.ch", zip2);
 		
-		Users user1 = new Users(group1, "Müller", "Catalina", "Zugerweg 3", zip1, com1, "mca", "user1", "042 765 34 73", "catalinamüller@outlook.ch");
-		Users user2 = new Users(group2, "Hofstetter", "Gida", "Hofmatt 90", zip2, com2, "admin", "admin", "043 657 98 54", "gidahofstetter@outlook.com");
+		User user1 = new User(group1, "Müller", "Catalina", "Zugerweg 3", zip1, com1, "mca", "user1", "042 765 34 73", "catalinamüller@outlook.ch");
+		User user2 = new User(group2, "Hofstetter", "Gida", "Hofmatt 90", zip2, com2, "admin", "admin", "043 657 98 54", "gidahofstetter@outlook.com");
 		
 		GregorianCalendar date1 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);

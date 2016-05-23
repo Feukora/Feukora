@@ -26,7 +26,9 @@ public class TownData {
 		File file = new File(fileName);
 
 		if (!file.canRead() || !file.isFile())
+		{
 			System.exit(0);
+		}
 
 		BufferedReader in = null;
 		try {
@@ -45,7 +47,7 @@ public class TownData {
 				try {
 					p.saveTown(t);
 				} catch (Exception e) {
-					logger.error("Aktion konnte nicht durchgeführt werden\'",
+					logger.error("Aktion konnte nicht durchgeführt werden ",
 							e);
 				}
 				

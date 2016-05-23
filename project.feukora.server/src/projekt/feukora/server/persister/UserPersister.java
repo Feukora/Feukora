@@ -2,7 +2,7 @@ package projekt.feukora.server.persister;
 
 import java.util.List;
 
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 
 /**
  * This interface refers to a UserPersister
@@ -19,7 +19,7 @@ public interface UserPersister {
 	 * @param entity
 	 * @throws Exception
 	 */
-	void saveUser(Users entity) throws Exception;
+	void saveUser(User entity) throws Exception;
 
 	/**
 	 * Update the given entity
@@ -28,7 +28,7 @@ public interface UserPersister {
 	 * @return Users
 	 * @throws Exception
 	 */
-	Users updateUser(Users entity) throws Exception;
+	User updateUser(User entity) throws Exception;
 
 	/**
 	 * Delete the given entity
@@ -36,7 +36,7 @@ public interface UserPersister {
 	 * @param entity
 	 * @throws Exception
 	 */
-	void deleteUser(Users entity) throws Exception;
+	void deleteUser(User entity) throws Exception;
 
 	/**
 	 * Delete the entity with this id
@@ -52,14 +52,14 @@ public interface UserPersister {
 	 * @param id
 	 * @return Useres
 	 */
-	Users findUserByUserid(Integer userid);
+	User findUserByUserid(Integer userid);
 
 	/**
 	 * Return all entities
 	 * 
 	 * @return List with Users
 	 */
-	List<Users> findAllUsers();
+	List<User> findAllUsers();
 
 	/**
 	 * Return a list of users with this lastname
@@ -67,7 +67,7 @@ public interface UserPersister {
 	 * @param name
 	 * @return List with Users
 	 */
-	public List<Users> findUserByLastname(String lastname);
+	public List<User> findUserByLastname(String lastname);
 
 	/**
 	 * Return a list of users with this firstname
@@ -75,7 +75,7 @@ public interface UserPersister {
 	 * @param vorname
 	 * @return List with Users
 	 */
-	public List<Users> findUserByFirstname(String firstname);
+	public List<User> findUserByFirstname(String firstname);
 
 	/**
 	 * Return a list of users with this lastname and firstname
@@ -84,13 +84,13 @@ public interface UserPersister {
 	 * @param firstname
 	 * @return List with users
 	 */
-	public List<Users> findUserByLastnameAndFirstname(String lastname, String firstname);
+	public List<User> findUserByLastnameAndFirstname(String lastname, String firstname);
 	
 	/**
 	 * Return a list of users with this username
 	 * 
 	 * @param username
-	 * @return List with users
+	 * @return user corresponding to the username
 	 */
-	public List<Users> findUserByUsername(String username);
+	public User findUserByUsername(String username);
 }

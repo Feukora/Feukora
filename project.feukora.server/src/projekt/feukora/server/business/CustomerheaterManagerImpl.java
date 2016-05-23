@@ -23,7 +23,7 @@ public class CustomerheaterManagerImpl implements CustomerheaterManager {
 	
 	@Override
 	public void saveCustomerheater(Customerheater entity) throws Exception {
-		if((Integer) entity.getCustomerheaterid() == null){
+		if( entity.getCustomerheaterid() == 0 ){
 			customerheaterPersister.saveCustomerheater(entity);
 		}else{
 			throw new Exception("Die Kundenheizung (id = "+ entity.getCustomerheaterid() + ") ist bereits vorhanden");
@@ -60,18 +60,7 @@ public class CustomerheaterManagerImpl implements CustomerheaterManager {
 
 	@Override
 	public List<Customerheater> findCustomerheaterByPerformance(Integer performance) {
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Customerheater> tQuery = em.createNamedQuery("Customerheater.findByPerformance",
-				Customerheater.class);
-
-		tQuery.setParameter("performance", performance);
-
-		List<Customerheater> customerheaterlist = tQuery.getResultList();
-
-		em.close();
-
-		return customerheaterlist != null ? customerheaterlist : new ArrayList<Customerheater>();
+		return customerheaterPersister.findCustomerheaterByPerformance(performance);
 	}
 
 }

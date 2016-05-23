@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 /**
@@ -17,13 +19,14 @@ import javax.persistence.NamedQuery;
  * @author Tamara
  */
 @Entity
+@Table(name="\"user\"")
 @NamedQueries({
-	@NamedQuery(name = "Users.findByUserid", query = "SELECT u FROM Users u WHERE u.userid=:userid"),
-	@NamedQuery(name = "Users.findByLastname", query = "SELECT u FROM Users u WHERE u.lastname=:lastname"),
-	@NamedQuery(name = "Users.findByFirstname", query = "SELECT u FROM Users u WHERE u.firstname=:firstname"),
-	@NamedQuery(name = "Users.findByLastnameAndFirstname", query = "SELECT u FROM Users u WHERE u.lastname=:lastname AND u.firstname=:firstname"),
-	@NamedQuery(name = "Users.findByUsername", query = "SELECT u FROM Users u WHERE u.username=:username") })
-public class Users implements Serializable {
+	@NamedQuery(name = "User.findByUserid", query = "SELECT u FROM User u WHERE u.userid=:userid"),
+	@NamedQuery(name = "User.findByLastname", query = "SELECT u FROM User u WHERE u.lastname=:lastname"),
+	@NamedQuery(name = "User.findByFirstname", query = "SELECT u FROM User u WHERE u.firstname=:firstname"),
+	@NamedQuery(name = "User.findByLastnameAndFirstname", query = "SELECT u FROM User u WHERE u.lastname=:lastname AND u.firstname=:firstname"),
+	@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username=:username") })
+public class User implements Serializable {
 
 	@Id
 	@GeneratedValue
@@ -46,12 +49,12 @@ public class Users implements Serializable {
 	/**
 	 * Default constructor
 	 */
-	public Users(){
+	public User(){
 		
 	}
 	
 	/**
-	 * Users Constructor
+	 * User Constructor
 	 * 
 	 * @param usergroupid
 	 * @param lastname
@@ -64,7 +67,7 @@ public class Users implements Serializable {
 	 * @param phone
 	 * @param email
 	 */
-	public Users(Usergroup usergroupid, String lastname, String firstname,String adress,Town zip,Company companyid,String username, String password,String phone, String email) {
+	public User(Usergroup usergroupid, String lastname, String firstname,String adress,Town zip,Company companyid,String username, String password,String phone, String email) {
 		this.usergroupid = usergroupid;
 		this.lastname = lastname;
 		this.firstname = firstname;
@@ -138,5 +141,10 @@ public class Users implements Serializable {
 	}
 	public String getTown(){
 		return zip.toString();
+	}
+	
+	public boolean login( String password )
+	{
+		return this.password.equals( password );
 	}
 }

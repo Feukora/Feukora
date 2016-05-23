@@ -2,7 +2,7 @@ package projekt.feukora.server.business;
 
 import java.util.List;
 
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 
 /**
  * Interface to handle user entities.
@@ -19,7 +19,7 @@ public interface UserManager {
 	 * @param entity
 	 * @throws Exception
 	 */
-	void saveUsers(Users entity) throws Exception;
+	void saveUsers(User entity) throws Exception;
 
 	/**
 	 * Update the given entity
@@ -28,7 +28,7 @@ public interface UserManager {
 	 * @return
 	 * @throws Exception
 	 */
-	Users updateUsers(Users entity) throws Exception;
+	User updateUsers(User entity) throws Exception;
 
 	/**
 	 * Delete the given entity
@@ -36,7 +36,7 @@ public interface UserManager {
 	 * @param entity
 	 * @throws Exception
 	 */
-	void deleteUsers(Users entity) throws Exception;
+	void deleteUsers(User entity) throws Exception;
 
 	/**
 	 * Delete the user entity with this id
@@ -52,14 +52,14 @@ public interface UserManager {
 	 * @param id
 	 * @return
 	 */
-	Users findUsersByUsersid(Integer usersid);
+	User findUsersByUsersid(Integer usersid);
 
 	/**
 	 * Return all entities
 	 * 
 	 * @return
 	 */
-	List<Users> findAllUsers();
+	List<User> findAllUsers();
 
 	/**
 	 * Return a list with users with this lastname
@@ -67,7 +67,7 @@ public interface UserManager {
 	 * @param name
 	 * @return
 	 */
-	public List<Users> findUsersByLastname(String lastname);
+	public List<User> findUsersByLastname(String lastname);
 
 	/**
 	 * Return a list with users with this firstname
@@ -75,7 +75,7 @@ public interface UserManager {
 	 * @param vorname
 	 * @return
 	 */
-	public List<Users> findUsersByFirstname(String firstname);
+	public List<User> findUsersByFirstname(String firstname);
 
 	/**
 	 * Return a list with users with this lastname and firstname
@@ -84,7 +84,7 @@ public interface UserManager {
 	 * @param vorname
 	 * @return
 	 */
-	public List<Users> findUsersByLastnameAndFirstname(String lastname, String firstname);
+	public List<User> findUsersByLastnameAndFirstname(String lastname, String firstname);
 
 	/**
 	 * Return a list with users with this username
@@ -92,6 +92,6 @@ public interface UserManager {
 	 * @param ort
 	 * @return
 	 */
-	public List<Users> findUserByUsername(String username);
+	public User findUserByUsername(String username);
 	
 }
