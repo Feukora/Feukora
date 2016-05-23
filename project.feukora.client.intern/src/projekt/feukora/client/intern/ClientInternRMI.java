@@ -232,18 +232,19 @@ public class ClientInternRMI {
 	public void updateBlower(Blower blower1, String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean blower, Boolean atmospheric, Boolean evaporator) throws Exception {
 		Blowertype type;
 		Fuel fuel;
+		blower1.setName(name);
 		if(oil == true) {
 			fuel = fuelRMI.findFuelByName("Öl");
 		} else if (gas == true) {
-			fuel = fuelRMI.findFuelByName("Gas");
+			fuel = fuelRMI.findFuelByName("Erdgas");
 		} else {
-			fuel = fuelRMI.findFuelByName("Flüssig Gas");
+			fuel = fuelRMI.findFuelByName("Flüssiggas");
 		}
 		
 		if(blower == true) {
 			type = blowertypeRMI.findBlowertypeByName("Gebläse");
 		} else if(atmospheric == true) {
-			type = blowertypeRMI.findBlowertypeByName("atmosphärisch");
+			type = blowertypeRMI.findBlowertypeByName("Athmosphärisch");
 		} else {
 			type = blowertypeRMI.findBlowertypeByName("Verdampfer");
 		}
