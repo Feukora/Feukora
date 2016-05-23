@@ -304,9 +304,8 @@ public class ClientInternRMI {
 
 	}
 
-	public void updateHeater(String name) throws Exception {
-		Heater h1 = new Heater(name);
-		heaterRMI.updateHeater(h1);
+	public void updateHeater(Heater entity) throws Exception {
+		heaterRMI.updateHeater(entity);
 	}
 
 	public void deleteHeater(Heater entity) {

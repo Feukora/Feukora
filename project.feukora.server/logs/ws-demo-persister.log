@@ -9259,3 +9259,42 @@ Caused by: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen
 	... 49 more
 2016-05-23 12:05:35 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@358a56cc
 2016-05-23 12:09:11 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@6a69cb6
+2016-05-23 13:44:55 INFO  GenericPersisterImpl:65 - Entity vom Typ Heater wird updatet: projekt.feukora.server.model.Heater@1db01c96
+2016-05-23 13:45:04 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@7cd751b2]  wird gelöscht
+2016-05-23 13:47:25 INFO  GenericPersisterImpl:65 - Entity vom Typ Heater wird updatet: projekt.feukora.server.model.Heater@4ae9085b
+2016-05-23 13:47:32 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@7b8b2a79]  wird gelöscht
+2016-05-23 13:52:50 INFO  GenericPersisterImpl:65 - Entity vom Typ Heater wird updatet: projekt.feukora.server.model.Heater@774ffcc5
+2016-05-23 13:53:05 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@47a07493]  wird gelöscht
+2016-05-23 13:54:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@6068ebb2]  wird gelöscht
+2016-05-23 13:54:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@5a466dd]  wird gelöscht
+2016-05-23 13:54:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@1ed9d173]  wird gelöscht
+2016-05-23 13:54:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@70c56434]  wird gelöscht
+2016-05-23 13:54:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@2c3f43d1]  wird gelöscht
+2016-05-23 13:54:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@645ba24a]  wird gelöscht
+2016-05-23 13:54:12 INFO  GenericPersisterImpl:99 - Entity vom Typ Heater [projekt.feukora.server.model.Heater@70cf7d1e]  wird gelöscht
+2016-05-23 13:56:05 INFO  GenericPersisterImpl:65 - Entity vom Typ Heater wird updatet: projekt.feukora.server.model.Heater@5cbe95b1
+2016-05-23 14:03:34 INFO  GenericPersisterImpl:65 - Entity vom Typ Heater wird updatet: projekt.feukora.server.model.Heater@2dbacac3
+2016-05-23 14:29:21 ERROR RMIServer:152 - Aktion konnte nicht durchgeführt werden'
+java.rmi.server.ExportException: Port already in use: 9009; nested exception is: 
+	java.net.BindException: Address already in use: JVM_Bind
+	at sun.rmi.transport.tcp.TCPTransport.listen(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.exportObject(Unknown Source)
+	at sun.rmi.transport.tcp.TCPEndpoint.exportObject(Unknown Source)
+	at sun.rmi.transport.LiveRef.exportObject(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.exportObject(Unknown Source)
+	at sun.rmi.registry.RegistryImpl.setup(Unknown Source)
+	at sun.rmi.registry.RegistryImpl.<init>(Unknown Source)
+	at java.rmi.registry.LocateRegistry.createRegistry(Unknown Source)
+	at projekt.feukora.server.rmi.RMIServer.main(RMIServer.java:76)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createServerSocket(Unknown Source)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createServerSocket(Unknown Source)
+	at sun.rmi.transport.tcp.TCPEndpoint.newServerSocket(Unknown Source)
+	... 9 more
