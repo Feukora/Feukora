@@ -1,6 +1,7 @@
 package projekt.feukora.server.model;
 
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 
 import javax.persistence.CascadeType;
@@ -27,7 +28,7 @@ import javax.persistence.TemporalType;
 	@NamedQuery(name = "Appointment.findByAppointmentdate", query = "SELECT a FROM Appointment a WHERE a.appointmentdate=:appointmentdate")
  })
 
-public class Appointment {
+public class Appointment implements Serializable{
 
 	@Id
 	@GeneratedValue

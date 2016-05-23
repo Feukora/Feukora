@@ -100,12 +100,14 @@ public class ControllerDetailview {
     	} else {
     		radioButtonLiquidGas.setSelected(true);
     	}
+    	Context.setNull();
     }
 
     @FXML
     void ActionDetailviewSaveBlower(ActionEvent event) {
         String blowerName = blowerNameField.getText();
-        Boolean blower = false;
+        Blower blower = Context.getBlower();
+        Boolean bblower = false;
         Boolean atmospheric = false;
         Boolean evaporator = false;
         
@@ -114,7 +116,7 @@ public class ControllerDetailview {
         Boolean liquidGas = false;
         
         if(radioButtonBlowers.isSelected()) {
-        	blower = true;
+        	bblower = true;
         } else if (radioButtonAtmospheric.isSelected()) {
         	atmospheric = true;
         } else if (radioButtonEvaporator.isSelected()) {
@@ -132,9 +134,9 @@ public class ControllerDetailview {
  		try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if (blower1 == null) {
-				feukora.saveBlower(blowerName, oil, gas, liquidGas, blower, atmospheric, evaporator);
+				feukora.saveBlower(blowerName, oil, gas, liquidGas, bblower, atmospheric, evaporator);
 			} else {
-				feukora.updateBlower(blowerName, oil, gas, liquidGas, blower, atmospheric, evaporator);
+				feukora.updateBlower(blowerName, oil, gas, liquidGas, bblower, atmospheric, evaporator);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

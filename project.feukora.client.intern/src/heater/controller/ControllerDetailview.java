@@ -61,7 +61,7 @@ public class ControllerDetailview {
     public void initialize() {
     	
     	if(Context.getHeater() != null) {
-    		NewOrUpdate();
+    		Update();
     	} else {
     		
     	}
@@ -70,7 +70,7 @@ public class ControllerDetailview {
     
     }
     
-    public void NewOrUpdate(){
+    public void Update(){
     		heaterNameField.setText(Context.getHeaterName());
 	    	Context.setNull();
     	
