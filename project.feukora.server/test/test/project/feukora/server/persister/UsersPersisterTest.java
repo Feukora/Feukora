@@ -12,17 +12,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Company;
-import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.User;
 import projekt.feukora.server.model.Usergroup;
-import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.CompanyPersister;
 import projekt.feukora.server.persister.CompanyPersisterImpl;
-import projekt.feukora.server.persister.CustomerPersisterImpl;
-import projekt.feukora.server.persister.CustomerfunctionPersister;
-import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
 import projekt.feukora.server.persister.TownData;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
