@@ -26,7 +26,7 @@ public class ControllerDetailview {
 	final ToggleGroup fuel = new ToggleGroup();
 	final ToggleGroup blowertype = new ToggleGroup();
 	
-	private Blower blower;
+	private Blower blower1;
 
     @FXML
     private Button detailviewSaveBlower;
@@ -84,7 +84,7 @@ public class ControllerDetailview {
     }
     
     public void Update() {
-    	blower = Context.getBlower();
+    	blower1 = Context.getBlower();
     	blowerNameField.setText(Context.getBlowername());
     	if(Context.getBlowerType().toString().equals("Gebläse")) {
     		radioButtonBlowers.setSelected(true);
@@ -131,10 +131,10 @@ public class ControllerDetailview {
         
  		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if (blower == null) {
-				feukora.saveBlower(asdfasdfasdf);
+			if (blower1 == null) {
+				feukora.saveBlower(blowerName, oil, gas, liquidGas, blower, atmospheric, evaporator);
 			} else {
-				feukora.updateBlower(asdfasdf);
+				feukora.updateBlower(blowerName, oil, gas, liquidGas, blower, atmospheric, evaporator);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
