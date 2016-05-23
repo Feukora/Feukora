@@ -18,7 +18,7 @@ import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 import projekt.feukora.server.rmi.AppointmentRMI;
 import projekt.feukora.server.rmi.BlowerRMI;
 import projekt.feukora.server.rmi.BlowertypeRMI;
@@ -136,7 +136,7 @@ public class ClientInternRMI {
 	 */
 	public boolean login(String username, String password) throws Exception {
 
-		Users user = userRMI.findUsersByUsername(username).get(0);
+		User user = userRMI.findUsersByUsername(username);
 		
 		return user.login( password );
 	}
@@ -291,7 +291,7 @@ public class ClientInternRMI {
 		
 	}
 	
-	public void saveUser(Users entity){
+	public void saveUser(User entity){
 		try {
 			userRMI.saveUsers(entity);
 		} catch (RemoteException e) {
@@ -303,7 +303,7 @@ public class ClientInternRMI {
 		}
 	}
 	
-	public void saveUser(Users entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
+	public void saveUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
 		try{
 			Company company;
 			Town city;
@@ -311,12 +311,12 @@ public class ClientInternRMI {
 			
 			usergroup = usergroupRMI.findUsergroupByUsergroupid(1);
 			city = townRMI.findTownByZip(zip);
-			company = companyRMI.findCompanyByName(companyname);
-			entity.setCompanyname(company);
-			entity.setTown(city);
+			company = companyRMI.findCompanyByName(companyname).get(0);
+//			entity.setCompanyname(company);
+//			entity.setTown(city);
+//			
 			
-			
-			Users u1 = new Users(usergroup, lastname, firstname, adress, zip, company, username, password, phone, email);
+			User u1 = new User(usergroup, lastname, firstname, adress, city, company, username, password, phone, email);
 			userRMI.saveUsers(u1);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
@@ -327,7 +327,7 @@ public class ClientInternRMI {
 		}
 	}
 	
-	public void deleteUser(Users entity) {
+	public void deleteUser(User entity) {
 		try {
 			userRMI.deleteUsers(entity);
 		} catch (RemoteException e) {
@@ -341,16 +341,16 @@ public class ClientInternRMI {
 		}
 	}
 	
-	public void updateUser(Users entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
+	public void updateUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
 		
 			Company company;
 			Town city;
 			
 			city = townRMI.findTownByZip(zip);
-			company = companyRMI.findCompanyByName(companyname);
+			company = companyRMI.findCompanyByName(companyname).get(0);
 			
-			entity.setCompanyname(company);
-			entity.setTown(city);
+//			entity.setCompanyname(company);
+//			entity.setTown(city);
 			
 			userRMI.updateUsers(entity);
 			
@@ -418,9 +418,9 @@ public class ClientInternRMI {
 	 *
 	 * @throws Exception
 	 */
-	public ObservableList<Users> getUsers() throws Exception {
+	public ObservableList<User> getUsers() throws Exception {
 		
-		ObservableList<Users> userlist = FXCollections.observableArrayList();
+		ObservableList<User> userlist = FXCollections.observableArrayList();
 		userlist.addAll(userRMI.findAllUsers());
 		return userlist;
 		

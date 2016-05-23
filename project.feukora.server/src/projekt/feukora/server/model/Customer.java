@@ -44,8 +44,8 @@ public class Customer implements Serializable{
 	private String email;
 	@ManyToOne
 	private Town zip;
-	@OneToMany
-	private List<Customerheater> customerHeaters;
+//	@OneToMany
+//	private List<Customerheater> customerHeaters;
 	 
 	/**
 	 * Default constructor
@@ -138,8 +138,8 @@ public class Customer implements Serializable{
 		return zip.toString();
 	}
 	
-	public List<Customerheater> getCustomerHeaters()
-	{
-		return customerHeaters;
-	}
+//	public List<Customerheater> getCustomerHeaters()
+//	{
+//		return customerHeaters;
+//	}
 }

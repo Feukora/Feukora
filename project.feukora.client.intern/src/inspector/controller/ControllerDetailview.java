@@ -11,14 +11,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 
 public class ControllerDetailview {
 	
 	private static final Logger logger = Logger
 			.getLogger(ControllerDetailview.class);
 
-	private Users inspector;
+	private User inspector;
     @FXML
     private Button detailviewSaveInspector;
     
@@ -148,7 +148,7 @@ public class ControllerDetailview {
     
     @FXML
     void ActionDetailviewSaveInspector(ActionEvent event) {
-    	Users inspector1 = Context.getUser();
+    	User inspector1 = Context.getUser();
     	String companyname = inspectorCompanyIdField.getText();
     	String lastname = inspectorNameField.getText();
     	String adress = inspectorAddressField.getText();
