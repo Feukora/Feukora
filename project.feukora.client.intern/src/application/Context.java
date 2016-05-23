@@ -2,6 +2,7 @@ package application;
 
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Heater;
 
 public class Context {
 	
@@ -18,6 +19,8 @@ public class Context {
 	public static String firstname;
 	public static String email;
 	public static String customerfunction;
+	
+	public static String heatername;
 	
 	public static String blowername;
 	public static String blowertype;
@@ -90,6 +93,14 @@ public class Context {
 	
 	public static Blower getBlower() {
 		return blower;
+	}
+	
+	public static void setHeater (Heater heater) {
+		heatername = heater.getName();
+	}
+	
+	public static String getHeater () {
+		return heatername;
 	}
 	
 	public static String getBlowername() {

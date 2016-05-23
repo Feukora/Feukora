@@ -6,18 +6,22 @@ package heater.controller;
 
 import org.apache.log4j.Logger;
 
+import application.Context;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Heater;
 
 public class ControllerOverview {
@@ -53,12 +57,6 @@ public class ControllerOverview {
     		ClientInternRMI feukora = new ClientInternRMI();
     		ObservableList<Heater> heaters = feukora.getHeaters();
     		
-    		columnTypeHeater.setCellValueFactory(
-    				new PropertyValueFactory<Heater, String>("heatertype")
-    		);
-    		columnYearOfManifactureHeater.setCellValueFactory(
-    				new PropertyValueFactory<Heater,String>("heateryear")
-    		);
     		columnNameHeater.setCellValueFactory(
     				new PropertyValueFactory<Heater,String>("name")
     		);
@@ -98,19 +96,30 @@ public class ControllerOverview {
     
     @FXML
     void ActionOverviewUpdateHeater(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
-    	
     	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("heater/view/heaterDetailview.fxml"));
-
-			// mainRoot.setCenter(pane);
-
+    		ClientInternRMI feukora = new ClientInternRMI();
+			Heater heater = overviewTableHeater.getSelectionModel().getSelectedItem();
+			if(heater != null){
+				AnchorPane pane = new AnchorPane();
+				Context.setHeater(heater);
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/heaterDetailview.fxml"));
+				overviewUpdateHeater.getScene().setRoot(pane);
+			}else{
+				String titleBar = "Nichts ausgewählt";
+				String headerMessage = "Wählen Sie einen Benutzer aus";
+				String infoMessage = "";
+				Alert alert = new Alert(AlertType.INFORMATION);
+		        alert.setTitle(titleBar);
+		        alert.setHeaderText(headerMessage);
+		        alert.setContentText(infoMessage);
+		        alert.showAndWait();
+			}
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+					e);	
 		}	
 		
-    	overviewUpdateHeater.getScene().setRoot(pane);
+    	//overviewUpdateHeater.getScene().setRoot(pane);
     }
 
 }
