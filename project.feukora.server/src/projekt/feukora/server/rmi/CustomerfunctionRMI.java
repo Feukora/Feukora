@@ -8,6 +8,7 @@ import projekt.feukora.server.model.Customerfunction;
 
 /**
  * RMI interface for handling customerfunction entities
+ * 
  * @author Patrick
  * @version 1.0
  */

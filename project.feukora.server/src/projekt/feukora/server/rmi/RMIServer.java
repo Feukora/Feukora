@@ -17,15 +17,11 @@ import test.project.feukora.server.persister.TestdataMeasuringresult;
 
 
 /**
- * This Class starts the RMI-Server on this machine, also it instances Remote Objects, 
- * binds and also unbinds them
+ * This Class starts the RMI-Server on this machine, also it instances Remote Objects, binds and also unbinds them.
  * 
+ * @author Sandro 
  * @version 1.2
- * @author Sandro Fasser
- *
  */
-
-
 public class RMIServer {
 
 	private static final Logger logger = Logger

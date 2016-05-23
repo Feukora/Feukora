@@ -9,11 +9,13 @@ import projekt.feukora.server.model.Users;
 
 /**
  * RMI interface for handling User entities
- * @author Tamara Tomic
+ * 
+ * @author Tamara 
  * @version 1.1
  *
  */
 public interface UserRMI extends Remote{
+	
 	/**
 	 * Save the given entity
 	 * 

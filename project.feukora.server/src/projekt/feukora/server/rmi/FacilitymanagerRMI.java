@@ -9,6 +9,7 @@ import projekt.feukora.server.model.Facilitymanager;
 
 /**
  * RMI interface for handling Facilitymanagers
+ * 
  * @author Pascal
  * @version 1.0
  */

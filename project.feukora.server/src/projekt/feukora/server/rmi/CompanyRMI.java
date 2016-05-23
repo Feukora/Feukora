@@ -6,16 +6,15 @@ import java.util.List;
 
 import projekt.feukora.server.model.Company;
 
+
 /**
  * RMI interface for handling customer entities
- * @author Sandro Fasser
- * @version 1.0
- */
-/**
- * @author Robin Purtschert
+ * 
+ * @author Robin 
  * @version 1.1
  */
 public interface CompanyRMI extends Remote{
+	
 	/**
 	 * Save the given entity
 	 * 

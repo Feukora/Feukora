@@ -10,7 +10,7 @@ import projekt.feukora.server.model.Appointment;
 /**
  * RMI interface for handling appointment entities
  * 
- * @author Allan Blessing
+ * @author Allan 
  * @version 1.1
  */
 

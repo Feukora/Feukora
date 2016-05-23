@@ -12,7 +12,8 @@ import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Blowertype;
 
 /**
- *  This Class implements the methods of the interface BlowertypeRMI
+ * This Class implements the methods of the interface BlowertypeRMI
+ *  
  * @author Patrick
  * @version 1.0
  */

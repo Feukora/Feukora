@@ -10,9 +10,9 @@ import projekt.feukora.server.business.AppointmentManagerImpl;
 import projekt.feukora.server.model.Appointment;
 
 /**
- *  This Class implements the methods of the interface AppointmentRMI
+ * This Class implements the methods of the interface AppointmentRMI
  *  
- * @author Allan Blessing
+ * @author Allan
  * @version 1.0
  */
 public class AppointmentRMIImpl extends UnicastRemoteObject implements AppointmentRMI {

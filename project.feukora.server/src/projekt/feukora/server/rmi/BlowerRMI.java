@@ -8,11 +8,13 @@ import projekt.feukora.server.model.Blower;
 
 /**
  * RMI interface for handling blower entities
- * @author Robin Purtschert
+ * 
+ * @author Robin 
  * @version 1.1
  */
 
 public interface BlowerRMI extends Remote{
+	
 	/**
 	 * Save the given entity
 	 * 

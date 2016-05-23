@@ -10,7 +10,8 @@ import projekt.feukora.server.business.TownManagerImpl;
 import projekt.feukora.server.model.Town;
 
 /**
- *  This Class implements the methods of the interface TownRMI
+ * This Class implements the methods of the interface TownRMI
+ *  
  * @author Pascal
  * @version 1.0
  */

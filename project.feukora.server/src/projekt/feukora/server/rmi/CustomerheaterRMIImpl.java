@@ -12,7 +12,8 @@ import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.persister.JpaUtil;
 
 /**
- *  This Class implements the methods of the interface CustomerheaterRMI
+ * This Class implements the methods of the interface CustomerheaterRMI
+ * 
  * @author Pascal
  * @version 1.0
  */

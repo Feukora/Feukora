@@ -9,8 +9,9 @@ import projekt.feukora.server.model.Blower;
 
 
 /**
- *  This Class implements the methods of the interface BlowerRMI
- * @author Robin Purtschert
+ * This Class implements the methods of the interface BlowerRMI
+ *  
+ * @author Robin 
  * @version 1.1
  */
 public class BlowerRMIImpl extends UnicastRemoteObject implements BlowerRMI {

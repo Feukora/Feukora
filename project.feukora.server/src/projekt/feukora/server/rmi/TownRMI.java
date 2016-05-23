@@ -7,7 +7,8 @@ import java.util.List;
 import projekt.feukora.server.model.Town;
 
 /**
- * RMI interface for handling town entities
+ * RMI interface for handling town entities.
+ * 
  * @author Pascal
  * @version 1.0
  */

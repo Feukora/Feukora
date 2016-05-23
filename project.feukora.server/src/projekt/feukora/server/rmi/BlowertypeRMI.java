@@ -7,6 +7,7 @@ import projekt.feukora.server.model.Blowertype;
 
 /**
  * RMI interface for handling blowertype entities
+ * 
  * @author Patrick
  * @version 1.0
  */

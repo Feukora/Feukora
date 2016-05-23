@@ -12,7 +12,8 @@ import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Facilitymanager;
 
 /**
- *  This Class implements the methods of the interface FacilitymanagerRMI
+ * This Class implements the methods of the interface FacilitymanagerRMI
+ *  
  * @author Pascal
  * @version 1.0
  */

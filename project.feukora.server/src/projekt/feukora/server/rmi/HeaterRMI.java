@@ -9,7 +9,8 @@ import projekt.feukora.server.model.Heater;
 
 /**
  * RMI interface for handling heater entities
- * @author Patrick Pereira
+ * 
+ * @author Patrick 
  * @version 1.1
  */
 

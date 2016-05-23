@@ -7,11 +7,11 @@ import java.util.List;
 import projekt.feukora.server.model.Customerheater;
 
 /**
- * RMI interface for handling Customerheaters
+ * RMI interface for handling Customerheaters.
+ * 
  * @author Pascal
  * @version 1.0
  */
-
 public interface CustomerheaterRMI extends Remote {
 	
 	/**
