@@ -7,7 +7,7 @@ public class Context {
 	
 	
 	private static Customer customer;
-	private Blower blower;
+	private static Blower blower;
 	
 	public static Integer customerid;
 	public static String companyname;
@@ -85,6 +85,11 @@ public class Context {
 		blowername = blower.getName();
 		blowertype = blower.getBlowertype();
 		fuel = blower.getFuel();
+		Context.blower = blower;
+	}
+	
+	public static Blower getBlower() {
+		return blower;
 	}
 	
 	public static String getBlowername() {

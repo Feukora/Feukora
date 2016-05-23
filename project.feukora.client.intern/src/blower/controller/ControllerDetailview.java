@@ -2,6 +2,7 @@ package blower.controller;
 
 import org.apache.log4j.Logger;
 
+import application.Context;
 import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
@@ -20,6 +22,11 @@ public class ControllerDetailview {
 	
 	private static final Logger logger = Logger
 			.getLogger(ControllerDetailview.class);
+	
+	final ToggleGroup fuel = new ToggleGroup();
+	final ToggleGroup blowertype = new ToggleGroup();
+	
+	private Blower blower;
 
     @FXML
     private Button detailviewSaveBlower;
@@ -53,22 +60,40 @@ public class ControllerDetailview {
 
     }
 
+    
+    public void initialize() {
+    	if(Context.getBlowername() != null){
+    		Update();
+    	} else {
+    		radioButtonOil.setToggleGroup(fuel);
+    		radioButtonGas.setToggleGroup(fuel);
+    		radioButtonLiquidGas.setToggleGroup(fuel);
+    		
+    		radioButtonBlowers.setToggleGroup(blowertype);
+    		radioButtonAtmospheric.setToggleGroup(blowertype);
+    		radioButtonEvaporator.setToggleGroup(blowertype);
+    		
+    		radioButtonOil.setSelected(false);
+    		radioButtonGas.setSelected(false);
+    		radioButtonLiquidGas.setSelected(false);
+    		
+    		radioButtonBlowers.setSelected(false);
+    		radioButtonAtmospheric.setSelected(false);
+    		radioButtonEvaporator.setSelected(false);
+    	}
+    }
+    
+    public void Update() {
+    	blower = Context.getBlower();
+    	blowerNameField.setText(Context.getBlowername());
+    }
 
     @FXML
     void ActionDetailviewSaveBlower(ActionEvent event) {
-    	String manufactureYear = blowerYearManufactureField.getText();
-    	String blowerModel = blowerModellField.getText();
-        String blowerType = blowerTypeField.getText();
         String blowerName = blowerNameField.getText();
         
-        Blowertype bt;
-        bt.setName(blowerType);
-        
-        Fuel bm;
-        bm.setName(blowerModel);
-        
  		try {
-			ClientInternRMI test = new ClientInternRMI();
+			ClientInternRMI feukora = new ClientInternRMI();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",

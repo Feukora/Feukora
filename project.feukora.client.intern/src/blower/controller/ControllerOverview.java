@@ -30,6 +30,8 @@ public class ControllerOverview {
 	private static final Logger logger = Logger
 			.getLogger(ControllerOverview.class);
 	
+	public ObservableList<Blower> blowers = FXCollections.observableArrayList();
+	
 	
     @FXML // fx:id="overviewTableBlower"
     private TableView<Blower> overviewTableBlower; // Value injected by FXMLLoader
@@ -57,15 +59,11 @@ public class ControllerOverview {
 	public void initialize() {
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			ObservableList<Blower> blowers = feukora.getBlowers();
+			blowers = feukora.getBlowers();
 
 			columnNameBlower.setCellValueFactory(
 					new PropertyValueFactory<Blower, String>("name")
-			);
-			
-			//HABE ICH AUSKOMMENTIERT DA BAUJAHR IM MODEL NICHT VORHANDEN UND NUN IM GUI ENTFERNT!!
-//			columnYearOfManufacturBlower.setCellValueFactory(
-//					new PropertyValueFactory<Blower, String>("bloweryear"));
+			);	
 			
 			overviewTableBlower.setItems(blowers);
 			

@@ -9258,3 +9258,4 @@ Caused by: org.postgresql.util.PSQLException: FEHLER: Aktualisieren oder Löschen
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
 	... 49 more
 2016-05-23 12:05:35 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@358a56cc
+2016-05-23 12:09:11 INFO  GenericPersisterImpl:65 - Entity vom Typ Customer wird updatet: projekt.feukora.server.model.Customer@6a69cb6
