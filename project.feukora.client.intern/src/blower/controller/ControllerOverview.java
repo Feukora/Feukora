@@ -23,7 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 
 public class ControllerOverview {
 	

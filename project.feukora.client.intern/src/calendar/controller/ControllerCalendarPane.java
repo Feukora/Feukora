@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
-import projekt.feukora.server.model.Users;
+import projekt.feukora.server.model.User;
 
 public class ControllerCalendarPane {
 	
@@ -131,7 +131,7 @@ public class ControllerCalendarPane {
 		try {
 			feukora = new ClientInternRMI();
 			ObservableList<String> usernames = FXCollections.observableArrayList();
-			ObservableList<Users> users = feukora.getUsers();
+			ObservableList<User> users = feukora.getUsers();
 			int i = 0;
 			while (i < users.size()) {
 				usernames.add(users.get(i).getUsername());
