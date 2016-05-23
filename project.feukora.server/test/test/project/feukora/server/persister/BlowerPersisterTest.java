@@ -23,7 +23,7 @@ import projekt.feukora.server.persister.TownData;
 /**
  * Class to tests the methods of the class BlowerPersister.
  * 
- * @author Tamara
+ * @author Robin
  * @version 1.0
  */
 public class BlowerPersisterTest {

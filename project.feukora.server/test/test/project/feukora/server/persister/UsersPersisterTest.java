@@ -29,6 +29,7 @@ import projekt.feukora.server.persister.UsergroupPersister;
 import projekt.feukora.server.persister.UsergroupPersisterImpl;
 
 /**
+ * Class to test the methods of the class UserPersister.
  * 
  * @author Tamara
  * @version 1.0
