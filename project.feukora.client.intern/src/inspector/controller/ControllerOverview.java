@@ -38,6 +38,9 @@ public class ControllerOverview {
 
     @FXML // fx:id="overviewTableInspector"
     private TableView<Users> overviewTableInspector; // Value injected by FXMLLoader
+    
+    @FXML // fx:id="columnCompanyIdInspector"
+    private TableColumn<Users, String> columnCompanyIdInspector; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnUsernameInspector"
     private TableColumn<Users, String> columnUsernameInspector; // Value injected by FXMLLoader

@@ -116,22 +116,14 @@ public class ControllerDetailview {
     
     public void initialize() {
     	
-    	if(Context.getCustomerName() != null) {
-    		NewOrUpdate();
-    	} else {
-    		radioButtonOwner.setToggleGroup(group);
-        	radioButtonAdministration.setToggleGroup(group);
-        	radioButtonOwner.setSelected(false);
-        	radioButtonAdministration.setSelected(false);
-    	}
-    	
+    	NewOrUpdate();
     	
     
     }
     
     public void NewOrUpdate(){
     
-//    	if(Context.getCustomerName() != null){
+    	if(Context.getCustomerName() != null){
     		customer = Context.getCustomer();
     		customerCompanyNameField.setText(Context.getCustomerCompanyName());
 	    	customerNameField.setText(Context.getCustomerName());
@@ -148,12 +140,12 @@ public class ControllerDetailview {
 	    		radioButtonAdministration.setSelected(true);
 	    	}
 	    	Context.setNull();
-//    	} else {
-//        	radioButtonOwner.setToggleGroup(group);
-//        	radioButtonAdministration.setToggleGroup(group);
-//        	radioButtonOwner.setSelected(false);
-//        	radioButtonAdministration.setSelected(false);
-//      	}
+    	} else {
+        	radioButtonOwner.setToggleGroup(group);
+        	radioButtonAdministration.setToggleGroup(group);
+        	radioButtonOwner.setSelected(false);
+        	radioButtonAdministration.setSelected(false);
+      	}
     	
     	
     }
@@ -178,13 +170,8 @@ public class ControllerDetailview {
     	
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(customer == null) {
-				feukora.saveCustomer(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
-			} else {
-				feukora.updateCustomer(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
-			}
-			
-//	    	feukora.deleteCustomer(customer);
+			feukora.saveCustomer(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
+	    	feukora.deleteCustomer(customer);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",

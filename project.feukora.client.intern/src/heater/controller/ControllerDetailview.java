@@ -20,36 +20,12 @@ public class ControllerDetailview {
     
     @FXML
     private Button detailviewCancelHeater;
-    
-    @FXML
-    private TextField heaterModellField;
-
-    @FXML
-    private TextField heaterYearManufacturField;
-
-    @FXML
-    private TextField heaterTypeField;
 
     @FXML
     private TextField heaterNameField;
 
     @FXML
     void ActionHeaterNameField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionHeaterModellField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionHeaterTypeField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionHeaterYearManufacturField(ActionEvent event) {
 
     }
 

@@ -40,7 +40,7 @@
                   <MenuItem fx:id="blowerNewMenuItem" mnemonicParsing="false" onAction="#ActionBlowerNewMenuItem" text="Neu" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Heizkörper">
+            <Menu mnemonicParsing="false" text="Wärmeerzeuger">
               
                <items>
                   <MenuItem fx:id="heaterMenuBar" mnemonicParsing="false" onAction="#ActionHeaterMenuBar" text="Übersicht" />

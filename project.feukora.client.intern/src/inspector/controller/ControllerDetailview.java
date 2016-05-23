@@ -32,6 +32,15 @@ public class ControllerDetailview {
 
     @FXML
     private TextField inspectorZipField;
+    
+    @FXML
+    private TextField inspectorPhoneField;
+    
+    @FXML
+    private TextField inspectorPasswordField;
+    
+    @FXML
+    private TextField inspectorCompanyIdField;
 
     @FXML
     private TextField inspectorMunicipalityField;
@@ -74,6 +83,21 @@ public class ControllerDetailview {
 
     @FXML
     void ActionInspectorUsernameField(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ActionInspectorPasswordField(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ActionInspectorPhoneField(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ActionInspectorCompanyIdField(ActionEvent event) {
 
     }
 

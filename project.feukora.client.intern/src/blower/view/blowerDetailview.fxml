@@ -6,36 +6,53 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blower.controller.ControllerDetailview">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blower.controller.ControllerDetailview">
    <children>
       <Label layoutX="50.0" layoutY="37.0" prefHeight="38.0" prefWidth="348.0" text="Detail Brenner">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <GridPane layoutX="50.0" layoutY="100.0" prefHeight="190.0" prefWidth="384.0">
+      <GridPane layoutX="50.0" layoutY="100.0" prefHeight="210.0" prefWidth="384.0">
          <children>
-            <Label prefHeight="25.0" prefWidth="60.0" text="Name" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Modell" GridPane.rowIndex="1" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Typ" GridPane.rowIndex="2" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Baujahr" GridPane.rowIndex="3" />
+            <Label prefHeight="25.0" prefWidth="103.0" text="Name / Modell" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Brenner" GridPane.rowIndex="1" />
+            <Label prefHeight="25.0" prefWidth="78.0" text="Brennstoff" GridPane.rowIndex="2" />
             <TextField fx:id="blowerNameField" onAction="#ActionBlowerNameField" GridPane.columnIndex="1" />
-            <TextField fx:id="blowerModellField" onAction="#ActionBlowerModellField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="blowerTypeField" onAction="#ActionBlowerTypeField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="blowerYearManufactureField" onAction="#ActionBlowerYearManufactureField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <RadioButton fx:id="radioButtonLiquidGas" mnemonicParsing="false" onAction="#ActionRadioButtonLiquidGas" text="Flüssiggas" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="40.0" />
+               </GridPane.margin>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonGas" mnemonicParsing="false" onAction="#ActionRadioButtonGas" text="Gas" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <RadioButton fx:id="radioButtonOil" mnemonicParsing="false" onAction="#ActionRadioButtonOil" text="Öl" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="40.0" />
+               </GridPane.margin>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonAtmospheric" mnemonicParsing="false" onAction="#ActionRadioButtonAtmospheric" text="atmosphärisch" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <RadioButton fx:id="radioButtonBlowers" mnemonicParsing="false" onAction="#ActionRadioButtonBlowers" text="Gebläse " GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="40.0" />
+               </GridPane.margin>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonEvaporator" mnemonicParsing="false" onAction="#ActionRadioButtonEvaporator" text="Verdampfer" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="40.0" />
+               </GridPane.margin>
+            </RadioButton>
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="157.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="10.0" prefWidth="317.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="111.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <Button fx:id="detailviewSaveBlower" layoutX="334.0" layoutY="326.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveBlower" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
-      <Button fx:id="detailviewCancelBlower" layoutX="164.0" layoutY="326.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelBlower" prefHeight="25.0" prefWidth="100.0" text="Abbrechen" />
+      <Button fx:id="detailviewSaveBlower" layoutX="334.0" layoutY="366.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveBlower" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
+      <Button fx:id="detailviewCancelBlower" layoutX="163.0" layoutY="366.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelBlower" prefHeight="25.0" prefWidth="100.0" text="Abbrechen" />
    </children>
 </AnchorPane>

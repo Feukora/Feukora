@@ -5,27 +5,16 @@ import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import projekt.feukora.client.intern.ClientInternRMI;
 
 public class ControllerMain implements Initializable{
 
-	private Button rapportstartweiter;
-	private Button waermeerzeugerzurueck;
-	private Button waermeerzeugerweiter;
-	private Button messergebnissezurueck;
-	private Button messergebnisseweiter;
-	private Button beurteilungzurueck;
-	private Button beurteilungspeichern;
-	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		
 	}
+
 
 	@FXML
     void ActionRapportStartWeiter(ActionEvent event) {
@@ -52,4 +41,6 @@ public class ControllerMain implements Initializable{
 	
 	
 	
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 }

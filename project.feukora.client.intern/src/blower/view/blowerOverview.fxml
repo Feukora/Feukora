@@ -11,9 +11,9 @@
       <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="164.0" text="Übersicht Brenner" AnchorPane.leftAnchor="80.0" />
       <TableView fx:id="overviewTableBlower" layoutX="76.0" layoutY="123.0" onSort="#ActionOverviewTableBlower" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
         <columns>
-          <TableColumn fx:id="columnNameBlower" prefWidth="350.0" text="Name" />
-          <TableColumn fx:id="columnTypeBlower" minWidth="0.0" prefWidth="350.0" text="Typ" />
-            <TableColumn fx:id="columnYearOfManufacturBlower" prefWidth="200.0" text="Baujahr" />
+          <TableColumn fx:id="columnNameBlower" prefWidth="350.0" text="Name / Modell" />
+          <TableColumn fx:id="columnBlowerBlower" minWidth="0.0" prefWidth="350.0" text="Brenner" />
+            <TableColumn fx:id="columnFuelBlower" prefWidth="200.0" text="Brennstoff" />
         </columns>
       </TableView>
       <Button fx:id="overviewDeleteBlower" layoutX="950.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewDeleteBlower" prefHeight="20.0" prefWidth="90.0" text="Löschen" />

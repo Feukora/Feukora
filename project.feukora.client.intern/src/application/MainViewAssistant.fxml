@@ -41,7 +41,7 @@
                   <MenuItem fx:id="blowerNewMenuItem" mnemonicParsing="false" onAction="#ActionBlowerNewMenuItem" text="Neu" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Heizkörper">
+            <Menu mnemonicParsing="false" text="Wärmeerzeuger">
               
                <items>
                   <MenuItem fx:id="heaterMenuBar" mnemonicParsing="false" onAction="#ActionHeaterMenuBar" text="Übersicht" />
@@ -90,7 +90,7 @@
                   </VBox>
                   <VBox prefHeight="131.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="heaterWelcome" mnemonicParsing="false" onAction="#ActionHeaterWelcome" prefHeight="40.0" prefWidth="200.0" text="Heizkörper">
+                        <Button fx:id="heaterWelcome" mnemonicParsing="false" onAction="#ActionHeaterWelcome" prefHeight="40.0" prefWidth="200.0" text="Wärmeerzeuger">
                            <VBox.margin>
                               <Insets bottom="50.0" />
                            </VBox.margin>
