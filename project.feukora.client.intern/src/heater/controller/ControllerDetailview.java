@@ -43,7 +43,7 @@ public class ControllerDetailview {
 			if(heater == null) {
 				feukora.saveHeater(heater);
 			} else {
-				feukora.updateHeater(heater);
+				feukora.updateHeater(heatername);
 			}
 			
 //	    	feukora.deleteCustomer(customer);
@@ -68,7 +68,7 @@ public class ControllerDetailview {
     }
     
     public void NewOrUpdate(){
-    		heaterNameField.setText(Context.getHeater());
+    		heaterNameField.setText(Context.getHeaterName());
 	    	Context.setNull();
     	
     }
