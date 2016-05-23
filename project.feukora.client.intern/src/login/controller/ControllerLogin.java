@@ -54,7 +54,7 @@ public class ControllerLogin {
     		Boolean successfull = feukora.login(username, password);
     		
     		if(successfull == true){
-    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspectorAdministrator.fxml"));
     		}else{
     			pane = FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
     			usernameLoginTextfield.clear();
