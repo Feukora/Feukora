@@ -823,37 +823,37 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <CheckBox fx:id="beurteilungallesok" layoutX="21.0" layoutY="80.0" mnemonicParsing="false" text="Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig.">
+                        <CheckBox fx:id="checkboxnotransgression" layoutX="21.0" layoutY="80.0" mnemonicParsing="false" onAction="#SetNoTransgression" text="Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig.">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="beurteilungnichtok" layoutX="21.0" layoutY="111.0" mnemonicParsing="false" text="Die Anlage wird beanstandet wegen Überschreitung von:">
+                        <CheckBox fx:id="checkboxtransgression" layoutX="21.0" layoutY="111.0" mnemonicParsing="false" onAction="#SetTransgression" text="Die Anlage wird beanstandet wegen Überschreitung von:">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="beurteilungrusszahl" layoutX="53.0" layoutY="148.0" mnemonicParsing="false" text="Russzahl">
+                        <CheckBox fx:id="checkboxsmokenumbertransgression" layoutX="53.0" layoutY="148.0" mnemonicParsing="false" onAction="#SetSmokenumberTransgression" text="Russzahl">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="beurteilungoelanteile" layoutX="184.0" layoutY="148.0" mnemonicParsing="false" text="Ölanteilen">
+                        <CheckBox fx:id="checkbockoilparttransgression" layoutX="184.0" layoutY="148.0" mnemonicParsing="false" onAction="#SetOilpartTransgression" text="Ölanteilen">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="beurteilungco" layoutX="327.0" layoutY="148.0" mnemonicParsing="false" text="CO in mg/m³">
+                        <CheckBox fx:id="checkboxcarbonmonoxidetransgression" layoutX="327.0" layoutY="148.0" mnemonicParsing="false" onAction="#SetCarbonmonoxideTransgression" text="CO in mg/m³">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="beurteilungno2" layoutX="494.0" layoutY="148.0" mnemonicParsing="false" text="NO2 in mg/m³">
+                        <CheckBox fx:id="checkboxnitrogendioxidetransgression" layoutX="494.0" layoutY="148.0" mnemonicParsing="false" onAction="#SetNitrogendioxideTransgression" text="NO2 in mg/m³">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="beurteilungabgasverluste" layoutX="671.0" layoutY="148.0" mnemonicParsing="false" text="Abgasverluste">
+                        <CheckBox fx:id="checkboxexhaustlosstransgression" layoutX="671.0" layoutY="148.0" mnemonicParsing="false" onAction="#SetExhaustgaslossTransgression" text="Abgasverluste">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -863,12 +863,12 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <CheckBox fx:id="weiteresvorgeheninnert30tagen" layoutX="21.0" layoutY="273.0" mnemonicParsing="false" text="Die Anlage muss innert 30 Tagen einreguliert werden. Die erfolgte Einregulierung ist durch den">
+                        <CheckBox fx:id="checkboxadditionalstepsno" layoutX="21.0" layoutY="273.0" mnemonicParsing="false" onAction="#setAdditionalstepsNo" text="Die Anlage muss innert 30 Tagen einreguliert werden. Die erfolgte Einregulierung ist durch den">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="weiteresvorgehennichtmoeglich" layoutX="21.0" layoutY="318.0" mnemonicParsing="false" text="Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich.">
+                        <CheckBox fx:id="checkboxadditionalstepsyes" layoutX="21.0" layoutY="318.0" mnemonicParsing="false" onAction="#SetAdditionalstepsYes" text="Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich.">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -888,7 +888,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="personalcode" layoutX="21.0" layoutY="638.0" minHeight="30.0" minWidth="66.0" prefHeight="30.0" prefWidth="98.0" />
+                        <TextField fx:id="textfieldpersonalcode" layoutX="21.0" layoutY="638.0" minHeight="30.0" minWidth="66.0" onAction="#SetPersonalcode" prefHeight="30.0" prefWidth="98.0" />
                         <Text layoutX="161.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Bei Abnahmemessungen muss die Zulassungsnummer in diesem Feld eingetragen werden)" wrappingWidth="729.8007798194885">
                            <font>
                               <Font size="18.0" />
@@ -899,7 +899,7 @@
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <TextArea fx:id="bemerkungentextarea" layoutX="21.0" layoutY="439.0" prefHeight="131.0" prefWidth="865.0" />
+                        <TextArea fx:id="textareacomments" layoutX="21.0" layoutY="439.0" prefHeight="131.0" prefWidth="865.0" />
                         <Button fx:id="rapportsave" layoutX="820.0" layoutY="700.0" minHeight="20.0" minWidth="66.0" mnemonicParsing="false" onAction="#ActionRapportSave" prefHeight="20.0" prefWidth="66.0" text="Speichern">
                            <font>
                               <Font size="10.0" />
