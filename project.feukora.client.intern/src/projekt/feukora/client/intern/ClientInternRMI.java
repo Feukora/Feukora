@@ -45,7 +45,7 @@ import projekt.feukora.server.rmi.UsergroupRMI;
 /**
  * This Class implements the rmi connection 
  * 
- * @version 1.2
+ * @version 1.3
  * @author Sandro Fasser
  *
  */
@@ -99,7 +99,7 @@ public class ClientInternRMI {
 		// init rmi connection
 		/* Konfigurationsdaten einlesen */
 		Properties props = new Properties();
-		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("rmi.properties");
+		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("clientrmi.properties");
 		try {
 			props.load(is);
 		} catch (Exception e) {
