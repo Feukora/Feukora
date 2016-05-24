@@ -483,7 +483,14 @@ public class ClientInternRMI {
 		
 		ObservableList<User> userlist = FXCollections.observableArrayList();
 		userlist.addAll(userRMI.findAllUsers());
-		return userlist;
+		
+		ObservableList<User> assistentlist = FXCollections.observableArrayList();
+		for (User user : userlist) {
+			if (user.getUsergroupid().equals("Sachbearbeiter")) {
+				assistentlist.add(user);
+			}
+		}
+		return assistentlist;
 		
 	}
 	
