@@ -497,9 +497,11 @@ public class ClientInternRMI {
 
 		ObservableList<User> userlist = FXCollections.observableArrayList();
 		userlist.addAll(userRMI.findAllUsers());
+		
 		return userlist;
 
 	}
+<<<<<<< HEAD
 
 	//	public ObservableList<User> getInspectors() throws Exception {
 	//		
@@ -516,6 +518,44 @@ public class ClientInternRMI {
 	//	}
 
 
+=======
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<User> getAssistentUsers() throws Exception {
+		
+		ObservableList<User> userlist = FXCollections.observableArrayList();
+		userlist.addAll(userRMI.findAllUsers());
+		
+		ObservableList<User> assistentlist = FXCollections.observableArrayList();
+		for (User user : userlist) {
+			if (user.getUsergroupid().equals("Sachbearbeiter")) {
+				assistentlist.add(user);
+			}
+		}
+		return assistentlist;
+		
+	}
+	
+//	public ObservableList<User> getInspectors() throws Exception {
+//		
+//		ObservableList<User> userlist = FXCollections.observableArrayList();
+//		userlist.addAll(userRMI.findUsersByUsergroup("Feuerungskontrolleur"));
+//		return userlist;
+//	}
+//	
+//	public ObservableList<User> getAssistants() throws Exception {
+//		
+//		ObservableList<User> userlist = FXCollections.observableArrayList();
+//		userlist.addAll(userRMI.findUsersByUsergroup("Sachbearbeiter"));
+//		return userlist;
+//	}
+	
+	
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 	/**
 	 * 
 	 *

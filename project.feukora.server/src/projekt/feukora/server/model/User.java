@@ -164,6 +164,12 @@ public class User implements Serializable {
 	public void setUsergroupid(Usergroup usergroupid) {
 		this.usergroupid = usergroupid;
 	}
+
+	public Usergroup getUsergroupid() {
+		return usergroupid;
+	}
+	
+	
 	
 	
 }
