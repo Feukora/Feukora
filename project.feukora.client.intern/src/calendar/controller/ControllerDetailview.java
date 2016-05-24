@@ -139,39 +139,39 @@ public class ControllerDetailview {
     	detailviewCancelAppointment.getScene().setRoot(pane);
     }
     
-    @FXML
-    void ActionDetailviewSaveAppointment(ActionEvent event) {
-    	String lastname = customerNameField.getText();
-    	String adress = customerAddressField.getText();
-    	String phone = customerNumberField.getText();
-    	String plz = customerZipField.getText();
-    	String firstname = customerFirstNameField.getText();
-    	String email = customerEmailField.getText();
-    	Integer zip = Integer.parseInt(plz);
-    	
-    	String datum = appointmentDateField.getText();
-    	String user = appointmentInspectorField.getText();
-    	String creator = appointmentTypistField.getText();
-    	String emailuser = appointmentEmailField.getText();
-    	String phoneuser = appointmentPhoneField.getText();
-    	
-    	
-    	try {
-			ClientInternRMI feukora = new ClientInternRMI();
-			feukora.saveAppointment(lastname, adress, phone, zip, firstname, email);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}
-    	
-    	customerNameField.clear();
-    	customerAddressField.clear();
-    	customerNumberField.clear();
-    	customerZipField.clear();
-    	customerFirstNameField.clear();
-    	customerEmailField.clear();
-    }
+//    @FXML
+//    void ActionDetailviewSaveAppointment(ActionEvent event) {
+//    	String lastname = customerNameField.getText();
+//    	String adress = customerAddressField.getText();
+//    	String phone = customerNumberField.getText();
+//    	String plz = customerZipField.getText();
+//    	String firstname = customerFirstNameField.getText();
+//    	String email = customerEmailField.getText();
+//    	Integer zip = Integer.parseInt(plz);
+//    	
+//    	String datum = appointmentDateField.getText();
+//    	String user = appointmentInspectorField.getText();
+//    	String creator = appointmentTypistField.getText();
+//    	String emailuser = appointmentEmailField.getText();
+//    	String phoneuser = appointmentPhoneField.getText();
+//    	
+//    	
+//    	try {
+//			ClientInternRMI feukora = new ClientInternRMI();
+//			feukora.saveAppointment(lastname, adress, phone, zip, firstname, email);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			logger.error("Aktion konnte nicht durchgeführt werden\'",
+//					e);
+//		}
+//    	
+//    	customerNameField.clear();
+//    	customerAddressField.clear();
+//    	customerNumberField.clear();
+//    	customerZipField.clear();
+//    	customerFirstNameField.clear();
+//    	customerEmailField.clear();
+//    }
 
 }
 

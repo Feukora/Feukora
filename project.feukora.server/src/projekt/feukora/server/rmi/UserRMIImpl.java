@@ -82,6 +82,11 @@ public class UserRMIImpl extends UnicastRemoteObject implements UserRMI {
 		return userManager.findUserByUsername(username);
 	}
 
+//	@Override
+//	public List<User> findUserByUsergroup(String usergroup) throws RemoteException {
+//		return userManager.findUserByUsergroup(usergroup);
+//	}
+
 
 
 	

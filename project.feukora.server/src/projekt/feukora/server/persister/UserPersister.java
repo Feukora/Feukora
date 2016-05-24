@@ -93,4 +93,12 @@ public interface UserPersister {
 	 * @return user corresponding to the username
 	 */
 	public User findUserByUsername(String username);
+	
+//	/**
+//	 * Return a list of users with this usergroup
+//	 * 
+//	 * @param username
+//	 * @return user corresponding to the usergroup
+//	 */
+//	public List<User> findUserByUsergroup(String usergroup);
 }

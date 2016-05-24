@@ -103,4 +103,12 @@ public interface UserRMI extends Remote{
 	 * @return
 	 */
 	public User findUsersByUsername(String username) throws RemoteException ;
+	
+//	/**
+//	 * Return a list with users with this usergroup
+//	 * 
+//	 * @param usergroup
+//	 * @return
+//	 */
+//	public List<User> findUserByUsergroup(String usergroup) throws RemoteException ;
 }
