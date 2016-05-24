@@ -13,6 +13,8 @@ import org.eclipse.persistence.sessions.server.ClientSession;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import login.controller.ControllerLogin;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Blowertype;
@@ -202,11 +204,25 @@ public class ClientInternRMI {
 		try {
 			customerRMI.deleteCustomer(entity);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}

@@ -124,7 +124,14 @@ public class ControllerOverview {
 	    	Customer entity = overviewTableCustomer.getSelectionModel().getSelectedItem();
 	    	feukora.deleteCustomer(entity);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
