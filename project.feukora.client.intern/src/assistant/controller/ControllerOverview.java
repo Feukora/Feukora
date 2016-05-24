@@ -67,6 +67,10 @@ public class ControllerOverview {
 	@FXML // fx:id="columnAddressAssistant"
 	private TableColumn<User, String> columnAddressAssistant; // Value injected by
 														// FXMLLoader
+	
+	@FXML // fx:id="columnCompanyIdAssistant"
+	private TableColumn<User, String> columnCompanyIdAssistant; // Value injected by
+														// FXMLLoader
 
 	@FXML
 	public void initialize() {
@@ -78,9 +82,9 @@ public class ControllerOverview {
 					new PropertyValueFactory<User, String>("email")
 			);
 			
-//			columnCompanyIdAssistant.setCellValueFactory(
-//					new PropertyValueFactory<User, String>("company")
-//			);
+			columnCompanyIdAssistant.setCellValueFactory(
+					new PropertyValueFactory<User, String>("company")
+			);
 
 			columnUsernameAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("username")

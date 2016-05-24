@@ -12,9 +12,9 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <Label layoutX="44.0" layoutY="109.0" prefHeight="25.0" prefWidth="124.0" text="Name / Modell" />
-      <TextField fx:id="heaterNameField" layoutX="184.0" layoutY="109.0" onAction="#ActionHeaterNameField" prefHeight="25.0" prefWidth="198.0" />
-      <Button fx:id="detailviewSaveHeater" layoutX="302.0" layoutY="226.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveHeater" prefHeight="25.0" prefWidth="80.0" text="Speichern" />
-      <Button fx:id="detailviewCancelHeater" layoutX="184.0" layoutY="226.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelHeater" prefHeight="25.0" prefWidth="80.0" text="Abbrechen" />
+      <Label layoutX="42.0" layoutY="136.0" prefHeight="25.0" prefWidth="124.0" text="Name / Modell" />
+      <TextField fx:id="heaterNameField" layoutX="184.0" layoutY="136.0" onAction="#ActionHeaterNameField" prefHeight="25.0" prefWidth="198.0" />
+      <Button fx:id="detailviewSaveHeater" layoutX="302.0" layoutY="214.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveHeater" prefHeight="25.0" prefWidth="80.0" text="Speichern" />
+      <Button fx:id="detailviewCancelHeater" layoutX="184.0" layoutY="214.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelHeater" prefHeight="25.0" prefWidth="80.0" text="Abbrechen" />
    </children>
 </AnchorPane>
