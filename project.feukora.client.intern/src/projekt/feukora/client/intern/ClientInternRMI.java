@@ -1,11 +1,13 @@
 package projekt.feukora.client.intern;
 
+import java.io.InputStream;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.List;
-
+import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.omg.CORBA.INITIALIZE;
+import org.eclipse.persistence.sessions.server.ClientSession;
 
 //import org.apache.log4j.Logger;
 
@@ -48,10 +50,10 @@ import projekt.feukora.server.rmi.UsergroupRMI;
  *
  */
 public class ClientInternRMI {
-	
+
 	private static final Logger logger = Logger
 			.getLogger(ClientInternRMI.class);
-	
+
 	CustomerRMI customerRMI;
 	CompanyRMI companyRMI;
 	AppointmentRMI appointmentRMI;
@@ -68,13 +70,13 @@ public class ClientInternRMI {
 	FacilitymanagerRMI facilitymanagerRMI;
 	FuelRMI fuelRMI;
 	UsergroupRMI usergroupRMI;
-	
 
 
-	
+
+
 	public static void main(String[] args) {
 		System.out
-				.println("======================================================================");
+		.println("======================================================================");
 		try {
 			// Init Application over RMI
 			ClientInternRMI feukora = new ClientInternRMI();
@@ -83,7 +85,7 @@ public class ClientInternRMI {
 					e);
 		}
 	}
-	
+
 	/**
 	 * Instantiates a new modulverwaltung client rmi.
 	 *
@@ -95,7 +97,19 @@ public class ClientInternRMI {
 		// SecurityManager installieren
 		System.setSecurityManager(new SecurityManager());
 		// init rmi connection
-		String url = "rmi://localhost:9009/";
+		/* Konfigurationsdaten einlesen */
+		Properties props = new Properties();
+		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("rmi.properties");
+		try {
+			props.load(is);
+		} catch (Exception e) {
+			logger.error("Konfigurationsdaten konnten nicht eingelesen werden\'",
+					e);
+		}
+		int port = Integer.parseInt(props.getProperty("server_port"));
+		String hostIP = props.getProperty("server_ip");
+		String url = "rmi://" + hostIP + ":" + port + "/";
+		//String url = "rmi://localhost:9009/";
 		String customerRMIName = "customerRMI";
 		String companyRMIName = "companyRMI";
 		String appointmentRMIName = "appointmentRMI";
@@ -112,7 +126,7 @@ public class ClientInternRMI {
 		String facilitymanagerRMIName = "facilitymanagerRMI";
 		String fuelRMIName = "fuelRMI";
 		String usergroupRMIName = "usergroupRMI";
-		
+
 		this.customerRMI = (CustomerRMI) Naming.lookup(url + customerRMIName);
 		this.companyRMI = (CompanyRMI) Naming.lookup(url + companyRMIName);
 		this.appointmentRMI = (AppointmentRMI) Naming.lookup(url + appointmentRMIName);
@@ -129,9 +143,9 @@ public class ClientInternRMI {
 		this.facilitymanagerRMI = (FacilitymanagerRMI) Naming.lookup(url + facilitymanagerRMIName);
 		this.fuelRMI = (FuelRMI) Naming.lookup(url + fuelRMIName);
 		this.usergroupRMI = (UsergroupRMI) Naming.lookup(url + usergroupRMIName);
-		
+
 	}
-	
+
 	/**
 	 * 
 	 *
@@ -140,7 +154,7 @@ public class ClientInternRMI {
 	public boolean login(String username, String password) throws Exception {
 
 		User user = userRMI.findUsersByUsername(username);
-		
+
 		return user.login( password );
 	}
 
@@ -157,11 +171,11 @@ public class ClientInternRMI {
 			function = customerfunctionRMI.findCustomerfunctionByName("Verwaltung");
 		}
 		Town town1 = townRMI.findTownByZip(zip);
-		
+
 		Customer c1 = new Customer(companyname, firstname, lastname, adress, phone, email, function, town1);
 		customerRMI.saveCustomer(c1);	
 	}
-	
+
 	public void updateCustomer(Customer entity, String companyname, String lastname, String adress, String phone, Integer zip, String firstname, String email, Boolean isOwner) throws Exception {
 		Customerfunction function;
 		if(isOwner == true) {
@@ -178,11 +192,11 @@ public class ClientInternRMI {
 		entity.setPhone(phone);
 		entity.setFirstname(firstname);
 		entity.setEmail(email);
-		
+
 		customerRMI.updateCustomer(entity);
 	}
-	
-	
+
+
 	public void deleteCustomer(Customer entity) {
 		try {
 			customerRMI.deleteCustomer(entity);
@@ -196,7 +210,7 @@ public class ClientInternRMI {
 					e);
 		}
 	}
-	
+
 	/**
 	 * 
 	 *
@@ -214,7 +228,7 @@ public class ClientInternRMI {
 		} else {
 			fuel = null;
 		}
-		
+
 		if(blower == true) {
 			type = blowertypeRMI.findBlowertypeByName("Gebläse");
 		} else if(atmospheric == true) {
@@ -224,11 +238,11 @@ public class ClientInternRMI {
 		} else {
 			type = null;
 		}
-		
+
 		Blower b1 = new Blower(type, fuel, name);
 		blowerRMI.saveBlower(b1);
 	}
-	
+
 	public void saveBlower(Blower entity) throws Exception {
 		try {
 			blowerRMI.saveBlower(entity);
@@ -241,7 +255,7 @@ public class ClientInternRMI {
 		}
 	}
 
-	
+
 	public void updateBlower(Blower entity, String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean bblower, Boolean atmospheric, Boolean evaporator) throws Exception {
 		Blowertype type;
 		Fuel fuel;
@@ -256,7 +270,7 @@ public class ClientInternRMI {
 			fuel = null;
 		}
 		entity.setFuelid(fuel);
-		
+
 		if(bblower == true) {
 			type = blowertypeRMI.findBlowertypeByName("Gebläse");
 		} else if(atmospheric == true) {
@@ -267,11 +281,11 @@ public class ClientInternRMI {
 			type = null;
 		}
 		entity.setBlowertypeid(type);
-		
+
 		blowerRMI.updateBlower(entity);
 	}
-	
-	
+
+
 	public void deleteBlower(Blower entity) {
 		try {
 			blowerRMI.deleteBlower(entity);
@@ -285,22 +299,22 @@ public class ClientInternRMI {
 					e);
 		}
 	}
-	
-	
-	
+
+
+
 	/**
 	 * 
 	 *
 	 * @throws Exception
 	 */
 	public ObservableList<Customer> getCustomers() throws Exception {
-		
+
 		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
 		customerlist.addAll(customerRMI.findAllCustomers());
 		return customerlist;
-		
+
 	}
-	
+
 	public void saveUser(User entity){
 		try {
 			userRMI.saveUsers(entity);
@@ -312,17 +326,17 @@ public class ClientInternRMI {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void saveInspectorUser(Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
 		try{
 			Company company;
 			Town city;
 			Usergroup usergroup;
-			
+
 			usergroup = usergroupRMI.findUsergroupByName("Feuerungskontrolleur");
 			city = townRMI.findTownByZip(zip);
 			company = companyRMI.findCompanyByName(companyname).get(0);		
-			
+
 			User u1 = new User(usergroup, lastname, firstname, adress, city, company, username, password, phone, email);
 			userRMI.saveUsers(u1);
 		} catch (RemoteException e) {
@@ -333,17 +347,17 @@ public class ClientInternRMI {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void saveAssistantUser(Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
 		try{
 			Company company;
 			Town city;
 			Usergroup usergroup;
-			
+
 			usergroup = usergroupRMI.findUsergroupByName("Feuerungskontrolleur");
 			city = townRMI.findTownByZip(zip);
 			company = companyRMI.findCompanyByName(companyname).get(0);		
-			
+
 			User u1 = new User(usergroup, lastname, firstname, adress, city, company, username, password, phone, email);
 			userRMI.saveUsers(u1);
 		} catch (RemoteException e) {
@@ -354,7 +368,7 @@ public class ClientInternRMI {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void deleteUser(User entity) {
 		try {
 			userRMI.deleteUsers(entity);
@@ -368,17 +382,17 @@ public class ClientInternRMI {
 					e);
 		}
 	}
-	
+
 	public void updateInspectorUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
-		
+
 		Company company;
 		Town city;
 		Usergroup usergroup;
-		
+
 		usergroup = usergroupRMI.findUsergroupByName("Feuerungskontrolleur");
 		city = townRMI.findTownByZip(zip);
 		company = companyRMI.findCompanyByName(companyname).get(0);
-		
+
 		entity.setUsergroupid(usergroup);
 		entity.setZip(city);
 		entity.setFirstname(firstname);
@@ -389,19 +403,19 @@ public class ClientInternRMI {
 		entity.setPassword(password);
 		entity.setCompanyid(company);	
 		userRMI.updateUsers(entity);
-			
+
 	}
-	
+
 	public void updateAssistantUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
-		
+
 		Company company;
 		Town city;
 		Usergroup usergroup;
-		
+
 		usergroup = usergroupRMI.findUsergroupByName("Sachbearbeiter");
 		city = townRMI.findTownByZip(zip);
 		company = companyRMI.findCompanyByName(companyname).get(0);
-		
+
 		entity.setUsergroupid(usergroup);
 		entity.setZip(city);
 		entity.setFirstname(firstname);
@@ -412,9 +426,9 @@ public class ClientInternRMI {
 		entity.setPassword(password);
 		entity.setCompanyid(company);	
 		userRMI.updateUsers(entity);
-			
+
 	}
-	
+
 	/**
 	 * 
 	 *
@@ -456,63 +470,63 @@ public class ClientInternRMI {
 			//			logger.error("Aktion konnte nicht durchgeführt werden\'",
 			//					e);
 		}
-		
-		
+
+
 	}
 
-	
+
 	/**
 	 * 
 	 *
 	 * @throws Exception
 	 */
 	public ObservableList<Blower> getBlowers() throws Exception {
-		
+
 		ObservableList<Blower> blowerlist = FXCollections.observableArrayList();
 		blowerlist.addAll(blowerRMI.findAllBlowers());
 		return blowerlist;
-		
+
 	}
-	
+
 	/**
 	 * 
 	 *
 	 * @throws Exception
 	 */
 	public ObservableList<User> getUsers() throws Exception {
-		
+
 		ObservableList<User> userlist = FXCollections.observableArrayList();
 		userlist.addAll(userRMI.findAllUsers());
 		return userlist;
-		
+
 	}
-	
-//	public ObservableList<User> getInspectors() throws Exception {
-//		
-//		ObservableList<User> userlist = FXCollections.observableArrayList();
-//		userlist.addAll(userRMI.findUsersByUsergroup("Feuerungskontrolleur"));
-//		return userlist;
-//	}
-//	
-//	public ObservableList<User> getAssistants() throws Exception {
-//		
-//		ObservableList<User> userlist = FXCollections.observableArrayList();
-//		userlist.addAll(userRMI.findUsersByUsergroup("Sachbearbeiter"));
-//		return userlist;
-//	}
-	
-	
+
+	//	public ObservableList<User> getInspectors() throws Exception {
+	//		
+	//		ObservableList<User> userlist = FXCollections.observableArrayList();
+	//		userlist.addAll(userRMI.findUsersByUsergroup("Feuerungskontrolleur"));
+	//		return userlist;
+	//	}
+	//	
+	//	public ObservableList<User> getAssistants() throws Exception {
+	//		
+	//		ObservableList<User> userlist = FXCollections.observableArrayList();
+	//		userlist.addAll(userRMI.findUsersByUsergroup("Sachbearbeiter"));
+	//		return userlist;
+	//	}
+
+
 	/**
 	 * 
 	 *
 	 * @throws Exception
 	 */
 	public ObservableList<Company> getCompanies() throws Exception {
-		
+
 		ObservableList<Company> companylist = FXCollections.observableArrayList();
 		companylist.addAll(companyRMI.findAllCompanies());
 		return companylist;
-		
+
 	}
 	/**
 	 * 
@@ -521,19 +535,19 @@ public class ClientInternRMI {
 	 */
 	// Do muass no d uslesig vu allna Calendardata wo 
 	public ObservableList<Customer> getCalendarData(String username) throws Exception {
-		
+
 		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
 		customerlist.addAll(customerRMI.findAllCustomers());
 		return customerlist;
-		
+
 	}
-	
+
 
 	public String getTown(Integer zip) throws RemoteException {
 		Town town1 = townRMI.findTownByZip(zip);
 		return town1.getName();
-		
+
 	}	
-	
+
 
 }

@@ -5,5 +5,6 @@
 	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="lib/projekt.feukora.server.model.jar"/>
 	<classpathentry kind="lib" path="lib/projekt.feukora.server.rmi.jar"/>
+	<classpathentry kind="lib" path="lib/eclipselink.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
