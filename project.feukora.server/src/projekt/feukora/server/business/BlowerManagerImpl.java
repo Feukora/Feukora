@@ -17,11 +17,11 @@ public class BlowerManagerImpl implements BlowerManager {
 
 	@Override
 	public void saveBlower(Blower entity) throws Exception {
-		if((Integer) entity.getBlowerid() == 0){
+//		if((Integer) entity.getBlowerid() == 0){
 			blowerPersister.saveBlower(entity);
-		}else{
-			throw new Exception("Der Brenner (id = "+ entity.getBlowerid() + ") ist bereits vorhanden");
-		}
+//		}else{
+//			throw new Exception("Der Brenner (id = "+ entity.getBlowerid() + ") ist bereits vorhanden");
+//		}
 	}
 
 	@Override

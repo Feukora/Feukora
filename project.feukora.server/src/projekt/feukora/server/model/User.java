@@ -80,6 +80,14 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
+	public void setZip(Town zip) {
+		this.zip = zip;
+	}
+
+	public void setCompanyid(Company companyid) {
+		this.companyid = companyid;
+	}
+
 	public int getUserid() {
 		return userid;
 	}

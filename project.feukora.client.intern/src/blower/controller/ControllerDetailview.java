@@ -139,7 +139,7 @@ public class ControllerDetailview {
  		try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if (blower1 == null) {
-				feukora.saveBlower(blower1);
+				feukora.saveBlower(blowerName, oil, gas, liquidGas, bblower, atmospheric, evaporator);
 			} else {
 				feukora.updateBlower(blower, blowerName, oil, gas, liquidGas, bblower, atmospheric, evaporator);
 			}

@@ -170,7 +170,7 @@ public class ControllerDetailview {
 //				inspector.setEmail(email);
 //				inspector.setUsername(username);
 //				inspector.setPassword(password);
-				feukora.saveUser(inspector1, zip, companyname, firstname, lastname, adress, phone, email, username, password);
+				feukora.saveUser(/*inspector1, */zip, companyname, firstname, lastname, adress, phone, email, username, password);
 			} else {
 				feukora.updateUser(inspector1, zip, companyname, firstname, lastname, adress, phone, email, username, password);
 			}

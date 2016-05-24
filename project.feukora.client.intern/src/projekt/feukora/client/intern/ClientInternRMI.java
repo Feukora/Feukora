@@ -232,10 +232,10 @@ public class ClientInternRMI {
 	}
 
 	
-	public void updateBlower(Blower blower1, String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean blower, Boolean atmospheric, Boolean evaporator) throws Exception {
+	public void updateBlower(Blower entity, String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean bblower, Boolean atmospheric, Boolean evaporator) throws Exception {
 		Blowertype type;
 		Fuel fuel;
-		blower1.setName(name);
+		entity.setName(name);
 		if(oil == true) {
 			fuel = fuelRMI.findFuelByName("Öl");
 		} else if (gas == true) {
@@ -245,9 +245,9 @@ public class ClientInternRMI {
 		} else {
 			fuel = null;
 		}
-		blower1.setFuelid(fuel);
+		entity.setFuelid(fuel);
 		
-		if(blower == true) {
+		if(bblower == true) {
 			type = blowertypeRMI.findBlowertypeByName("Gebläse");
 		} else if(atmospheric == true) {
 			type = blowertypeRMI.findBlowertypeByName("Athmosphärisch");
@@ -256,9 +256,9 @@ public class ClientInternRMI {
 		} else {
 			type = null;
 		}
-		blower1.setBlowertypeid(type);
+		entity.setBlowertypeid(type);
 		
-		blowerRMI.updateBlower(blower1);
+		blowerRMI.updateBlower(entity);
 	}
 	
 	
@@ -303,7 +303,7 @@ public class ClientInternRMI {
 		}
 	}
 	
-	public void saveUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
+	public void saveUser(/*User entity, */Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
 		try{
 			Company company;
 			Town city;
@@ -349,8 +349,8 @@ public class ClientInternRMI {
 			city = townRMI.findTownByZip(zip);
 			company = companyRMI.findCompanyByName(companyname).get(0);
 			
-//			entity.setCompanyname(company);
-//			entity.setTown(city);
+			entity.setCompanyid(company);
+			entity.setZip(city);
 			
 			userRMI.updateUsers(entity);
 			
