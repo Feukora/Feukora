@@ -75,7 +75,7 @@ public class ControllerOverview {
 	public void initialize() {
 		 try {
 				ClientInternRMI feukora = new ClientInternRMI();
-				ObservableList<User> users = feukora.getUsers();
+				ObservableList<User> users = feukora.getInspectors();
 				
 				columnCompanyIdInspector.setCellValueFactory(
 						new PropertyValueFactory<User, String>("company")

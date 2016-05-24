@@ -117,8 +117,20 @@ public class ControllerDetailview {
 
     @FXML
     void ActionAssistantZipField(ActionEvent event) {
+		String plz = assistantZipField.getText();
+		Integer zip = Integer.parseInt(plz);
 
-    }
+		try {
+			ClientInternRMI feukora = new ClientInternRMI();
+			String town = feukora.getTown(zip);
+			assistantMunicipalityField.setText(town);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+	}
 
     @FXML
     void ActionAssistantMunicipalityField(ActionEvent event) {
