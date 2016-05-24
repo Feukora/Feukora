@@ -31,6 +31,7 @@ public class ControllerMain {
 	private Customerheater customerheater;
 	private Customer customer;
 	private Facilitymanager facilitymanager;
+
 	//Togglegroup for tab: Start
 	final ToggleGroup start = new ToggleGroup();
 
@@ -126,7 +127,7 @@ public class ControllerMain {
 		rapport = Context.getRapport();
 		customer = Context.getCustomer();
 		facilitymanager = Context.getFacilitymanager();
-		
+
 		//1. Tab
 		//Beide Methoden müssen in die Model Klasse noch hinzugefügt werden
 		textfieldCanton.setText(rapport.getCanton());
@@ -135,8 +136,38 @@ public class ControllerMain {
 		textfieldfacilitymanager.setText(facilitymanager.getLastname() + " " + facilitymanager.getFirstname());
 
 		// 2. Tab
-		
 
+		// 3. Tab
+
+		// 4. Tab
+		if(rapport.getResults() == true){
+			radiotransgression.setSelected(true);
+		}else{
+			radionotransgression.setSelected(true);
+			if(rapport.getTransgression_smokenumber() == true){
+				checkboxsmokenumbertransgression.setSelected(true);
+			}
+			if(rapport.getTransgression_oilpart() == true){
+				checkbockoilparttransgression.setSelected(true);
+			}
+			if(rapport.getCarbonmonoxide() == true){
+				checkboxcarbonmonoxidetransgression.setSelected(true);
+			}
+			if(rapport.getNitrogendioxide() == true){
+				checkboxnitrogendioxidetransgression.setSelected(true);
+			}
+			if(rapport.getExhaustgaslost() == true){
+				checkboxexhaustlosstransgression.setSelected(true);
+			}
+		}
+		if(rapport.getAdditionalsteps() == true){
+			radioadditionalstepsyes.setSelected(true);
+		}else{
+			radioadditionalstepsno.setSelected(true);
+		}
+		textareacomments.setText(rapport.getComments());
+		
+		
 	}
 
 	@FXML
@@ -334,6 +365,26 @@ public class ControllerMain {
 
 	@FXML
 	void ActionRapportSave(ActionEvent event) {
+		Rapport rapport = Context.getRapport;
+		String canton = textfieldCanton.getText();
+		String adress = textfieldaddress.getText();
+		//man muss noch den customer in firstname und lastname teilen
+		String customer = comboboxOwnerAdministration.getValue();
+		String facilitymanager = textfieldfacilitymanager.getText();
+		
+		// Tab 2
+		String manufactureyear = textfieldheateryear.getText();
+		String heatertype = comboboxheatertype.getSelectionModel().getSelectedItem().toString();
+		if(radioroutinecontrol.isSelected() == true){
+			String controltype = "Routinekontrolle"; 
+		}else{
+			String controltype = "Abnahmekontrolle";
+		}
+		
+		String manufactureyear1 = textfieldbloweryear.getText();
+		String blowertype = comboboxblowertype.getSelectionModel().getSelectedItem().toString();
+		String heatinput = textfieldheatinput.getText();
+		
 
 	}
 
