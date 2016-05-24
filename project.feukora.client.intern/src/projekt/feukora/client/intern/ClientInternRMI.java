@@ -313,7 +313,28 @@ public class ClientInternRMI {
 		}
 	}
 	
-	public void saveUser(Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
+	public void saveInspectorUser(Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
+		try{
+			Company company;
+			Town city;
+			Usergroup usergroup;
+			
+			usergroup = usergroupRMI.findUsergroupByName("Feuerungskontrolleur");
+			city = townRMI.findTownByZip(zip);
+			company = companyRMI.findCompanyByName(companyname).get(0);		
+			
+			User u1 = new User(usergroup, lastname, firstname, adress, city, company, username, password, phone, email);
+			userRMI.saveUsers(u1);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void saveAssistantUser(Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
 		try{
 			Company company;
 			Town city;
@@ -348,13 +369,36 @@ public class ClientInternRMI {
 		}
 	}
 	
-	public void updateUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
+	public void updateInspectorUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
 		
 		Company company;
 		Town city;
 		Usergroup usergroup;
 		
 		usergroup = usergroupRMI.findUsergroupByName("Feuerungskontrolleur");
+		city = townRMI.findTownByZip(zip);
+		company = companyRMI.findCompanyByName(companyname).get(0);
+		
+		entity.setUsergroupid(usergroup);
+		entity.setZip(city);
+		entity.setFirstname(firstname);
+		entity.setLastname(lastname);
+		entity.setAdress(adress);
+		entity.setPhone(phone);
+		entity.setUsername(username);
+		entity.setPassword(password);
+		entity.setCompanyid(company);	
+		userRMI.updateUsers(entity);
+			
+	}
+	
+	public void updateAssistantUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
+		
+		Company company;
+		Town city;
+		Usergroup usergroup;
+		
+		usergroup = usergroupRMI.findUsergroupByName("Sachbearbeiter");
 		city = townRMI.findTownByZip(zip);
 		company = companyRMI.findCompanyByName(companyname).get(0);
 		

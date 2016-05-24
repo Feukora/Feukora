@@ -2,6 +2,7 @@ package assistant.controller;
 
 import org.apache.log4j.Logger;
 
+import application.Context;
 import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,9 +14,11 @@ import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
@@ -74,6 +77,10 @@ public class ControllerOverview {
 			columnEmailAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("email")
 			);
+			
+//			columnCompanyIdAssistant.setCellValueFactory(
+//					new PropertyValueFactory<User, String>("company")
+//			);
 
 			columnUsernameAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("username")
@@ -92,7 +99,7 @@ public class ControllerOverview {
 			);
 
 			columnNameAssistant.setCellValueFactory(
-					new PropertyValueFactory<User, String>("name")
+					new PropertyValueFactory<User, String>("lastname")
 			);
 
 			columnAddressAssistant.setCellValueFactory(
@@ -117,12 +124,14 @@ public class ControllerOverview {
 		ClientInternRMI feukora;
 		try {
 			feukora = new ClientInternRMI();
-			User entity = overviewTableAssistant.getSelectionModel().getSelectedItem();
-			feukora.deleteUser(entity);
+	    	User entity = overviewTableAssistant.getSelectionModel().getSelectedItem();
+	    	feukora.deleteUser(entity);
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
+		initialize();
 
 	}
 
@@ -134,19 +143,28 @@ public class ControllerOverview {
 
 	@FXML
 	void ActionOverviewUpdateAssistant(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
-
 		try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("assistant/view/assistantDetailview.fxml"));
-
-			// mainRoot.setCenter(pane);
-
+    		ClientInternRMI feukora = new ClientInternRMI();
+			User assistant = overviewTableAssistant.getSelectionModel().getSelectedItem();
+			if(assistant != null){
+				AnchorPane pane = new AnchorPane();
+				Context.setUser(assistant);
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("assistant/view/assistantDetailview.fxml"));
+				overviewUpdateAssistant.getScene().setRoot(pane);
+			}else{
+				String titleBar = "Nichts ausgewählt";
+				String headerMessage = "Wählen Sie einen Benutzer aus";
+				String infoMessage = "";
+				Alert alert = new Alert(AlertType.INFORMATION);
+		        alert.setTitle(titleBar);
+		        alert.setHeaderText(headerMessage);
+		        alert.setContentText(infoMessage);
+		        alert.showAndWait();
+			}
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}
-
-		overviewUpdateAssistant.getScene().setRoot(pane);
-	}
+					e);	
+		}	
+	}	
 
 }

@@ -179,9 +179,9 @@ public class ControllerDetailview {
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(inspector == null) {
-				feukora.saveUser(zip, company, firstname, lastname, adress, phone, email, username, password);
+				feukora.saveInspectorUser(zip, company, firstname, lastname, adress, phone, email, username, password);
 			} else {
-				feukora.updateUser(inspector, zip, company, firstname, lastname, adress, phone, email, username, password);
+				feukora.updateInspectorUser(inspector, zip, company, firstname, lastname, adress, phone, email, username, password);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
