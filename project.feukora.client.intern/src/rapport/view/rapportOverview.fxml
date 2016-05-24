@@ -12,7 +12,7 @@
          <font>
             <Font size="22.0" />
          </font></Label>
-      <TableView layoutX="66.0" layoutY="124.0" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="54.0">
+      <TableView fx:id="overviewTableRapport" layoutX="66.0" layoutY="124.0" onSort="#ActionOverviewTableRapport" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="54.0">
         <columns>
           <TableColumn fx:id="overviewTableCustomer" prefWidth="179.0" text="Kunde" />
           <TableColumn fx:id="overviewTableDate" minWidth="0.0" prefWidth="153.0" text="Datum" />

@@ -3,6 +3,7 @@ package application;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Heater;
+import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.User;
 
 public class Context {
@@ -12,6 +13,7 @@ public class Context {
 	private static Blower blower;
 	private static Heater heater;
 	private static User user;
+	private static Rapport rapport;
 	
 	public static Integer customerid;
 	public static String companyname;
@@ -33,6 +35,7 @@ public class Context {
 	public static String username;
 	public static String password;
 	
+	public static Integer rapportid;
 	public Context() {
 		
 	}
@@ -156,5 +159,12 @@ public class Context {
 	
 	public static User getUser() {
 		return user;
+	}
+	
+	public static void setRapportid(Rapport rapport) {
+		rapportid = rapport.getRapportid();
+	}
+	public static Integer getRapportid() {
+		return rapportid;
 	}
 }

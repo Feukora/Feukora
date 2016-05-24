@@ -21,6 +21,7 @@ import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Heater;
+import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
 import projekt.feukora.server.model.User;
@@ -312,6 +313,25 @@ public class ClientInternRMI {
 		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
 		customerlist.addAll(customerRMI.findAllCustomers());
 		return customerlist;
+
+	}
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<Rapport> getRapports() throws Exception {
+
+		ObservableList<Rapport> rapportlist1 = FXCollections.observableArrayList();
+		rapportlist1.addAll(rapportRMI.findAllRapports());
+		
+		ObservableList<Rapport> rapportlist = FXCollections.observableArrayList();
+		for (Rapport rapport : rapportlist1) {
+			rapport.getMeasuringdate().toString(); 
+		}
+		//Rückgabe von Measuringdate als String muss noch gemacht werden
+		return rapportlist1;
 
 	}
 
