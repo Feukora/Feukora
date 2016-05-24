@@ -10,7 +10,6 @@ import projekt.feukora.server.model.Measuringresult;
  * @version 1.1
  *
  */
-
 public interface MeasuringresultManager {
 	
 	/**
@@ -60,6 +59,4 @@ public interface MeasuringresultManager {
 	 * @return
 	 */
 	List<Measuringresult> findAllMeasuringresults();
-
-
 }

@@ -2,7 +2,6 @@ package projekt.feukora.server.business;
 
 import java.util.GregorianCalendar;
 import java.util.List;
-
 import projekt.feukora.server.model.Rapport;
 
 /**

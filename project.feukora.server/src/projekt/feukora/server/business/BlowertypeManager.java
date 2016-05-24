@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Blowertype;
 
 /**
@@ -11,7 +10,6 @@ import projekt.feukora.server.model.Blowertype;
  * @version 1.0
  *
  */
-
 public interface BlowertypeManager {
 
 	/**
@@ -69,5 +67,4 @@ public interface BlowertypeManager {
 	 * @return List with Blowertypes
 	 */
 	public Blowertype findBlowertypeByName(String name);
-	
 }

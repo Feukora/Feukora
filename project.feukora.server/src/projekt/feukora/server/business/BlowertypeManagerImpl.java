@@ -11,7 +11,6 @@ import projekt.feukora.server.persister.BlowertypePersisterImpl;
  * @author Patrick
  * @version 1.0
  */
-
 public class BlowertypeManagerImpl implements BlowertypeManager {
 
 	private BlowertypePersister blowertypePersister = new BlowertypePersisterImpl();
@@ -23,7 +22,6 @@ public class BlowertypeManagerImpl implements BlowertypeManager {
 		}else{
 			throw new Exception("Der Brennertyp (id = "+ entity.getBlowertypeid() + ") ist bereits vorhanden");
 		}
-		
 	}
 
 	@Override
@@ -34,13 +32,11 @@ public class BlowertypeManagerImpl implements BlowertypeManager {
 	@Override
 	public void deleteBlowertype(Blowertype entity) throws Exception {
 		blowertypePersister.deleteBlowertype(entity);
-		
 	}
 
 	@Override
 	public void deleteBlowertypeByBlowertypeid(Integer blowertypeid) throws Exception {
 		blowertypePersister.deleteBlowertypeByBlowertypeid(blowertypeid);
-		
 	}
 
 	@Override
@@ -57,5 +53,4 @@ public class BlowertypeManagerImpl implements BlowertypeManager {
 	public Blowertype findBlowertypeByName(String name) {
 		return blowertypePersister.findBlowertypeByName(name);
 	}
-
 }

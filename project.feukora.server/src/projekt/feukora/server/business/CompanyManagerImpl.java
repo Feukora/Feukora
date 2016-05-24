@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Company;
 import projekt.feukora.server.persister.CompanyPersister;
 import projekt.feukora.server.persister.CompanyPersisterImpl;
@@ -29,7 +28,6 @@ public class CompanyManagerImpl implements CompanyManager {
 			return companyPersister.updateCompany(entity);	
 	}
 	
-	
 	@Override
 	public void deleteCompany(Company entity) throws Exception {
 		companyPersister.deleteCompany(entity);
@@ -54,6 +52,4 @@ public class CompanyManagerImpl implements CompanyManager {
 	public List<Company> findCompanyByName(String name) {
 		return companyPersister.findCompanyByName(name);
 	}
-
-
 }

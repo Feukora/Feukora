@@ -11,7 +11,6 @@ import projekt.feukora.server.persister.HeaterPersisterImpl;
  * @author Patrick
  * @version 1.1
  */
-
 public class HeaterManagerImpl implements HeaterManager {
 	
 	private HeaterPersister heaterPersister = new HeaterPersisterImpl();
@@ -23,25 +22,21 @@ public class HeaterManagerImpl implements HeaterManager {
 //		}else{
 //			throw new Exception("Der Heater (id = "+ entity.getHeaterid() + ") ist bereits vorhanden");
 //		}
-		
 	}
 
 	@Override
 	public Heater updateHeater(Heater entity) throws Exception {
 		return heaterPersister.updateHeater(entity);
-		
 	}
 
 	@Override
 	public void deleteHeater(Heater entity) throws Exception {
 		heaterPersister.deleteHeater(entity);
-		
 	}
 
 	@Override
 	public void deleteHeaterByHeaterid(Integer heaterid) throws Exception {
 		heaterPersister.deleteHeaterByHeaterid(heaterid);
-		
 	}
 
 	@Override
@@ -58,5 +53,4 @@ public class HeaterManagerImpl implements HeaterManager {
 	public List<Heater> findHeaterByName(String name) {
 		return heaterPersister.findHeaterByName(name);
 	}
-
 }

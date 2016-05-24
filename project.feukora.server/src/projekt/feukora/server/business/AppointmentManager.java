@@ -4,7 +4,6 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import projekt.feukora.server.model.Appointment;
 
-
 /**
  * Interface to handle appointment entities
  * 
@@ -69,5 +68,4 @@ public interface AppointmentManager {
 	 * @return
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
-
 }

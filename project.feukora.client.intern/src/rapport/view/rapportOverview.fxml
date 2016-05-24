@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rapport.controller.ControllerOverview">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rapport.controller.ControllerOverview">
    <children>
       <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="300.0" text="Übersicht Rapporte" AnchorPane.leftAnchor="80.0">
          <font>
             <Font size="22.0" />
          </font></Label>
-      <TableView layoutX="66.0" layoutY="124.0" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="54.0">
+      <TableView fx:id="overviewTableRapport" layoutX="66.0" layoutY="124.0" onSort="#ActionOverviewTableRapport" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="54.0">
         <columns>
           <TableColumn fx:id="overviewTableCustomer" prefWidth="179.0" text="Kunde" />
           <TableColumn fx:id="overviewTableDate" minWidth="0.0" prefWidth="153.0" text="Datum" />

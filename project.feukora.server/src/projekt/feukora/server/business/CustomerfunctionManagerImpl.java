@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.persister.CustomerfunctionPersister;
 import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
@@ -13,7 +12,6 @@ import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
  * @version 1.0
  * 
  */
-
 public class CustomerfunctionManagerImpl implements CustomerfunctionManager {
 
 	private CustomerfunctionPersister customerfunctionPersister = new CustomerfunctionPersisterImpl();
@@ -25,7 +23,6 @@ public class CustomerfunctionManagerImpl implements CustomerfunctionManager {
 		}else{
 			throw new Exception("Die Kundenfunktion (id = "+ entity.getCustomerfunctionid() + ") ist bereits vorhanden");
 		}
-		
 	}
 
 	@Override
@@ -36,13 +33,11 @@ public class CustomerfunctionManagerImpl implements CustomerfunctionManager {
 	@Override
 	public void deleteCustomerfunction(Customerfunction entity) throws Exception {
 		customerfunctionPersister.deleteCustomerfunction(entity);
-		
 	}
 
 	@Override
 	public void deleteCustomerfunctionByCustomerfunctionid(Integer customerfunctionid) throws Exception {
 		customerfunctionPersister.deleteCustomerfunctionByCustomerfunctionid(customerfunctionid);
-		
 	}
 
 	@Override
@@ -59,5 +54,4 @@ public class CustomerfunctionManagerImpl implements CustomerfunctionManager {
 	public Customerfunction findCustomerfunctionByName(String name) {
 		return customerfunctionPersister.findCustomerfunctionByName(name);
 	}
-
 }

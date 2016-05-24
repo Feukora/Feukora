@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Facilitymanager;
 
 /**
@@ -11,8 +10,8 @@ import projekt.feukora.server.model.Facilitymanager;
  * @version 1.0
  *
  */
-
 public interface FacilitymanagerManager {
+	
 	/**
 	 * Save the given entity
 	 * 

@@ -4,10 +4,8 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
@@ -20,7 +18,6 @@ import projekt.feukora.server.persister.JpaUtil;
  * @author Pascal
  * @version 1.0
  */
-
 public class TownManagerImpl implements TownManager {
 	
 	private TownPersister townPersister = new TownPersisterImpl();
@@ -38,7 +35,6 @@ public class TownManagerImpl implements TownManager {
 	public Town updateTown(Town entity) throws Exception {
 			return townPersister.updateTown(entity);	
 	}
-	
 	
 	@Override
 	public void deleteTown(Town entity) throws Exception {

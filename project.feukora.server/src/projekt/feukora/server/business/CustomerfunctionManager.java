@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Customerfunction;
 
 /**
@@ -11,7 +10,6 @@ import projekt.feukora.server.model.Customerfunction;
  * @version 1.0
  *
  */
-
 public interface CustomerfunctionManager {
 	
 	/**
@@ -69,5 +67,4 @@ public interface CustomerfunctionManager {
 	 * @return Customerfunction
 	 */
 	Customerfunction findCustomerfunctionByName(String name);
-
 }

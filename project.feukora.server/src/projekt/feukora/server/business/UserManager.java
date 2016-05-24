@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.User;
 
 /**
@@ -93,13 +92,4 @@ public interface UserManager {
 	 * @return
 	 */
 	public User findUserByUsername(String username);
-	
-//	/**
-//	 * Return a list with users with this usergroup
-//	 * 
-//	 * @param ort
-//	 * @return
-//	 */
-//	public List<User> findUserByUsergroup(String usergroup);
-	
 }

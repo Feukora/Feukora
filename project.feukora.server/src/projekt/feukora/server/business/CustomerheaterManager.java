@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Customerheater;
 
 /**
@@ -11,7 +10,6 @@ import projekt.feukora.server.model.Customerheater;
  * @version 1.0
  *
  */
-
 public interface CustomerheaterManager {
 
 	/**
@@ -70,5 +68,4 @@ public interface CustomerheaterManager {
 	 * @return List with Customerheaters
 	 */
 	public List<Customerheater> findCustomerheaterByPerformance(Integer performance);
-	
 }

@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Blower;
 
 /**
@@ -68,5 +67,4 @@ public interface BlowerManager {
 	 * @return
 	 */
 	public List<Blower> findBlowerByName(String name);
-
 }

@@ -16,7 +16,6 @@ import projekt.feukora.server.persister.JpaUtil;
  * @version 1.1
  * 
  */
-
 public class CustomerheaterManagerImpl implements CustomerheaterManager {
 
 	private CustomerheaterPersister customerheaterPersister = new CustomerheaterPersisterImpl();
@@ -28,7 +27,6 @@ public class CustomerheaterManagerImpl implements CustomerheaterManager {
 		}else{
 			throw new Exception("Die Kundenheizung (id = "+ entity.getCustomerheaterid() + ") ist bereits vorhanden");
 		}
-		
 	}
 
 	@Override
@@ -39,13 +37,11 @@ public class CustomerheaterManagerImpl implements CustomerheaterManager {
 	@Override
 	public void deleteCustomerheater(Customerheater entity) throws Exception {
 		customerheaterPersister.deleteCustomerheater(entity);
-		
 	}
 
 	@Override
 	public void deleteCustomerheaterByCustomerheaterid(Integer customerheaterid) throws Exception {
 		customerheaterPersister.deleteCustomerheaterByCustomerheaterid(customerheaterid);
-		
 	}
 
 	@Override
@@ -62,5 +58,4 @@ public class CustomerheaterManagerImpl implements CustomerheaterManager {
 	public List<Customerheater> findCustomerheaterByPerformance(Integer performance) {
 		return customerheaterPersister.findCustomerheaterByPerformance(performance);
 	}
-
 }
