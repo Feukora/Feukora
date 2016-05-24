@@ -42,12 +42,6 @@ public class ControllerOverview {
     @FXML // fx:id="overviewTableHeater"
     private TableView<Heater> overviewTableHeater; // Value injected by FXMLLoader
 
-    @FXML // fx:id="columnTypeHeater"
-    private TableColumn<Heater, String> columnTypeHeater; // Value injected by FXMLLoader
-
-    @FXML // fx:id="columnYearOfManifactureHeater"
-    private TableColumn<Heater, String> columnYearOfManifactureHeater; // Value injected by FXMLLoader
-
     @FXML // fx:id="columnNameHeater"
     private TableColumn<Heater, String> columnNameHeater; // Value injected by FXMLLoader
     

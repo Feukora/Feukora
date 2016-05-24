@@ -11,13 +11,14 @@
       <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="228.0" text="Übersicht Sachbearbeiter" AnchorPane.leftAnchor="80.0" />
       <TableView fx:id="overviewTableAssistant" layoutX="76.0" layoutY="123.0" onSort="#ActionOverviewTableAssistant" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
         <columns>
-       	   	<TableColumn fx:id="columnUsernameAssistant" prefWidth="150.0" text="Username" />
-        	<TableColumn fx:id="columnNameAssistant" minWidth="0.0" prefWidth="156.0" text="Name" />
-            <TableColumn fx:id="columnFirstnameAssistant" prefWidth="151.0" text="Vorname" />
-            <TableColumn fx:id="columnAddressAssistant" prefWidth="213.0" text="Adresse" />
-            <TableColumn fx:id="columnZIPAssistant" minWidth="0.0" prefWidth="63.0" text="PLZ" />
-            <TableColumn fx:id="columnPhoneAssistant" prefWidth="108.0" text="Telefon " />
-            <TableColumn fx:id="columnEmailAssistant" prefWidth="138.0" text="Email" />
+            <TableColumn fx:id="columnCompanyIdAssistant" prefWidth="92.0" text="Firma" />
+       	   	<TableColumn fx:id="columnUsernameAssistant" prefWidth="99.0" text="Username" />
+        	<TableColumn fx:id="columnNameAssistant" minWidth="0.0" prefWidth="105.0" text="Name" />
+            <TableColumn fx:id="columnFirstnameAssistant" prefWidth="108.0" text="Vorname" />
+            <TableColumn fx:id="columnAddressAssistant" prefWidth="166.0" text="Adresse" />
+            <TableColumn fx:id="columnZIPAssistant" minWidth="0.0" prefWidth="110.0" text="PLZ" />
+            <TableColumn fx:id="columnPhoneAssistant" minWidth="0.0" prefWidth="128.0" text="Telefon " />
+            <TableColumn fx:id="columnEmailAssistant" prefWidth="171.0" text="Email" />
         </columns>
       </TableView>
       <Button fx:id="overviewDeleteAssistant" layoutX="950.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewDeleteAssistant" prefHeight="20.0" prefWidth="90.0" text="Löschen" />
