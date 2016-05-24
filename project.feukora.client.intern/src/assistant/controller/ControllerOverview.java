@@ -77,7 +77,7 @@ public class ControllerOverview {
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
 //			users = feukora.getAssistants();
-			ObservableList<User> users = feukora.getUsers();
+			ObservableList<User> users = feukora.getAssistentUsers();
 
 			columnEmailAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("email")
