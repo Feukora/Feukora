@@ -3,6 +3,9 @@ package rapport.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Context;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,8 +17,17 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Company;
+import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Customerheater;
+import projekt.feukora.server.model.Rapport;
+import projekt.feukora.server.model.Town;
 
 public class ControllerMain {
+	
+	private Rapport rapport;
+	private Customerheater customerheater;
 	//Togglegroup for tab: Start
 	final ToggleGroup start = new ToggleGroup();
 	
@@ -97,8 +109,51 @@ public class ControllerMain {
        radioadditionalstepsyes.setSelected(false);
        radioadditionalstepsno.setSelected(false);
        
+       ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+			ObservableList<String> customerNames = FXCollections.observableArrayList();
+			ObservableList<Customer> customers = feukora.getCustomers();
+			int i = 0;
+			while (i < customers.size()) {
+				String lastname = customers.get(i).getLastname();
+				String firstname = customers.get(i).getFirstname();
+				String name = lastname + " " + firstname;
+				customerNames.add(name);			
+				i++;
+			}
+			
+			comboboxOwnerAdministration.setItems(customerNames);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+       
+		if(Context.getRapportid() != null){
+    	   Update();
+       }else{
+    	   
+       }
     
 
+	}
+	
+	public void Update(){
+		
+		rapport = Context.getRapport();
+		Town town = Context.getTown();
+		textfieldCanton.setText(town.getCanton());
+		textfieldaddress.setText(Context.getRapportAddress());
+		if(Context.getCustomerCustomerfunction().toString().equals("Eigentümer")){
+			radioowner.setSelected(true);
+		}else{
+			radioadministration.setSelected(true);
+		}
+		comboboxOwnerAdministration.setValue(rapport.get);
+		textfieldfacilitymanager.setText;
+		
+		
 	}
 	
     @FXML
@@ -117,7 +172,7 @@ public class ControllerMain {
     private TextField textfieldfacilitymanager;
 
     @FXML
-    private ComboBox<?> comboboxOwnerAdministration;
+    private ComboBox<String> comboboxOwnerAdministration;
 
     @FXML
     private TextField textfieldheateryear;
@@ -672,4 +727,4 @@ public class ControllerMain {
     void setHeaterType(ActionEvent event) {
 
     }
-}
+}  

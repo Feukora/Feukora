@@ -99,7 +99,7 @@ public class ClientInternRMI {
 		// init rmi connection
 		/* Konfigurationsdaten einlesen */
 		Properties props = new Properties();
-		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("clientrmi.properties");
+		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("rmiclient.properties");
 		try {
 			props.load(is);
 		} catch (Exception e) {
