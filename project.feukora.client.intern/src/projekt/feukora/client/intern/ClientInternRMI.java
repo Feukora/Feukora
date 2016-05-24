@@ -4,6 +4,7 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.omg.CORBA.INITIALIZE;
 
 //import org.apache.log4j.Logger;
@@ -48,9 +49,9 @@ import projekt.feukora.server.rmi.UsergroupRMI;
  */
 public class ClientInternRMI {
 	
-//	private static final Logger logger = Logger
-//			.getLogger(ClientInternRMI.class);
-//	
+	private static final Logger logger = Logger
+			.getLogger(ClientInternRMI.class);
+	
 	CustomerRMI customerRMI;
 	CompanyRMI companyRMI;
 	AppointmentRMI appointmentRMI;
@@ -78,8 +79,8 @@ public class ClientInternRMI {
 			// Init Application over RMI
 			ClientInternRMI feukora = new ClientInternRMI();
 		} catch (Exception e) {
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 	
@@ -186,13 +187,13 @@ public class ClientInternRMI {
 		try {
 			customerRMI.deleteCustomer(entity);
 		} catch (RemoteException e) {
-//			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
+			// TODO Auto-generated catch block
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 	
@@ -275,13 +276,13 @@ public class ClientInternRMI {
 		try {
 			blowerRMI.deleteBlower(entity);
 		} catch (RemoteException e) {
-//			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
+			// TODO Auto-generated catch block
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 	
@@ -312,18 +313,15 @@ public class ClientInternRMI {
 		}
 	}
 	
-	public void saveUser(/*User entity, */Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
+	public void saveUser(Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
 		try{
 			Company company;
 			Town city;
 			Usergroup usergroup;
 			
-			usergroup = usergroupRMI.findUsergroupByUsergroupid(1);
+			usergroup = usergroupRMI.findUsergroupByName("Feuerungskontrolleur");
 			city = townRMI.findTownByZip(zip);
-			company = companyRMI.findCompanyByName(companyname).get(0);
-//			entity.setCompanyname(company);
-//			entity.setTown(city);
-//			
+			company = companyRMI.findCompanyByName(companyname).get(0);		
 			
 			User u1 = new User(usergroup, lastname, firstname, adress, city, company, username, password, phone, email);
 			userRMI.saveUsers(u1);
@@ -341,27 +339,35 @@ public class ClientInternRMI {
 			userRMI.deleteUsers(entity);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 	
 	public void updateUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
 		
-			Company company;
-			Town city;
-			
-			city = townRMI.findTownByZip(zip);
-			company = companyRMI.findCompanyByName(companyname).get(0);
-			
-			entity.setCompanyid(company);
-			entity.setZip(city);
-			
-			userRMI.updateUsers(entity);
+		Company company;
+		Town city;
+		Usergroup usergroup;
+		
+		usergroup = usergroupRMI.findUsergroupByName("Feuerungskontrolleur");
+		city = townRMI.findTownByZip(zip);
+		company = companyRMI.findCompanyByName(companyname).get(0);
+		
+		entity.setUsergroupid(usergroup);
+		entity.setZip(city);
+		entity.setFirstname(firstname);
+		entity.setLastname(lastname);
+		entity.setAdress(adress);
+		entity.setPhone(phone);
+		entity.setUsername(username);
+		entity.setPassword(password);
+		entity.setCompanyid(company);	
+		userRMI.updateUsers(entity);
 			
 	}
 	
@@ -437,6 +443,19 @@ public class ClientInternRMI {
 		
 	}
 	
+	
+	/**
+	 * 
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<Company> getCompanies() throws Exception {
+		
+		ObservableList<Company> companylist = FXCollections.observableArrayList();
+		companylist.addAll(companyRMI.findAllCompanies());
+		return companylist;
+		
+	}
 	/**
 	 * 
 	 *

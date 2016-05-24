@@ -23,7 +23,7 @@
 1025	St-Sulpice VD
 1026	Echandens-Denges
 1027	Lonay
-1028	PrÃ©verenges
+1028	Préverenges
 1029	Villars-Ste-Croix
 1030	Bussigny-Lausanne
 1031	Mex VD
@@ -32,7 +32,7 @@
 1034	Boussens
 1035	Bournens
 1036	Sullens
-1037	EtagniÃ¨res
+1037	Etagnières
 1038	Bercher
 1039	Cheseaux Polyval
 1040	Echallens
@@ -64,7 +64,7 @@
 1080	Les Cullayes
 1081	Montpreveyres
 1082	Corcelles-le-Jorat
-1083	MÃ©ziÃ¨res VD
+1083	Mézières VD
 1084	Carrouge VD
 1085	Vulliens
 1088	Ropraz
@@ -94,14 +94,14 @@
 1128	Reverolle
 1131	Tolochenaz
 1132	Lully VD
-1134	Vufflens-ChÃ¢teau
+1134	Vufflens-Château
 1135	Denens
 1136	Bussy-Chardonney
-1141	SÃ©very
+1141	Sévery
 1142	Pampigny
 1143	Apples
 1144	Ballens
-1145	BiÃ¨re
+1145	Bière
 1146	Mollens VD
 1147	Montricher
 1148	L'Isle
@@ -116,7 +116,7 @@
 1169	Yens
 1170	Aubonne
 1172	Bougy-Villars
-1173	FÃ©chy
+1173	Féchy
 1174	Montherod
 1175	Lavigny
 1176	St-Livres
@@ -132,31 +132,31 @@
 1195	Dully-Bursinel
 1196	Gland
 1197	Prangins
-1200	GenÃ¨ve
-1201	GenÃ¨ve
-1202	GenÃ¨ve
-1203	GenÃ¨ve
-1204	GenÃ¨ve
-1205	GenÃ¨ve
-1206	GenÃ¨ve
-1207	GenÃ¨ve
-1208	GenÃ¨ve
-1209	GenÃ¨ve
-1211	GenÃ¨ve 1
+1200	Genève
+1201	Genève
+1202	Genève
+1203	Genève
+1204	Genève
+1205	Genève
+1206	Genève
+1207	Genève
+1208	Genève
+1209	Genève
+1211	Genève 1
 1212	Grand-Lancy
 1213	Petit-Lancy
 1214	Vernier
-1215	GenÃ¨ve
+1215	Genève
 1216	Cointrin
 1217	Meyrin
 1218	Le Grand-Saconnex
 1219	Le Lignon
 1220	Les Avanchets
-1222	VÃ©senaz
+1222	Vésenaz
 1223	Cologny
-1224	ChÃªne-Bougeries
-1225	ChÃªne-Bourg
-1226	ThÃ´nex
+1224	Chêne-Bougeries
+1225	Chêne-Bourg
+1226	Thônex
 1227	Carouge GE
 1228	Plan-les-Ouates
 1231	Conches
@@ -166,14 +166,14 @@
 1236	Cartigny
 1237	Avully
 1239	Collex
-1240	GenÃ¨ve
+1240	Genève
 1241	Puplinge
 1242	Satigny
 1243	Presinge
 1244	Choulex
 1245	Collonge-Bellerive
 1246	Corsier GE
-1247	AniÃ¨res
+1247	Anières
 1248	Hermance
 1251	Gy
 1252	Meinier
@@ -193,12 +193,12 @@
 1267	Vich-Coinsins
 1268	Burtigny
 1269	Bassins
-1270	TrÃ©lex
+1270	Trélex
 1271	Givrins
 1272	Genolier
 1273	Le Muids
 1274	Grens
-1275	ChÃ©serex
+1275	Chéserex
 1276	Gingins
 1277	Borex
 1278	La Rippe
@@ -210,18 +210,18 @@
 1286	Soral
 1287	Laconnex
 1288	Aire-la-Ville
-1289	GenÃ¨ve Serv. SpÃ©c.
+1289	Genève Serv. Spéc.
 1290	Versoix
 1291	Commugny
-1292	ChambÃ©sy
+1292	Chambésy
 1293	Bellevue
 1294	Genthod
 1295	Mies-Tannay
 1296	Coppet
 1297	Founex
-1298	CÃ©ligny
-1299	Crans-prÃ¨s-CÃ©ligny
-1300	EclÃ©pens CC
+1298	Céligny
+1299	Crans-près-Céligny
+1300	Eclépens CC
 1302	Vufflens-la-Ville
 1303	Penthaz
 1304	Senarclens
@@ -230,8 +230,8 @@
 1307	Lussery-Villars
 1308	La Chaux-Cossonay
 1310	Daillens Dist Ba
-1311	EclÃ©pens SC
-1312	EclÃ©pens
+1311	Eclépens SC
+1312	Eclépens
 1313	Ferreyres
 1315	La Sarraz
 1316	Chevilly
@@ -240,17 +240,17 @@
 1320	Daillens ST PP 1
 1321	Arnex-sur-Orbe
 1322	Croy
-1323	RomainmÃ´tier
+1323	Romainmôtier
 1324	Premier
 1325	Vaulion
 1326	Juriens
-1329	BretonniÃ¨res
+1329	Bretonnières
 1330	Daillens CALL
 1337	Vallorbe
 1338	Ballaigues
 1341	Orient
 1342	Le Pont
-1343	Les CharbonniÃ¨res
+1343	Les Charbonnières
 1344	L'Abbaye
 1345	Le Lieu
 1346	Les Bioux
@@ -261,13 +261,13 @@
 1353	Bofflens
 1354	Montcherand
 1355	L'Abergement
-1356	Les ClÃ©es
+1356	Les Clées
 1357	Lignerolle
 1358	Valeyres-Rances
 1372	Bavois
 1373	Chavornay
 1374	Corcelles-Chavorn
-1375	PenthÃ©rÃ©az
+1375	Penthéréaz
 1376	Goumoens-la-Ville
 1377	Oulens-Echallens
 1400	Yverdon-les-Bains
@@ -277,7 +277,7 @@
 1406	Cronay
 1407	Bioley-Magnoux
 1408	Prahins
-1409	ChanÃ©az
+1409	Chanéaz
 1410	Thierrens
 1412	Valeyres-Ursins
 1413	Orzens
@@ -302,7 +302,7 @@
 1434	Ependes VD
 1435	Essert-Pittet
 1436	Treycovagnes
-1437	SuscÃ©vaz
+1437	Suscévaz
 1438	Mathod
 1439	Rances
 1440	Montagny-Chamard
@@ -317,11 +317,11 @@
 1454	L'Auberson
 1462	Yvonand
 1463	Rovray
-1464	Chavannes-le-ChÃªne
+1464	Chavannes-le-Chêne
 1468	Cheyres
 1470	Estavayer-le-Lac
 1473	Font
-1474	ChÃ¢bles FR
+1474	Châbles FR
 1475	Autavaux
 1482	Cugy FR
 1483	Montet (Broye)
@@ -345,22 +345,22 @@
 1528	Surpierre
 1529	Cheiry
 1530	Payerne
-1532	FÃ©tigny
-1533	MÃ©niÃ¨res
+1532	Fétigny
+1533	Ménières
 1534	Sassel
 1535	Combremont-Grand
 1536	Combremont-Petit
 1537	Champtauroz
 1538	Treytorrens-Payern
 1541	Bussy FR
-1542	Rueyres-les-PrÃ©s
+1542	Rueyres-les-Prés
 1543	Grandcour
 1544	Gletterens
 1545	Chevroux
 1551	Vers-chez-Perrin
 1552	Trey
-1553	ChÃ¢tonnaye
-1554	SÃ©deilles
+1553	Châtonnaye
+1554	Sédeilles
 1555	Villarzel
 1562	Corcelles-Payerne
 1563	Dompierre FR
@@ -378,22 +378,22 @@
 1588	Cudrefin
 1589	Chabrey
 1595	Faoug
-1607	PalÃ©zieux-Village
-1608	Oron-le-ChÃ¢tel
+1607	Palézieux-Village
+1608	Oron-le-Châtel
 1609	St-Martin FR
-1610	ChÃ¢tillens
-1611	Le CrÃªt-p-Semsales
+1610	Châtillens
+1611	Le Crêt-p-Semsales
 1612	Ecoteaux
 1613	Maracon
 1614	Granges (Veveyse)
 1615	Bossonnens
 1616	Attalens
 1617	Remaufens
-1618	ChÃ¢tel-St-Denis
+1618	Châtel-St-Denis
 1619	Les Paccots
 1623	Semsales
 1624	La Verrerie
-1625	SÃ¢les (GruyÃ¨re)
+1625	Sâles (Gruyère)
 1626	Romanens
 1627	Vaulruz
 1628	Vuadens
@@ -402,29 +402,29 @@
 1632	Riaz
 1633	Vuippens
 1634	La Roche FR
-1635	La Tour-de-TrÃªme
+1635	La Tour-de-Trême
 1636	Broc
-1637	Charmey (GruyÃ¨re)
+1637	Charmey (Gruyère)
 1638	Morlon
 1642	Sorens
 1643	Gumefens
 1644	Avry-devant-Pont
 1645	Le Bry
 1646	Echarlens
-1647	CorbiÃ¨res
+1647	Corbières
 1648	Hauteville
 1649	Pont-la-Ville
 1651	Villarvolard
 1652	Botterens
-1653	ChÃ¢tel-Montsalvens
+1653	Châtel-Montsalvens
 1654	Cerniat FR
 1656	Im Fang
-1657	AblÃ¤ndschen
+1657	Abländschen
 1658	La Tine
 1659	Flendruz
 1660	Les Moulins
-1661	PÃ¢quier-Montbarry
-1663	MolÃ©son-s-GruyÃ¨res
+1661	Pâquier-Montbarry
+1663	Moléson-s-Gruyères
 1665	Estavannens
 1666	Grandvillard
 1667	Enney
@@ -441,12 +441,12 @@
 1681	Billens
 1682	Villars-Bramard
 1683	Brenles
-1684	MÃ©ziÃ¨res FR
+1684	Mézières FR
 1685	Villariaz
 1686	Grangettes-Romont
-1687	EstÃ©venens
+1687	Estévenens
 1688	Sommentier
-1689	ChÃ¢telard-p-Romont
+1689	Châtelard-p-Romont
 1690	Villaz-St-Pierre
 1691	Villarimboud
 1692	Massonnens
@@ -470,7 +470,7 @@
 1716	Schwarzsee
 1717	St. Ursen
 1718	Rechthalten
-1719	BrÃ¼nisried
+1719	Brünisried
 1720	Corminboeuf
 1721	Misery-Courtion
 1722	Bourguillon
@@ -492,21 +492,21 @@
 1740	Neyruz FR
 1741	Cottens FR
 1742	Autigny
-1744	ChÃ©nens
+1744	Chénens
 1745	Lentigny
-1746	Prez-vers-NorÃ©az
+1746	Prez-vers-Noréaz
 1747	Corserey
 1748	Torny-le-Grand
 1749	Middes
-1752	Villars-sur-GlÃ¢ne
+1752	Villars-sur-Glâne
 1753	Matran
-1754	RosÃ©
+1754	Rosé
 1756	Onnens FR
-1757	NorÃ©az
+1757	Noréaz
 1762	Givisiez
 1763	Granges-Paccot
 1772	Grolley
-1773	LÃ©chelles
+1773	Léchelles
 1774	Cousset
 1775	Mannens
 1776	Montagny-la-Ville
@@ -515,7 +515,7 @@
 1784	Courtepin
 1785	Cressier FR
 1786	Sugiez
-1787	MÃ´tier (Vully)
+1787	Môtier (Vully)
 1788	Praz (Vully)
 1789	Lugnorre
 1791	Courtaman
@@ -524,14 +524,14 @@
 1794	Salvenach
 1795	Courlevon
 1796	Courgevaux
-1797	MÃ¼nchenwiler
+1797	Münchenwiler
 1800	Vevey
-1801	Le Mont-PÃ¨lerin
+1801	Le Mont-Pèlerin
 1802	Corseaux
 1803	Chardonne
 1804	Corsier-sur-Vevey
 1805	Jongny
-1806	St-LÃ©gier-ChiÃ©saz
+1806	St-Légier-Chiésaz
 1807	Blonay
 1808	Monts-de-Corsier
 1809	Fenil-sur-Corsier
@@ -557,7 +557,7 @@
 1856	Corbeyrier
 1860	Aigle
 1862	La Comballaz
-1863	Le SÃ©pey
+1863	Le Sépey
 1864	Vers-l'Eglise
 1865	Les Diablerets
 1866	La Forclaz VD
@@ -568,14 +568,14 @@
 1871	ChoÃ«x
 1872	Troistorrents
 1873	Val-d'Illiez
-1874	ChampÃ©ry
+1874	Champéry
 1875	Morgins
 1880	Bex
 1882	Gryon
-1884	HuÃ©moz
-1885	ChesiÃ¨res
+1884	Huémoz
+1885	Chesières
 1890	St-Maurice
-1891	VÃ©rossaz
+1891	Vérossaz
 1892	Lavey-Village
 1893	Muraz (Collombey)
 1895	Vionnaz
@@ -586,69 +586,69 @@
 1902	Evionnaz
 1903	Collonges
 1904	Vernayaz
-1905	DorÃ©naz
+1905	Dorénaz
 1906	Charrat
 1907	Saxon
 1908	Riddes
 1911	Ovronnaz
 1912	Leytron
 1913	Saillon
-1914	IsÃ©rables
+1914	Isérables
 1918	La Tzoumaz
 1919	Martigny Mutuel
 1920	Martigny
 1921	Martigny-Croix
 1922	Salvan
-1923	Le TrÃ©tien
-1925	Le ChÃ¢telard VS
+1923	Le Trétien
+1925	Le Châtelard VS
 1926	Fully
 1927	Chemin
 1928	Ravoire
 1929	Trient
 1932	Bovernier
 1933	Sembrancher
-1934	Le ChÃ¢ble VS
+1934	Le Châble VS
 1936	Verbier
-1937	OrsiÃ¨res
+1937	Orsières
 1938	Champex-Lac
-1941	VollÃ¨ges
+1941	Vollèges
 1942	Levron
 1943	Praz-de-Fort
 1944	La Fouly VS
 1945	Liddes
 1946	Bourg-St-Pierre
-1947	VersegÃ¨res
+1947	Versegères
 1948	Lourtier
 1950	Sion
 1951	Sion
 1953	Sion RZ
 1955	Chamoson
 1957	Ardon
-1958	St-LÃ©onard
-1961	VernamiÃ¨ge
+1958	St-Léonard
+1961	Vernamiège
 1962	Pont-de-la-Morge
-1963	VÃ©troz
+1963	Vétroz
 1964	Conthey
-1965	SaviÃ¨se
+1965	Savièse
 1966	Ayent
 1967	Bramois
 1968	Mase
 1969	St-Martin VS
 1971	Grimisuat
-1972	AnzÃ¨re
+1972	Anzère
 1973	Nax
 1974	Arbaz
-1975	St-SÃ©verin
+1975	St-Séverin
 1976	Erde
 1977	Icogne
 1978	Lens
 1981	Vex
 1982	Euseigne
-1983	EvolÃ¨ne
-1984	Les HaudÃ¨res
+1983	Evolène
+1984	Les Haudères
 1985	La Sage
 1986	Arolla
-1987	HÃ©rÃ©mence
+1987	Hérémence
 1988	Les Collons
 1991	Salins
 1992	Les Agettes
@@ -656,19 +656,19 @@
 1994	Aproz (Nendaz)
 1996	Fey (Nendaz)
 1997	Siviez (Nendaz)
-2000	NeuchÃ¢tel
-2001	NeuchÃ¢tel 1 DÃ©pÃ´t
-2002	NeuchÃ¢tel 2
-2003	NeuchÃ¢tel 3
-2004	NeuchÃ¢tel 4
-2006	NeuchÃ¢tel 6
-2007	NeuchÃ¢tel 7
-2008	NeuchÃ¢tel
-2009	NeuchÃ¢tel 9
-2010	NeuchÃ¢tel OFS
+2000	Neuchâtel
+2001	Neuchâtel 1 Dépôt
+2002	Neuchâtel 2
+2003	Neuchâtel 3
+2004	Neuchâtel 4
+2006	Neuchâtel 6
+2007	Neuchâtel 7
+2008	Neuchâtel
+2009	Neuchâtel 9
+2010	Neuchâtel OFS
 2012	Auvernier
 2013	Colombier NE
-2014	BÃ´le
+2014	Bôle
 2015	Areuse
 2016	Cortaillod
 2017	Boudry
@@ -681,17 +681,17 @@
 2028	Vaumarcus
 2034	Peseux
 2035	Corcelles NE
-2036	CormondrÃ¨che
+2036	Cormondrèche
 2037	Montmollin
 2042	Valangin
 2043	Boudevilliers
 2046	Fontaines NE
 2052	Fontainemelon
 2053	Cernier
-2054	ChÃ©zard-St-Martin
+2054	Chézard-St-Martin
 2056	Dombresson
 2057	Villiers
-2058	Le PÃ¢quier NE
+2058	Le Pâquier NE
 2063	Vilars NE
 2065	Savagnier
 2067	Chaumont
@@ -705,15 +705,15 @@
 2103	Noiraigue
 2105	Travers
 2108	Couvet
-2112	MÃ´tiers NE
+2112	Môtiers NE
 2113	Boveresse
 2114	Fleurier
 2115	Buttes
 2116	Mont-de-Buttes
-2117	La CÃ´te-aux-FÃ©es
+2117	La Côte-aux-Fées
 2123	St-Sulpice NE
 2124	Les Sagnettes
-2126	Les VerriÃ¨res
+2126	Les Verrières
 2127	Les Bayards
 2149	Champ-du-Moulin
 2206	Geneveys-Coffrane
@@ -728,24 +728,24 @@
 2314	La Sagne NE
 2316	Petit-Martel
 2318	Brot-Plamboz
-2322	Le CrÃªt-du-Locle
+2322	Le Crêt-du-Locle
 2325	Les Planchettes
-2333	La FerriÃ¨re
+2333	La Ferrière
 2336	Les Bois
 2338	Les Emibois
 2340	Le Noirmont
 2345	Les Breuleux
-2350	SaignelÃ©gier
+2350	Saignelégier
 2353	Les Pommerats
 2354	Goumois
-2360	Le BÃ©mont JU
+2360	Le Bémont JU
 2362	Montfaucon
 2363	Les Enfers
 2364	St-Brais
 2400	Le Locle
 2405	La Chaux-du-Milieu
-2406	La BrÃ©vine
-2414	Cerneux-PÃ©quignot
+2406	La Brévine
+2414	Cerneux-Péquignot
 2416	Les Brenets
 2500	Biel/Bienne
 2501	Biel/Bienne
@@ -754,15 +754,15 @@
 2504	Biel/Bienne
 2505	Biel/Bienne
 2510	Biel/Bienne DistBa
-2512	TÃ¼scherz-AlfermÃ©e
+2512	Tüscherz-Alfermée
 2513	Twann
 2514	Ligerz
-2515	PrÃªles
+2515	Prêles
 2516	Lamboing
 2517	Diesse
 2518	Nods
 2520	La Neuveville
-2523	LigniÃ¨res
+2523	Lignières
 2525	Le Landeron
 2532	Magglingen/Macolin
 2533	Evilard
@@ -779,7 +779,7 @@
 2552	Orpund
 2553	Safnern
 2554	Meinisberg
-2555	BrÃ¼gg BE
+2555	Brügg BE
 2556	Scheuren
 2557	Studen BE
 2558	Aegerten
@@ -789,14 +789,14 @@
 2564	Bellmund
 2565	Jens
 2572	Sutz
-2575	TÃ¤uffelen
-2576	LÃ¼scherz
+2575	Täuffelen
+2576	Lüscherz
 2577	Siselen BE
-2603	PÃ©ry
+2603	Péry
 2604	La Heutte
 2605	Sonceboz-Sombeval
-2606	CorgÃ©mont
-2607	CortÃ©bert
+2606	Corgémont
+2607	Cortébert
 2608	Courtelary
 2610	St-Imier
 2612	Cormoret
@@ -806,8 +806,8 @@
 2710	Tavannes
 2712	Le Fuet
 2713	Bellelay
-2714	Le PrÃ©dame
-2715	ChÃ¢telat-Monible
+2714	Le Prédame
+2715	Châtelat-Monible
 2716	Sornetan
 2717	Fornet-Dessous
 2718	Fornet-Dessus
@@ -816,7 +816,7 @@
 2723	Mont-Tramelan
 2732	Reconvilier
 2733	Pontenet
-2735	Malleray-BÃ©vilard
+2735	Malleray-Bévilard
 2736	Sorvilier
 2738	Court
 2740	Moutier
@@ -824,14 +824,14 @@
 2743	Eschert
 2744	Belprahon
 2745	Grandval
-2746	CrÃ©mines
+2746	Crémines
 2747	Seehof
 2748	Souboz
 2762	Roches BE
-2800	DelÃ©mont
+2800	Delémont
 2802	Develier
 2803	Bourrignon
-2805	SoyhiÃ¨res
+2805	Soyhières
 2806	Mettembert
 2807	Pleigne
 2812	Movelier
@@ -848,12 +848,12 @@
 2830	Courrendlin
 2832	Rebeuvelier
 2842	Rossemaison
-2843	ChÃ¢tillon JU
-2852	CourtÃ©telle
+2843	Châtillon JU
+2852	Courtételle
 2853	Courfaivre
 2854	Bassecourt
 2855	Glovelier
-2856	BoÃ©court
+2856	Boécourt
 2857	Montavon
 2863	Undervelier
 2864	Soulce
@@ -885,15 +885,15 @@
 2926	Boncourt
 2932	Coeuve
 2933	Damphreux
-2935	BeurnevÃ©sin
+2935	Beurnevésin
 2942	Alle
 2943	Vendlincourt
 2944	Bonfol
-2946	MiÃ©court
+2946	Miécourt
 2947	Charmoille
 2950	Courgenay
 2952	Cornol
-2953	FregiÃ©court-Pleuj
+2953	Fregiécourt-Pleuj
 2954	Asuel
 3000	Bern
 3001	Bern
@@ -935,11 +935,11 @@
 3046	Wahlendorf
 3047	Bremgarten b. Bern
 3048	Worblaufen
-3049	SÃ¤riswil
+3049	Säriswil
 3050	Bern
 3052	Zollikofen
-3053	MÃ¼nchenbuchsee
-3054	SchÃ¼pfen
+3053	Münchenbuchsee
+3054	Schüpfen
 3063	Ittigen
 3065	Bolligen
 3066	Stettlen
@@ -948,9 +948,9 @@
 3070	Ostermundigen LZB
 3071	Ostermundigen Zust
 3072	Ostermundigen
-3073	GÃ¼mligen
+3073	Gümligen
 3074	Muri b. Bern
-3075	RÃ¼fenacht BE
+3075	Rüfenacht BE
 3076	Worb
 3077	Enggistein
 3078	Richigen
@@ -960,15 +960,15 @@
 3085	Wabern Weihnachten
 3086	Zimmerwald
 3087	Niedermuhlern
-3088	OberbÃ¼tschel
+3088	Oberbütschel
 3089	Hinterfultigen
 3095	Spiegel b. Bern
 3096	Oberbalm
 3097	Liebefeld
-3098	KÃ¶niz
-3099	RÃ¼ti b. Riggisberg
-3110	MÃ¼nsingen
-3111	TÃ¤gertschi
+3098	Köniz
+3099	Rüti b. Riggisberg
+3110	Münsingen
+3111	Tägertschi
 3112	Allmendingen b. BE
 3113	Rubigen
 3114	Wichtrach
@@ -979,59 +979,59 @@
 3124	Belpberg
 3125	Toffen
 3126	Kaufdorf
-3127	MÃ¼hlethurnen
+3127	Mühlethurnen
 3128	Kirchenthurnen
 3132	Riggisberg
 3144	Gasel
 3145	Niederscherli
-3147	MittelhÃ¤usern
-3148	LanzenhÃ¤usern
+3147	Mittelhäusern
+3148	Lanzenhäusern
 3150	Schwarzenburg
 3152	Mamishaus
-3153	RÃ¼schegg Gambach
-3154	RÃ¼schegg Heubach
+3153	Rüschegg Gambach
+3154	Rüschegg Heubach
 3155	Helgisried
 3156	Riffenmatt
 3157	Milken
 3158	Guggisberg
-3159	RiedstÃ¤tt
+3159	Riedstätt
 3172	Niederwangen BE
 3173	Oberwangen b. Bern
-3174	ThÃ¶rishaus
+3174	Thörishaus
 3175	Flamatt
 3176	Neuenegg
 3177	Laupen BE
-3178	BÃ¶singen
+3178	Bösingen
 3179	Kriechenwil
 3182	Ueberstorf
 3183	Albligen
-3184	WÃ¼nnewil
+3184	Wünnewil
 3185	Schmitten FR
-3186	DÃ¼dingen
+3186	Düdingen
 3202	Frauenkappelen
-3203	MÃ¼hleberg
-3204	RosshÃ¤usern
-3205	GÃ¼mmenen
+3203	Mühleberg
+3204	Rosshäusern
+3205	Gümmenen
 3206	Rizenbach
 3207	Wileroltigen
-3208	GurbrÃ¼
+3208	Gurbrü
 3210	Kerzers
 3212	Gurmels
 3213	Liebistorf
 3214	Ulmiz
 3215	Gempenach
 3216	Ried b. Kerzers
-3225	MÃ¼ntschemier
+3225	Müntschemier
 3226	Treiten
 3232	Ins
 3233	Tschugg
 3234	Vinelz
 3235	Erlach
 3236	Gampelen
-3237	BrÃ¼ttelen
+3237	Brüttelen
 3238	Gals
 3250	Lyss
-3251	Wengi b. BÃ¼ren
+3251	Wengi b. Büren
 3252	Worben
 3253	Schnottwil
 3254	Messen
@@ -1039,8 +1039,8 @@
 3256	Dieterswil
 3257	Grossaffoltern
 3262	Suberg
-3263	BÃ¼etigen
-3264	Diessbach b. BÃ¼ren
+3263	Büetigen
+3264	Diessbach b. Büren
 3266	Wiler b. Seedorf
 3267	Seedorf BE
 3268	Lobsigen
@@ -1052,16 +1052,16 @@
 3280	Murten
 3282	Bargen BE
 3283	Kallnach
-3284	FrÃ¤schels
+3284	Fräschels
 3285	Galmiz
 3286	Muntelier
 3292	Busswil BE
 3293	Dotzigen
-3294	BÃ¼ren an der Aare
-3295	RÃ¼ti b. BÃ¼ren
+3294	Büren an der Aare
+3295	Rüti b. Büren
 3296	Arch
 3297	Leuzigen
-3298	Oberwil b. BÃ¼ren
+3298	Oberwil b. Büren
 3302	Moosseedorf
 3303	Jegenstorf
 3305	Iffwil
@@ -1070,22 +1070,22 @@
 3308	Grafenried
 3309	Kernenried
 3312	Fraubrunnen
-3313	BÃ¼ren zum Hof
+3313	Büren zum Hof
 3314	Schalunen
-3315	BÃ¤tterkinden
+3315	Bätterkinden
 3317	Limpach
-3321	SchÃ¶nbÃ¼hl EKZ
-3322	Urtenen-SchÃ¶nbÃ¼hl
-3323	BÃ¤riswil BE
+3321	Schönbühl EKZ
+3322	Urtenen-Schönbühl
+3323	Bäriswil BE
 3324	Hindelbank
 3325	Hettiswil
 3326	Krauchthal
 3360	Herzogenbuchsee
-3362	NiederÃ¶nz
-3363	OberÃ¶nz
+3362	Niederönz
+3363	Oberönz
 3365	Seeberg
 3366	Bettenhausen
-3367	ThÃ¶rigen
+3367	Thörigen
 3368	Bleienbach
 3372	Wanzwil
 3373	Heimenhausen
@@ -1100,63 +1100,63 @@
 3412	Heimiswil
 3413	Kaltacker
 3414	Oberburg
-3415	Hasle-RÃ¼egsau
+3415	Hasle-Rüegsau
 3416	Affoltern BE
-3417	RÃ¼egsau
-3418	RÃ¼egsbach
+3417	Rüegsau
+3418	Rüegsbach
 3419	Biembach
 3421	Lyssach
 3422	Kirchberg BE
 3423	Ersigen
-3424	NiederÃ¶sch
+3424	Niederösch
 3425	Koppigen
 3426	Aefligen
 3427	Utzenstorf
 3428	Wiler b.Utzenstorf
-3429	HÃ¶chstetten-Hells
-3432	LÃ¼tzelflÃ¼h-Goldb
+3429	Höchstetten-Hells
+3432	Lützelflüh-Goldb
 3433	Schwanden i. E.
 3434	Obergoldbach
 3435	Ramsei
-3436	ZollbrÃ¼ck
-3437	RÃ¼derswil
+3436	Zollbrück
+3437	Rüderswil
 3438	Lauperswil
-3439	RanflÃ¼h
-3452	GrÃ¼nenmatt
+3439	Ranflüh
+3452	Grünenmatt
 3453	Heimisbach
 3454	Sumiswald
-3455	GrÃ¼nen
+3455	Grünen
 3456	Trachselwald
 3457	Wasen im Emmental
 3462	Weier im Emmental
-3463	HÃ¤usernmoos
-3464	Schmidigen-MÃ¼hlew
-3465	DÃ¼rrenroth
+3463	Häusernmoos
+3464	Schmidigen-Mühlew
+3465	Dürrenroth
 3472	Wynigen
 3473	Alchenstorf
-3474	RÃ¼edisbach
+3474	Rüedisbach
 3475	Riedtwil
 3476	Oschwand
 3503	Gysenstein
-3504	NiederhÃ¼nigen
-3506	GrosshÃ¶chstetten
+3504	Niederhünigen
+3506	Grosshöchstetten
 3507	Biglen
 3508	Arni BE
 3510	Konolfingen
 3512	Walkringen
 3513	Bigenthal
 3531	Oberthal
-3532	ZÃ¤ziwil
+3532	Zäziwil
 3533	Bowil
 3534	Signau
-3535	SchÃ¼pbach
+3535	Schüpbach
 3536	Aeschau
 3537	Eggiwil
-3538	RÃ¶thenbach i. E.
+3538	Röthenbach i. E.
 3543	Emmenmatt
 3550	Langnau i. E.
 3551	Oberfrittenbach
-3552	BÃ¤rau
+3552	Bärau
 3553	Gohl
 3555	Trubschachen
 3556	Trub
@@ -1176,22 +1176,22 @@
 3615	Heimenschwand
 3616	Schwarzenegg
 3617	Fahrni b. Thun
-3618	SÃ¼deren
+3618	Süderen
 3619	Eriz
 3622	Homberg b. Thun
 3623	Teuffenthal BE
 3624	Goldiwil (Thun)
 3625	Heiligenschwendi
-3626	HÃ¼nibach
+3626	Hünibach
 3627	Heimberg
 3628	Uttigen
 3629	Kiesen
-3631	HÃ¶fen b. Thun
+3631	Höfen b. Thun
 3632	Niederstocken
 3633	Amsoldingen
 3634	Thierachern
 3635	Uebeschi
-3636	LÃ¤ngenbÃ¼hl
+3636	Längenbühl
 3638	Blumenstein
 3645	Gwatt (Thun)
 3646	Einigen
@@ -1218,7 +1218,7 @@
 3704	Krattigen
 3705	Faulensee
 3706	Leissigen
-3707	DÃ¤rligen
+3707	Därligen
 3711	Emdthal
 3713	Reichenbach i. K.
 3714	Frutigen
@@ -1234,11 +1234,11 @@
 3753	Oey
 3754	Diemtigen
 3755	Horboden
-3756	ZwischenflÃ¼h
+3756	Zwischenflüh
 3757	Schwenden
 3758	Latterbach
 3762	Erlenbach i. S.
-3763	DÃ¤rstetten
+3763	Därstetten
 3764	Weissenburg
 3765	Oberwil i. S.
 3766	Boltigen
@@ -1248,8 +1248,8 @@
 3773	Matten(St.Stephan)
 3775	Lenk im Simmental
 3776	Oeschseite
-3777	SaanenmÃ¶ser
-3778	SchÃ¶nried
+3777	Saanenmöser
+3778	Schönried
 3780	Gstaad
 3781	Turbach
 3782	Lauenen b. Gstaad
@@ -1262,18 +1262,18 @@
 3803	Beatenberg
 3804	Habkern
 3805	Goldswil
-3806	BÃ¶nigen
+3806	Bönigen
 3807	Iseltwald
 3812	Wilderswil
 3813	Saxeten
 3814	Gsteigwiler
-3815	ZweilÃ¼tschinen
-3816	LÃ¼tschental
+3815	Zweilütschinen
+3816	Lütschental
 3818	Grindelwald
 3822	Lauterbrunnen
 3823	Wengen
 3824	Stechelberg
-3825	MÃ¼rren
+3825	Mürren
 3826	Gimmelwald
 3852	Ringgenberg BE
 3853	Niederried Interl
@@ -1302,30 +1302,30 @@
 3914	Blatten b. Naters
 3916	Ferden
 3917	Goppenstein
-3918	Wiler (LÃ¶tschen)
-3919	Blatten(LÃ¶tschen)
+3918	Wiler (Lötschen)
+3919	Blatten(Lötschen)
 3920	Zermatt
 3922	Eisten
-3923	TÃ¶rbel
+3923	Törbel
 3924	St. Niklaus VS
-3925	GrÃ¤chen
+3925	Grächen
 3926	Embd
 3927	Herbriggen
 3928	Randa
-3929	TÃ¤sch
+3929	Täsch
 3930	Visp
 3931	Lalden
 3932	Visperterminen
 3933	Staldenried
 3934	Zeneggen
-3935	BÃ¼rchen
+3935	Bürchen
 3937	Baltschieder
 3938	Ausserberg
 3939	Eggerberg
 3940	Steg VS
 3942	St. German
 3943	Eischoll
-3944	UnterbÃ¤ch VS
+3944	Unterbäch VS
 3945	Gampel
 3946	Gruben
 3947	Ergisch
@@ -1347,19 +1347,19 @@
 3968	Veyras
 3970	Salgesch
 3971	Chermignon
-3972	MiÃ¨ge
-3973	VenthÃ´ne
+3972	Miège
+3973	Venthône
 3974	Mollens VS
 3975	Randogne
 3976	NoÃ«s
 3977	Granges VS
 3978	Flanthey
-3979	GrÃ´ne
+3979	Grône
 3982	Bitsch
-3983	MÃ¶rel
+3983	Mörel
 3984	Fiesch
 3985	Geschinen
-3986	Ried-MÃ¶rel
+3986	Ried-Mörel
 3987	Riederalp
 3988	Obergesteln
 3989	Niederwald
@@ -1441,20 +1441,20 @@
 4106	Therwil
 4107	Ettingen
 4108	Witterswil
-4112	BÃ¤ttwil-FlÃ¼h
+4112	Bättwil-Flüh
 4114	Hofstetten SO
 4115	Mariastein
 4116	Metzerlen
 4117	Burg im Leimental
 4118	Rodersdorf
 4123	Allschwil
-4124	SchÃ¶nenbuch
+4124	Schönenbuch
 4125	Riehen
 4126	Bettingen
 4127	Birsfelden
 4132	Muttenz
 4133	Pratteln
-4142	MÃ¼nchenstein
+4142	Münchenstein
 4143	Dornach
 4144	Arlesheim
 4145	Gempen
@@ -1473,7 +1473,7 @@
 4224	Nenzlingen
 4225	Brislach
 4226	Breitenbach
-4227	BÃ¼sserach
+4227	Büsserach
 4228	Erschwil
 4229	Beinwil SO
 4232	Fehren
@@ -1481,11 +1481,11 @@
 4234	Zullwil
 4242	Laufen
 4243	Dittingen
-4244	RÃ¶schenz
-4245	KleinlÃ¼tzel
+4244	Röschenz
+4245	Kleinlützel
 4246	Wahlen b. Laufen
 4247	Grindel
-4252	BÃ¤rschwil
+4252	Bärschwil
 4253	Liesberg
 4254	Liesberg Dorf
 4302	Augst BL
@@ -1494,7 +1494,7 @@
 4305	Olsberg
 4310	Rheinfelden
 4312	Magden
-4313	MÃ¶hlin
+4313	Möhlin
 4314	Zeiningen
 4315	Zuzgen
 4316	Hellikon
@@ -1504,14 +1504,14 @@
 4324	Obermumpf
 4325	Schupfart
 4332	Stein AG
-4333	MÃ¼nchwilen AG
+4333	Münchwilen AG
 4334	Sisseln AG
 4402	Frenkendorf
 4410	Liestal
 4411	Seltisberg
 4412	Nuglar
-4413	BÃ¼ren SO
-4414	FÃ¼llinsdorf
+4413	Büren SO
+4414	Füllinsdorf
 4415	Lausen
 4416	Bubendorf
 4417	Ziefen
@@ -1526,19 +1526,19 @@
 4431	Bennwil
 4432	Lampenberg
 4433	Ramlinsburg
-4434	HÃ¶lstein
+4434	Hölstein
 4435	Niederdorf
 4436	Oberdorf BL
 4437	Waldenburg
 4438	Langenbruck
-4441	ThÃ¼rnen
+4441	Thürnen
 4442	Diepflingen
 4443	Wittinsburg
-4444	RÃ¼mlingen
-4445	HÃ¤felfingen
+4444	Rümlingen
+4445	Häfelfingen
 4446	Buckten
-4447	KÃ¤nerkinden
-4448	LÃ¤ufelfingen
+4447	Känerkinden
+4448	Läufelfingen
 4450	Sissach
 4451	Wintersingen
 4452	Itingen
@@ -1548,7 +1548,7 @@
 4457	Diegten
 4458	Eptingen
 4460	Gelterkinden
-4461	BÃ¶ckten
+4461	Böckten
 4462	Rickenbach BL
 4463	Buus
 4464	Maisprach
@@ -1562,7 +1562,7 @@
 4494	Oltingen
 4495	Zeglingen
 4496	Kilchberg BL
-4497	RÃ¼nenberg
+4497	Rünenberg
 4500	Solothurn
 4501	Solothurn
 4502	Solothurn
@@ -1573,10 +1573,10 @@
 4513	Langendorf
 4514	Lommiswil
 4515	Weissenstein
-4522	RÃ¼ttenen
+4522	Rüttenen
 4523	Niederwil SO
-4524	GÃ¼nsberg
-4525	Balm b. GÃ¼nsberg
+4524	Günsberg
+4525	Balm b. Günsberg
 4528	Zuchwil
 4532	Feldbrunnen
 4533	Riedholz
@@ -1600,55 +1600,55 @@
 4564	Obergerlafingen
 4565	Recherswil
 4566	Kriegstetten
-4571	LÃ¼terkofen-Ichert
+4571	Lüterkofen-Ichert
 4573	Lohn-Ammannsegg
 4574	Nennigkofen
 4576	Tscheppach
 4577	Hessigkofen
 4578	Bibern SO
 4579	Gossliwil
-4581	KÃ¼ttigkofen
-4582	BrÃ¼gglen
-4583	MÃ¼hledorf SO
-4584	GÃ¤chliwil
+4581	Küttigkofen
+4582	Brügglen
+4583	Mühledorf SO
+4584	Gächliwil
 4585	Biezwil
 4586	Kyburg-Buchegg
 4587	Aetingen
 4588	Unterramsern
 4600	Olten
-4601	Olten 1 FÃ¤cher
+4601	Olten 1 Fächer
 4603	Olten
 4604	Olten 4 Hammer
 4609	Olten
-4611	HÃ¤rkingen SC
+4611	Härkingen SC
 4612	Wangen b. Olten
 4613	Rickenbach SO
-4614	HÃ¤gendorf
+4614	Hägendorf
 4615	Allerheiligenberg
 4616	Kappel SO
 4617	Gunzgen
 4618	Boningen
-4620	HÃ¤rkingen PZ
-4621	HÃ¤rkingen BZ
+4620	Härkingen PZ
+4621	Härkingen BZ
 4622	Egerkingen
 4623	Neuendorf
-4624	HÃ¤rkingen
+4624	Härkingen
 4625	Oberbuchsiten
 4626	Niederbuchsiten
 4628	Wolfwil
 4629	Fulenbach
-4630	HÃ¤rkingen CALL
+4630	Härkingen CALL
 4632	Trimbach
 4633	Hauenstein
 4634	Wisen SO
-4640	HÃ¤rkingen ST PP 1
+4640	Härkingen ST PP 1
 4652	Winznau
-4653	ObergÃ¶sgen
+4653	Obergösgen
 4654	Lostorf
-4655	StÃ¼sslingen
+4655	Stüsslingen
 4656	Starrkirch-Wil
 4657	Dulliken
-4658	DÃ¤niken SO
+4658	Däniken SO
 4663	Aarburg
 4665	Oftringen
 4702	Oensingen
@@ -1660,7 +1660,7 @@
 4714	Aedermannsdorf
 4715	Herbetswil
 4716	Welschenrohr
-4717	MÃ¼mliswil
+4717	Mümliswil
 4718	Holderbank SO
 4719	Ramiswil
 4800	Zofingen
@@ -1672,16 +1672,16 @@
 4807	Zofingen PF
 4808	Zofingen PF
 4809	Zofingen PF
-4812	MÃ¼hlethal
+4812	Mühlethal
 4813	Uerkheim
 4814	Bottenwil
 4852	Rothrist
 4853	Murgenthal
-4856	GlashÃ¼tten
+4856	Glashütten
 4900	Langenthal
 4901	Langenthal
 4902	Langenthal
-4911	SchwarzhÃ¤usern
+4911	Schwarzhäusern
 4912	Aarwangen
 4913	Bannwil
 4914	Roggwil BE
@@ -1689,11 +1689,11 @@
 4916	Untersteckholz
 4917	Melchnau
 4919	Reisiswil
-4922	BÃ¼tzberg
+4922	Bützberg
 4923	Wynau
 4924	Obersteckholz
 4932	Lotzwil
-4933	RÃ¼tschelen
+4933	Rütschelen
 4934	Madiswil
 4935	Leimiswil
 4936	Kleindietwil
@@ -1708,20 +1708,20 @@
 4954	Wyssachen
 4955	Gondiswil
 5000	Aarau
-5001	Aarau 1 FÃ¤cher
+5001	Aarau 1 Fächer
 5004	Aarau
-5010	DÃ¤niken PZ
-5012	SchÃ¶nenwerd
-5013	NiedergÃ¶sgen
+5010	Däniken PZ
+5012	Schönenwerd
+5013	Niedergösgen
 5014	Gretzenbach
 5015	Erlinsbach SO
 5017	Barmelweid
 5018	Erlinsbach
 5022	Rombach
 5023	Biberstein
-5024	KÃ¼ttigen
+5024	Küttigen
 5025	Asp
-5026	DensbÃ¼ren
+5026	Densbüren
 5027	Herznach
 5028	Ueken
 5032	Aarau Rohr
@@ -1730,7 +1730,7 @@
 5035	Unterentfelden
 5036	Oberentfelden
 5037	Muhen
-5040	SchÃ¶ftland
+5040	Schöftland
 5042	Hirschthal
 5043	Holziken
 5044	Schlossrued
@@ -1741,14 +1741,14 @@
 5057	Reitnau
 5058	Wiliberg
 5062	Oberhof
-5063	WÃ¶lflinswil
+5063	Wölflinswil
 5064	Wittnau
 5070	Frick
 5072	Oeschgen
 5073	Gipf-Oberfrick
 5074	Eiken
 5075	Hornussen
-5076	BÃ¶zen
+5076	Bözen
 5077	Elfingen
 5078	Effingen
 5079	Zeihen
@@ -1773,15 +1773,15 @@
 5213	Villnachern
 5222	Umiken
 5223	Riniken
-5225	BÃ¶zberg
+5225	Bözberg
 5232	Villigen PSI
 5233	Stilli
 5234	Villigen
-5235	RÃ¼fenach AG
+5235	Rüfenach AG
 5236	Remigen
-5237	MÃ¶nthal
+5237	Mönthal
 5242	Birr-Lupfig
-5243	MÃ¼lligen
+5243	Mülligen
 5244	Birrhard
 5245	Habsburg
 5246	Scherz
@@ -1793,14 +1793,14 @@
 5277	Hottwil
 5300	Turgi
 5301	Siggenthal Station
-5303	WÃ¼renlingen
+5303	Würenlingen
 5304	Endingen
 5305	Unterendingen
 5306	Tegerfelden
-5312	DÃ¶ttingen
+5312	Döttingen
 5313	Klingnau
-5314	KleindÃ¶ttingen
-5315	BÃ¶ttstein
+5314	Kleindöttingen
+5315	Böttstein
 5316	Leuggern
 5317	Hettenschwil
 5318	Mandach
@@ -1812,7 +1812,7 @@
 5330	Bad Zurzach
 5332	Rekingen AG
 5333	Baldingen
-5334	BÃ¶bikon
+5334	Böbikon
 5400	Baden
 5401	Baden
 5402	Baden
@@ -1832,17 +1832,17 @@
 5430	Wettingen
 5431	Wettingen Sonderd
 5432	Neuenhof
-5436	WÃ¼renlos
+5436	Würenlos
 5442	Fislisbach
 5443	Niederrohrdorf
-5444	KÃ¼nten
+5444	Künten
 5445	Eggenwil
 5452	Oberrohrdorf
 5453	Remetschwil
 5454	Bellikon
 5462	Siglistorf
 5463	Wislikofen
-5464	RÃ¼mikon AG
+5464	Rümikon AG
 5465	Mellikon
 5466	Kaiserstuhl AG
 5467	Fisibach
@@ -1850,19 +1850,19 @@
 5503	Schafisheim
 5504	Othmarsingen
 5505	Brunegg
-5506	MÃ¤genwil
+5506	Mägenwil
 5507	Mellingen
 5512	Wohlenschwil
-5522	TÃ¤gerig
+5522	Tägerig
 5524	Nesselnbach
-5525	Fischbach-GÃ¶slikon
+5525	Fischbach-Göslikon
 5600	Lenzburg
 5601	Lenzburg Sonderdst
 5603	Staufen
 5604	Hendschiken
 5605	Dottikon
 5606	Dintikon
-5607	HÃ¤gglingen
+5607	Hägglingen
 5608	Stetten AG
 5610	Wohlen AG
 5611	Anglikon
@@ -1873,27 +1873,27 @@
 5616	Meisterschwanden
 5617	Tennwil
 5618	Bettwil
-5619	BÃ¼ttikon AG
+5619	Büttikon AG
 5620	Bremgarten AG
 5621	Zufikon
 5622	Waltenschwil
 5623	Boswil
-5624	BÃ¼nzen
+5624	Bünzen
 5625	Kallern
 5626	Hermetschwil-Staff
-5627	BesenbÃ¼ren
+5627	Besenbüren
 5628	Aristau
 5630	Muri AG
 5632	Buttwil
 5634	Merenschwand
 5636	Benzenschwil
 5637	Beinwil (Freiamt)
-5642	MÃ¼hlau
+5642	Mühlau
 5643	Sins
 5644	Auw
 5645	Aettenschwil
 5646	Abtwil AG
-5647	OberrÃ¼ti
+5647	Oberrüti
 5702	Niederlenz
 5703	Seon
 5704	Egliswil
@@ -1902,9 +1902,9 @@
 5707	Seengen
 5708	Birrwil
 5712	Beinwil am See
-5722	GrÃ¤nichen
+5722	Gränichen
 5723	Teufenthal AG
-5724	DÃ¼rrenÃ¤sch
+5724	Dürrenäsch
 5725	Leutwil
 5726	Unterkulm
 5727	Oberkulm
@@ -1915,7 +1915,7 @@
 5735	Pfeffikon LU
 5736	Burg AG
 5737	Menziken
-5742	KÃ¶lliken
+5742	Kölliken
 5745	Safenwil
 5746	Walterswil SO
 6000	Luzern
@@ -1933,18 +1933,18 @@
 6013	Eigenthal
 6014	Luzern
 6015	Luzern
-6016	HellbÃ¼hl
+6016	Hellbühl
 6017	Ruswil
 6018	Buttisholz
 6019	Sigigen
-6020	EmmenbrÃ¼cke
-6021	EmmenbrÃ¼cke 1
+6020	Emmenbrücke
+6021	Emmenbrücke 1
 6022	Grosswangen
 6023	Rothenburg
 6024	Hildisrieden
 6025	Neudorf
 6026	Rain
-6027	RÃ¶merswil LU
+6027	Römerswil LU
 6028	Herlisberg
 6030	Ebikon
 6031	Ebikon
@@ -1955,7 +1955,7 @@
 6036	Dierikon
 6037	Root
 6038	Gisikon
-6039	Root LÃ¤ngenbold
+6039	Root Längenbold
 6042	Dietwil
 6043	Adligenswil
 6044	Udligenswil
@@ -1965,7 +1965,7 @@
 6052	Hergiswil NW
 6053	Alpnachstad
 6055	Alpnach Dorf
-6056	KÃ¤giswil
+6056	Kägiswil
 6060	Sarnen
 6061	Sarnen 1
 6062	Wilen (Sarnen)
@@ -1975,9 +1975,9 @@
 6067	Melchtal
 6068	Melchsee-Frutt
 6072	Sachseln
-6073	FlÃ¼eli-Ranft
+6073	Flüeli-Ranft
 6074	Giswil
-6078	BÃ¼rglen OW
+6078	Bürglen OW
 6083	Hasliberg Hohfluh
 6084	Hasliberg Wasserw
 6085	Hasliberg Goldern
@@ -2002,8 +2002,8 @@
 6144	Zell LU
 6145	Fischbach LU
 6146	Grossdietwil
-6147	AltbÃ¼ron
-6152	HÃ¼swil
+6147	Altbüron
+6152	Hüswil
 6153	Ufhusen
 6154	Hofstatt
 6156	Luthern
@@ -2013,9 +2013,9 @@
 6163	Ebnet
 6166	Hasle LU
 6167	Bramboden
-6170	SchÃ¼pfheim
-6173	FlÃ¼hli LU
-6174	SÃ¶renberg
+6170	Schüpfheim
+6173	Flühli LU
+6174	Sörenberg
 6182	Escholzmatt
 6192	Wiggen
 6196	Marbach LU
@@ -2031,7 +2031,7 @@
 6212	St. Erhard
 6213	Knutwil
 6214	Schenkon
-6215	BeromÃ¼nster
+6215	Beromünster
 6216	Mauensee
 6217	Kottwil
 6218	Ettiswil
@@ -2039,7 +2039,7 @@
 6222	Gunzwil
 6231	Schlierbach
 6232	Geuensee
-6233	BÃ¼ron
+6233	Büron
 6234	Triengen
 6235	Winikon
 6236	Wilihof
@@ -2048,7 +2048,7 @@
 6244	Nebikon
 6245	Ebersecken
 6246	Altishofen
-6247	SchÃ¶tz
+6247	Schötz
 6248	Alberswil
 6252	Dagmersellen
 6253	Uffikon
@@ -2069,7 +2069,7 @@
 6286	Altwis
 6287	Aesch LU
 6288	Schongau
-6289	MÃ¼swangen
+6289	Müswangen
 6294	Ermensee
 6295	Mosen
 6300	Zug
@@ -2080,15 +2080,15 @@
 6310	Zug
 6312	Steinhausen
 6313	Edlibach
-6314	UnterÃ¤geri
+6314	Unterägeri
 6315	Morgarten
 6317	Oberwil b. Zug
 6318	Walchwil
 6319	Allenwinden
 6330	Cham 2
-6331	HÃ¼nenberg
+6331	Hünenberg
 6332	Hagendorn
-6333	HÃ¼nenberg See
+6333	Hünenberg See
 6340	Baar
 6341	Baar
 6343	Rotkreuz
@@ -2100,17 +2100,17 @@
 6354	Vitznau
 6356	Rigi Kaltbad
 6362	Stansstad
-6363	ObbÃ¼rgen
+6363	Obbürgen
 6365	Kehrsiten
 6370	Stans
 6371	Stans
 6372	Ennetmoos
-6373	EnnetbÃ¼rgen
+6373	Ennetbürgen
 6374	Buochs
 6375	Beckenried
 6376	Emmetten
 6377	Seelisberg
-6382	BÃ¼ren NW
+6382	Büren NW
 6383	Dallenwil
 6386	Wolfenschiessen
 6387	Oberrickenbach
@@ -2118,7 +2118,7 @@
 6390	Engelberg
 6391	Engelberg
 6402	Merlischachen
-6403	KÃ¼ssnacht am Rigi
+6403	Küssnacht am Rigi
 6404	Greppen
 6405	Immensee
 6410	Goldau
@@ -2138,17 +2138,17 @@
 6436	Ried (Muotathal)
 6438	Ibach
 6440	Brunnen
-6441	RÃ¼tli
+6441	Rütli
 6442	Gersau
 6443	Morschach
 6452	Sisikon
-6454	FlÃ¼elen
+6454	Flüelen
 6460	Altdorf UR
 6461	Isenthal
 6462	Seedorf UR
-6463	BÃ¼rglen UR
+6463	Bürglen UR
 6464	Spiringen
-6465	UnterschÃ¤chen
+6465	Unterschächen
 6466	Bauen
 6467	Schattdorf
 6468	Attinghausen
@@ -2161,7 +2161,7 @@
 6482	Gurtnellen
 6484	Wassen UR
 6485	Meien
-6487	GÃ¶schenen
+6487	Göschenen
 6490	Andermatt
 6491	Realp
 6493	Hospental
@@ -2427,7 +2427,7 @@
 6976	Castagnola
 6977	Ruvigliana
 6978	Gandria
-6979	BrÃ¨ sopra Lugano
+6979	Brè sopra Lugano
 6980	Castelrotto
 6981	Bedigliora
 6982	Agno
@@ -2464,7 +2464,7 @@
 7019	Fidaz
 7023	Haldenstein
 7026	Maladers
-7027	LÃ¼en
+7027	Lüen
 7028	St. Peter
 7029	Peist
 7031	Laax GR
@@ -2472,7 +2472,7 @@
 7050	Arosa
 7056	Molinis
 7057	Langwies
-7058	LitzirÃ¼ti
+7058	Litzirüti
 7062	Passugg-Araschgen
 7063	Praden
 7064	Tschiertschen
@@ -2504,7 +2504,7 @@
 7133	Obersaxen Affeier
 7134	Obersaxen Meierhof
 7135	Obersaxen Giraniga
-7136	Obers FriggahÃ¼s
+7136	Obers Friggahüs
 7137	Flond
 7138	Surcuolm
 7141	Luven
@@ -2537,9 +2537,9 @@
 7174	S. Benedetg
 7175	Sumvitg
 7176	Cumpadials
-7180	Disentis/MustÃ©r
+7180	Disentis/Mustér
 7182	Cavardiras
-7183	MumpÃ© Medel
+7183	Mumpé Medel
 7184	Curaglia
 7185	Platta
 7186	Segnas
@@ -2555,7 +2555,7 @@
 7208	Malans GR
 7212	Seewis Dorf
 7213	Valzeina
-7214	GrÃ¼sch
+7214	Grüsch
 7215	Fanas
 7220	Schiers
 7222	Mittellunden
@@ -2567,14 +2567,14 @@
 7232	Furna
 7233	Jenaz
 7235	Fideris
-7240	KÃ¼blis
+7240	Küblis
 7241	Conters
 7242	Luzein
 7243	Pany
-7244	GadenstÃ¤tt
+7244	Gadenstätt
 7245	Ascharina
-7246	St. AntÃ¶nien
-7247	Saas im PrÃ¤ttigau
+7246	St. Antönien
+7247	Saas im Prättigau
 7249	Serneus
 7250	Klosters
 7252	Klosters Dorf
@@ -2588,13 +2588,13 @@
 7302	Landquart
 7303	Mastrils
 7304	Maienfeld
-7306	FlÃ¤sch
+7306	Fläsch
 7307	Jenins
 7310	Bad Ragaz
-7312	PfÃ¤fers
+7312	Pfäfers
 7313	St. Margrethenberg
 7314	Vadura
-7315	VÃ¤ttis
+7315	Vättis
 7317	Valens
 7320	Sargans
 7323	Wangs
@@ -2602,15 +2602,15 @@
 7325	Schwendi
 7326	Weisstannen
 7402	Bonaduz
-7403	RhÃ¤zÃ¼ns
+7403	Rhäzüns
 7404	Feldis/Veulden
 7405	Rothenbrunnen
 7407	Trans
 7408	Cazis
 7411	Sils im Domleschg
 7412	Scharans
-7413	FÃ¼rstenaubruck
-7414	FÃ¼rstenau
+7413	Fürstenaubruck
+7414	Fürstenau
 7415	Rodels
 7416	Almens
 7417	Paspels
@@ -2619,7 +2619,7 @@
 7421	Summaprada
 7422	Tartar
 7423	Sarn
-7424	PrÃ¤z
+7424	Präz
 7425	Masein
 7426	Flerden
 7427	Urmein
@@ -2629,7 +2629,7 @@
 7432	Zillis
 7433	Donat
 7434	Sufers
-7435	SplÃ¼gen
+7435	Splügen
 7436	Medels
 7437	Nufenen
 7438	Hinterrhein
@@ -2638,7 +2638,7 @@
 7443	Pignia
 7444	Ausserferrera
 7445	Innerferrera
-7446	Campsut-CrÃ¶t
+7446	Campsut-Cröt
 7447	Cresta (Avers)
 7448	Juf
 7450	Tiefencastel
@@ -2658,7 +2658,7 @@
 7472	Surava
 7473	Alvaneu Bad
 7477	Filisur
-7482	BergÃ¼n/Bravuogn
+7482	Bergün/Bravuogn
 7484	Latsch
 7492	Alvaneu Dorf
 7493	Schmitten (Albula)
@@ -2668,7 +2668,7 @@
 7503	Samedan
 7504	Pontresina
 7505	Celerina
-7512	ChampfÃ¨r
+7512	Champfèr
 7513	Silvaplana
 7514	Sils/Segl Maria
 7515	Sils/Segl Baselgia
@@ -2683,10 +2683,10 @@
 7530	Zernez
 7532	Tschierv
 7533	Fuldera
-7534	LÃ¼
+7534	Lü
 7535	Valchava
 7536	Sta. Maria V. M.
-7537	MÃ¼stair
+7537	Müstair
 7542	Susch
 7543	Lavin
 7545	Guarda
@@ -2719,89 +2719,89 @@
 7746	Le Prese
 7747	Viano
 7748	Campascio
-8000	ZÃ¼rich
-8001	ZÃ¼rich
-8002	ZÃ¼rich
-8003	ZÃ¼rich
-8004	ZÃ¼rich
-8005	ZÃ¼rich
-8006	ZÃ¼rich
-8008	ZÃ¼rich
-8010	ZÃ¼rich
-8011	ZÃ¼rich MÃ¼lligen SC
-8012	ZÃ¼rich
-8015	ZÃ¼rich 15
-8016	ZÃ¼rich 16 Zust
-8020	ZÃ¼rich 1
-8021	ZÃ¼rich 1 Sihlpost
-8022	ZÃ¼rich
-8023	ZÃ¼rich
-8024	ZÃ¼rich
-8026	ZÃ¼rich
-8027	ZÃ¼rich
-8030	ZÃ¼rich
-8031	ZÃ¼rich
-8032	ZÃ¼rich
-8033	ZÃ¼rich
-8034	ZÃ¼rich
-8036	ZÃ¼rich
-8037	ZÃ¼rich
-8038	ZÃ¼rich
-8039	ZÃ¼rich
-8040	ZÃ¼rich
-8041	ZÃ¼rich
-8042	ZÃ¼rich
-8044	ZÃ¼rich
-8045	ZÃ¼rich
-8046	ZÃ¼rich
-8047	ZÃ¼rich
-8048	ZÃ¼rich
-8049	ZÃ¼rich
-8050	ZÃ¼rich
-8051	ZÃ¼rich
-8052	ZÃ¼rich
-8053	ZÃ¼rich
-8055	ZÃ¼rich
-8057	ZÃ¼rich
-8058	ZÃ¼rich
-8059	ZÃ¼rich 59 EO
-8060	ZÃ¼rich
-8061	ZÃ¼rich
-8063	ZÃ¼rich
-8064	ZÃ¼rich
-8065	ZÃ¼rich
-8066	ZÃ¼rich
-8068	ZÃ¼rich
-8070	ZÃ¼rich
-8071	ZÃ¼rich CS PZ
-8074	ZÃ¼rich Voice Pub
-8075	ZÃ¼rich
-8080	ZÃ¼rich 80
-8081	ZÃ¼rich
-8085	ZÃ¼rich Versich.
-8086	ZÃ¼rich R Digest
-8087	ZÃ¼rich
-8088	ZÃ¼rich
-8090	ZÃ¼rich
-8091	ZÃ¼rich
-8092	ZÃ¼rich
-8093	ZÃ¼rich
-8096	ZÃ¼rich IBRS local
-8098	ZÃ¼rich
-8099	ZÃ¼rich
+8000	Zürich
+8001	Zürich
+8002	Zürich
+8003	Zürich
+8004	Zürich
+8005	Zürich
+8006	Zürich
+8008	Zürich
+8010	Zürich
+8011	Zürich Mülligen SC
+8012	Zürich
+8015	Zürich 15
+8016	Zürich 16 Zust
+8020	Zürich 1
+8021	Zürich 1 Sihlpost
+8022	Zürich
+8023	Zürich
+8024	Zürich
+8026	Zürich
+8027	Zürich
+8030	Zürich
+8031	Zürich
+8032	Zürich
+8033	Zürich
+8034	Zürich
+8036	Zürich
+8037	Zürich
+8038	Zürich
+8039	Zürich
+8040	Zürich
+8041	Zürich
+8042	Zürich
+8044	Zürich
+8045	Zürich
+8046	Zürich
+8047	Zürich
+8048	Zürich
+8049	Zürich
+8050	Zürich
+8051	Zürich
+8052	Zürich
+8053	Zürich
+8055	Zürich
+8057	Zürich
+8058	Zürich
+8059	Zürich 59 EO
+8060	Zürich
+8061	Zürich
+8063	Zürich
+8064	Zürich
+8065	Zürich
+8066	Zürich
+8068	Zürich
+8070	Zürich
+8071	Zürich CS PZ
+8074	Zürich Voice Pub
+8075	Zürich
+8080	Zürich 80
+8081	Zürich
+8085	Zürich Versich.
+8086	Zürich R Digest
+8087	Zürich
+8088	Zürich
+8090	Zürich
+8091	Zürich
+8092	Zürich
+8093	Zürich
+8096	Zürich IBRS local
+8098	Zürich
+8099	Zürich
 8102	Oberengstringen
 8103	Unterengstringen
 8104	Weiningen ZH
 8105	Regensdorf
 8106	Adlikon b.Regensdf
 8107	Buchs ZH
-8108	DÃ¤llikon
+8108	Dällikon
 8109	Kloster Fahr
 8112	Otelfingen
 8113	Boppelsen
-8114	DÃ¤nikon ZH
-8115	HÃ¼ttikon
-8117	FÃ¤llanden
+8114	Dänikon ZH
+8115	Hüttikon
+8117	Fällanden
 8118	Pfaffhausen
 8121	Benglen
 8122	Binz
@@ -2819,7 +2819,7 @@
 8142	Uitikon Waldegg
 8143	Uetliberg
 8152	Glattbrugg
-8153	RÃ¼mlang
+8153	Rümlang
 8154	Oberglatt ZH
 8155	Niederhasli
 8156	Oberhasli
@@ -2827,22 +2827,22 @@
 8158	Regensberg
 8162	Steinmaur
 8164	Bachs
-8165	SchÃ¶fflisdorf
+8165	Schöfflisdorf
 8166	Niederweningen
 8172	Niederglatt ZH
 8173	Neerach
 8174	Stadel
 8175	Windlach
-8180	BÃ¼lach
-8181	HÃ¶ri
+8180	Bülach
+8181	Höri
 8182	Hochfelden
-8183	BÃ¼lach Dist Ba
-8184	BachenbÃ¼lach
+8183	Bülach Dist Ba
+8184	Bachenbülach
 8185	Winkel
 8187	Weiach
 8192	Glattfelden
 8193	Eglisau
-8194	HÃ¼ntwangen
+8194	Hüntwangen
 8195	Wasterkingen
 8196	Wil ZH
 8197	Rafz
@@ -2857,7 +2857,7 @@
 8210	Schaffhausen DistB
 8212	Neuhausen
 8213	Neunkirch
-8214	GÃ¤chlingen
+8214	Gächlingen
 8215	Hallau
 8216	Oberhallau
 8217	Wilchingen
@@ -2865,7 +2865,7 @@
 8219	Trasadingen
 8222	Beringen
 8223	Guntmadingen
-8224	LÃ¶hningen
+8224	Löhningen
 8225	Siblingen
 8226	Schleitheim
 8228	Beggingen
@@ -2875,8 +2875,8 @@
 8234	Stetten SH
 8235	Lohn SH
 8236	Opfertshofen SH
-8238	BÃ¼singen
-8239	DÃ¶rflingen
+8238	Büsingen
+8239	Dörflingen
 8240	Thayngen
 8241	Barzheim
 8242	Bibern SH
@@ -2902,7 +2902,7 @@
 8269	Fruthwilen
 8272	Ermatingen
 8273	Triboltingen
-8274	TÃ¤gerwilen
+8274	Tägerwilen
 8280	Kreuzlingen
 8285	Kreuzlingen Ifolor
 8301	Glattzentrum
@@ -2910,12 +2910,12 @@
 8303	Bassersdorf
 8304	Wallisellen
 8305	Dietlikon
-8306	BrÃ¼ttisellen
+8306	Brüttisellen
 8307	Effretikon
 8308	Illnau
-8309	NÃ¼rensdorf
+8309	Nürensdorf
 8310	Kemptthal
-8311	BrÃ¼tten
+8311	Brütten
 8312	Winterberg ZH
 8314	Kyburg
 8315	Lindau
@@ -2923,14 +2923,14 @@
 8320	Fehraltorf
 8322	Madetswil
 8325	Effretikon Dist Ba
-8330	PfÃ¤ffikon ZH
+8330	Pfäffikon ZH
 8331	Auslikon
 8332	Russikon
 8335	Hittnau
 8340	Hinwil
 8342	Wernetshausen
 8343	Hinwil Dist Ba
-8344	BÃ¤retswil
+8344	Bäretswil
 8345	Adetswil
 8352	Elsau
 8353	Elgg
@@ -2962,7 +2962,7 @@
 8415	Berg am Irchel
 8416	Flaach
 8418	Schlatt
-8421	DÃ¤ttlikon
+8421	Dättlikon
 8422	Pfungen
 8423	Embrach-Embraport
 8424	Embrach
@@ -2978,7 +2978,7 @@
 8452	Adlikon
 8453	Alten
 8454	Buchberg
-8455	RÃ¼dlingen
+8455	Rüdlingen
 8457	Humlikon
 8458	Dorf
 8459	Volken
@@ -2988,7 +2988,7 @@
 8463	Benken ZH
 8464	Ellikon am Rhein
 8465	Rudolfingen
-8466	TrÃ¼llikon
+8466	Trüllikon
 8467	Truttikon
 8468	Guntalingen
 8471	Rutschwil
@@ -3002,15 +3002,15 @@
 8482	Sennhof
 8483	Kollbrunn
 8484	Weisslingen
-8486	Rikon im TÃ¶sstal
-8487	RÃ¤mismÃ¼hle
+8486	Rikon im Tösstal
+8487	Rämismühle
 8488	Turbenthal
 8489	Wildberg
 8492	Wila
 8493	Saland
 8494	Bauma
-8495	SchmidrÃ¼ti
-8496	Steg im TÃ¶sstal
+8495	Schmidrüti
+8496	Steg im Tösstal
 8497	Fischenthal
 8498	Gibswil
 8499	Sternenberg
@@ -3020,13 +3020,13 @@
 8503	Frauenfeld
 8505	Pfyn
 8506	Lanzenneunforn
-8507	HÃ¶rhausen
+8507	Hörhausen
 8508	Homburg
 8510	Frauenfeld
 8512	Thundorf
 8514	Amlikon-Bissegg
 8520	Frauenfeld PZ
-8522	HÃ¤uslenen
+8522	Häuslenen
 8523	Hagenbuch ZH
 8524	Uesslingen
 8525	Niederneunforn
@@ -3034,7 +3034,7 @@
 8530	Frauenfeld CALL
 8532	Warth
 8535	Herdern
-8536	HÃ¼ttwilen
+8536	Hüttwilen
 8537	Nussbaumen TG
 8540	Frauenfeld ST PP 1
 8542	Wiesendangen
@@ -3045,12 +3045,12 @@
 8547	Gachnang
 8548	Ellikon a d Thur
 8552	Felben-Wellhausen
-8553	HÃ¼ttlingen-Mettdf
-8554	MÃ¼llheim-Wigoltgn
-8555	MÃ¼llheim Dorf
+8553	Hüttlingen-Mettdf
+8554	Müllheim-Wigoltgn
+8555	Müllheim Dorf
 8556	Wigoltingen
 8558	Raperswilen
-8560	MÃ¤rstetten
+8560	Märstetten
 8561	Ottoberg
 8564	Lipperswil
 8565	Hugelshofen
@@ -3059,9 +3059,9 @@
 8572	Berg TG
 8573	Siegershausen
 8574	Lengwil-Oberhofen
-8575	BÃ¼rglen TG
+8575	Bürglen TG
 8576	Mauren TG
-8577	SchÃ¶nholzerswilen
+8577	Schönholzerswilen
 8580	Amriswil
 8581	Schocherswil
 8582	Dozwil
@@ -3075,19 +3075,19 @@
 8590	Romanshorn
 8592	Uttwil
 8593	Kesswil
-8594	GÃ¼ttingen
+8594	Güttingen
 8595	Altnau
 8596	Scherzingen
 8597	Landschlacht
 8598	Bottighofen
 8599	Salmsach
-8600	DÃ¼bendorf
+8600	Dübendorf
 8602	Wangen ZH
 8603	Schwerzenbach
 8604	Volketswil
 8605	Gutenswil
-8606	NÃ¤nikon
-8607	Aathal-SeegrÃ¤ben
+8606	Nänikon
+8607	Aathal-Seegräben
 8608	Bubikon
 8610	Uster
 8612	Uster 2
@@ -3095,21 +3095,21 @@
 8614	Bertschikon Gossau
 8615	Wermatswil
 8616	Riedikon
-8617	MÃ¶nchaltorf
+8617	Mönchaltorf
 8618	Oetwil am See
 8620	Wetzikon ZH
 8621	Wetzikon ZH 4
 8622	Wetzikon ZH
 8623	Wetzikon ZH
-8624	GrÃ¼t (Gossau ZH)
+8624	Grüt (Gossau ZH)
 8625	Gossau ZH
 8626	Ottikon
-8627	GrÃ¼ningen
-8630	RÃ¼ti ZH
+8627	Grüningen
+8630	Rüti ZH
 8632	Tann
 8633	Wolfhausen
 8634	Hombrechtikon
-8635	DÃ¼rnten
+8635	Dürnten
 8636	Wald ZH
 8637	Laupen ZH
 8638	Goldingen
@@ -3117,20 +3117,20 @@
 8640	Rapperswil SG
 8645	Jona
 8646	Wagen
-8700	KÃ¼snacht ZH
+8700	Küsnacht ZH
 8702	Zollikon
 8703	Erlenbach ZH
 8704	Herrliberg
 8706	Meilen
 8707	Uetikon am See
-8708	MÃ¤nnedorf
-8712	StÃ¤fa
+8708	Männedorf
+8712	Stäfa
 8713	Uerikon
 8714	Feldbach
 8715	Bollingen
 8716	Schmerikon
 8717	Benken SG
-8718	SchÃ¤nis
+8718	Schänis
 8722	Kaltbrunn
 8723	Rufi
 8725	Ernetschwil
@@ -3144,14 +3144,14 @@
 8737	Gommiswald
 8738	Uetliburg SG
 8739	Rieden SG
-8740	Uznach VÃ¶gele AG
+8740	Uznach Vögele AG
 8750	Glarus
 8751	Urnerboden
-8752	NÃ¤fels
+8752	Näfels
 8753	Mollis
 8754	Netstal
 8755	Ennenda
-8756	MitlÃ¶di
+8756	Mitlödi
 8757	Filzbach
 8758	Obstalden
 8759	Netstal
@@ -3164,26 +3164,26 @@
 8774	Leuggelbach
 8775	Luchsingen
 8777	Diesbach GL
-8782	RÃ¼ti GL
+8782	Rüti GL
 8783	Linthal
 8784	Braunwald
 8800	Thalwil
 8801	Thalwil
 8802	Kilchberg ZH
-8803	RÃ¼schlikon
+8803	Rüschlikon
 8804	Au ZH
 8805	Richterswil
-8806	BÃ¤ch SZ
+8806	Bäch SZ
 8807	Freienbach
-8808	PfÃ¤ffikon SZ
+8808	Pfäffikon SZ
 8810	Horgen
 8812	Horgen Bhf Oberd.
 8813	Horgen
 8815	Horgenberg
 8816	Hirzel
-8820	WÃ¤denswil
-8824	SchÃ¶nenberg ZH
-8825	HÃ¼tten
+8820	Wädenswil
+8824	Schönenberg ZH
+8825	Hütten
 8832	Wollerau
 8833	Samstagern
 8834	Schindellegi
@@ -3205,16 +3205,16 @@
 8856	Tuggen
 8857	Vorderthal
 8858	Innerthal
-8862	SchÃ¼belbach
+8862	Schübelbach
 8863	Buttikon SZ
 8864	Reichenburg
 8865	Bilten
-8866	ZiegelbrÃ¼cke
+8866	Ziegelbrücke
 8867	Niederurnen
 8868	Oberurnen
 8872	Weesen
 8873	Amden
-8874	MÃ¼hlehorn
+8874	Mühlehorn
 8877	Murg
 8878	Quinten
 8879	Pizolpark (Mels)
@@ -3224,7 +3224,7 @@
 8883	Quarten
 8884	Oberterzen
 8885	Mols
-8886	MÃ¤dris-Vermol
+8886	Mädris-Vermol
 8887	Mels
 8888	Heiligkreuz (Mels)
 8889	Plons
@@ -3311,11 +3311,11 @@
 9052	Niederteufen
 9053	Teufen AR
 9054	Haslen AI
-9055	BÃ¼hler
+9055	Bühler
 9056	Gais
 9057	Weissbad
-9058	BrÃ¼lisau
-9062	LustmÃ¼hle
+9058	Brülisau
+9062	Lustmühle
 9063	Stein AR
 9064	Hundwil
 9100	Herisau
@@ -3323,8 +3323,8 @@
 9102	Herisau
 9103	Schwellbrunn
 9104	Waldstatt
-9105	SchÃ¶nengrund
-9107	UrnÃ¤sch
+9105	Schönengrund
+9107	Urnäsch
 9108	Gonten
 9112	Schachen b.Herisau
 9113	Degersheim
@@ -3343,8 +3343,8 @@
 9205	Waldkirch
 9212	Arnegg
 9213	Hauptwil
-9214	Kradolf-SchÃ¶nenb.
-9215	SchÃ¶nenberg TG
+9214	Kradolf-Schönenb.
+9215	Schönenberg TG
 9216	Heldswil
 9217	Neukirch
 9220	Bischofszell
@@ -3356,8 +3356,8 @@
 9242	Oberuzwil
 9243	Jonschwil
 9244	Niederuzwil
-9245	OberbÃ¼ren
-9246	NiederbÃ¼ren
+9245	Oberbüren
+9246	Niederbüren
 9247	Henau
 9248	Bichwil
 9249	Algetshausen
@@ -3366,8 +3366,8 @@
 9304	Bernhardzell
 9305	Berg SG
 9306	Freidorf TG
-9308	LÃ¶mmenschwil
-9312	HÃ¤ggenschwil
+9308	Lömmenschwil
+9312	Häggenschwil
 9313	Muolen
 9314	Steinebrunn
 9315	Winden
@@ -3376,10 +3376,10 @@
 9323	Steinach
 9325	Roggwil TG
 9326	Horn
-9327	TÃ¼bach
+9327	Tübach
 9400	Rorschach
 9401	Rorschach
-9402	MÃ¶rschwil
+9402	Mörschwil
 9403	Goldach
 9404	Rorschacherberg
 9405	Wienacht-Tobel
@@ -3403,16 +3403,16 @@
 9443	Widnau
 9444	Diepoldsau
 9445	Rebstein
-9450	LÃ¼chingen
+9450	Lüchingen
 9451	Kriessern
 9452	Hinterforst
 9453	Eichberg
 9462	Montlingen
 9463	Oberriet SG
-9464	RÃ¼thi (Rheintal)
+9464	Rüthi (Rheintal)
 9465	Salez
 9466	Sennwald
-9467	FrÃ¼msen
+9467	Frümsen
 9468	Sax
 9469	Haag (Rheintal)
 9470	Buchs SG
@@ -3421,7 +3421,7 @@
 9473	Gams
 9475	Sevelen
 9476	Weite
-9477	TrÃ¼bbach
+9477	Trübbach
 9478	Azmoos
 9479	Oberschan
 9485	Nendeln
@@ -3447,42 +3447,42 @@
 9507	Stettfurt
 9508	Weingarten-Kalth
 9510	Wil SG Dist Ba
-9512	RossrÃ¼ti
+9512	Rossrüti
 9514	Wuppenau
 9515	Hosenruck
 9517	Mettlen
-9523	ZÃ¼berwangen
+9523	Züberwangen
 9524	Zuzwil SG
 9525	Lenggenwil
 9526	Zuckenriet
 9527	Niederhelfenschwil
 9532	Rickenbach b. Wil
 9533	Kirchberg SG
-9534	GÃ¤hwil
+9534	Gähwil
 9535	Wilen b. Wil
 9536	Schwarzenbach SG
-9542	MÃ¼nchwilen TG
+9542	Münchwilen TG
 9543	St. Margarethen TG
-9545	WÃ¤ngi
+9545	Wängi
 9546	Tuttwil
 9547	Wittenwil
 9548	Matzingen
 9552	Bronschhofen
 9553	Bettwiesen
-9554	TÃ¤gerschen
+9554	Tägerschen
 9555	Tobel
 9556	Affeltrangen
-9562	MÃ¤rwil
+9562	Märwil
 9565	Rothenhausen
 9573	Littenheid
-9601	LÃ¼tisburg Station
+9601	Lütisburg Station
 9602	Bazenheid
 9604	Oberrindal
-9606	BÃ¼tschwil
+9606	Bütschwil
 9607	Mosnang
 9608	Ganterschwil
 9612	Dreien
-9613	MÃ¼hlrÃ¼ti
+9613	Mühlrüti
 9614	Libingen
 9615	Dietfurt
 9620	Lichtensteig
@@ -3490,11 +3490,11 @@
 9622	Krinau
 9630	Wattwil
 9631	Ulisbach
-9633	BÃ¤chli (Hemberg)
+9633	Bächli (Hemberg)
 9642	Ebnat-Kappel
 9643	Krummenau
 9650	Nesslau
-9651	EnnetbÃ¼hl
+9651	Ennetbühl
 9652	Neu St. Johann
 9655	Stein SG
 9656	Alt St. Johann

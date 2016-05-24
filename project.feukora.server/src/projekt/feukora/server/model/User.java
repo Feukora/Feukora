@@ -159,4 +159,10 @@ public class User implements Serializable {
 	{
 		return this.password.equals( password );
 	}
+
+	public void setUsergroupid(Usergroup usergroupid) {
+		this.usergroupid = usergroupid;
+	}
+	
+	
 }
