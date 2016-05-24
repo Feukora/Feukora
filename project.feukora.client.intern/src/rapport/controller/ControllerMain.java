@@ -51,27 +51,11 @@ public class ControllerMain {
        radioowner.setSelected(false);
        radioadministration.setSelected(false);
        
-       //Togglegroup handling for: Heater/Blower (Fuel)
-       radiofueloil.setToggleGroup(heaterfuel);
-       radiofuelnaturalgas.setToggleGroup(heaterfuel);
-       radiofuelliquidgas.setToggleGroup(heaterfuel);
-       radiofueloil.setSelected(false);
-       radiofuelnaturalgas.setSelected(false);
-       radiofuelliquidgas.setSelected(false);
-       
        //Togglegroup handling for: Heater/Blower (Controltype)
        radioroutinecontrol.setToggleGroup(controltype);
        radioacceptanceinspection.setToggleGroup(controltype);
        radioroutinecontrol.setSelected(false);
        radioacceptanceinspection.setSelected(false);
-       
-       //Togglegroup handling for: Heater/Blower (Fuel)
-       radioblowerfan.setToggleGroup(blowertype);
-       radiobloweratmospheric.setToggleGroup(blowertype);
-       radioblowervaporizer.setToggleGroup(blowertype);
-       radiofueloil.setSelected(false);
-       radiofuelnaturalgas.setSelected(false);
-       radiofuelliquidgas.setSelected(false);
        
        //Togglegroup handling for: Oilpart measuring Step 1
        radiooilpartyes1.setToggleGroup(oilpart1);
@@ -163,12 +147,6 @@ public class ControllerMain {
     private TextField textfieldaddress;
 
     @FXML
-    private RadioButton radioowner;
-
-    @FXML
-    private RadioButton radioadministration;
-
-    @FXML
     private TextField textfieldfacilitymanager;
 
     @FXML
@@ -187,15 +165,6 @@ public class ControllerMain {
     private ComboBox<?> comboboxheatertype;
 
     @FXML
-    private RadioButton radiofueloil;
-
-    @FXML
-    private RadioButton radiofuelliquidgas;
-
-    @FXML
-    private RadioButton radiofuelnaturalgas;
-
-    @FXML
     private RadioButton radioroutinecontrol;
 
     @FXML
@@ -203,15 +172,6 @@ public class ControllerMain {
 
     @FXML
     private ComboBox<?> comboboxblowertype;
-
-    @FXML
-    private RadioButton radioblowerfan;
-
-    @FXML
-    private RadioButton radioblowervaporizer;
-
-    @FXML
-    private RadioButton radiobloweratmospheric;
 
     @FXML
     private DatePicker measuringdate;
@@ -394,32 +354,12 @@ public class ControllerMain {
     }
 
     @FXML
-    void SetAdministration(ActionEvent event) {
-
-    }
-
-    @FXML
     void SetAdress(ActionEvent event) {
 
     }
 
     @FXML
-    void SetBlowerAtmospheric(ActionEvent event) {
-
-    }
-
-    @FXML
-    void SetBlowerFan(ActionEvent event) {
-
-    }
-
-    @FXML
     void SetBlowerType(ActionEvent event) {
-
-    }
-
-    @FXML
-    void SetBlowerVaporizer(ActionEvent event) {
 
     }
 
@@ -520,21 +460,6 @@ public class ControllerMain {
 
     @FXML
     void SetFacilitymanager(ActionEvent event) {
-
-    }
-
-    @FXML
-    void SetFuelLiquidGas(ActionEvent event) {
-
-    }
-
-    @FXML
-    void SetFuelNaturalGas(ActionEvent event) {
-
-    }
-
-    @FXML
-    void SetFuelOil(ActionEvent event) {
 
     }
 
@@ -645,11 +570,6 @@ public class ControllerMain {
 
     @FXML
     void SetOilpartYes4(ActionEvent event) {
-
-    }
-
-    @FXML
-    void SetOwner(ActionEvent event) {
 
     }
 

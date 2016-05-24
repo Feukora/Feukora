@@ -36,16 +36,6 @@
                               <Font size="14.0" />
                            </font></Label>
                         <TextField fx:id="textfieldaddress" layoutX="21.0" layoutY="253.0" minHeight="30.0" minWidth="270.0" onAction="#SetAdress" prefHeight="30.0" prefWidth="270.0" />
-                        <RadioButton fx:id="radioowner" layoutX="21.0" layoutY="323.0" mnemonicParsing="false" onAction="#SetOwner" text="Eigentümer">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </RadioButton>
-                        <RadioButton fx:id="radioadministration" layoutX="127.0" layoutY="323.0" mnemonicParsing="false" onAction="#SetAdministration" text="Verwaltung">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </RadioButton>
                         <Label layoutX="21.0" layoutY="400.0" prefHeight="35.0" prefWidth="80.0" text="Hauswart">
                            <font>
                               <Font size="14.0" />
@@ -53,6 +43,11 @@
                         </Label>
                         <TextField fx:id="textfieldfacilitymanager" layoutX="21.0" layoutY="435.0" minHeight="30.0" minWidth="270.0" onAction="#SetFacilitymanager" prefHeight="30.0" prefWidth="270.0" />
                         <ComboBox fx:id="comboboxOwnerAdministration" layoutX="21.0" layoutY="353.0" minHeight="30.0" minWidth="270.0" onAction="#ChoseOwnerAdministration" prefHeight="30.0" prefWidth="270.0" />
+                        <Label layoutX="21.0" layoutY="323.0" text="Kunde">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                </content>
@@ -77,12 +72,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="270.0" layoutY="65.0" prefHeight="35.0" prefWidth="108.0" text="Brennstoff">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="395.0" layoutY="26.0" text="Kontrollart">
+                        <Label layoutX="270.0" layoutY="26.0" text="Kontrollart">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -103,59 +93,24 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="270.0" layoutY="252.0" prefHeight="35.0" prefWidth="108.0" text="Brenner">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="textfieldheatinput" layoutX="395.0" layoutY="288.0" minHeight="30.0" minWidth="66.0" onAction="#SetHeatinput" prefHeight="30.0" prefWidth="66.0" />
-                        <Label layoutX="395.0" layoutY="253.0" prefHeight="35.0" prefWidth="166.0" text="Feuerungswärmeleistung">
+                        <TextField fx:id="textfieldheatinput" layoutX="270.0" layoutY="288.0" minHeight="30.0" minWidth="66.0" onAction="#SetHeatinput" prefHeight="30.0" prefWidth="66.0" />
+                        <Label layoutX="270.0" layoutY="253.0" prefHeight="35.0" prefWidth="166.0" text="Feuerungswärmeleistung">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
                         <ComboBox fx:id="comboboxheatertype" layoutX="118.0" layoutY="100.0" minHeight="30.0" onAction="#setHeaterType" prefHeight="30.0" prefWidth="127.0" />
-                        <RadioButton fx:id="radiofueloil" layoutX="270.0" layoutY="94.0" mnemonicParsing="false" onAction="#SetFuelOil" prefHeight="35.0" prefWidth="63.0" text="Öl">
+                        <RadioButton fx:id="radioroutinecontrol" layoutX="270.0" layoutY="94.0" mnemonicParsing="false" onAction="#SetRoutinecontrol" prefHeight="35.0" prefWidth="133.0" text="Routinekontrolle">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="radiofuelliquidgas" layoutX="270.0" layoutY="144.0" mnemonicParsing="false" onAction="#SetFuelLiquidGas" prefHeight="35.0" prefWidth="107.0" text="Flüssiggas">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </RadioButton>
-                        <RadioButton fx:id="radiofuelnaturalgas" layoutX="270.0" layoutY="119.0" mnemonicParsing="false" onAction="#SetFuelNaturalGas" prefHeight="35.0" prefWidth="75.0" text="Erdgas">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </RadioButton>
-                        <RadioButton fx:id="radioroutinecontrol" layoutX="395.0" layoutY="94.0" mnemonicParsing="false" onAction="#SetRoutinecontrol" prefHeight="35.0" prefWidth="133.0" text="Routinekontrolle">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </RadioButton>
-                        <RadioButton fx:id="radioacceptanceinspection" layoutX="395.0" layoutY="119.0" mnemonicParsing="false" onAction="#SetAcceptanceinspection" prefHeight="35.0" prefWidth="146.0" text="Abnahmekontrolle">
+                        <RadioButton fx:id="radioacceptanceinspection" layoutX="270.0" layoutY="119.0" mnemonicParsing="false" onAction="#SetAcceptanceinspection" prefHeight="35.0" prefWidth="146.0" text="Abnahmekontrolle">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
                         <ComboBox fx:id="comboboxblowertype" layoutX="118.0" layoutY="288.0" minHeight="30.0" minWidth="127.0" onAction="#SetBlowerType" prefHeight="30.0" prefWidth="127.0" />
-                        <RadioButton fx:id="radioblowerfan" layoutX="270.0" layoutY="286.0" mnemonicParsing="false" onAction="#SetBlowerFan" prefHeight="35.0" prefWidth="80.0" text="Gebläse">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </RadioButton>
-                        <RadioButton fx:id="radioblowervaporizer" layoutX="270.0" layoutY="341.0" mnemonicParsing="false" onAction="#SetBlowerVaporizer" prefHeight="35.0" prefWidth="112.0" text="Verdampfer">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </RadioButton>
-                        <RadioButton fx:id="radiobloweratmospheric" layoutX="270.0" layoutY="313.0" mnemonicParsing="false" onAction="#SetBlowerAtmospheric" prefHeight="35.0" prefWidth="111.0" text="atmospheric">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </RadioButton>
                      </children>
                   </AnchorPane>
                </content>
