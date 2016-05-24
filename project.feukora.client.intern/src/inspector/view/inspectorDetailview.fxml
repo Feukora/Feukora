@@ -31,7 +31,17 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <HBox prefHeight="19.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+
+            <Label prefHeight="25.0" prefWidth="60.0" text="Name" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Vorname" GridPane.rowIndex="1" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Adresse" GridPane.rowIndex="2" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="PLZ / Ort" GridPane.rowIndex="3" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Email" GridPane.rowIndex="5" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Username" GridPane.rowIndex="7" />
+            <TextField fx:id="inspectorNameField" onAction="#ActionInspectorNameField" GridPane.columnIndex="1" />
+            <TextField fx:id="inspectorFirstNameField" onAction="#ActionInspectorFirstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="inspectorAddressField" onAction="#ActionInspectorAddressField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <HBox prefHeight="19.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
                   <TextField fx:id="inspectorZipField" onAction="#ActionInspectorZipField" prefHeight="25.0" prefWidth="92.0" />
                   <Label prefHeight="17.0" prefWidth="0.0" text="/">
@@ -52,23 +62,15 @@
                   <Insets top="4.0" />
                </GridPane.margin>
             </HBox>
-            <Label prefHeight="25.0" prefWidth="60.0" text="Name" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Vorname" GridPane.rowIndex="1" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Adresse" GridPane.rowIndex="2" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="PLZ / Ort" GridPane.rowIndex="3" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Email" GridPane.rowIndex="5" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Username" GridPane.rowIndex="7" />
-            <TextField fx:id="inspectorNameField" onAction="#ActionInspectorNameField" GridPane.columnIndex="1" />
-            <TextField fx:id="inspectorFirstNameField" onAction="#ActionInspectorFirstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="inspectorAddressField" onAction="#ActionInspectorAddressField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="inspectorPhoneField" onAction="#ActionInspectorPhoneField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="inspectorEmailField" onAction="#ActionInspectorEmailField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label prefHeight="25.0" prefWidth="60.0" text="Firma" GridPane.rowIndex="6" />
             <TextField fx:id="inspectorUsernameField" onAction="#ActionInspectorUsernameField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <Label prefHeight="25.0" prefWidth="60.0" text="Nummer" GridPane.rowIndex="4" />
-            <TextField fx:id="inspectorPhoneField" onAction="#ActionInspectorPhoneField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Firma" GridPane.rowIndex="6" />
-            <Label prefHeight="25.0" prefWidth="60.0" text="Passwort" GridPane.rowIndex="8" />
+             <ComboBox fx:id="inspectorCompanyFieldCombo" onAction="#ActionInspectorCompanyFieldCombo" prefHeight="31.0" prefWidth="284.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    		<Label prefHeight="25.0" prefWidth="60.0" text="Passwort" GridPane.rowIndex="8" />
             <TextField fx:id="inspectorPasswordField" onAction="#ActionInspectorPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <ComboBox fx:id="inspectorCompanyFieldCombo" onAction="#ActionInspectorCompanyFieldCombo" prefHeight="31.0" prefWidth="284.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+           
          </children>
       </GridPane>
       <Button fx:id="detailviewSaveInspector" layoutX="334.0" layoutY="401.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveInspector" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
