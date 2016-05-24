@@ -73,6 +73,11 @@ public class UserManagerImpl implements UserManager {
 	public User findUserByUsername(String username) {
 		return userPersister.findUserByUsername(username);
 	}
+
+//	@Override
+//	public List<User> findUserByUsergroup(String usergroup) {
+//		return userPersister.findUserByUsergroup(usergroup);
+//	}
 	
 	
 

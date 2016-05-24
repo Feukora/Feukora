@@ -84,7 +84,7 @@ public class TestdataDB {
 		
 		Usergroup group1 = new Usergroup("Administrator");
 		Usergroup group2 = new Usergroup("Feuerungskontrolleur");
-		Usergroup group3 = new Usergroup("Backoffice");
+		Usergroup group3 = new Usergroup("Sachbearbeiter");
 		
 		Controltype typ1 = new Controltype("Routinekontrolle");
 		Controltype typ2 = new Controltype("Abnahmekontrolle");

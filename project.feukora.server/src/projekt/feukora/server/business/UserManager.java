@@ -94,4 +94,12 @@ public interface UserManager {
 	 */
 	public User findUserByUsername(String username);
 	
+//	/**
+//	 * Return a list with users with this usergroup
+//	 * 
+//	 * @param ort
+//	 * @return
+//	 */
+//	public List<User> findUserByUsergroup(String usergroup);
+	
 }
