@@ -11,6 +11,7 @@ import projekt.feukora.server.model.Customer;
  *
  */
 public interface CustomerManager {
+	
 	/**
 	 * Save the given entity
 	 * 

@@ -12,7 +12,6 @@ import projekt.feukora.server.persister.CustomerPersisterImpl;
  * @version 1.1
  * 
  */
-
 public class CustomerManagerImpl implements CustomerManager {
 	
 	private CustomerPersister customerPersister = new CustomerPersisterImpl();
@@ -30,7 +29,6 @@ public class CustomerManagerImpl implements CustomerManager {
 	public Customer updateCustomer(Customer entity) throws Exception {
 			return customerPersister.updateCustomer(entity);	
 	}
-	
 	
 	@Override
 	public void deleteCustomer(Customer entity) throws Exception {
@@ -71,6 +69,4 @@ public class CustomerManagerImpl implements CustomerManager {
 	public List<Customer> findCustomerByCompanyname(String companyname) {
 		return customerPersister.findCustomerByCompanyname(companyname);
 	}
-
-
 }

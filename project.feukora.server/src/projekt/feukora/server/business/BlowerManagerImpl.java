@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.persister.BlowerPersister;
 import projekt.feukora.server.persister.BlowerPersisterImpl;
@@ -32,13 +31,11 @@ public class BlowerManagerImpl implements BlowerManager {
 	@Override
 	public void deleteBlower(Blower entity) throws Exception {
 		blowerPersister.deleteBlower(entity);
-		
 	}
 
 	@Override
 	public void deleteBlowerByBlowerid(Integer blowerid) throws Exception {
 		blowerPersister.deleteBlowerByBlowerid(blowerid);
-		
 	}
 
 	@Override
@@ -55,5 +52,4 @@ public class BlowerManagerImpl implements BlowerManager {
 	public List<Blower> findBlowerByName(String name) {
 		return blowerPersister.findBlowerByName(name);
 	}
-
 }

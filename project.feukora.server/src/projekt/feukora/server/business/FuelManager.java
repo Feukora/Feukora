@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Fuel;
 
 /**
@@ -68,8 +67,4 @@ public interface FuelManager {
 	 * @return
 	 */
 	public Fuel findFuelByName(String name);
-
-	
-
-
 }

@@ -1,7 +1,6 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Heater;
 
 /**
@@ -11,7 +10,6 @@ import projekt.feukora.server.model.Heater;
  * @version 1.0
  *
  */
-
 public interface HeaterManager {
 	
 	/**
@@ -69,5 +67,4 @@ public interface HeaterManager {
 	 * @return List of Heaters
 	 */
 	public List<Heater> findHeaterByName(String name);
-
 }

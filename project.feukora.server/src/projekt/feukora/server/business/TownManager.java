@@ -2,7 +2,6 @@ package projekt.feukora.server.business;
 
 import java.rmi.Remote;
 import java.util.List;
-
 import projekt.feukora.server.model.Town;
 
 /**

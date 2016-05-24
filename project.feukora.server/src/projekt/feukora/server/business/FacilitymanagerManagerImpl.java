@@ -5,7 +5,6 @@ import projekt.feukora.server.model.Facilitymanager;
 import projekt.feukora.server.persister.FacilitymanagerPersister;
 import projekt.feukora.server.persister.FacilitymanagerPersisterImpl;
 
-
 /**
  * This class implements the methodes of the interface FacilitymanagerManager.
  * 
@@ -13,7 +12,6 @@ import projekt.feukora.server.persister.FacilitymanagerPersisterImpl;
  * @version 1.1
  *
  */
-
 public class FacilitymanagerManagerImpl implements FacilitymanagerManager {
 
 	FacilitymanagerPersister facilitymanagerPersister = new FacilitymanagerPersisterImpl();
@@ -25,7 +23,6 @@ public class FacilitymanagerManagerImpl implements FacilitymanagerManager {
 		}else{
 			throw new Exception("Der Facilitymanager (id = "+ entity.getFacilitymanagerid() + ") ist bereits vorhanden");
 		}
-		
 	}
 
 	@Override
@@ -36,13 +33,11 @@ public class FacilitymanagerManagerImpl implements FacilitymanagerManager {
 	@Override
 	public void deleteFacilitymanager(Facilitymanager entity) throws Exception {
 		facilitymanagerPersister.deleteFacilitymanager(entity);
-		
 	}
 
 	@Override
 	public void deleteFacilitymanagerByFacilitymanagerid(Integer Facilitymanagerid) throws Exception {
 		facilitymanagerPersister.deleteFacilitymanagerByFacilitymanagerid(Facilitymanagerid);
-		
 	}
 
 	@Override
@@ -64,8 +59,5 @@ public class FacilitymanagerManagerImpl implements FacilitymanagerManager {
 	public List<Facilitymanager> findFacilitymanagerByFirstname(String firstname) {
 		return facilitymanagerPersister.findFacilitymanagerByFirstname(firstname);
 	}
-
-	
-	
 }
 

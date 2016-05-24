@@ -11,7 +11,6 @@ import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
  * @author Patrick
  * @version 1.0
  */
-
 public class MeasuringresultManagerImpl implements MeasuringresultManager {
 	
 	private MeasuringresultPersister measuringresultPersister = new MeasuringresultPersisterImpl();
@@ -23,7 +22,6 @@ public class MeasuringresultManagerImpl implements MeasuringresultManager {
 		}else{
 			throw new Exception("Das Messresultat (id = "+ entity.getMeasuringresultid() + ") ist bereits vorhanden");
 		}
-		
 	}
 
 	@Override
@@ -34,13 +32,11 @@ public class MeasuringresultManagerImpl implements MeasuringresultManager {
 	@Override
 	public void deleteMeasuringresult(Measuringresult entity) throws Exception {
 		measuringresultPersister.deleteMeasuringresult(entity);
-		
 	}
 
 	@Override
 	public void deleteMeasuringresultByMeasuringresultid(Integer measuringresultid) throws Exception {
 		measuringresultPersister.deleteMeasuringresultByMeasuringresultid(measuringresultid);
-		
 	}
 
 	@Override
@@ -52,5 +48,4 @@ public class MeasuringresultManagerImpl implements MeasuringresultManager {
 	public List<Measuringresult> findAllMeasuringresults() {
 		return measuringresultPersister.findAllMeasuringresult();
 	}
-
 }

@@ -6,7 +6,6 @@ import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.persister.AppointmentPersister;
 import projekt.feukora.server.persister.AppointmentPersisterImpl;
 
-
 /**
  * This Class implements the methods of the interface AppointmentManager.
  * 
@@ -34,14 +33,12 @@ public class AppointmentManagerImpl implements AppointmentManager{
 
 	@Override
 	public void deleteAppointment(Appointment entity) throws Exception {
-		appointmentPersister.deleteAppointment(entity);
-		
+		appointmentPersister.deleteAppointment(entity);	
 	}
 
 	@Override
 	public void deleteAppointmentByAppointmentid(Integer appointmentid) throws Exception {
 		appointmentPersister.deleteAppointmentByAppointmentid(appointmentid);
-		
 	}
 
 	@Override
@@ -58,5 +55,4 @@ public class AppointmentManagerImpl implements AppointmentManager{
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate) {
 		return appointmentPersister.findAppointmentByAppointmentdate(appointmentdate);
 	}
-
 }

@@ -68,5 +68,4 @@ public interface ControltypeManager {
 	 * @return
 	 */
 	public Controltype findControltypeByName(String name);
-
 }

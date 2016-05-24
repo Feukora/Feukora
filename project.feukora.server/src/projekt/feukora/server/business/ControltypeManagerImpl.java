@@ -23,7 +23,6 @@ public class ControltypeManagerImpl implements ControltypeManager{
 		}else{
 			throw new Exception ("Die Controltype(id =" + entity.getControltypeid() + ") ist bereits vorhanden");
 		}
-		
 	}
 
 	@Override
@@ -34,13 +33,11 @@ public class ControltypeManagerImpl implements ControltypeManager{
 	@Override
 	public void deleteControltype(Controltype entity) throws Exception {
 		controltypePersister.deleteControltype(entity);
-		
 	}
 
 	@Override
 	public void deleteControltypeByControltypeid(Integer controltypeid) throws Exception {
 		controltypePersister.deleteControltypeByControltypeid(controltypeid);
-		
 	}
 
 	@Override
@@ -57,5 +54,4 @@ public class ControltypeManagerImpl implements ControltypeManager{
 	public Controltype findControltypeByName(String name) {
 		return controltypePersister.findControltypeByName(name);
 	}
-
 }
