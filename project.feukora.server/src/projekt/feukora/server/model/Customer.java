@@ -137,6 +137,16 @@ public class Customer implements Serializable{
 	public String getTown(){
 		return zip.toString();
 	}
+
+	public void setCustomerfunction(Customerfunction customerfunctionid) {
+		this.customerfunctionid = customerfunctionid;
+	}
+
+	public void setTown(Town zip) {
+		this.zip = zip;
+	}
+	
+	
 	
 //	public List<Customerheater> getCustomerHeaters()
 //	{

@@ -42,11 +42,11 @@ public class ControllerOverview {
     @FXML // fx:id="overviewTableCustomer"
     public TableView<Customer> overviewTableCustomer; // Value injected by FXMLLoader
     
-	@FXML // fx:id="columnCompanynameCostumer"
-    private TableColumn<Customer, String> columnCompanynameCostumer; // Value injected by FXMLLoader
+	@FXML // fx:id="columnCompanynameCustomer"
+    private TableColumn<Customer, String> columnCompanynameCustomer; // Value injected by FXMLLoader
 	
-	@FXML // fx:id="columnCCustomerfunctionCostumer"
-    private TableColumn<Customer, String> columnCostumerFunctionCostumer; // Value injected by FXMLLoader
+	@FXML // fx:id="columnCCustomerfunctionCustomer"
+    private TableColumn<Customer, String> columnCustomerFunctionCustomer; // Value injected by FXMLLoader
 
     @FXML // fx:id="columnEmailCustomer"
     private TableColumn<Customer, String> columnEmailCustomer; // Value injected by FXMLLoader
@@ -77,11 +77,11 @@ public class ControllerOverview {
 				ClientInternRMI feukora = new ClientInternRMI();
 				customers = feukora.getCustomers();
 				
-				columnCompanynameCostumer.setCellValueFactory(
+				columnCompanynameCustomer.setCellValueFactory(
 						new PropertyValueFactory<Customer, String>("companyname")
 				);
 				
-				columnCostumerFunctionCostumer.setCellValueFactory(
+				columnCustomerFunctionCustomer.setCellValueFactory(
 						new PropertyValueFactory<Customer, String>("customerfunction")
 				);
 				
@@ -128,7 +128,7 @@ public class ControllerOverview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-    	
+		initialize();
     	
     }
 
@@ -140,7 +140,6 @@ public class ControllerOverview {
     @FXML
     void ActionOverviewUpdateCustomer(ActionEvent event) {
     	try {
-    		ClientInternRMI feukora = new ClientInternRMI();
 			Customer customer = overviewTableCustomer.getSelectionModel().getSelectedItem();
 			if(customer != null){
 				AnchorPane pane = new AnchorPane();

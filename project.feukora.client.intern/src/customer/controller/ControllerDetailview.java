@@ -115,12 +115,11 @@ public class ControllerDetailview {
     }
     
     public void initialize() {
-    	
+    	setToggleGroup();
     	if(Context.getCustomerName() != null) {
-    		setToggleGroup();
-    		NewOrUpdate();
+    		Update();
     	} else {
-    		setToggleGroup();
+    		
     	}
     	
     	
@@ -134,9 +133,8 @@ public class ControllerDetailview {
     	radioButtonAdministration.setSelected(false);
     }
     
-    public void NewOrUpdate(){
+    public void Update(){
     
-//    	if(Context.getCustomerName() != null){
     		customer = Context.getCustomer();
     		customerCompanyNameField.setText(Context.getCustomerCompanyName());
 	    	customerNameField.setText(Context.getCustomerName());
@@ -146,26 +144,19 @@ public class ControllerDetailview {
 	    	customerEmailField.setText(Context.getCustomerEmail());
 	    	customerZipField.setText(Context.getCustomerTown().substring(0, 4));
 	    	customerMunicipalityField.setText(Context.getCustomerTown().substring(5));
-	    	customerNameField.setText(Context.getCustomerName());
 	    	if(Context.getCustomerCustomerfunction().toString().equals("Eigentümer")){
 	    		radioButtonOwner.setSelected(true);
 	    	}else{
 	    		radioButtonAdministration.setSelected(true);
 	    	}
 	    	Context.setNull();
-//    	} else {
-//        	radioButtonOwner.setToggleGroup(group);
-//        	radioButtonAdministration.setToggleGroup(group);
-//        	radioButtonOwner.setSelected(false);
-//        	radioButtonAdministration.setSelected(false);
-//      	}
-    	
-    	
+    	    	
     }
 
     @FXML
     void ActionDetailviewSaveCustomer(ActionEvent event) {
     	
+    	Customer customer = Context.getCustomer();
     	String companyname = customerCompanyNameField.getText();
     	String lastname = customerNameField.getText();
     	String adress = customerAddressField.getText();
@@ -186,7 +177,7 @@ public class ControllerDetailview {
 			if(customer == null) {
 				feukora.saveCustomer(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
 			} else {
-				feukora.updateCustomer(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
+				feukora.updateCustomer(customer, companyname, lastname, adress, phone, zip, firstname, email, isOwner);
 			}
 			
 //	    	feukora.deleteCustomer(customer);

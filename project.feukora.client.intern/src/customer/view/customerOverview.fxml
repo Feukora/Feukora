@@ -11,10 +11,10 @@
       <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="164.0" text="Übersicht Kunde" AnchorPane.leftAnchor="80.0" />
       <TableView fx:id="overviewTableCustomer" layoutX="76.0" layoutY="123.0" onSort="#ActionOverviewTableCustomer" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
         <columns>
-          <TableColumn fx:id="columnCompanynameCostumer" prefWidth="150.0" text="Firmenname" />
+          <TableColumn fx:id="columnCompanynameCustomer" prefWidth="150.0" text="Firmenname" />
           <TableColumn fx:id="columnNameCustomer" minWidth="0.0" prefWidth="156.0" text="Name" />
             <TableColumn fx:id="columnFirstnameCustomer" prefWidth="151.0" text="Vorname" />
-            <TableColumn fx:id="columnCostumerFunctionCustomer" prefWidth="75.0" text="Funktion" />
+            <TableColumn fx:id="columnCustomerFunctionCustomer" prefWidth="75.0" text="Funktion" />
             <TableColumn fx:id="columnAddressCustomer" prefWidth="213.0" text="Adresse" />
             <TableColumn fx:id="columnZIPCustomer" minWidth="0.0" prefWidth="63.0" text="PLZ" />
             <TableColumn fx:id="columnPhoneCustomer" prefWidth="108.0" text="Telefon " />
