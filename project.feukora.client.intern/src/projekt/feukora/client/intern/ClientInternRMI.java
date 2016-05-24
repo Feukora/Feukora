@@ -4,6 +4,8 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.List;
 
+import org.omg.CORBA.INITIALIZE;
+
 //import org.apache.log4j.Logger;
 
 import javafx.collections.FXCollections;
@@ -397,6 +399,8 @@ public class ClientInternRMI {
 			//			logger.error("Aktion konnte nicht durchgeführt werden\'",
 			//					e);
 		}
+		
+		
 	}
 
 	

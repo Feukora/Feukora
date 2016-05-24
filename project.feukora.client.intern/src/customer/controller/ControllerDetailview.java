@@ -117,16 +117,21 @@ public class ControllerDetailview {
     public void initialize() {
     	
     	if(Context.getCustomerName() != null) {
+    		setToggleGroup();
     		NewOrUpdate();
     	} else {
-    		radioButtonOwner.setToggleGroup(group);
-        	radioButtonAdministration.setToggleGroup(group);
-        	radioButtonOwner.setSelected(false);
-        	radioButtonAdministration.setSelected(false);
+    		setToggleGroup();
     	}
     	
     	
     
+    }
+    
+    public void setToggleGroup() {
+    	radioButtonOwner.setToggleGroup(group);
+    	radioButtonAdministration.setToggleGroup(group);
+    	radioButtonOwner.setSelected(false);
+    	radioButtonAdministration.setSelected(false);
     }
     
     public void NewOrUpdate(){

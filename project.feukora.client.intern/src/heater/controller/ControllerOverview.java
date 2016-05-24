@@ -85,6 +85,7 @@ public class ControllerOverview {
     		logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
     	}
+    	initialize();
 
     }
 

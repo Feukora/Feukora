@@ -77,6 +77,10 @@ public class ControllerOverview {
 				ClientInternRMI feukora = new ClientInternRMI();
 				ObservableList<User> users = feukora.getUsers();
 				
+				columnCompanyIdInspector.setCellValueFactory(
+						new PropertyValueFactory<User, String>("company")
+				);
+				
 				columnUsernameInspector.setCellValueFactory(
 						new PropertyValueFactory<User, String>("username")
 				);

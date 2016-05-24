@@ -38,12 +38,11 @@ public class ControllerDetailview {
     void ActionDetailviewSaveHeater(ActionEvent event) {
     	String heatername = heaterNameField.getText();
     	Heater heater = Context.getHeater();
-    	
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(heater == null) {
-				
-				feukora.saveHeater(heater);
+				Heater entity = new Heater(heatername);
+				feukora.saveHeater(entity);
 			} else {
 		    	heater.setName(heatername);
 				feukora.updateHeater(heater);

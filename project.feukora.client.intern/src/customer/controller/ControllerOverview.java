@@ -81,6 +81,10 @@ public class ControllerOverview {
 						new PropertyValueFactory<Customer, String>("companyname")
 				);
 				
+				columnCostumerFunctionCostumer.setCellValueFactory(
+						new PropertyValueFactory<Customer, String>("customerfunction")
+				);
+				
 				columnEmailCustomer.setCellValueFactory(
 						new PropertyValueFactory<Customer, String>("email")
 				);
@@ -99,6 +103,7 @@ public class ControllerOverview {
 				columnFirstnameCustomer.setCellValueFactory(
 						new PropertyValueFactory<Customer, String>("firstname")
 				);
+				
 				
 				overviewTableCustomer.setItems(customers);
 				

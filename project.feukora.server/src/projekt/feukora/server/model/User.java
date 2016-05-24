@@ -151,6 +151,10 @@ public class User implements Serializable {
 		return zip.toString();
 	}
 	
+	public String getCompany() {
+		return companyid.toString();
+	}
+	
 	public boolean login( String password )
 	{
 		return this.password.equals( password );

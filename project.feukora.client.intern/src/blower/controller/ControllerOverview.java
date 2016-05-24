@@ -66,11 +66,11 @@ public class ControllerOverview {
 			);	
 			
 			columnBlowerBlower.setCellValueFactory(
-					new PropertyValueFactory<Blower, String>("blowertypeid")
+					new PropertyValueFactory<Blower, String>("blowertype")
 			);
 			
 			columnFuelBlower.setCellValueFactory(
-					new PropertyValueFactory<Blower, String>("fuelid")
+					new PropertyValueFactory<Blower, String>("fuel")
 			);
 			overviewTableBlower.setItems(blowers);
 			
@@ -96,6 +96,7 @@ public class ControllerOverview {
     		logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
     	}
+    	initialize();
 
     }
 
