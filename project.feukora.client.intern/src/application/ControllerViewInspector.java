@@ -114,7 +114,7 @@ public class ControllerViewInspector {
 
     @FXML
     void ActionCalendarWelcome(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
+    	BorderPane pane = new BorderPane();
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
@@ -139,7 +139,7 @@ public class ControllerViewInspector {
 
     @FXML
     void ActionCalenderMenuBar(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
+    	BorderPane pane = new BorderPane();
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));

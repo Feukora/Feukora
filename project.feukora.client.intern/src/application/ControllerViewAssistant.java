@@ -162,7 +162,7 @@ public class ControllerViewAssistant {
     
     @FXML
     void ActionCalendarWelcome(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
+    	BorderPane pane = new BorderPane();
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
@@ -207,7 +207,7 @@ public class ControllerViewAssistant {
 
     @FXML
     void ActionCalenderMenuBar(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
+    	BorderPane pane = new BorderPane();
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
