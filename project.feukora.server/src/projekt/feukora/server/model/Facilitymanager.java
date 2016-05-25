@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
+
 /**
  * This class refers to a facilitymanager
  * 
@@ -20,17 +21,14 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries ({
 	@NamedQuery(name = "Facilitymanager.findByfacilitymanagerid", query = "SELECT fm FROM Facilitymanager fm WHERE fm.facilitymanagerid=:facilitymanagerid"),
-	@NamedQuery(name = "Facilitymanager.findByLastname", query = "SELECT fm FROM Facilitymanager fm WHERE fm.lastname=:lastname"),
-	@NamedQuery(name = "Facilitymanager.findByFirstname", query = "SELECT fm FROM Facilitymanager fm WHERE fm.firstname=:firstname")})
+	@NamedQuery(name = "Facilitymanager.findByLastname", query = "SELECT fm FROM Facilitymanager fm WHERE fm.lastname=:lastname")})
 public class Facilitymanager implements Serializable {
 
 	
 	@Id
 	@GeneratedValue
 	private int facilitymanagerid;
-	private String lastname;
-	private String firstname;
-	
+	private String lastname;	
 	/**
 	 * Default constructor
 	 */
@@ -42,30 +40,20 @@ public class Facilitymanager implements Serializable {
 	 * Facilitymanager Constructor
 	 * 
 	 * @param lastname
-	 * @param firstname
 	 */
-	public Facilitymanager(String lastname, String firstname) {
+	public Facilitymanager(String lastname) {
 		this.lastname = lastname;
-		this.firstname = firstname;
 	}
 	
 	public int getFacilitymanagerid() {
 		return facilitymanagerid;
 	}
 
-	public String getLastname() {
+	public String getlastname() {
 		return lastname;
 	}
 	
-	public void setLastname(String lastname) {
+	public void setlastname(String lastname) {
 		this.lastname = lastname;
-	}
-	
-	public String getFirstname() {
-		return firstname;
-	}
-	
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
 	}
 }
