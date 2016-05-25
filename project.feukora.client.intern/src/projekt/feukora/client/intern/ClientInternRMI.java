@@ -21,10 +21,14 @@ import login.controller.ControllerLogin;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Blowertype;
 import projekt.feukora.server.model.Company;
+import projekt.feukora.server.model.Controltype;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
+import projekt.feukora.server.model.Customerheater;
+import projekt.feukora.server.model.Facilitymanager;
 import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Heater;
+import projekt.feukora.server.model.Measuringresult;
 import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
@@ -630,10 +634,86 @@ public class ClientInternRMI {
 			String oxygen4, String exhaustgaslost1, String exhaustgaslost2, String exhaustgaslost3,
 			String exhaustgaslost4, Boolean oilpart1, Boolean oilpart2, Boolean oilpart3, Boolean oilpart4,
 			Boolean result, Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
-			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {
-		// TODO Auto-generated method stub
+			Boolean exhaustgaslost, Boolean additionalsteps, String comment, String persNumber) throws RemoteException {
 		
+		Rapport rapRapport;
+		Customerheater rapCustomerheater;
+		Customer rapCustomer;
+		Facilitymanager rapFacilitymanager;
+		Controltype rapType;
+		Measuringresult rapMeasuringresult;
+		Heater rapHeater;
+		Blower rapBlower;
+		User rapUser;
+		
+		Integer rapPerformance = Integer.parseInt(performance);
+		
+		Integer rapSmokenumber1 = Integer.parseInt(smokenumber1);
+		Integer rapSmokenumber2 = Integer.parseInt(smokenumber2);
+		Integer rapSmokenumber3 = Integer.parseInt(smokenumber3);
+		Integer rapSmokenumber4 = Integer.parseInt(smokenumber4);
+		
+		Integer rapCarbonmonoxide1 = Integer.parseInt(carbonmonoxide1);
+		Integer rapCarbonmonoxide2 = Integer.parseInt(carbonmonoxide2);
+		Integer rapCarbonmonoxide3 = Integer.parseInt(carbonmonoxide3);
+		Integer rapCarbonmonoxide4 = Integer.parseInt(carbonmonoxide4);
+		
+		Integer rapNitrogendioxide1 = Integer.parseInt(nitrogendioxide1);
+		Integer rapNitrogendioxide2 = Integer.parseInt(nitrogendioxide2);
+		Integer rapNitrogendioxide3 = Integer.parseInt(nitrogendioxide3);
+		Integer rapNitrogendioxide4 = Integer.parseInt(nitrogendioxide4);
+		
+		Integer rapExhaustgastemp1 = Integer.parseInt(exhaustgastemp1);
+		Integer rapExhaustgastemp2 = Integer.parseInt(exhaustgastemp2);
+		Integer rapExhaustgastemp3 = Integer.parseInt(exhaustgastemp3);
+		Integer rapExhaustgastemp4 = Integer.parseInt(exhaustgastemp4);
+		
+		Integer rapHeatertemp1 = Integer.parseInt(heatertemp1);
+		Integer rapHeatertemp2 = Integer.parseInt(heatertemp2);
+		Integer rapHeatertemp3 = Integer.parseInt(heatertemp3);
+		Integer rapHeatertemp4 = Integer.parseInt(heatertemp4);
+		
+		Integer rapBlowertemp1 = Integer.parseInt(blowertemp1);
+		Integer rapBlowertemp2 = Integer.parseInt(blowertemp2);
+		Integer rapBlowertemp3 = Integer.parseInt(blowertemp3);
+		Integer rapBlowertemp4 = Integer.parseInt(blowertemp4);
+		
+		Double rapOxygen1 = Double.parseDouble(oxygen1);
+		Double rapOxygen2 = Double.parseDouble(oxygen2);
+		Double rapOxygen3 = Double.parseDouble(oxygen3);
+		Double rapOxygen4 = Double.parseDouble(oxygen4);
+		
+		Double rapExhaustgaslost1 = Double.parseDouble(exhaustgaslost1);
+		Double rapExhaustgaslost2 = Double.parseDouble(exhaustgaslost2);
+		Double rapExhaustgaslost3 = Double.parseDouble(exhaustgaslost3);
+		Double rapExhaustgaslost4 = Double.parseDouble(exhaustgaslost4);
+		
+		Integer rapPersNumber = Integer.parseInt(persNumber);
+		rapUser = userRMI.findUsersByUserid(rapPersNumber);
+		
+		
+		String lastname;
+		String[] names = customer.split("\\s+ ");
+		lastname = names[0];
+		
+		rapCustomer = customerRMI.findCustomerByLastname(lastname).get(0);
+		
+		rapHeater = heaterRMI.findHeaterByName(heatertype).get(0);
+		
+		rapType = controltypeRMI.findControltypeByName(ctype);
+		
+		rapBlower = blowerRMI.findBlowerByName(blowertype).get(0);
+		
+		Facilitymanager fm1 = new Facilitymanager(facilitymanager);
+		Measuringresult mr1 = new Measuringresult(r1, 1, 1, rapSmokenumber1, rapCarbonmonoxide1, oilpart1, rapNitrogendioxide1,
+				rapExhaustgastemp1, rapHeatertemp1, rapBlowertemp1, rapOxygen1, rapExhaustgaslost1);
+		Measuringresult mr2 = new Measuringresult(r1, 1, 2, rapSmokenumber2, rapCarbonmonoxide2, oilpart2, rapNitrogendioxide2,
+				rapExhaustgastemp2, rapHeatertemp2, rapBlowertemp2, rapOxygen2, rapExhaustgaslost2);
+		Measuringresult mr3 = new Measuringresult(r1, 2, 1, rapSmokenumber3, rapCarbonmonoxide3, oilpart3, rapNitrogendioxide3,
+				rapExhaustgastemp3, rapHeatertemp3, rapBlowertemp3, rapOxygen3, rapExhaustgaslost3);
+		Measuringresult mr4 = new Measuringresult(r1, 2, 2, rapSmokenumber4, rapCarbonmonoxide4, oilpart4, rapNitrogendioxide4,
+				rapExhaustgastemp4, rapHeatertemp4, rapBlowertemp4, rapOxygen4, rapExhaustgaslost4);
+		Customerheater ch1 = new Customerheater(rapCustomer, rapHeater, rapBlower, fm1, bloweryear, heateryear, rapPerformance);
+		Rapport r1 = new Rapport(canton, adress, rapType, ch1, rapUser, null, gdate, result, additionalsteps, comment, smokenumber, oilpart, exhaustgaslost, nitrogendioxide, carbonmonoxide);
 	}	
-
-
 }

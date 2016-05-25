@@ -412,6 +412,8 @@ public class ControllerMain {
 		
 		String comment = textareacomments.getText();
 		
+		String persNumber = textfieldpersonalcode.getText();
+		
 		
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
@@ -426,7 +428,7 @@ public class ControllerMain {
 						oxygen1, oxygen2, oxygen3, oxygen4, 
 						exhaustgaslost1, exhaustgaslost2, exhaustgaslost3, exhaustgaslost4,
 						oilpart1, oilpart2, oilpart3, oilpart4, 
-						result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
+						result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment, persNumber);
 			} else {
 				feukora.updateRapport(rapport, canton, adress, customer, facilitymanager, heateryear, bloweryear, performance, date, /* viele mehr aus tab3 */result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
 			}
@@ -581,7 +583,7 @@ public class ControllerMain {
 		}
 		textareacomments.setText(rapport.getComments());
 		
-		
+		textfieldpersonalcode.setText(rapport.getResults());
 	}
 
 	@FXML
