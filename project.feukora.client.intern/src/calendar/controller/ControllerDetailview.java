@@ -1,15 +1,7 @@
 package calendar.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import org.apache.log4j.Logger;
-
-import javafx.collections.ObservableMap;
-
-/**
- * Sample Skeleton for 'calendarDetailview.fxml' Controller Class
- */
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,45 +12,26 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.server.model.Appointment;
-import projekt.feukora.server.model.User;
 
 public class ControllerDetailview {
 	
 	private static final Logger logger = Logger
 			.getLogger(ControllerDetailview.class);
 
-    @FXML // fx:id="detailviewCancelAppointment"
-    private Button detailviewCancelAppointment; // Value injected by FXMLLoader
+    @FXML
+    private Button detailviewSaveAppointment;
+
+    @FXML
+    private Button detailviewCancelAppointment;
+
+    @FXML
+    private TextField appointmentDateField;
     
-    @FXML // fx:id="detailviewSaveAppointment"
-    private Button detailviewSaveAppointment; // Value injected by FXMLLoader
-    
-    @FXML // fx:id="customerAddressField"
-    private TextField customerAddressField; // Value injected by FXMLLoader
+    @FXML
+    private TextField appointmentInspectorField;
 
-    @FXML // fx:id="customerNumberField"
-    private TextField customerNumberField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="customerFirstNameField"
-    private TextField customerFirstNameField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="appointmentInspectorField"
-    private TextField appointmentInspectorField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="appointmentPhoneField"
-    private TextField appointmentPhoneField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="appointmentEmailField"
-    private TextField appointmentEmailField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="customerNameField"
-    private TextField customerNameField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="appointmentDateField"
-    private TextField appointmentDateField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="customerZipField"
-    private TextField customerZipField; // Value injected by FXMLLoader
+    @FXML
+    private TextField appointmentCreatedByField;
 
     @FXML
     private ComboBox<?> appointmentClientcomboBox;
@@ -70,43 +43,6 @@ public class ControllerDetailview {
     private ComboBox<?> appointmentHeatercomboBox;
 
     private Appointment appointment;
-    private User inspector;
-    private Calendar cal;
-    
-    @FXML
-    void ActionCustomerZipField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionCustomerMunicipalyField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionCustomerNameField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionCustomerFirstNameField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionCustomerAddressField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionCustomerEmailField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionCustomerNumberField(ActionEvent event) {
-
-    }
 
     @FXML
     void ActionAppointmentDateField(ActionEvent event) {
@@ -187,16 +123,9 @@ public class ControllerDetailview {
 
     }
     
-    public void initData ( ObservableMap<Object, Object> properties )
+    public void initData ( Appointment appointment )
     {
-    	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
-    	cal = (Calendar) properties.get("date");
-    	inspector = (User) properties.get("user");
-    	
-    	appointmentInspectorField.setText( inspector.toString() );
-    	appointmentDateField.setText( sdf.format( cal.getTime() ) );
-    	
-    	
+    	this.appointment = appointment;
     }
 
 }
