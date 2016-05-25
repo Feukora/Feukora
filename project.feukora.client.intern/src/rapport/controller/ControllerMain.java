@@ -7,7 +7,10 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
+import org.apache.log4j.Logger;
+
 import application.Context;
+import customer.controller.ControllerDetailview;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -34,6 +37,9 @@ import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.Town;
 
 public class ControllerMain {
+	
+	private static final Logger logger = Logger
+			.getLogger(ControllerDetailview.class);
 
 	private Rapport rapport;
 	private Customerheater customerheater;
@@ -408,9 +414,9 @@ public class ControllerMain {
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(rapport == null) {
-				feukora.saveRapport(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
+				feukora.saveRapport(canton, adress, customer, facilitymanager, heateryear, bloweryear, performance, date, /* viele mehr aus tab3 */result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
 			} else {
-				feukora.updateRapport(rapport, companyname, lastname, adress, phone, zip, firstname, email, isOwner);
+				feukora.updateRapport(rapport, canton, adress, customer, facilitymanager, heateryear, bloweryear, performance, date, /* viele mehr aus tab3 */result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
 			}
 			
 		} catch (Exception e) {
