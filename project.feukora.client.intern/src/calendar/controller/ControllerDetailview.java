@@ -139,8 +139,8 @@ public class ControllerDetailview {
     	detailviewCancelAppointment.getScene().setRoot(pane);
     }
     
-//    @FXML
-//    void ActionDetailviewSaveAppointment(ActionEvent event) {
+    @FXML
+    void ActionDetailviewSaveAppointment(ActionEvent event) {
 //    	String lastname = customerNameField.getText();
 //    	String adress = customerAddressField.getText();
 //    	String phone = customerNumberField.getText();
@@ -163,7 +163,7 @@ public class ControllerDetailview {
 //			// TODO Auto-generated catch block
 //			logger.error("Aktion konnte nicht durchgeführt werden\'",
 //					e);
-//		}
+	}
 //    	
 //    	customerNameField.clear();
 //    	customerAddressField.clear();
