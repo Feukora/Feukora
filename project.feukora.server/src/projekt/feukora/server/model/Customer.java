@@ -146,6 +146,11 @@ public class Customer implements Serializable{
 		this.zip = zip;
 	}
 	
+	@Override
+	public String toString() {
+		return lastname + " " + firstname;
+	}
+	
 	
 	
 //	public List<Customerheater> getCustomerHeaters()

@@ -183,4 +183,8 @@ public class Rapport implements Serializable {
 	public String getInspector() {
 		return userid.toString();
 	}
+	
+	public String getCustomerheater() {
+		return customerheaterid.toString();
+	}
 }

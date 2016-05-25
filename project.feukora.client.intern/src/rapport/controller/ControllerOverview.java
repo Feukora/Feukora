@@ -61,7 +61,7 @@ public class ControllerOverview {
 				rapport = feukora.getRapports();
 				
 				overviewTableCustomer.setCellValueFactory(
-						new PropertyValueFactory<Rapport, String>("customer")
+						new PropertyValueFactory<Rapport, String>("customerheater")
 				);
 				
 				overviewTableDate.setCellValueFactory(

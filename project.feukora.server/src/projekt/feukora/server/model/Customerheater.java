@@ -95,4 +95,9 @@ public class Customerheater implements Serializable{
 	public void setPerformance(int performance) {
 		this.performance = performance;
 	}
+	
+	@Override
+	public String toString () {
+		return customerid.toString();
+	}
 }
