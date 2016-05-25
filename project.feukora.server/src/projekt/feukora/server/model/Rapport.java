@@ -171,4 +171,16 @@ public class Rapport implements Serializable {
 	public void setCarbonmonoxide(Boolean carbonmonoxide) {
 		this.carbonmonoxide = carbonmonoxide;
 	}
+	
+	public String getDate() {
+		return measuringdate.toString();
+	}
+	
+	public String getControltype() {
+		return controltypeid.toString();
+	}
+	
+	public String getInspector() {
+		return userid.toString();
+	}
 }

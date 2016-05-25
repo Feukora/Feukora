@@ -1,5 +1,7 @@
 package rapport.controller;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import org.apache.log4j.Logger;
@@ -9,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -37,7 +40,7 @@ public class ControllerOverview {
 	private TableColumn<Rapport, String> overviewTableControlltype;
 
 	@FXML
-	private TableColumn<Rapport, Boolean> overviewTableResult;
+	private TableColumn<Rapport, Boolean> overviewTableResult = new TableColumn<>("results");
 
 	@FXML
 	private TableColumn<Rapport, String> overviewTableCustomer;
@@ -46,7 +49,7 @@ public class ControllerOverview {
 	private TableColumn<Rapport, String> overviewTableInspector;
 
 	@FXML
-	private TableColumn<Rapport, String> overviewTableDate;
+	private TableColumn<Rapport, Calendar> overviewTableDate = new TableColumn<>("measuringdate");
 
 	@FXML
 	public TableView<Rapport> overviewTableRapport; // Value injected by FXMLLoader
@@ -62,9 +65,22 @@ public class ControllerOverview {
 				);
 				
 				overviewTableDate.setCellValueFactory(
-						new PropertyValueFactory<Rapport, String>("date")
+						new PropertyValueFactory<Rapport, Calendar>("measuringdate")
 				);
 				
+				final DateFormat dateFormat = DateFormat.getDateInstance();
+				overviewTableDate.setCellFactory(col -> new TableCell<Rapport, Calendar>(){
+							@Override
+							public void updateItem(Calendar item, boolean empty) {
+							super.updateItem(item, empty);
+							if (item == null) {
+								setText(null);
+							} else {
+								setText(dateFormat.format(item.getTime()));
+							}
+						}	
+						});
+
 				overviewTableControlltype.setCellValueFactory(
 						new PropertyValueFactory<Rapport, String>("controltype")
 				);
@@ -72,6 +88,20 @@ public class ControllerOverview {
 				overviewTableResult.setCellValueFactory(
 						new PropertyValueFactory<Rapport, Boolean>("results")
 				);
+				
+				overviewTableResult.setCellFactory(col -> new TableCell<Rapport, Boolean>(){
+					@Override
+					public void updateItem(Boolean result, boolean empty) {
+					super.updateItem(result, empty);
+					if (result == null) {
+						setText(null);
+					} else if(result == true) {
+						setText("Bestanden");
+					} else {
+						setText("Nicht bestanden");
+					}
+				}	
+				});
 
 				overviewTableInspector.setCellValueFactory(
 						new PropertyValueFactory<Rapport, String>("inspector")
