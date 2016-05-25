@@ -1,5 +1,8 @@
 package calendar.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -18,6 +21,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -205,7 +209,13 @@ public class ControllerCalendarPane {
 			feukora = new ClientInternRMI();
 			ObservableList<User> users = feukora.getUsers();
 			comboBoxSelectCalendar.setItems(users);
-			initButtons();
+			//TODO User überprüfen
+			comboBoxSelectCalendar.getSelectionModel().select(0);
+			
+			Calendar cal = Calendar.getInstance();
+	    	cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
+	    	
+			initNodes( cal );
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -230,14 +240,31 @@ public class ControllerCalendarPane {
     	
     }
     
-    private void initButtons()
+	private void initNodes( Calendar cal )
     {
+    	SimpleDateFormat fmt = new SimpleDateFormat("dd.MM.yyyy");
+        fmt.setCalendar(cal);
     	for ( Node node : calendarPane.getChildren() )
     	{
+            
+    		if ( calendarPane.getColumnIndex(node) != null )
+    		{
+				int colIndex = calendarPane.getColumnIndex(node);
+	    		cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek() + colIndex);
+    		}
+    		
+    		//init labels
+    		if( node instanceof Label && node.getId() != null && node.getId().startsWith( "lbl" ) )
+    		{
+    			Label lbl = (Label) node;
+    			lbl.setText( lbl.getText() + " " + fmt.format( cal.getTime() ) );
+    		}
+    		
+    		//init buttons
     		if ( node instanceof Button )
     		{
-	    		Button btn = (Button) node;
-	    		btn.setText("Hallo");
+    			Button btn = (Button) node;
+	    		btn.setText(fmt.format(cal.getTime()));
     		}
     	}
     }
