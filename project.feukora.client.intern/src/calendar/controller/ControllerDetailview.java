@@ -3,6 +3,8 @@ package calendar.controller;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.management.remote.rmi.RMIServer;
+
 import org.apache.log4j.Logger;
 
 import javafx.collections.ObservableMap;
@@ -14,6 +16,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.User;
 
@@ -131,7 +134,13 @@ public class ControllerDetailview {
     
     public void initData ( ObservableMap<Object, Object> properties )
     {
-    	this.appointment = appointment;
+    	try {
+			ClientInternRMI cirmi = new ClientInternRMI();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
     	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm");
     	cal = (Calendar) properties.get("date");
     	inspector = (User) properties.get("user");
