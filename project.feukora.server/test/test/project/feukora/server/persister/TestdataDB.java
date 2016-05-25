@@ -107,9 +107,9 @@ public class TestdataDB {
 		Heater heater2 = new Heater("CTC");
 		Heater heater3 = new Heater("Buderns GII5 REI7");
 		
-		Facilitymanager fm1 = new Facilitymanager("Hausmeister", "Robert");
-		Facilitymanager fm2 = new Facilitymanager("Meister", "Jakob");
-		Facilitymanager fm3 = new Facilitymanager("Hausmeister", "Kanye");
+		Facilitymanager fm1 = new Facilitymanager("Hans Meister");
+		Facilitymanager fm2 = new Facilitymanager("Meister Proper");
+		Facilitymanager fm3 = new Facilitymanager("Don Geier");
 		
 		Town zip1 = tp.findbyZip(6000);
 		Town zip2 = tp.findbyZip(6005);
