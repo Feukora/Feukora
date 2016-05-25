@@ -1,6 +1,10 @@
 package rapport.controller;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 import application.Context;
@@ -18,10 +22,14 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Company;
+import projekt.feukora.server.model.Controltype;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.model.Facilitymanager;
+import projekt.feukora.server.model.Heater;
+import projekt.feukora.server.model.Measuringresult;
 import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.Town;
 
@@ -31,6 +39,8 @@ public class ControllerMain {
 	private Customerheater customerheater;
 	private Customer customer;
 	private Facilitymanager facilitymanager;
+	private Controltype type;
+	private Measuringresult measuringresult;
 
 	//Togglegroup for tab: Start
 	final ToggleGroup start = new ToggleGroup();
@@ -48,127 +58,7 @@ public class ControllerMain {
 
 
 
-	public void initialize() {
-
-		//Togglegroup handling for: Heater/Blower (Controltype)
-		radioroutinecontrol.setToggleGroup(controltype);
-		radioacceptanceinspection.setToggleGroup(controltype);
-		radioroutinecontrol.setSelected(false);
-		radioacceptanceinspection.setSelected(false);
-
-		//Togglegroup handling for: Oilpart measuring Step 1
-		radiooilpartyes1.setToggleGroup(oilpart1);
-		radiooilpartno1.setToggleGroup(oilpart1);
-		radiooilpartyes1.setSelected(false);
-		radiooilpartno1.setSelected(false);
-
-		//Togglegroup handling for: Oilpart measuring Step 2
-		radiooilpartyes2.setToggleGroup(oilpart2);
-		radiooilpartno2.setToggleGroup(oilpart2);
-		radiooilpartyes2.setSelected(false);
-		radiooilpartno2.setSelected(false);
-
-		//Togglegroup handling for: Oilpart measuring Step 3
-		radiooilpartyes3.setToggleGroup(oilpart3);
-		radiooilpartno3.setToggleGroup(oilpart3);
-		radiooilpartyes3.setSelected(false);
-		radiooilpartno3.setSelected(false);
-
-		//Togglegroup handling for: Oilpart measuring Step 4
-		radiooilpartyes4.setToggleGroup(oilpart4);
-		radiooilpartno4.setToggleGroup(oilpart4);
-		radiooilpartyes4.setSelected(false);
-		radiooilpartno4.setSelected(false);
-
-		//Togglegroup handling for: Results
-		radiotransgression.setToggleGroup(result);
-		radionotransgression.setToggleGroup(result);
-		radiotransgression.setSelected(false);
-		radionotransgression.setSelected(false);
-
-		//Togglegroup handling for: Additional steps
-		radioadditionalstepsyes.setToggleGroup(additionalsteps);
-		radioadditionalstepsno.setToggleGroup(additionalsteps);
-		radioadditionalstepsyes.setSelected(false);
-		radioadditionalstepsno.setSelected(false);
-
-		ClientInternRMI feukora;
-		try {
-			feukora = new ClientInternRMI();
-			ObservableList<String> customerNames = FXCollections.observableArrayList();
-			ObservableList<Customer> customers = feukora.getCustomers();
-			int i = 0;
-			while (i < customers.size()) {
-				String lastname = customers.get(i).getLastname();
-				String firstname = customers.get(i).getFirstname();
-				String name = lastname + " " + firstname;
-				customerNames.add(name);			
-				i++;
-			}
-
-			comboboxOwnerAdministration.setItems(customerNames);
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		if(Context.getRapportid() != null){
-			Update();
-		}else{
-
-		}
-
-
-	}
-
-	public void Update(){
-
-		rapport = Context.getRapport();
-		customer = Context.getCustomer();
-		facilitymanager = Context.getFacilitymanager();
-
-		//1. Tab
-		//Beide Methoden müssen in die Model Klasse noch hinzugefügt werden
-		textfieldCanton.setText(rapport.getCanton());
-		textfieldaddress.setText(rapport.getRapportAddress());
-		comboboxOwnerAdministration.setValue(customer.getLastname() + " " + customer.getFirstname());
-		textfieldfacilitymanager.setText(facilitymanager.getLastname() + " " + facilitymanager.getFirstname());
-
-		// 2. Tab
-
-		// 3. Tab
-
-		// 4. Tab
-		if(rapport.getResults() == true){
-			radiotransgression.setSelected(true);
-		}else{
-			radionotransgression.setSelected(true);
-			if(rapport.getTransgression_smokenumber() == true){
-				checkboxsmokenumbertransgression.setSelected(true);
-			}
-			if(rapport.getTransgression_oilpart() == true){
-				checkbockoilparttransgression.setSelected(true);
-			}
-			if(rapport.getCarbonmonoxide() == true){
-				checkboxcarbonmonoxidetransgression.setSelected(true);
-			}
-			if(rapport.getNitrogendioxide() == true){
-				checkboxnitrogendioxidetransgression.setSelected(true);
-			}
-			if(rapport.getExhaustgaslost() == true){
-				checkboxexhaustlosstransgression.setSelected(true);
-			}
-		}
-		if(rapport.getAdditionalsteps() == true){
-			radioadditionalstepsyes.setSelected(true);
-		}else{
-			radioadditionalstepsno.setSelected(true);
-		}
-		textareacomments.setText(rapport.getComments());
-		
-		
-	}
+	
 
 	@FXML
 	private TextField textfieldCanton;
@@ -192,7 +82,7 @@ public class ControllerMain {
 	private TextField textfieldheatinput;
 
 	@FXML
-	private ComboBox<?> comboboxheatertype;
+	private ComboBox<String> comboboxheatertype;
 
 	@FXML
 	private RadioButton radioroutinecontrol;
@@ -201,7 +91,7 @@ public class ControllerMain {
 	private RadioButton radioacceptanceinspection;
 
 	@FXML
-	private ComboBox<?> comboboxblowertype;
+	private ComboBox<String> comboboxblowertype;
 
 	@FXML
 	private DatePicker measuringdate;
@@ -365,27 +255,315 @@ public class ControllerMain {
 
 	@FXML
 	void ActionRapportSave(ActionEvent event) {
-		Rapport rapport = Context.getRapport;
+		
+		Rapport rapport = Context.getRapport();
+		
 		String canton = textfieldCanton.getText();
 		String adress = textfieldaddress.getText();
-		//man muss noch den customer in firstname und lastname teilen
 		String customer = comboboxOwnerAdministration.getValue();
 		String facilitymanager = textfieldfacilitymanager.getText();
 		
 		// Tab 2
-		String manufactureyear = textfieldheateryear.getText();
+		String manufactureyearheater = textfieldheateryear.getText();
+		Integer heateryear = Integer.parseInt(manufactureyearheater);
 		String heatertype = comboboxheatertype.getSelectionModel().getSelectedItem().toString();
 		if(radioroutinecontrol.isSelected() == true){
 			String controltype = "Routinekontrolle"; 
-		}else{
+		}else if(radioacceptanceinspection.isSelected() == true){
 			String controltype = "Abnahmekontrolle";
 		}
 		
-		String manufactureyear1 = textfieldbloweryear.getText();
+		String manufactureyearblower = textfieldbloweryear.getText();
+		Integer bloweryear = Integer.parseInt(manufactureyearblower);
 		String blowertype = comboboxblowertype.getSelectionModel().getSelectedItem().toString();
-		String heatinput = textfieldheatinput.getText();
+		String performance = textfieldheatinput.getText();
 		
+		
+		//Tab 3
+		LocalDate date = measuringdate.getValue();
+//		Date utilDate = Date.from( localDate.atStartOfDay( ZoneId.systemDefault() ).toInstant() );
+//		GregorianCalendar date = date.setTime(utilDate);
+		
+		String smokenumber1 = textfieldsmokenumber1.getText();
+		String smokenumber2 = textfieldsmokenumber1.getText();
+		String smokenumber3 = textfieldsmokenumber1.getText();
+		String smokenumber4 = textfieldsmokenumber1.getText();
+		
+		String carbonmonoxide1 = textfielcarbonmonoxide1.getText();
+		String carbonmonoxide2 = textfielcarbonmonoxide2.getText();
+		String carbonmonoxide3 = textfielcarbonmonoxide3.getText();
+		String carbonmonoxide4 = textfielcarbonmonoxide4.getText();
+		
+		String nitrogendioxide1 = textfieldnitrogendioxide1.getText();
+		String nitrogendioxide2 = textfieldnitrogendioxide2.getText();
+		String nitrogendioxide3 = textfieldnitrogendioxide3.getText();
+		String nitrogendioxide4 = textfieldnitrogendioxide4.getText();
+		
+		String exhaustgastemp1 = textfieldexhaustgastemp1.getText();
+		String exhaustgastemp2 = textfieldexhaustgastemp2.getText();
+		String exhaustgastemp3 = textfieldexhaustgastemp3.getText();
+		String exhaustgastemp4 = textfieldexhaustgastemp4.getText();
+		
+		String heatertemp1 = textfieldheatertemp1.getText();
+		String heatertemp2 = textfieldheatertemp2.getText();
+		String heatertemp3 = textfieldheatertemp3.getText();
+		String heatertemp4 = textfieldheatertemp4.getText();
+		
+		String blowertemp1 = textfieldblowertemp1.getText();
+		String blowertemp2 = textfieldblowertemp2.getText();
+		String blowertemp3 = textfieldblowertemp3.getText();
+		String blowertemp4 = textfieldblowertemp4.getText();
+		
+		String oxygen1 = textfieldoxygen1.getText();
+		String oxygen2 = textfieldoxygen2.getText();
+		String oxygen3 = textfieldoxygen3.getText();
+		String oxygen4 = textfieldoxygen4.getText();
+		
+		String exhaustgaslost1 = textfieldexhaustgasloss1.getText();
+		String exhaustgaslost2 = textfieldexhaustgasloss2.getText();
+		String exhaustgaslost3 = textfieldexhaustgasloss3.getText();
+		String exhaustgaslost4 = textfieldexhaustgasloss4.getText();
+		
+		Boolean oilpart1 = false;
+		Boolean oilpart2 = false;
+		Boolean oilpart3 = false;
+		Boolean oilpart4 = false;
+		
+		if(radiooilpartyes1.isSelected()){
+			oilpart1 = true;
+		} else if(radiooilpartno1.isSelected()){
+			oilpart1 = false;
+		}
+		
+		if(radiooilpartyes2.isSelected()){
+			oilpart2 = true;
+		} else if(radiooilpartno2.isSelected()){
+			oilpart2 = false;
+		}
+		
+		if(radiooilpartyes3.isSelected()){
+			oilpart3 = true;
+		} else if(radiooilpartno3.isSelected()){
+			oilpart3 = false;
+		}
+		
+		if(radiooilpartyes4.isSelected()){
+			oilpart4 = true;
+		} else if(radiooilpartno4.isSelected()){
+			oilpart4 = false;
+		}
+				
+		
+		//Tab 4
+		Boolean result = false;
+		if(radionotransgression.isSelected()){
+			result = true;
+		} else if(radiotransgression.isSelected()){
+			result = false;
+		}
+		
+		Boolean smokenumber = false;
+		Boolean oilpart = false;
+		Boolean carbonmonoxide = false;
+		Boolean nitrogendioxide = false;
+		Boolean exhaustgaslost = false;
+		
+		if(checkboxsmokenumbertransgression.isSelected()){
+			smokenumber = true;
+		} else{
+			smokenumber = false;
+		}
+		if(checkbockoilparttransgression.isSelected()){
+			oilpart = true;
+		} else{
+			oilpart = false;
+		}
+		if(checkboxcarbonmonoxidetransgression.isSelected()){
+			carbonmonoxide = true;
+		} else{
+			carbonmonoxide = false;
+		}
+		if(checkboxnitrogendioxidetransgression.isSelected()){
+			nitrogendioxide = true;
+		} else{
+			nitrogendioxide = false;
+		}
+		if(checkboxexhaustlosstransgression.isSelected()){
+			exhaustgaslost = true;
+		} else{
+			exhaustgaslost = false;
+		}
+		
+		Boolean additionalsteps = false;
+		
+		if(radioadditionalstepsyes.isSelected()){
+			additionalsteps = true;
+		}else if (radioadditionalstepsno.isSelected()){
+			additionalsteps = false;
+		}
+		
+		String comment = textareacomments.getText();
+		
+		
+    	try {
+			ClientInternRMI feukora = new ClientInternRMI();
+			if(rapport == null) {
+				feukora.saveRapport(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
+			} else {
+				feukora.updateRapport(rapport, companyname, lastname, adress, phone, zip, firstname, email, isOwner);
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+    	
+//    	customerCompanyNameField.clear();
+//    	radioButtonAdministration.setSelected(false);
+		
+	}
+	
+	public void initialize() {
 
+		//Togglegroup handling for: Heater/Blower (Controltype)
+		radioroutinecontrol.setToggleGroup(controltype);
+		radioacceptanceinspection.setToggleGroup(controltype);
+		radioroutinecontrol.setSelected(false);
+		radioacceptanceinspection.setSelected(false);
+
+		//Togglegroup handling for: Oilpart measuring Step 1
+		radiooilpartyes1.setToggleGroup(oilpart1);
+		radiooilpartno1.setToggleGroup(oilpart1);
+		radiooilpartyes1.setSelected(false);
+		radiooilpartno1.setSelected(false);
+
+		//Togglegroup handling for: Oilpart measuring Step 2
+		radiooilpartyes2.setToggleGroup(oilpart2);
+		radiooilpartno2.setToggleGroup(oilpart2);
+		radiooilpartyes2.setSelected(false);
+		radiooilpartno2.setSelected(false);
+
+		//Togglegroup handling for: Oilpart measuring Step 3
+		radiooilpartyes3.setToggleGroup(oilpart3);
+		radiooilpartno3.setToggleGroup(oilpart3);
+		radiooilpartyes3.setSelected(false);
+		radiooilpartno3.setSelected(false);
+
+		//Togglegroup handling for: Oilpart measuring Step 4
+		radiooilpartyes4.setToggleGroup(oilpart4);
+		radiooilpartno4.setToggleGroup(oilpart4);
+		radiooilpartyes4.setSelected(false);
+		radiooilpartno4.setSelected(false);
+
+		//Togglegroup handling for: Results
+		radiotransgression.setToggleGroup(result);
+		radionotransgression.setToggleGroup(result);
+		radiotransgression.setSelected(false);
+		radionotransgression.setSelected(false);
+
+		//Togglegroup handling for: Additional steps
+		radioadditionalstepsyes.setToggleGroup(additionalsteps);
+		radioadditionalstepsno.setToggleGroup(additionalsteps);
+		radioadditionalstepsyes.setSelected(false);
+		radioadditionalstepsno.setSelected(false);
+
+		ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+			ObservableList<String> customerNames = FXCollections.observableArrayList();
+			ObservableList<Customer> customers = feukora.getCustomers();
+			int i = 0;
+			while (i < customers.size()) {
+				String lastname = customers.get(i).getLastname();
+				String firstname = customers.get(i).getFirstname();
+				String name = lastname + " " + firstname;
+				customerNames.add(name);			
+				i++;
+			}
+			
+			ObservableList<String> heaterNames = FXCollections.observableArrayList();
+			ObservableList<Heater> heaters = feukora.getHeaters();
+			int j = 0;
+			while (j < heaters.size()) {
+				String name = heaters.get(j).getName();
+				heaterNames.add(name);			
+				j++;
+			}
+			
+			ObservableList<String> blowerNames = FXCollections.observableArrayList();
+			ObservableList<Blower> blowers = feukora.getBlowers();
+			int k = 0;
+			while (k < blowers.size()) {
+				String name = blowers.get(k).getName();
+				blowerNames.add(name);			
+				k++;
+			}
+
+			comboboxOwnerAdministration.setItems(customerNames);
+			comboboxheatertype.setItems(heaterNames);
+			comboboxblowertype.setItems(blowerNames);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		if(Context.getRapportid() != null){
+			Update();
+		}else{
+
+		}
+
+
+	}
+
+	public void Update(){
+
+		rapport = Context.getRapport();
+		customer = Context.getCustomer();
+		facilitymanager = Context.getFacilitymanager();
+
+		//1. Tab
+		//Beide Methoden müssen in die Model Klasse noch hinzugefügt werden
+		textfieldCanton.setText(rapport.getCanton());
+		textfieldaddress.setText(rapport.getRapportAddress());
+		comboboxOwnerAdministration.setValue(customer.getLastname() + " " + customer.getFirstname());
+		textfieldfacilitymanager.setText(facilitymanager.getLastname() + " " + facilitymanager.getFirstname());
+
+		// 2. Tab
+
+		// 3. Tab
+
+		// 4. Tab
+		if(rapport.getResults() == true){
+			radiotransgression.setSelected(true);
+		}else{
+			radionotransgression.setSelected(true);
+			if(rapport.getTransgression_smokenumber() == true){
+				checkboxsmokenumbertransgression.setSelected(true);
+			}
+			if(rapport.getTransgression_oilpart() == true){
+				checkbockoilparttransgression.setSelected(true);
+			}
+			if(rapport.getCarbonmonoxide() == true){
+				checkboxcarbonmonoxidetransgression.setSelected(true);
+			}
+			if(rapport.getNitrogendioxide() == true){
+				checkboxnitrogendioxidetransgression.setSelected(true);
+			}
+			if(rapport.getExhaustgaslost() == true){
+				checkboxexhaustlosstransgression.setSelected(true);
+			}
+		}
+		if(rapport.getAdditionalsteps() == true){
+			radioadditionalstepsyes.setSelected(true);
+		}else{
+			radioadditionalstepsno.setSelected(true);
+		}
+		textareacomments.setText(rapport.getComments());
+		
+		
 	}
 
 	@FXML
