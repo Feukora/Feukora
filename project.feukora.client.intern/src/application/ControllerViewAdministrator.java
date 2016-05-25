@@ -174,7 +174,7 @@ public class ControllerViewAdministrator {
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
-			mainRoot.setCenter(pane);
+			mainRoot.setTop(pane);
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
