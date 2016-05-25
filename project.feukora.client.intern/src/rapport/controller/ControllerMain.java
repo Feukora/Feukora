@@ -273,10 +273,11 @@ public class ControllerMain {
 		String manufactureyearheater = textfieldheateryear.getText();
 		Integer heateryear = Integer.parseInt(manufactureyearheater);
 		String heatertype = comboboxheatertype.getSelectionModel().getSelectedItem().toString();
+		String ctype;
 		if(radioroutinecontrol.isSelected() == true){
-			String controltype = "Routinekontrolle"; 
+			ctype = "Routinekontrolle"; 
 		}else if(radioacceptanceinspection.isSelected() == true){
-			String controltype = "Abnahmekontrolle";
+			ctype = "Abnahmekontrolle";
 		}
 		
 		String manufactureyearblower = textfieldbloweryear.getText();
@@ -287,8 +288,9 @@ public class ControllerMain {
 		
 		//Tab 3
 		LocalDate date = measuringdate.getValue();
-//		Date utilDate = Date.from( localDate.atStartOfDay( ZoneId.systemDefault() ).toInstant() );
-//		GregorianCalendar date = date.setTime(utilDate);
+		Date utilDate = Date.from( date.atStartOfDay( ZoneId.systemDefault() ).toInstant() );
+		GregorianCalendar gdate = new GregorianCalendar();
+		gdate.setTime(utilDate);
 		
 		String smokenumber1 = textfieldsmokenumber1.getText();
 		String smokenumber2 = textfieldsmokenumber1.getText();
@@ -414,7 +416,17 @@ public class ControllerMain {
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(rapport == null) {
-				feukora.saveRapport(canton, adress, customer, facilitymanager, heateryear, bloweryear, performance, date, /* viele mehr aus tab3 */result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
+				feukora.saveRapport(canton, adress, customer, facilitymanager, heateryear, heatertype, ctype, bloweryear, blowertype, performance, gdate,
+						smokenumber1, smokenumber2, smokenumber3, smokenumber4,
+						carbonmonoxide1, carbonmonoxide2, carbonmonoxide3, carbonmonoxide4,
+						nitrogendioxide1, nitrogendioxide2, nitrogendioxide3, nitrogendioxide4,
+						exhaustgastemp1, exhaustgastemp2, exhaustgastemp3, exhaustgastemp4, 
+						heatertemp1, heatertemp2, heatertemp3, heatertemp4,
+						blowertemp1, blowertemp2, blowertemp3, blowertemp4, 
+						oxygen1, oxygen2, oxygen3, oxygen4, 
+						exhaustgaslost1, exhaustgaslost2, exhaustgaslost3, exhaustgaslost4,
+						oilpart1, oilpart2, oilpart3, oilpart4, 
+						result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
 			} else {
 				feukora.updateRapport(rapport, canton, adress, customer, facilitymanager, heateryear, bloweryear, performance, date, /* viele mehr aus tab3 */result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
 			}

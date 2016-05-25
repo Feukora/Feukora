@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.time.LocalDate;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
 import org.apache.log4j.Logger;
@@ -610,17 +611,25 @@ public class ClientInternRMI {
 
 	}
 
-	public void saveRapport(String canton, String adress, String customer, String facilitymanager, Integer heateryear,
-			Integer bloweryear, String performance, LocalDate date, Boolean result, Boolean smokenumber,
-			Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide, Boolean exhaustgaslost,
-			Boolean additionalsteps, String comment) {
+	public void updateRapport(Rapport rapport, String canton, String adress, String customer, String facilitymanager,
+			Integer heateryear, Integer bloweryear, String performance, LocalDate date, Boolean result,
+			Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
+			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void updateRapport(Rapport rapport, String canton, String adress, String customer, String facilitymanager,
-			Integer heateryear, Integer bloweryear, String performance, LocalDate date, Boolean result,
-			Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
+	public void saveRapport(String canton, String adress, String customer, String facilitymanager, Integer heateryear,
+			String heatertype, String ctype, Integer bloweryear, String blowertype, String performance,
+			GregorianCalendar gdate, String smokenumber1, String smokenumber2, String smokenumber3, String smokenumber4,
+			String carbonmonoxide1, String carbonmonoxide2, String carbonmonoxide3, String carbonmonoxide4,
+			String nitrogendioxide1, String nitrogendioxide2, String nitrogendioxide3, String nitrogendioxide4,
+			String exhaustgastemp1, String exhaustgastemp2, String exhaustgastemp3, String exhaustgastemp4,
+			String heatertemp1, String heatertemp2, String heatertemp3, String heatertemp4, String blowertemp1,
+			String blowertemp2, String blowertemp3, String blowertemp4, String oxygen1, String oxygen2, String oxygen3,
+			String oxygen4, String exhaustgaslost1, String exhaustgaslost2, String exhaustgaslost3,
+			String exhaustgaslost4, Boolean oilpart1, Boolean oilpart2, Boolean oilpart3, Boolean oilpart4,
+			Boolean result, Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
 			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {
 		// TODO Auto-generated method stub
 		
