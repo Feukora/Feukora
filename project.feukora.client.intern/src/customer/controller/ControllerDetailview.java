@@ -30,6 +30,9 @@ public class ControllerDetailview {
     private Button detailviewSaveCustomer;
     
     @FXML
+    private Button detailviewDeleteAppointment;
+    
+    @FXML
     private Button detailviewCancelCustomer;
     
     @FXML
@@ -232,6 +235,11 @@ public class ControllerDetailview {
 		}	
 		
     	detailviewCancelCustomer.getScene().setRoot(pane);
+    }
+    
+    @FXML
+    void ActionDetailviewDeleteAppointment(ActionEvent event) {
+
     }
     
     @FXML

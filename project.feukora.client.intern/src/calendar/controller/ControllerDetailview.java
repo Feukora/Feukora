@@ -27,6 +27,9 @@ public class ControllerDetailview {
 
     @FXML
     private Button detailviewCancelAppointment;
+    
+    @FXML
+    private Button detailviewDeleteAppointment;
 
     @FXML
     private TextField appointmentDateField;
@@ -140,6 +143,11 @@ public class ControllerDetailview {
     	appointmentDateField.setText( sdf.format( cal.getTime() ) );
     	
     	
+    }
+    
+    @FXML
+    void ActionDetailviewDeleteAppointment(ActionEvent event) {
+
     }
 
 }

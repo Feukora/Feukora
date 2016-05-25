@@ -14,7 +14,7 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <Button fx:id="detailviewSaveAppointment" layoutX="840.0" layoutY="438.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveAppointment" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
+      <Button fx:id="detailviewSaveAppointment" layoutX="840.0" layoutY="432.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveAppointment" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
       <GridPane layoutX="474.0" layoutY="155.0" prefHeight="153.0" prefWidth="466.0">
          <children>
             <Label prefHeight="25.0" prefWidth="101.0" text="Datum" />
@@ -52,7 +52,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Button fx:id="detailviewCancelAppointment" layoutX="682.0" layoutY="438.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelAppointment" prefHeight="25.0" prefWidth="100.0" text="Abbrechen" />
+      <Button fx:id="detailviewCancelAppointment" layoutX="508.0" layoutY="432.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelAppointment" prefHeight="25.0" prefWidth="100.0" text="Abbrechen" />
       <ComboBox fx:id="appointmentClientcomboBox" layoutX="45.0" layoutY="158.0" onAction="#ActionAppointmentClientcomboBox" prefWidth="150.0" />
       <Label layoutX="45.0" layoutY="245.0" text="Wärmeerzeuger">
          <font>
@@ -60,5 +60,6 @@
          </font>
       </Label>
       <ComboBox fx:id="appointmentHeatercomboBox" layoutX="45.0" layoutY="288.0" onAction="#ActionAppointmentHeatercomboBox" prefWidth="150.0" />
+      <Button fx:id="detailviewDeleteAppointment" layoutX="678.0" layoutY="432.0" mnemonicParsing="false" onAction="#ActionDetailviewDeleteAppointment" prefHeight="25.0" prefWidth="100.0" text="Löschen" />
    </children>
 </AnchorPane>
