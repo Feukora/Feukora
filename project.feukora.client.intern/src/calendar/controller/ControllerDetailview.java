@@ -1,8 +1,11 @@
 package calendar.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import org.apache.log4j.Logger;
 
+import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.User;
 
 public class ControllerDetailview {
 	
@@ -43,6 +47,8 @@ public class ControllerDetailview {
     private ComboBox<?> appointmentHeatercomboBox;
 
     private Appointment appointment;
+    private User inspector;
+    private Calendar cal;
 
     @FXML
     void ActionAppointmentDateField(ActionEvent event) {
@@ -123,9 +129,17 @@ public class ControllerDetailview {
 
     }
     
-    public void initData ( Appointment appointment )
+    public void initData ( ObservableMap<Object, Object> properties )
     {
     	this.appointment = appointment;
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+    	cal = (Calendar) properties.get("date");
+    	inspector = (User) properties.get("user");
+    	
+    	appointmentInspectorField.setText( inspector.toString() );
+    	appointmentDateField.setText( sdf.format( cal.getTime() ) );
+    	
+    	
     }
 
 }

@@ -172,11 +172,12 @@ public class ControllerCalendarPane {
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));
 		Button origin = (Button) event.getSource();
     	try {
-    		User targetUser = comboBoxSelectCalendar.getValue();
+    		origin.getProperties().put("user", comboBoxSelectCalendar.getValue());
+    		origin.getScene().setRoot(loader.load());
     		ControllerDetailview calendarController = loader.<ControllerDetailview>getController();
     		calendarController.initData( origin.getProperties() );
     		
-    		origin.getScene().setRoot(loader.load());
+    		
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
@@ -186,8 +187,8 @@ public class ControllerCalendarPane {
 
     @FXML
     void ActionComboBoxSelectCalendar(ActionEvent event) {
-    	/*String activeUser = comboBoxSelectCalendar.getSelectionModel().getSelectedItem();
-    	initializeNew(activeUser);*/
+    	User selectedInspector = comboBoxSelectCalendar.getValue();
+    	//initializeNew(activeUser);
     	
     }
 
@@ -259,8 +260,26 @@ public class ControllerCalendarPane {
     		if ( node instanceof Button )
     		{
     			Button btn = (Button) node;
-	    		btn.getProperties().put("date", cal);
-	    		btn.getProperties().put("user", user);
+	    		Calendar btnCal = Calendar.getInstance();
+	    		btnCal.setTimeInMillis( cal.getTimeInMillis() );
+	    		btnCal.set(Calendar.MINUTE, 0);
+	    		if ( btn.getId().endsWith( "10" ) )
+	    		{
+	    			btnCal.set(Calendar.HOUR_OF_DAY, 8);
+	    		}
+	    		else if ( btn.getId().endsWith("12") )
+	    		{
+	    			btnCal.set(Calendar.HOUR_OF_DAY, 10);
+	    		}
+	    		else if ( btn.getId().endsWith( "15" ) )
+	    		{
+	    			btnCal.set(Calendar.HOUR_OF_DAY, 13);
+	    		}
+	    		else if ( btn.getId().endsWith( "17" ) )
+	    		{
+	    			btnCal.set(Calendar.HOUR_OF_DAY, 15);
+	    		}
+	    		btn.getProperties().put("date", btnCal);
     		}
     	}
     }
