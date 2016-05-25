@@ -2,8 +2,6 @@ package calendar.controller;
 
 import org.apache.log4j.Logger;
 
-import blower.controller.ControllerOverview;
-
 /**
  * Sample Skeleton for 'calendarDetailview.fxml' Controller Class
  */
@@ -13,9 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Appointment;
 
 public class ControllerDetailview {
 	
@@ -64,6 +61,8 @@ public class ControllerDetailview {
     @FXML // fx:id="appointmentTypistField"
     private TextField appointmentTypistField; // Value injected by FXMLLoader
 
+    private Appointment appointment;
+    
     @FXML
     void ActionCustomerZipField(ActionEvent event) {
 
@@ -139,8 +138,8 @@ public class ControllerDetailview {
     	detailviewCancelAppointment.getScene().setRoot(pane);
     }
     
-//    @FXML
-//    void ActionDetailviewSaveAppointment(ActionEvent event) {
+    @FXML
+    void ActionDetailviewSaveAppointment(ActionEvent event) {
 //    	String lastname = customerNameField.getText();
 //    	String adress = customerAddressField.getText();
 //    	String phone = customerNumberField.getText();
@@ -163,7 +162,7 @@ public class ControllerDetailview {
 //			// TODO Auto-generated catch block
 //			logger.error("Aktion konnte nicht durchgeführt werden\'",
 //					e);
-//		}
+	}
 //    	
 //    	customerNameField.clear();
 //    	customerAddressField.clear();
@@ -171,7 +170,12 @@ public class ControllerDetailview {
 //    	customerZipField.clear();
 //    	customerFirstNameField.clear();
 //    	customerEmailField.clear();
-//    }
+    }
+    
+    public void initData ( Appointment appointment )
+    {
+    	this.appointment = appointment;
+    }
 
 }
 

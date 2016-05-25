@@ -1,17 +1,20 @@
 package calendar.controller;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
-import blower.controller.ControllerOverview;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.print.PrinterJob;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.User;
 
@@ -19,103 +22,109 @@ public class ControllerCalendarPane {
 	
 	private static final Logger logger = Logger
 			.getLogger(ControllerCalendarPane.class);
+	
+	@FXML
+	private GridPane calendarPane;
+	
+    @FXML
+    private Button btnApp_sat1315;
 
     @FXML
-    private Button sat1315;
+    private Button btnApp_mon1517;
 
     @FXML
-    private Button mon1517;
+    private Button btnApp_fri1315;
 
     @FXML
-    private Button fri1315;
+    private Button btnApp_thur1315;
 
     @FXML
-    private Button thur1315;
+    private Button btnApp_mon1315;
 
     @FXML
-    private Button mon1315;
+    private Button btnApp_thur1012;
 
     @FXML
-    private Button thur1012;
+    private Button btnApp_fri1517;
 
     @FXML
-    private Button fri1517;
+    private Button btnApp_sat1012;
 
     @FXML
-    private Button sat1012;
-
-    @FXML
-    private Button wed0810;
+    private Button btnApp_wed0810;
 
     @FXML
     private Button printCalendar;
 
     @FXML
-    private Button thur1517;
+    private Button btnApp_thur1517;
 
     @FXML
-    private Button tues0810;
+    private Button btnApp_tues0810;
 
     @FXML
-    private Button wed1517;
+    private Button btnApp_wed1517;
 
     @FXML
-    private Button mon1012;
+    private Button btnApp_mon1012;
 
     @FXML
-    private Button sat1517;
+    private Button btnApp_sat1517;
 
     @FXML
-    private Button sat0810;
+    private Button btnApp_sat0810;
 
     @FXML
-    private Button wed1012;
+    private Button btnApp_wed1012;
 
     @FXML
-    private Button mon0810;
+    private Button btnApp_mon0810;
 
     @FXML
-    private Button fri0810;
+    private Button btnApp_fri0810;
 
     @FXML
-    private Button tues1012;
+    private Button btnApp_tues1012;
 
     @FXML
-    private Button wed1315;
+    private Button btnApp_wed1315;
 
     @FXML
-    private Button thur0810;
+    private Button btnApp_thur0810;
 
     @FXML
-    private ComboBox<String> comboBoxSelectCalendar;
+    private ComboBox<User> comboBoxSelectCalendar;
 
     @FXML
-    private Button tues1315;
+    private Button btnApp_tues1315;
 
     @FXML
-    private Button fri1012;
+    private Button btnApp_fri1012;
 
     @FXML
-    private Button tues1517;
+    private Button btnApp_tues1517;
 
     @FXML
     void ActionSetAppointment(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
-    	
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));
+		Button origin = (Button) event.getSource();
     	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));
-
+    		User targetUser = comboBoxSelectCalendar.getValue();
+    		//ControllerDetailview calendarController = loader.<ControllerDetailview>getController();
+    		//calendarController.initData(appointmentId);
+    		
+    		origin.getScene().setRoot(loader.load());
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
-    	tues1517.getScene().setRoot(pane);
+    	
     }
 
     @FXML
     void ActionComboBoxSelectCalendar(ActionEvent event) {
-    	String activeUser = comboBoxSelectCalendar.getSelectionModel().getSelectedItem();
-    	initializeNew(activeUser);
+    	/*String activeUser = comboBoxSelectCalendar.getSelectionModel().getSelectedItem();
+    	initializeNew(activeUser);*/
     	
     }
 
@@ -130,14 +139,9 @@ public class ControllerCalendarPane {
     	ClientInternRMI feukora;
 		try {
 			feukora = new ClientInternRMI();
-			ObservableList<String> usernames = FXCollections.observableArrayList();
 			ObservableList<User> users = feukora.getUsers();
-			int i = 0;
-			while (i < users.size()) {
-				usernames.add(users.get(i).getUsername());
-				i++;
-			}
-			comboBoxSelectCalendar.setItems(usernames);
+			comboBoxSelectCalendar.setItems(users);
+			initButtons();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -160,6 +164,18 @@ public class ControllerCalendarPane {
 			e.printStackTrace();
 		}
     	
+    }
+    
+    private void initButtons()
+    {
+    	for ( Node node : calendarPane.getChildren() )
+    	{
+    		if ( node instanceof Button )
+    		{
+	    		Button btn = (Button) node;
+	    		btn.setText("Hallo");
+    		}
+    	}
     }
 
 }
