@@ -62,9 +62,9 @@
       </MenuBar>
    </top>
    <center>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="986.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane fx:id="calendarPane" gridLinesVisible="true" layoutX="14.0" layoutY="102.0" prefHeight="400.0" prefWidth="600.0">
+      <GridPane fx:id="calendarPane" gridLinesVisible="true" layoutX="-6.0" layoutY="102.0" prefHeight="477.0" prefWidth="996.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="12.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="12.0" prefWidth="100.0" />
@@ -173,122 +173,122 @@
             </Label>
             <Button fx:id="btnApp_mon0810" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_wed0810" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_tues0810" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_thur0810" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_fri0810" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_sat0810" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_mon1012" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_tues1012" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_wed1012" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_thur1012" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_fri1012" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_sat1012" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_mon1315" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_tues1315" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_wed1315" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_thur1315" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_fri1315" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_sat1315" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_mon1517" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_tues1517" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_wed1517" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_thur1517" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_fri1517" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
             <Button fx:id="btnApp_sat1517" mnemonicParsing="false" onAction="#ActionSetAppointment" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
                <GridPane.margin>
-                  <Insets left="7.0" />
+                  <Insets left="35.0" />
                </GridPane.margin>
             </Button>
          </children>
@@ -296,23 +296,24 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </GridPane>
-      <Label layoutX="24.0" layoutY="29.0" prefHeight="25.0" prefWidth="217.0" text="Feuerungskontrolleur">
+      <Label layoutY="2.0" prefHeight="25.0" prefWidth="217.0" text="Feuerungskontrolleur">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboBoxSelectCalendar" layoutX="241.0" layoutY="29.0" onAction="#ActionComboBoxSelectCalendar" prefHeight="25.0" prefWidth="182.0" />
-      <Button fx:id="printCalendar" layoutX="510.0" layoutY="29.0" mnemonicParsing="false" onAction="#ActionPrintCalendar" text="Drucken" />
-      <Button fx:id="moveLeft" layoutX="24.0" layoutY="64.0" mnemonicParsing="false" onAction="#ActionMoveLeft" text="&lt;">
+      <ComboBox fx:id="comboBoxSelectCalendar" layoutX="305.0" layoutY="2.0" onAction="#ActionComboBoxSelectCalendar" prefHeight="31.0" prefWidth="197.0" />
+      <Button fx:id="printCalendar" layoutX="723.0" layoutY="1.0" mnemonicParsing="false" onAction="#ActionPrintCalendar" prefHeight="28.0" prefWidth="75.0" text="Drucken" />
+      <Button fx:id="moveLeft" layoutY="65.0" mnemonicParsing="false" onAction="#ActionMoveLeft" text="&lt;">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>
       </Button>
-      <Button fx:id="moveRight" layoutX="70.0" layoutY="64.0" mnemonicParsing="false" onAction="#ActionMoveRight" text="&gt;">
+      <Button fx:id="moveRight" layoutX="59.0" layoutY="65.0" mnemonicParsing="false" onAction="#ActionMoveRight" text="&gt;">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>
       </Button>
+            <Label fx:id="calendarWeek" layoutX="22.0" layoutY="65.0" prefHeight="24.0" prefWidth="38.0" />
    </children>
    <opaqueInsets>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

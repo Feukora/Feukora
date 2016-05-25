@@ -33,6 +33,9 @@ public class ControllerCalendarPane {
 
     @FXML
     private MenuBar mBar;
+    
+    @FXML
+    private Label calendarWeek;
 
     @FXML
     private MenuItem loginWelcome;
