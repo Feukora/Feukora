@@ -28,7 +28,7 @@
             <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Mo" GridPane.columnIndex="1">
+            <Label fx:id="lblMon" text="Mo" GridPane.columnIndex="1">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label text="Di" GridPane.columnIndex="2">
+            <Label fx:id="lblTue" text="Di" GridPane.columnIndex="2">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -44,7 +44,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label text="Mi" GridPane.columnIndex="3">
+            <Label fx:id="lblWed" text="Mi" GridPane.columnIndex="3">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -52,7 +52,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label text="Do" GridPane.columnIndex="4">
+            <Label fx:id="lblThu" text="Do" GridPane.columnIndex="4">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -60,7 +60,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label text="Fr" GridPane.columnIndex="5">
+            <Label fx:id="lblFri" text="Fr" GridPane.columnIndex="5">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label text="Sa" GridPane.columnIndex="6">
+            <Label fx:id="lblSat" text="Sa" GridPane.columnIndex="6">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
