@@ -167,5 +167,10 @@ public class User implements Serializable {
 
 	public Usergroup getUsergroupid() {
 		return usergroupid;
-	}	
+	}
+	
+	@Override
+	public String toString() {
+		return lastname + " " + firstname;
+	}
 }
