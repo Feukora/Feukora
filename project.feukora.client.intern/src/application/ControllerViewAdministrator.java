@@ -169,19 +169,19 @@ public class ControllerViewAdministrator {
 	
     @FXML
     void ActionCalendarWelcome(ActionEvent event) {
-		BorderPane pane = new BorderPane();
+		AnchorPane pane = new AnchorPane();
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
-		//	mainRoot.setCenter(pane);
+			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
 		
-		calendarWelcome.getScene().setRoot(pane);
+		//calendarWelcome.getScene().setRoot(pane);
     }
         
     @FXML
@@ -233,18 +233,17 @@ public class ControllerViewAdministrator {
 
     @FXML
     void ActionCalendarMenuBar(ActionEvent event) {
-		BorderPane pane = new BorderPane();
+		AnchorPane pane = new AnchorPane();
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
-			mainRoot.setTop(pane);
+			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-
     }
 
     @FXML

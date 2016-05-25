@@ -21,14 +21,10 @@ import login.controller.ControllerLogin;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Blowertype;
 import projekt.feukora.server.model.Company;
-import projekt.feukora.server.model.Controltype;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerfunction;
-import projekt.feukora.server.model.Customerheater;
-import projekt.feukora.server.model.Facilitymanager;
 import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Heater;
-import projekt.feukora.server.model.Measuringresult;
 import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
@@ -634,8 +630,14 @@ public class ClientInternRMI {
 			String oxygen4, String exhaustgaslost1, String exhaustgaslost2, String exhaustgaslost3,
 			String exhaustgaslost4, Boolean oilpart1, Boolean oilpart2, Boolean oilpart3, Boolean oilpart4,
 			Boolean result, Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
+<<<<<<< HEAD
 			Boolean exhaustgaslost, Boolean additionalsteps, String comment, String persNumber) throws Exception {
+=======
+			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {
+		// TODO Auto-generated method stub
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 		
+<<<<<<< HEAD
 		Rapport rapRapport;
 		Customerheater rapCustomerheater;
 		Customer rapCustomer;
@@ -715,5 +717,9 @@ public class ClientInternRMI {
 				rapExhaustgastemp3, rapHeatertemp3, rapBlowertemp3, rapOxygen3, rapExhaustgaslost3);
 		Measuringresult mr4 = new Measuringresult(r1, 2, 2, rapSmokenumber4, rapCarbonmonoxide4, oilpart4, rapNitrogendioxide4,
 				rapExhaustgastemp4, rapHeatertemp4, rapBlowertemp4, rapOxygen4, rapExhaustgaslost4);
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 	}	
+
+
 }

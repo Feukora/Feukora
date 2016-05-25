@@ -196,7 +196,7 @@ public class ControllerDetailview {
 
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && plz.isEmpty() == false && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && company.isEmpty() == false) {
+			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip != null && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && company.isEmpty() == false) {
 				if(inspector == null) {
 				feukora.saveInspectorUser(zip, company, firstname, lastname, adress, phone, email, username, password);
 			} else {

@@ -48,8 +48,6 @@ public class Rapport implements Serializable {
 	private Boolean exhaustgaslost;
 	private Boolean nitrogendioxide;
 	private Boolean carbonmonoxide;
-	private String canton;
-	private String adress;
 	
 	/**
 	 * Default constructor
@@ -82,9 +80,7 @@ public class Rapport implements Serializable {
 	 * @param nitrogendioxide
 	 * @param carbonmonoxide
 	 */
-	public Rapport(String canton, String adress, Controltype controltypeid, Customerheater customerheaterid, User userid, Appointment appointmentid, GregorianCalendar measuringdate, Boolean results, Boolean additionalsteps, String comments, Boolean transgression_smokenumber, Boolean transgression_oilpart, Boolean exhaustgaslost, Boolean nitrogendioxide, Boolean carbonmonoxide){
-		this.canton = canton;
-		this.adress = adress;
+	public Rapport(Controltype controltypeid, Customerheater customerheaterid, User userid, Appointment appointmentid, GregorianCalendar measuringdate, Boolean results, Boolean additionalsteps, String comments, Boolean transgression_smokenumber, Boolean transgression_oilpart, Boolean exhaustgaslost, Boolean nitrogendioxide, Boolean carbonmonoxide){
 		this.controltypeid = controltypeid;
 		this.customerheaterid = customerheaterid;
 		this.userid = userid;
@@ -98,22 +94,6 @@ public class Rapport implements Serializable {
 		this.exhaustgaslost = exhaustgaslost;
 		this.nitrogendioxide = nitrogendioxide;
 		this.carbonmonoxide = carbonmonoxide;	
-	}
-
-	public String getCanton() {
-		return canton;
-	}
-
-	public void setCanton(String canton) {
-		this.canton = canton;
-	}
-
-	public String getAdress() {
-		return adress;
-	}
-
-	public void setAdress(String adress) {
-		this.adress = adress;
 	}
 
 	public int getRapportid() {
