@@ -162,7 +162,7 @@ public class ControllerDetailview {
 //			// TODO Auto-generated catch block
 //			logger.error("Aktion konnte nicht durchgeführt werden\'",
 //					e);
-	}
+//	}
 //    	
 //    	customerNameField.clear();
 //    	customerAddressField.clear();
