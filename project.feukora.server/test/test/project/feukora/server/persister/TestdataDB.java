@@ -101,28 +101,45 @@ public class TestdataDB {
 		
 		Blower blower1 = new Blower(bTyp1, fuel1, "Sixmadun SL21");
 		Blower blower2 = new Blower(bTyp3, fuel3, "Sixmadun SL23-2D");
+		Blower blower3 = new Blower(bTyp2, fuel2, "Budens BREI");
 		
 		Heater heater1 = new Heater("Sixmadun TG 21");
 		Heater heater2 = new Heater("CTC");
+		Heater heater3 = new Heater("Buderns GII5 REI7");
 		
 		Facilitymanager fm1 = new Facilitymanager("Hausmeister", "Robert");
 		Facilitymanager fm2 = new Facilitymanager("Meister", "Jakob");
+		Facilitymanager fm3 = new Facilitymanager("Hausmeister", "Kanye");
 		
 		Town zip1 = tp.findbyZip(6000);
 		Town zip2 = tp.findbyZip(6005);
+		Town zip3 = tp.findbyZip(6300);
 		assertNotNull(zip1);
 
 		Customer c1 = new Customer("Fasser AG", "Sandro", "Fasser",  "Bergün", "1234", "sf@sf.ch", function1, zip1);
 		Customer c2 = new Customer("Perry AG", "Patrick", "Pereira",  "Aargau", "5678", "pdp@pdp.ch", function2, zip2);
+		Customer c3 = new Customer("Klein AG", "Kevin", "Klein", "Zug", "042 440 98 76", "kleinkev@gmail.com", function1, zip3);
+		Customer c4 = new Customer("Blessing AG", "Chantal", "Blessing", "Luzern", "042 367 07 74", "blechant@gamil.com", function2, zip2);
+		Customer c5 = new Customer("Oragon AG", "Tina", "Grün", "Luzern", "042 756 54 54", "tinagrün@gamil.com", function1, zip2);
+		Customer c6 = new Customer("Levin AG", "Hans", "Meissner", "Zug", "042 564 56 45", "hansmeissner@gamil.com", function1, zip3);
 
 		Customerheater ch1 = new Customerheater(c1, heater1, blower1, fm1, 1990, 2000, 78);
 		Customerheater ch2 = new Customerheater(c2, heater2, blower2, fm2, 2010, 2010, 200);
+		Customerheater ch3 = new Customerheater(c3, heater3, blower3, fm3, 1999, 2001, 190);
 		
 		Company com1 = new Company("Centralhof", "Zentralstrasse 24", "045 440 67 43", "centralhof@gmail.ch", zip1);
 		Company com2 = new Company("PHAdmin", "Zürichstrasse 13", "043 387 32 31", "phadmin@outlook.ch", zip2);
+		Company com3 = new Company("Meissner GmbH", "Leihenstrasse 33", "043 234 65 34", "meissnergmbh@outlook.ch", zip3);
+		Company com4 = new Company("Company AG", "Meilenweg 76", "044 387 34 43", "companyag@outlook.ch", zip2);
+		Company com5 = new Company("appelwindow AG", "Jungstrasse 55", "046 357 32 31", "appelwindow@outlook.ch", zip1);
+		Company com6 = new Company("Unfreezing AG", "Luzernstrasse 73", "043 387 89 32", "unfreezingag@outlook.ch", zip3);
 		
-		User user1 = new User(group2, "Müller", "Catalina", "Zugerweg 3", zip1, com1, "mca", "user1", "042 765 34 73", "catalinamüller@outlook.ch");
-		User user2 = new User(group1, "Hofstetter", "Gida", "Hofmatt 90", zip2, com2, "admin", "admin", "043 657 98 54", "gidahofstetter@outlook.com");
+		User user1 = new User(group1, "Müller", "Catalina", "Zugerweg 3", zip1, com1, "mca", "user1", "042 765 34 73", "catalinamüller@outlook.ch");
+		User user2 = new User(group2, "Hofstetter", "Gida", "Hofmatt 90", zip2, com2, "admin", "admin", "043 657 98 54", "gidahofstetter@outlook.com");
+		User user3 = new User(group3, "Hansen", "Katarina", "Heimweg 4", zip3, com3, "hka", "user3", "042 878 43 34", "katarinahanseen@outlook.ch");
+		User user4 = new User(group1, "Hartman", "Viola", "Kasperlistrasse 34", zip1, com4, "hav", "user4", "042 789 76 32", "hartmannviola@outlook.ch");
+		User user5 = new User(group2, "Amrein", "Eveline", "Sommerstrasse 2", zip2, com5, "eva", "user5", "042 765 34 73", "evelineamrein@outlook.ch");
+		User user6 = new User(group3, "Helsinker", "Stefan", "Zugerweg 3", zip3, com6, "hes", "user6", "042 232 34 34", "stefanhelsinker@outlook.ch");
 		
 		GregorianCalendar date1 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
@@ -131,12 +148,15 @@ public class TestdataDB {
 		
 		Appointment app1 = new Appointment(ch1, user1, user1, date1, date2, "Kein Kommentar");
 		Appointment app2 = new Appointment(ch2, user2, user2, date3, date4, "Hallo");
+		Appointment app3 = new Appointment(ch3, user3, user3, date1, date3, "Termin");
 		
 		Rapport rap1 = new Rapport(typ1, ch1, user1, app1, date1, true, false, "Kein Kommentar", true, true, true, true, true);
 		Rapport rap2 = new Rapport(typ2, ch2, user2, app2, date3, false, true, "Richtiger Kommentar", true, true, true, true, true);
+		Rapport rap3 = new Rapport(typ1, ch3, user5, app3, date4, false, true, "Kein Kommentar", true, true, true, true, true);
 
 		Measuringresult mr1 = new Measuringresult(rap1, 1, 2, 0, 8, false, 127, 100, 58, 16, 3.5, 6.0 );
 		Measuringresult mr2 = new Measuringresult(rap2, 2, 1, 0, 20, true, 150, 105, 60, 18, 3.0, 6.2 );
+		Measuringresult mr3 = new Measuringresult(rap3, 1, 1, 0, 24, true, 156, 155, 70, 18, 3.6, 6.8 );
 		
 		try {
 			customerfunction.saveCustomerfunction(function1);
