@@ -15,6 +15,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.server.model.Appointment;
@@ -58,14 +60,14 @@ public class ControllerDetailview {
     @FXML // fx:id="customerZipField"
     private TextField customerZipField; // Value injected by FXMLLoader
 
-    @FXML // fx:id="customerMunicipalyField"
-    private TextField customerMunicipalyField; // Value injected by FXMLLoader
+    @FXML
+    private ComboBox<?> appointmentClientcomboBox;
 
-    @FXML // fx:id="customerEmailField"
-    private TextField customerEmailField; // Value injected by FXMLLoader
+    @FXML
+    private TextArea appointmentCommentsField;
 
-    @FXML // fx:id="appointmentTypistField"
-    private TextField appointmentTypistField; // Value injected by FXMLLoader
+    @FXML
+    private ComboBox<?> appointmentHeatercomboBox;
 
     private Appointment appointment;
     private User inspector;
@@ -110,24 +112,19 @@ public class ControllerDetailview {
     void ActionAppointmentDateField(ActionEvent event) {
 
     }
-
-    @FXML
-    void ActionAppointmentTypistField(ActionEvent event) {
-
-    }
-
+    
     @FXML
     void ActionAppointmentInspectorField(ActionEvent event) {
 
     }
 
     @FXML
-    void ActionAppointmentPhoneField(ActionEvent event) {
+    void ActionAppointmentCreatedByField(ActionEvent event) {
 
     }
 
     @FXML
-    void ActionAppointmentEmailField(ActionEvent event) {
+    void ActionAppointmentCommentsField(ActionEvent event) {
 
     }
 
@@ -179,6 +176,16 @@ public class ControllerDetailview {
 //    	customerFirstNameField.clear();
 //    	customerEmailField.clear();
     }
+
+    @FXML
+    void ActionAppointmentClientcomboBox(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ActionAppointmentHeatercomboBox(ActionEvent event) {
+
+    }
     
     public void initData ( ObservableMap<Object, Object> properties )
     {
@@ -193,4 +200,3 @@ public class ControllerDetailview {
     }
 
 }
-
