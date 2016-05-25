@@ -262,7 +262,7 @@ public class ControllerMain {
 	@FXML
 	void ActionRapportSave(ActionEvent event) {
 		
-		Rapport rapport = Context.getRapport();
+//		Rapport rapport = Context.getRapport();
 		
 		String canton = textfieldCanton.getText();
 		String adress = textfieldaddress.getText();
@@ -273,7 +273,7 @@ public class ControllerMain {
 		String manufactureyearheater = textfieldheateryear.getText();
 		Integer heateryear = Integer.parseInt(manufactureyearheater);
 		String heatertype = comboboxheatertype.getSelectionModel().getSelectedItem().toString();
-		String ctype;
+		String ctype = null;
 		if(radioroutinecontrol.isSelected() == true){
 			ctype = "Routinekontrolle"; 
 		}else if(radioacceptanceinspection.isSelected() == true){
@@ -412,10 +412,12 @@ public class ControllerMain {
 		
 		String comment = textareacomments.getText();
 		
+		String persNumber = textfieldpersonalcode.getText();
+		
 		
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(rapport == null) {
+//			if(rapport == null) {
 				feukora.saveRapport(canton, adress, customer, facilitymanager, heateryear, heatertype, ctype, bloweryear, blowertype, performance, gdate,
 						smokenumber1, smokenumber2, smokenumber3, smokenumber4,
 						carbonmonoxide1, carbonmonoxide2, carbonmonoxide3, carbonmonoxide4,
@@ -426,10 +428,10 @@ public class ControllerMain {
 						oxygen1, oxygen2, oxygen3, oxygen4, 
 						exhaustgaslost1, exhaustgaslost2, exhaustgaslost3, exhaustgaslost4,
 						oilpart1, oilpart2, oilpart3, oilpart4, 
-						result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
-			} else {
-				feukora.updateRapport(rapport, canton, adress, customer, facilitymanager, heateryear, bloweryear, performance, date, /* viele mehr aus tab3 */result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
-			}
+						result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment, persNumber);
+//			} else {
+//				feukora.updateRapport(rapport, canton, adress, customer, facilitymanager, heateryear, bloweryear, performance, date, /* viele mehr aus tab3 */result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
+//			}
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -538,16 +540,16 @@ public class ControllerMain {
 
 	public void Update(){
 
-		rapport = Context.getRapport();
+//		rapport = Context.getRapport();
 		customer = Context.getCustomer();
-		facilitymanager = Context.getFacilitymanager();
+//		facilitymanager = Context.getFacilitymanager();
 
 		//1. Tab
 		//Beide Methoden müssen in die Model Klasse noch hinzugefügt werden
 		textfieldCanton.setText(rapport.getCanton());
-		textfieldaddress.setText(rapport.getRapportAddress());
+//		textfieldaddress.setText(rapport.getRapportAddress());
 		comboboxOwnerAdministration.setValue(customer.getLastname() + " " + customer.getFirstname());
-		textfieldfacilitymanager.setText(facilitymanager.getLastname() + " " + facilitymanager.getFirstname());
+		textfieldfacilitymanager.setText(facilitymanager.getlastname());
 
 		// 2. Tab
 

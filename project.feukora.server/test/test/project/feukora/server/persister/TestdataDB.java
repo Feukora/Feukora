@@ -45,6 +45,8 @@ import projekt.feukora.server.persister.FuelPersister;
 import projekt.feukora.server.persister.FuelPersisterImpl;
 import projekt.feukora.server.persister.HeaterPersister;
 import projekt.feukora.server.persister.HeaterPersisterImpl;
+import projekt.feukora.server.persister.MeasuringresultPersister;
+import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
 import projekt.feukora.server.persister.RapportPersister;
 import projekt.feukora.server.persister.RapportPersisterImpl;
 import projekt.feukora.server.persister.TownPersister;
@@ -71,6 +73,7 @@ public class TestdataDB {
 	public static UserPersister users = new UserPersisterImpl();
 	public static AppointmentPersister appointment = new AppointmentPersisterImpl();
 	public static RapportPersister rapport = new RapportPersisterImpl();
+	public static MeasuringresultPersister measuringresult = new MeasuringresultPersisterImpl();
 	
 	private static final Logger logger = Logger
 			.getLogger(TestdataDB.class);
@@ -222,6 +225,10 @@ public class TestdataDB {
 			rapport.saveRapport(rap1);
 			rapport.saveRapport(rap2);
 			rapport.saveRapport(rap3);
+			
+			measuringresult.saveMeasuringresult(mr1);
+			measuringresult.saveMeasuringresult(mr2);
+			measuringresult.saveMeasuringresult(mr3);
 			
 		} catch (Exception e) {
 			logger.error("Testdaten konnten nicht geladen werden\'",
