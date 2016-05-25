@@ -1,6 +1,11 @@
 package calendar.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import org.apache.log4j.Logger;
+
+import javafx.collections.ObservableMap;
 
 /**
  * Sample Skeleton for 'calendarDetailview.fxml' Controller Class
@@ -13,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.User;
 
 public class ControllerDetailview {
 	
@@ -62,6 +68,8 @@ public class ControllerDetailview {
     private TextField appointmentTypistField; // Value injected by FXMLLoader
 
     private Appointment appointment;
+    private User inspector;
+    private Calendar cal;
     
     @FXML
     void ActionCustomerZipField(ActionEvent event) {
@@ -172,9 +180,16 @@ public class ControllerDetailview {
 //    	customerEmailField.clear();
     }
     
-    public void initData ( Appointment appointment )
+    public void initData ( ObservableMap<Object, Object> properties )
     {
-    	this.appointment = appointment;
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+    	cal = (Calendar) properties.get("date");
+    	inspector = (User) properties.get("user");
+    	
+    	appointmentInspectorField.setText( inspector.toString() );
+    	appointmentDateField.setText( sdf.format( cal.getTime() ) );
+    	
+    	
     }
 
 }

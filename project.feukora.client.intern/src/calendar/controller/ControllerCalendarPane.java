@@ -2,9 +2,6 @@ package calendar.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
 import org.apache.log4j.Logger;
 
 import javafx.application.Platform;
@@ -14,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.print.PrinterJob;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.MenuBar;
@@ -24,7 +20,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.User;
 
@@ -178,8 +173,8 @@ public class ControllerCalendarPane {
 		Button origin = (Button) event.getSource();
     	try {
     		User targetUser = comboBoxSelectCalendar.getValue();
-    		//ControllerDetailview calendarController = loader.<ControllerDetailview>getController();
-    		//calendarController.initData(appointmentId);
+    		ControllerDetailview calendarController = loader.<ControllerDetailview>getController();
+    		calendarController.initData( origin.getProperties() );
     		
     		origin.getScene().setRoot(loader.load());
 		} catch (Exception e) {
@@ -215,7 +210,7 @@ public class ControllerCalendarPane {
 			Calendar cal = Calendar.getInstance();
 	    	cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
 	    	
-			initNodes( cal );
+			initNodes( cal, comboBoxSelectCalendar.getValue() );
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -240,7 +235,7 @@ public class ControllerCalendarPane {
     	
     }
     
-	private void initNodes( Calendar cal )
+	private void initNodes( Calendar cal, User user )
     {
     	SimpleDateFormat fmt = new SimpleDateFormat("dd.MM.yyyy");
         fmt.setCalendar(cal);
@@ -264,7 +259,8 @@ public class ControllerCalendarPane {
     		if ( node instanceof Button )
     		{
     			Button btn = (Button) node;
-	    		btn.setText(fmt.format(cal.getTime()));
+	    		btn.getProperties().put("date", cal);
+	    		btn.getProperties().put("user", user);
     		}
     	}
     }

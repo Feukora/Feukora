@@ -304,7 +304,7 @@
       </Label>
       <ComboBox fx:id="comboBoxSelectCalendar" layoutX="241.0" layoutY="29.0" onAction="#ActionComboBoxSelectCalendar" prefHeight="25.0" prefWidth="182.0" />
       <Button fx:id="printCalendar" layoutX="510.0" layoutY="29.0" mnemonicParsing="false" onAction="#ActionPrintCalendar" text="Drucken" />
-      <!-- <Button fx:id="moveLeft" layoutX="24.0" layoutY="64.0" mnemonicParsing="false" onAction="#ActionMoveLeft" text="&lt;">
+      <Button fx:id="moveLeft" layoutX="24.0" layoutY="64.0" mnemonicParsing="false" onAction="#ActionMoveLeft" text="&lt;">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>
@@ -313,7 +313,7 @@
          <font>
             <Font name="System Bold" size="10.0" />
          </font>
-      </Button> -->
+      </Button>
    </children>
    <opaqueInsets>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
