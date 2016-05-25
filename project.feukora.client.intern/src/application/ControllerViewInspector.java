@@ -114,12 +114,12 @@ public class ControllerViewInspector {
 
     @FXML
     void ActionCalendarWelcome(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
+    	BorderPane pane = new BorderPane();
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
-			mainRoot.setCenter(pane);
+			mainRoot.setTop(pane);
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
@@ -139,7 +139,7 @@ public class ControllerViewInspector {
 
     @FXML
     void ActionCalenderMenuBar(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
+    	BorderPane pane = new BorderPane();
     	
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
