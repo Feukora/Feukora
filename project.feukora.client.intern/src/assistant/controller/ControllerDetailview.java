@@ -87,7 +87,7 @@ public class ControllerDetailview {
 		String password = assistantPasswordField.getText();
 		String company = assistantCompanyFieldCombo.getValue();
 		Integer zip = null;
-		if (plz.isEmpty() == false) {
+		if (!plz.isEmpty()) {
 			zip = Integer.parseInt(plz);
 		}
 		
@@ -95,7 +95,7 @@ public class ControllerDetailview {
 
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip != null && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && !company.isEmpty()) {
+			if(!lastname.isEmpty() && !adress.isEmpty() && !phone.isEmpty() && zip != null && !firstname.isEmpty() && !email.isEmpty() && !username.isEmpty() && !password.isEmpty() && !company.isEmpty()) {
 				if(assistant == null) {
 					feukora.saveAssistantUser(zip, company, firstname, lastname, adress, phone, email, username, password);
 				} else {
