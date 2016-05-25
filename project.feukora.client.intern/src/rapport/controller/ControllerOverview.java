@@ -3,9 +3,7 @@ package rapport.controller;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
 import org.apache.log4j.Logger;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

@@ -7,8 +7,10 @@ import customer.controller.ControllerOverview;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
@@ -28,6 +30,17 @@ public class ControllerDetailview {
 
     @FXML
     private TextField heaterNameField;
+    
+    public void errorInfoNeu(){
+		String titleBar = "Achtung";
+		String headerMessage = "Bitte alle Daten eingeben";
+		String infoMessage = "Eingabe nicht vollständig";
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(titleBar);
+		alert.setHeaderText(headerMessage);
+		alert.setContentText(infoMessage);
+		alert.showAndWait();
+	}
 
     @FXML
     void ActionHeaterNameField(ActionEvent event) {
@@ -36,16 +49,23 @@ public class ControllerDetailview {
 
     @FXML
     void ActionDetailviewSaveHeater(ActionEvent event) {
-    	String heatername = heaterNameField.getText();
     	Heater heater = Context.getHeater();
+    	String heatername = heaterNameField.getText();
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(heater == null) {
-				Heater entity = new Heater(heatername);
-				feukora.saveHeater(entity);
+			if(heatername.isEmpty() == false){
+				if(heater == null) {
+					Heater entity = new Heater(heatername);
+					feukora.saveHeater(entity);
 			} else {
 		    	heater.setName(heatername);
 				feukora.updateHeater(heater);
+			}
+				
+			heaterNameField.clear();
+			
+			} else {
+				errorInfoNeu();
 			}
 			
 //	    	feukora.deleteCustomer(customer);
@@ -53,8 +73,7 @@ public class ControllerDetailview {
 			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
-		}
-    	heaterNameField.clear();
+		}    
     }
     
     public void initialize() {
@@ -64,15 +83,11 @@ public class ControllerDetailview {
     	} else {
     		
     	}
-    	
-    	
-    
     }
     
     public void Update(){
     		heaterNameField.setText(Context.getHeaterName());
-	    	Context.setNull();
-    	
+	    	Context.setNull();	
     }
     
     @FXML

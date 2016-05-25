@@ -6,10 +6,12 @@ import application.Context;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
@@ -59,6 +61,17 @@ public class ControllerDetailview {
 
     @FXML
     private TextField customerEmailField;
+    
+    public void errorInfoNeu(){
+		String titleBar = "Achtung";
+		String headerMessage = "Bitte alle Daten eingeben";
+		String infoMessage = "Eingabe nicht vollständig";
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(titleBar);
+		alert.setHeaderText(headerMessage);
+		alert.setContentText(infoMessage);
+		alert.showAndWait();
+    }
 
     @FXML
     void ActionCustomerCompanyNameField(ActionEvent event) {
@@ -164,7 +177,10 @@ public class ControllerDetailview {
     	String plz = customerZipField.getText();
     	String firstname = customerFirstNameField.getText();
     	String email = customerEmailField.getText();
-    	Integer zip = Integer.parseInt(plz);
+    	Integer zip = null;
+    	if (plz.isEmpty() == false) {
+    		zip = Integer.parseInt(plz);
+    	}
     	Boolean isOwner = false;
     	if(radioButtonOwner.isSelected()) {
     		isOwner = true;
@@ -174,31 +190,34 @@ public class ControllerDetailview {
     	
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(customer == null) {
+			if(companyname.isEmpty() == false && lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip == null && firstname.isEmpty() == false && email.isEmpty() == false) {
+				if(customer == null){
 				feukora.saveCustomer(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
 			} else {
 				feukora.updateCustomer(customer, companyname, lastname, adress, phone, zip, firstname, email, isOwner);
 			}
 			
-//	    	feukora.deleteCustomer(customer);
+	    	customerCompanyNameField.clear();
+	    	customerNameField.clear();
+	    	customerAddressField.clear();
+	    	customerNumberField.clear();
+	    	customerZipField.clear();
+	    	customerMunicipalityField.clear();
+	    	customerFirstNameField.clear();
+	    	customerEmailField.clear();
+	    	radioButtonOwner.setSelected(false);
+	    	radioButtonAdministration.setSelected(false);
+	    	
+    	} else {
+    		errorInfoNeu();
+    	}
+	    	//feukora.deleteCustomer(customer);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-    	
-    	customerCompanyNameField.clear();
-    	customerNameField.clear();
-    	customerAddressField.clear();
-    	customerNumberField.clear();
-    	customerZipField.clear();
-    	customerMunicipalityField.clear();
-    	customerFirstNameField.clear();
-    	customerEmailField.clear();
-    	radioButtonOwner.setSelected(false);
-    	radioButtonAdministration.setSelected(false);
-    	
-    }
+	}    
     
     @FXML
     void ActionDetailviewCancelCustomer(ActionEvent event) {
