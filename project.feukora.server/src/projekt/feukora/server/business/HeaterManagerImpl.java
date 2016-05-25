@@ -17,11 +17,7 @@ public class HeaterManagerImpl implements HeaterManager {
 
 	@Override
 	public void saveHeater(Heater entity) throws Exception {
-//		if((Integer) entity.getHeaterid() == null){
 			heaterPersister.saveHeater(entity);
-//		}else{
-//			throw new Exception("Der Heater (id = "+ entity.getHeaterid() + ") ist bereits vorhanden");
-//		}
 	}
 
 	@Override

@@ -19,11 +19,7 @@ public class UserManagerImpl implements UserManager {
 	
 	@Override
 	public void saveUsers(User entity) throws Exception {
-		if( entity.getUserid()==  0 ){
 			userPersister.saveUser(entity);
-		}else{
-			throw new Exception ("Der User (id ="+ entity.getUserid()+ ") ist bereits vorhanden");
-		}
 	}
 
 	@Override

@@ -16,11 +16,7 @@ public class CompanyManagerImpl implements CompanyManager {
 
 	@Override
 	public void saveCompany(Company entity) throws Exception {
-		if( entity.getCompanyid() == 0 ){
 			companyPersister.saveCompany(entity);
-		}else{
-			throw new Exception("Die Firma (id = "+ entity.getCompanyid() + ") ist bereits vorhanden");
-		}
 	}
 
 	@Override

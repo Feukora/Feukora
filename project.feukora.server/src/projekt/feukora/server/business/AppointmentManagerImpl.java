@@ -19,11 +19,7 @@ public class AppointmentManagerImpl implements AppointmentManager{
 
 	@Override
 	public void saveAppointment(Appointment entity) throws Exception {
-		if( entity.getAppointmentid() == 0 ){
 			appointmentPersister.saveAppointment(entity);
-		}else{
-			throw new Exception("Der Termin (id = "+ entity.getAppointmentid() + ") ist bereits vorhanden");
-		}
 	}
 
 	@Override

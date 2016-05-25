@@ -18,11 +18,7 @@ public class ControltypeManagerImpl implements ControltypeManager{
 
 	@Override
 	public void saveControltype(Controltype entity) throws Exception {
-		if((Integer)entity.getControltypeid()== null){
 			controltypePersister.saveControltype(entity);
-		}else{
-			throw new Exception ("Die Controltype(id =" + entity.getControltypeid() + ") ist bereits vorhanden");
-		}
 	}
 
 	@Override

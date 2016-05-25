@@ -17,11 +17,7 @@ public class BlowertypeManagerImpl implements BlowertypeManager {
 	
 	@Override
 	public void saveBlowertype(Blowertype entity) throws Exception {
-		if((Integer) entity.getBlowertypeid() == null){
 			blowertypePersister.saveBlowertype(entity);
-		}else{
-			throw new Exception("Der Brennertyp (id = "+ entity.getBlowertypeid() + ") ist bereits vorhanden");
-		}
 	}
 
 	@Override

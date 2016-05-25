@@ -18,11 +18,7 @@ public class CustomerfunctionManagerImpl implements CustomerfunctionManager {
 	
 	@Override
 	public void saveCustomerfunction(Customerfunction entity) throws Exception {
-		if((Integer) entity.getCustomerfunctionid() == null){
 			customerfunctionPersister.saveCustomerfunction(entity);
-		}else{
-			throw new Exception("Die Kundenfunktion (id = "+ entity.getCustomerfunctionid() + ") ist bereits vorhanden");
-		}
 	}
 
 	@Override

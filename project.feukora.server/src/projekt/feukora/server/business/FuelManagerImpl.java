@@ -18,11 +18,7 @@ public class FuelManagerImpl implements FuelManager{
 
 	@Override
 	public void saveFuel(Fuel entity) throws Exception {
-		if((Integer)entity.getFuelid()== null){
 			fuelPersister.saveFuel(entity);
-		}else{
-			throw new Exception ("Die Fuel(id =" + entity.getFuelid() + ") ist bereits vorhanden");
-		}
 	}
 
 	@Override

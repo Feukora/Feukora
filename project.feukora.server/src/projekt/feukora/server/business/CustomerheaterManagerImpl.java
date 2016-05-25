@@ -22,11 +22,7 @@ public class CustomerheaterManagerImpl implements CustomerheaterManager {
 	
 	@Override
 	public void saveCustomerheater(Customerheater entity) throws Exception {
-		if( entity.getCustomerheaterid() == 0 ){
 			customerheaterPersister.saveCustomerheater(entity);
-		}else{
-			throw new Exception("Die Kundenheizung (id = "+ entity.getCustomerheaterid() + ") ist bereits vorhanden");
-		}
 	}
 
 	@Override
