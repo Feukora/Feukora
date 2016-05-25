@@ -190,7 +190,7 @@ public class ControllerDetailview {
     	
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(companyname.isEmpty() == false && lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip == null && firstname.isEmpty() == false && email.isEmpty() == false) {
+			if(companyname.isEmpty() == false && lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip != null && firstname.isEmpty() == false && email.isEmpty() == false) {
 				if(customer == null){
 				feukora.saveCustomer(companyname, lastname, adress, phone, zip, firstname, email, isOwner);
 			} else {

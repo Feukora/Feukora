@@ -7,63 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="mainRoot" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.controller.ControllerCalendarPane">
-   <top>
-      <MenuBar fx:id="mBar" prefHeight="50.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
-         <menus>
-            <Menu mnemonicParsing="false" text="Datei">
-               <items>
-                  <MenuItem fx:id="loginWelcome" mnemonicParsing="false" onAction="#ActionLoginMenuBar" text="Login" />
-                  <MenuItem fx:id="closeWelcome" mnemonicParsing="false" onAction="#ActionCloseMenuBar" text="Close" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Terminkalender">
-               <items>
-                  <MenuItem fx:id="calendarMenuBar" mnemonicParsing="false" onAction="#ActionCalendarMenuBar" text="Terminkalender" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Feurungskontrolleur">
-               <items>
-                  <MenuItem fx:id="inspectorMenuBar" mnemonicParsing="false" onAction="#ActionInspectorMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="inspectorNewMenuItem" mnemonicParsing="false" onAction="#ActionInspectorNewMenuItem" text="Neu" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Kunde">
-               <items>
-                  <MenuItem fx:id="customerMenuBar" mnemonicParsing="false" onAction="#ActionCustomerMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="customerNewMenuItem" mnemonicParsing="false" onAction="#ActionCustomerNewMenuItem" text="Neu" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Sachbearbeiter">
-              <items>
-                <MenuItem fx:id="assistantMenuBar" mnemonicParsing="false" onAction="#ActionAssistantMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="assistantNewMenuItem" mnemonicParsing="false" onAction="#ActionAssistantNewMenuItem" text="Neu" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Brenner">
-
-               <items>
-                  <MenuItem fx:id="blowerMenuBar" mnemonicParsing="false" onAction="#ActionBlowerMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="blowerNewMenuItem" mnemonicParsing="false" onAction="#ActionBlowerNewMenuItem" text="Neu" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Wärmeerzeuger">
-              
-               <items>
-                  <MenuItem fx:id="heaterMenuBar" mnemonicParsing="false" onAction="#ActionHeaterMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="heaterNewMenuItem" mnemonicParsing="false" onAction="#ActionHeaterNewMenuItem" text="Neu" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Rapporte">
-               <items>
-                  <MenuItem fx:id="rapportMenuBar" mnemonicParsing="false" onAction="#ActionRapportMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="rapportNewMenuItem" mnemonicParsing="false" onAction="#ActionRapportNewMenuItem" text="Neu" />
-               </items></Menu>
-         </menus>
-      </MenuBar>
-   </top>
-   <center>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.controller.ControllerCalendarPane">
    <children>
       <GridPane fx:id="calendarPane" gridLinesVisible="true" layoutX="14.0" layoutY="102.0" prefHeight="400.0" prefWidth="600.0">
         <columnConstraints>
@@ -84,7 +28,7 @@
             <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="lblMon" text="Mo" GridPane.columnIndex="1">
+            <Label text="Mo" GridPane.columnIndex="1">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -92,7 +36,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label fx:id="lblTue" text="Di" GridPane.columnIndex="2">
+            <Label text="Di" GridPane.columnIndex="2">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -100,7 +44,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label fx:id="lblWed" text="Mi" GridPane.columnIndex="3">
+            <Label text="Mi" GridPane.columnIndex="3">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -108,7 +52,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label fx:id="lblthu" text="Do" GridPane.columnIndex="4">
+            <Label text="Do" GridPane.columnIndex="4">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -116,7 +60,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label fx:id="lblFri" text="Fr" GridPane.columnIndex="5">
+            <Label text="Fr" GridPane.columnIndex="5">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -124,7 +68,7 @@
                   <Insets left="8.0" />
                </padding>
             </Label>
-            <Label fx:id="lblSat" text="Sa" GridPane.columnIndex="6">
+            <Label text="Sa" GridPane.columnIndex="6">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -322,6 +266,3 @@
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
 </AnchorPane>
-
-   </center>
-</BorderPane>
