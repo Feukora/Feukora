@@ -114,7 +114,8 @@ public class ControllerOverview {
 						e);
 			}
 	}
-    @FXML
+    
+    /*@FXML
     void ActionOverviewDeleteInspector(ActionEvent event) {
     	ClientInternRMI feukora;
 		try {
@@ -127,6 +128,29 @@ public class ControllerOverview {
 					e);
 		}
 		initialize();
+    }*/
+    
+    @FXML
+    void ActionOverviewDeleteInspector(ActionEvent event) {
+    	ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+	    	User entity = overviewTableInspector.getSelectionModel().getSelectedItem();
+	    	feukora.deleteUser(entity);
+		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Feuerungskkontrolleur kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen diesem Feuerungskontrolleur";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+		initialize();
+    	
     }
 
     @FXML

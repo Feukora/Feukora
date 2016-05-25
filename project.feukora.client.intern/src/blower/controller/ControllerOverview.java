@@ -23,6 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.User;
 
 public class ControllerOverview {
@@ -85,7 +86,7 @@ public class ControllerOverview {
 
     }
 
-    @FXML
+    /*@FXML
     void ActionOverviewDeleteBlower(ActionEvent event) {
     	ClientInternRMI feukora;
     	try{
@@ -98,6 +99,29 @@ public class ControllerOverview {
     	}
     	initialize();
 
+    }*/
+    
+    @FXML
+    void ActionOverviewDeleteBlower(ActionEvent event) {
+    	ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+	    	Blower entity = overviewTableBlower.getSelectionModel().getSelectedItem();
+	    	feukora.deleteBlower(entity);
+		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Brenner kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen diesem Brenner";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+		initialize();
+    	
     }
 
     @FXML
