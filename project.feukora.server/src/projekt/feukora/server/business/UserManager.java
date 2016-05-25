@@ -2,6 +2,7 @@ package projekt.feukora.server.business;
 
 import java.util.List;
 import projekt.feukora.server.model.User;
+import projekt.feukora.server.model.Usergroup;
 
 /**
  * Interface to handle user entities.
@@ -92,4 +93,12 @@ public interface UserManager {
 	 * @return
 	 */
 	public User findUserByUsername(String username);
+	
+	/**
+	 * Return a list with users with this usergroup
+	 * 
+	 * @param ort
+	 * @return
+	 */
+	public List<User>findUserByUsergroup(Usergroup usergroup);
 }

@@ -562,19 +562,19 @@ public class ClientInternRMI {
 		
 	}
 	
-//	public ObservableList<User> getInspectors() throws Exception {
-//		
-//		ObservableList<User> userlist = FXCollections.observableArrayList();
-//		userlist.addAll(userRMI.findUsersByUsergroup("Feuerungskontrolleur"));
-//		return userlist;
-//	}
-//	
-//	public ObservableList<User> getAssistants() throws Exception {
-//		
-//		ObservableList<User> userlist = FXCollections.observableArrayList();
-//		userlist.addAll(userRMI.findUsersByUsergroup("Sachbearbeiter"));
-//		return userlist;
-//	}
+	public ObservableList<User> getInspectors() throws Exception {
+		
+		ObservableList<User> userlist = FXCollections.observableArrayList();
+		userlist.addAll(userRMI.findUserByUsergroup(usergroupRMI.findUsergroupByName("Feuerungskontrolleur")));
+		return userlist;
+	}
+	
+	public ObservableList<User> getAssistants() throws Exception {
+		
+		ObservableList<User> userlist = FXCollections.observableArrayList();
+		userlist.addAll(userRMI.findUserByUsergroup(usergroupRMI.findUsergroupByName("Sachbearbeiter")));
+		return userlist;
+	}
 	
 	/**
 	 * 

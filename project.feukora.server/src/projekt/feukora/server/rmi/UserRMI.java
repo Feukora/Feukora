@@ -6,6 +6,7 @@ import java.util.List;
 
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.User;
+import projekt.feukora.server.model.Usergroup;
 
 /**
  * RMI interface for handling User entities
@@ -104,11 +105,11 @@ public interface UserRMI extends Remote{
 	 */
 	public User findUsersByUsername(String username) throws RemoteException ;
 	
-//	/**
-//	 * Return a list with users with this usergroup
-//	 * 
-//	 * @param usergroup
-//	 * @return
-//	 */
-//	public List<User> findUserByUsergroup(String usergroup) throws RemoteException ;
+	/**
+	 * Return a list with users with this usergroup
+	 * 
+	 * @param usergroup
+	 * @return
+	 */
+	public List<User> findUserByUsergroup(Usergroup usergroup) throws RemoteException ;
 }

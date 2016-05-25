@@ -2,6 +2,7 @@ package projekt.feukora.server.business;
 
 import java.util.List;
 import projekt.feukora.server.model.User;
+import projekt.feukora.server.model.Usergroup;
 import projekt.feukora.server.persister.UserPersister;
 import projekt.feukora.server.persister.UserPersisterImpl;
 
@@ -68,5 +69,10 @@ public class UserManagerImpl implements UserManager {
 	@Override
 	public User findUserByUsername(String username) {
 		return userPersister.findUserByUsername(username);
+	}
+	
+	@Override
+	public List<User> findUserByUsergroup(Usergroup usergroup) {
+		return userPersister.findUserByUsergroup(usergroup);
 	}
 }

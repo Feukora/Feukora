@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.model.User;
+import projekt.feukora.server.model.Usergroup;
 
 /**
  * This class implements the interface UserPersister
@@ -112,18 +113,18 @@ public class UserPersisterImpl implements UserPersister{
 		return user;
 	}
 
-//	@Override
-//	public List<User> findUserByUsergroup(String usergroup) {
-//		EntityManager em = JpaUtil.createEntityManager();
-//		TypedQuery<User> tQuery = em.createNamedQuery(
-//				"User.findByUsergroup", User.class);
-//
-//		tQuery.setParameter("usergroup", usergroup);
-//
-//		List<User> userlist = tQuery.getResultList();
-//
-//		em.close();
-//
-//		return userlist != null ? userlist : new ArrayList<User>();
-//	}
+	@Override
+	public List<User> findUserByUsergroup(Usergroup usergroup) {
+		EntityManager em = JpaUtil.createEntityManager();
+		TypedQuery<User> tQuery = em.createNamedQuery(
+				"User.findByUsergroup", User.class);
+
+		tQuery.setParameter("usergroup", usergroup);
+
+		List<User> userlist = tQuery.getResultList();
+
+		em.close();
+
+		return userlist != null ? userlist : new ArrayList<User>();
+	}
 }

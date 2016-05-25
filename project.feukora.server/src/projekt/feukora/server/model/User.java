@@ -26,7 +26,7 @@ import javax.persistence.Transient;
 	@NamedQuery(name = "User.findByFirstname", query = "SELECT u FROM User u WHERE u.firstname=:firstname"),
 	@NamedQuery(name = "User.findByLastnameAndFirstname", query = "SELECT u FROM User u WHERE u.lastname=:lastname AND u.firstname=:firstname"),
 	@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username=:username"),
-/*	@NamedQuery(name = "User.findByUsergroup", query = "SELECT u FROM User u WHERE u.usergroup=:usergroup")*/})
+	@NamedQuery(name = "User.findByUsergroup", query = "SELECT u FROM User u WHERE u.usergroupid=:usergroup")})
 public class User implements Serializable {
 
 	@Id
@@ -167,9 +167,5 @@ public class User implements Serializable {
 
 	public Usergroup getUsergroupid() {
 		return usergroupid;
-	}
-	
-	
-	
-	
+	}	
 }

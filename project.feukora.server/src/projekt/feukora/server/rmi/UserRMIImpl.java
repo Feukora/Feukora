@@ -12,6 +12,7 @@ import javax.persistence.TypedQuery;
 import projekt.feukora.server.business.UserManager;
 import projekt.feukora.server.business.UserManagerImpl;
 import projekt.feukora.server.model.User;
+import projekt.feukora.server.model.Usergroup;
 import projekt.feukora.server.persister.GenericPersisterImpl;
 import projekt.feukora.server.persister.JpaUtil;
 
@@ -82,10 +83,10 @@ public class UserRMIImpl extends UnicastRemoteObject implements UserRMI {
 		return userManager.findUserByUsername(username);
 	}
 
-//	@Override
-//	public List<User> findUserByUsergroup(String usergroup) throws RemoteException {
-//		return userManager.findUserByUsergroup(usergroup);
-//	}
+	@Override
+	public List<User> findUserByUsergroup(Usergroup usergroup) throws RemoteException {
+		return userManager.findUserByUsergroup(usergroup);
+	}
 
 
 

@@ -3,6 +3,7 @@ package projekt.feukora.server.persister;
 import java.util.List;
 
 import projekt.feukora.server.model.User;
+import projekt.feukora.server.model.Usergroup;
 
 /**
  * This interface refers to a UserPersister
@@ -94,11 +95,11 @@ public interface UserPersister {
 	 */
 	public User findUserByUsername(String username);
 	
-//	/**
-//	 * Return a list of users with this usergroup
-//	 * 
-//	 * @param username
-//	 * @return user corresponding to the usergroup
-//	 */
-//	public List<User> findUserByUsergroup(String usergroup);
+	/**
+	 * Return a list of users with this usergroup
+	 * 
+	 * @param username
+	 * @return user corresponding to the usergroup
+	 */
+	public List<User> findUserByUsergroup(Usergroup usergroup);
 }
