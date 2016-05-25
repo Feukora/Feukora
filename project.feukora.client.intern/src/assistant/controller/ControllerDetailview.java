@@ -9,9 +9,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
@@ -60,6 +62,17 @@ public class ControllerDetailview {
     @FXML
 	private ComboBox<String> assistantCompanyFieldCombo;
     
+    public void errorInfoNeu(){
+		String titleBar = "Achtung";
+		String headerMessage = "Bitte alle Daten eingeben";
+		String infoMessage = "Eingabe nicht vollständig";
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(titleBar);
+		alert.setHeaderText(headerMessage);
+		alert.setContentText(infoMessage);
+		alert.showAndWait();
+	}
+    
     @FXML
     void ActionDetailviewSaveAssistant(ActionEvent event) {
 
@@ -72,15 +85,35 @@ public class ControllerDetailview {
 		String email = assistantEmailField.getText();
 		String username = assistantUsernameField.getText();
 		String password = assistantPasswordField.getText();
-		Integer zip = Integer.parseInt(plz);
+		Integer zip = null;
+		if (plz.isEmpty() == false) {
+			zip = Integer.parseInt(plz);
+		}
+		
 		String company = assistantCompanyFieldCombo.getValue();
 
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(assistant == null) {
-				feukora.saveAssistantUser(zip, company, firstname, lastname, adress, phone, email, username, password);
+			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip != null && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && company.isEmpty() == false) {
+				if(assistant == null) {
+					feukora.saveAssistantUser(zip, company, firstname, lastname, adress, phone, email, username, password);
+				} else {
+					feukora.updateAssistantUser(assistant, zip, company, firstname, lastname, adress, phone, email, username, password);
+				}
+
+				assistantCompanyFieldCombo.getSelectionModel().clearSelection();
+				assistantNameField.clear();
+				assistantAddressField.clear();
+				assistantPhoneField.clear();
+				assistantZipField.clear();
+				assistantMunicipalityField.clear();
+				assistantFirstNameField.clear();
+				assistantEmailField.clear();
+				assistantUsernameField.clear();
+				assistantPasswordField.clear();
+
 			} else {
-				feukora.updateAssistantUser(assistant, zip, company, firstname, lastname, adress, phone, email, username, password);
+				errorInfoNeu();
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -88,16 +121,6 @@ public class ControllerDetailview {
 					e);
 		}
 
-		assistantCompanyFieldCombo.getSelectionModel().clearSelection();
-		assistantNameField.clear();
-		assistantAddressField.clear();
-		assistantPhoneField.clear();
-		assistantZipField.clear();
-		assistantMunicipalityField.clear();
-		assistantFirstNameField.clear();
-		assistantEmailField.clear();
-		assistantUsernameField.clear();
-		assistantPasswordField.clear();
     }
     
     @FXML

@@ -394,7 +394,7 @@ public class ClientInternRMI {
 			Town city;
 			Usergroup usergroup;
 
-			usergroup = usergroupRMI.findUsergroupByName("Feuerungskontrolleur");
+			usergroup = usergroupRMI.findUsergroupByName("Sachbearbeiter");
 			city = townRMI.findTownByZip(zip);
 			company = companyRMI.findCompanyByName(companyname).get(0);		
 

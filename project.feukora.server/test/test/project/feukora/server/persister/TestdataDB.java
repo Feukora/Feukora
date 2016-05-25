@@ -134,8 +134,8 @@ public class TestdataDB {
 		Company com5 = new Company("appelwindow AG", "Jungstrasse 55", "046 357 32 31", "appelwindow@outlook.ch", zip1);
 		Company com6 = new Company("Unfreezing AG", "Luzernstrasse 73", "043 387 89 32", "unfreezingag@outlook.ch", zip3);
 		
-		User user1 = new User(group1, "Müller", "Catalina", "Zugerweg 3", zip1, com1, "mca", "user1", "042 765 34 73", "catalinamüller@outlook.ch");
-		User user2 = new User(group2, "Hofstetter", "Gida", "Hofmatt 90", zip2, com2, "admin", "admin", "043 657 98 54", "gidahofstetter@outlook.com");
+		User user1 = new User(group2, "Müller", "Catalina", "Zugerweg 3", zip1, com1, "mca", "user1", "042 765 34 73", "catalinamüller@outlook.ch");
+		User user2 = new User(group1, "Hofstetter", "Gida", "Hofmatt 90", zip2, com2, "admin", "admin", "043 657 98 54", "gidahofstetter@outlook.com");
 		User user3 = new User(group3, "Hansen", "Katarina", "Heimweg 4", zip3, com3, "hka", "user3", "042 878 43 34", "katarinahanseen@outlook.ch");
 		User user4 = new User(group1, "Hartman", "Viola", "Kasperlistrasse 34", zip1, com4, "hav", "user4", "042 789 76 32", "hartmannviola@outlook.ch");
 		User user5 = new User(group2, "Amrein", "Eveline", "Sommerstrasse 2", zip2, com5, "eva", "user5", "042 765 34 73", "evelineamrein@outlook.ch");

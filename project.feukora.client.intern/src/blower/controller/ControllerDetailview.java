@@ -90,7 +90,7 @@ public class ControllerDetailview {
 		radioButtonEvaporator.setSelected(false);
 	}
 
-	public void errorInfo(){
+	public void errorInfoNeu(){
 		String titleBar = "Achtung";
 		String headerMessage = "Bitte alle Daten eingeben";
 		String infoMessage = "Eingabe nicht vollständig";
@@ -164,11 +164,11 @@ public class ControllerDetailview {
 				radioButtonGas.setSelected(false);
 				radioButtonLiquidGas.setSelected(false);
 			}else{
-				errorInfo();
+				errorInfoNeu();
 			}
 
 		} catch (Exception e) {
-			errorInfo();
+			errorInfoNeu();
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
