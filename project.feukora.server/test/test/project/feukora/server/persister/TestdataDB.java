@@ -179,30 +179,49 @@ public class TestdataDB {
 			
 			blower.saveBlower(blower1);
 			blower.saveBlower(blower2);
+			blower.saveBlower(blower3);
 			
 			heater.saveHeater(heater1);
 			heater.saveHeater(heater2);
+			heater.saveHeater(heater3);
 			
 			facilitymanager.saveFacilitymanager(fm1);
 			facilitymanager.saveFacilitymanager(fm2);
+			facilitymanager.saveFacilitymanager(fm3);
 			
 			customer.saveCustomer(c1);
 			customer.saveCustomer(c2);
+			customer.saveCustomer(c3);
+			customer.saveCustomer(c4);
+			customer.saveCustomer(c5);
+			customer.saveCustomer(c6);
 			
 			customerheater.saveCustomerheater(ch1);
 			customerheater.saveCustomerheater(ch2);
+			customerheater.saveCustomerheater(ch3);
 			
 			company.saveCompany(com1);
 			company.saveCompany(com2);
+			company.saveCompany(com3);
+			company.saveCompany(com4);
+			company.saveCompany(com5);
+			company.saveCompany(com6);
+			
 			
 			users.saveUser(user1);
 			users.saveUser(user2);
+			users.saveUser(user3);
+			users.saveUser(user4);
+			users.saveUser(user5);
+			users.saveUser(user6);
 			
 			appointment.saveAppointment(app1);
 			appointment.saveAppointment(app2);
+			appointment.saveAppointment(app3);
 			
 			rapport.saveRapport(rap1);
 			rapport.saveRapport(rap2);
+			rapport.saveRapport(rap3);
 			
 		} catch (Exception e) {
 			logger.error("Testdaten konnten nicht geladen werden\'",
