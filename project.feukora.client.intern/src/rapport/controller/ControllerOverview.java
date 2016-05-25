@@ -46,7 +46,7 @@ public class ControllerOverview {
 	private TableColumn<Rapport, String> overviewTableInspector;
 
 	@FXML
-	private TableColumn<Rapport, GregorianCalendar> overviewTableDate;
+	private TableColumn<Rapport, String> overviewTableDate;
 
 	@FXML
 	public TableView<Rapport> overviewTableRapport; // Value injected by FXMLLoader
@@ -62,7 +62,7 @@ public class ControllerOverview {
 				);
 				
 				overviewTableDate.setCellValueFactory(
-						new PropertyValueFactory<Rapport, GregorianCalendar>("measuringdate")
+						new PropertyValueFactory<Rapport, String>("date")
 				);
 				
 				overviewTableControlltype.setCellValueFactory(
