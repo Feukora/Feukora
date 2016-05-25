@@ -75,8 +75,6 @@ public class ClientInternRMI {
 	UsergroupRMI usergroupRMI;
 
 
-
-
 	public static void main(String[] args) {
 		System.out
 		.println("======================================================================");
@@ -159,6 +157,12 @@ public class ClientInternRMI {
 		User user = userRMI.findUsersByUsername(username);
 
 		return user.login( password );
+	}
+	
+	public String authentication(String username) throws RemoteException {
+		User user = userRMI.findUsersByUsername(username);
+		String role = user.getUsergroupid().toString();
+		return role;
 	}
 
 	/**

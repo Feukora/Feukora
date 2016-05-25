@@ -54,7 +54,15 @@ public class ControllerLogin {
     		Boolean successfull = feukora.login(username, password);
     		
     		if(successfull == true){
-    			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+    			String role = feukora.authentication(username);
+    			if(role.equals("Administrator")) {
+    				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+    			} else if (role.equals("Feuerungskontrolleur")) {
+    				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+    			} else if (role.equals("Sachbearbeiter")) {
+    				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+    			}
+    			
     		}else{
     			pane = FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
     			usernameLoginTextfield.clear();
