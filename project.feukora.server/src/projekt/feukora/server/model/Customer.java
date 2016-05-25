@@ -148,7 +148,7 @@ public class Customer implements Serializable{
 	
 	@Override
 	public String toString() {
-		return lastname + " " + firstname;
+		return lastname;
 	}
 	
 	

@@ -79,11 +79,4 @@ public interface FacilitymanagerRMI extends Remote {
 	 */
 	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname) throws RemoteException;
 
-	/**
-	 * Return a list with facilitymanagers with this firstname
-	 * 
-	 * @param vorname
-	 * @return
-	 */
-	public List<Facilitymanager> findFacilitymanagerByFirstname(String firstname) throws RemoteException ;
 }

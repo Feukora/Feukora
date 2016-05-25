@@ -48,12 +48,7 @@ public class FacilitymanagerManagerImpl implements FacilitymanagerManager {
 
 	@Override
 	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname) {
-		return facilitymanagerPersister.findFacilitymanagerByFirstname(lastname);
-	}
-
-	@Override
-	public List<Facilitymanager> findFacilitymanagerByFirstname(String firstname) {
-		return facilitymanagerPersister.findFacilitymanagerByFirstname(firstname);
+		return facilitymanagerPersister.findFacilitymanagerByLastname(lastname);
 	}
 }
 

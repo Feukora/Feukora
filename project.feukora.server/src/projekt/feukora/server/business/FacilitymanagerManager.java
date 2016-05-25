@@ -68,11 +68,5 @@ public interface FacilitymanagerManager {
 	 */
 	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname);
 
-	/**
-	 * Return a list with Facilitymanager with this firstname
-	 * 
-	 * @param firstname
-	 * @return List with Facilitymanagers
-	 */
-	public List<Facilitymanager> findFacilitymanagerByFirstname(String firstname);
+	
 }

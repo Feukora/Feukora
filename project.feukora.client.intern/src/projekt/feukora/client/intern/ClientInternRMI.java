@@ -18,6 +18,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import login.controller.ControllerLogin;
+import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Blowertype;
 import projekt.feukora.server.model.Company;
@@ -704,9 +705,16 @@ public class ClientInternRMI {
 		
 		rapBlower = blowerRMI.findBlowerByName(blowertype).get(0);
 		
+		Appointment a1 = appointmentRMI.findAllAppointments().get(0);
 		Facilitymanager fm1 = new Facilitymanager(facilitymanager);
+		facilitymanagerRMI.saveFacilitymanager(fm1);
+		fm1 = facilitymanagerRMI.findFacilitymanagerByLastname(facilitymanager).get(0);
 		Customerheater ch1 = new Customerheater(rapCustomer, rapHeater, rapBlower, fm1, bloweryear, heateryear, rapPerformance);
-		Rapport r1 = new Rapport(canton, adress, rapType, ch1, rapUser, null, gdate, result, additionalsteps, comment, smokenumber, oilpart, exhaustgaslost, nitrogendioxide, carbonmonoxide);
+		customerheaterRMI.saveCustomerheater(ch1);
+		ch1 = customerheaterRMI.findCustomerheaterByCustomerheaterid(ch1.getCustomerheaterid());
+		Rapport r1 = new Rapport(canton, adress, rapType, ch1, rapUser, a1, gdate, result, additionalsteps, comment, smokenumber, oilpart, exhaustgaslost, nitrogendioxide, carbonmonoxide);
+		rapportRMI.saveRapport(r1);
+		r1 = rapportRMI.findRapportByRapportid(r1.getRapportid());
 		Measuringresult mr1 = new Measuringresult(r1, 1, 1, rapSmokenumber1, rapCarbonmonoxide1, oilpart1, rapNitrogendioxide1,
 				rapExhaustgastemp1, rapHeatertemp1, rapBlowertemp1, rapOxygen1, rapExhaustgaslost1);
 		Measuringresult mr2 = new Measuringresult(r1, 1, 2, rapSmokenumber2, rapCarbonmonoxide2, oilpart2, rapNitrogendioxide2,
@@ -715,10 +723,7 @@ public class ClientInternRMI {
 				rapExhaustgastemp3, rapHeatertemp3, rapBlowertemp3, rapOxygen3, rapExhaustgaslost3);
 		Measuringresult mr4 = new Measuringresult(r1, 2, 2, rapSmokenumber4, rapCarbonmonoxide4, oilpart4, rapNitrogendioxide4,
 				rapExhaustgastemp4, rapHeatertemp4, rapBlowertemp4, rapOxygen4, rapExhaustgaslost4);
-
-		facilitymanagerRMI.saveFacilitymanager(fm1);
-		customerheaterRMI.saveCustomerheater(ch1);
-		rapportRMI.saveRapport(r1);
+		
 		measuringresultRMI.saveMeasuringresult(mr1);
 		measuringresultRMI.saveMeasuringresult(mr2);
 		measuringresultRMI.saveMeasuringresult(mr3);

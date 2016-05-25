@@ -68,11 +68,4 @@ public interface FacilitymanagerPersister {
 	 */
 	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname);
 
-	/**
-	 * Return a list with Facilitymanager with this firstname
-	 * 
-	 * @param firstname
-	 * @return List with Customers
-	 */
-	public List<Facilitymanager> findFacilitymanagerByFirstname(String firstname);
 }

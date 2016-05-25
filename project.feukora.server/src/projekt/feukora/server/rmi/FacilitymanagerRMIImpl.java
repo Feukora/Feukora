@@ -62,12 +62,5 @@ public class FacilitymanagerRMIImpl extends UnicastRemoteObject implements Facil
 	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname) throws RemoteException  {
 		return facilitymanagerManager.findFacilitymanagerByLastname(lastname);
 	}
-
-	@Override
-	public List<Facilitymanager> findFacilitymanagerByFirstname(String firstname) throws RemoteException {
-		return facilitymanagerManager.findFacilitymanagerByFirstname(firstname);	
-
-}
-
 	
 	}

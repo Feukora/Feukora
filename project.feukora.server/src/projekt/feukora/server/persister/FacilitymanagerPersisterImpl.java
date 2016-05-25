@@ -65,19 +65,4 @@ public class FacilitymanagerPersisterImpl implements FacilitymanagerPersister{
 		return facilitymanagerlist != null ? facilitymanagerlist : new ArrayList<Facilitymanager>();
 	}
 
-	@Override
-	public List<Facilitymanager> findFacilitymanagerByFirstname(String firstname) {
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Facilitymanager> tQuery = em.createNamedQuery("Facilitymanager.findByFirstname",
-				Facilitymanager.class);
-
-		tQuery.setParameter("firstname", firstname);
-
-		List<Facilitymanager> facilitymanagerlist = tQuery.getResultList();
-
-		em.close();
-
-		return facilitymanagerlist != null ? facilitymanagerlist : new ArrayList<Facilitymanager>();
-	}
 }
