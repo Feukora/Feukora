@@ -711,7 +711,12 @@ public class ClientInternRMI {
 		fm1 = facilitymanagerRMI.findFacilitymanagerByLastname(facilitymanager).get(0);
 		Customerheater ch1 = new Customerheater(rapCustomer, rapHeater, rapBlower, fm1, bloweryear, heateryear, rapPerformance);
 		customerheaterRMI.saveCustomerheater(ch1);
-		ch1 = customerheaterRMI.findCustomerheaterByCustomerheaterid(ch1.getCustomerheaterid());
+		List<Customerheater> listch1 = customerheaterRMI.findAllCustomerheaters();
+		int i = 0;
+		while(i < listch1.size()){
+			ch1 = listch1.get(i);
+			i++;
+		}
 		Rapport r1 = new Rapport(canton, adress, rapType, ch1, rapUser, a1, gdate, result, additionalsteps, comment, smokenumber, oilpart, exhaustgaslost, nitrogendioxide, carbonmonoxide);
 		rapportRMI.saveRapport(r1);
 		r1 = rapportRMI.findRapportByRapportid(r1.getRapportid());
