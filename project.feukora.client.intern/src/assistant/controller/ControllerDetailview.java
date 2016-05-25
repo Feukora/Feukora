@@ -95,7 +95,7 @@ public class ControllerDetailview {
 
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip != null && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && company.getSelectedIndex().isEmpty() == false) {
+			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip != null && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && !company.isEmpty()) {
 				if(assistant == null) {
 					feukora.saveAssistantUser(zip, company, firstname, lastname, adress, phone, email, username, password);
 				} else {
