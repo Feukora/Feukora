@@ -18,11 +18,7 @@ public class FacilitymanagerManagerImpl implements FacilitymanagerManager {
 	
 	@Override
 	public void saveFacilitymanager(Facilitymanager entity) throws Exception {
-		if((Integer) entity.getFacilitymanagerid() == null){
 			facilitymanagerPersister.saveFacilitymanager(entity);
-		}else{
-			throw new Exception("Der Facilitymanager (id = "+ entity.getFacilitymanagerid() + ") ist bereits vorhanden");
-		}
 	}
 
 	@Override

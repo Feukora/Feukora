@@ -693,7 +693,7 @@ public class ClientInternRMI {
 		
 		
 		String lastname;
-		String[] names = customer.split("\\s+ ");
+		String[] names = customer.split("\\s+");
 		lastname = names[0];
 		
 		rapCustomer = customerRMI.findCustomerByLastname(lastname).get(0);
@@ -716,6 +716,14 @@ public class ClientInternRMI {
 		Measuringresult mr4 = new Measuringresult(r1, 2, 2, rapSmokenumber4, rapCarbonmonoxide4, oilpart4, rapNitrogendioxide4,
 				rapExhaustgastemp4, rapHeatertemp4, rapBlowertemp4, rapOxygen4, rapExhaustgaslost4);
 
+		facilitymanagerRMI.saveFacilitymanager(fm1);
+		customerheaterRMI.saveCustomerheater(ch1);
+		rapportRMI.saveRapport(r1);
+		measuringresultRMI.saveMeasuringresult(mr1);
+		measuringresultRMI.saveMeasuringresult(mr2);
+		measuringresultRMI.saveMeasuringresult(mr3);
+		measuringresultRMI.saveMeasuringresult(mr4);
+		
 	}	
 
 

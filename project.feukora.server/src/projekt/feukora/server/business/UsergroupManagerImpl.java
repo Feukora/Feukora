@@ -18,11 +18,7 @@ public class UsergroupManagerImpl implements UsergroupManager{
 	
 	@Override
 	public void saveUsergroup(Usergroup entity) throws Exception {
-		if((Integer)entity.getUsergroupid()== null){
 			usergroupPersister.saveUsergroup(entity);
-		}else{
-			throw new Exception ("Die Usergroup(id =" + entity.getUsergroupid() + ") ist bereits vorhanden");
-		}
 	}
 
 	@Override

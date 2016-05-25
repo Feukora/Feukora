@@ -24,11 +24,7 @@ public class TownManagerImpl implements TownManager {
 
 	@Override
 	public void saveTown(Town entity) throws Exception {
-//		if( entity.getTownid() == 0){
 			townPersister.saveTown(entity);
-//		}else{
-//			throw new Exception("Der Kunde (id = "+ entity.getTownid() + ") ist bereits vorhanden");
-//		}
 	}
 
 	@Override

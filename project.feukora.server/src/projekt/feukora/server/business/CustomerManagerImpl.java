@@ -18,11 +18,7 @@ public class CustomerManagerImpl implements CustomerManager {
 
 	@Override
 	public void saveCustomer(Customer entity) throws Exception {
-//		if( entity.getCustomerid() == 0){
 			customerPersister.saveCustomer(entity);
-//		}else{
-//			throw new Exception("Der Kunde (id = "+ entity.getCustomerid() + ") ist bereits vorhanden");
-//		}
 	}
 
 	@Override
