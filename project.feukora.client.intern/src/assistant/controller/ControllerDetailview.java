@@ -85,12 +85,13 @@ public class ControllerDetailview {
 		String email = assistantEmailField.getText();
 		String username = assistantUsernameField.getText();
 		String password = assistantPasswordField.getText();
+		String company = assistantCompanyFieldCombo.getValue();
 		Integer zip = null;
 		if (plz.isEmpty() == false) {
 			zip = Integer.parseInt(plz);
 		}
 		
-		String company = assistantCompanyFieldCombo.getValue();
+		
 
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();

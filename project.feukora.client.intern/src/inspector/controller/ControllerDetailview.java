@@ -8,9 +8,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Company;
@@ -58,6 +60,17 @@ public class ControllerDetailview {
 
 	@FXML
 	private TextField inspectorUsernameField;
+	
+	public void errorInfoNeu(){
+		String titleBar = "Achtung";
+		String headerMessage = "Bitte alle Daten eingeben";
+		String infoMessage = "Eingabe nicht vollständig";
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(titleBar);
+		alert.setHeaderText(headerMessage);
+		alert.setContentText(infoMessage);
+		alert.showAndWait();
+	}
 
 	@FXML
 	void ActionInspectorZipField(ActionEvent event) {
@@ -162,6 +175,8 @@ public class ControllerDetailview {
 
 	}
 
+	
+	
 	@FXML
 	void ActionDetailviewSaveInspector(ActionEvent event) {
 		User inspector = Context.getUser();
@@ -173,33 +188,40 @@ public class ControllerDetailview {
 		String email = inspectorEmailField.getText();
 		String username = inspectorUsernameField.getText();
 		String password = inspectorPasswordField.getText();
-		Integer zip = Integer.parseInt(plz);
 		String company = inspectorCompanyFieldCombo.getValue();
+		Integer zip = null;
+		if (plz.isEmpty() == false) {
+			zip = Integer.parseInt(plz);
+		}
 
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(inspector == null) {
+			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && plz.isEmpty() == false && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && company.isEmpty() == false) {
+				if(inspector == null) {
 				feukora.saveInspectorUser(zip, company, firstname, lastname, adress, phone, email, username, password);
 			} else {
 				feukora.updateInspectorUser(inspector, zip, company, firstname, lastname, adress, phone, email, username, password);
+			}
+				
+				inspectorCompanyFieldCombo.getSelectionModel().clearSelection();
+				inspectorNameField.clear();
+				inspectorAddressField.clear();
+				inspectorPhoneField.clear();
+				inspectorZipField.clear();
+				inspectorMunicipalityField.clear();
+				inspectorFirstNameField.clear();
+				inspectorEmailField.clear();
+				inspectorUsernameField.clear();
+				inspectorPasswordField.clear();
+				
+			} else {
+				errorInfoNeu();
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-
-		inspectorCompanyFieldCombo.getSelectionModel().clearSelection();
-		inspectorNameField.clear();
-		inspectorAddressField.clear();
-		inspectorPhoneField.clear();
-		inspectorZipField.clear();
-		inspectorMunicipalityField.clear();
-		inspectorFirstNameField.clear();
-		inspectorEmailField.clear();
-		inspectorUsernameField.clear();
-		inspectorPasswordField.clear();
-
 	}
 
 	@FXML
