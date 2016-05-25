@@ -826,7 +826,7 @@
                               <Font size="13.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="radioadditionalstepsno" layoutX="21.0" layoutY="318.0" mnemonicParsing="false" onAction="#setAdditionalstepsNo" text="Die Anlage muss innert 30 Tagen einreguliert werden. Die erfolgte Einregulierung ist durch den">
+                        <RadioButton fx:id="radioadditionalstepsno" layoutX="21.0" layoutY="318.0" mnemonicParsing="false" onAction="#setAdditionalstepsNo" text="Einregulierung auf Einhaltung der LRV-Grenzwerte nicht möglich.">
                            <font>
                               <Font size="13.0" />
                            </font>
