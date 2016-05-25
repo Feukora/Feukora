@@ -3,6 +3,7 @@ package projekt.feukora.client.intern;
 import java.io.InputStream;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Properties;
 import org.apache.log4j.Logger;
@@ -607,6 +608,22 @@ public class ClientInternRMI {
 		Town town1 = townRMI.findTownByZip(zip);
 		return town1.getName();
 
+	}
+
+	public void saveRapport(String canton, String adress, String customer, String facilitymanager, Integer heateryear,
+			Integer bloweryear, String performance, LocalDate date, Boolean result, Boolean smokenumber,
+			Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide, Boolean exhaustgaslost,
+			Boolean additionalsteps, String comment) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateRapport(Rapport rapport, String canton, String adress, String customer, String facilitymanager,
+			Integer heateryear, Integer bloweryear, String performance, LocalDate date, Boolean result,
+			Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
+			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {
+		// TODO Auto-generated method stub
+		
 	}	
 
 
