@@ -600,12 +600,9 @@ public class ClientInternRMI {
 	 *
 	 * @throws Exception
 	 */
-	// Do muass no d uslesig vu allna Calendardata wo 
-	public ObservableList<Customer> getCalendarData(String username) throws Exception {
+	public List<Appointment> getAppointments(User inspector) throws Exception {
 
-		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
-		customerlist.addAll(customerRMI.findAllCustomers());
-		return customerlist;
+		return appointmentRMI.findAppointmentsForInspector(inspector);
 
 	}
 

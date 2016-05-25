@@ -1,7 +1,11 @@
 package calendar.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import javafx.application.Platform;
@@ -21,6 +25,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.User;
 
 public class ControllerCalendarPane {
@@ -169,7 +174,9 @@ public class ControllerCalendarPane {
     @FXML
     private Button moveRight;
 
+    private ClientInternRMI feukora;
     private static int weekScroller = 0;
+    private List<Button> buttons = new ArrayList<Button>();
 
     @FXML
     void ActionSetAppointment(ActionEvent event) {
@@ -191,9 +198,7 @@ public class ControllerCalendarPane {
 
     @FXML
     void ActionComboBoxSelectCalendar(ActionEvent event) {
-    	User selectedInspector = comboBoxSelectCalendar.getValue();
-    	//initializeNew(activeUser);
-    	
+    	fillAppointments();
     }
 
     @FXML
@@ -205,7 +210,6 @@ public class ControllerCalendarPane {
     
     public void initialize()
     {
-    	ClientInternRMI feukora;
 		try {
 			feukora = new ClientInternRMI();
 			ObservableList<User> users = feukora.getUsers();
@@ -218,30 +222,16 @@ public class ControllerCalendarPane {
 	    	cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
 	    	
 	    	calendarWeek.setText("Kalenderwoche " + cal.get(Calendar.WEEK_OF_YEAR));
-			initNodes( cal, comboBoxSelectCalendar.getValue() );
+			initNodes( cal );
+			
+			fillAppointments();
 			
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden ", e);
 		}
     }
     
-    // Hier wird bei einer änderung des Activen users in der Combobox der Kalender neu geladen
-    public void initializeNew(String activeUser){
-    	ClientInternRMI feukora;
-		try {
-			feukora = new ClientInternRMI();
-			//Kalenderdaten des activeUser 
-			feukora.getCalendarData(activeUser);
-			
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	
-    }
-    
-	private void initNodes( Calendar cal, User user )
+	private void initNodes( Calendar cal )
     {
     	SimpleDateFormat fmt = new SimpleDateFormat("dd.MM.yyyy");
         fmt.setCalendar(cal);
@@ -268,6 +258,8 @@ public class ControllerCalendarPane {
 	    		Calendar btnCal = Calendar.getInstance();
 	    		btnCal.setTimeInMillis( cal.getTimeInMillis() );
 	    		btnCal.set(Calendar.MINUTE, 0);
+	    		btnCal.set(Calendar.SECOND, 0);
+	    		btnCal.set(Calendar.MILLISECOND, 0);
 	    		if ( btn.getId().endsWith( "10" ) )
 	    		{
 	    			btnCal.set(Calendar.HOUR_OF_DAY, 8);
@@ -285,6 +277,7 @@ public class ControllerCalendarPane {
 	    			btnCal.set(Calendar.HOUR_OF_DAY, 15);
 	    		}
 	    		btn.getProperties().put("date", btnCal);
+	    		buttons.add(btn);
     		}
     	}
     }
@@ -518,6 +511,36 @@ public class ControllerCalendarPane {
 		}
     	
     	moveRight.getScene().setRoot(pane);
+    }
+    
+    private void fillAppointments ()
+    {
+    	List<Appointment> appointments;
+		try {
+			appointments = feukora.getAppointments(comboBoxSelectCalendar.getValue());
+		
+	    	for ( Appointment app : appointments )
+	    	{
+	    		for( Button btn : buttons )
+	    		{
+	    			//reset all appointments
+	    			btn.getProperties().remove("appointment");
+	    			btn.setText("");
+	    			
+	    			Calendar cal = (Calendar) btn.getProperties().get( "date" );
+	    			Calendar appDate = app.getAppointmentdate();
+	
+	    			if( cal.equals(appDate) )
+	    			{
+	    				btn.setText(app.toString());
+	    				btn.getProperties().put("appointment", app);
+	    			}
+	    		}
+	    	}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }
 

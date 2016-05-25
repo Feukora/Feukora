@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.User;
 
 /**
  * This class implements the Interface AppointmentPersister
@@ -66,4 +67,16 @@ public class AppointmentPersisterImpl implements AppointmentPersister{
 		return appointmentdatelist != null ? appointmentdatelist : new ArrayList<Appointment>();
 	}
 
+	@Override
+	public List<Appointment> findAppointmentsForInspector(User inspector) {
+		EntityManager em = JpaUtil.createEntityManager();
+		
+		TypedQuery<Appointment> tQuery = em.createNamedQuery("Appointment.findByUserId", Appointment.class);
+		tQuery.setParameter("userId", inspector);
+		List<Appointment> appointmentList = tQuery.getResultList();
+		em.close();
+		
+		return appointmentList != null ? appointmentList : new ArrayList<Appointment>();
+	}
+	
 }

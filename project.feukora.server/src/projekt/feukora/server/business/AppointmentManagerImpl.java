@@ -3,6 +3,7 @@ package projekt.feukora.server.business;
 import java.util.GregorianCalendar;
 import java.util.List;
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.AppointmentPersister;
 import projekt.feukora.server.persister.AppointmentPersisterImpl;
 
@@ -50,5 +51,10 @@ public class AppointmentManagerImpl implements AppointmentManager{
 	@Override
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate) {
 		return appointmentPersister.findAppointmentByAppointmentdate(appointmentdate);
+	}
+
+	@Override
+	public List<Appointment> findAppointmentsForInspector(User inspector) {
+		return appointmentPersister.findAppointmentsForInspector(inspector);
 	}
 }

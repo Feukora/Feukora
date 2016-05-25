@@ -8,6 +8,7 @@ import java.util.List;
 import projekt.feukora.server.business.AppointmentManager;
 import projekt.feukora.server.business.AppointmentManagerImpl;
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.User;
 
 /**
  * This Class implements the methods of the interface AppointmentRMI
@@ -64,5 +65,10 @@ public class AppointmentRMIImpl extends UnicastRemoteObject implements Appointme
 	@Override
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate) throws RemoteException {
 		return appointmentManager.findAppointmentByAppointmentdate(appointmentdate);
+	}
+
+	@Override
+	public List<Appointment> findAppointmentsForInspector(User inspector) {
+		return appointmentManager.findAppointmentsForInspector(inspector);
 	}
 }
