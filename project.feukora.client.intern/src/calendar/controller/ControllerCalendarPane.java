@@ -169,6 +169,7 @@ public class ControllerCalendarPane {
     @FXML
     private Button moveRight;
 
+    private static int weekScroller = 0;
 
     @FXML
     void ActionSetAppointment(ActionEvent event) {
@@ -202,25 +203,26 @@ public class ControllerCalendarPane {
     	   printerJob.endJob();
     }
     
-    public void initialize(){
+    public void initialize()
+    {
     	ClientInternRMI feukora;
 		try {
 			feukora = new ClientInternRMI();
 			ObservableList<User> users = feukora.getUsers();
 			comboBoxSelectCalendar.setItems(users);
-			//TODO User überprüfen
 			comboBoxSelectCalendar.getSelectionModel().select(0);
 			
 			Calendar cal = Calendar.getInstance();
+			cal.setMinimalDaysInFirstWeek(7);
+			cal.add(Calendar.WEEK_OF_YEAR, weekScroller);
 	    	cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
 	    	
+	    	calendarWeek.setText("Kalenderwoche " + cal.get(Calendar.WEEK_OF_YEAR));
 			initNodes( cal, comboBoxSelectCalendar.getValue() );
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Aktion konnte nicht durchgeführt werden ", e);
 		}
-    	
     }
     
     // Hier wird bei einer änderung des Activen users in der Combobox der Kalender neu geladen
@@ -255,8 +257,8 @@ public class ControllerCalendarPane {
     		//init labels
     		if( node instanceof Label && node.getId() != null && node.getId().startsWith( "lbl" ) )
     		{
-    			Label lbl = (Label) node;
-    			lbl.setText( lbl.getText() + " " + fmt.format( cal.getTime() ) );
+				Label lbl = (Label) node;
+				lbl.setText( lbl.getText().substring(0, 2) + " " + fmt.format( cal.getTime() ) );
     		}
     		
     		//init buttons
@@ -322,7 +324,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -337,7 +339,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
 	}
@@ -352,7 +354,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
 	}
@@ -367,7 +369,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
 	}
@@ -382,7 +384,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
 	}
@@ -396,7 +398,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     
@@ -411,7 +413,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -425,7 +427,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -439,7 +441,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -453,7 +455,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -468,7 +470,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}
     }
@@ -481,7 +483,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -491,6 +493,7 @@ public class ControllerCalendarPane {
     	BorderPane pane = new BorderPane();
     	
     	try {
+    		weekScroller--;
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/CalendarPane.fxml"));
 
 		} catch (Exception e) {
@@ -506,15 +509,15 @@ public class ControllerCalendarPane {
 		BorderPane pane = new BorderPane();
     	
     	try {
+    		weekScroller++;
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/CalendarPane.fxml"));
 
     	} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}
     	
     	moveRight.getScene().setRoot(pane);
     }
-
 }
 

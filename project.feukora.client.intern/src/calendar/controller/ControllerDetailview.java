@@ -3,8 +3,11 @@ package calendar.controller;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.management.remote.rmi.RMIServer;
+
 import org.apache.log4j.Logger;
 
+import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +17,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.User;
 
 public class ControllerDetailview {
@@ -41,7 +46,7 @@ public class ControllerDetailview {
     private TextField appointmentCreatedByField;
 
     @FXML
-    private ComboBox<?> appointmentClientcomboBox;
+    private ComboBox<Customer> appointmentClientcomboBox;
 
     @FXML
     private TextArea appointmentCommentsField;
@@ -133,8 +138,20 @@ public class ControllerDetailview {
     }
     
     public void initData ( ObservableMap<Object, Object> properties )
-    {
-    	this.appointment = appointment;
+    {	
+    	ClientInternRMI cirmi;
+    	try {
+			cirmi = new ClientInternRMI();
+			appointmentClientcomboBox.setItems(cirmi.getCustomers());
+			appointmentClientcomboBox.getSelectionModel().select(0);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
+    	
     	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm");
     	cal = (Calendar) properties.get("date");
     	inspector = (User) properties.get("user");
