@@ -68,7 +68,7 @@ public class ControllerOverview {
 
     }
     
-    @FXML
+    /*@FXML
     void ActionOverviewDeleteHeater(ActionEvent event) {
     	ClientInternRMI feukora;
     	try{
@@ -81,6 +81,29 @@ public class ControllerOverview {
     	}
     	initialize();
 
+    }*/
+    
+    @FXML
+    void ActionOverviewDeleteHeater(ActionEvent event) {
+    	ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+	    	Heater entity = overviewTableHeater.getSelectionModel().getSelectedItem();
+	    	feukora.deleteHeater(entity);
+		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Wärmeerzeuger kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen diesem Wärmeerzeuger";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+		initialize();
+    	
     }
 
     @FXML
