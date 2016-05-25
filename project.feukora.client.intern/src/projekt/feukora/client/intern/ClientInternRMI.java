@@ -634,7 +634,7 @@ public class ClientInternRMI {
 			String oxygen4, String exhaustgaslost1, String exhaustgaslost2, String exhaustgaslost3,
 			String exhaustgaslost4, Boolean oilpart1, Boolean oilpart2, Boolean oilpart3, Boolean oilpart4,
 			Boolean result, Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
-			Boolean exhaustgaslost, Boolean additionalsteps, String comment, String persNumber) throws RemoteException {
+			Boolean exhaustgaslost, Boolean additionalsteps, String comment, String persNumber) throws Exception {
 		
 		Rapport rapRapport;
 		Customerheater rapCustomerheater;
@@ -705,6 +705,8 @@ public class ClientInternRMI {
 		rapBlower = blowerRMI.findBlowerByName(blowertype).get(0);
 		
 		Facilitymanager fm1 = new Facilitymanager(facilitymanager);
+		Customerheater ch1 = new Customerheater(rapCustomer, rapHeater, rapBlower, fm1, bloweryear, heateryear, rapPerformance);
+		Rapport r1 = new Rapport(canton, adress, rapType, ch1, rapUser, null, gdate, result, additionalsteps, comment, smokenumber, oilpart, exhaustgaslost, nitrogendioxide, carbonmonoxide);
 		Measuringresult mr1 = new Measuringresult(r1, 1, 1, rapSmokenumber1, rapCarbonmonoxide1, oilpart1, rapNitrogendioxide1,
 				rapExhaustgastemp1, rapHeatertemp1, rapBlowertemp1, rapOxygen1, rapExhaustgaslost1);
 		Measuringresult mr2 = new Measuringresult(r1, 1, 2, rapSmokenumber2, rapCarbonmonoxide2, oilpart2, rapNitrogendioxide2,
@@ -713,7 +715,5 @@ public class ClientInternRMI {
 				rapExhaustgastemp3, rapHeatertemp3, rapBlowertemp3, rapOxygen3, rapExhaustgaslost3);
 		Measuringresult mr4 = new Measuringresult(r1, 2, 2, rapSmokenumber4, rapCarbonmonoxide4, oilpart4, rapNitrogendioxide4,
 				rapExhaustgastemp4, rapHeatertemp4, rapBlowertemp4, rapOxygen4, rapExhaustgaslost4);
-		Customerheater ch1 = new Customerheater(rapCustomer, rapHeater, rapBlower, fm1, bloweryear, heateryear, rapPerformance);
-		Rapport r1 = new Rapport(canton, adress, rapType, ch1, rapUser, null, gdate, result, additionalsteps, comment, smokenumber, oilpart, exhaustgaslost, nitrogendioxide, carbonmonoxide);
 	}	
 }
