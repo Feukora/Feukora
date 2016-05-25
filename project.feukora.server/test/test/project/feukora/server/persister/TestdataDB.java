@@ -45,6 +45,8 @@ import projekt.feukora.server.persister.FuelPersister;
 import projekt.feukora.server.persister.FuelPersisterImpl;
 import projekt.feukora.server.persister.HeaterPersister;
 import projekt.feukora.server.persister.HeaterPersisterImpl;
+import projekt.feukora.server.persister.MeasuringresultPersister;
+import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
 import projekt.feukora.server.persister.RapportPersister;
 import projekt.feukora.server.persister.RapportPersisterImpl;
 import projekt.feukora.server.persister.TownPersister;
@@ -71,6 +73,7 @@ public class TestdataDB {
 	public static UserPersister users = new UserPersisterImpl();
 	public static AppointmentPersister appointment = new AppointmentPersisterImpl();
 	public static RapportPersister rapport = new RapportPersisterImpl();
+	public static MeasuringresultPersister measuringresult = new MeasuringresultPersisterImpl();
 	
 	private static final Logger logger = Logger
 			.getLogger(TestdataDB.class);
@@ -150,9 +153,9 @@ public class TestdataDB {
 		Appointment app2 = new Appointment(ch2, user2, user2, date3, date4, "Hallo");
 		Appointment app3 = new Appointment(ch3, user3, user3, date1, date3, "Termin");
 		
-		Rapport rap1 = new Rapport(typ1, ch1, user1, app1, date1, true, false, "Kein Kommentar", true, true, true, true, true);
-		Rapport rap2 = new Rapport(typ2, ch2, user2, app2, date3, false, true, "Richtiger Kommentar", true, true, true, true, true);
-		Rapport rap3 = new Rapport(typ1, ch3, user5, app3, date4, false, true, "Kein Kommentar", true, true, true, true, true);
+		Rapport rap1 = new Rapport("LU", "Strasse 24", typ1, ch1, user1, app1, date1, true, false, "Kein Kommentar", true, true, true, true, true);
+		Rapport rap2 = new Rapport("GR", "Strasse 25",typ2, ch2, user2, app2, date3, false, true, "Richtiger Kommentar", true, true, true, true, true);
+		Rapport rap3 = new Rapport("AG", "Stinktstrasse 24",typ1, ch3, user5, app3, date4, false, true, "Kein Kommentar", true, true, true, true, true);
 
 		Measuringresult mr1 = new Measuringresult(rap1, 1, 2, 0, 8, false, 127, 100, 58, 16, 3.5, 6.0 );
 		Measuringresult mr2 = new Measuringresult(rap2, 2, 1, 0, 20, true, 150, 105, 60, 18, 3.0, 6.2 );
@@ -222,6 +225,10 @@ public class TestdataDB {
 			rapport.saveRapport(rap1);
 			rapport.saveRapport(rap2);
 			rapport.saveRapport(rap3);
+			
+			measuringresult.saveMeasuringresult(mr1);
+			measuringresult.saveMeasuringresult(mr2);
+			measuringresult.saveMeasuringresult(mr3);
 			
 		} catch (Exception e) {
 			logger.error("Testdaten konnten nicht geladen werden\'",
