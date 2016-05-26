@@ -129,8 +129,12 @@ public class ControllerDetailview {
 		BorderPane pane = new BorderPane();
     	
     	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
-
+			if(Context.getRole().equals("Administrator")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+			} else if (Context.getRole().equals("Sachbearbeiter")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+			}
+			
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);

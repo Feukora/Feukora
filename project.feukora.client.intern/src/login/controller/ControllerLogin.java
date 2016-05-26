@@ -2,6 +2,7 @@ package login.controller;
 
 import org.apache.log4j.Logger;
 
+import application.Context;
 import inspector.controller.ControllerDetailview;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -55,6 +56,7 @@ public class ControllerLogin {
     		
     		if(successfull == true){
     			String role = feukora.authentication(username);
+    			Context.setRole(role);
     			if(role.equals("Administrator")) {
     				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
     			} else if (role.equals("Feuerungskontrolleur")) {

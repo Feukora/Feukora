@@ -7,6 +7,7 @@ import javax.management.remote.rmi.RMIServer;
 
 import org.apache.log4j.Logger;
 
+import application.Context;
 import calendar.util.CalendarConstants;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
@@ -84,7 +85,13 @@ public class ControllerDetailview {
 		BorderPane pane = new BorderPane();
     	
     	try { // Funktioniert noch nicht
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+    		if(Context.getRole().equals("Administrator")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+			} else if (Context.getRole().equals("Feuerungskontrolleur")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+			} else if (Context.getRole().equals("Sachbearbeiter")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+			}
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",

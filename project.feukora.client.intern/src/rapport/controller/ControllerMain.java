@@ -1,5 +1,6 @@
 package rapport.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -10,11 +11,13 @@ import java.util.ResourceBundle;
 import org.apache.log4j.Logger;
 
 import application.Context;
+import application.ControllerViewAdministrator;
 import customer.controller.ControllerDetailview;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -24,6 +27,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Company;
@@ -260,7 +264,7 @@ public class ControllerMain {
 	private Button rapportsave;
 
 	@FXML
-	void ActionRapportSave(ActionEvent event) {
+	void ActionRapportSave(ActionEvent event) throws IOException {
 		
 //		Rapport rapport = Context.getRapport();
 		
@@ -441,7 +445,17 @@ public class ControllerMain {
     	
 //    	customerCompanyNameField.clear();
 //    	radioButtonAdministration.setSelected(false);
-		
+    	AnchorPane pane = new AnchorPane();
+    	
+    	if(Context.getRole().equals("Administrator")) {
+    		pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+		} else if (Context.getRole().equals("Feuerungskontrolleur")) {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+		} else if (Context.getRole().equals("Sachbearbeiter")) {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+		}
+    	
+    	
 	}
 	
 	public void initialize() {
