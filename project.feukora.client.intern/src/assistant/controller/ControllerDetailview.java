@@ -86,13 +86,17 @@ public class ControllerDetailview {
 		String password = assistantPasswordField.getText();
 		String company = assistantCompanyFieldCombo.getValue();
 		Integer zip = null;
-		if (plz.isEmpty() == false) {
+		if (!plz.isEmpty()) {
 			zip = Integer.parseInt(plz);
 		}
 		
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
+<<<<<<< HEAD
 			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip != null && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && company.isEmpty() == false) {
+=======
+			if(!lastname.isEmpty() && !adress.isEmpty() && !phone.isEmpty() && zip != null && !firstname.isEmpty() && !email.isEmpty() && !username.isEmpty() && !password.isEmpty() && !company.isEmpty()) {
+>>>>>>> refs/remotes/origin/master
 				if(assistant == null) {
 					feukora.saveAssistantUser(zip, company, firstname, lastname, adress, phone, email, username, password);
 				} else {
@@ -125,8 +129,12 @@ public class ControllerDetailview {
 		BorderPane pane = new BorderPane();
     	
     	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
-
+			if(Context.getRole().equals("Administrator")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+			} else if (Context.getRole().equals("Sachbearbeiter")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+			}
+			
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);

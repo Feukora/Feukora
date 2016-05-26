@@ -13,6 +13,7 @@ public class Context {
 	private static Heater heater;
 	private static User user;
 	private static Rapport rapport;
+	private static String role;
 	
 	public static Integer customerid;
 	public static String companyname;
@@ -68,6 +69,15 @@ public class Context {
 		return lastname;
 	}
 	
+public static void setRole(String role) {
+		
+		Context.role = role;
+
+	} 
+
+	public static String getRole() {
+		return role;
+	}
 	public static String getCustomerAdress() {
 		return adress;
 	}

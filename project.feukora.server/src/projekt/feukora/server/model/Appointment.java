@@ -22,7 +22,8 @@ import javax.persistence.TemporalType;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Appointment.findByAppointmentid", query = "SELECT a FROM Appointment a WHERE a.appointmentid=:appointmentid"),
-	@NamedQuery(name = "Appointment.findByAppointmentdate", query = "SELECT a FROM Appointment a WHERE a.appointmentdate=:appointmentdate")
+	@NamedQuery(name = "Appointment.findByAppointmentdate", query = "SELECT a FROM Appointment a WHERE a.appointmentdate=:appointmentdate"),
+	@NamedQuery(name= "Appointment.findByUserId", query = "SELECT a FROM Appointment a WHERE a.user=:userId")
  })
 
 public class Appointment implements Serializable{

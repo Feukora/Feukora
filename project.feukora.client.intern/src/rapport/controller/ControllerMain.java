@@ -1,16 +1,27 @@
 package rapport.controller;
 
+<<<<<<< HEAD
+=======
+import java.io.IOException;
+import java.net.URL;
+>>>>>>> refs/remotes/origin/master
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import org.apache.log4j.Logger;
 import application.Context;
+import application.ControllerViewAdministrator;
 import customer.controller.ControllerDetailview;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+<<<<<<< HEAD
+=======
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+>>>>>>> refs/remotes/origin/master
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -19,6 +30,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Controltype;
@@ -249,7 +261,7 @@ public class ControllerMain {
 	private Button rapportsave;
 
 	@FXML
-	void ActionRapportSave(ActionEvent event) {
+	void ActionRapportSave(ActionEvent event) throws IOException {
 		
 		String canton = textfieldCanton.getText();
 		String adress = textfieldaddress.getText();
@@ -418,7 +430,25 @@ public class ControllerMain {
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
+<<<<<<< HEAD
 		}		
+=======
+		}
+    	
+//    	customerCompanyNameField.clear();
+//    	radioButtonAdministration.setSelected(false);
+    	AnchorPane pane = new AnchorPane();
+    	
+    	if(Context.getRole().equals("Administrator")) {
+    		pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+		} else if (Context.getRole().equals("Feuerungskontrolleur")) {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+		} else if (Context.getRole().equals("Sachbearbeiter")) {
+			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+		}
+    	
+    	
+>>>>>>> refs/remotes/origin/master
 	}
 	
 	public void initialize() {

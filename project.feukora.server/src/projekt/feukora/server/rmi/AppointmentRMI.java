@@ -6,6 +6,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.User;
 
 /**
  * RMI interface for handling appointment entities
@@ -77,6 +78,8 @@ public interface AppointmentRMI extends Remote{
 	 * @throws RemoteException 
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate) throws RemoteException;
+	
+	List<Appointment> findAppointmentsForInspector( User inspector ) throws RemoteException;
 
 	
 }

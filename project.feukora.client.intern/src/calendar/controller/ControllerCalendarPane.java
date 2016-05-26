@@ -1,8 +1,17 @@
 package calendar.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
 import org.apache.log4j.Logger;
+<<<<<<< HEAD
+=======
+
+import calendar.util.CalendarConstants;
+>>>>>>> refs/remotes/origin/master
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,6 +29,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import projekt.feukora.client.intern.ClientInternRMI;
+import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.User;
 
 public class ControllerCalendarPane {
@@ -168,13 +178,20 @@ public class ControllerCalendarPane {
     @FXML
     private Button moveRight;
 
+<<<<<<< HEAD
+=======
+    private ClientInternRMI feukora;
+    private static int weekScroller = 0;
+    private List<Button> buttons = new ArrayList<Button>();
+
+>>>>>>> refs/remotes/origin/master
     @FXML
     void ActionSetAppointment(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));
 		Button origin = (Button) event.getSource();
     	try {
-    		origin.getProperties().put("user", comboBoxSelectCalendar.getValue());
-    		origin.getScene().setRoot(loader.load());
+    		origin.getProperties().put( CalendarConstants.PROPERTYNAME_INSPECTOR, comboBoxSelectCalendar.getValue() );
+    		origin.getScene().setRoot( loader.load() );
     		ControllerDetailview calendarController = loader.<ControllerDetailview>getController();
     		calendarController.initData( origin.getProperties() );	
     		
@@ -186,7 +203,11 @@ public class ControllerCalendarPane {
 
     @FXML
     void ActionComboBoxSelectCalendar(ActionEvent event) {
+<<<<<<< HEAD
     	User selectedInspector = comboBoxSelectCalendar.getValue();
+=======
+    	fillAppointments();
+>>>>>>> refs/remotes/origin/master
     }
 
     @FXML
@@ -196,8 +217,8 @@ public class ControllerCalendarPane {
     	   printerJob.endJob();
     }
     
-    public void initialize(){
-    	ClientInternRMI feukora;
+    public void initialize()
+    {
 		try {
 			feukora = new ClientInternRMI();
 			ObservableList<User> users = feukora.getUsers();
@@ -205,15 +226,25 @@ public class ControllerCalendarPane {
 			comboBoxSelectCalendar.getSelectionModel().select(0);
 			
 			Calendar cal = Calendar.getInstance();
+			cal.setMinimalDaysInFirstWeek(7);
+			cal.add(Calendar.WEEK_OF_YEAR, weekScroller);
 	    	cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
 	    	
-			initNodes( cal, comboBoxSelectCalendar.getValue() );
+	    	calendarWeek.setText("Kalenderwoche " + cal.get(Calendar.WEEK_OF_YEAR));
+			initNodes( cal );
+			
+			fillAppointments();
 			
 		} catch (Exception e) {
+<<<<<<< HEAD
 			e.printStackTrace();
+=======
+			logger.error("Aktion konnte nicht durchgeführt werden ", e);
+>>>>>>> refs/remotes/origin/master
 		}
     }
     
+<<<<<<< HEAD
     // Hier wird bei einer änderung des Activen users in der Combobox der Kalender neu geladen
     public void initializeNew(String activeUser){
     	ClientInternRMI feukora;
@@ -228,22 +259,25 @@ public class ControllerCalendarPane {
     }
     
 	private void initNodes( Calendar cal, User user )
+=======
+	private void initNodes( Calendar cal )
+>>>>>>> refs/remotes/origin/master
     {
-    	SimpleDateFormat fmt = new SimpleDateFormat("dd.MM.yyyy");
+    	SimpleDateFormat fmt = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYY );
         fmt.setCalendar(cal);
     	for ( Node node : calendarPane.getChildren() )
     	{
     		if ( calendarPane.getColumnIndex(node) != null )
     		{
 				int colIndex = calendarPane.getColumnIndex(node);
-	    		cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek() + colIndex);
+	    		cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek() + colIndex );
     		}
     		
     		//init labels
-    		if( node instanceof Label && node.getId() != null && node.getId().startsWith( "lbl" ) )
+    		if( node instanceof Label && node.getId() != null && node.getId().startsWith( CalendarConstants.LABELID_PREFIX_LBL ) )
     		{
-    			Label lbl = (Label) node;
-    			lbl.setText( lbl.getText() + " " + fmt.format( cal.getTime() ) );
+				Label lbl = (Label) node;
+				lbl.setText( lbl.getText().substring(0, 2) + " " + fmt.format( cal.getTime() ) );
     		}
     		
     		//init buttons
@@ -253,23 +287,26 @@ public class ControllerCalendarPane {
 	    		Calendar btnCal = Calendar.getInstance();
 	    		btnCal.setTimeInMillis( cal.getTimeInMillis() );
 	    		btnCal.set(Calendar.MINUTE, 0);
-	    		if ( btn.getId().endsWith( "10" ) )
+	    		btnCal.set(Calendar.SECOND, 0);
+	    		btnCal.set(Calendar.MILLISECOND, 0);
+	    		if ( btn.getId().endsWith( CalendarConstants.BUTTONID_SUFFIX_TEN ) )
 	    		{
-	    			btnCal.set(Calendar.HOUR_OF_DAY, 8);
+	    			btnCal.set(Calendar.HOUR_OF_DAY, CalendarConstants.APPOINTMENT_TIME_EIGHT);
 	    		}
-	    		else if ( btn.getId().endsWith("12") )
+	    		else if ( btn.getId().endsWith( CalendarConstants.BUTTONID_SUFFIX_TWELVE ) )
 	    		{
-	    			btnCal.set(Calendar.HOUR_OF_DAY, 10);
+	    			btnCal.set(Calendar.HOUR_OF_DAY, CalendarConstants.APPOINTMENT_TIME_TEN);
 	    		}
-	    		else if ( btn.getId().endsWith( "15" ) )
+	    		else if ( btn.getId().endsWith( CalendarConstants.BUTTONID_SUFFIX_FIFTEEN ) )
 	    		{
-	    			btnCal.set(Calendar.HOUR_OF_DAY, 13);
+	    			btnCal.set(Calendar.HOUR_OF_DAY, CalendarConstants.APPOINTMENT_TIME_THIRTEEN);
 	    		}
-	    		else if ( btn.getId().endsWith( "17" ) )
+	    		else if ( btn.getId().endsWith( CalendarConstants.BUTTONID_SUFFIX_SEVENTEEN ) )
 	    		{
-	    			btnCal.set(Calendar.HOUR_OF_DAY, 15);
+	    			btnCal.set(Calendar.HOUR_OF_DAY, CalendarConstants.APPOINTMENT_TIME_FIFTEEN);
 	    		}
-	    		btn.getProperties().put("date", btnCal);
+	    		btn.getProperties().put( CalendarConstants.PROPERTYNAME_DATE, btnCal );
+	    		buttons.add(btn);
     		}
     	}
     }
@@ -309,7 +346,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -324,7 +361,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
 	}
@@ -339,7 +376,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
 	}
@@ -354,7 +391,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
 	}
@@ -369,7 +406,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
 	}
@@ -383,7 +420,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -397,7 +434,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -411,7 +448,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -425,7 +462,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -439,7 +476,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -454,7 +491,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}
     }
@@ -467,7 +504,7 @@ public class ControllerCalendarPane {
 			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
     }
@@ -477,6 +514,7 @@ public class ControllerCalendarPane {
     	BorderPane pane = new BorderPane();
     	
     	try {
+    		weekScroller--;
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/CalendarPane.fxml"));
 
 		} catch (Exception e) {
@@ -492,14 +530,48 @@ public class ControllerCalendarPane {
 		BorderPane pane = new BorderPane();
     	
     	try {
+    		weekScroller++;
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/CalendarPane.fxml"));
 
     	} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
+			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}
     	
     	moveRight.getScene().setRoot(pane);
     }
+<<<<<<< HEAD
+=======
+    
+    private void fillAppointments ()
+    {
+    	List<Appointment> appointments;
+		try {
+			appointments = feukora.getAppointments(comboBoxSelectCalendar.getValue());
+		
+	    	for ( Appointment app : appointments )
+	    	{
+	    		for( Button btn : buttons )
+	    		{
+	    			//reset all appointments
+	    			btn.getProperties().remove( CalendarConstants.PROPERTYNAME_APPOINTMENT );
+	    			btn.setText("");
+	    			
+	    			Calendar btnDate = (Calendar) btn.getProperties().get( CalendarConstants.PROPERTYNAME_DATE );
+	    			Calendar appDate = app.getAppointmentdate();
+	
+	    			if( btnDate.equals( appDate ) )
+	    			{
+	    				btn.setText(app.toString());
+	    				btn.getProperties().put( CalendarConstants.PROPERTYNAME_APPOINTMENT, app );
+	    			}
+	    		}
+	    	}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+>>>>>>> refs/remotes/origin/master
 }
 

@@ -1,8 +1,10 @@
 package projekt.feukora.server.business;
 
+import java.rmi.RemoteException;
 import java.util.GregorianCalendar;
 import java.util.List;
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.User;
 
 /**
  * Interface to handle appointment entities
@@ -68,4 +70,10 @@ public interface AppointmentManager {
 	 * @return
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
+<<<<<<< HEAD
 }
+=======
+	
+	List<Appointment> findAppointmentsForInspector( User inspector );
+}
+>>>>>>> refs/remotes/origin/master

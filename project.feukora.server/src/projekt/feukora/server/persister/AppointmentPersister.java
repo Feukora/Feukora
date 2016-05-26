@@ -1,8 +1,14 @@
 package projekt.feukora.server.persister;
 
+<<<<<<< HEAD
+=======
+import java.rmi.RemoteException;
+import java.util.Date;
+>>>>>>> refs/remotes/origin/master
 import java.util.GregorianCalendar;
 import java.util.List;
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.User;
 
 /**
  * This interface refers to a AppointmentPersister
@@ -68,4 +74,11 @@ public interface AppointmentPersister {
 	 * @return
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
+<<<<<<< HEAD
 }
+=======
+	
+	List<Appointment> findAppointmentsForInspector( User inspector );
+}
+
+>>>>>>> refs/remotes/origin/master

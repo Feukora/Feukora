@@ -2,7 +2,20 @@ package calendar.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+<<<<<<< HEAD
+=======
+
+import javax.management.remote.rmi.RMIServer;
+
+>>>>>>> refs/remotes/origin/master
 import org.apache.log4j.Logger;
+<<<<<<< HEAD
+=======
+
+import application.Context;
+import calendar.util.CalendarConstants;
+import javafx.collections.ObservableList;
+>>>>>>> refs/remotes/origin/master
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +25,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Appointment;
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.User;
 
 public class ControllerDetailview {
@@ -39,7 +54,7 @@ public class ControllerDetailview {
     private TextField appointmentCreatedByField;
 
     @FXML
-    private ComboBox<?> appointmentClientcomboBox;
+    private ComboBox<Customer> appointmentClientcomboBox;
 
     @FXML
     private TextArea appointmentCommentsField;
@@ -75,8 +90,19 @@ public class ControllerDetailview {
     void ActionDetailviewCancelAppointment(ActionEvent event) {
 		BorderPane pane = new BorderPane();
     	
+<<<<<<< HEAD
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+=======
+    	try { // Funktioniert noch nicht
+    		if(Context.getRole().equals("Administrator")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+			} else if (Context.getRole().equals("Feuerungskontrolleur")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+			} else if (Context.getRole().equals("Sachbearbeiter")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+			}
+>>>>>>> refs/remotes/origin/master
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
@@ -87,6 +113,7 @@ public class ControllerDetailview {
     
     @FXML
     void ActionDetailviewSaveAppointment(ActionEvent event) {
+<<<<<<< HEAD
 //    	String lastname = customerNameField.getText();
 //    	String adress = customerAddressField.getText();
 //    	String phone = customerNumberField.getText();
@@ -116,6 +143,9 @@ public class ControllerDetailview {
 //    	customerZipField.clear();
 //    	customerFirstNameField.clear();
 //    	customerEmailField.clear();
+=======
+    	
+>>>>>>> refs/remotes/origin/master
     }
 
     @FXML
@@ -129,11 +159,23 @@ public class ControllerDetailview {
     }
     
     public void initData ( ObservableMap<Object, Object> properties )
-    {
-    	this.appointment = appointment;
-    	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm");
-    	cal = (Calendar) properties.get("date");
-    	inspector = (User) properties.get("user");
+    {	
+    	ClientInternRMI cirmi;
+    	try {
+			cirmi = new ClientInternRMI();
+			appointmentClientcomboBox.setItems(cirmi.getCustomers());
+			appointmentClientcomboBox.getSelectionModel().select(0);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
+    	
+    	SimpleDateFormat sdf = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYHHMM );
+    	cal = (Calendar) properties.get( CalendarConstants.PROPERTYNAME_DATE );
+    	inspector = (User) properties.get( CalendarConstants.PROPERTYNAME_INSPECTOR );
     	
     	appointmentInspectorField.setText( inspector.toString() );
     	appointmentDateField.setText( sdf.format( cal.getTime() ) );

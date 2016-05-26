@@ -7,10 +7,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Rapport;
@@ -117,12 +119,29 @@ public class ControllerOverview {
 	
 	@FXML
 	void ActionOverviewDeleteRapport(ActionEvent event) {
-
+		ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+	    	Rapport entity = overviewTableRapport.getSelectionModel().getSelectedItem();
+	    	feukora.deleteRapport(entity);
+		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+		initialize();
 	}
 
 	@FXML
 	void ActionOverviewRefreshRapport(ActionEvent event) {
-
+		initialize();
 	}
 
 	@FXML
