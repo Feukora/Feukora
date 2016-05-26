@@ -183,6 +183,10 @@ public class ControllerCalendarPane {
     private static User selectedInspector = null;
     private List<Button> buttons = new ArrayList<Button>();
 
+    /**
+     * method to set an appointment
+     * @param event
+     */
     @FXML
     void ActionSetAppointment(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));

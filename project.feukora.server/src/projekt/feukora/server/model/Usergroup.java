@@ -16,22 +16,22 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "Usergroup.findByUsergroupid", query = "SELECT ug FROM Usergroup ug WHERE ug.usergroupid=:usergroupid"),
-		@NamedQuery(name = "Usergroup.findByName", query = "SELECT ug FROM Usergroup ug WHERE ug.name=:name") })
+	@NamedQuery(name = "Usergroup.findByUsergroupid", query = "SELECT ug FROM Usergroup ug WHERE ug.usergroupid=:usergroupid"),
+	@NamedQuery(name = "Usergroup.findByName", query = "SELECT ug FROM Usergroup ug WHERE ug.name=:name") })
 public class Usergroup implements Serializable {
 
 	@Id
 	@GeneratedValue
 	private int usergroupid;
 	private String name;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Usergroup() {
 
 	}
-	
+
 	/**
 	 * Usergroup constructor
 	 * 
@@ -52,7 +52,7 @@ public class Usergroup implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String toString() {
 		return name;

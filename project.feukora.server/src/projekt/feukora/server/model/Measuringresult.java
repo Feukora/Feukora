@@ -22,7 +22,7 @@ import javax.persistence.NamedQuery;
 })
 
 public class Measuringresult implements Serializable{
-	
+
 	@Id
 	@GeneratedValue
 	private int measuringresultid;
@@ -39,14 +39,14 @@ public class Measuringresult implements Serializable{
 	private int blowertemp;
 	private double oxygen;
 	private double exhaustgasloss;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Measuringresult(){
-		
+
 	}
-	
+
 	/**
 	 * Measuringresult constructor
 	 * 

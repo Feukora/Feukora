@@ -27,13 +27,13 @@ public class Controltype implements Serializable {
 	@GeneratedValue
 	private int controltypeid;
 	private String name;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Controltype(){
 	}
-	
+
 	/**
 	 * Controltype constructor
 	 * 
@@ -54,7 +54,7 @@ public class Controltype implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String toString() {
 		return name;

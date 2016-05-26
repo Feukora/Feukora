@@ -83,22 +83,11 @@ public class ControllerOverview {
     void ActionOverviewTableBlower(ActionEvent event) {
 
     }
-
-    /*@FXML
-    void ActionOverviewDeleteBlower(ActionEvent event) {
-    	ClientInternRMI feukora;
-    	try{
-    		feukora = new ClientInternRMI();
-    		Blower entity = overviewTableBlower.getSelectionModel().getSelectedItem();
-    		feukora.deleteBlower(entity);
-    	}catch(Exception e){
-    		logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-    	}
-    	initialize();
-
-    }*/
     
+    /**
+     * method to delete the selected record
+     * @param event
+     */
     @FXML
     void ActionOverviewDeleteBlower(ActionEvent event) {
     	ClientInternRMI feukora;
@@ -121,11 +110,19 @@ public class ControllerOverview {
 		initialize();
     }
 
+    /**
+     * method to refresh the overview
+     * @param event
+     */
     @FXML
     void ActionOverviewRefreshBlower(ActionEvent event) {
     	initialize();
     }
     
+    /**
+     * method to get the detailview of the selected record
+     * @param event
+     */
     @FXML
     void ActionOverviewUpdateBlower(ActionEvent event) {
     	

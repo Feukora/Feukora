@@ -34,6 +34,9 @@ public class ControllerDetailview {
     @FXML
     private TextField heaterNameField;
     
+    /**
+     * method to show error message
+     */
     public void errorInfoNeu(){
 		String titleBar = "Achtung";
 		String headerMessage = "Bitte alle Daten eingeben";
@@ -50,6 +53,10 @@ public class ControllerDetailview {
 
     }
 
+    /**
+     * method to save a record
+     * @param event
+     */
     @FXML
     void ActionDetailviewSaveHeater(ActionEvent event) {
     	Heater heater = Context.getHeater();
@@ -85,11 +92,18 @@ public class ControllerDetailview {
     	}
     }
     
+    /**
+	 * method to get the data of the chosen record
+	 */
     public void Update(){
     		heaterNameField.setText(Context.getHeaterName());
 	    	Context.setNull();	
     }
     
+    /**
+     * method to cancel the action
+     * @param event
+     */
     @FXML
     void ActionDetailviewCancelHeater(ActionEvent event) {
 		BorderPane pane = new BorderPane();

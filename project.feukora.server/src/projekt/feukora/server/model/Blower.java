@@ -32,55 +32,55 @@ public class Blower implements Serializable {
 	@ManyToOne
 	private Fuel fuelid;
 	private String name;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Blower(){
-		
+
 	}
-	 /**
-	  * Blower constructor
-	  * 
-	  * @param blowertypeid
-	  * @param fuelid
-	  * @param name
-	  */
+
+	/**
+	 * Blower constructor
+	 * 
+	 * @param blowertypeid
+	 * @param fuelid
+	 * @param name
+	 */
 	public Blower(Blowertype blowertypeid, Fuel fuelid, String name){
 		this.blowertypeid = blowertypeid;
 		this.fuelid = fuelid;
 		this.name = name;
-		
+
 	}
 	public int getBlowerid() {
 		return blowerid;
 	}
-	
+
 	public void setBlowertypeid(Blowertype blowertypeid) {
 		this.blowertypeid = blowertypeid;
 	}
 	public void setFuelid(Fuel fuelid) {
 		this.fuelid = fuelid;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getBlowertype() {
 		return blowertypeid.toString();
 	}
-	
+
 	public String getFuel() {
 		return fuelid.toString();
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
-	public String toString()
-	{
+
+	public String toString() {
 		return name;
 	}
 }

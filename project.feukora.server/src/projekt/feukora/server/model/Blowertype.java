@@ -19,22 +19,22 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Blowertype.findByBlowertypeid", query = "SELECT bt FROM Blowertype bt WHERE bt.blowertypeid=:blowertypeid"),
 	@NamedQuery(name = "Blowertype.findByName", query = "SELECT bt FROM Blowertype bt WHERE bt.name=:name"),
-	})
+})
 
 public class Blowertype implements Serializable {
-	
+
 	@Id
 	@GeneratedValue
 	private int blowertypeid;
 	private String name;
-	
+
 	/**
 	 *Default constructor
 	 */
 	public Blowertype(){
-		
+
 	}
-	
+
 	/**
 	 * Blowertype constructor
 	 * 
@@ -55,7 +55,7 @@ public class Blowertype implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String toString() {
 		return name;
