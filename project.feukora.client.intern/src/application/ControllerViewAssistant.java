@@ -26,9 +26,6 @@ public class ControllerViewAssistant {
     private MenuBar mBar;
 
     @FXML
-    private MenuItem loginWelcome;
-
-    @FXML
     private MenuItem closeWelcome;
     
     @FXML
@@ -194,11 +191,6 @@ public class ControllerViewAssistant {
 		
 		blowerWelcome.getScene().setRoot(pane);
 		}
-    
-    @FXML
-    void ActionLoginMenuBar(ActionEvent event) {
-    	
-    }
     
     @FXML
     void ActionCloseMenuBar(ActionEvent event) {

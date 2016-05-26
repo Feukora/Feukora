@@ -30,9 +30,6 @@ public class ControllerViewAdministrator {
     
     @FXML
     private MenuItem closeWelcome;
-    
-    @FXML
-    private MenuItem loginWelcome;
 
     @FXML
     private MenuItem inspectorMenuBar;
@@ -218,12 +215,6 @@ public class ControllerViewAdministrator {
 		
 		//blowerWelcome.getScene().setRoot(pane);
 		}
-    
-    @FXML
-    void ActionLoginMenuBar(ActionEvent event) {
-    	Platform.exit();
-    	Main.main(null);
-    }
     
     @FXML
     void ActionCloseMenuBar(ActionEvent event) {

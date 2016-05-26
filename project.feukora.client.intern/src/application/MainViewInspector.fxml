@@ -12,39 +12,12 @@
          <menus>
             <Menu mnemonicParsing="false" text="Datei">
                <items>
-                  <MenuItem fx:id="loginWelcome" mnemonicParsing="false" onAction="#ActionLoginMenuBar" text="Login" />
-                  <MenuItem fx:id="closeWelcome" mnemonicParsing="false" onAction="#ActionCloseMenuBar" text="Close" />
+                 <MenuItem fx:id="closeWelcome" mnemonicParsing="false" onAction="#ActionCloseMenuBar" text="Close" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Terminkalender">
                <items>
-                  <MenuItem fx:id="calenderMenuBar" mnemonicParsing="false" onAction="#ActionCalenderMenuBar" text="Terminkalender"/>
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Feurungskontrolleur">
-               <items>
-                  <MenuItem fx:id="inspectorMenuBar" mnemonicParsing="false" onAction="#ActionInspectorMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="inspectorNewMenuItem" mnemonicParsing="false" onAction="#ActionInspectorNewMenuItem" text="Neu" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Kunde">
-               <items>
-                  <MenuItem fx:id="customerMenuBar" mnemonicParsing="false" onAction="#ActionCustomerMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="customerNewMenuItem" mnemonicParsing="false" onAction="#ActionCustomerNewMenuItem" text="Neu" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Brenner">
-
-               <items>
-                  <MenuItem fx:id="blowerMenuBar" mnemonicParsing="false" onAction="#ActionBlowerMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="blowerNewMenuItem" mnemonicParsing="false" onAction="#ActionBlowerNewMenuItem" text="Neu" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Wärmeerzeuger">
-              
-               <items>
-                  <MenuItem fx:id="heaterMenuBar" mnemonicParsing="false" onAction="#ActionHeaterMenuBar" text="Übersicht" />
-                  <MenuItem fx:id="heaterNewMenuItem" mnemonicParsing="false" onAction="#ActionHeaterNewMenuItem" text="Neu" />
+                  <MenuItem fx:id="calenderMenuBar" mnemonicParsing="false" onAction="#ActionCalenderMenuBar" text="Terminkalender" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Rapporte">

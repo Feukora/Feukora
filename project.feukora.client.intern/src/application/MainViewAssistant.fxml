@@ -13,8 +13,7 @@
          <menus>
             <Menu mnemonicParsing="false" text="Datei">
                <items>
-                  <MenuItem fx:id="loginWelcome" mnemonicParsing="false" onAction="#ActionLoginMenuBar" text="Login" />
-                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItemfx:id="closeWelcome" mnemonicParsing="false" onAction="#ActionCloseMenuBar" text="Close" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Terminkalender">

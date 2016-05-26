@@ -40,37 +40,10 @@ public class ControllerViewInspector {
     private MenuItem calenderMenuBar;
 
     @FXML
-    private MenuItem loginWelcome;
-
-    @FXML
-    private MenuItem customerMenuBar;
-
-    @FXML
-    private MenuItem customerNewMenuItem;
-
-    @FXML
-    private MenuItem inspectorMenuBar;
-    
-    @FXML
-    private MenuItem inspectorNewMenuItem;
-
-    @FXML
-    private MenuItem heaterMenuBar;
-
-    @FXML
-    private MenuItem heaterNewMenuItem;
-
-    @FXML
     private MenuItem rapportMenuBar;
     
     @FXML
     private MenuItem rapportNewMenuItem;
-
-    @FXML
-    private MenuItem blowerMenuBar;
-
-    @FXML
-    private MenuItem blowerNewMenuItem;
 
     @FXML
     private MenuItem closeWelcome;
@@ -127,11 +100,6 @@ public class ControllerViewInspector {
 		}
     }
 
-    @FXML
-    void ActionLoginMenuBar(ActionEvent event) {
-    	
-    }
-    
     @FXML
     void ActionCloseMenuBar(ActionEvent event) {
     	Platform.exit();
