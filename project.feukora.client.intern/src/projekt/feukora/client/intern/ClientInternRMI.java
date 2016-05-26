@@ -48,10 +48,9 @@ import projekt.feukora.server.rmi.UserRMI;
 import projekt.feukora.server.rmi.UsergroupRMI;
 
 /**
- * This Class implements the rmi connection 
- * 
+ * This Class that implements the rmi connection.
+ * @author Sandro
  * @version 1.7
- * @author Sandro Fasser
  *
  */
 public class ClientInternRMI {
@@ -435,9 +434,27 @@ public class ClientInternRMI {
 		try {
 			userRMI.deleteUsers(entity);
 		} catch (RemoteException e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Feuerungskkontrolleur kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen diesem Feuerungskontrolleur";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+	        
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Feuerungskkontrolleur kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen diesem Feuerungskontrolleur";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+	        
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}

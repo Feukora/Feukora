@@ -13,6 +13,12 @@ import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Heater;
 
+/**
+ * Controller for the heaters detailview.
+ * @author Pascal
+ * @version 1.5
+ *
+ */
 public class ControllerDetailview {
 	
 	private static final Logger logger = Logger

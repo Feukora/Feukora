@@ -37,6 +37,12 @@ import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Measuringresult;
 import projekt.feukora.server.model.Rapport;
 
+/**
+ * Mainmenu for the rapport. 
+ * @author Patrick
+ * @version 1.3
+ *
+ */
 public class ControllerMain {
 	
 	private static final Logger logger = Logger

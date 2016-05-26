@@ -1,5 +1,11 @@
 package calendar.util;
 
+/**
+ * Utility Class with constants for the calendar.
+ * @author Nicolas
+ * @version 1.0
+ *
+ */
 public interface CalendarConstants {
 	public static final String PROPERTYNAME_APPOINTMENT = "appointment";
 	public static final String PROPERTYNAME_DATE = "date";

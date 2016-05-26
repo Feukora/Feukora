@@ -17,6 +17,12 @@ import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Company;
 import projekt.feukora.server.model.User;
 
+/**
+ * Controller for the inspectors detailview. 
+ * @author Sandro
+ * @version 1.7
+ *
+ */
 public class ControllerDetailview {
 
 	private static final Logger logger = Logger
@@ -81,7 +87,6 @@ public class ControllerDetailview {
 			inspectorMunicipalityField.setText(town);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
@@ -149,7 +154,7 @@ public class ControllerDetailview {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if(Context.getUser() != null) {
+		if(Context.getUser() != null && Context.getName().isEmpty() == false) {
 			Update();
 		} else {
 		}
@@ -197,8 +202,17 @@ public class ControllerDetailview {
 			} else {
 				feukora.updateInspectorUser(inspector, zip, company, firstname, lastname, adress, phone, email, username, password);
 			}
-				
-
+			
+				inspectorNameField.clear();
+				inspectorAddressField.clear();
+				inspectorPhoneField.clear();
+				inspectorZipField.clear();
+				inspectorFirstNameField.clear();
+				inspectorEmailField.clear();
+				inspectorUsernameField.clear();
+				inspectorPasswordField.clear();
+				inspectorCompanyFieldCombo.getSelectionModel().clearSelection();
+				inspectorMunicipalityField.clear();
 				
 			} else {
 				errorInfoNeu();

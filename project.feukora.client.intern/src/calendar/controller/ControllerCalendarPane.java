@@ -3,11 +3,8 @@ package calendar.controller;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-
 import org.apache.log4j.Logger;
-
 import calendar.util.CalendarConstants;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -29,6 +26,12 @@ import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.User;
 
+/**
+ * Controller for Calendar pane
+ * @author Sandro
+ * @version 1.6
+ *
+ */
 public class ControllerCalendarPane {
 	
 	private static final Logger logger = Logger
