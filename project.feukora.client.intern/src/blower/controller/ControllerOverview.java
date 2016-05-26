@@ -1,6 +1,5 @@
 package blower.controller;
 
-
 import org.apache.log4j.Logger;
 
 import application.Context;
@@ -23,8 +22,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
-import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.User;
 
 public class ControllerOverview {
 	
@@ -121,13 +118,11 @@ public class ControllerOverview {
 					e);
 		}
 		initialize();
-    	
     }
 
     @FXML
     void ActionOverviewRefreshBlower(ActionEvent event) {
     	initialize();
-
     }
     
     @FXML

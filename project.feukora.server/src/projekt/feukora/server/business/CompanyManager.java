@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Company;
  * Interface to handle company entities.
  * 
  * @author Robin
- * @version 1.1
+ * @version 1.4
  *
  */
 public interface CompanyManager {

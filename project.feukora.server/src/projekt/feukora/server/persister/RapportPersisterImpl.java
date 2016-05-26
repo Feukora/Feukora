@@ -3,16 +3,14 @@ package projekt.feukora.server.persister;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import projekt.feukora.server.model.Rapport;
 
 /**
  * This class implements the interface RapportPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Sandro
  *
  */

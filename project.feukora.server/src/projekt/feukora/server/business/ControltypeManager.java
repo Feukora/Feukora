@@ -2,13 +2,12 @@ package projekt.feukora.server.business;
 
 import java.util.List;
 import projekt.feukora.server.model.Controltype;
-import projekt.feukora.server.model.Fuel;
 
 /**
  * Interface to handle controltype entities.
  * 
  * @author Tamara
- * @version 1.0
+ * @version 1.4
  * 
  */
 public interface ControltypeManager {

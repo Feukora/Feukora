@@ -1,7 +1,6 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,12 +11,13 @@ import javax.persistence.NamedQuery;
  * This class refers to a fuel.
  * 
  * @author Tamara
- * @version 1.1
+ * @version 1.5
  */
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Fuel.findByFuelid", query = "SELECT f FROM Fuel f WHERE f.fuelid=:fuelid"),
 	@NamedQuery(name = "Fuel.findByName", query = "SELECT f FROM Fuel f WHERE f.name=:name") })
+
 public class Fuel implements Serializable{
 	
 	@Id

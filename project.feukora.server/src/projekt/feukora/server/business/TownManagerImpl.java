@@ -1,22 +1,15 @@
 package projekt.feukora.server.business;
 
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import projekt.feukora.server.model.Town;
 import projekt.feukora.server.persister.TownPersister;
 import projekt.feukora.server.persister.TownPersisterImpl;
-import projekt.feukora.server.persister.GenericPersisterImpl;
-import projekt.feukora.server.persister.JpaUtil;
 
 /**
  * This Class implements the methods of the interface TownManager.
  * 
  * @author Pascal
- * @version 1.0
+ * @version 1.4
  */
 public class TownManagerImpl implements TownManager {
 	

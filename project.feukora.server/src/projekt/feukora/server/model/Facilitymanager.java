@@ -1,19 +1,16 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
-
 /**
  * This class refers to a facilitymanager
  * 
- * @version 1.3
+ * @version 1.6
  * @author Pascal
  *
  */
@@ -22,13 +19,14 @@ import javax.persistence.NamedQuery;
 @NamedQueries ({
 	@NamedQuery(name = "Facilitymanager.findByfacilitymanagerid", query = "SELECT fm FROM Facilitymanager fm WHERE fm.facilitymanagerid=:facilitymanagerid"),
 	@NamedQuery(name = "Facilitymanager.findByLastname", query = "SELECT fm FROM Facilitymanager fm WHERE fm.lastname=:lastname")})
+
 public class Facilitymanager implements Serializable {
 
-	
 	@Id
 	@GeneratedValue
 	private int facilitymanagerid;
-	private String lastname;	
+	private String lastname;
+	
 	/**
 	 * Default constructor
 	 */

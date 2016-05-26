@@ -18,9 +18,8 @@ import javax.persistence.NamedQuery;
  * This class refers to a company.
  * 
  * @author Robin
- * @version 1.1
+ * @version 1.4
  */
-
 public class Company implements Serializable {
 	
 	@Id
@@ -49,7 +48,6 @@ public class Company implements Serializable {
 	 * @param email
 	 * @param zip
 	 */
-	
 	public Company(String name, String adress,String phone, String email, Town zip){
 		this.name = name;
 		this.adress = adress;
@@ -57,7 +55,6 @@ public class Company implements Serializable {
 		this.email = email;
 		this.zip = zip;
 	}
-
 
 	public int getCompanyid() {
 		return companyid;

@@ -10,7 +10,7 @@ import projekt.feukora.server.model.User;
  * Interface to handle appointment entities
  * 
  * @author Allan
- * @version 1.1
+ * @version 1.4
  *
  */
 public interface AppointmentManager {
@@ -70,6 +70,13 @@ public interface AppointmentManager {
 	 * @return
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+=======
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 	
 	List<Appointment> findAppointmentsForInspector( User inspector );
 }
+>>>>>>> refs/remotes/origin/master

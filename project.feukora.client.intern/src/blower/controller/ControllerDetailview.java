@@ -1,9 +1,7 @@
 package blower.controller;
 
 import org.apache.log4j.Logger;
-
 import application.Context;
-import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,9 +14,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
-import projekt.feukora.server.model.Blowertype;
-import projekt.feukora.server.model.Fuel;
-import projekt.feukora.server.rmi.BlowerRMIImpl;
 
 public class ControllerDetailview {
 
@@ -61,7 +56,6 @@ public class ControllerDetailview {
 	void ActionBlowerNameField(ActionEvent event) {
 
 	}
-
 
 	public void initialize() {
 		setToggleGroup();
@@ -172,8 +166,6 @@ public class ControllerDetailview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-
-
 	}
 
 	@FXML

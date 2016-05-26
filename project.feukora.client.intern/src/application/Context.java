@@ -8,7 +8,6 @@ import projekt.feukora.server.model.User;
 
 public class Context {
 	
-	
 	private static Customer customer;
 	private static Blower blower;
 	private static Heater heater;
@@ -27,7 +26,6 @@ public class Context {
 	public static String customerfunction;
 	
 	public static String heatername;
-	
 	public static String blowername;
 	public static String blowertype;
 	public static String fuel;

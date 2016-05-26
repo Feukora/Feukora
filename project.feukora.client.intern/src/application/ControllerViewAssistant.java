@@ -1,7 +1,6 @@
 package application;
 
 import org.apache.log4j.Logger;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +16,6 @@ public class ControllerViewAssistant {
 
 	private static final Logger logger = Logger
 			.getLogger(ControllerViewAssistant.class);
-
 
     @FXML
 	public BorderPane mainRoot;
@@ -82,8 +80,6 @@ public class ControllerViewAssistant {
     @FXML
     private Button exitWelcome;
 
-
-
     @FXML
     void ActionExitWelcome(ActionEvent event) {
        	Platform.exit();
@@ -137,7 +133,6 @@ public class ControllerViewAssistant {
 					e);
 		}	
     	rapportWelcome.getScene().setRoot(pane);
-    	
     }
 
     @FXML
@@ -170,8 +165,6 @@ public class ControllerViewAssistant {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    	
-		//calendarWelcome.getScene().setRoot(pane);
     }
 
     @FXML
@@ -299,7 +292,6 @@ public class ControllerViewAssistant {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    
     }
     
     @FXML
@@ -357,6 +349,4 @@ public class ControllerViewAssistant {
 					e);
 		}	
     }
-
-
 }

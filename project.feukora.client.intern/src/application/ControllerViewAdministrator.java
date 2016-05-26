@@ -1,7 +1,6 @@
 package application;
 
 import org.apache.log4j.Logger;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +11,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-
 
 public class ControllerViewAdministrator {
 	
@@ -109,8 +107,6 @@ public class ControllerViewAdministrator {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-		
-    	//inspectorWelcome.getScene().setRoot(pane);
     }
 
     @FXML
@@ -126,8 +122,6 @@ public class ControllerViewAdministrator {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-		
-		//customerWelcome.getScene().setRoot(pane);
     }
 
     @FXML
@@ -143,8 +137,6 @@ public class ControllerViewAdministrator {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    	//rapportWelcome.getScene().setRoot(pane);
-    	
     }
 
     @FXML
@@ -161,8 +153,6 @@ public class ControllerViewAdministrator {
 					e);
 		}
     }
-		
-		//heaterWelcome.getScene().setRoot(pane);
 	
     @FXML
     void ActionCalendarWelcome(ActionEvent event) {
@@ -177,8 +167,6 @@ public class ControllerViewAdministrator {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-		
-		//calendarWelcome.getScene().setRoot(pane);
     }
         
     @FXML
@@ -194,8 +182,6 @@ public class ControllerViewAdministrator {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-		
-		//assistantWelcome.getScene().setRoot(pane);
     }
 
     @FXML
@@ -212,14 +198,23 @@ public class ControllerViewAdministrator {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
+<<<<<<< HEAD
 		
 		//blowerWelcome.getScene().setRoot(pane);
 		}
+=======
+	}
+    
+    @FXML
+    void ActionLoginMenuBar(ActionEvent event) {
+    	Platform.exit();
+    	Main.main(null);
+    }
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     
     @FXML
     void ActionCloseMenuBar(ActionEvent event) {
     	Platform.exit();
-    	
     }
 
     @FXML
@@ -409,5 +404,4 @@ public class ControllerViewAdministrator {
 					e);
 		}	
     }
-  
 }

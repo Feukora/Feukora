@@ -9,7 +9,7 @@ import projekt.feukora.server.persister.FuelPersisterImpl;
  * This Class implements the methodes of the interface FuelManager.
  * 
  * @author Tamara
- *@version 1.0
+ *@version 1.4
  *
  */
 public class FuelManagerImpl implements FuelManager{

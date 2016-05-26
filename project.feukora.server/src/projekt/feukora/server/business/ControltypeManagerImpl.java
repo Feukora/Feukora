@@ -6,10 +6,10 @@ import projekt.feukora.server.persister.ControltypePersister;
 import projekt.feukora.server.persister.ControltypePersisterImpl;
 
 /**
- * The Class implements the methodes of the interface ControltypeManager.
+ * The Class implements the methods of the interface ControltypeManager.
  * 
  * @author Tamara
- * @version 1.0
+ * @version 1.4
  *
  */
 public class ControltypeManagerImpl implements ControltypeManager{

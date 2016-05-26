@@ -2,13 +2,12 @@ package projekt.feukora.server.persister;
 
 import java.util.GregorianCalendar;
 import java.util.List;
-
 import projekt.feukora.server.model.Rapport;
 
 /**
  * This interface refers to a RapportPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Sandro
  *
  */
@@ -76,7 +75,5 @@ public interface RapportPersister {
 	 * @return List with Rapports
 	 */
 	public List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate);
-
-
 	
 }

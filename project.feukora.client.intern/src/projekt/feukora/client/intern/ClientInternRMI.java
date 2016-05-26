@@ -8,16 +8,11 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
 import org.apache.log4j.Logger;
-import org.omg.CORBA.INITIALIZE;
 import org.eclipse.persistence.sessions.server.ClientSession;
-
-//import org.apache.log4j.Logger;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import login.controller.ControllerLogin;
 import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Blowertype;
@@ -51,11 +46,10 @@ import projekt.feukora.server.rmi.TownRMI;
 import projekt.feukora.server.rmi.UserRMI;
 import projekt.feukora.server.rmi.UsergroupRMI;
 
-
 /**
  * This Class implements the rmi connection 
  * 
- * @version 1.3
+ * @version 1.6
  * @author Sandro Fasser
  *
  */
@@ -80,7 +74,6 @@ public class ClientInternRMI {
 	FacilitymanagerRMI facilitymanagerRMI;
 	FuelRMI fuelRMI;
 	UsergroupRMI usergroupRMI;
-
 
 	public static void main(String[] args) {
 		System.out
@@ -210,10 +203,37 @@ public class ClientInternRMI {
 		customerRMI.updateCustomer(entity);
 	}
 
-
 	public void deleteCustomer(Customer entity) {
 		try {
 			customerRMI.deleteCustomer(entity);
+		} catch (RemoteException e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+	}
+	
+	public void deleteRapport(Rapport entity) {
+		try {
+			rapportRMI.deleteRapport(entity);
 		} catch (RemoteException e) {
 			String titleBar = "Achtung";
 			String headerMessage = "Benutzer kann nicht gelöscht werden";
@@ -311,7 +331,6 @@ public class ClientInternRMI {
 		}
 	}
 
-
 	public void updateBlower(Blower entity, String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean bblower, Boolean atmospheric, Boolean evaporator) throws Exception {
 		Blowertype type;
 		Fuel fuel;
@@ -341,7 +360,6 @@ public class ClientInternRMI {
 		blowerRMI.updateBlower(entity);
 	}
 
-
 	public void deleteBlower(Blower entity) {
 		try {
 			blowerRMI.deleteBlower(entity);
@@ -355,8 +373,6 @@ public class ClientInternRMI {
 					e);
 		}
 	}
-
-
 
 	/**
 	 * 
@@ -394,10 +410,8 @@ public class ClientInternRMI {
 		try {
 			userRMI.saveUsers(entity);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -415,10 +429,8 @@ public class ClientInternRMI {
 			User u1 = new User(usergroup, lastname, firstname, adress, city, company, username, password, phone, email);
 			userRMI.saveUsers(u1);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -436,10 +448,8 @@ public class ClientInternRMI {
 			User u1 = new User(usergroup, lastname, firstname, adress, city, company, username, password, phone, email);
 			userRMI.saveUsers(u1);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -448,11 +458,9 @@ public class ClientInternRMI {
 		try {
 			userRMI.deleteUsers(entity);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
@@ -478,7 +486,6 @@ public class ClientInternRMI {
 		entity.setPassword(password);
 		entity.setCompanyid(company);	
 		userRMI.updateUsers(entity);
-
 	}
 
 	public void updateAssistantUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
@@ -501,7 +508,6 @@ public class ClientInternRMI {
 		entity.setPassword(password);
 		entity.setCompanyid(company);	
 		userRMI.updateUsers(entity);
-
 	}
 
 	/**
@@ -514,7 +520,6 @@ public class ClientInternRMI {
 		ObservableList<Heater> heaterlist = FXCollections.observableArrayList();
 		heaterlist.addAll(heaterRMI.findAllHeaters());
 		return heaterlist;
-
 	}
 
 	public void saveHeater(Heater entity){
@@ -545,10 +550,7 @@ public class ClientInternRMI {
 			//			logger.error("Aktion konnte nicht durchgeführt werden\'",
 			//					e);
 		}
-
-
 	}
-
 
 	/**
 	 * 
@@ -560,7 +562,6 @@ public class ClientInternRMI {
 		ObservableList<Blower> blowerlist = FXCollections.observableArrayList();
 		blowerlist.addAll(blowerRMI.findAllBlowers());
 		return blowerlist;
-
 	}
 
 	/**
@@ -574,7 +575,6 @@ public class ClientInternRMI {
 		userlist.addAll(userRMI.findAllUsers());
 		
 		return userlist;
-
 	}
 	
 	/**
@@ -594,7 +594,6 @@ public class ClientInternRMI {
 			}
 		}
 		return assistentlist;
-		
 	}
 	
 	public ObservableList<User> getInspectors() throws Exception {
@@ -621,7 +620,6 @@ public class ClientInternRMI {
 		ObservableList<Company> companylist = FXCollections.observableArrayList();
 		companylist.addAll(companyRMI.findAllCompanies());
 		return companylist;
-
 	}
 	/**
 	 * 
@@ -630,23 +628,28 @@ public class ClientInternRMI {
 	 */
 	public List<Appointment> getAppointments(User inspector) throws Exception {
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
+		customerlist.addAll(customerRMI.findAllCustomers());
+		return customerlist;
+=======
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 		return appointmentRMI.findAppointmentsForInspector(inspector);
 
+>>>>>>> refs/remotes/origin/master
 	}
-
 
 	public String getTown(Integer zip) throws RemoteException {
 		Town town1 = townRMI.findTownByZip(zip);
 		return town1.getName();
-
 	}
 
 	public void updateRapport(Rapport rapport, String canton, String adress, String customer, String facilitymanager,
 			Integer heateryear, Integer bloweryear, String performance, LocalDate date, Boolean result,
 			Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
-			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {
-		// TODO Auto-generated method stub
-		
+			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {		
 	}
 
 	public void saveRapport(String canton, String adress, String customer, String facilitymanager, Integer heateryear,
@@ -717,7 +720,6 @@ public class ClientInternRMI {
 		Integer rapPersNumber = Integer.parseInt(persNumber);
 		rapUser = userRMI.findUsersByUserid(rapPersNumber);
 		
-		
 		String lastname;
 		String[] names = customer.split("\\s+");
 		lastname = names[0];
@@ -758,8 +760,5 @@ public class ClientInternRMI {
 		measuringresultRMI.saveMeasuringresult(mr2);
 		measuringresultRMI.saveMeasuringresult(mr3);
 		measuringresultRMI.saveMeasuringresult(mr4);
-		
 	}	
-
-
 }

@@ -1,13 +1,12 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Customerfunction;
 
 /**
  * This interface refers to a CustomerfunctionPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Allan
  *
  */
@@ -69,4 +68,3 @@ public interface CustomerfunctionPersister {
 	 */
 	Customerfunction findCustomerfunctionByName(String name);
 }
-

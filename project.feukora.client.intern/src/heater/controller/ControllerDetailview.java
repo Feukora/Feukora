@@ -1,9 +1,7 @@
 package heater.controller;
 
 import org.apache.log4j.Logger;
-
 import application.Context;
-import customer.controller.ControllerOverview;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Heater;
 
 public class ControllerDetailview {
@@ -67,10 +64,7 @@ public class ControllerDetailview {
 			} else {
 				errorInfoNeu();
 			}
-			
-//	    	feukora.deleteCustomer(customer);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}    
@@ -108,5 +102,4 @@ public class ControllerDetailview {
 		
     	detailviewCancelHeater.getScene().setRoot(pane);
     }
-
 }

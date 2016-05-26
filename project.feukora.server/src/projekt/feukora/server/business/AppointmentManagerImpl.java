@@ -11,7 +11,7 @@ import projekt.feukora.server.persister.AppointmentPersisterImpl;
  * This Class implements the methods of the interface AppointmentManager.
  * 
  * @author Allan
- * @version 1.0
+ * @version 1.4
  *
  */
 public class AppointmentManagerImpl implements AppointmentManager{
@@ -52,9 +52,16 @@ public class AppointmentManagerImpl implements AppointmentManager{
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate) {
 		return appointmentPersister.findAppointmentByAppointmentdate(appointmentdate);
 	}
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+=======
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 
 	@Override
 	public List<Appointment> findAppointmentsForInspector(User inspector) {
 		return appointmentPersister.findAppointmentsForInspector(inspector);
 	}
 }
+>>>>>>> refs/remotes/origin/master

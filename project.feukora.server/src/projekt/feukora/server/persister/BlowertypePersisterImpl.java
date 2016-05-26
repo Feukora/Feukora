@@ -1,18 +1,14 @@
 package projekt.feukora.server.persister;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import projekt.feukora.server.model.Blowertype;
-
 
 /**
  * This class implements the interface BlowertypePersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Patrick
  * 
  */
@@ -63,5 +59,4 @@ public class BlowertypePersisterImpl implements BlowertypePersister{
 
 		return blowertypelist.get(0);
 	}
-
 }

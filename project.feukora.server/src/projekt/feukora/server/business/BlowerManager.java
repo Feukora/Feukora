@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Blower;
  * Interface to handle blower entities.
  * 
  * @author Robin
- * @version 1.0
+ * @version 1.4
  *
  */
 public interface BlowerManager {

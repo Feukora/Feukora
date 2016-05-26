@@ -1,20 +1,17 @@
 package projekt.feukora.server.persister;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.User;
 
 /**
  * This class implements the Interface AppointmentPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Pascal
  *
  */
@@ -66,6 +63,9 @@ public class AppointmentPersisterImpl implements AppointmentPersister{
 
 		return appointmentdatelist != null ? appointmentdatelist : new ArrayList<Appointment>();
 	}
+<<<<<<< HEAD
+}
+=======
 
 	@Override
 	public List<Appointment> findAppointmentsForInspector(User inspector) {
@@ -80,3 +80,4 @@ public class AppointmentPersisterImpl implements AppointmentPersister{
 	}
 	
 }
+>>>>>>> refs/remotes/origin/master

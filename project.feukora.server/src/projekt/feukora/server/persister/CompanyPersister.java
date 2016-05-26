@@ -1,12 +1,12 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Company;
+
  /**
  * This interface refers to a CompanyPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Robin
   */
 public interface CompanyPersister {
@@ -66,5 +66,4 @@ public interface CompanyPersister {
 	 * @return List with Companies
 	 */
 	public List<Company> findCompanyByName(String name);
-	
 }

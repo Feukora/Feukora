@@ -1,7 +1,6 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,7 +10,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a usergroup.
  * 
- * @version 1.1
+ * @version 1.5
  * @author Tamara
  * 
  */
@@ -25,7 +24,6 @@ public class Usergroup implements Serializable {
 	@GeneratedValue
 	private int usergroupid;
 	private String name;
-
 	
 	/**
 	 * Default constructor
@@ -33,6 +31,7 @@ public class Usergroup implements Serializable {
 	public Usergroup() {
 
 	}
+	
 	/**
 	 * Usergroup constructor
 	 * 

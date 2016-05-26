@@ -1,13 +1,7 @@
-/**
- * Sample Skeleton for 'heaterOverview.fxml' Controller Class
- */
-
 package heater.controller;
 
 import org.apache.log4j.Logger;
-
 import application.Context;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,15 +14,16 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
-import projekt.feukora.server.model.Blower;
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Heater;
+
+/**
+ * Sample Skeleton for 'heaterOverview.fxml' Controller Class
+ */
 
 public class ControllerOverview {
 	
 	private static final Logger logger = Logger
 			.getLogger(ControllerOverview.class);
-	
 
     @FXML // fx:id="overviewRefreshHeater"
     private Button overviewRefreshHeater; // Value injected by FXMLLoader
@@ -103,13 +98,11 @@ public class ControllerOverview {
 					e);
 		}
 		initialize();
-    	
     }
 
     @FXML
     void ActionOverviewRefreshHeater(ActionEvent event) {
     	initialize();
-    	
     }
     
     @FXML
@@ -136,8 +129,5 @@ public class ControllerOverview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);	
 		}	
-		
-    	//overviewUpdateHeater.getScene().setRoot(pane);
     }
-
 }

@@ -1,19 +1,15 @@
 package projekt.feukora.server.business;
 
-import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.persister.CustomerheaterPersister;
 import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
-import projekt.feukora.server.persister.JpaUtil;
 
 /**
  * This Class implements the methods of the interface CustomerheaterManager.
  * 
  * @author Robin
- * @version 1.1
+ * @version 1.4
  * 
  */
 public class CustomerheaterManagerImpl implements CustomerheaterManager {

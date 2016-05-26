@@ -2,7 +2,6 @@ package rapport.controller;
 
 import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import org.apache.log4j.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,9 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import projekt.feukora.client.intern.ClientInternRMI;
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Rapport;
-
 
 public class ControllerOverview {
 
@@ -52,7 +49,7 @@ public class ControllerOverview {
 	private TableColumn<Rapport, Calendar> overviewTableDate = new TableColumn<>("measuringdate");
 
 	@FXML
-	public TableView<Rapport> overviewTableRapport; // Value injected by FXMLLoader
+	public TableView<Rapport> overviewTableRapport;
     
 	@FXML
 	public void initialize() {
@@ -107,12 +104,9 @@ public class ControllerOverview {
 						new PropertyValueFactory<Rapport, String>("inspector")
 				);
 
-				
 				overviewTableRapport.setItems(rapport);
 				
-				
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				logger.error("Aktion konnte nicht durchgeführt werden\'",
 						e);
 			}
@@ -154,5 +148,4 @@ public class ControllerOverview {
 	void ActionOverviewUpdateRapport(ActionEvent event) {
 
 	}
-
 }

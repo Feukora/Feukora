@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Usergroup;
  * Interface to handle usergroup entities.
  * 
  * @author Tamara
- * @version 1.0
+ * @version 1.4
  *
  */
 public interface UsergroupManager {

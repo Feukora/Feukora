@@ -1,7 +1,6 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,7 +10,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a heater.
  * 
- * @version 1.1
+ * @version 1.6
  * @author Patrick
  *
  */

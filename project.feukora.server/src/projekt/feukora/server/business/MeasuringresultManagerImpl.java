@@ -9,7 +9,7 @@ import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
  * This Class implements the methods of the interface HeaterManager.
  * 
  * @author Patrick
- * @version 1.0
+ * @version 1.4
  */
 public class MeasuringresultManagerImpl implements MeasuringresultManager {
 	

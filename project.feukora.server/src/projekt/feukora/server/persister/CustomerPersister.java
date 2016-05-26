@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Customer;
 /**
  * This interface refers to a CustomerPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Pascal
  *
  */

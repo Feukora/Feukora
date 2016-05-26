@@ -1,15 +1,18 @@
 package rapport.controller;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import java.io.IOException;
 import java.net.URL;
+>>>>>>> refs/remotes/origin/master
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.ResourceBundle;
-
 import org.apache.log4j.Logger;
-
 import application.Context;
 import application.ControllerViewAdministrator;
 import customer.controller.ControllerDetailview;
@@ -17,8 +20,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+>>>>>>> refs/remotes/origin/master
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -30,7 +39,6 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
-import projekt.feukora.server.model.Company;
 import projekt.feukora.server.model.Controltype;
 import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
@@ -38,7 +46,6 @@ import projekt.feukora.server.model.Facilitymanager;
 import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Measuringresult;
 import projekt.feukora.server.model.Rapport;
-import projekt.feukora.server.model.Town;
 
 public class ControllerMain {
 	
@@ -65,10 +72,6 @@ public class ControllerMain {
 	final ToggleGroup oilpart4 = new ToggleGroup();
 	final ToggleGroup result = new ToggleGroup();
 	final ToggleGroup additionalsteps = new ToggleGroup();
-
-
-
-	
 
 	@FXML
 	private TextField textfieldCanton;
@@ -265,8 +268,11 @@ public class ControllerMain {
 
 	@FXML
 	void ActionRapportSave(ActionEvent event) throws IOException {
+<<<<<<< HEAD
+=======
 		
 //		Rapport rapport = Context.getRapport();
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 		
 		String canton = textfieldCanton.getText();
 		String adress = textfieldaddress.getText();
@@ -288,7 +294,6 @@ public class ControllerMain {
 		Integer bloweryear = Integer.parseInt(manufactureyearblower);
 		String blowertype = comboboxblowertype.getSelectionModel().getSelectedItem().toString();
 		String performance = textfieldheatinput.getText();
-		
 		
 		//Tab 3
 		LocalDate date = measuringdate.getValue();
@@ -421,7 +426,6 @@ public class ControllerMain {
 		
     	try {
 			ClientInternRMI feukora = new ClientInternRMI();
-//			if(rapport == null) {
 				feukora.saveRapport(canton, adress, customer, facilitymanager, heateryear, heatertype, ctype, bloweryear, blowertype, performance, gdate,
 						smokenumber1, smokenumber2, smokenumber3, smokenumber4,
 						carbonmonoxide1, carbonmonoxide2, carbonmonoxide3, carbonmonoxide4,
@@ -433,14 +437,13 @@ public class ControllerMain {
 						exhaustgaslost1, exhaustgaslost2, exhaustgaslost3, exhaustgaslost4,
 						oilpart1, oilpart2, oilpart3, oilpart4, 
 						result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment, persNumber);
-//			} else {
-//				feukora.updateRapport(rapport, canton, adress, customer, facilitymanager, heateryear, bloweryear, performance, date, /* viele mehr aus tab3 */result, smokenumber, oilpart, carbonmonoxide, nitrogendioxide, exhaustgaslost, additionalsteps, comment);
-//			}
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
+<<<<<<< HEAD
+		}		
+=======
 		}
     	
 //    	customerCompanyNameField.clear();
@@ -456,6 +459,10 @@ public class ControllerMain {
 		}
     	
     	
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 	}
 	
 	public void initialize() {
@@ -539,37 +546,24 @@ public class ControllerMain {
 			comboboxblowertype.setItems(blowerNames);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		if(Context.getRapportid() != null){
 			Update();
-		}else{
-
+		}else {
 		}
-
 
 	}
 
 	public void Update(){
 
-//		rapport = Context.getRapport();
 		customer = Context.getCustomer();
-//		facilitymanager = Context.getFacilitymanager();
 
-		//1. Tab
-		//Beide Methoden müssen in die Model Klasse noch hinzugefügt werden
 		textfieldCanton.setText(rapport.getCanton());
-//		textfieldaddress.setText(rapport.getRapportAddress());
 		comboboxOwnerAdministration.setValue(customer.getLastname() + " " + customer.getFirstname());
 		textfieldfacilitymanager.setText(facilitymanager.getlastname());
 
-		// 2. Tab
-
-		// 3. Tab
-
-		// 4. Tab
 		if(rapport.getResults() == true){
 			radiotransgression.setSelected(true);
 		}else{
@@ -596,8 +590,7 @@ public class ControllerMain {
 			radioadditionalstepsno.setSelected(true);
 		}
 		textareacomments.setText(rapport.getComments());
-		
-		
+
 	}
 
 	@FXML

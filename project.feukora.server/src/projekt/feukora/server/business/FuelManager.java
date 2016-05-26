@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Fuel;
  * Interface for handling fuel entities.
  * 
  * @author Tamara
- * @version 1.0
+ * @version 1.4
  *
  */
 public interface FuelManager {

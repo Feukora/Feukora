@@ -1,11 +1,13 @@
 package login.controller;
 
 import org.apache.log4j.Logger;
+<<<<<<< HEAD
+=======
 
 import application.Context;
 import inspector.controller.ControllerDetailview;
+>>>>>>> refs/remotes/origin/master
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
@@ -13,8 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 
@@ -22,7 +23,6 @@ public class ControllerLogin {
 	
 	private static final Logger logger = Logger
 			.getLogger(ControllerLogin.class);
-
 
     @FXML
     private TextField usernameLoginTextfield;
@@ -47,8 +47,6 @@ public class ControllerLogin {
     	
 		String username = usernameLoginTextfield.getText();
 		String password = passwordLoginTextfield.getText();
-		
-		
 
     	try {
     		ClientInternRMI feukora = new ClientInternRMI();
@@ -82,7 +80,6 @@ public class ControllerLogin {
 			} catch (Exception e) {
 				logger.error("Login fehlgeschlagen\'",
 						e);
-				
 		}	
     	
     	loginLogin.getScene().setRoot(pane);
@@ -95,8 +92,6 @@ public class ControllerLogin {
 		String username = usernameLoginTextfield.getText();
 		String password = passwordLoginTextfield.getText();
 		
-		
-
     	try {
     		ClientInternRMI feukora = new ClientInternRMI();
     		Boolean successfull = feukora.login(username, password);

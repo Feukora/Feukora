@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Heater;
  * Interface to handle heater entities.
  * 
  * @author Patrick
- * @version 1.0
+ * @version 1.4
  *
  */
 public interface HeaterManager {

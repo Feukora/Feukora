@@ -10,7 +10,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a blowertype.
  * 
- * @version 1.1
+ * @version 1.4
  * @author Patrick
  *
  */
@@ -34,6 +34,7 @@ public class Blowertype implements Serializable {
 	public Blowertype(){
 		
 	}
+	
 	/**
 	 * Blowertype constructor
 	 * 

@@ -5,12 +5,11 @@ import java.util.List;
 /**
  * Interface for basic operations
  * 
- * @version 1.0
+ * @version 1.5
  * @author Pascal
  *
  * @param <T>
  */
-
 public interface GenericPersister<T>{
 	/**
 	 * Save the entity
@@ -59,5 +58,4 @@ public interface GenericPersister<T>{
 	 * @return
 	 */
 	List<T> findAll();
-
 }

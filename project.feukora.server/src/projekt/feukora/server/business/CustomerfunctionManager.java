@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Customerfunction;
  * Interface to handle Customerfunction entities.
  * 
  * @author Patrick
- * @version 1.0
+ * @version 1.4
  *
  */
 public interface CustomerfunctionManager {

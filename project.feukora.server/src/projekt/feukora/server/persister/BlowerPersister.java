@@ -1,13 +1,12 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Blower;
 
 /**
  * This interface refers to a BlowerPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Robin
  * 
  */

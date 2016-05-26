@@ -8,7 +8,7 @@ import projekt.feukora.server.model.Usergroup;
  * Interface to handle user entities.
  * 
  * @author Tamara
- * @version 1.0
+ * @version 1.4
  *
  */
 public interface UserManager {

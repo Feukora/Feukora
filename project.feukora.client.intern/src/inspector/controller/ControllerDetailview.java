@@ -1,7 +1,6 @@
 package inspector.controller;
 
 import org.apache.log4j.Logger;
-
 import application.Context;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +15,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Company;
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.User;
 
 public class ControllerDetailview {
@@ -148,7 +146,6 @@ public class ControllerDetailview {
 			inspectorCompanyFieldCombo.setItems(companyNames);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(Context.getUser() != null) {
@@ -172,11 +169,8 @@ public class ControllerDetailview {
 		inspectorPasswordField.setText(inspector.getPassword());
 
 		Context.setNull();
-
 	}
 
-	
-	
 	@FXML
 	void ActionDetailviewSaveInspector(ActionEvent event) {
 		User inspector = Context.getUser();
@@ -218,7 +212,6 @@ public class ControllerDetailview {
 				errorInfoNeu();
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
@@ -242,5 +235,4 @@ public class ControllerDetailview {
 
 		detailviewCancelInspector.getScene().setRoot(pane);
 	}
-
 }
