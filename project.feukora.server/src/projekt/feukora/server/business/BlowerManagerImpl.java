@@ -16,7 +16,7 @@ public class BlowerManagerImpl implements BlowerManager {
 
 	@Override
 	public void saveBlower(Blower entity) throws Exception {
-			blowerPersister.saveBlower(entity);
+		blowerPersister.saveBlower(entity);
 	}
 
 	@Override

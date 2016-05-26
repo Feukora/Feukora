@@ -15,10 +15,10 @@ import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
 public class CustomerfunctionManagerImpl implements CustomerfunctionManager {
 
 	private CustomerfunctionPersister customerfunctionPersister = new CustomerfunctionPersisterImpl();
-	
+
 	@Override
 	public void saveCustomerfunction(Customerfunction entity) throws Exception {
-			customerfunctionPersister.saveCustomerfunction(entity);
+		customerfunctionPersister.saveCustomerfunction(entity);
 	}
 
 	@Override

@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Blower;
  *
  */
 public interface BlowerManager {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -66,5 +66,5 @@ public interface BlowerManager {
 	 * @param name
 	 * @return
 	 */
-	public List<Blower> findBlowerByName(String name);
+	List<Blower> findBlowerByName(String name);
 }

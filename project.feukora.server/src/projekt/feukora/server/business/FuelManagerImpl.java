@@ -12,13 +12,13 @@ import projekt.feukora.server.persister.FuelPersisterImpl;
  *@version 1.4
  *
  */
-public class FuelManagerImpl implements FuelManager{
-	
+public class FuelManagerImpl implements FuelManager {
+
 	private FuelPersister fuelPersister = new FuelPersisterImpl();
 
 	@Override
 	public void saveFuel(Fuel entity) throws Exception {
-			fuelPersister.saveFuel(entity);
+		fuelPersister.saveFuel(entity);
 	}
 
 	@Override

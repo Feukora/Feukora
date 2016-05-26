@@ -16,10 +16,10 @@ import projekt.feukora.server.persister.UserPersisterImpl;
 public class UserManagerImpl implements UserManager {
 
 	private UserPersister userPersister = new UserPersisterImpl();
-	
+
 	@Override
 	public void saveUsers(User entity) throws Exception {
-			userPersister.saveUser(entity);
+		userPersister.saveUser(entity);
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public class UserManagerImpl implements UserManager {
 	public User findUserByUsername(String username) {
 		return userPersister.findUserByUsername(username);
 	}
-	
+
 	@Override
 	public List<User> findUserByUsergroup(Usergroup usergroup) {
 		return userPersister.findUserByUsergroup(usergroup);

@@ -67,7 +67,7 @@ public interface UserManager {
 	 * @param name
 	 * @return
 	 */
-	public List<User> findUsersByLastname(String lastname);
+	List<User> findUsersByLastname(String lastname);
 
 	/**
 	 * Return a list with users with this firstname
@@ -75,7 +75,7 @@ public interface UserManager {
 	 * @param vorname
 	 * @return
 	 */
-	public List<User> findUsersByFirstname(String firstname);
+	List<User> findUsersByFirstname(String firstname);
 
 	/**
 	 * Return a list with users with this lastname and firstname
@@ -84,7 +84,7 @@ public interface UserManager {
 	 * @param vorname
 	 * @return
 	 */
-	public List<User> findUsersByLastnameAndFirstname(String lastname, String firstname);
+	List<User> findUsersByLastnameAndFirstname(String lastname, String firstname);
 
 	/**
 	 * Return a list with users with this username
@@ -92,13 +92,13 @@ public interface UserManager {
 	 * @param ort
 	 * @return
 	 */
-	public User findUserByUsername(String username);
-	
+	User findUserByUsername(String username);
+
 	/**
 	 * Return a list with users with this usergroup
 	 * 
 	 * @param ort
 	 * @return
 	 */
-	public List<User>findUserByUsergroup(Usergroup usergroup);
+	List<User>findUserByUsergroup(Usergroup usergroup);
 }

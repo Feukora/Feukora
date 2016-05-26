@@ -12,13 +12,13 @@ import projekt.feukora.server.persister.UsergroupPersisterImpl;
  * @version 1.0
  *
  */
-public class UsergroupManagerImpl implements UsergroupManager{
-	
+public class UsergroupManagerImpl implements UsergroupManager {
+
 	UsergroupPersister usergroupPersister  = new UsergroupPersisterImpl();
-	
+
 	@Override
 	public void saveUsergroup(Usergroup entity) throws Exception {
-			usergroupPersister.saveUsergroup(entity);
+		usergroupPersister.saveUsergroup(entity);
 	}
 
 	@Override

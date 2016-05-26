@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Fuel;
  *
  */
 public interface FuelManager {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -66,5 +66,5 @@ public interface FuelManager {
 	 * @param name
 	 * @return
 	 */
-	public Fuel findFuelByName(String name);
+	Fuel findFuelByName(String name);
 }

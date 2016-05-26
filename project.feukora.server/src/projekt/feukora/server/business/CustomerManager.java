@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Customer;
  *
  */
 public interface CustomerManager {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -66,7 +66,7 @@ public interface CustomerManager {
 	 * @param name
 	 * @return
 	 */
-	public List<Customer> findCustomerByLastname(String lastname);
+	List<Customer> findCustomerByLastname(String lastname);
 
 	/**
 	 * Return a list with customers with this firstname
@@ -74,7 +74,7 @@ public interface CustomerManager {
 	 * @param vorname
 	 * @return
 	 */
-	public List<Customer> findCustomerByFirstname(String firstname);
+	List<Customer> findCustomerByFirstname(String firstname);
 
 	/**
 	 * Return a list with customers with this lastname and firstname
@@ -83,7 +83,7 @@ public interface CustomerManager {
 	 * @param vorname
 	 * @return
 	 */
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname);
+	List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname);
 
 	/**
 	 * Return a list with customers with this adress
@@ -91,5 +91,5 @@ public interface CustomerManager {
 	 * @param ort
 	 * @return
 	 */
-	public List<Customer> findCustomerByCompanyname(String companyname);
+	List<Customer> findCustomerByCompanyname(String companyname);
 }

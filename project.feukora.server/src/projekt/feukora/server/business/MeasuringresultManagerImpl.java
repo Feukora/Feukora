@@ -12,12 +12,12 @@ import projekt.feukora.server.persister.MeasuringresultPersisterImpl;
  * @version 1.4
  */
 public class MeasuringresultManagerImpl implements MeasuringresultManager {
-	
+
 	private MeasuringresultPersister measuringresultPersister = new MeasuringresultPersisterImpl();
 
 	@Override
 	public void saveMeasuringresult(Measuringresult entity) throws Exception {
-			measuringresultPersister.saveMeasuringresult(entity);
+		measuringresultPersister.saveMeasuringresult(entity);
 	}
 
 	@Override

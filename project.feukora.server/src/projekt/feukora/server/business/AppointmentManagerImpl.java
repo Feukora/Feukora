@@ -15,12 +15,12 @@ import projekt.feukora.server.persister.AppointmentPersisterImpl;
  *
  */
 public class AppointmentManagerImpl implements AppointmentManager{
-	
+
 	private AppointmentPersister appointmentPersister = new AppointmentPersisterImpl();
 
 	@Override
 	public void saveAppointment(Appointment entity) throws Exception {
-			appointmentPersister.saveAppointment(entity);
+		appointmentPersister.saveAppointment(entity);
 	}
 
 	@Override

@@ -49,5 +49,5 @@ public interface TownManager {
 	 * @param name
 	 * @return
 	 */
-	public Town findTownByZip(Integer zip);
+	Town findTownByZip(Integer zip);
 }

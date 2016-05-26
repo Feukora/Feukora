@@ -12,19 +12,19 @@ import projekt.feukora.server.persister.TownPersisterImpl;
  * @version 1.4
  */
 public class TownManagerImpl implements TownManager {
-	
+
 	private TownPersister townPersister = new TownPersisterImpl();
 
 	@Override
 	public void saveTown(Town entity) throws Exception {
-			townPersister.saveTown(entity);
+		townPersister.saveTown(entity);
 	}
 
 	@Override
 	public Town updateTown(Town entity) throws Exception {
-			return townPersister.updateTown(entity);	
+		return townPersister.updateTown(entity);	
 	}
-	
+
 	@Override
 	public void deleteTown(Town entity) throws Exception {
 		townPersister.deleteTown(entity);

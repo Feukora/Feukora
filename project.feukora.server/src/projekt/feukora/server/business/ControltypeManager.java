@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Controltype;
  * 
  */
 public interface ControltypeManager {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -66,5 +66,5 @@ public interface ControltypeManager {
 	 * @param name
 	 * @return
 	 */
-	public Controltype findControltypeByName(String name);
+	Controltype findControltypeByName(String name);
 }

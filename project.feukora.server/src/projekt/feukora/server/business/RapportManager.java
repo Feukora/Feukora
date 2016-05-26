@@ -5,12 +5,12 @@ import java.util.List;
 import projekt.feukora.server.model.Rapport;
 
 /**
-* Interface for handling rapport entities.
-* 
-* @author Sandro Fasser
-* @version 1.4
-*
-*/
+ * Interface for handling rapport entities.
+ * 
+ * @author Sandro
+ * @version 1.4
+ *
+ */
 public interface RapportManager {
 
 	/**
@@ -67,13 +67,13 @@ public interface RapportManager {
 	 * @param name
 	 * @return List with Rapports
 	 */
-	public List<Rapport> findRapportByResults(Boolean results);
-	
+	List<Rapport> findRapportByResults(Boolean results);
+
 	/**
 	 * Return a list with rapports with this measuringdate
 	 * 
 	 * @param name
 	 * @return List with Rapports
 	 */
-	public List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate);
+	List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate);
 }

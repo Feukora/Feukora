@@ -12,13 +12,13 @@ import projekt.feukora.server.persister.ControltypePersisterImpl;
  * @version 1.4
  *
  */
-public class ControltypeManagerImpl implements ControltypeManager{
-	
+public class ControltypeManagerImpl implements ControltypeManager {
+
 	ControltypePersister controltypePersister = new ControltypePersisterImpl();
 
 	@Override
 	public void saveControltype(Controltype entity) throws Exception {
-			controltypePersister.saveControltype(entity);
+		controltypePersister.saveControltype(entity);
 	}
 
 	@Override

@@ -8,24 +8,24 @@ import projekt.feukora.server.persister.CustomerPersisterImpl;
 /**
  * This Class implements the methods of the interface CustomerManager.
  * 
- * @author Sandro Fasser
+ * @author Sandro
  * @version 1.4
  * 
  */
 public class CustomerManagerImpl implements CustomerManager {
-	
+
 	private CustomerPersister customerPersister = new CustomerPersisterImpl();
 
 	@Override
 	public void saveCustomer(Customer entity) throws Exception {
-			customerPersister.saveCustomer(entity);
+		customerPersister.saveCustomer(entity);
 	}
 
 	@Override
 	public Customer updateCustomer(Customer entity) throws Exception {
-			return customerPersister.updateCustomer(entity);	
+		return customerPersister.updateCustomer(entity);	
 	}
-	
+
 	@Override
 	public void deleteCustomer(Customer entity) throws Exception {
 		customerPersister.deleteCustomer(entity);

@@ -1,6 +1,5 @@
 package projekt.feukora.server.business;
 
-import java.rmi.RemoteException;
 import java.util.GregorianCalendar;
 import java.util.List;
 import projekt.feukora.server.model.Appointment;
@@ -14,7 +13,7 @@ import projekt.feukora.server.model.User;
  *
  */
 public interface AppointmentManager {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -67,10 +66,14 @@ public interface AppointmentManager {
 	 * Return a list with appointments with this appointment date
 	 * 
 	 * @param appointmentdate
-	 * @return
+	 * @return List with appointments
 	 */
-	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
+	List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
 
-	
+	/**
+	 * Return a list with appointments for this inspector
+	 * @param inspector
+	 * @return List with appointments
+	 */
 	List<Appointment> findAppointmentsForInspector( User inspector );
 }

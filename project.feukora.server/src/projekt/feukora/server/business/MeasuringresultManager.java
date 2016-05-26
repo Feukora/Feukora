@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Measuringresult;
  *
  */
 public interface MeasuringresultManager {
-	
+
 	/**
 	 * Save the given entity
 	 * 

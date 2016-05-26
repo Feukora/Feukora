@@ -42,7 +42,7 @@ public class AppointmentPersisterTest {
 
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		TestdataAppointment.loadTestdata();
 	}
 	

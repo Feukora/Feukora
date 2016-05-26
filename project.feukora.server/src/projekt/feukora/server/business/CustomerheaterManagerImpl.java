@@ -17,10 +17,10 @@ import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
 public class CustomerheaterManagerImpl implements CustomerheaterManager {
 
 	private CustomerheaterPersister customerheaterPersister = new CustomerheaterPersisterImpl();
-	
+
 	@Override
 	public void saveCustomerheater(Customerheater entity) throws Exception {
-			customerheaterPersister.saveCustomerheater(entity);
+		customerheaterPersister.saveCustomerheater(entity);
 	}
 
 	@Override

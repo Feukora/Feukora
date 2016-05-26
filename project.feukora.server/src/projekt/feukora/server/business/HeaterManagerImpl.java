@@ -12,12 +12,12 @@ import projekt.feukora.server.persister.HeaterPersisterImpl;
  * @version 1.4
  */
 public class HeaterManagerImpl implements HeaterManager {
-	
+
 	private HeaterPersister heaterPersister = new HeaterPersisterImpl();
 
 	@Override
 	public void saveHeater(Heater entity) throws Exception {
-			heaterPersister.saveHeater(entity);
+		heaterPersister.saveHeater(entity);
 	}
 
 	@Override

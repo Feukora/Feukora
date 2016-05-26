@@ -66,5 +66,5 @@ public interface UsergroupManager {
 	 * @param name
 	 * @return
 	 */
-	public Usergroup findFuelByName(String name);
+	Usergroup findFuelByName(String name);
 }

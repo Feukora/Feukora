@@ -15,10 +15,10 @@ import projekt.feukora.server.persister.FacilitymanagerPersisterImpl;
 public class FacilitymanagerManagerImpl implements FacilitymanagerManager {
 
 	FacilitymanagerPersister facilitymanagerPersister = new FacilitymanagerPersisterImpl();
-	
+
 	@Override
 	public void saveFacilitymanager(Facilitymanager entity) throws Exception {
-			facilitymanagerPersister.saveFacilitymanager(entity);
+		facilitymanagerPersister.saveFacilitymanager(entity);
 	}
 
 	@Override

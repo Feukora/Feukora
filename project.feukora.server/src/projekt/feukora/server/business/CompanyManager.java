@@ -66,5 +66,5 @@ public interface CompanyManager {
 	 * @param name
 	 * @return
 	 */
-	public List<Company> findCompanyByName(String name);
+	List<Company> findCompanyByName(String name);
 }

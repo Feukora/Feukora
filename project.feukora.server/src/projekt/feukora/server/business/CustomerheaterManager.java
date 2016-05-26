@@ -60,7 +60,7 @@ public interface CustomerheaterManager {
 	 * @return List with all Customerheaters
 	 */
 	List<Customerheater> findAllCustomerheaters();
-	
+
 	/**
 	 * 
 	 * Return the entity with this performance
@@ -68,13 +68,13 @@ public interface CustomerheaterManager {
 	 * @param performance
 	 * @return List with Customerheaters
 	 */
-	public List<Customerheater> findCustomerheaterByPerformance(Integer performance);
-	
+	List<Customerheater> findCustomerheaterByPerformance(Integer performance);
+
 	/**
 	 * This method returns a {@link List<Customerheater>} with all heaters for the given customer
 	 * 
 	 * @param customer
 	 * @return {@link List<Customerheater>} with all {@link Customerheater} for the given customer
 	 */
-	public List<Customerheater> findCustomerHeaterForCustomer( Customer customer );
+	List<Customerheater> findCustomerHeaterForCustomer( Customer customer );
 }

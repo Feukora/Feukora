@@ -14,10 +14,10 @@ import projekt.feukora.server.persister.BlowertypePersisterImpl;
 public class BlowertypeManagerImpl implements BlowertypeManager {
 
 	private BlowertypePersister blowertypePersister = new BlowertypePersisterImpl();
-	
+
 	@Override
 	public void saveBlowertype(Blowertype entity) throws Exception {
-			blowertypePersister.saveBlowertype(entity);
+		blowertypePersister.saveBlowertype(entity);
 	}
 
 	@Override

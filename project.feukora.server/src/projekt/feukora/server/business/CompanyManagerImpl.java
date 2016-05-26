@@ -16,14 +16,14 @@ public class CompanyManagerImpl implements CompanyManager {
 
 	@Override
 	public void saveCompany(Company entity) throws Exception {
-			companyPersister.saveCompany(entity);
+		companyPersister.saveCompany(entity);
 	}
 
 	@Override
 	public Company updateCompany(Company entity) throws Exception {
-			return companyPersister.updateCompany(entity);	
+		return companyPersister.updateCompany(entity);	
 	}
-	
+
 	@Override
 	public void deleteCompany(Company entity) throws Exception {
 		companyPersister.deleteCompany(entity);

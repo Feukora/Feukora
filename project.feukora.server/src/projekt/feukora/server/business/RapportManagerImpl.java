@@ -13,12 +13,12 @@ import projekt.feukora.server.persister.RapportPersisterImpl;
  * @version 1.1
  */
 public class RapportManagerImpl implements RapportManager {
-	
+
 	private RapportPersister rapportPersister = new RapportPersisterImpl();
 
 	@Override
 	public void saveRapport(Rapport entity) throws Exception {
-			rapportPersister.saveRapport(entity);;
+		rapportPersister.saveRapport(entity);;
 	}
 
 	@Override
