@@ -105,10 +105,6 @@ public class ControllerViewInspector {
 					e);
 		}
     }
-
-    @FXML
-    void ActionLoginMenuBar(ActionEvent event) {
-    }
     
     @FXML
     void ActionCloseMenuBar(ActionEvent event) {
@@ -122,7 +118,7 @@ public class ControllerViewInspector {
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
-			mainRoot.setCenter(pane);
+			mainRoot.setTop(pane);
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
@@ -146,51 +142,6 @@ public class ControllerViewInspector {
     }
 
     @FXML
-    void ActionCustomerMenuBar(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
-    	
-    	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerOverview.fxml"));
-
-			mainRoot.setCenter(pane);
-
-		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}	
-	}
-
-    @FXML
-    void ActionBlowerMenuBar(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
-    	
-    	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("blower/view/blowerOverview.fxml"));
-
-			mainRoot.setCenter(pane);
-
-		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}	
-	}
-
-    @FXML
-    void ActionHeaterMenuBar(ActionEvent event) {
-		AnchorPane pane = new AnchorPane();
-    	
-    	try {
-			pane = FXMLLoader.load(getClass().getClassLoader().getResource("heater/view/heaterOverview.fxml"));
-
-			mainRoot.setCenter(pane);
-
-		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}	
-	}   
-
-    @FXML
     void ActionRapportMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
     	
@@ -204,50 +155,7 @@ public class ControllerViewInspector {
 					e);
 		}	
     }
-    
-    @FXML
-    void ActionCustomerNewMenuItem(ActionEvent event) {
-	    	
-    	try {
-			final Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
 
-			mainRoot.setCenter(pane);
-
-		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}	
-    
-    }
-
-    @FXML
-    void ActionHeaterNewMenuItem(ActionEvent event) {
-		
-    	try {
-			final Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("heater/view/heaterDetailview.fxml"));
-
-			mainRoot.setCenter(pane);
-
-		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}	
-    }
-    
-    @FXML
-    void ActionBlowerNewMenuItem(ActionEvent event) {
-    	
-    	try {
-			final Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("blower/view/blowerDetailview.fxml"));
-
-			mainRoot.setCenter(pane);
-
-		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}	
-    }
-    
     @FXML
     void ActionInspectorNewMenuItem(ActionEvent event) {
     	
