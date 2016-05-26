@@ -506,7 +506,7 @@ public class ControllerMain {
 			ObservableList<Heater> heaters = feukora.getHeaters();
 			int j = 0;
 			while (j < heaters.size()) {
-				String name = heaters.get(j).getName();
+				String name = heaters.get(j).toString();
 				heaterNames.add(name);			
 				j++;
 			}
@@ -515,7 +515,7 @@ public class ControllerMain {
 			ObservableList<Blower> blowers = feukora.getBlowers();
 			int k = 0;
 			while (k < blowers.size()) {
-				String name = blowers.get(k).getName();
+				String name = blowers.get(k).toString();
 				blowerNames.add(name);			
 				k++;
 			}

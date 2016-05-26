@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a customerheater.
  * 
- * @Version 1.5
+ * @Version 1.6
  * @author Pascal
  *
  */
@@ -20,7 +20,7 @@ import javax.persistence.NamedQuery;
 @NamedQueries ({
 	@NamedQuery(name = "Customerheater.findByCustomerheaterid", query = "SELECT ch FROM Customerheater ch WHERE ch.customerheaterid=:customerheaterid"),
 	@NamedQuery(name = "Customerheater.findByPerformance", query = "SELECT ch FROM Customerheater ch WHERE ch.performance=:performance"),
-	@NamedQuery(name = "Customerheater.getByCustomerId", query = "SELECT ch FROM Customerheater ch WHERE ch.customerid=:customerid")
+	@NamedQuery(name = "Customerheater.findByCustomerId", query = "SELECT ch FROM Customerheater ch WHERE ch.customerid=:customerid")
 	})
 
 public class Customerheater implements Serializable{
@@ -96,8 +96,13 @@ public class Customerheater implements Serializable{
 		this.performance = performance;
 	}
 	
+	public Customer getCustomer()
+	{
+		return customerid;
+	}
+	
 	@Override
 	public String toString () {
-		return customerid.toString();
+		return heaterid.toString() + " / " + blowerid.toString();
 	}
 }

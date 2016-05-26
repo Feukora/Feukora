@@ -1,6 +1,8 @@
 package projekt.feukora.server.business;
 
 import java.util.List;
+
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.persister.CustomerheaterPersister;
 import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
@@ -9,7 +11,7 @@ import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
  * This Class implements the methods of the interface CustomerheaterManager.
  * 
  * @author Robin
- * @version 1.4
+ * @version 1.5
  * 
  */
 public class CustomerheaterManagerImpl implements CustomerheaterManager {
@@ -49,5 +51,10 @@ public class CustomerheaterManagerImpl implements CustomerheaterManager {
 	@Override
 	public List<Customerheater> findCustomerheaterByPerformance(Integer performance) {
 		return customerheaterPersister.findCustomerheaterByPerformance(performance);
+	}
+
+	@Override
+	public List<Customerheater> findCustomerHeaterForCustomer(Customer customer) {
+		return customerheaterPersister.findCustomerHeaterForCustomer( customer );
 	}
 }

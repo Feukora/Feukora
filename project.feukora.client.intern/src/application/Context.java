@@ -103,7 +103,7 @@ public static void setRole(String role) {
 	}
 	
 	public static void setBlower (Blower blower) {
-		blowername = blower.getName();
+		blowername = blower.toString();
 		blowertype = blower.getBlowertype();
 		fuel = blower.getFuel();
 		Context.blower = blower;
@@ -115,7 +115,7 @@ public static void setRole(String role) {
 	
 	public static void setHeater (Heater heater) {
 		Context.heater = heater;
-		heatername = heater.getName();
+		heatername = heater.toString();
 	}
 	
 	public static String getHeaterName () {

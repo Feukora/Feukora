@@ -2,10 +2,10 @@ package calendar.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import javax.management.remote.rmi.RMIServer;
 import org.apache.log4j.Logger;
 import application.Context;
 import calendar.util.CalendarConstants;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
@@ -19,6 +19,7 @@ import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Appointment;
 import projekt.feukora.server.model.Customer;
+import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.model.User;
 
 public class ControllerDetailview {
@@ -51,11 +52,12 @@ public class ControllerDetailview {
 	private TextArea appointmentCommentsField;
 
 	@FXML
-	private ComboBox<?> appointmentHeatercomboBox;
+	private ComboBox<Customerheater> appointmentHeatercomboBox;
 
 	private Appointment appointment;
 	private User inspector;
 	private Calendar cal;
+	private ClientInternRMI cirmi;
 
 	@FXML
 	void ActionAppointmentDateField(ActionEvent event) {
@@ -113,73 +115,86 @@ public class ControllerDetailview {
 
 		@FXML
 		void ActionDetailviewSaveAppointment(ActionEvent event) {
-			//    	String lastname = customerNameField.getText();
-			//    	String adress = customerAddressField.getText();
-			//    	String phone = customerNumberField.getText();
-			//    	String plz = customerZipField.getText();
-			//    	String firstname = customerFirstNameField.getText();
-			//    	String email = customerEmailField.getText();
-			//    	Integer zip = Integer.parseInt(plz);
-			//    	
-			//    	String datum = appointmentDateField.getText();
-			//    	String user = appointmentInspectorField.getText();
-			//    	String creator = appointmentTypistField.getText();
-			//    	String emailuser = appointmentEmailField.getText();
-			//    	String phoneuser = appointmentPhoneField.getText();
-			//    	
-			//    	try {
-			//			ClientInternRMI feukora = new ClientInternRMI();
-			//			feukora.saveAppointment(lastname, adress, phone, zip, firstname, email);
-			//		} catch (Exception e) {
-			//			// TODO Auto-generated catch block
-			//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-			//					e);
-			//	}
-			//    	
-			//    	customerNameField.clear();
-			//    	customerAddressField.clear();
-			//    	customerNumberField.clear();
-			//    	customerZipField.clear();
-			//    	customerFirstNameField.clear();
-			//    	customerEmailField.clear();
+
 		}
 
 		@FXML
 		void ActionAppointmentClientcomboBox(ActionEvent event) {
-
+			fillCustomerHeaterComboBox( appointmentClientcomboBox.getValue() );
+			appointmentHeatercomboBox.getSelectionModel().select( 0 );
 		}
 
 		@FXML
 		void ActionAppointmentHeatercomboBox(ActionEvent event) {
-
+			//do nothing
 		}
 
 		public void initData ( ObservableMap<Object, Object> properties )
-		{	
-			ClientInternRMI cirmi;
+		{
 			try {
 				cirmi = new ClientInternRMI();
 				appointmentClientcomboBox.setItems(cirmi.getCustomers());
-				appointmentClientcomboBox.getSelectionModel().select(0);
 
+				SimpleDateFormat sdf = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYHHMM );
+				
+				appointment = (Appointment) properties.get( CalendarConstants.PROPERTYNAME_APPOINTMENT );
+				Customer customer;
+				
+				if ( appointment == null )
+				{
+					//no appointment exists, create a new one
+					appointmentClientcomboBox.getSelectionModel().select( 0 );
+					customer = appointmentClientcomboBox.getValue();
+					
+					fillCustomerHeaterComboBox( customer );
+					appointmentHeatercomboBox.getSelectionModel().select( 0 );
+					
+					cal = (Calendar) properties.get( CalendarConstants.PROPERTYNAME_DATE );
+					inspector = (User) properties.get( CalendarConstants.PROPERTYNAME_INSPECTOR );
+		
+					appointmentInspectorField.setText( inspector.toString() );
+					appointmentDateField.setText( sdf.format( cal.getTime() ) );
+					
+					detailviewDeleteAppointment.setDisable(true);
+				}
+				else
+				{
+					//appointment exists, fill gui fields with data
+					Customerheater customerHeater = appointment.getCustomerHeater();
+					customer = customerHeater.getCustomer();
+					
+					appointmentInspectorField.setText( appointment.getUser().toString() );
+					appointmentDateField.setText( sdf.format( appointment.getAppointmentdate().getTime() ) );
+					appointmentCommentsField.setText( appointment.getComments() );
+					appointmentClientcomboBox.getSelectionModel().select( customer );
+					
+					fillCustomerHeaterComboBox( customer );
+					appointmentHeatercomboBox.getSelectionModel().select( customerHeater );
+					
+				}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Fehler beim Erstellen der RMI Verbindung", e);
 			}
-
-
-
-			SimpleDateFormat sdf = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYHHMM );
-			cal = (Calendar) properties.get( CalendarConstants.PROPERTYNAME_DATE );
-			inspector = (User) properties.get( CalendarConstants.PROPERTYNAME_INSPECTOR );
-
-			appointmentInspectorField.setText( inspector.toString() );
-			appointmentDateField.setText( sdf.format( cal.getTime() ) );
-
 		}
 
 		@FXML
 		void ActionDetailviewDeleteAppointment(ActionEvent event) {
-
+			if ( appointment != null )
+			{
+				cirmi.deleteAppointment( appointment );
+				ActionDetailviewCancelAppointment( event );
+			}
+		}
+		
+		/**
+		 * Fills the data for the {@link Customerheater} combobox, featured in this GUI
+		 * 
+		 * @param customer
+		 */
+		private void fillCustomerHeaterComboBox ( Customer customer )
+		{
+			ObservableList<Customerheater> cmbCustomerHeaters = FXCollections.observableArrayList();
+			cmbCustomerHeaters.addAll( cirmi.getCustomerHeaters( customer ) );
+			appointmentHeatercomboBox.setItems(cmbCustomerHeaters);
 		}
 	}

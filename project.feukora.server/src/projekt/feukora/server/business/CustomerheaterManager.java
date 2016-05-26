@@ -2,12 +2,13 @@ package projekt.feukora.server.business;
 
 import java.util.List;
 import projekt.feukora.server.model.Customerheater;
+import projekt.feukora.server.model.Customer;
 
 /**
  * Interface to handle customerheater entities.
  * 
  * @author Pascal
- * @version 1.4
+ * @version 1.5
  *
  */
 public interface CustomerheaterManager {
@@ -68,4 +69,12 @@ public interface CustomerheaterManager {
 	 * @return List with Customerheaters
 	 */
 	public List<Customerheater> findCustomerheaterByPerformance(Integer performance);
+	
+	/**
+	 * This method returns a {@link List<Customerheater>} with all heaters for the given customer
+	 * 
+	 * @param customer
+	 * @return {@link List<Customerheater>} with all {@link Customerheater} for the given customer
+	 */
+	public List<Customerheater> findCustomerHeaterForCustomer( Customer customer );
 }

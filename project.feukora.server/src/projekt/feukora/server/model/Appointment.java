@@ -95,5 +95,15 @@ public class Appointment implements Serializable{
 
 	public void setComments(String comments) {
 		this.comments = comments;
-	}	
+	}
+	
+	public User getUser()
+	{
+		return user;
+	}
+	
+	public Customerheater getCustomerHeater()
+	{
+		return costumerheaterid;
+	}
 }

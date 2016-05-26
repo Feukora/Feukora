@@ -62,9 +62,7 @@ public class Blower implements Serializable {
 	public void setFuelid(Fuel fuelid) {
 		this.fuelid = fuelid;
 	}
-	public String getName() {
-		return name;
-	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -75,5 +73,10 @@ public class Blower implements Serializable {
 	
 	public String getFuel() {
 		return fuelid.toString();
+	}
+	
+	public String toString()
+	{
+		return name;
 	}
 }

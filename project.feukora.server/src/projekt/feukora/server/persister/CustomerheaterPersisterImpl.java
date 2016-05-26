@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 
 /**
  * This class implements the interface CustomerheaterPersister
  * 
- * @version 1.5
+ * @version 1.6
  * @author Pascal
  *
  */
@@ -61,5 +63,20 @@ public class CustomerheaterPersisterImpl implements CustomerheaterPersister {
 		em.close();
 
 		return customerheaterlist != null ? customerheaterlist : new ArrayList<Customerheater>();
+	}
+
+	@Override
+	public List<Customerheater> findCustomerHeaterForCustomer(Customer customer) {
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Customerheater> tQuery = em.createNamedQuery("Customerheater.findByCustomerId", Customerheater.class);
+
+		tQuery.setParameter("customerid", customer);
+
+		List<Customerheater> customerHeaterList = tQuery.getResultList();
+
+		em.close();
+
+		return customerHeaterList != null ? customerHeaterList : new ArrayList<Customerheater>();
 	}
 }

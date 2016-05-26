@@ -4,13 +4,14 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 
 /**
  * RMI interface for handling Customerheaters.
  * 
  * @author Pascal
- * @version 1.0
+ * @version 1.1
  */
 public interface CustomerheaterRMI extends Remote {
 	
@@ -72,6 +73,14 @@ public interface CustomerheaterRMI extends Remote {
 	 * @return List with Customerheaters
 	 * @throws RemoteException 
 	 */
-	public List<Customerheater> findCustomerheaterByPerformance(Integer performance) throws RemoteException;
+	List<Customerheater> findCustomerheaterByPerformance(Integer performance) throws RemoteException;
+	
+	/**
+	 * This method returns a {@link List<Customerheater>} with all heaters for the given customer
+	 * 
+	 * @param customer
+	 * @return {@link List<Customerheater>} with all {@link Customerheater} for the given customer
+	 */
+	List<Customerheater> findCustomerHeaterForCustomer( Customer customer ) throws RemoteException;
 
 }
