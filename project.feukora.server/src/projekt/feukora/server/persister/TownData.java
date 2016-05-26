@@ -1,10 +1,12 @@
 package projekt.feukora.server.persister;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import org.apache.log4j.Logger;
+
 import projekt.feukora.server.model.Town;
 
 /**
@@ -18,19 +20,15 @@ public class TownData {
 	private static final Logger logger = Logger
 			.getLogger(TownData.class);
 
-	public static void loadTownData(String fileName) {
-
-		File file = new File(fileName);
-
-		if (!file.canRead() || !file.isFile())
-		{
-			System.exit(0);
-		}
+	public static void loadTownData() {
 
 		BufferedReader in = null;
 		try {
 			TownPersister p = new TownPersisterImpl();
-			in = new BufferedReader(new FileReader(fileName));
+			
+			InputStream is = TownData.class.getClass().getResourceAsStream("/ZIP.txt");
+			
+			in = new BufferedReader(new InputStreamReader( is ));
 			
 			String zeile = null;
 			while ((zeile = in.readLine()) != null) {

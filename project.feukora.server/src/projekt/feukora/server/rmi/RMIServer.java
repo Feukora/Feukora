@@ -2,6 +2,7 @@ package projekt.feukora.server.rmi;
 
 import java.io.InputStream;
 import java.net.InetAddress;
+import java.rmi.RMISecurityManager;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Properties;
@@ -9,10 +10,10 @@ import java.util.Properties;
 import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
-import org.eclipse.persistence.sessions.server.Server;
+import org.apache.log4j.PropertyConfigurator;
+
 import projekt.feukora.server.persister.TownData;
 import test.project.feukora.server.persister.TestdataDB;
-import test.project.feukora.server.persister.TestdataMeasuringresult;
 
 
 /**
@@ -27,17 +28,15 @@ public class RMIServer {
 			.getLogger(RMIServer.class);
 	
 	public static void main(String[] args) {
-		
-		System.setProperty("java.security.policy", "feukora.policy");
-		// SecurityManager installieren
-		System.setSecurityManager(new SecurityManager());
+
 		/* Konfigurationsdaten einlesen */
 		Properties props = new Properties();
-		InputStream is = Server.class.getClassLoader().getResourceAsStream("rmiserver.properties");
+		InputStream is = RMIServer.class.getClass().getResourceAsStream("/rmiserver.properties");
+
 		try {
 			props.load(is);
 		} catch (Exception e) {
-			logger.error("Konfigurationsdaten konnten nicht eingelesen werden\'",
+			logger.error("Konfigurationsdaten konnten nicht eingelesen werden ",
 					e);
 		}
 		int port = Integer.parseInt(props.getProperty("server_port"));
@@ -67,15 +66,15 @@ public class RMIServer {
 
 
 			InetAddress.getLocalHost();
-
+			
 			
 			System.setProperty("java.rmi.server.hostname", hostIP);
 
-			registry = LocateRegistry.createRegistry(port, null, null);
+			registry = LocateRegistry.createRegistry(port);
 
 			if (registry != null) {
-				
-				TownData.loadTownData("resources/ZIP.txt");
+
+				TownData.loadTownData();
 				TestdataDB.loadTestdata();
 				// Entfernte Objekte erstellen
 				CustomerRMI customerRMI = new CustomerRMIImpl();
@@ -94,7 +93,6 @@ public class RMIServer {
 				FacilitymanagerRMI facilitymanagerRMI = new FacilitymanagerRMIImpl();
 				FuelRMI fuelRMI = new FuelRMIImpl();
 				UsergroupRMI usergroupRMI = new UsergroupRMIImpl();
-				
 
 				registry.rebind(customerRMIName, customerRMI);
 				registry.rebind(companyRMIName, companyRMI);
@@ -114,6 +112,8 @@ public class RMIServer {
 				registry.rebind(usergroupRMIName, usergroupRMI);
 				
 			
+				
+				
 				String msg = "RMI-Server ist bereit fuer Client-Anfragen.\n\n"
 						+ "Server herunterfahren?";
 				JOptionPane.showMessageDialog(null, msg, "ServerName ["
@@ -147,8 +147,8 @@ public class RMIServer {
 						.println("Entferntes Objekt konnte nicht exportiert werden!");
 			}
 		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
+			logger.error("Aktion konnte nicht durchgeführt werden ", e);
+			
 		}
 	}
 }
