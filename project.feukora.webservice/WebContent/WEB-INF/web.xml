@@ -5,15 +5,15 @@
   </listener>
   
   <servlet>
-    <servlet-name>FeukoraServlet</servlet-name>
+    <servlet-name>Feukora</servlet-name>
     <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>FeukoraServlet</servlet-name>
-    <url-pattern>/feukora/*</url-pattern>
+    <servlet-name>Feukora</servlet-name>
+    <url-pattern>/*</url-pattern>
   </servlet-mapping>
   <session-config>
-    <session-timeout>180</session-timeout>
+    <session-timeout>120</session-timeout>
   </session-config>
 </web-app>
