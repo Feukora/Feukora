@@ -28,7 +28,9 @@ public class RMIServer {
 	
 	public static void main(String[] args) {
 		
-		
+		System.setProperty("java.security.policy", "feukora.policy");
+		// SecurityManager installieren
+		System.setSecurityManager(new SecurityManager());
 		/* Konfigurationsdaten einlesen */
 		Properties props = new Properties();
 		InputStream is = Server.class.getClassLoader().getResourceAsStream("rmiserver.properties");

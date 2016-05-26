@@ -96,13 +96,11 @@ public class ClientInternRMI {
 	 */
 	public ClientInternRMI() throws Exception {
 
-		System.setProperty("java.security.policy", "feukora.policy");
-		// SecurityManager installieren
-		System.setSecurityManager(new SecurityManager());
+
 		// init rmi connection
 		/* Konfigurationsdaten einlesen */
 		Properties props = new Properties();
-		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("rmiclient.properties");
+		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("rmiclient.txt");
 		try {
 			props.load(is);
 		} catch (Exception e) {
