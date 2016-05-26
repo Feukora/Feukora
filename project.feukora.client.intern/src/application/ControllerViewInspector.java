@@ -54,6 +54,10 @@ public class ControllerViewInspector {
     @FXML
     private MenuItem closeWelcome;
 
+    /**
+     * method for the exit button of the welcome panel
+     * @param event
+     */
     @FXML
     void ActionExitWelcome(ActionEvent event) {
     	Platform.exit();
