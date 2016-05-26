@@ -1,0 +1,9 @@
+# --------------------------------------------- #
+#          RMI Server Properties          #
+# ----------------------------------------------#
+
+# IP-Adresse des Servers
+server_ip=localhost
+
+# Port des Servers
+server_port=9009
