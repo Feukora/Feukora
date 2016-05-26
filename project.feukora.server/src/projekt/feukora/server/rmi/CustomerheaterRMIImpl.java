@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import projekt.feukora.server.business.CustomerheaterManager;
 import projekt.feukora.server.business.CustomerheaterManagerImpl;
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.persister.JpaUtil;
 
@@ -15,7 +16,7 @@ import projekt.feukora.server.persister.JpaUtil;
  * This Class implements the methods of the interface CustomerheaterRMI
  * 
  * @author Pascal
- * @version 1.0
+ * @version 1.1
  */
 
 public class CustomerheaterRMIImpl extends UnicastRemoteObject implements CustomerheaterRMI {
@@ -60,18 +61,12 @@ public class CustomerheaterRMIImpl extends UnicastRemoteObject implements Custom
 
 		@Override
 		public List<Customerheater> findCustomerheaterByPerformance(Integer performance) throws RemoteException {
-			EntityManager em = JpaUtil.createEntityManager();
+			return customerheaterManager.findCustomerheaterByPerformance(performance);
+		}
 
-			TypedQuery<Customerheater> tQuery = em.createNamedQuery("Customerheater.findByPerformance",
-					Customerheater.class);
-
-			tQuery.setParameter("performance", performance);
-
-			List<Customerheater> customerheaterlist = tQuery.getResultList();
-
-			em.close();
-
-			return customerheaterlist != null ? customerheaterlist : new ArrayList<Customerheater>();
+		@Override
+		public List<Customerheater> findCustomerHeaterForCustomer(Customer customer) throws RemoteException {
+			return customerheaterManager.findCustomerHeaterForCustomer(customer);
 		} 
 
 

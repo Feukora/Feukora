@@ -3,6 +3,5 @@
 <endpoints version="2.0"
 	xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
 
-	<endpoint implementation="project.feukora.webservice.model.FeukoraService" url-pattern="/feukora/*" name="Feukora" />
-
+	<endpoint name="Feukora" implementation="project.feukora.webservice.model.FeukoraService" url-pattern="/*"/>
 </endpoints>

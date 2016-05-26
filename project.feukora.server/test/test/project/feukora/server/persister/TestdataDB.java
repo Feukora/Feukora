@@ -129,6 +129,7 @@ public class TestdataDB {
 		Customerheater ch1 = new Customerheater(c1, heater1, blower1, fm1, 1990, 2000, 78);
 		Customerheater ch2 = new Customerheater(c2, heater2, blower2, fm2, 2010, 2010, 200);
 		Customerheater ch3 = new Customerheater(c3, heater3, blower3, fm3, 1999, 2001, 190);
+		Customerheater ch4 = new Customerheater(c1, heater2, blower3, fm1, 1995, 2016, 12);
 		
 		Company com1 = new Company("Centralhof", "Zentralstrasse 24", "045 440 67 43", "centralhof@gmail.ch", zip1);
 		Company com2 = new Company("PHAdmin", "Zürichstrasse 13", "043 387 32 31", "phadmin@outlook.ch", zip2);
@@ -152,6 +153,7 @@ public class TestdataDB {
 		Appointment app1 = new Appointment(ch1, user1, user1, date1, date2, "Kein Kommentar");
 		Appointment app2 = new Appointment(ch2, user2, user2, date3, date4, "Hallo");
 		Appointment app3 = new Appointment(ch3, user3, user3, date1, date3, "Termin");
+		Appointment app4 = new Appointment(ch4, user1, user1, date3, date3, "Test");
 		
 		Rapport rap1 = new Rapport("LU", "Strasse 24", typ1, ch1, user1, app1, date1, true, false, "Kein Kommentar", true, true, true, true, true);
 		Rapport rap2 = new Rapport("GR", "Strasse 25",typ2, ch2, user2, app2, date3, false, true, "Richtiger Kommentar", true, true, true, true, true);
@@ -202,6 +204,7 @@ public class TestdataDB {
 			customerheater.saveCustomerheater(ch1);
 			customerheater.saveCustomerheater(ch2);
 			customerheater.saveCustomerheater(ch3);
+			customerheater.saveCustomerheater(ch4);
 			
 			company.saveCompany(com1);
 			company.saveCompany(com2);
@@ -221,6 +224,7 @@ public class TestdataDB {
 			appointment.saveAppointment(app1);
 			appointment.saveAppointment(app2);
 			appointment.saveAppointment(app3);
+			appointment.saveAppointment(app4);
 			
 			rapport.saveRapport(rap1);
 			rapport.saveRapport(rap2);
@@ -231,7 +235,7 @@ public class TestdataDB {
 			measuringresult.saveMeasuringresult(mr3);
 			
 		} catch (Exception e) {
-			logger.error("Testdaten konnten nicht geladen werden\'",
+			logger.error("Testdaten konnten nicht geladen werden ",
 					e);
 		}	
 	}
