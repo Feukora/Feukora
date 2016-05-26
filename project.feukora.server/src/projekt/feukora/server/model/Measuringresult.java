@@ -1,7 +1,6 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,7 +11,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a measuringresult.
  * 
- * @version 1.1
+ * @version 1.5
  * @author Patrick
  *
  */
@@ -21,6 +20,7 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Measuringresult.findByMeasuringresultid", query = "SELECT mr FROM Measuringresult mr WHERE mr.measuringresultid=:measuringid"),
 })
+
 public class Measuringresult implements Serializable{
 	
 	@Id
@@ -41,7 +41,7 @@ public class Measuringresult implements Serializable{
 	private double exhaustgasloss;
 	
 	/**
-	 * Defaul constructor
+	 * Default constructor
 	 */
 	public Measuringresult(){
 		

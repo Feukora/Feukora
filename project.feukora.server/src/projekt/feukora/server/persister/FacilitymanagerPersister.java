@@ -1,13 +1,12 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Facilitymanager;
 
 /**
  * This interface refers to a Facilitymanager
  * 
- * @version 1.1
+ * @version 1.5
  * @author Pascal
  *
  */
@@ -67,5 +66,4 @@ public interface FacilitymanagerPersister {
 	 * @return List with Facilitymanager
 	 */
 	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname);
-
 }

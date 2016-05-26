@@ -2,7 +2,6 @@ package projekt.feukora.server.model;
 
 import java.io.Serializable;
 import java.util.GregorianCalendar;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,7 +14,7 @@ import javax.persistence.TemporalType;
 /**
  * This class refers to a rapport
  * 
- * @version 1.1
+ * @version 1.4
  * @author Sandro 
  */
 
@@ -100,7 +99,6 @@ public class Rapport implements Serializable {
 		this.carbonmonoxide = carbonmonoxide;	
 	}
 
-	
 	public String getAdress() {
 		return adress;
 	}

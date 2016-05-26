@@ -1,15 +1,12 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
-
-import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.Usergroup;
-
 
 /**
  * This interface refers to a UsergroupPersister
  * 
- * @version 1.1
+ * @version 1.4
  * @author Tamara
  *
  */

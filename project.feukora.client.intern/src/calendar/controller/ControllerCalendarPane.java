@@ -3,7 +3,6 @@ package calendar.controller;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import org.apache.log4j.Logger;
-
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -169,7 +168,6 @@ public class ControllerCalendarPane {
     @FXML
     private Button moveRight;
 
-
     @FXML
     void ActionSetAppointment(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));
@@ -178,21 +176,17 @@ public class ControllerCalendarPane {
     		origin.getProperties().put("user", comboBoxSelectCalendar.getValue());
     		origin.getScene().setRoot(loader.load());
     		ControllerDetailview calendarController = loader.<ControllerDetailview>getController();
-    		calendarController.initData( origin.getProperties() );
-    		
+    		calendarController.initData( origin.getProperties() );	
     		
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
-    	
     }
 
     @FXML
     void ActionComboBoxSelectCalendar(ActionEvent event) {
     	User selectedInspector = comboBoxSelectCalendar.getValue();
-    	//initializeNew(activeUser);
-    	
     }
 
     @FXML
@@ -208,7 +202,6 @@ public class ControllerCalendarPane {
 			feukora = new ClientInternRMI();
 			ObservableList<User> users = feukora.getUsers();
 			comboBoxSelectCalendar.setItems(users);
-			//TODO User überprüfen
 			comboBoxSelectCalendar.getSelectionModel().select(0);
 			
 			Calendar cal = Calendar.getInstance();
@@ -217,10 +210,8 @@ public class ControllerCalendarPane {
 			initNodes( cal, comboBoxSelectCalendar.getValue() );
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
     }
     
     // Hier wird bei einer änderung des Activen users in der Combobox der Kalender neu geladen
@@ -231,12 +222,9 @@ public class ControllerCalendarPane {
 			//Kalenderdaten des activeUser 
 			feukora.getCalendarData(activeUser);
 			
-			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
     }
     
 	private void initNodes( Calendar cal, User user )
@@ -245,7 +233,6 @@ public class ControllerCalendarPane {
         fmt.setCalendar(cal);
     	for ( Node node : calendarPane.getChildren() )
     	{
-            
     		if ( calendarPane.getColumnIndex(node) != null )
     		{
 				int colIndex = calendarPane.getColumnIndex(node);
@@ -399,7 +386,6 @@ public class ControllerCalendarPane {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    
     }
     
     @FXML
@@ -515,6 +501,5 @@ public class ControllerCalendarPane {
     	
     	moveRight.getScene().setRoot(pane);
     }
-
 }
 

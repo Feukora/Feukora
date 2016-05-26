@@ -9,7 +9,7 @@ import projekt.feukora.server.persister.BlowertypePersisterImpl;
  * This Class implements the methods of the interface BlowertypeManager.
  * 
  * @author Patrick
- * @version 1.0
+ * @version 1.4
  */
 public class BlowertypeManagerImpl implements BlowertypeManager {
 

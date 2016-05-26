@@ -1,21 +1,17 @@
 package projekt.feukora.server.persister;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import projekt.feukora.server.model.Controltype;
 
 /**
  * This class implements the interface ControltypePersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Allan
  *
  */
-
 public class ControltypePersisterImpl implements ControltypePersister {
 
 	@Override

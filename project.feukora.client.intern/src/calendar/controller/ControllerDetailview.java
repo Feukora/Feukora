@@ -2,9 +2,7 @@ package calendar.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 import org.apache.log4j.Logger;
-
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -77,14 +75,13 @@ public class ControllerDetailview {
     void ActionDetailviewCancelAppointment(ActionEvent event) {
 		BorderPane pane = new BorderPane();
     	
-    	try { // Funktioniert noch nicht
+    	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-		
     	detailviewCancelAppointment.getScene().setRoot(pane);
     }
     
@@ -103,7 +100,6 @@ public class ControllerDetailview {
 //    	String creator = appointmentTypistField.getText();
 //    	String emailuser = appointmentEmailField.getText();
 //    	String phoneuser = appointmentPhoneField.getText();
-//    	
 //    	
 //    	try {
 //			ClientInternRMI feukora = new ClientInternRMI();
@@ -142,12 +138,10 @@ public class ControllerDetailview {
     	appointmentInspectorField.setText( inspector.toString() );
     	appointmentDateField.setText( sdf.format( cal.getTime() ) );
     	
-    	
     }
     
     @FXML
     void ActionDetailviewDeleteAppointment(ActionEvent event) {
 
     }
-
 }

@@ -8,7 +8,7 @@ import projekt.feukora.server.model.Rapport;
 * Interface for handling rapport entities.
 * 
 * @author Sandro Fasser
-* @version 1.1
+* @version 1.4
 *
 */
 public interface RapportManager {

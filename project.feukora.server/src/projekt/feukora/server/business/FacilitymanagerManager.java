@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Facilitymanager;
  * Interface to handle facillitymanager entities.
  * 
  * @author Pascal
- * @version 1.0
+ * @version 1.4
  *
  */
 public interface FacilitymanagerManager {
@@ -67,6 +67,4 @@ public interface FacilitymanagerManager {
 	 * @return List with Facilitymanager
 	 */
 	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname);
-
-	
 }

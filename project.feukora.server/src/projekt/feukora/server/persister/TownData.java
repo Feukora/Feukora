@@ -1,18 +1,15 @@
 package projekt.feukora.server.persister;
 
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-
 import org.apache.log4j.Logger;
-
 import projekt.feukora.server.model.Town;
 
 /**
  * This class includes Town data
- * @version 1.1
+ * @version 1.5
  * @author Robin
  */
 
@@ -50,7 +47,6 @@ public class TownData {
 					logger.error("Aktion konnte nicht durchgeführt werden ",
 							e);
 				}
-				
 			}
 			
 		} catch (IOException e) {
@@ -63,5 +59,4 @@ public class TownData {
 				}
 		}
 	}
-
 }

@@ -1,7 +1,6 @@
 package customer.controller;
 
 import org.apache.log4j.Logger;
-
 import application.Context;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +11,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
@@ -94,7 +92,6 @@ public class ControllerDetailview {
     @FXML
     void ActionCustomerMunicipalityField(ActionEvent event) {
 
-
     }
 
     @FXML
@@ -117,7 +114,6 @@ public class ControllerDetailview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-
     }
 
     @FXML
@@ -137,9 +133,6 @@ public class ControllerDetailview {
     	} else {
     		
     	}
-    	
-    	
-    
     }
     
     public void setToggleGroup() {
@@ -165,8 +158,7 @@ public class ControllerDetailview {
 	    	}else{
 	    		radioButtonAdministration.setSelected(true);
 	    	}
-	    	Context.setNull();
-    	    	
+	    	Context.setNull();	
     }
 
     @FXML
@@ -214,9 +206,7 @@ public class ControllerDetailview {
     	} else {
     		errorInfoNeu();
     	}
-	    	//feukora.deleteCustomer(customer);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
@@ -245,7 +235,6 @@ public class ControllerDetailview {
     @FXML
     void ActionRadioButtonOwner(ActionEvent event) {
     	
-
     }
 
     @FXML

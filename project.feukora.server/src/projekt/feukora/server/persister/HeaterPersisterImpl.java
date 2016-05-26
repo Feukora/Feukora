@@ -2,16 +2,14 @@ package projekt.feukora.server.persister;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import projekt.feukora.server.model.Heater;
 
 /**
  * This class implements the interface HeaterPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Patrick
  *
  */
@@ -62,5 +60,4 @@ public class HeaterPersisterImpl implements HeaterPersister {
 
 		return heaterlist != null ? heaterlist : new ArrayList<Heater>();
 	}
-
 }

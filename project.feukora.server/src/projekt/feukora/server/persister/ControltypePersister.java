@@ -1,13 +1,12 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Controltype;
 
 /**
  * This interface refers to a ControltypePersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Allan
  *
  */

@@ -1,7 +1,6 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,7 +10,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a customerfunction
  * 
- * @version 1.1
+ * @version 1.5
  * @author Allan
  *
  */
@@ -21,6 +20,7 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Customerfunction.Customerfunctionid", query = "SELECT cf FROM Customerfunction cf WHERE cf.customerfunctionid=:customerfunctionid"),
 	@NamedQuery(name = "Customerfunction.findByName", query = "SELECT cf FROM Customerfunction cf WHERE cf.name=:name")
 })
+
 public class Customerfunction implements Serializable {
 
 	@Id
@@ -43,7 +43,6 @@ public class Customerfunction implements Serializable {
 	public Customerfunction(String name){
 		this.name = name;
 	}
-	
 	
 	public int getCustomerfunctionid() {
 		return customerfunctionid;

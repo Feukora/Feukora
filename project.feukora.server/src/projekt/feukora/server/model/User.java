@@ -1,7 +1,6 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,15 +8,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-
 
 /**
  * This class refers to a user.
  * 
- * @version 1.1
+ * @version 1.6
  * @author Tamara
  */
+
 @Entity
 @Table(name="\"user\"")
 @NamedQueries({
@@ -27,6 +25,7 @@ import javax.persistence.Transient;
 	@NamedQuery(name = "User.findByLastnameAndFirstname", query = "SELECT u FROM User u WHERE u.lastname=:lastname AND u.firstname=:firstname"),
 	@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username=:username"),
 	@NamedQuery(name = "User.findByUsergroup", query = "SELECT u FROM User u WHERE u.usergroupid=:usergroup")})
+
 public class User implements Serializable {
 
 	@Id
@@ -45,7 +44,6 @@ public class User implements Serializable {
 	private String password;
 	private String phone;
 	private String email;
-	
 	
 	/**
 	 * Default constructor

@@ -2,17 +2,14 @@ package projekt.feukora.server.persister;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Town;
 
 /**
  * This class implements the interface TownPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Robin
  *
  */
@@ -21,7 +18,6 @@ public class TownPersisterImpl implements TownPersister {
 	@Override
 	public void saveTown(Town entity) throws Exception {
 		new GenericPersisterImpl<Town>(Town.class).save(entity);
-		
 	}
 
 	@Override
@@ -41,7 +37,6 @@ public class TownPersisterImpl implements TownPersister {
 
 	@Override
 	public Town findbyZip(Integer zip) {
-//		return new GenericPersisterImpl<Town>(Town.class).findById(zip);
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -55,8 +50,6 @@ public class TownPersisterImpl implements TownPersister {
 		em.close();
 		
 		return townlist.get(0);
-
-//		return townlist != null ? townlist : new ArrayList<Town>();
 	}
 
 	@Override

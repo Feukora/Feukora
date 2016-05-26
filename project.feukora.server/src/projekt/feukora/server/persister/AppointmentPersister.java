@@ -1,20 +1,18 @@
 package projekt.feukora.server.persister;
 
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-
 import projekt.feukora.server.model.Appointment;
 
 /**
  * This interface refers to a AppointmentPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Allan
  *
  */
-
 public interface AppointmentPersister {
+	
 	/**
 	 * Save the given entity
 	 * 
@@ -71,4 +69,3 @@ public interface AppointmentPersister {
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
 }
-

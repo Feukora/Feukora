@@ -8,7 +8,7 @@ import projekt.feukora.server.model.Appointment;
  * Interface to handle appointment entities
  * 
  * @author Allan
- * @version 1.1
+ * @version 1.4
  *
  */
 public interface AppointmentManager {

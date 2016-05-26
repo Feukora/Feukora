@@ -1,17 +1,15 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-
 import org.apache.log4j.Logger;
 
 /**
  * Class for all basic-functions, which appears in all subclasses
  * 
- * @version 1.0
+ * @version 1.5
  * @author Pascal
  *
  * @param <T>

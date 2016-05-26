@@ -1,7 +1,6 @@
 package customer.controller;
 
 import org.apache.log4j.Logger;
-
 import application.Context;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,7 +16,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-
 
 /**
  * Sample Skeleton for 'customerOverview.fxml' Controller Class
@@ -104,13 +102,9 @@ public class ControllerOverview {
 						new PropertyValueFactory<Customer, String>("firstname")
 				);
 				
-				
 				overviewTableCustomer.setItems(customers);
 				
-				//overviewTableCustomer.getSelectionModel().get
-				
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				logger.error("Aktion konnte nicht durchgeführt werden\'",
 						e);
 			}
@@ -136,7 +130,6 @@ public class ControllerOverview {
 					e);
 		}
 		initialize();
-    	
     }
 
     @FXML
@@ -169,5 +162,3 @@ public class ControllerOverview {
 		}	
 	}	   	
 }
-
-

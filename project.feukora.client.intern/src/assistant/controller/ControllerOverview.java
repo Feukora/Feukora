@@ -1,17 +1,13 @@
 package assistant.controller;
 
 import org.apache.log4j.Logger;
-
 import application.Context;
-import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-
 /**
  * Sample Skeleton for 'assistantOverview.fxml' Controller Class
  */
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
@@ -22,7 +18,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.User;
 
 public class ControllerOverview {
@@ -54,24 +49,19 @@ public class ControllerOverview {
 	private TableColumn<User, String> columnPhoneAssistant; // Value injected by
 
 	@FXML // fx:id="columnFirstnameAssistant"
-	private TableColumn<User, String> columnFirstnameAssistant; // Value injected by
-														// FXMLLoader
-
+	private TableColumn<User, String> columnFirstnameAssistant; // Value injected by FXMLLoader
+														
 	@FXML // fx:id="columnZIPAssistant"
-	private TableColumn<User, String> columnZIPAssistant; // Value injected by
-													// FXMLLoader
+	private TableColumn<User, String> columnZIPAssistant; // Value injected by FXMLLoader
 
 	@FXML // fx:id="columnNameAssistant"
-	private TableColumn<User, String> columnNameAssistant; // Value injected by
-													// FXMLLoader
+	private TableColumn<User, String> columnNameAssistant; // Value injected by FXMLLoader
 
 	@FXML // fx:id="columnAddressAssistant"
-	private TableColumn<User, String> columnAddressAssistant; // Value injected by
-														// FXMLLoader
+	private TableColumn<User, String> columnAddressAssistant; // Value injected by FXMLLoader
 	
 	@FXML // fx:id="columnCompanyIdAssistant"
-	private TableColumn<User, String> columnCompanyIdAssistant; // Value injected by
-														// FXMLLoader
+	private TableColumn<User, String> columnCompanyIdAssistant; // Value injected by FXMLLoader
 
 	@FXML
 	public void initialize() {
@@ -160,13 +150,11 @@ public class ControllerOverview {
 					e);
 		}
 		initialize();
-    	
     }
 
 	@FXML
 	void ActionOverviewRefreshAssistant(ActionEvent event) {
 		initialize();
-
 	}
 
 	@FXML
@@ -194,5 +182,4 @@ public class ControllerOverview {
 					e);	
 		}	
 	}	
-
 }

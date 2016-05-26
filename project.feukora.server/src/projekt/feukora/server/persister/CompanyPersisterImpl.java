@@ -2,19 +2,16 @@ package projekt.feukora.server.persister;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import projekt.feukora.server.model.Company;
 
 /**
  * This class implements the interface CompanyPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Robin
  */
-
 public class CompanyPersisterImpl implements CompanyPersister {
 
 	@Override

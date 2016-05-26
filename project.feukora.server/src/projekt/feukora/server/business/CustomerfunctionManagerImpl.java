@@ -9,7 +9,7 @@ import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
  * This Class implements the methods of the interface CustomerfunctionManager.
  * 
  * @author Patrick
- * @version 1.0
+ * @version 1.4
  * 
  */
 public class CustomerfunctionManagerImpl implements CustomerfunctionManager {

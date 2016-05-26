@@ -7,7 +7,7 @@ import projekt.feukora.server.model.Customerheater;
  * Interface to handle customerheater entities.
  * 
  * @author Pascal
- * @version 1.0
+ * @version 1.4
  *
  */
 public interface CustomerheaterManager {

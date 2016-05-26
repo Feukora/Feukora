@@ -1,7 +1,6 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,7 +11,7 @@ import javax.persistence.NamedQuery;
 /**
  * This class refers to a customerheater.
  * 
- * @Version 1.2
+ * @Version 1.5
  * @author Pascal
  *
  */
@@ -23,6 +22,7 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Customerheater.findByPerformance", query = "SELECT ch FROM Customerheater ch WHERE ch.performance=:performance"),
 	@NamedQuery(name = "Customerheater.getByCustomerId", query = "SELECT ch FROM Customerheater ch WHERE ch.customerid=:customerid")
 	})
+
 public class Customerheater implements Serializable{
 	
 	@Id

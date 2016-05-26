@@ -1,13 +1,12 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
-
 import projekt.feukora.server.model.Measuringresult;
 
 /**
  * This interface refers to a MeasuringresultPersiser
  * 
- * @version 1.1
+ * @version 1.4
  * @author Patrick
  *
  */

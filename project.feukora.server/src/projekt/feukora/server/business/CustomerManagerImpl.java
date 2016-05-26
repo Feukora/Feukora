@@ -9,7 +9,7 @@ import projekt.feukora.server.persister.CustomerPersisterImpl;
  * This Class implements the methods of the interface CustomerManager.
  * 
  * @author Sandro Fasser
- * @version 1.1
+ * @version 1.4
  * 
  */
 public class CustomerManagerImpl implements CustomerManager {

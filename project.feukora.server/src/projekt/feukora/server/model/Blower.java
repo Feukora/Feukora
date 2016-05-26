@@ -1,7 +1,6 @@
 package projekt.feukora.server.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,19 +8,20 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
+/**
+ * This class refers to a blower.
+ * 
+ * @version 1.5
+ * @author Robin
+ * 
+ */
+
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Blower.findByBlowerid", query = "SELECT b FROM Blower b WHERE b.blowerid=:blowerid"),
 	@NamedQuery(name = "Blower.findByName", query = "SELECT b FROM Blower b WHERE b.name=:name"),
 })
 
-/**
- * This class refers to a blower.
- * 
- * @version 1.1
- * @author Robin
- * 
- */
 public class Blower implements Serializable {
 
 	@Id

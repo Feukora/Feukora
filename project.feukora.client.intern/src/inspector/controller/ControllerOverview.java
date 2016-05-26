@@ -1,16 +1,8 @@
 package inspector.controller;
 
-import java.rmi.RemoteException;
-
 import org.apache.log4j.Logger;
-
 import application.Context;
 import javafx.collections.ObservableList;
-
-/**
- * Sample Skeleton for 'inspectorOverview.fxml' Controller Class
- */
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,8 +14,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.User;
+
+/**
+ * Sample Skeleton for 'inspectorOverview.fxml' Controller Class
+ */
 
 public class ControllerOverview {
 	
@@ -106,10 +101,7 @@ public class ControllerOverview {
 				
 				overviewTableInspector.setItems(users);
 				
-				//overviewTableCustomer.getSelectionModel().get
-				
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				logger.error("Aktion konnte nicht durchgeführt werden\'",
 						e);
 			}
@@ -150,14 +142,12 @@ public class ControllerOverview {
 					e);
 		}
 		initialize();
-    	
     }
 
     @FXML
     void ActionOverviewRefreshInspector(ActionEvent event) {
     	initialize();
     }
-    
     
     @FXML
     void ActionOverviewUpdateInspector(ActionEvent event) {
@@ -184,7 +174,4 @@ public class ControllerOverview {
 					e);	
 		}	
 	}	
-
 }
-
-

@@ -1,9 +1,7 @@
 package projekt.feukora.server.model;
 
-
 import java.io.Serializable;
 import java.util.GregorianCalendar;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,7 +14,7 @@ import javax.persistence.TemporalType;
 /**
  * This class refers to an appointment
  * 
- * @version 1.1
+ * @version 1.4
  * @author Allan
  *
  */

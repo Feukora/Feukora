@@ -1,14 +1,12 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
-
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Fuel;
 
 /**
  * This interface refers to a FuelPersister
  * 
- * @version 1.1
+ * @version 1.5
  * @author Tamara
  * 
  */

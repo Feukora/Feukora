@@ -1,7 +1,6 @@
 package application;
 
 import org.apache.log4j.Logger;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -129,7 +128,6 @@ public class ControllerViewInspector {
 
     @FXML
     void ActionLoginMenuBar(ActionEvent event) {
-    	
     }
     
     @FXML
@@ -210,8 +208,7 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-	}
-    
+	}   
 
     @FXML
     void ActionRapportMenuBar(ActionEvent event) {
@@ -298,6 +295,4 @@ public class ControllerViewInspector {
 					e);
 		}	
     }
-
-
 }

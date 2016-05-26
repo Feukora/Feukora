@@ -9,7 +9,7 @@ import projekt.feukora.server.persister.FacilitymanagerPersisterImpl;
  * This class implements the methodes of the interface FacilitymanagerManager.
  * 
  * @author Pascal
- * @version 1.1
+ * @version 1.4
  *
  */
 public class FacilitymanagerManagerImpl implements FacilitymanagerManager {
@@ -51,4 +51,3 @@ public class FacilitymanagerManagerImpl implements FacilitymanagerManager {
 		return facilitymanagerPersister.findFacilitymanagerByLastname(lastname);
 	}
 }
-
