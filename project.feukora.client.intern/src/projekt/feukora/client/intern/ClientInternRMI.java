@@ -238,6 +238,34 @@ public class ClientInternRMI {
 					e);
 		}
 	}
+	
+	public void deleteRapport(Rapport entity) {
+		try {
+			rapportRMI.deleteRapport(entity);
+		} catch (RemoteException e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+	        alert.setTitle(titleBar);
+	        alert.setHeaderText(headerMessage);
+	        alert.setContentText(infoMessage);
+	        alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+	}
 
 	/**
 	 * 
