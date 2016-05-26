@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import calendar.util.CalendarConstants;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -183,8 +184,8 @@ public class ControllerCalendarPane {
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));
 		Button origin = (Button) event.getSource();
     	try {
-    		origin.getProperties().put("user", comboBoxSelectCalendar.getValue());
-    		origin.getScene().setRoot(loader.load());
+    		origin.getProperties().put( CalendarConstants.PROPERTYNAME_INSPECTOR, comboBoxSelectCalendar.getValue() );
+    		origin.getScene().setRoot( loader.load() );
     		ControllerDetailview calendarController = loader.<ControllerDetailview>getController();
     		calendarController.initData( origin.getProperties() );
     		
@@ -233,7 +234,7 @@ public class ControllerCalendarPane {
     
 	private void initNodes( Calendar cal )
     {
-    	SimpleDateFormat fmt = new SimpleDateFormat("dd.MM.yyyy");
+    	SimpleDateFormat fmt = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYY );
         fmt.setCalendar(cal);
     	for ( Node node : calendarPane.getChildren() )
     	{
@@ -241,11 +242,11 @@ public class ControllerCalendarPane {
     		if ( calendarPane.getColumnIndex(node) != null )
     		{
 				int colIndex = calendarPane.getColumnIndex(node);
-	    		cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek() + colIndex);
+	    		cal.set( Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek() + colIndex );
     		}
     		
     		//init labels
-    		if( node instanceof Label && node.getId() != null && node.getId().startsWith( "lbl" ) )
+    		if( node instanceof Label && node.getId() != null && node.getId().startsWith( CalendarConstants.LABELID_PREFIX_LBL ) )
     		{
 				Label lbl = (Label) node;
 				lbl.setText( lbl.getText().substring(0, 2) + " " + fmt.format( cal.getTime() ) );
@@ -260,23 +261,23 @@ public class ControllerCalendarPane {
 	    		btnCal.set(Calendar.MINUTE, 0);
 	    		btnCal.set(Calendar.SECOND, 0);
 	    		btnCal.set(Calendar.MILLISECOND, 0);
-	    		if ( btn.getId().endsWith( "10" ) )
+	    		if ( btn.getId().endsWith( CalendarConstants.BUTTONID_SUFFIX_TEN ) )
 	    		{
-	    			btnCal.set(Calendar.HOUR_OF_DAY, 8);
+	    			btnCal.set(Calendar.HOUR_OF_DAY, CalendarConstants.APPOINTMENT_TIME_EIGHT);
 	    		}
-	    		else if ( btn.getId().endsWith("12") )
+	    		else if ( btn.getId().endsWith( CalendarConstants.BUTTONID_SUFFIX_TWELVE ) )
 	    		{
-	    			btnCal.set(Calendar.HOUR_OF_DAY, 10);
+	    			btnCal.set(Calendar.HOUR_OF_DAY, CalendarConstants.APPOINTMENT_TIME_TEN);
 	    		}
-	    		else if ( btn.getId().endsWith( "15" ) )
+	    		else if ( btn.getId().endsWith( CalendarConstants.BUTTONID_SUFFIX_FIFTEEN ) )
 	    		{
-	    			btnCal.set(Calendar.HOUR_OF_DAY, 13);
+	    			btnCal.set(Calendar.HOUR_OF_DAY, CalendarConstants.APPOINTMENT_TIME_THIRTEEN);
 	    		}
-	    		else if ( btn.getId().endsWith( "17" ) )
+	    		else if ( btn.getId().endsWith( CalendarConstants.BUTTONID_SUFFIX_SEVENTEEN ) )
 	    		{
-	    			btnCal.set(Calendar.HOUR_OF_DAY, 15);
+	    			btnCal.set(Calendar.HOUR_OF_DAY, CalendarConstants.APPOINTMENT_TIME_FIFTEEN);
 	    		}
-	    		btn.getProperties().put("date", btnCal);
+	    		btn.getProperties().put( CalendarConstants.PROPERTYNAME_DATE, btnCal );
 	    		buttons.add(btn);
     		}
     	}
@@ -524,16 +525,16 @@ public class ControllerCalendarPane {
 	    		for( Button btn : buttons )
 	    		{
 	    			//reset all appointments
-	    			btn.getProperties().remove("appointment");
+	    			btn.getProperties().remove( CalendarConstants.PROPERTYNAME_APPOINTMENT );
 	    			btn.setText("");
 	    			
-	    			Calendar cal = (Calendar) btn.getProperties().get( "date" );
+	    			Calendar btnDate = (Calendar) btn.getProperties().get( CalendarConstants.PROPERTYNAME_DATE );
 	    			Calendar appDate = app.getAppointmentdate();
 	
-	    			if( cal.equals(appDate) )
+	    			if( btnDate.equals( appDate ) )
 	    			{
 	    				btn.setText(app.toString());
-	    				btn.getProperties().put("appointment", app);
+	    				btn.getProperties().put( CalendarConstants.PROPERTYNAME_APPOINTMENT, app );
 	    			}
 	    		}
 	    	}

@@ -7,6 +7,7 @@ import javax.management.remote.rmi.RMIServer;
 
 import org.apache.log4j.Logger;
 
+import calendar.util.CalendarConstants;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
@@ -95,36 +96,7 @@ public class ControllerDetailview {
     
     @FXML
     void ActionDetailviewSaveAppointment(ActionEvent event) {
-//    	String lastname = customerNameField.getText();
-//    	String adress = customerAddressField.getText();
-//    	String phone = customerNumberField.getText();
-//    	String plz = customerZipField.getText();
-//    	String firstname = customerFirstNameField.getText();
-//    	String email = customerEmailField.getText();
-//    	Integer zip = Integer.parseInt(plz);
-//    	
-//    	String datum = appointmentDateField.getText();
-//    	String user = appointmentInspectorField.getText();
-//    	String creator = appointmentTypistField.getText();
-//    	String emailuser = appointmentEmailField.getText();
-//    	String phoneuser = appointmentPhoneField.getText();
-//    	
-//    	
-//    	try {
-//			ClientInternRMI feukora = new ClientInternRMI();
-//			feukora.saveAppointment(lastname, adress, phone, zip, firstname, email);
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-//					e);
-//	}
-//    	
-//    	customerNameField.clear();
-//    	customerAddressField.clear();
-//    	customerNumberField.clear();
-//    	customerZipField.clear();
-//    	customerFirstNameField.clear();
-//    	customerEmailField.clear();
+    	
     }
 
     @FXML
@@ -152,9 +124,9 @@ public class ControllerDetailview {
     	
     	
     	
-    	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm");
-    	cal = (Calendar) properties.get("date");
-    	inspector = (User) properties.get("user");
+    	SimpleDateFormat sdf = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYHHMM );
+    	cal = (Calendar) properties.get( CalendarConstants.PROPERTYNAME_DATE );
+    	inspector = (User) properties.get( CalendarConstants.PROPERTYNAME_INSPECTOR );
     	
     	appointmentInspectorField.setText( inspector.toString() );
     	appointmentDateField.setText( sdf.format( cal.getTime() ) );
