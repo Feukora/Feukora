@@ -87,11 +87,20 @@ public class ControllerViewAssistant {
     @FXML
     private Button exitWelcome;
 
+    /**
+     * method for the exit button of the welcome panel
+     * @param event
+     */
     @FXML
     void ActionExitWelcome(ActionEvent event) {
        	Platform.exit();
     }
     
+   
+    /**
+     * button on the welcome panel to load the the inspector overview
+     * @param event
+     */
     @FXML
     void ActionInspectorWelcome(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
@@ -109,6 +118,10 @@ public class ControllerViewAssistant {
     	inspectorWelcome.getScene().setRoot(pane);
     }
 
+    /**
+     * button on the welcome panel to load the the customer overview
+     * @param event
+     */
     @FXML
     void ActionCustomerWelcome(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
@@ -126,6 +139,10 @@ public class ControllerViewAssistant {
 		customerWelcome.getScene().setRoot(pane);
     }
 
+    /**
+     * button on the welcome panel to load the the rapport overview
+     * @param event
+     */
     @FXML
     void ActionRapportWelcome(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
@@ -142,6 +159,10 @@ public class ControllerViewAssistant {
     	rapportWelcome.getScene().setRoot(pane);
     }
 
+    /**
+     * button on the welcome panel to load the the heater overview
+     * @param event
+     */
     @FXML
     void ActionHeaterWelcome(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
@@ -159,6 +180,10 @@ public class ControllerViewAssistant {
 		heaterWelcome.getScene().setRoot(pane);
     }
     
+    /**
+     * button on the welcome panel to load the the calendar overview
+     * @param event
+     */
     @FXML
     void ActionCalendarWelcome(ActionEvent event) {
     	BorderPane pane = new BorderPane();
@@ -174,6 +199,10 @@ public class ControllerViewAssistant {
 		}	
     }
 
+    /**
+     * button on the welcome panel to load the the blower overview
+     * @param event
+     */
     @FXML
     void ActionBlowerWelcome(ActionEvent event) {
     	
@@ -192,11 +221,19 @@ public class ControllerViewAssistant {
 		blowerWelcome.getScene().setRoot(pane);
 		}
     
+    /**
+     * exit button to close the panel
+     * @param event
+     */
     @FXML
     void ActionCloseMenuBar(ActionEvent event) {
     	Platform.exit();
     }
 
+    /**
+     * method to load the calendar overview through the menubar
+     * @param event
+     */
     @FXML
     void ActionCalenderMenuBar(ActionEvent event) {
     	BorderPane pane = new BorderPane();
@@ -212,6 +249,10 @@ public class ControllerViewAssistant {
 		}
     }
 
+    /**
+     * method to load the inspector overview through the menubar
+     * @param event
+     */
     @FXML
     void ActionInspectorMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
@@ -227,6 +268,10 @@ public class ControllerViewAssistant {
 		}	
     }
 
+    /**
+     * method to load the customer overview through the menubar
+     * @param event
+     */
     @FXML
     void ActionCustomerMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
@@ -242,6 +287,10 @@ public class ControllerViewAssistant {
 		}	
 	}
 
+    /**
+     * method to load the blower overview through the menubar
+     * @param event
+     */
     @FXML
     void ActionBlowerMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
@@ -257,6 +306,10 @@ public class ControllerViewAssistant {
 		}	
 	}
     
+    /**
+     * method to load the rapport overview through the menubar
+     * @param event
+     */
     @FXML
     void ActionRapportMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
@@ -272,6 +325,10 @@ public class ControllerViewAssistant {
 		}	
 	}
 
+    /**
+     * method to load the heater overview through the menubar
+     * @param event
+     */
     @FXML
     void ActionHeaterMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
@@ -287,6 +344,10 @@ public class ControllerViewAssistant {
 		}	
 	}
     
+    /**
+     * method to load the customer detailview through the menubar
+     * @param event
+     */
     @FXML
     void ActionCustomerNewMenuItem(ActionEvent event) {
 	    	
@@ -301,6 +362,10 @@ public class ControllerViewAssistant {
 		}	
     }
     
+    /**
+     * method to load the rapport detailview through the menubar
+     * @param event
+     */
     @FXML
     void ActionRapportNewMenuItem(ActionEvent event) {
 		
@@ -315,6 +380,10 @@ public class ControllerViewAssistant {
 		}	
     }
 
+    /**
+     * method to load the heater detailview through the menubar
+     * @param event
+     */
     @FXML
     void ActionHeaterNewMenuItem(ActionEvent event) {
 		
@@ -329,6 +398,10 @@ public class ControllerViewAssistant {
 		}	
     }
     
+    /**
+     * method to load the blower detailview through the menubar
+     * @param event
+     */
     @FXML
     void ActionBlowerNewMenuItem(ActionEvent event) {
     	
@@ -343,6 +416,10 @@ public class ControllerViewAssistant {
 		}	
     }
     
+    /**
+     * method to load the inspector detailview through the menubar
+     * @param event
+     */
     @FXML
     void ActionInspectorNewMenuItem(ActionEvent event) {
     	

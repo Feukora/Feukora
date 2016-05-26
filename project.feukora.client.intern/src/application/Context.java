@@ -46,6 +46,10 @@ public class Context {
 		
 	}
 	
+	/**
+	 * saves the customers Information in a cache
+	 * @param customer
+	 */
 	public static void setCustomer(Customer customer) {
 		
 		customerid = customer.getCustomerid();
@@ -145,6 +149,9 @@ public static void setRole(String role) {
 		return fuel;
 	}
 	
+	/**
+	 * sets all fields to null
+	 */
 	public static void setNull() {
 		companyname = null;
 		lastname = null;
@@ -163,7 +170,10 @@ public static void setRole(String role) {
     	heatername = null;
     	
 	}
-	
+	/**
+	 * saves the customers Information in a cache
+	 * @param user
+	 */
 	public static void setUser(User user) {
 		companyname = null;
 		lastname = user.getLastname();
