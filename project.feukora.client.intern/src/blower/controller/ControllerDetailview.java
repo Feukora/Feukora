@@ -73,6 +73,9 @@ public class ControllerDetailview {
 		}
 	}
 
+	/**
+	 * method to bind radiobuttons together
+	 */
 	public void setToggleGroup() {
 		radioButtonOil.setToggleGroup(fuel);
 		radioButtonGas.setToggleGroup(fuel);
@@ -102,6 +105,9 @@ public class ControllerDetailview {
 		alert.showAndWait();
 	}
 
+	/**
+	 * method to get the data of the chosen record
+	 */
 	public void Update() {
 		blower1 = Context.getBlower();
 		blowerNameField.setText(Context.getBlowername());
@@ -122,6 +128,10 @@ public class ControllerDetailview {
 		Context.setNull();
 	}
 
+	/**
+	 * method to update the the selected record
+	 * @param event
+	 */
 	@FXML
 	void ActionDetailviewSaveBlower(ActionEvent event) {
 		String blowerName = blowerNameField.getText();
@@ -175,6 +185,10 @@ public class ControllerDetailview {
 		}
 	}
 
+	/**
+	 * method to cancel the action
+	 * @param event
+	 */
 	@FXML
 	void ActionDetailviewCancelBlower(ActionEvent event) {
 		BorderPane pane = new BorderPane();

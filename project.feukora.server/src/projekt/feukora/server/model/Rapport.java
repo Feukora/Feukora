@@ -23,9 +23,9 @@ import javax.persistence.TemporalType;
 	@NamedQuery(name = "Rapport.findByRapportid", query = "SELECT r FROM Rapport r WHERE r.rapportid=:rapportid"),
 	@NamedQuery(name = "Rapport.findByMeasuringdate", query = "SELECT r FROM Rapport r WHERE r.measuringdate=:measuringdate"),
 	@NamedQuery(name = "Rapport.findByResults", query = "SELECT r FROM Rapport r WHERE r.results=:results"),
-	})
+})
 public class Rapport implements Serializable {
-	
+
 	@Id
 	@GeneratedValue 
 	private int rapportid;
@@ -49,20 +49,19 @@ public class Rapport implements Serializable {
 	private Boolean carbonmonoxide;
 	private String adress;
 	private String canton;
-	
+
 	/**
 	 * Default constructor
 	 */
-	public Rapport(){
-		
+	public Rapport() {
+
 	}
-	
-	public Rapport( User user )
-	{
+
+	public Rapport( User user ) {
 		userid = user;
 		measuringdate = new GregorianCalendar();
 	}
-	
+
 	/**
 	 * 
 	 * Rapport Constructor
@@ -190,20 +189,20 @@ public class Rapport implements Serializable {
 	public void setCarbonmonoxide(Boolean carbonmonoxide) {
 		this.carbonmonoxide = carbonmonoxide;
 	}
-	
+
 	public String getDate() {
 		return measuringdate.toString();
 	}
-	
+
 	public String getControltype() {
 		return controltypeid.toString();
 	}
-	
+
 	public String getInspector() {
 		return userid.toString();
 	}
-	
+
 	public String getCustomerheater() {
-		return customerheaterid.toString();
+		return customerheaterid.getHeater();
 	}
 }

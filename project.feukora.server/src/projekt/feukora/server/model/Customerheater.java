@@ -21,10 +21,10 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Customerheater.findByCustomerheaterid", query = "SELECT ch FROM Customerheater ch WHERE ch.customerheaterid=:customerheaterid"),
 	@NamedQuery(name = "Customerheater.findByPerformance", query = "SELECT ch FROM Customerheater ch WHERE ch.performance=:performance"),
 	@NamedQuery(name = "Customerheater.findByCustomerId", query = "SELECT ch FROM Customerheater ch WHERE ch.customerid=:customerid")
-	})
+})
 
 public class Customerheater implements Serializable{
-	
+
 	@Id
 	@GeneratedValue
 	private int customerheaterid;
@@ -39,13 +39,13 @@ public class Customerheater implements Serializable{
 	private int bloweryear;
 	private int heateryear;
 	private int performance;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Customerheater() {	
 	}
-	
+
 	/**
 	 * Customerheater constructor
 	 * 
@@ -57,7 +57,7 @@ public class Customerheater implements Serializable{
 	 * @param heateryear
 	 * @param performance
 	 */
-	
+
 	public Customerheater(Customer customerid, Heater heaterid, Blower blowerid, Facilitymanager facilitymanagerid, int bloweryear, int heateryear, int performance) {
 		this.customerid = customerid;
 		this.heaterid = heaterid;
@@ -67,7 +67,7 @@ public class Customerheater implements Serializable{
 		this.heateryear = heateryear;
 		this.performance = performance;
 	}
-	
+
 	public int getCustomerheaterid() {
 		return customerheaterid;
 	}
@@ -75,32 +75,36 @@ public class Customerheater implements Serializable{
 	public int getBloweryear() {
 		return bloweryear;
 	}
-	
+
 	public void setBloweryear(int bloweryear) {
 		this.bloweryear = bloweryear;
 	}
-	
+
 	public int getHeateryear() {
 		return heateryear;
 	}
-	
+
 	public void setHeateryear(int heateryear) {
 		this.heateryear = heateryear;
 	}
-	
+
 	public int getPerformance() {
 		return performance;
 	}
-	
+
 	public void setPerformance(int performance) {
 		this.performance = performance;
 	}
-	
+
 	public Customer getCustomer()
 	{
 		return customerid;
 	}
-	
+
+	public String getHeater() {
+		return customerid.toString();
+	}
+
 	@Override
 	public String toString () {
 		return heaterid.toString() + " / " + blowerid.toString();

@@ -45,6 +45,10 @@ public class ControllerLogin {
 
 	}
 
+	/**
+	 * method to check username and password
+	 * @param event
+	 */
 	@FXML
 	void ActionPasswordLoginTextfield(ActionEvent event) {
 		BorderPane pane = new BorderPane();
@@ -104,6 +108,10 @@ public class ControllerLogin {
 		loginLogin.getScene().setRoot(pane);
 	}
 
+	/**
+	 * button to start the method that varifies the username and password
+	 * @param event
+	 */
 	@FXML
 	void ActionLoginLogin(ActionEvent event) {
 		BorderPane pane = new BorderPane();
@@ -153,6 +161,10 @@ public class ControllerLogin {
 		loginLogin.getScene().setRoot(pane);
 	}
 
+	/**
+	 * method when the user forgets the password
+	 * @param event
+	 */
 	@FXML
 	void ActionPasswordForgetLogin(ActionEvent event) {
 		String titleBar = "Passwort vergessen?";
