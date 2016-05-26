@@ -107,21 +107,6 @@ public class ControllerOverview {
 			}
 	}
     
-    /*@FXML
-    void ActionOverviewDeleteInspector(ActionEvent event) {
-    	ClientInternRMI feukora;
-		try {
-			feukora = new ClientInternRMI();
-	    	User entity = overviewTableInspector.getSelectionModel().getSelectedItem();
-	    	feukora.deleteUser(entity);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}
-		initialize();
-    }*/
-    
     @FXML
     void ActionOverviewDeleteInspector(ActionEvent event) {
     	ClientInternRMI feukora;

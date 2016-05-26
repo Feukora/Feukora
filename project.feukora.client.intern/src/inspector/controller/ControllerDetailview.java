@@ -149,7 +149,7 @@ public class ControllerDetailview {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if(Context.getUser() != null) {
+		if(Context.getUser() != null && Context.getName().isEmpty() == false) {
 			Update();
 		} else {
 		}
@@ -197,8 +197,17 @@ public class ControllerDetailview {
 			} else {
 				feukora.updateInspectorUser(inspector, zip, company, firstname, lastname, adress, phone, email, username, password);
 			}
-				
-
+			
+				inspectorNameField.clear();
+				inspectorAddressField.clear();
+				inspectorPhoneField.clear();
+				inspectorZipField.clear();
+				inspectorFirstNameField.clear();
+				inspectorEmailField.clear();
+				inspectorUsernameField.clear();
+				inspectorPasswordField.clear();
+				inspectorCompanyFieldCombo.getSelectionModel().clearSelection();
+				inspectorMunicipalityField.clear();
 				
 			} else {
 				errorInfoNeu();

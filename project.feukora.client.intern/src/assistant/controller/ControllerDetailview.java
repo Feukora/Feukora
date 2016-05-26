@@ -223,7 +223,7 @@ public class ControllerDetailview {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(Context.getUser() != null) {
+		if(Context.getUser() != null && Context.getName().isEmpty() == false) {
 			Update();
 		} else {
 		}
