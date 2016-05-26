@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="mainRoot" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerViewInspector">
+   <top>
+      <MenuBar fx:id="mBar" prefHeight="50.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Datei">
+               <items>
+                 <MenuItem fx:id="closeWelcome" mnemonicParsing="false" onAction="#ActionCloseMenuBar" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Terminkalender">
+               <items>
+                  <MenuItem fx:id="calenderMenuBar" mnemonicParsing="false" onAction="#ActionCalenderMenuBar" text="Terminkalender" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Rapporte">
+               <items>
+                  <MenuItem fx:id="rapportMenuBar" mnemonicParsing="false" onAction="#ActionRapportMenuBar" text="Übersicht" />
+                  <MenuItem fx:id="rapportNewMenuItem" mnemonicParsing="false" onAction="#ActionRapportNewMenuItem" text="Neu" />
+               </items></Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="exitWelcome" layoutX="799.0" layoutY="430.0" mnemonicParsing="false" onAction="#ActionExitWelcome" prefHeight="40.0" prefWidth="140.0" text="Exit" />
+            <HBox layoutX="150.0" layoutY="216.0" prefHeight="131.0" prefWidth="858.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0">
+               <children>
+                  <VBox prefHeight="131.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="rapportWelcome" mnemonicParsing="false" onAction="#ActionRapportWelcome" prefHeight="40.0" prefWidth="200.0" text="Rapporte">
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="150.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="131.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="rapportNewWelcome" mnemonicParsing="false" onAction="#ActionRapportNewWelcome" prefHeight="40.0" prefWidth="200.0" text="Rapport: Neu" />
+                     </children>
+                     <HBox.margin>
+                        <Insets right="150.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="131.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="calendarWelcome" mnemonicParsing="false" onAction="#ActionCalendarWelcome" prefHeight="40.0" prefWidth="200.0" text="Kalender" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label layoutX="450.0" layoutY="89.0" prefHeight="40.0" prefWidth="200.0" text="Welcome">
+               <font>
+                  <Font name="Arabic Typesetting" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
