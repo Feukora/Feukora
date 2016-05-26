@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Company.findByCompanyid", query = "SELECT com FROM Company com WHERE com.companyid=:companyid"),
 	@NamedQuery(name = "Company.findByName", query = "SELECT com FROM Company com WHERE com.name=:name"),
-	 })
+})
 
 /**
  * This class refers to a company.
@@ -21,7 +21,7 @@ import javax.persistence.NamedQuery;
  * @version 1.4
  */
 public class Company implements Serializable {
-	
+
 	@Id
 	@GeneratedValue
 	private int companyid;
@@ -31,14 +31,14 @@ public class Company implements Serializable {
 	private String email;
 	@ManyToOne
 	private Town zip;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Company(){
-		
+
 	}
-	
+
 	/**
 	 * Company constructor
 	 * 
@@ -91,7 +91,7 @@ public class Company implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	@Override
 	public String toString() {
 		return name;

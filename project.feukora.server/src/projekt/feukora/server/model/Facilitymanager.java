@@ -26,14 +26,14 @@ public class Facilitymanager implements Serializable {
 	@GeneratedValue
 	private int facilitymanagerid;
 	private String lastname;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Facilitymanager() {
-		
+
 	}
-	
+
 	/**
 	 * Facilitymanager Constructor
 	 * 
@@ -42,7 +42,7 @@ public class Facilitymanager implements Serializable {
 	public Facilitymanager(String lastname) {
 		this.lastname = lastname;
 	}
-	
+
 	public int getFacilitymanagerid() {
 		return facilitymanagerid;
 	}
@@ -50,7 +50,7 @@ public class Facilitymanager implements Serializable {
 	public String getlastname() {
 		return lastname;
 	}
-	
+
 	public void setlastname(String lastname) {
 		this.lastname = lastname;
 	}

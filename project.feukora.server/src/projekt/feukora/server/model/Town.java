@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
  * This class refers to a town.
  * 
  * @version 1.7
- * @author Sandro Fasser
+ * @author Sandro
  * 
  */
 
@@ -34,22 +34,22 @@ public class Town implements Serializable {
 	/**
 	 * Default constructor
 	 */
-	public Town(){
-		
+	public Town() {
+
 	}
-	
+
 	/**
 	 * Town constructor
 	 * 
 	 * @param name
 	 * @param canton
 	 */
-	
-	public Town (String name, String canton){
-	this.name = name;
-	this.canton = canton;
+
+	public Town (String name, String canton) {
+		this.name = name;
+		this.canton = canton;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -65,7 +65,7 @@ public class Town implements Serializable {
 	public void setZip(int zip) {
 		this.zip = zip;
 	}
-		
+
 	public String getName() {
 		return name;
 	}
@@ -81,10 +81,9 @@ public class Town implements Serializable {
 	public void setCanton(String canton) {
 		this.canton = canton;
 	}	
-	
+
 	@Override
 	public String toString() {
-//		return zip + "";
 		return zip + " " + name;
 	}
 }

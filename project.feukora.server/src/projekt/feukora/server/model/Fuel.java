@@ -19,25 +19,25 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Fuel.findByName", query = "SELECT f FROM Fuel f WHERE f.name=:name") })
 
 public class Fuel implements Serializable{
-	
+
 	@Id
 	@GeneratedValue
 	private int fuelid;
 	private String name;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Fuel(){
-		
+
 	}
-	
+
 	/**
 	 * Fuel constructor
 	 * 
 	 * @param name
 	 */
-	public Fuel(String name){
+	public Fuel(String name) {
 		this.name = name;
 	}
 
@@ -52,7 +52,7 @@ public class Fuel implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String toString() {
 		return name;

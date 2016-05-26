@@ -27,23 +27,23 @@ public class Customerfunction implements Serializable {
 	@GeneratedValue
 	private int customerfunctionid;
 	private String name;
-	
+
 	/**
 	 * Default constructor
 	 * 
 	 */
 	public Customerfunction(){
 	}
-	
+
 	/**
 	 * Customerfunction constructor
 	 * 
 	 * @param name
 	 */
-	public Customerfunction(String name){
+	public Customerfunction(String name) {
 		this.name = name;
 	}
-	
+
 	public int getCustomerfunctionid() {
 		return customerfunctionid;
 	}
@@ -51,11 +51,11 @@ public class Customerfunction implements Serializable {
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String toString() {
 		return name;

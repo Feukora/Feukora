@@ -24,7 +24,7 @@ import javax.persistence.TemporalType;
 	@NamedQuery(name = "Appointment.findByAppointmentid", query = "SELECT a FROM Appointment a WHERE a.appointmentid=:appointmentid"),
 	@NamedQuery(name = "Appointment.findByAppointmentdate", query = "SELECT a FROM Appointment a WHERE a.appointmentdate=:appointmentdate"),
 	@NamedQuery(name= "Appointment.findByUserId", query = "SELECT a FROM Appointment a WHERE a.user=:userId")
- })
+})
 
 public class Appointment implements Serializable{
 
@@ -42,14 +42,14 @@ public class Appointment implements Serializable{
 	@Temporal (TemporalType.TIMESTAMP)
 	private GregorianCalendar appointmentdate;
 	private String comments;
-	
+
 	/**
 	 * Default constructor
 	 */
-	public Appointment()
-	{
+	public Appointment(){
+
 	}
-	
+
 	/**
 	 * Appointment constructor 
 	 * 
@@ -62,20 +62,19 @@ public class Appointment implements Serializable{
 	 */
 	public Appointment(Customerheater costumerheaterid, User user, User createdby, GregorianCalendar created,
 			GregorianCalendar appointmentdate, String comments){
+		this.costumerheaterid = costumerheaterid;
+		this.user = user;
+		this.createdby = createdby;
+		this.created = created;
 		this.appointmentdate = appointmentdate;
 		this.comments = comments;
-		this.created = created;
-		this.costumerheaterid = costumerheaterid;
-		this.createdby = createdby;
-		this.user = user;
 	}
-	
-	public Appointment( User currLoggedInUser )
-	{
+
+	public Appointment(User currLoggedInUser) {
 		this.created = new GregorianCalendar();
 		this.createdby = currLoggedInUser;
 	}
-	
+
 	public int getAppointmentid() {
 		return appointmentid;
 	}
@@ -95,24 +94,20 @@ public class Appointment implements Serializable{
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
-	
-	public User getUser()
-	{
+
+	public User getUser() {
 		return user;
 	}
-	
-	public Customerheater getCustomerHeater()
-	{
+
+	public Customerheater getCustomerHeater() {
 		return costumerheaterid;
 	}
-	
-	public void setUser( User user )
-	{
+
+	public void setUser( User user ) {
 		this.user = user;
 	}
-	
-	public void setCustomerHeater ( Customerheater customerHeater )
-	{
+
+	public void setCustomerHeater ( Customerheater customerHeater ) {
 		this.costumerheaterid = customerHeater;
 	}
 }

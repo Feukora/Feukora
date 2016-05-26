@@ -44,14 +44,14 @@ public class User implements Serializable {
 	private String password;
 	private String phone;
 	private String email;
-	
+
 	/**
 	 * Default constructor
 	 */
-	public User(){
-		
+	public User() {
+
 	}
-	
+
 	/**
 	 * User Constructor
 	 * 
@@ -149,11 +149,11 @@ public class User implements Serializable {
 	public String getTown(){
 		return zip.toString();
 	}
-	
+
 	public String getCompany() {
 		return companyid.toString();
 	}
-	
+
 	/**
 	 * Returns the currently logged in user or null if the credentials were wrong
 	 * 
@@ -172,7 +172,7 @@ public class User implements Serializable {
 	public Usergroup getUsergroupid() {
 		return usergroupid;
 	}
-	
+
 	@Override
 	public String toString() {
 		return lastname + " " + firstname;

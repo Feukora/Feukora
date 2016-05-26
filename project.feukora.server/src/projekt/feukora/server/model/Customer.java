@@ -25,7 +25,7 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Customer.findByLastnameAndFirstname", query = "SELECT c FROM Customer c WHERE c.lastname=:lastname AND c.firstname=:firstname")})
 
 public class Customer implements Serializable{
-	
+
 	@Id
 	@GeneratedValue
 	private int customerid;
@@ -39,14 +39,14 @@ public class Customer implements Serializable{
 	private String email;
 	@ManyToOne
 	private Town zip;
-	 
+
 	/**
 	 * Default constructor
 	 */
 	public Customer() {
-		
+
 	}
-	
+
 	/**
 	 * Customer constructor
 	 * 
@@ -126,7 +126,7 @@ public class Customer implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public String getTown(){
 		return zip.toString();
 	}
@@ -138,7 +138,7 @@ public class Customer implements Serializable{
 	public void setTown(Town zip) {
 		this.zip = zip;
 	}
-	
+
 	@Override
 	public String toString() {
 		return lastname + " " + firstname;
