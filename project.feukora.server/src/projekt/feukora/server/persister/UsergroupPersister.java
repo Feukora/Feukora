@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Usergroup;
  *
  */
 public interface UsergroupPersister {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -59,12 +59,12 @@ public interface UsergroupPersister {
 	 * @return
 	 */
 	List<Usergroup> findAllUsergroup();
-	
+
 	/**
 	 * Return a list with entities with this name
 	 * 
 	 * @param name
 	 * @return Usergroup
 	 */
-	public Usergroup findUsergroupByName(String name);
+	Usergroup findUsergroupByName(String name);
 }

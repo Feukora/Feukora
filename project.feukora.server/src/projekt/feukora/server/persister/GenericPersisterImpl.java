@@ -61,7 +61,7 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 			eMerged = em.merge(entity);
 
 			logger.info("Entity vom Typ " + classType.getSimpleName()
-					+ " wird updatet: " + entity);
+			+ " wird updatet: " + entity);
 
 			em.getTransaction().commit();
 		} catch (Exception e) {
@@ -118,7 +118,7 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 
 		EntityManager em = JpaUtil.createEntityManager();
 		String strQuery = "DELETE FROM " + classType.getSimpleName()
-				+ " entity WHERE entity.id = :id";
+		+ " entity WHERE entity.id = :id";
 
 		Query query = em.createQuery(strQuery);
 		query.setParameter("id", id);
@@ -129,7 +129,7 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 			query.executeUpdate();
 
 			logger.info("Entity vom Typ " + classType.getSimpleName()
-					+ " mit id = " + id + " wird gelöscht");
+			+ " mit id = " + id + " wird gelöscht");
 
 			em.getTransaction().commit();
 		} catch (Exception e) {
@@ -153,7 +153,7 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 	@Override
 	public List<T> findAll() {
 		String sql = "SELECT entity FROM " + classType.getSimpleName()
-				+ " entity";
+		+ " entity";
 		TypedQuery<T> q = JpaUtil.createEntityManager().createQuery(sql,
 				classType);
 		return q.getResultList();

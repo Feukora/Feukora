@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Town;
  *
  */
 public interface TownPersister {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -43,7 +43,7 @@ public interface TownPersister {
 	 * @param id
 	 * @throws Exception
 	 */
-	
+
 	void deleteTownByZip(Integer zip) throws Exception;
 
 	/**
@@ -67,13 +67,13 @@ public interface TownPersister {
 	 * @param name
 	 * @return List of Towns
 	 */
-	public List<Town> findTownByName(String name);
-	
+	List<Town> findTownByName(String name);
+
 	/**
 	 * Return a list with entities with this canton
 	 * 
 	 * @param name
 	 * @return List of Towns
 	 */
-	public List<Town> findTownByCanton(String canton);
+	List<Town> findTownByCanton(String canton);
 }

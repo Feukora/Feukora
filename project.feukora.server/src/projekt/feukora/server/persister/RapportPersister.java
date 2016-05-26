@@ -12,6 +12,7 @@ import projekt.feukora.server.model.Rapport;
  *
  */
 public interface RapportPersister {
+
 	/**
 	 * Save the given entity
 	 * 
@@ -66,14 +67,13 @@ public interface RapportPersister {
 	 * @param name
 	 * @return List with Rapports
 	 */
-	public List<Rapport> findRapportByResults(Boolean results);
-	
+	List<Rapport> findRapportByResults(Boolean results);
+
 	/**
 	 * Return a list with rapports with this measuringdate
 	 * 
 	 * @param name
 	 * @return List with Rapports
 	 */
-	public List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate);
-	
+	List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate);	
 }

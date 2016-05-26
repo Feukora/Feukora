@@ -13,12 +13,11 @@ import projekt.feukora.server.model.Facilitymanager;
  * @author Pascal
  *
  */
-public class FacilitymanagerPersisterImpl implements FacilitymanagerPersister{
+public class FacilitymanagerPersisterImpl implements FacilitymanagerPersister {
 
 	@Override
 	public void saveFacilitymanager(Facilitymanager entity) throws Exception {
-		new GenericPersisterImpl<Facilitymanager>(Facilitymanager.class).save(entity);
-		
+		new GenericPersisterImpl<Facilitymanager>(Facilitymanager.class).save(entity);	
 	}
 
 	@Override
@@ -28,8 +27,7 @@ public class FacilitymanagerPersisterImpl implements FacilitymanagerPersister{
 
 	@Override
 	public void deleteFacilitymanager(Facilitymanager entity) throws Exception {
-		new GenericPersisterImpl<Facilitymanager>(Facilitymanager.class).delete(entity);
-		
+		new GenericPersisterImpl<Facilitymanager>(Facilitymanager.class).delete(entity);	
 	}
 
 	@Override

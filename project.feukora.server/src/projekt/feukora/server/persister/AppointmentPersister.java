@@ -1,6 +1,5 @@
 package projekt.feukora.server.persister;
-import java.rmi.RemoteException;
-import java.util.Date;
+
 import java.util.GregorianCalendar;
 import java.util.List;
 import projekt.feukora.server.model.Appointment;
@@ -14,7 +13,7 @@ import projekt.feukora.server.model.User;
  *
  */
 public interface AppointmentPersister {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -69,8 +68,8 @@ public interface AppointmentPersister {
 	 * @param appointmentdate
 	 * @return
 	 */
-	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
+	List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
 
-	
+
 	List<Appointment> findAppointmentsForInspector( User inspector );
 }

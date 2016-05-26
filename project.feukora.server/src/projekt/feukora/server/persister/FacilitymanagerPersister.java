@@ -11,6 +11,7 @@ import projekt.feukora.server.model.Facilitymanager;
  *
  */
 public interface FacilitymanagerPersister {
+
 	/**
 	 * Save the given entity
 	 * 
@@ -58,12 +59,12 @@ public interface FacilitymanagerPersister {
 	 * @return
 	 */
 	List<Facilitymanager> findAllFacilitymanagers();
-	
+
 	/**
 	 * Return a list with Facilitymanager with this lastname
 	 * 
 	 * @param name
 	 * @return List with Facilitymanager
 	 */
-	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname);
+	List<Facilitymanager> findFacilitymanagerByLastname(String lastname);
 }

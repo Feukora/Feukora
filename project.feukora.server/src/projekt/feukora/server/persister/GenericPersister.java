@@ -10,7 +10,8 @@ import java.util.List;
  *
  * @param <T>
  */
-public interface GenericPersister<T>{
+public interface GenericPersister<T> {
+
 	/**
 	 * Save the entity
 	 * 

@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Fuel;
  * 
  */
 public interface FuelPersister {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -59,7 +59,7 @@ public interface FuelPersister {
 	 * @return
 	 */
 	List<Fuel> findAllFuel();
-	
+
 	/**
 	 * Return the fuel with this name
 	 * 
