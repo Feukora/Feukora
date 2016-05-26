@@ -7,7 +7,10 @@ import java.util.Calendar;
 
 import javax.management.remote.rmi.RMIServer;
 
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import org.apache.log4j.Logger;
 <<<<<<< HEAD
 =======
@@ -15,7 +18,10 @@ import org.apache.log4j.Logger;
 import application.Context;
 import calendar.util.CalendarConstants;
 import javafx.collections.ObservableList;
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -91,6 +97,7 @@ public class ControllerDetailview {
 		BorderPane pane = new BorderPane();
     	
 <<<<<<< HEAD
+<<<<<<< HEAD
     	try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 =======
@@ -103,6 +110,16 @@ public class ControllerDetailview {
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
 			}
 >>>>>>> refs/remotes/origin/master
+=======
+    	try { // Funktioniert noch nicht
+    		if(Context.getRole().equals("Administrator")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+			} else if (Context.getRole().equals("Feuerungskontrolleur")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+			} else if (Context.getRole().equals("Sachbearbeiter")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+			}
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
@@ -113,6 +130,7 @@ public class ControllerDetailview {
     
     @FXML
     void ActionDetailviewSaveAppointment(ActionEvent event) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 //    	String lastname = customerNameField.getText();
 //    	String adress = customerAddressField.getText();
@@ -146,6 +164,9 @@ public class ControllerDetailview {
 =======
     	
 >>>>>>> refs/remotes/origin/master
+=======
+    	
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     }
 
     @FXML

@@ -5,13 +5,22 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
+=======
 
+import org.apache.log4j.Logger;
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
+
+<<<<<<< HEAD
 import org.apache.log4j.Logger;
 <<<<<<< HEAD
 =======
 
 import calendar.util.CalendarConstants;
 >>>>>>> refs/remotes/origin/master
+=======
+import calendar.util.CalendarConstants;
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -179,7 +188,10 @@ public class ControllerCalendarPane {
     private Button moveRight;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     private ClientInternRMI feukora;
     private static int weekScroller = 0;
     private List<Button> buttons = new ArrayList<Button>();
@@ -204,10 +216,14 @@ public class ControllerCalendarPane {
     @FXML
     void ActionComboBoxSelectCalendar(ActionEvent event) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     	User selectedInspector = comboBoxSelectCalendar.getValue();
 =======
     	fillAppointments();
 >>>>>>> refs/remotes/origin/master
+=======
+    	fillAppointments();
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     }
 
     @FXML
@@ -237,13 +253,18 @@ public class ControllerCalendarPane {
 			
 		} catch (Exception e) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			e.printStackTrace();
 =======
 			logger.error("Aktion konnte nicht durchgeführt werden ", e);
 >>>>>>> refs/remotes/origin/master
+=======
+			logger.error("Aktion konnte nicht durchgeführt werden ", e);
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 		}
     }
     
+<<<<<<< HEAD
 <<<<<<< HEAD
     // Hier wird bei einer änderung des Activen users in der Combobox der Kalender neu geladen
     public void initializeNew(String activeUser){
@@ -262,6 +283,9 @@ public class ControllerCalendarPane {
 =======
 	private void initNodes( Calendar cal )
 >>>>>>> refs/remotes/origin/master
+=======
+	private void initNodes( Calendar cal )
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     {
     	SimpleDateFormat fmt = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYY );
         fmt.setCalendar(cal);
@@ -541,6 +565,7 @@ public class ControllerCalendarPane {
     	moveRight.getScene().setRoot(pane);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
     private void fillAppointments ()
@@ -573,5 +598,37 @@ public class ControllerCalendarPane {
 		}
     }
 >>>>>>> refs/remotes/origin/master
+=======
+    
+    private void fillAppointments ()
+    {
+    	List<Appointment> appointments;
+		try {
+			appointments = feukora.getAppointments(comboBoxSelectCalendar.getValue());
+		
+	    	for ( Appointment app : appointments )
+	    	{
+	    		for( Button btn : buttons )
+	    		{
+	    			//reset all appointments
+	    			btn.getProperties().remove( CalendarConstants.PROPERTYNAME_APPOINTMENT );
+	    			btn.setText("");
+	    			
+	    			Calendar btnDate = (Calendar) btn.getProperties().get( CalendarConstants.PROPERTYNAME_DATE );
+	    			Calendar appDate = app.getAppointmentdate();
+	
+	    			if( btnDate.equals( appDate ) )
+	    			{
+	    				btn.setText(app.toString());
+	    				btn.getProperties().put( CalendarConstants.PROPERTYNAME_APPOINTMENT, app );
+	    			}
+	    		}
+	    	}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 }
 

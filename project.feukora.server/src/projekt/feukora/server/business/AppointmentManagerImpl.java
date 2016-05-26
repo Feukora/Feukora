@@ -53,8 +53,11 @@ public class AppointmentManagerImpl implements AppointmentManager{
 		return appointmentPersister.findAppointmentByAppointmentdate(appointmentdate);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 
 	@Override
 	public List<Appointment> findAppointmentsForInspector(User inspector) {

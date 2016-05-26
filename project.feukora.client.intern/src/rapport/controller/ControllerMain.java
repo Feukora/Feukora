@@ -1,7 +1,10 @@
 package rapport.controller;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import java.io.IOException;
 import java.net.URL;
 >>>>>>> refs/remotes/origin/master
@@ -18,7 +21,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 >>>>>>> refs/remotes/origin/master
@@ -262,6 +268,11 @@ public class ControllerMain {
 
 	@FXML
 	void ActionRapportSave(ActionEvent event) throws IOException {
+<<<<<<< HEAD
+=======
+		
+//		Rapport rapport = Context.getRapport();
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 		
 		String canton = textfieldCanton.getText();
 		String adress = textfieldaddress.getText();
@@ -448,7 +459,10 @@ public class ControllerMain {
 		}
     	
     	
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 	}
 	
 	public void initialize() {
