@@ -25,7 +25,7 @@ import projekt.feukora.server.model.User;
 
 /**
  * Controller for Calendar Pane detailview.
- * @author Tamara
+ * @author Nicolas
  *
  */
 public class ControllerDetailview {
@@ -81,6 +81,10 @@ public class ControllerDetailview {
 		//do nothing
 	}
 
+	/**
+	 * method to cancel the action 
+	 * @param event
+	 */
 	@FXML
 	void ActionDetailviewCancelAppointment(ActionEvent event) {
 		BorderPane pane = new BorderPane();
@@ -115,6 +119,10 @@ public class ControllerDetailview {
 			detailviewCancelAppointment.getScene().setRoot(pane);
 		}
 
+	/**
+	 * method to save the changes record
+	 * @param event
+	 */
 		@FXML
 		void ActionDetailviewSaveAppointment(ActionEvent event) {
 			if ( appointment == null )
@@ -194,6 +202,10 @@ public class ControllerDetailview {
 			}
 		}
 
+		/**
+		 * method to delete the selected record
+		 * @param event
+		 */
 		@FXML
 		void ActionDetailviewDeleteAppointment(ActionEvent event) {
 			if ( appointment != null )

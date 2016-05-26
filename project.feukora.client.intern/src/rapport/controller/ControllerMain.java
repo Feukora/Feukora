@@ -273,6 +273,11 @@ public class ControllerMain {
 		alert.showAndWait();
 	}
 
+    /**
+     * method to save a rapport
+     * @param event
+     * @throws IOException
+     */
 	@FXML
 	void ActionRapportSave(ActionEvent event) throws IOException {
 
@@ -647,6 +652,9 @@ public class ControllerMain {
 
 	}
 
+	/**
+	 * method to get the data of the chosen record
+	 */
 	public void Update(){
 
 		customer = Context.getCustomer();

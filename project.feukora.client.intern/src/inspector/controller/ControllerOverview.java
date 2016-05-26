@@ -17,9 +17,11 @@ import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.User;
 
 /**
- * Sample Skeleton for 'inspectorOverview.fxml' Controller Class
+ * Controller for the inspectors overview. 
+ * @author Pascal
+ * @version 1.5
+ *
  */
-
 public class ControllerOverview {
 	
 	private static final Logger logger = Logger
@@ -107,6 +109,10 @@ public class ControllerOverview {
 			}
 	}
     
+    /**
+     * method to delete the selected record
+     * @param event
+     */
     @FXML
     void ActionOverviewDeleteInspector(ActionEvent event) {
     	ClientInternRMI feukora;
@@ -129,11 +135,19 @@ public class ControllerOverview {
 		initialize();
     }
 
+    /**
+     * method to refresh the overview
+     * @param event
+     */
     @FXML
     void ActionOverviewRefreshInspector(ActionEvent event) {
     	initialize();
     }
     
+    /**
+     * method to open the detailview for the selected record
+     * @param event
+     */
     @FXML
     void ActionOverviewUpdateInspector(ActionEvent event) {
     	try {

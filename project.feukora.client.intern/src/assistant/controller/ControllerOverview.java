@@ -118,6 +118,10 @@ public class ControllerOverview {
 		
 	}
 	
+	/**
+	 * button to delete delete the selected record
+	 * @param event
+	 */
     @FXML
     void ActionOverviewDeleteAssistant(ActionEvent event) {
     	ClientInternRMI feukora;
@@ -140,11 +144,19 @@ public class ControllerOverview {
 		initialize();
     }
 
+    /**
+     * method to refresh the overview
+     * @param event
+     */
 	@FXML
 	void ActionOverviewRefreshAssistant(ActionEvent event) {
 		initialize();
 	}
 
+	/**
+	 * method to update the the selected record
+	 * @param event
+	 */
 	@FXML
 	void ActionOverviewUpdateAssistant(ActionEvent event) {
 		try {
