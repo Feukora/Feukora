@@ -41,10 +41,10 @@ public class UserPersisterTest {
 
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		TestdataUsers.loadTestdata();
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		UserPersisterTest.init();
@@ -53,43 +53,42 @@ public class UserPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<User> userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 2);
-		
+
 		TownPersister tp = new TownPersisterImpl();
 		Town plz = tp.findbyZip(6000);
-		
+
 		UsergroupPersister ug = new UsergroupPersisterImpl();
 		Usergroup usergroup = ug.findUsergroupByUsergroupid(0);
-		
+
 		CompanyPersister c = new CompanyPersisterImpl();
 		Company company = c.findCompanyByName("Firma 1").get(0);
-		
+
 		User u = new User(usergroup,"Nachname","Vorname", "Ort",plz,company, "Username","Passwort","Telefon","Email");
 
 		userTest.saveUser(u);
 
 		userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 3);
-
 	}
-	
+
 	@Test
 	public void testUpdate() throws Exception {
 
 		List<User> userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 2);
-		
+
 		TownPersister tp = new TownPersisterImpl();
 		Town plz = tp.findbyZip(6000);
-		
+
 		UsergroupPersister ug = new UsergroupPersisterImpl();
 		Usergroup usergroup = ug.findUsergroupByUsergroupid(0);
-		
+
 		CompanyPersister c = new CompanyPersisterImpl();
 		Company company = c.findCompanyByName("Firma 2").get(0);
 
@@ -106,7 +105,6 @@ public class UserPersisterTest {
 
 		User userFromDB = userTest.findUserByLastname("Name").get(0);
 		assertNotNull(userFromDB);
-
 	}
 
 	@Test
@@ -119,8 +117,8 @@ public class UserPersisterTest {
 
 		userlist = userTest.findAllUsers();
 		assertTrue(userlist.size() == 1);
-
 	}
+
 	@Test
 	public void testFindByLastname() {
 
@@ -128,55 +126,54 @@ public class UserPersisterTest {
 
 		assertTrue(userTest.findUserByLastname(lastname).size() == 1);
 	}
-	
+
 	@Test
 	public void testByFirstname(){
-		
+
 		String firstname = "Vorname2";
-		
+
 		assertTrue(userTest.findUserByFirstname(firstname).size()==1);	
 	}
-	
+
 	@Test
 	public void testByLastnameAndFirstname(){
-		
+
 		String lastname ="Nachname1";
 		String firstname = "Vorname1";
-		
+
 		assertTrue(userTest.findUserByLastnameAndFirstname(lastname, firstname).size()==1
 				);
-	
+
 		firstname = "Max";
-		
+
 		assertTrue(userTest.findUserByLastnameAndFirstname(lastname, firstname)
 				.isEmpty());
-	
 	}
-	
+
 	@Test
 	public void testByUsername(){
-		
+
 		String username = "Username1";
-		
+
 		assertTrue(userTest.findUserByUsername(username) != null);
 	}
 
 	public static List<User> init() throws Exception {
 
 		UserPersisterTest.deleteAll();
-		
+
 		TownPersister tp = new TownPersisterImpl();
 		Town plz1 = tp.findbyZip(6000);
 		Town plz2 = tp.findbyZip(6005);
-		
+
 		UsergroupPersister ug = new UsergroupPersisterImpl();
 		Usergroup ug1 = ug.findUsergroupByName("Feuerungskontrolleur");
 		Usergroup ug2 = ug.findUsergroupByName("Backoffice");
-		
+
 		CompanyPersister c = new CompanyPersisterImpl();
 		Company c1 = c.findCompanyByName("Firma 1").get(0);
 		Company c2 = c.findCompanyByName("Firma 2").get(0);
-		
+
 
 		User u1 = new User(ug1, "Nachname1", "Vorname1", "Ort1", plz1, c1, "Username1", "Passwort1", "Telefon1", "Email1");
 		User u2 = new User(ug2, "Nachname2", "Vorname2", "Ort2", plz2, c2, "Username2", "Passwort2", "Telefon2", "Email2");

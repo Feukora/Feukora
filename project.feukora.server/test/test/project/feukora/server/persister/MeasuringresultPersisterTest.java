@@ -40,10 +40,10 @@ public class MeasuringresultPersisterTest {
 
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		TestdataMeasuringresult.loadTestdata();
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		MeasuringresultPersisterTest.init();
@@ -51,7 +51,9 @@ public class MeasuringresultPersisterTest {
 
 	@After
 	public void tearDown() throws Exception {
+
 	}
+
 	/**
 	 * tests if the Measuringresult is saved
 	 * 
@@ -59,10 +61,10 @@ public class MeasuringresultPersisterTest {
 	 */
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<Measuringresult> measuringresultlist = measuringresultTest.findAllMeasuringresult();
 		assertTrue(measuringresultlist.size() == 2);
-		
+
 		RapportPersister rp = new RapportPersisterImpl();
 		Rapport rapport1 = rp.findRapportByResults(false).get(0);
 
@@ -71,7 +73,6 @@ public class MeasuringresultPersisterTest {
 
 		measuringresultlist = measuringresultTest.findAllMeasuringresult();
 		assertTrue(measuringresultlist.size() == 3);
-
 	}
 
 	/**
@@ -89,13 +90,12 @@ public class MeasuringresultPersisterTest {
 
 		measuringresultlist = measuringresultTest.findAllMeasuringresult();
 		assertTrue(measuringresultlist.size() == 1);
-
 	}
 
 	public static List<Measuringresult> init() throws Exception {
 
 		MeasuringresultPersisterTest.deleteAll();
-		
+
 		RapportPersister rp = new RapportPersisterImpl();
 		Rapport rapport1 = rp.findRapportByResults(false).get(0);
 		Rapport rapport2 = rp.findRapportByResults(true).get(0);

@@ -37,7 +37,7 @@ import projekt.feukora.server.persister.UsergroupPersister;
 import projekt.feukora.server.persister.UsergroupPersisterImpl;
 
 public class TestdataCustomerheater {
-	
+
 	public static CustomerfunctionPersister customerfunction = new CustomerfunctionPersisterImpl();
 	public static UsergroupPersister usergroup = new UsergroupPersisterImpl();
 	public static ControltypePersister controltype = new ControltypePersisterImpl();
@@ -48,41 +48,41 @@ public class TestdataCustomerheater {
 	public static FacilitymanagerPersister facilitymanager = new FacilitymanagerPersisterImpl();
 	public static CustomerPersister customer = new CustomerPersisterImpl();
 	public static TownPersister tp = new TownPersisterImpl();
-	
+
 	private static final Logger logger = Logger
 			.getLogger(TestdataCustomerheater.class);
-	
+
 	@Test
 	public static void loadTestdata() {
-		
-		
+
+
 		Customerfunction function1 = new Customerfunction("Verwaltung");
 		Customerfunction function2 = new Customerfunction("Eigentümer");
-		
+
 		Usergroup group1 = new Usergroup("Administrator");
 		Usergroup group2 = new Usergroup("Feuerungskontrolleur");
 		Usergroup group3 = new Usergroup("Backoffice");
-		
+
 		Controltype typ1 = new Controltype("Routinekontrolle");
 		Controltype typ2 = new Controltype("Abnahmekontrolle");
-		
+
 		Fuel fuel1 = new Fuel("Öl");
 		Fuel fuel2 = new Fuel("Erdgas");
 		Fuel fuel3 = new Fuel("Flüssiggas");
-		
+
 		Blowertype bTyp1 = new Blowertype("Gebläse");
 		Blowertype bTyp2 = new Blowertype("Athmosphärisch");
 		Blowertype bTyp3 = new Blowertype("Verdampfer");
-		
+
 		Blower blower1 = new Blower(bTyp1, fuel1, "Blower 1");
 		Blower blower2 = new Blower(bTyp3, fuel3, "Blower 2");
-		
+
 		Heater heater1 = new Heater("Heizung 1");
 		Heater heater2 = new Heater("Heizung 2");
-		
-		Facilitymanager fm1 = new Facilitymanager("Hausmeister", "Robert");
-		Facilitymanager fm2 = new Facilitymanager("Meister", "Jakob");
-		
+
+		Facilitymanager fm1 = new Facilitymanager("Hausmeister");
+		Facilitymanager fm2 = new Facilitymanager("Meister");
+
 		Town zip1 = tp.findbyZip(6000);
 		Town zip2 = tp.findbyZip(6005);
 		assertNotNull(zip1);
@@ -90,41 +90,37 @@ public class TestdataCustomerheater {
 		Customer c1 = new Customer("Fasser AG", "Sandro", "Fasser",  "Bergün", "1234", "sf@sf.ch", function1, zip1);
 		Customer c2 = new Customer("Perry AG", "Patrick", "Pereira",  "Aargau", "5678", "pdp@pdp.ch", function2, zip2);
 
-
-		
 		try {
 			customerfunction.saveCustomerfunction(function1);
 			customerfunction.saveCustomerfunction(function2);
-			
+
 			usergroup.saveUsergroup(group1);
 			usergroup.saveUsergroup(group2);
 			usergroup.saveUsergroup(group3);
-			
+
 			controltype.saveControltype(typ1);
 			controltype.saveControltype(typ2);
-			
+
 			fuel.saveFuel(fuel1);
 			fuel.saveFuel(fuel2);
 			fuel.saveFuel(fuel3);
-			
+
 			blowertype.saveBlowertype(bTyp1);
 			blowertype.saveBlowertype(bTyp2);
 			blowertype.saveBlowertype(bTyp3);
-			
+
 			blower.saveBlower(blower1);
 			blower.saveBlower(blower2);
-			
+
 			heater.saveHeater(heater1);
 			heater.saveHeater(heater2);
-			
+
 			facilitymanager.saveFacilitymanager(fm1);
 			facilitymanager.saveFacilitymanager(fm2);
-			
+
 			customer.saveCustomer(c1);
 			customer.saveCustomer(c2);
-			
-			
-			
+
 		} catch (Exception e) {
 			logger.error("Testdaten konnten nicht geladen werden\'",
 					e);

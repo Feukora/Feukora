@@ -31,10 +31,10 @@ public class CompanyPersisterTest {
 
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		Testdata.loadTestdata();
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		CompanyPersisterTest.init();
@@ -43,7 +43,7 @@ public class CompanyPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	/**
 	 * tests if the Company is saved
 	 * 
@@ -51,13 +51,12 @@ public class CompanyPersisterTest {
 	 */
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<Company> companylist = companyTest.findAllCompanies();
 		assertTrue(companylist.size() == 2);
-		
+
 		TownPersister tp = new TownPersisterImpl();
 		Town plz = tp.findbyZip(6000);
-		
 
 		Company com = new Company("Name", "Ort", "Telefon", "Email", plz);
 
@@ -67,7 +66,7 @@ public class CompanyPersisterTest {
 		assertTrue(companylist.size() == 3);
 
 	}
-	
+
 	/**
 	 * tests if the Company is updated
 	 * 
@@ -78,10 +77,10 @@ public class CompanyPersisterTest {
 
 		List<Company> companylist = companyTest.findAllCompanies();
 		assertTrue(companylist.size() == 2);
-		
+
 		TownPersister tp = new TownPersisterImpl();
 		Town plz = tp.findbyZip(6000);
-		
+
 		Company com = new Company("Name", "Ort", "Telefon", "Email", plz);
 
 		companyTest.saveCompany(com);
@@ -95,7 +94,6 @@ public class CompanyPersisterTest {
 
 		Company companyFromDB = companyTest.findCompanyByName("Robin AG").get(0);
 		assertNotNull(companyFromDB);
-
 	}
 
 	/**
@@ -113,8 +111,8 @@ public class CompanyPersisterTest {
 
 		companylist = companyTest.findAllCompanies();
 		assertTrue(companylist.size() == 1);
-
 	}
+
 	/**
 	 * tests if the Company can be found by name
 	 */
@@ -129,11 +127,11 @@ public class CompanyPersisterTest {
 	public static List<Company> init() throws Exception {
 
 		CompanyPersisterTest.deleteAll();
-		
+
 		TownPersister tp = new TownPersisterImpl();
 		Town plz1 = tp.findbyZip(6000);
 		Town plz2 = tp.findbyZip(6005);
-		
+
 		Company com1 = new Company("Name1", "Ort1", "Telefon1", "Email1", plz1);
 		Company com2 = new Company("Name2", "Ort2", "Telefon2", "Email2", plz2);
 

@@ -33,10 +33,10 @@ public class BlowerPersisterTest {
 
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		Testdata.loadTestdata();
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		BlowerPersisterTest.init();
@@ -45,7 +45,7 @@ public class BlowerPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	/**
 	 * tests if the Blower is saved
 	 * 
@@ -53,25 +53,24 @@ public class BlowerPersisterTest {
 	 */
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<Blower> blowerlist = blowerTest.findAllBlowers();
 		assertTrue(blowerlist.size() == 2);
-		
+
 		FuelPersister fp = new FuelPersisterImpl();
 		Fuel fuel = fp.findFuelByName("Öl");
-		
+
 		BlowertypePersister bp = new BlowertypePersisterImpl();
 		Blowertype blowertype = bp.findBlowertypeByName("Verdampfer");
-		
+
 		Blower b = new Blower(blowertype, fuel, "Name");
 
 		blowerTest.saveBlower(b);
 
 		blowerlist = blowerTest.findAllBlowers();
 		assertTrue(blowerlist.size() == 3);
-
 	}
-	
+
 	/**
 	 * tests if the Blower is updated
 	 * 
@@ -82,13 +81,13 @@ public class BlowerPersisterTest {
 
 		List<Blower> blowerlist = blowerTest.findAllBlowers();
 		assertTrue(blowerlist.size() == 2);
-		
+
 		FuelPersister fp = new FuelPersisterImpl();
 		Fuel fuel = fp.findFuelByName("Erdgas");
-		
+
 		BlowertypePersister bp = new BlowertypePersisterImpl();
 		Blowertype blowertype = bp.findBlowertypeByName("Gebläse");
-		
+
 		Blower b = new Blower(blowertype, fuel, "Name");
 
 		blowerTest.saveBlower(b);
@@ -102,7 +101,6 @@ public class BlowerPersisterTest {
 
 		Blower blowerFromDB = blowerTest.findBlowerByName("Blower").get(0);
 		assertNotNull(blowerFromDB);
-
 	}
 
 	/**
@@ -120,8 +118,8 @@ public class BlowerPersisterTest {
 
 		blowerlist = blowerTest.findAllBlowers();
 		assertTrue(blowerlist.size() == 1);
-
 	}
+
 	/**
 	 * tests if the Blower can be found by name
 	 */
@@ -132,18 +130,19 @@ public class BlowerPersisterTest {
 
 		assertTrue(blowerTest.findBlowerByName(name).size() == 1);
 	}
+
 	public static List<Blower> init() throws Exception {
 
 		BlowerPersisterTest.deleteAll();
-		
+
 		FuelPersister fp = new FuelPersisterImpl();
 		Fuel fuel1 = fp.findFuelByName("Öl");
 		Fuel fuel2 = fp.findFuelByName("Erdgas");
-		
+
 		BlowertypePersister bp = new BlowertypePersisterImpl();
 		Blowertype blowertype1 = bp.findBlowertypeByName("Gebläse");
 		Blowertype blowertype2 = bp.findBlowertypeByName("Verdampfer");
-		
+
 		Blower b1 = new Blower(blowertype1, fuel1,"Name");
 		Blower b2 = new Blower(blowertype2,fuel2,"Name2");
 

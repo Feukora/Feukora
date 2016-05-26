@@ -24,10 +24,10 @@ public class FacilitymanagerPersisterTest {
 
 
 	private static FacilitymanagerPersisterImpl facilitymanagerTest = new FacilitymanagerPersisterImpl();
-	
+
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		Testdata.loadTestdata();
 	}
 
@@ -39,7 +39,7 @@ public class FacilitymanagerPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	/**
 	 * tests if the Facilitymanager is saved
 	 * 
@@ -47,19 +47,18 @@ public class FacilitymanagerPersisterTest {
 	 */
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<Facilitymanager> facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
 		assertTrue(facilitymanagerlist.size() == 2);
 
-		Facilitymanager fm = new Facilitymanager("Hauswart", "Werner");
+		Facilitymanager fm = new Facilitymanager("Hauswart");
 
 		facilitymanagerTest.saveFacilitymanager(fm);
 
 		facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
 		assertTrue(facilitymanagerlist.size() == 3);
-
 	}
-	
+
 	/**
 	 * tests if the Facilitymanager is saved
 	 * 
@@ -70,21 +69,20 @@ public class FacilitymanagerPersisterTest {
 
 		List<Facilitymanager> facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
 		assertTrue(facilitymanagerlist.size() == 2);
-		
-		Facilitymanager fm = new Facilitymanager("Burri", "Pascal");
+
+		Facilitymanager fm = new Facilitymanager("Burri");
 
 		facilitymanagerTest.saveFacilitymanager(fm);
 
 		facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
 		assertTrue(facilitymanagerlist.size() == 3);
 
-		fm.setLastname("Irrub");
+		fm.setlastname("Irrub");
 
 		facilitymanagerTest.updateFacilitymanager(fm);
 
 		Facilitymanager facilitymanagerFromDB = facilitymanagerTest.findFacilitymanagerByLastname("Irrub").get(0);
 		assertNotNull(facilitymanagerFromDB);
-
 	}
 
 	/**
@@ -102,7 +100,6 @@ public class FacilitymanagerPersisterTest {
 
 		facilitymanagerlist = facilitymanagerTest.findAllFacilitymanagers();
 		assertTrue(facilitymanagerlist.size() == 1);
-
 	}
 
 	/**
@@ -116,24 +113,14 @@ public class FacilitymanagerPersisterTest {
 		assertTrue(facilitymanagerTest.findFacilitymanagerByLastname(lastname).size() == 1);
 	}
 
-	/**
-	 * test if the Facilitymanager can be found by firstname
-	 */
-	@Test
-	public void testFindByFirstname() {
 
-		String firstname = "Allan";
-
-		assertTrue(facilitymanagerTest.findFacilitymanagerByFirstname(firstname).size() == 1);
-	}
-	
 	public static List<Facilitymanager> init() throws Exception {
 
 		FacilitymanagerPersisterTest.deleteAll();
-		
 
-		Facilitymanager fm1 = new Facilitymanager("Fasser", "Sandro");
-		Facilitymanager fm2 = new Facilitymanager("Blessing", "Allan");
+
+		Facilitymanager fm1 = new Facilitymanager("Fasser");
+		Facilitymanager fm2 = new Facilitymanager("Blessing");
 
 		facilitymanagerTest.saveFacilitymanager(fm1);
 		facilitymanagerTest.saveFacilitymanager(fm2);

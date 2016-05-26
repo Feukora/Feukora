@@ -39,10 +39,10 @@ public class CustomerheaterPersisterTest {
 
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		TestdataCustomerheater.loadTestdata();
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		CustomerheaterPersisterTest.init();
@@ -51,7 +51,7 @@ public class CustomerheaterPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	/**
 	 * tests if the Customerheater is saved
 	 * 
@@ -59,19 +59,19 @@ public class CustomerheaterPersisterTest {
 	 */
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<Customerheater> customerheaterlist = customerheaterTest.findAllCustomerheaters();
 		assertTrue(customerheaterlist.size() == 2);
-		
+
 		CustomerPersister cp = new CustomerPersisterImpl();
 		Customer c = cp.findCustomerByLastname("Fasser").get(0);
-		
+
 		HeaterPersister hp = new HeaterPersisterImpl();
 		Heater h = hp.findHeaterByName("Heizung 2").get(0);
-		
+
 		BlowerPersister bp = new BlowerPersisterImpl();
 		Blower b = bp.findBlowerByName("Blower 2").get(0);
-		
+
 		FacilitymanagerPersister fmp = new FacilitymanagerPersisterImpl();
 		Facilitymanager fm = fmp.findFacilitymanagerByLastname("Meister").get(0);
 
@@ -81,9 +81,8 @@ public class CustomerheaterPersisterTest {
 
 		customerheaterlist = customerheaterTest.findAllCustomerheaters();
 		assertTrue(customerheaterlist.size() == 3);
-
 	}
-	
+
 	/**
 	 * tests if the Customerheater is updated
 	 * 
@@ -94,16 +93,16 @@ public class CustomerheaterPersisterTest {
 
 		List<Customerheater> customerheaterlist = customerheaterTest.findAllCustomerheaters();
 		assertTrue(customerheaterlist.size() == 2);
-		
+
 		CustomerPersister cp = new CustomerPersisterImpl();
 		Customer c = cp.findCustomerByLastname("Fasser").get(0);
-		
+
 		HeaterPersister hp = new HeaterPersisterImpl();
 		Heater h = hp.findHeaterByName("Heizung 2").get(0);
-		
+
 		BlowerPersister bp = new BlowerPersisterImpl();
 		Blower b = bp.findBlowerByName("Blower 2").get(0);
-		
+
 		FacilitymanagerPersister fmp = new FacilitymanagerPersisterImpl();
 		Facilitymanager fm = fmp.findFacilitymanagerByLastname("Meister").get(0);
 
@@ -117,7 +116,6 @@ public class CustomerheaterPersisterTest {
 		ch.setHeateryear(2007);
 
 		customerheaterTest.updateCustomerheater(ch);
-
 	}
 
 	/**
@@ -135,25 +133,24 @@ public class CustomerheaterPersisterTest {
 
 		customerheaterlist = customerheaterTest.findAllCustomerheaters();
 		assertTrue(customerheaterlist.size() == 1);
-
 	}
 
 	public static List<Customerheater> init() throws Exception {
 
 		CustomerheaterPersisterTest.deleteAll();
-		
+
 		CustomerPersister cp = new CustomerPersisterImpl();
 		Customer c1 = cp.findCustomerByLastname("Fasser").get(0);
 		Customer c2 = cp.findCustomerByLastname("Pereira").get(0);
-		
+
 		HeaterPersister hp = new HeaterPersisterImpl();
 		Heater h1 = hp.findHeaterByName("Heizung 1").get(0);
 		Heater h2 = hp.findHeaterByName("Heizung 2").get(0);
-		
+
 		BlowerPersister bp = new BlowerPersisterImpl();
 		Blower b1 = bp.findBlowerByName("Blower 1").get(0);
 		Blower b2 = bp.findBlowerByName("Blower 2").get(0);
-		
+
 		FacilitymanagerPersister fmp = new FacilitymanagerPersisterImpl();
 		Facilitymanager fm1 = fmp.findFacilitymanagerByLastname("Hausmeister").get(0);
 		Facilitymanager fm2 = fmp.findFacilitymanagerByLastname("Meister").get(0);

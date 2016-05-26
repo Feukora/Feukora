@@ -12,20 +12,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import projekt.feukora.server.model.Appointment;
-import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.Customerfunction;
 import projekt.feukora.server.model.Customerheater;
-import projekt.feukora.server.model.Town;
 import projekt.feukora.server.model.User;
 import projekt.feukora.server.persister.AppointmentPersisterImpl;
-import projekt.feukora.server.persister.CustomerPersisterImpl;
-import projekt.feukora.server.persister.CustomerfunctionPersister;
-import projekt.feukora.server.persister.CustomerfunctionPersisterImpl;
 import projekt.feukora.server.persister.CustomerheaterPersister;
 import projekt.feukora.server.persister.CustomerheaterPersisterImpl;
 import projekt.feukora.server.persister.TownData;
-import projekt.feukora.server.persister.TownPersister;
-import projekt.feukora.server.persister.TownPersisterImpl;
 import projekt.feukora.server.persister.UserPersister;
 import projekt.feukora.server.persister.UserPersisterImpl;
 
@@ -33,10 +25,9 @@ import projekt.feukora.server.persister.UserPersisterImpl;
  * Class to test the methods of the class AppointmentPersister.
  * 
  * @author Allan
- * @version 1.0
+ * @version 1.2
  */
 public class AppointmentPersisterTest {
-
 
 	private static AppointmentPersisterImpl appointmentTest = new AppointmentPersisterImpl();
 
@@ -45,7 +36,7 @@ public class AppointmentPersisterTest {
 		TownData.loadTownData();
 		TestdataAppointment.loadTestdata();
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		AppointmentPersisterTest.init();
@@ -54,7 +45,7 @@ public class AppointmentPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	/**
 	 * tests if the Appointment is saved
 	 * 
@@ -62,26 +53,25 @@ public class AppointmentPersisterTest {
 	 */
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<Appointment> appointmentlist = appointmentTest.findAllAppointments();
 		assertTrue(appointmentlist.size() == 2);
-		
+
 		CustomerheaterPersister chp = new CustomerheaterPersisterImpl();
 		Customerheater ch = chp.findCustomerheaterByPerformance(200).get(0);
-		
+
 		UserPersister up = new UserPersisterImpl();
 		User user = up.findUserByLastname("Nachname").get(0);
 
 		Appointment a = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 13, 8, 0),
 				new GregorianCalendar(2016, 05, 14, 13, 0), "Neuer Termin");
-		
+
 		appointmentTest.saveAppointment(a);
 
 		appointmentlist = appointmentTest.findAllAppointments();
 		assertTrue(appointmentlist.size() == 3);
-
 	}
-	
+
 	/**
 	 * tests if the Appointment is updated
 	 * 
@@ -92,21 +82,21 @@ public class AppointmentPersisterTest {
 
 		List<Appointment> appointmentlist = appointmentTest.findAllAppointments();
 		assertTrue(appointmentlist.size() == 2);
-		
+
 		CustomerheaterPersister chp = new CustomerheaterPersisterImpl();
 		Customerheater ch = chp.findCustomerheaterByPerformance(200).get(0);
-		
+
 		UserPersister up = new UserPersisterImpl();
 		User user = up.findUserByLastname("Nachname").get(0);
 
 		Appointment a = new Appointment(ch, user, user, new GregorianCalendar(2016, 05, 13, 8, 0),
 				new GregorianCalendar(2016, 05, 13, 8, 0), "Update Test");
-		
+
 		appointmentTest.saveAppointment(a);
 
 		appointmentlist = appointmentTest.findAllAppointments();
 		assertTrue(appointmentlist.size() == 3);
-		
+
 		a.setComments("Ganz neuer Kommentar");
 
 		appointmentTest.updateAppointment(a);
@@ -121,15 +111,14 @@ public class AppointmentPersisterTest {
 	public void testDelete() throws Exception {
 
 		List<Appointment> appointmentlist = appointmentTest.findAllAppointments();
-		assertTrue(appointmentlist.size() == 3);
+		assertTrue(appointmentlist.size() == 2);
 
 		appointmentTest.deleteAppointment(appointmentlist.get(0));
 
 		appointmentlist = appointmentTest.findAllAppointments();
-		assertTrue(appointmentlist.size() == 2);
-
+		assertTrue(appointmentlist.size() == 1);
 	}
-	
+
 	/**
 	 * tests if the Appointment is found by the date
 	 */
@@ -137,20 +126,20 @@ public class AppointmentPersisterTest {
 	public void testFindByAppointmentdate() {
 
 		GregorianCalendar appointmentdate = new GregorianCalendar(2016, 05, 13, 8, 0);
-		
+
 		assertTrue(appointmentTest.findAppointmentByAppointmentdate(appointmentdate).size() == 1);
 	}	
 
 	public static List<Appointment> init() throws Exception {
 
 		AppointmentPersisterTest.deleteAll();
-		
+
 		CustomerheaterPersister chp = new CustomerheaterPersisterImpl();
 		Customerheater ch = chp.findCustomerheaterByPerformance(200).get(0);
-		
+
 		UserPersister up = new UserPersisterImpl();
 		User user = up.findUserByLastname("Nachname").get(0);
-		
+
 		GregorianCalendar date1 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		GregorianCalendar date3 = new GregorianCalendar(2016, 05, 16, 10, 0);

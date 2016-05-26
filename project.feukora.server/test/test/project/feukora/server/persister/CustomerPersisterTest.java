@@ -30,13 +30,13 @@ import projekt.feukora.server.persister.TownPersisterImpl;
 public class CustomerPersisterTest {
 
 	private static CustomerPersisterImpl customerTest = new CustomerPersisterImpl();
-	
+
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		Testdata.loadTestdata();
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		CustomerPersisterTest.init();
@@ -45,17 +45,17 @@ public class CustomerPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<Customer> customerlist = customerTest.findAllCustomers();
 		assertTrue(customerlist.size() == 2);
-		
+
 		TownPersister tp = new TownPersisterImpl();
 		Town zip = tp.findbyZip(6000);
 		System.out.println(zip);
-		
+
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function = cf.findCustomerfunctionByName("Verwaltung");
 
@@ -68,20 +68,19 @@ public class CustomerPersisterTest {
 			System.out.println(customer.getCompanyname());
 		}
 		assertTrue(customerlist.size() == 3);
-
 	}
-	
+
 	@Test
 	public void testUpdate() throws Exception {
 
 		List<Customer> customerlist = customerTest.findAllCustomers();
 		assertTrue(customerlist.size() == 2);
-		
+
 		TownPersister tp = new TownPersisterImpl();
 		Town zip = tp.findbyZip(6000);
 		assertNotNull(zip);
 		Town plz = tp.findbyZip(6000);
-		
+
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function = cf.findCustomerfunctionByName("Eigentümer");
 
@@ -95,13 +94,8 @@ public class CustomerPersisterTest {
 		c.setLastname("Irrub");
 
 		customerTest.updateCustomer(c);
-
-//		Customer customerFromDB = customerTest.findCustomerByLastnameAndFirstname("Irrub",
-//				"Pascal").get(0);
-//		assertNotNull(customerFromDB);
-
 	}
-	
+
 	@Test
 	public void testDelete() throws Exception {
 
@@ -112,7 +106,6 @@ public class CustomerPersisterTest {
 
 		customerlist = customerTest.findAllCustomers();
 		assertTrue(customerlist.size() == 1);
-
 	}
 
 	@Test
@@ -135,43 +128,28 @@ public class CustomerPersisterTest {
 		assertTrue(customerTest.findCustomerByFirstname(firstname).isEmpty());
 	}
 
-//	@Test
-//	public void testFindByLastnameAndFirstname() {
-//
-//		String lastname = "Pereira";
-//		String firstname = "Patrick";
-//
-//		assertTrue(customerTest.findCustomerByLastnameAndFirstname(lastname, firstname).size() == 1);
-//
-//		firstname = "Max";
-//
-//		assertTrue(customerTest.findCustomerByLastnameAndFirstname(lastname, firstname)
-//				.isEmpty());
-//	}
-
 	@Test
 	public void testFindByCompanyname() {
-		
+
 		String companyname = "Perry AG";
 
 		assertTrue(customerTest.findCustomerByCompanyname(companyname).size() == 1);
-		
+
 		companyname = "Parry AG";
 
 		assertTrue(customerTest.findCustomerByCompanyname(companyname)
 				.isEmpty());
-
 	}
 
 	public static List<Customer> init() throws Exception {
 
 		CustomerPersisterTest.deleteAll();
-		
+
 		TownPersister tp = new TownPersisterImpl();
 		Town zip1 = tp.findbyZip(6000);
 		Town zip2 = tp.findbyZip(6005);
 		assertNotNull(zip1);
-		
+
 		CustomerfunctionPersister cf = new CustomerfunctionPersisterImpl();
 		Customerfunction function1 = cf.findCustomerfunctionByName("Verwaltung");
 		Customerfunction function2 = cf.findCustomerfunctionByName("Eigentümer");

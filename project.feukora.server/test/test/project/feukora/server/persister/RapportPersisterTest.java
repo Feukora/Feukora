@@ -41,10 +41,10 @@ public class RapportPersisterTest {
 
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		TestdataRapport.loadTestdata();
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		RapportPersisterTest.init();
@@ -53,7 +53,7 @@ public class RapportPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	/**
 	 * tests if the Rapport is saved
 	 * 
@@ -61,27 +61,27 @@ public class RapportPersisterTest {
 	 */
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<Rapport> rapportlist = rapportTest.findAllRapports();
 		assertTrue(rapportlist.size() == 2);
-		
+
 		ControltypePersister ct = new ControltypePersisterImpl();
 		Controltype controltype1 = ct.findControltypeByName("Abnahmekontrolle");
-		
+
 		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
 		Customerheater customerheater1 = ch.findCustomerheaterByPerformance(200).get(0);
 
 		UserPersister us = new UserPersisterImpl();
 		User user1 = us.findUserByLastname("Nachname").get(0);
-		
+
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
-		
+
 		AppointmentPersister ap = new AppointmentPersisterImpl();
 		Appointment appointment1 = ap.findAppointmentByAppointmentdate(date2).get(0);
-	
+
 		GregorianCalendar cal1 = new GregorianCalendar(2016, 3, 3);
-		
-		Rapport r = new Rapport(controltype1, customerheater1, user1, appointment1, cal1, true, false, "Kommentar Nummer 1", true, true,false, false, true);
+
+		Rapport r = new Rapport("LU", "Adresse 1", controltype1, customerheater1, user1, appointment1, cal1, true, false, "Kommentar Nummer 1", true, true,false, false, true);
 
 		rapportTest.saveRapport(r);
 
@@ -90,9 +90,8 @@ public class RapportPersisterTest {
 			System.out.println(rapport.getComments());
 		}
 		assertTrue(rapportlist.size() == 3);
-
 	}
-	
+
 	/**
 	 * tests if the Rapport is updated
 	 * 
@@ -103,24 +102,24 @@ public class RapportPersisterTest {
 
 		List<Rapport> rapportlist = rapportTest.findAllRapports();
 		assertTrue(rapportlist.size() == 2);
-		
+
 		ControltypePersister ct = new ControltypePersisterImpl();
 		Controltype controltype1 = ct.findControltypeByName("Abnahmekontrolle");
-		
+
 		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
 		Customerheater customerheater1 = ch.findCustomerheaterByPerformance(200).get(0);
 
 		UserPersister us = new UserPersisterImpl();
 		User user1 = us.findUserByLastname("Nachname").get(0);
-		
+
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
-		
+
 		AppointmentPersister ap = new AppointmentPersisterImpl();
 		Appointment appointment1 = ap.findAppointmentByAppointmentdate(date2).get(0);
-	
+
 		GregorianCalendar cal1 = new GregorianCalendar(2016, 3, 3);
-		
-		Rapport r = new Rapport(controltype1, customerheater1, user1, appointment1, cal1, true, false, "Kommentar Nummer 2", true, true,false, false, true);
+
+		Rapport r = new Rapport("ZH", "Hauptstrasse 1", controltype1, customerheater1, user1, appointment1, cal1, true, false, "Kommentar Nummer 2", true, true,false, false, true);
 
 		rapportTest.saveRapport(r);
 
@@ -134,7 +133,6 @@ public class RapportPersisterTest {
 
 		Rapport rapportFromDB = rapportTest.findRapportByMeasuringdate(calup).get(0);
 		assertNotNull(rapportFromDB);
-
 	}
 
 	/**
@@ -152,9 +150,8 @@ public class RapportPersisterTest {
 
 		rapportlist = rapportTest.findAllRapports();
 		assertTrue(rapportlist.size() == 1);
-
 	}
-	
+
 	/**
 	 * tests if the Rapport can be found by the Measuringdate
 	 */
@@ -165,7 +162,7 @@ public class RapportPersisterTest {
 
 		assertTrue(rapportTest.findRapportByMeasuringdate(caltest).size() == 1);
 	}
-	
+
 	/**
 	 * test if the Rapport can be found by the result
 	 */
@@ -177,15 +174,15 @@ public class RapportPersisterTest {
 		assertTrue(rapportTest.findRapportByResults(result).size() == 2);
 	}
 
-	
+
 	public static List<Rapport> init() throws Exception {
 
 		RapportPersisterTest.deleteAll();
-		
+
 		ControltypePersister ct = new ControltypePersisterImpl();
 		Controltype controltype1 = ct.findControltypeByName("Abnahmekontrolle");
 		Controltype controltype2 = ct.findControltypeByName("Routinekontrolle");
-		
+
 		CustomerheaterPersister ch = new CustomerheaterPersisterImpl();
 		Customerheater customerheater1 = ch.findCustomerheaterByPerformance(200).get(0);
 		Customerheater customerheater2 = ch.findCustomerheaterByPerformance(78).get(0);
@@ -193,20 +190,20 @@ public class RapportPersisterTest {
 		UserPersister us = new UserPersisterImpl();
 		User user1 = us.findUserByLastname("Nachname").get(0);
 		User user2 = us.findUserByLastname("Lastname").get(0);
-		
+
 		GregorianCalendar date2 = new GregorianCalendar(2016, 05, 13, 8, 0);
 		GregorianCalendar date4 = new GregorianCalendar(2016, 05, 16, 10, 0);
-		
+
 		AppointmentPersister ap = new AppointmentPersisterImpl();
 		Appointment appointment1 = ap.findAppointmentByAppointmentdate(date2).get(0);
 		Appointment appointment2 = ap.findAppointmentByAppointmentdate(date4).get(0);
-	
+
 		GregorianCalendar cal1 = new GregorianCalendar(2016, 3, 3);
 		GregorianCalendar cal2 = new GregorianCalendar(2016, 1, 4);
-		
-		Rapport r1 = new Rapport(controltype1, customerheater1, user1, appointment1, cal1, true, false, "Kein Kommentar", true, true,true, true, true);
-		Rapport r2 = new Rapport(controltype2, customerheater2, user2, appointment2, cal2, true, false, "Kein Kommentar 2", true, true,true, true, true);
-		
+
+		Rapport r1 = new Rapport("BE", "Strasse 25", controltype1, customerheater1, user1, appointment1, cal1, true, false, "Kein Kommentar", true, true,true, true, true);
+		Rapport r2 = new Rapport("BA", "Road", controltype2, customerheater2, user2, appointment2, cal2, true, false, "Kein Kommentar 2", true, true,true, true, true);
+
 		rapportTest.saveRapport(r1);
 		rapportTest.saveRapport(r2);
 

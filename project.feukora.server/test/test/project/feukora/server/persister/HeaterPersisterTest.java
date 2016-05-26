@@ -27,10 +27,10 @@ public class HeaterPersisterTest {
 
 	@BeforeClass
 	public static void start() throws Exception {
-		TownData.loadTownData("resources/ZIP.txt");
+		TownData.loadTownData();
 		Testdata.loadTestdata();
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		HeaterPersisterTest.init();
@@ -39,7 +39,7 @@ public class HeaterPersisterTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	/**
 	 * tests if the Heater is saved
 	 * 
@@ -47,7 +47,7 @@ public class HeaterPersisterTest {
 	 */
 	@Test
 	public void testSave() throws Exception {
-		
+
 		List<Heater> heaterlist = heaterTest.findAllHeaters();
 		assertTrue(heaterlist.size() == 2);
 
@@ -57,9 +57,8 @@ public class HeaterPersisterTest {
 
 		heaterlist = heaterTest.findAllHeaters();
 		assertTrue(heaterlist.size() == 3);
-
 	}
-	
+
 	/**
 	 * tests if the Heater id updated
 	 * 
@@ -84,7 +83,6 @@ public class HeaterPersisterTest {
 
 		Heater heaterFromDB = heaterTest.findHeaterByName("Heater 1").get(0);
 		assertNotNull(heaterFromDB);
-
 	}
 
 	/**
@@ -101,7 +99,6 @@ public class HeaterPersisterTest {
 
 		heaterlist = heaterTest.findAllHeaters();
 		assertTrue(heaterlist.size() == 1);
-
 	}
 
 	/**
