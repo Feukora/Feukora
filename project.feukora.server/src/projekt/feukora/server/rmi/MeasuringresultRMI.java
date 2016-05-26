@@ -4,7 +4,6 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Measuringresult;
 
 /**
@@ -13,8 +12,8 @@ import projekt.feukora.server.model.Measuringresult;
  * @author Patrick
  * @version 1.1
  */
-
 public interface MeasuringresultRMI extends Remote{
+
 	/**
 	 * Save the given entity
 	 * 

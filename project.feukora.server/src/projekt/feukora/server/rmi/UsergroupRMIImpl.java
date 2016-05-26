@@ -4,10 +4,8 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-
 import projekt.feukora.server.business.UsergroupManager;
 import projekt.feukora.server.business.UsergroupManagerImpl;
-import projekt.feukora.server.model.Fuel;
 import projekt.feukora.server.model.Usergroup;
 
 
@@ -15,21 +13,20 @@ import projekt.feukora.server.model.Usergroup;
  * This Class implements the methodes of the interface UsergroupRMI
  * 
  * @author Tamara
- * @version 1.0
+ * @version 1.1
  */
 public class UsergroupRMIImpl extends UnicastRemoteObject implements UsergroupRMI{
 
 	private static final long serialVersionUID = -371551722376955090L;
-private UsergroupManager usergroupManager;
-	
+	private UsergroupManager usergroupManager;
+
 	public UsergroupRMIImpl() throws RemoteException {
 		usergroupManager = new UsergroupManagerImpl();
 	}
 
 	@Override
 	public void saveUsergroup(Usergroup entity) throws RemoteException, Exception {
-		usergroupManager.saveUsergroup(entity);
-		
+		usergroupManager.saveUsergroup(entity);	
 	}
 
 	@Override
@@ -39,14 +36,12 @@ private UsergroupManager usergroupManager;
 
 	@Override
 	public void deleteUsergroup(Usergroup entity) throws RemoteException, Exception {
-		usergroupManager.deleteUsergroup(entity);
-		
+		usergroupManager.deleteUsergroup(entity);	
 	}
 
 	@Override
 	public void deleteUsergroupByUsergroupid(Integer usergroupid) throws RemoteException, Exception {
-		usergroupManager.deleteUsergroupByUsergroupid(usergroupid);
-		
+		usergroupManager.deleteUsergroupByUsergroupid(usergroupid);	
 	}
 
 	@Override

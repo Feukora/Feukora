@@ -14,24 +14,19 @@ import projekt.feukora.server.model.User;
  * This Class implements the methods of the interface AppointmentRMI
  *  
  * @author Allan
- * @version 1.0
+ * @version 1.1
  */
 public class AppointmentRMIImpl extends UnicastRemoteObject implements AppointmentRMI {
 
-	
+
 	private static final long serialVersionUID = -1675223100958250005L;
-	/**
-	 * 
-	 */
+
 	private AppointmentManager appointmentManager;
 
 	public AppointmentRMIImpl() throws RemoteException {
 		appointmentManager = new AppointmentManagerImpl();
 	}
-	
-	/**
-	 * 
-	 */
+
 	@Override
 	public void saveAppointment(Appointment entity) throws RemoteException, Exception {
 		appointmentManager.saveAppointment(entity);	

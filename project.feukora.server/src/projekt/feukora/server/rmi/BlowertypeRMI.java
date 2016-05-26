@@ -3,6 +3,7 @@ package projekt.feukora.server.rmi;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
+
 import projekt.feukora.server.model.Blowertype;
 
 /**
@@ -11,7 +12,6 @@ import projekt.feukora.server.model.Blowertype;
  * @author Patrick
  * @version 1.0
  */
-
 public interface BlowertypeRMI extends Remote {
 
 	/**
@@ -75,5 +75,5 @@ public interface BlowertypeRMI extends Remote {
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public Blowertype findBlowertypeByName(String name) throws RemoteException, Exception;
+	Blowertype findBlowertypeByName(String name) throws RemoteException, Exception;
 }

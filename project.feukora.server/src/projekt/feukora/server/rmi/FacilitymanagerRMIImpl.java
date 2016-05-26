@@ -4,11 +4,8 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import projekt.feukora.server.business.CustomerManager;
-import projekt.feukora.server.business.CustomerManagerImpl;
 import projekt.feukora.server.business.FacilitymanagerManager;
 import projekt.feukora.server.business.FacilitymanagerManagerImpl;
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Facilitymanager;
 
 /**
@@ -17,11 +14,10 @@ import projekt.feukora.server.model.Facilitymanager;
  * @author Pascal
  * @version 1.0
  */
-
 public class FacilitymanagerRMIImpl extends UnicastRemoteObject implements FacilitymanagerRMI {
 
 	private static final long serialVersionUID = -8209421018993159995L;
-	
+
 	private FacilitymanagerManager facilitymanagerManager;
 
 	public FacilitymanagerRMIImpl() throws RemoteException {
@@ -62,5 +58,4 @@ public class FacilitymanagerRMIImpl extends UnicastRemoteObject implements Facil
 	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname) throws RemoteException  {
 		return facilitymanagerManager.findFacilitymanagerByLastname(lastname);
 	}
-	
-	}
+}

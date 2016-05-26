@@ -3,6 +3,7 @@ package projekt.feukora.server.rmi;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
+
 import projekt.feukora.server.business.CustomerfunctionManager;
 import projekt.feukora.server.business.CustomerfunctionManagerImpl;
 import projekt.feukora.server.model.Customerfunction;
@@ -13,7 +14,6 @@ import projekt.feukora.server.model.Customerfunction;
  * @author Patrick
  * @version 1.0
  */
-
 public class CustomerfunctionRMIImpl extends UnicastRemoteObject implements CustomerfunctionRMI {
 
 	private static final long serialVersionUID = 1266986892096541978L;
@@ -57,5 +57,5 @@ public class CustomerfunctionRMIImpl extends UnicastRemoteObject implements Cust
 	@Override
 	public Customerfunction findCustomerfunctionByName(String name) throws RemoteException {
 		return customerfunctionManager.findCustomerfunctionByName(name);
-		}
+	}
 }

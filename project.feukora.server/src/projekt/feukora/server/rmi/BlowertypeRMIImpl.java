@@ -4,11 +4,8 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import projekt.feukora.server.business.BlowerManager;
-import projekt.feukora.server.business.BlowerManagerImpl;
 import projekt.feukora.server.business.BlowertypeManager;
 import projekt.feukora.server.business.BlowertypeManagerImpl;
-import projekt.feukora.server.model.Blower;
 import projekt.feukora.server.model.Blowertype;
 
 /**
@@ -17,11 +14,10 @@ import projekt.feukora.server.model.Blowertype;
  * @author Patrick
  * @version 1.0
  */
-
 public class BlowertypeRMIImpl extends UnicastRemoteObject implements BlowertypeRMI {
-	
+
 	private static final long serialVersionUID = -145670658486889430L;
-	
+
 	private BlowertypeManager blowertypeManager;
 
 	public BlowertypeRMIImpl() throws RemoteException {
@@ -61,5 +57,5 @@ public class BlowertypeRMIImpl extends UnicastRemoteObject implements Blowertype
 	@Override
 	public Blowertype findBlowertypeByName(String name) throws RemoteException, Exception {
 		return blowertypeManager.findBlowertypeByName(name);
-		}
 	}
+}

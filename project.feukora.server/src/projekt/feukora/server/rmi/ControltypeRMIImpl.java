@@ -7,7 +7,6 @@ import java.util.List;
 import projekt.feukora.server.business.ControltypeManager;
 import projekt.feukora.server.business.ControltypeManagerImpl;
 import projekt.feukora.server.model.Controltype;
-import projekt.feukora.server.model.Fuel;
 
 /**
  * This Class implements the methodes of the Interface ControltypeRMI
@@ -16,19 +15,18 @@ import projekt.feukora.server.model.Fuel;
  *
  */
 public class ControltypeRMIImpl extends UnicastRemoteObject implements ControltypeRMI{
-	
+
 	private static final long serialVersionUID = 1813253292411198528L;
-	
+
 	private ControltypeManager controltypeManager;
-	
+
 	public ControltypeRMIImpl() throws RemoteException {
 		controltypeManager = new ControltypeManagerImpl();
 	}
 
 	@Override
 	public void saveControltype(Controltype entity) throws RemoteException, Exception {
-		controltypeManager.saveControltype(entity);
-		
+		controltypeManager.saveControltype(entity);	
 	}
 
 	@Override
@@ -38,14 +36,12 @@ public class ControltypeRMIImpl extends UnicastRemoteObject implements Controlty
 
 	@Override
 	public void deleteControltype(Controltype entity) throws RemoteException, Exception {
-		controltypeManager.deleteControltype(entity);
-		
+		controltypeManager.deleteControltype(entity);	
 	}
 
 	@Override
 	public void deleteControltypeByControltypeid(Integer controltypeid) throws RemoteException, Exception {
-		controltypeManager.deleteControltypeByControltypeid(controltypeid);
-		
+		controltypeManager.deleteControltypeByControltypeid(controltypeid);	
 	}
 
 	@Override
@@ -62,7 +58,4 @@ public class ControltypeRMIImpl extends UnicastRemoteObject implements Controlty
 	public Controltype findControltypeByName(String name) throws RemoteException, Exception {
 		return controltypeManager.findControltypeByName(name);
 	}
-
-	
-
 }

@@ -14,8 +14,8 @@ import projekt.feukora.server.model.User;
  * @author Allan 
  * @version 1.1
  */
+public interface AppointmentRMI extends Remote {
 
-public interface AppointmentRMI extends Remote{
 	/**
 	 * Save the given entity
 	 * 
@@ -77,9 +77,13 @@ public interface AppointmentRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate) throws RemoteException;
-	
-	List<Appointment> findAppointmentsForInspector( User inspector ) throws RemoteException;
+	List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate) throws RemoteException;
 
-	
+	/**
+	 * Return a list with appointments for this inspector
+	 * @param inspector
+	 * @return
+	 * @throws RemoteException
+	 */
+	List<Appointment> findAppointmentsForInspector( User inspector ) throws RemoteException;	
 }

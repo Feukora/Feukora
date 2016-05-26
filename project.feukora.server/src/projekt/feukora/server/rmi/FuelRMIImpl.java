@@ -12,16 +12,13 @@ import projekt.feukora.server.model.Fuel;
  * This Class implements the methodes of the interface FuelRMI.
  * 
  * @author Tamara
- * @version 1.0
+ * @version 1.2
  */
 public class FuelRMIImpl extends UnicastRemoteObject implements FuelRMI {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 2534220880779514943L;
 	private FuelManager fuelManager;
-	
+
 	public FuelRMIImpl() throws RemoteException{
 		fuelManager = new FuelManagerImpl();
 	}
@@ -30,23 +27,20 @@ public class FuelRMIImpl extends UnicastRemoteObject implements FuelRMI {
 	public Fuel updateFuel(Fuel entity) throws RemoteException, Exception {
 		return fuelManager.updateFuel(entity);
 	}
-	
+
 	@Override
 	public void saveFuel(Fuel entity) throws RemoteException, Exception {
 		fuelManager.saveFuel(entity);
-		
 	}
 
 	@Override
 	public void deleteFuel(Fuel entity) throws RemoteException, Exception {
 		fuelManager.deleteFuel(entity);
-		
 	}
 
 	@Override
 	public void deleteFuelByFuelid(Integer fuelid) throws RemoteException, Exception {
 		fuelManager.deleteFuelByFuelid(fuelid);
-		
 	}
 
 	@Override
@@ -63,9 +57,4 @@ public class FuelRMIImpl extends UnicastRemoteObject implements FuelRMI {
 	public Fuel findFuelByName(String name) throws RemoteException, Exception {
 		return fuelManager.findFuelByName(name);
 	}
-
-
-	
-
-
 }

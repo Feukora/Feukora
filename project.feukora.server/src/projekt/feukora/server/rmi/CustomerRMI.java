@@ -14,7 +14,7 @@ import projekt.feukora.server.model.Customer;
  * @version 1.1
  */
 public interface CustomerRMI extends Remote{
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -76,7 +76,7 @@ public interface CustomerRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Customer> findCustomerByLastname(String lastname) throws RemoteException;
+	List<Customer> findCustomerByLastname(String lastname) throws RemoteException;
 
 	/**
 	 * Return a list with customers with this firstname
@@ -84,7 +84,7 @@ public interface CustomerRMI extends Remote{
 	 * @param vorname
 	 * @return
 	 */
-	public List<Customer> findCustomerByFirstname(String firstname) throws RemoteException ;
+	List<Customer> findCustomerByFirstname(String firstname) throws RemoteException ;
 
 	/**
 	 * Return a list with customers with this lastname and firstname
@@ -93,7 +93,7 @@ public interface CustomerRMI extends Remote{
 	 * @param vorname
 	 * @return
 	 */
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
+	List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
 
 	/**
 	 * Return a list with customers with this adress
@@ -101,5 +101,5 @@ public interface CustomerRMI extends Remote{
 	 * @param ort
 	 * @return
 	 */
-	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException ;
+	List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException ;
 }

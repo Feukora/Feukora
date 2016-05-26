@@ -14,7 +14,7 @@ import projekt.feukora.server.model.Customerheater;
  * @version 1.1
  */
 public interface CustomerheaterRMI extends Remote {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -64,7 +64,7 @@ public interface CustomerheaterRMI extends Remote {
 	 * @throws RemoteException 
 	 */
 	List<Customerheater> findAllCustomerheaters() throws RemoteException;
-	
+
 	/**
 	 * 
 	 * Return the entity with this performance
@@ -74,7 +74,7 @@ public interface CustomerheaterRMI extends Remote {
 	 * @throws RemoteException 
 	 */
 	List<Customerheater> findCustomerheaterByPerformance(Integer performance) throws RemoteException;
-	
+
 	/**
 	 * This method returns a {@link List<Customerheater>} with all heaters for the given customer
 	 * 
@@ -82,5 +82,4 @@ public interface CustomerheaterRMI extends Remote {
 	 * @return {@link List<Customerheater>} with all {@link Customerheater} for the given customer
 	 */
 	List<Customerheater> findCustomerHeaterForCustomer( Customer customer ) throws RemoteException;
-
 }

@@ -4,7 +4,6 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Facilitymanager;
 
 /**
@@ -13,7 +12,6 @@ import projekt.feukora.server.model.Facilitymanager;
  * @author Pascal
  * @version 1.0
  */
-
 public interface FacilitymanagerRMI extends Remote {
 
 	/**
@@ -77,6 +75,5 @@ public interface FacilitymanagerRMI extends Remote {
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Facilitymanager> findFacilitymanagerByLastname(String lastname) throws RemoteException;
-
+	List<Facilitymanager> findFacilitymanagerByLastname(String lastname) throws RemoteException;
 }

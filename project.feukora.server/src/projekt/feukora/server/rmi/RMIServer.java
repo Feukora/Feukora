@@ -2,7 +2,6 @@ package projekt.feukora.server.rmi;
 
 import java.io.InputStream;
 import java.net.InetAddress;
-import java.rmi.RMISecurityManager;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Properties;
@@ -10,7 +9,6 @@ import java.util.Properties;
 import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 import projekt.feukora.server.persister.TownData;
 import test.project.feukora.server.persister.TestdataDB;
@@ -26,10 +24,9 @@ public class RMIServer {
 
 	private static final Logger logger = Logger
 			.getLogger(RMIServer.class);
-	
+
 	public static void main(String[] args) {
 
-		/* Konfigurationsdaten einlesen */
 		Properties props = new Properties();
 		InputStream is = RMIServer.class.getClass().getResourceAsStream("/rmiserver.properties");
 
@@ -41,7 +38,6 @@ public class RMIServer {
 		}
 		int port = Integer.parseInt(props.getProperty("server_port"));
 		String hostIP = props.getProperty("server_ip");
-		
 
 		String customerRMIName = "customerRMI";
 		String companyRMIName = "companyRMI";
@@ -59,15 +55,13 @@ public class RMIServer {
 		String facilitymanagerRMIName = "facilitymanagerRMI";
 		String fuelRMIName = "fuelRMI";
 		String usergroupRMIName = "usergroupRMI";
-		
+
 		Registry registry = null;
-		
+
 		try{
 
-
 			InetAddress.getLocalHost();
-			
-			
+
 			System.setProperty("java.rmi.server.hostname", hostIP);
 
 			registry = LocateRegistry.createRegistry(port);
@@ -76,7 +70,7 @@ public class RMIServer {
 
 				TownData.loadTownData();
 				TestdataDB.loadTestdata();
-				// Entfernte Objekte erstellen
+
 				CustomerRMI customerRMI = new CustomerRMIImpl();
 				CompanyRMI companyRMI = new CompanyRMIImpl();
 				AppointmentRMI appointmentRMI = new AppointmentRMIImpl();
@@ -110,10 +104,7 @@ public class RMIServer {
 				registry.rebind(facilitymanagerRMIName, facilitymanagerRMI);
 				registry.rebind(fuelRMIName, fuelRMI);
 				registry.rebind(usergroupRMIName, usergroupRMI);
-				
-			
-				
-				
+
 				String msg = "RMI-Server ist bereit fuer Client-Anfragen.\n\n"
 						+ "Server herunterfahren?";
 				JOptionPane.showMessageDialog(null, msg, "ServerName ["
@@ -135,20 +126,17 @@ public class RMIServer {
 				registry.unbind(customerheaterRMIName);
 				registry.unbind(facilitymanagerRMIName);
 				registry.unbind(fuelRMIName);
-				registry.unbind(usergroupRMIName);
-				
-				
+				registry.unbind(usergroupRMIName);				
 
 				System.out.println("RMI Server wird heruntergefahren!\n");
 
 				System.exit(0);
 			} else {
 				System.out
-						.println("Entferntes Objekt konnte nicht exportiert werden!");
+				.println("Entferntes Objekt konnte nicht exportiert werden!");
 			}
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden ", e);
-			
 		}
 	}
 }

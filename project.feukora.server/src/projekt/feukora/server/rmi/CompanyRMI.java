@@ -14,7 +14,7 @@ import projekt.feukora.server.model.Company;
  * @version 1.1
  */
 public interface CompanyRMI extends Remote{
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -76,6 +76,5 @@ public interface CompanyRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Company> findCompanyByName(String name) throws RemoteException;
-
+	List<Company> findCompanyByName(String name) throws RemoteException;
 }

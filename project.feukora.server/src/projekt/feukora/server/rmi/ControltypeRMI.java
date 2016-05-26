@@ -5,7 +5,6 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import projekt.feukora.server.model.Controltype;
-import projekt.feukora.server.model.Fuel;
 
 /**
  * RMI interface for handling controltype entities.
@@ -14,7 +13,7 @@ import projekt.feukora.server.model.Fuel;
  *
  */
 public interface ControltypeRMI extends Remote{
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -76,6 +75,6 @@ public interface ControltypeRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public Controltype findControltypeByName(String name) throws RemoteException, Exception;
+	Controltype findControltypeByName(String name) throws RemoteException, Exception;
 
 }

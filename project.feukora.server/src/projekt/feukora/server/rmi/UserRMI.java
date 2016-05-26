@@ -4,7 +4,6 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.User;
 import projekt.feukora.server.model.Usergroup;
 
@@ -16,7 +15,7 @@ import projekt.feukora.server.model.Usergroup;
  *
  */
 public interface UserRMI extends Remote{
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -78,7 +77,7 @@ public interface UserRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<User> findUsersByLastname(String lastname) throws RemoteException;
+	List<User> findUsersByLastname(String lastname) throws RemoteException;
 
 	/**
 	 * Return a list with users with this firstname
@@ -86,7 +85,7 @@ public interface UserRMI extends Remote{
 	 * @param vorname
 	 * @return
 	 */
-	public List<User> findUsersByFirstname(String firstname) throws RemoteException ;
+	List<User> findUsersByFirstname(String firstname) throws RemoteException ;
 
 	/**
 	 * Return a list with users with this lastname and firstname
@@ -95,7 +94,7 @@ public interface UserRMI extends Remote{
 	 * @param vorname
 	 * @return
 	 */
-	public List<User> findUsersByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
+	List<User> findUsersByLastnameAndFirstname(String lastname, String firstname) throws RemoteException ;
 
 	/**
 	 * Return a list with users with this username
@@ -103,13 +102,13 @@ public interface UserRMI extends Remote{
 	 * @param ort
 	 * @return
 	 */
-	public User findUsersByUsername(String username) throws RemoteException ;
-	
+	User findUsersByUsername(String username) throws RemoteException ;
+
 	/**
 	 * Return a list with users with this usergroup
 	 * 
 	 * @param usergroup
 	 * @return
 	 */
-	public List<User> findUserByUsergroup(Usergroup usergroup) throws RemoteException ;
+	List<User> findUserByUsergroup(Usergroup usergroup) throws RemoteException ;
 }

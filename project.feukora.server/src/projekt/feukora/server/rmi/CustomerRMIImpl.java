@@ -2,28 +2,22 @@ package projekt.feukora.server.rmi;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.business.CustomerManager;
 import projekt.feukora.server.business.CustomerManagerImpl;
 import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.persister.GenericPersisterImpl;
-import projekt.feukora.server.persister.JpaUtil;
 
 /**
  * This Class implements the methods of the interface CustomerRMI
  * 
- * @author Sandro Fasser
- * @version 1.0
+ * @author Sandro
+ * @version 1.1
  */
 public class CustomerRMIImpl extends UnicastRemoteObject implements CustomerRMI {
 
 	private static final long serialVersionUID = 724994631535546964L;
-	
+
 	private CustomerManager customerManager;
 
 	public CustomerRMIImpl() throws RemoteException {
@@ -79,6 +73,4 @@ public class CustomerRMIImpl extends UnicastRemoteObject implements CustomerRMI 
 	public List<Customer> findCustomerByCompanyname(String companyname) throws RemoteException  {
 		return customerManager.findCustomerByCompanyname(companyname);
 	} 
-
-
 }

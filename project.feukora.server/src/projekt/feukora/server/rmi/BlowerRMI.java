@@ -12,9 +12,8 @@ import projekt.feukora.server.model.Blower;
  * @author Robin 
  * @version 1.1
  */
-
 public interface BlowerRMI extends Remote{
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -76,6 +75,5 @@ public interface BlowerRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Blower> findBlowerByName(String name) throws RemoteException, Exception;
-
+	List<Blower> findBlowerByName(String name) throws RemoteException, Exception;
 }

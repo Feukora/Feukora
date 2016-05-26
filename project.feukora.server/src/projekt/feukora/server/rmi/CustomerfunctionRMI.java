@@ -12,9 +12,8 @@ import projekt.feukora.server.model.Customerfunction;
  * @author Patrick
  * @version 1.0
  */
-
 public interface CustomerfunctionRMI extends Remote {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -72,5 +71,4 @@ public interface CustomerfunctionRMI extends Remote {
 	 * @throws RemoteException 
 	 */
 	Customerfunction findCustomerfunctionByName(String name) throws RemoteException;
-
 }

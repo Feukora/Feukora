@@ -8,12 +8,12 @@ import java.util.List;
 import projekt.feukora.server.model.Rapport;
 
 /**
-* RMI interface for handling rapport entities
-* 
-* @author Sandro F
-* @version 1.0
-*
-*/
+ * RMI interface for handling rapport entities
+ * 
+ * @author Sandro
+ * @version 1.1
+ *
+ */
 public interface RapportRMI extends Remote {
 
 	/**
@@ -70,13 +70,13 @@ public interface RapportRMI extends Remote {
 	 * @param name
 	 * @return List with Rapports
 	 */
-	public List<Rapport> findRapportByResults(Boolean results) throws RemoteException;
-	
+	List<Rapport> findRapportByResults(Boolean results) throws RemoteException;
+
 	/**
 	 * Return a list with rapports with this measuringdate
 	 * 
 	 * @param name
 	 * @return List with Rapports
 	 */
-	public List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate) throws RemoteException;
+	List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate) throws RemoteException;
 }

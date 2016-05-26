@@ -3,6 +3,7 @@ package projekt.feukora.server.rmi;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
+
 import projekt.feukora.server.business.BlowerManager;
 import projekt.feukora.server.business.BlowerManagerImpl;
 import projekt.feukora.server.model.Blower;
@@ -18,7 +19,7 @@ public class BlowerRMIImpl extends UnicastRemoteObject implements BlowerRMI {
 
 
 	private static final long serialVersionUID = 8782682640987666627L;
-	
+
 	private BlowerManager blowerManager;
 
 	public BlowerRMIImpl() throws RemoteException {
@@ -58,6 +59,5 @@ public class BlowerRMIImpl extends UnicastRemoteObject implements BlowerRMI {
 	@Override
 	public List<Blower> findBlowerByName(String name) throws RemoteException {
 		return blowerManager.findBlowerByName(name);
-		}
-
+	}
 }

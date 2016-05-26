@@ -2,19 +2,12 @@ package projekt.feukora.server.rmi;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-
 
 import projekt.feukora.server.business.UserManager;
 import projekt.feukora.server.business.UserManagerImpl;
 import projekt.feukora.server.model.User;
 import projekt.feukora.server.model.Usergroup;
-import projekt.feukora.server.persister.GenericPersisterImpl;
-import projekt.feukora.server.persister.JpaUtil;
 
 /**
  * This Class implements the methods of the interface UserRMI
@@ -25,7 +18,7 @@ import projekt.feukora.server.persister.JpaUtil;
 public class UserRMIImpl extends UnicastRemoteObject implements UserRMI {
 
 	private static final long serialVersionUID = 784171184659353831L;
-	
+
 	private UserManager userManager;
 
 	public UserRMIImpl() throws RemoteException {
@@ -50,7 +43,6 @@ public class UserRMIImpl extends UnicastRemoteObject implements UserRMI {
 	@Override
 	public void deleteUserByUserid(Integer usersid) throws RemoteException, Exception {
 		userManager.deleteUsersByUsersid(usersid);
-		
 	}
 
 	@Override
@@ -87,13 +79,4 @@ public class UserRMIImpl extends UnicastRemoteObject implements UserRMI {
 	public List<User> findUserByUsergroup(Usergroup usergroup) throws RemoteException {
 		return userManager.findUserByUsergroup(usergroup);
 	}
-
-
-
-	
-
-
-
-
-
 }

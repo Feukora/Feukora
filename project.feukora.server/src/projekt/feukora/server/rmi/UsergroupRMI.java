@@ -3,6 +3,7 @@ package projekt.feukora.server.rmi;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
+
 import projekt.feukora.server.model.Usergroup;
 
 /**
@@ -12,7 +13,7 @@ import projekt.feukora.server.model.Usergroup;
  * @version 1.0
  */
 public interface UsergroupRMI extends Remote {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -74,6 +75,5 @@ public interface UsergroupRMI extends Remote {
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public Usergroup findUsergroupByName(String name) throws RemoteException, Exception;
-
+	Usergroup findUsergroupByName(String name) throws RemoteException, Exception;
 }

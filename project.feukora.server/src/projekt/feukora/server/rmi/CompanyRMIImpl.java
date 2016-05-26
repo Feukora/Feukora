@@ -2,16 +2,11 @@ package projekt.feukora.server.rmi;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
 import projekt.feukora.server.business.CompanyManager;
 import projekt.feukora.server.business.CompanyManagerImpl;
 import projekt.feukora.server.model.Company;
-import projekt.feukora.server.persister.JpaUtil;
 
 /**
  *  This Class implements the methods of the interface CompanyRMI
@@ -21,9 +16,8 @@ import projekt.feukora.server.persister.JpaUtil;
  */
 public class CompanyRMIImpl extends UnicastRemoteObject implements CompanyRMI {
 
-
 	private static final long serialVersionUID = 5688064118469483727L;
-	
+
 	private CompanyManager companyManager;
 
 	public CompanyRMIImpl() throws RemoteException {
@@ -62,8 +56,6 @@ public class CompanyRMIImpl extends UnicastRemoteObject implements CompanyRMI {
 
 	@Override
 	public List<Company> findCompanyByName(String name)throws RemoteException {
-			return companyManager.findCompanyByName(name);
-			
+		return companyManager.findCompanyByName(name);	
 	}
-
 }

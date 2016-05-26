@@ -10,7 +10,7 @@ import projekt.feukora.server.model.Fuel;
  * RMI interface for handling fuel entities.
  * 
  * @author Tamara
- * @version 1.0
+ * @version 1.2
  */
 public interface FuelRMI extends Remote {
 
@@ -75,5 +75,5 @@ public interface FuelRMI extends Remote {
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public Fuel findFuelByName(String name) throws RemoteException, Exception;
+	Fuel findFuelByName(String name) throws RemoteException, Exception;
 }

@@ -18,17 +18,16 @@ import projekt.feukora.server.model.Rapport;
 public class RapportRMIImpl extends UnicastRemoteObject implements RapportRMI {
 
 	private static final long serialVersionUID = -8825604569434762933L;
-	
+
 	private RapportManager rapportManager;
-	
+
 	public RapportRMIImpl() throws RemoteException{
 		rapportManager = new RapportManagerImpl();
 	}
 
 	@Override
 	public void saveRapport(Rapport entity) throws RemoteException, Exception {
-		rapportManager.saveRapport(entity);
-		
+		rapportManager.saveRapport(entity);	
 	}
 
 	@Override
@@ -39,13 +38,11 @@ public class RapportRMIImpl extends UnicastRemoteObject implements RapportRMI {
 	@Override
 	public void deleteRapport(Rapport entity) throws RemoteException, Exception {
 		rapportManager.deleteRapport(entity);
-		
 	}
 
 	@Override
 	public void deleteRapportByRapportid(Integer rapportid) throws RemoteException, Exception {
-		rapportManager.deleteRapportByRapportid(rapportid);
-		
+		rapportManager.deleteRapportByRapportid(rapportid);	
 	}
 
 	@Override
@@ -67,8 +64,5 @@ public class RapportRMIImpl extends UnicastRemoteObject implements RapportRMI {
 	public List<Rapport> findRapportByMeasuringdate(GregorianCalendar measuringdate) throws RemoteException {
 		return rapportManager.findRapportByMeasuringdate(measuringdate);
 	}
-	
-	
-
 }
 

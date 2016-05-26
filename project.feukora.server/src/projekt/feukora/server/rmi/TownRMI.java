@@ -12,7 +12,8 @@ import projekt.feukora.server.model.Town;
  * @author Pascal
  * @version 1.0
  */
-public interface TownRMI extends Remote{
+public interface TownRMI extends Remote {
+
 	/**
 	 * Save the given entity
 	 * 
@@ -56,5 +57,5 @@ public interface TownRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public Town findTownByZip(Integer zip) throws RemoteException;
+	Town findTownByZip(Integer zip) throws RemoteException;
 }

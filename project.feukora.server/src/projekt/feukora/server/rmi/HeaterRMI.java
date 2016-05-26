@@ -4,7 +4,6 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Heater;
 
 /**
@@ -14,7 +13,8 @@ import projekt.feukora.server.model.Heater;
  * @version 1.1
  */
 
-public interface HeaterRMI extends Remote{
+public interface HeaterRMI extends Remote {
+
 	/**
 	 * Save the given entity
 	 * 
@@ -76,6 +76,5 @@ public interface HeaterRMI extends Remote{
 	 * @return
 	 * @throws RemoteException 
 	 */
-	public List<Heater> findHeaterByName(String name) throws RemoteException;
-
+	List<Heater> findHeaterByName(String name) throws RemoteException;
 }
