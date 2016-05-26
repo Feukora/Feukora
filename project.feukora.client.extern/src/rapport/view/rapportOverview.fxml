@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rapport.controller.ControllerOverview">
+   <children>
+      <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="300.0" text="Übersicht Rapporte" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <TableView fx:id="overviewTableRapport" layoutX="66.0" layoutY="124.0" onSort="#ActionOverviewTableRapport" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="54.0">
+        <columns>
+          <TableColumn fx:id="overviewTableCustomer" prefWidth="179.0" text="Kunde" />
+          <TableColumn fx:id="overviewTableDate" minWidth="0.0" prefWidth="153.0" text="Datum" />
+            <TableColumn fx:id="overviewTableControlltype" prefWidth="209.0" text="Kontrolltyp" />
+            <TableColumn fx:id="overviewTableResult" prefWidth="223.0" text="Beurteilung" />
+            <TableColumn fx:id="overviewTableInspector" minWidth="0.0" prefWidth="215.0" text="Feuerungskontrolleur" />
+        </columns>
+      </TableView>
+      <Button fx:id="overviewDeleteRapport" layoutX="950.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewDeleteRapport" prefHeight="20.0" prefWidth="90.0" text="Löschen" />
+      <Button fx:id="overviewRefreshRapport" layoutX="830.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewRefreshRapport" prefHeight="20.0" prefWidth="90.0" text="Refresh" />
+      <Button fx:id="overviewUpdateRapport" layoutX="710.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewUpdateRapport" prefHeight="20.0" prefWidth="90.0" text="Ändern" />
+   </children>
+</AnchorPane>

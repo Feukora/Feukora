@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="23.0" layoutY="100.0" prefHeight="65.0" prefWidth="573.0" text="Feuerungs-Rapport">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="177.0" prefHeight="40.0" prefWidth="805.0" text="Öl- und Gasfeuerungen für die Zentralschweiz (Version 2012)">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="320.0" layoutY="80.0">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="177.0" layoutY="236.0" text="Gemeinde (politisch)" />
+      <TextField layoutX="177.0" layoutY="271.0" prefHeight="51.0" prefWidth="340.0" />
+      <Label layoutX="23.0" layoutY="236.0" text="Kanton" />
+      <TextField layoutX="23.0" layoutY="271.0" prefHeight="51.0" prefWidth="125.0" />
+      <TabPane layoutX="364.0" layoutY="253.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
+      <Button layoutX="804.0" layoutY="722.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" text="Weiter &gt;" />
+      <Label layoutX="23.0" layoutY="344.0" text="Anlagestandort (Strasse, Haus-Nr., PLZ, Ort)" />
+      <TextField layoutX="23.0" layoutY="379.0" prefHeight="51.0" prefWidth="793.0" />
+      <RadioButton layoutX="24.0" layoutY="440.0" mnemonicParsing="false" text="Eigentümer">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="24.0" layoutY="473.0" mnemonicParsing="false" text="Verwaltung">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <TextField layoutX="154.0" layoutY="448.0" prefHeight="51.0" prefWidth="659.0" />
+      <Label layoutX="61.0" layoutY="515.0" prefHeight="35.0" prefWidth="90.0" text="Hauswart">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="154.0" layoutY="507.0" prefHeight="51.0" prefWidth="659.0" />
+   </children>
+</Pane>

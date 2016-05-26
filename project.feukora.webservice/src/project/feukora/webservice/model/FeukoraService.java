@@ -75,6 +75,7 @@ public class FeukoraService implements IFeukoraService {
 	public List<Customer> getCustomers() throws RemoteException {
 		return customerManager.findAllCustomers();
 	}
+	
 
 	@Override
 	public Rapport createRapport() throws RemoteException {
