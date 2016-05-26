@@ -17,6 +17,12 @@ import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Company;
 import projekt.feukora.server.model.User;
 
+/**
+ * Controller for the inspectors detailview. 
+ * @author Sandro
+ * @version 1.7
+ *
+ */
 public class ControllerDetailview {
 
 	private static final Logger logger = Logger
@@ -81,7 +87,6 @@ public class ControllerDetailview {
 			inspectorMunicipalityField.setText(town);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}

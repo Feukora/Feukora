@@ -15,6 +15,12 @@ import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Customer;
 
+/**
+ * Controller for the customers detailview.
+ * @author Sandro
+ * @version 1.6
+ *
+ */
 public class ControllerDetailview {
 	
 	private static final Logger logger = Logger

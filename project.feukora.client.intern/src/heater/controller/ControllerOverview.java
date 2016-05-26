@@ -17,9 +17,11 @@ import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Heater;
 
 /**
- * Sample Skeleton for 'heaterOverview.fxml' Controller Class
+ * Controller for the heaters overview. 
+ * @author Pascal
+ * @version 1.7
+ *
  */
-
 public class ControllerOverview {
 	
 	private static final Logger logger = Logger
@@ -62,21 +64,6 @@ public class ControllerOverview {
     void ActionOverviewTableHeater(ActionEvent event) {
 
     }
-    
-    /*@FXML
-    void ActionOverviewDeleteHeater(ActionEvent event) {
-    	ClientInternRMI feukora;
-    	try{
-    		feukora = new ClientInternRMI();
-    		Heater entity = overviewTableHeater.getSelectionModel().getSelectedItem();
-    		feukora.deleteHeater(entity);
-    	}catch(Exception e){
-    		logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-    	}
-    	initialize();
-
-    }*/
     
     @FXML
     void ActionOverviewDeleteHeater(ActionEvent event) {

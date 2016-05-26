@@ -48,10 +48,9 @@ import projekt.feukora.server.rmi.UserRMI;
 import projekt.feukora.server.rmi.UsergroupRMI;
 
 /**
- * This Class implements the rmi connection 
- * 
+ * This Class that implements the rmi connection.
+ * @author Sandro
  * @version 1.7
- * @author Sandro Fasser
  *
  */
 public class ClientInternRMI {

@@ -17,6 +17,12 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 
+/**
+ * Controller for the login.
+ * @author Pascal
+ * @version 1.7
+ *
+ */
 public class ControllerLogin {
 
 	private static final Logger logger = Logger
