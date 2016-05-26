@@ -67,7 +67,7 @@ public interface CustomerPersister {
 	 * @param lastname
 	 * @return List with Customers
 	 */
-	public List<Customer> findCustomerByLastname(String lastname);
+	List<Customer> findCustomerByLastname(String lastname);
 
 	/**
 	 * Return a list with customers with this firstname
@@ -75,7 +75,7 @@ public interface CustomerPersister {
 	 * @param firstname
 	 * @return List with Customers
 	 */
-	public List<Customer> findCustomerByFirstname(String firstname);
+	List<Customer> findCustomerByFirstname(String firstname);
 
 	/**
 	 * Return a list with customers with this lastname and firstname
@@ -84,7 +84,7 @@ public interface CustomerPersister {
 	 * @param firstname
 	 * @return List with Customers
 	 */
-	public List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname);
+	List<Customer> findCustomerByLastnameAndFirstname(String lastname, String firstname);
 
 	/**
 	 * Return a list with customers with this Companyname
@@ -92,5 +92,5 @@ public interface CustomerPersister {
 	 * @param companyname
 	 * @return List with Customers
 	 */
-	public List<Customer> findCustomerByCompanyname(String companyname);
+	List<Customer> findCustomerByCompanyname(String companyname);
 }

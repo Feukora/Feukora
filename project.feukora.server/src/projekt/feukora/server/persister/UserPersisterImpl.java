@@ -17,7 +17,7 @@ import projekt.feukora.server.model.Usergroup;
  *
  */
 public class UserPersisterImpl implements UserPersister{
-	
+
 	@Override
 	public void saveUser(User entity) throws Exception {
 		new GenericPersisterImpl<User>(User.class).save(entity);
@@ -50,7 +50,7 @@ public class UserPersisterImpl implements UserPersister{
 
 	@Override
 	public List<User> findUserByLastname(String lastname) {
-		
+
 		EntityManager em = JpaUtil.createEntityManager();
 		TypedQuery<User> tQuery = em.createNamedQuery("User.findByLastname",
 				User.class);
@@ -66,7 +66,7 @@ public class UserPersisterImpl implements UserPersister{
 
 	@Override
 	public List<User> findUserByFirstname(String firstname) {
-		
+
 		EntityManager em = JpaUtil.createEntityManager();
 		TypedQuery<User> tQuery = em.createNamedQuery("User.findByFirstname",
 				User.class);
@@ -82,7 +82,7 @@ public class UserPersisterImpl implements UserPersister{
 
 	@Override
 	public List<User> findUserByLastnameAndFirstname(String lastname, String firstname) {
-		
+
 		EntityManager em = JpaUtil.createEntityManager();
 		TypedQuery<User> tQuery = em.createNamedQuery(
 				"User.findByLastnameAndFirstname", User.class);
@@ -99,7 +99,7 @@ public class UserPersisterImpl implements UserPersister{
 
 	@Override
 	public User findUserByUsername(String username) {
-		
+
 		EntityManager em = JpaUtil.createEntityManager();
 		TypedQuery<User> tQuery = em.createNamedQuery(
 				"User.findByUsername", User.class);

@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import projekt.feukora.server.model.Blower;
- 
+
 /**
  * This class implements the interface BlowerPersister
  * 
@@ -59,5 +59,5 @@ public class BlowerPersisterImpl implements BlowerPersister {
 		em.close();
 
 		return blowerlist != null ? blowerlist : new ArrayList<Blower>();
-		}
+	}
 }

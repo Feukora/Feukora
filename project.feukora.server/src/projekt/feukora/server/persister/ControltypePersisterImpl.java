@@ -54,7 +54,7 @@ public class ControltypePersisterImpl implements ControltypePersister {
 		tQuery.setParameter("name", name);
 
 		List<Controltype> controltypelist = tQuery.getResultList();
-		
+
 		em.close();
 
 		return controltypelist.get(0);

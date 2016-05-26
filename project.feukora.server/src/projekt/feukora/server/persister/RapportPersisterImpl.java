@@ -60,7 +60,6 @@ public class RapportPersisterImpl implements RapportPersister {
 		em.close();
 
 		return rapportlist != null ? rapportlist : new ArrayList<Rapport>();
-	
 	}
 
 	@Override

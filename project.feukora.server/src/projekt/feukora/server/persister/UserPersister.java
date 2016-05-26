@@ -67,7 +67,7 @@ public interface UserPersister {
 	 * @param name
 	 * @return List with Users
 	 */
-	public List<User> findUserByLastname(String lastname);
+	List<User> findUserByLastname(String lastname);
 
 	/**
 	 * Return a list of users with this firstname
@@ -75,7 +75,7 @@ public interface UserPersister {
 	 * @param vorname
 	 * @return List with Users
 	 */
-	public List<User> findUserByFirstname(String firstname);
+	List<User> findUserByFirstname(String firstname);
 
 	/**
 	 * Return a list of users with this lastname and firstname
@@ -84,21 +84,21 @@ public interface UserPersister {
 	 * @param firstname
 	 * @return List with users
 	 */
-	public List<User> findUserByLastnameAndFirstname(String lastname, String firstname);
-	
+	List<User> findUserByLastnameAndFirstname(String lastname, String firstname);
+
 	/**
 	 * Return a list of users with this username
 	 * 
 	 * @param username
 	 * @return user corresponding to the username
 	 */
-	public User findUserByUsername(String username);
-	
+	User findUserByUsername(String username);
+
 	/**
 	 * Return a list of users with this usergroup
 	 * 
 	 * @param username
 	 * @return user corresponding to the usergroup
 	 */
-	public List<User> findUserByUsergroup(Usergroup usergroup);
+	List<User> findUserByUsergroup(Usergroup usergroup);
 }

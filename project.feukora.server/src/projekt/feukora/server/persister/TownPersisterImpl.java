@@ -37,7 +37,7 @@ public class TownPersisterImpl implements TownPersister {
 
 	@Override
 	public Town findbyZip(Integer zip) {
-		
+
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Town> tQuery = em.createNamedQuery("Town.findByZip",
@@ -48,7 +48,7 @@ public class TownPersisterImpl implements TownPersister {
 		List<Town> townlist = tQuery.getResultList();
 
 		em.close();
-		
+
 		return townlist.get(0);
 	}
 

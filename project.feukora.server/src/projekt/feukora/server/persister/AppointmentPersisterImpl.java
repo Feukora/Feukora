@@ -34,8 +34,7 @@ public class AppointmentPersisterImpl implements AppointmentPersister{
 
 	@Override
 	public void deleteAppointmentByAppointmentid (Integer appointmentid) throws Exception {
-		new GenericPersisterImpl<Appointment>(Appointment.class).deleteById(appointmentid);
-		
+		new GenericPersisterImpl<Appointment>(Appointment.class).deleteById(appointmentid);	
 	}
 
 	@Override
@@ -67,13 +66,12 @@ public class AppointmentPersisterImpl implements AppointmentPersister{
 	@Override
 	public List<Appointment> findAppointmentsForInspector(User inspector) {
 		EntityManager em = JpaUtil.createEntityManager();
-		
+
 		TypedQuery<Appointment> tQuery = em.createNamedQuery("Appointment.findByUserId", Appointment.class);
 		tQuery.setParameter("userId", inspector);
 		List<Appointment> appointmentList = tQuery.getResultList();
 		em.close();
-		
+
 		return appointmentList != null ? appointmentList : new ArrayList<Appointment>();
-	}
-	
+	}	
 }

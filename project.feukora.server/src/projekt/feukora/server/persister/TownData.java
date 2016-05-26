@@ -12,11 +12,11 @@ import projekt.feukora.server.model.Town;
 /**
  * This class includes Town data
  * @version 1.5
- * @author Robin
+ * @author Sandro
  */
 
 public class TownData {
-	
+
 	private static final Logger logger = Logger
 			.getLogger(TownData.class);
 
@@ -25,11 +25,11 @@ public class TownData {
 		BufferedReader in = null;
 		try {
 			TownPersister p = new TownPersisterImpl();
-			
+
 			InputStream is = TownData.class.getClass().getResourceAsStream("/ZIP.txt");
-			
+
 			in = new BufferedReader(new InputStreamReader( is ));
-			
+
 			String zeile = null;
 			while ((zeile = in.readLine()) != null) {
 				String[] splited = zeile.split("\t");
@@ -38,7 +38,7 @@ public class TownData {
 				String name = splited[1];
 				t.setZip(zip);;
 				t.setName(name);
-				
+
 				try {
 					p.saveTown(t);
 				} catch (Exception e) {
@@ -46,7 +46,7 @@ public class TownData {
 							e);
 				}
 			}
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

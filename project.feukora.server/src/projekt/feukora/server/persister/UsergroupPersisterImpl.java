@@ -16,8 +16,7 @@ public class UsergroupPersisterImpl implements UsergroupPersister {
 
 	@Override
 	public void saveUsergroup(Usergroup entity) throws Exception {
-		new GenericPersisterImpl<Usergroup>(Usergroup.class).save(entity);
-		
+		new GenericPersisterImpl<Usergroup>(Usergroup.class).save(entity);	
 	}
 
 	@Override
@@ -28,13 +27,11 @@ public class UsergroupPersisterImpl implements UsergroupPersister {
 	@Override
 	public void deleteUsergroup(Usergroup entity) throws Exception {
 		new GenericPersisterImpl<Usergroup>(Usergroup.class).delete(entity);
-		
 	}
 
 	@Override
 	public void deleteUsergroupByUsergroupid(Integer usergroupid) throws Exception {
-		new GenericPersisterImpl<Usergroup>(Usergroup.class).deleteById(usergroupid);
-		
+		new GenericPersisterImpl<Usergroup>(Usergroup.class).deleteById(usergroupid);	
 	}
 
 	@Override
@@ -45,7 +42,6 @@ public class UsergroupPersisterImpl implements UsergroupPersister {
 	@Override
 	public List<Usergroup> findAllUsergroup() {
 		return new GenericPersisterImpl<Usergroup>(Usergroup.class).findAll();
-		
 	}
 
 	@Override

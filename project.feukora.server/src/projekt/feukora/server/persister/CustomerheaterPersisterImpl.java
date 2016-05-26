@@ -30,13 +30,11 @@ public class CustomerheaterPersisterImpl implements CustomerheaterPersister {
 	@Override
 	public void deleteCustomerheater(Customerheater entity) throws Exception {
 		new GenericPersisterImpl<Customerheater>(Customerheater.class).delete(entity);
-		
 	}
 
 	@Override
 	public void deleteCustomerheaterByCustomerheaterid(Integer customerheaterid) throws Exception {
-		new GenericPersisterImpl<Customerheater>(Customerheater.class).deleteById(customerheaterid);
-		
+		new GenericPersisterImpl<Customerheater>(Customerheater.class).deleteById(customerheaterid);	
 	}
 
 	@Override
@@ -48,7 +46,7 @@ public class CustomerheaterPersisterImpl implements CustomerheaterPersister {
 	public List<Customerheater> findAllCustomerheaters() {
 		return new GenericPersisterImpl<Customerheater>(Customerheater.class).findAll();
 	}
-	
+
 	@Override
 	public List<Customerheater> findCustomerheaterByPerformance(Integer performance) {
 		EntityManager em = JpaUtil.createEntityManager();

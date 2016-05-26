@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Heater;
  *
  */
 public interface HeaterPersister {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -66,5 +66,5 @@ public interface HeaterPersister {
 	 * @param name
 	 * @return List of Heaters
 	 */
-	public List<Heater> findHeaterByName(String name);	
+	List<Heater> findHeaterByName(String name);	
 }

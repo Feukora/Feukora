@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Blowertype;
  *
  */
 public interface BlowertypePersister {
-	
+
 	/**
 	 * Save the given entity
 	 * 
@@ -66,5 +66,5 @@ public interface BlowertypePersister {
 	 * @param name
 	 * @return List with Blowertypes
 	 */
-	public Blowertype findBlowertypeByName(String name);
+	Blowertype findBlowertypeByName(String name);
 }

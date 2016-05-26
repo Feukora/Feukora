@@ -11,7 +11,7 @@ import projekt.feukora.server.model.Controltype;
  *
  */
 public interface ControltypePersister {
-	
+
 	/**
 	 * Save the given entity
 	 * 
