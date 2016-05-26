@@ -19,7 +19,7 @@ import projekt.feukora.server.model.User;
 
 /**
  * 
- * Controller for assistants Detailview
+ * Controller for the assistants Detailview
  * @author Sandro
  * @version 1.7
  *

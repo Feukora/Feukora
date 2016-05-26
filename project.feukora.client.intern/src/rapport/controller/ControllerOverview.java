@@ -17,6 +17,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Rapport;
 
+/**
+ * Controller for the rapport overview.
+ * @author Patrick
+ * @version 1.3
+ *
+ */
 public class ControllerOverview {
 
 	private static final Logger logger = Logger

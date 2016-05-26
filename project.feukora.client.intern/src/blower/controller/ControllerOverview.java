@@ -1,15 +1,9 @@
 package blower.controller;
 
 import org.apache.log4j.Logger;
-
 import application.Context;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-/**
- * Sample Skeleton for 'blowerOverview.fxml' Controller Class
- */
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +17,13 @@ import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Blower;
 
+/**
+ * 
+ * Controller for Blower overview
+ * @author Sandro
+ * @version 1.6
+ *
+ */
 public class ControllerOverview {
 	
 	private static final Logger logger = Logger

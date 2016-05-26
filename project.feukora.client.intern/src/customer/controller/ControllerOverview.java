@@ -18,9 +18,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 /**
- * Sample Skeleton for 'customerOverview.fxml' Controller Class
+ * Controller for the customers overview.
+ * @author Sandro
+ * @version 1.7
+ *
  */
-
 public class ControllerOverview {
 	
 	private static final Logger logger = Logger

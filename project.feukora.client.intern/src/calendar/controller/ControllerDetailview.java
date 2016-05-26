@@ -3,9 +3,6 @@ package calendar.controller;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
-import javax.management.remote.rmi.RMIServer;
-
 import org.apache.log4j.Logger;
 import application.Context;
 import calendar.util.CalendarConstants;
@@ -26,6 +23,11 @@ import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 import projekt.feukora.server.model.User;
 
+/**
+ * Controller for Calendar Pane detailview.
+ * @author Tamara
+ *
+ */
 public class ControllerDetailview {
 
 	private static final Logger logger = Logger
