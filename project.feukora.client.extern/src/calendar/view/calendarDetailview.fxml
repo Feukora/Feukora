@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.controller.ControllerDetailview">
+   <children>
+      <Label layoutX="45.0" layoutY="37.0" prefHeight="38.0" prefWidth="456.0" text="Detail Termin">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="detailviewSaveAppointment" layoutX="840.0" layoutY="432.0" mnemonicParsing="false" onAction="#ActionDetailviewSaveAppointment" prefHeight="25.0" prefWidth="100.0" text="Speichern" />
+      <GridPane layoutX="474.0" layoutY="155.0" prefHeight="153.0" prefWidth="466.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="101.0" text="Datum" />
+            <Label prefHeight="25.0" prefWidth="116.0" text="Kommentar" GridPane.rowIndex="4" />
+            <TextField fx:id="appointmentDateField" editable="false" onAction="#ActionAppointmentDateField" GridPane.columnIndex="1" />
+           
+            <TextArea fx:id="appointmentCommentsField" onDragDetected="#ActionAppointmentCommentsField" prefHeight="26.0" prefWidth="313.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </TextArea>
+            <Label prefHeight="25.0" prefWidth="151.0" text="Feuerungskontrolleur" GridPane.rowIndex="2" />
+            <TextField fx:id="appointmentInspectorField" editable="false" onAction="#ActionAppointmentInspectorField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="157.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="10.0" prefWidth="317.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Label layoutX="45.0" layoutY="116.0" text="Kunde">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="474.0" layoutY="116.0" text="Termin">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="detailviewCancelAppointment" layoutX="508.0" layoutY="432.0" mnemonicParsing="false" onAction="#ActionDetailviewCancelAppointment" prefHeight="25.0" prefWidth="100.0" text="Abbrechen" />
+      <ComboBox fx:id="appointmentClientcomboBox" layoutX="45.0" layoutY="158.0" onAction="#ActionAppointmentClientcomboBox" prefWidth="150.0" />
+      <Label layoutX="45.0" layoutY="245.0" text="Wärmeerzeuger">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="appointmentHeatercomboBox" layoutX="45.0" layoutY="288.0" onAction="#ActionAppointmentHeatercomboBox" prefWidth="150.0" />
+      <Button fx:id="detailviewDeleteAppointment" layoutX="678.0" layoutY="432.0" mnemonicParsing="false" onAction="#ActionDetailviewDeleteAppointment" prefHeight="25.0" prefWidth="100.0" text="Löschen" />
+   </children>
+</AnchorPane>
