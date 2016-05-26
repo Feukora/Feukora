@@ -767,10 +767,17 @@ public class ClientInternRMI {
 		}
 	}
 	
-	public void saveAppointment( Appointment app )
+	public void saveAppointment( Appointment app, boolean newApp )
 	{
 		try {
-			appointmentRMI.saveAppointment( app );
+			if ( newApp )
+			{
+				appointmentRMI.saveAppointment( app );
+			}
+			else
+			{
+				appointmentRMI.updateAppointment(app);
+			}
 		} catch (Exception e) {
 			logger.error( "Fehler beim speichern eines neuen Termines", e );
 		}

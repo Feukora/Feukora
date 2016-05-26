@@ -146,6 +146,7 @@ public static void setRole(String role) {
 	}
 	
 	public static void setNull() {
+		customerid = null;
 		companyname = null;
 		lastname = null;
     	adress = null;
@@ -156,6 +157,17 @@ public static void setRole(String role) {
     	customerfunction = null;
     	username = null;
     	password = null;
+    	userid = null;
+    	fuel = null;
+    	blowertype = null;
+    	blowername = null;
+    	heatername = null;
+    	user = null;
+    	blower = null;
+    	heater = null;
+    	customer = null;
+    	rapport = null;
+    	
 	}
 	
 	public static void setUser(User user) {

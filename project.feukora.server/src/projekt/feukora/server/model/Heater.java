@@ -48,6 +48,9 @@ public class Heater implements Serializable{
 		return heaterid;
 	}
 
+	public String getName() {
+		return name;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
