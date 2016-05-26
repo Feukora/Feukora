@@ -17,46 +17,46 @@ public class ControllerViewInspector {
 	private static final Logger logger = Logger
 			.getLogger(ControllerViewInspector.class);
 
-    @FXML
-    private BorderPane mainRoot;
-    
-    @FXML
-    private Button rapportWelcome;
+	@FXML
+	private BorderPane mainRoot;
 
-    @FXML
-    private Button rapportNewWelcome;
+	@FXML
+	private Button rapportWelcome;
 
-    @FXML
-    private Button calendarWelcome;
+	@FXML
+	private Button rapportNewWelcome;
 
-    @FXML
-    private Button exitWelcome;
+	@FXML
+	private Button calendarWelcome;
 
-    @FXML
-    private MenuBar mBar;
+	@FXML
+	private Button exitWelcome;
 
-    @FXML
-    private MenuItem calenderMenuBar;
+	@FXML
+	private MenuBar mBar;
 
-    @FXML
-    private MenuItem rapportMenuBar;
-    
-    @FXML
-    private MenuItem rapportNewMenuItem;
+	@FXML
+	private MenuItem calenderMenuBar;
 
-    @FXML
-    private MenuItem closeWelcome;
+	@FXML
+	private MenuItem rapportMenuBar;
 
-    @FXML
-    void ActionExitWelcome(ActionEvent event) {
-    	Platform.exit();
-    }
+	@FXML
+	private MenuItem rapportNewMenuItem;
 
-    @FXML
-    void ActionRapportWelcome(ActionEvent event) {
+	@FXML
+	private MenuItem closeWelcome;
+
+	@FXML
+	void ActionExitWelcome(ActionEvent event) {
+		Platform.exit();
+	}
+
+	@FXML
+	void ActionRapportWelcome(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
-    	
-    	try {
+
+		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("rapport/view/rapportOverview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -65,14 +65,14 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    	rapportWelcome.getScene().setRoot(pane);
-    }
+		rapportWelcome.getScene().setRoot(pane);
+	}
 
-    @FXML
-    void ActionRapportNewWelcome(ActionEvent event) {
+	@FXML
+	void ActionRapportNewWelcome(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
-    	
-    	try {
+
+		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("rapport/view/Main.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -81,14 +81,14 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    	rapportWelcome.getScene().setRoot(pane);
-    }
+		rapportWelcome.getScene().setRoot(pane);
+	}
 
-    @FXML
-    void ActionCalendarWelcome(ActionEvent event) {
-    	BorderPane pane = new BorderPane();
-    	
-    	try {
+	@FXML
+	void ActionCalendarWelcome(ActionEvent event) {
+		BorderPane pane = new BorderPane();
+
+		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
 			mainRoot.setTop(pane);
@@ -97,22 +97,22 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-    }
+	}
 
-    @FXML
-    void ActionLoginMenuBar(ActionEvent event) {
-    }
-    
-    @FXML
-    void ActionCloseMenuBar(ActionEvent event) {
-    	Platform.exit();
-    }
+	@FXML
+	void ActionLoginMenuBar(ActionEvent event) {
+	}
 
-    @FXML
-    void ActionCalenderMenuBar(ActionEvent event) {
-    	BorderPane pane = new BorderPane();
-    	
-    	try {
+	@FXML
+	void ActionCloseMenuBar(ActionEvent event) {
+		Platform.exit();
+	}
+
+	@FXML
+	void ActionCalenderMenuBar(ActionEvent event) {
+		BorderPane pane = new BorderPane();
+
+		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -121,13 +121,13 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-    }
+	}
 
-    @FXML
-    void ActionInspectorMenuBar(ActionEvent event) {
+	@FXML
+	void ActionInspectorMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
-    	
-    	try {
+
+		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("inspector/view/inspectorOverview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -136,13 +136,13 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    }
+	}
 
-    @FXML
-    void ActionCustomerMenuBar(ActionEvent event) {
+	@FXML
+	void ActionCustomerMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
-    	
-    	try {
+
+		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerOverview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -153,11 +153,11 @@ public class ControllerViewInspector {
 		}	
 	}
 
-    @FXML
-    void ActionBlowerMenuBar(ActionEvent event) {
+	@FXML
+	void ActionBlowerMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
-    	
-    	try {
+
+		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("blower/view/blowerOverview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -168,11 +168,11 @@ public class ControllerViewInspector {
 		}	
 	}
 
-    @FXML
-    void ActionHeaterMenuBar(ActionEvent event) {
+	@FXML
+	void ActionHeaterMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
-    	
-    	try {
+
+		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("heater/view/heaterOverview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -183,11 +183,11 @@ public class ControllerViewInspector {
 		}	
 	}   
 
-    @FXML
-    void ActionRapportMenuBar(ActionEvent event) {
+	@FXML
+	void ActionRapportMenuBar(ActionEvent event) {
 		AnchorPane pane = new AnchorPane();
-    	
-    	try {
+
+		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("rapport/view/rapportOverview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -196,12 +196,12 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    }
-    
-    @FXML
-    void ActionCustomerNewMenuItem(ActionEvent event) {
-	    	
-    	try {
+	}
+
+	@FXML
+	void ActionCustomerNewMenuItem(ActionEvent event) {
+
+		try {
 			final Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("customer/view/customerDetailview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -210,13 +210,12 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    
-    }
+	}
 
-    @FXML
-    void ActionHeaterNewMenuItem(ActionEvent event) {
-		
-    	try {
+	@FXML
+	void ActionHeaterNewMenuItem(ActionEvent event) {
+
+		try {
 			final Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("heater/view/heaterDetailview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -225,12 +224,12 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    }
-    
-    @FXML
-    void ActionBlowerNewMenuItem(ActionEvent event) {
-    	
-    	try {
+	}
+
+	@FXML
+	void ActionBlowerNewMenuItem(ActionEvent event) {
+
+		try {
 			final Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("blower/view/blowerDetailview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -239,12 +238,12 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    }
-    
-    @FXML
-    void ActionInspectorNewMenuItem(ActionEvent event) {
-    	
-    	try {
+	}
+
+	@FXML
+	void ActionInspectorNewMenuItem(ActionEvent event) {
+
+		try {
 			final Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("inspector/view/inspectorDetailview.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -253,12 +252,12 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    }
+	}
 
-    @FXML
-    void ActionRapportNewMenuItem(ActionEvent event) {
-    	
-    	try {
+	@FXML
+	void ActionRapportNewMenuItem(ActionEvent event) {
+
+		try {
 			final Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("rapport/view/Main.fxml"));
 
 			mainRoot.setCenter(pane);
@@ -267,5 +266,5 @@ public class ControllerViewInspector {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-    }
+	}
 }

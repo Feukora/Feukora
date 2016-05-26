@@ -72,7 +72,7 @@ public class ControllerDetailview {
 	void ActionAppointmentInspectorField(ActionEvent event) {
 		//do nothing
 	}
-	
+
 	@FXML
 	void ActionAppointmentCommentsField(ActionEvent event) {
 		//do nothing
@@ -96,119 +96,119 @@ public class ControllerDetailview {
 					e);
 		}
 
-			try { // Funktioniert noch nicht
-				if(Context.getRole().equals("Administrator")) {
-					pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
-				} else if (Context.getRole().equals("Feuerungskontrolleur")) {
-					pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
-				} else if (Context.getRole().equals("Sachbearbeiter")) {
-					pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
-				}
+		try { // Funktioniert noch nicht
+			if(Context.getRole().equals("Administrator")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+			} else if (Context.getRole().equals("Feuerungskontrolleur")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+			} else if (Context.getRole().equals("Sachbearbeiter")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+			}
 
-			} catch (Exception e) {
-				logger.error("Aktion konnte nicht durchgeführt werden\'",
-						e);
-			}	
-			detailviewCancelAppointment.getScene().setRoot(pane);
+		} catch (Exception e) {
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}	
+		detailviewCancelAppointment.getScene().setRoot(pane);
+	}
+
+	@FXML
+	void ActionDetailviewSaveAppointment(ActionEvent event) {
+		if ( appointment == null )
+		{
+			appointment = new Appointment( ClientInternRMI.currLoggedInUser );
 		}
+		appointment.setAppointmentdate( (GregorianCalendar) cal );
+		appointment.setComments( appointmentCommentsField.getText() );
+		appointment.setUser( inspector );
+		appointment.setCustomerHeater( appointmentHeatercomboBox.getValue() );
 
-		@FXML
-		void ActionDetailviewSaveAppointment(ActionEvent event) {
+		cirmi.saveAppointment( appointment );
+		ActionDetailviewCancelAppointment(event);
+
+	}
+
+	@FXML
+	void ActionAppointmentClientcomboBox(ActionEvent event) {
+		fillCustomerHeaterComboBox( appointmentClientcomboBox.getValue() );
+		appointmentHeatercomboBox.getSelectionModel().select( 0 );
+	}
+
+	@FXML
+	void ActionAppointmentHeatercomboBox(ActionEvent event) {
+		//do nothing
+	}
+
+	public void initData ( ObservableMap<Object, Object> properties )
+	{
+		try {
+			cirmi = new ClientInternRMI();
+			appointmentClientcomboBox.setItems(cirmi.getCustomers());
+
+			SimpleDateFormat sdf = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYHHMM );
+
+			appointment = (Appointment) properties.get( CalendarConstants.PROPERTYNAME_APPOINTMENT );
+			Customer customer;
+
 			if ( appointment == null )
 			{
-				appointment = new Appointment( ClientInternRMI.currLoggedInUser );
+				//no appointment exists, create a new one
+				appointmentClientcomboBox.getSelectionModel().select( 0 );
+				customer = appointmentClientcomboBox.getValue();
+
+				fillCustomerHeaterComboBox( customer );
+				appointmentHeatercomboBox.getSelectionModel().select( 0 );
+
+				cal = (Calendar) properties.get( CalendarConstants.PROPERTYNAME_DATE );
+				inspector = (User) properties.get( CalendarConstants.PROPERTYNAME_INSPECTOR );
+
+				appointmentInspectorField.setText( inspector.toString() );
+				appointmentDateField.setText( sdf.format( cal.getTime() ) );
+				appointmentDateField.getProperties().put( CalendarConstants.PROPERTYNAME_DATE, cal );
+
+				detailviewDeleteAppointment.setDisable(true);
 			}
-			appointment.setAppointmentdate( (GregorianCalendar) cal );
-			appointment.setComments( appointmentCommentsField.getText() );
-			appointment.setUser( inspector );
-			appointment.setCustomerHeater( appointmentHeatercomboBox.getValue() );
-			
-			cirmi.saveAppointment( appointment );
-			ActionDetailviewCancelAppointment(event);
-			
-		}
-
-		@FXML
-		void ActionAppointmentClientcomboBox(ActionEvent event) {
-			fillCustomerHeaterComboBox( appointmentClientcomboBox.getValue() );
-			appointmentHeatercomboBox.getSelectionModel().select( 0 );
-		}
-
-		@FXML
-		void ActionAppointmentHeatercomboBox(ActionEvent event) {
-			//do nothing
-		}
-
-		public void initData ( ObservableMap<Object, Object> properties )
-		{
-			try {
-				cirmi = new ClientInternRMI();
-				appointmentClientcomboBox.setItems(cirmi.getCustomers());
-
-				SimpleDateFormat sdf = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYHHMM );
-				
-				appointment = (Appointment) properties.get( CalendarConstants.PROPERTYNAME_APPOINTMENT );
-				Customer customer;
-				
-				if ( appointment == null )
-				{
-					//no appointment exists, create a new one
-					appointmentClientcomboBox.getSelectionModel().select( 0 );
-					customer = appointmentClientcomboBox.getValue();
-					
-					fillCustomerHeaterComboBox( customer );
-					appointmentHeatercomboBox.getSelectionModel().select( 0 );
-					
-					cal = (Calendar) properties.get( CalendarConstants.PROPERTYNAME_DATE );
-					inspector = (User) properties.get( CalendarConstants.PROPERTYNAME_INSPECTOR );
-		
-					appointmentInspectorField.setText( inspector.toString() );
-					appointmentDateField.setText( sdf.format( cal.getTime() ) );
-					appointmentDateField.getProperties().put( CalendarConstants.PROPERTYNAME_DATE, cal );
-					
-					detailviewDeleteAppointment.setDisable(true);
-				}
-				else
-				{
-					//appointment exists, fill gui fields with data
-					Customerheater customerHeater = appointment.getCustomerHeater();
-					customer = customerHeater.getCustomer();
-					
-					inspector = appointment.getUser();
-					cal = appointment.getAppointmentdate();
-					
-					appointmentInspectorField.setText( inspector.toString() );
-					appointmentDateField.setText( sdf.format( cal.getTime() ) );
-					appointmentCommentsField.setText( appointment.getComments() );
-					appointmentClientcomboBox.getSelectionModel().select( customer );
-					
-					fillCustomerHeaterComboBox( customer );
-					appointmentHeatercomboBox.getSelectionModel().select( customerHeater );
-					
-				}
-			} catch (Exception e) {
-				logger.error("Fehler beim Erstellen der RMI Verbindung", e);
-			}
-		}
-
-		@FXML
-		void ActionDetailviewDeleteAppointment(ActionEvent event) {
-			if ( appointment != null )
+			else
 			{
-				cirmi.deleteAppointment( appointment );
-				ActionDetailviewCancelAppointment( event );
+				//appointment exists, fill gui fields with data
+				Customerheater customerHeater = appointment.getCustomerHeater();
+				customer = customerHeater.getCustomer();
+
+				inspector = appointment.getUser();
+				cal = appointment.getAppointmentdate();
+
+				appointmentInspectorField.setText( inspector.toString() );
+				appointmentDateField.setText( sdf.format( cal.getTime() ) );
+				appointmentCommentsField.setText( appointment.getComments() );
+				appointmentClientcomboBox.getSelectionModel().select( customer );
+
+				fillCustomerHeaterComboBox( customer );
+				appointmentHeatercomboBox.getSelectionModel().select( customerHeater );
+
 			}
-		}
-		
-		/**
-		 * Fills the data for the {@link Customerheater} combobox, featured in this GUI
-		 * 
-		 * @param customer
-		 */
-		private void fillCustomerHeaterComboBox ( Customer customer )
-		{
-			ObservableList<Customerheater> cmbCustomerHeaters = FXCollections.observableArrayList();
-			cmbCustomerHeaters.addAll( cirmi.getCustomerHeaters( customer ) );
-			appointmentHeatercomboBox.setItems(cmbCustomerHeaters);
+		} catch (Exception e) {
+			logger.error("Fehler beim Erstellen der RMI Verbindung", e);
 		}
 	}
+
+	@FXML
+	void ActionDetailviewDeleteAppointment(ActionEvent event) {
+		if ( appointment != null )
+		{
+			cirmi.deleteAppointment( appointment );
+			ActionDetailviewCancelAppointment( event );
+		}
+	}
+
+	/**
+	 * Fills the data for the {@link Customerheater} combobox, featured in this GUI
+	 * 
+	 * @param customer
+	 */
+	private void fillCustomerHeaterComboBox ( Customer customer )
+	{
+		ObservableList<Customerheater> cmbCustomerHeaters = FXCollections.observableArrayList();
+		cmbCustomerHeaters.addAll( cirmi.getCustomerHeaters( customer ) );
+		appointmentHeatercomboBox.setItems(cmbCustomerHeaters);
+	}
+}

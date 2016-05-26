@@ -35,7 +35,7 @@ import projekt.feukora.server.model.Measuringresult;
 import projekt.feukora.server.model.Rapport;
 
 public class ControllerMain {
-	
+
 	private static final Logger logger = Logger
 			.getLogger(ControllerMain.class);
 
@@ -256,14 +256,14 @@ public class ControllerMain {
 	@FXML
 	void ActionRapportSave(ActionEvent event) throws IOException {
 
-//		Rapport rapport = Context.getRapport();
+		//		Rapport rapport = Context.getRapport();
 
-		
+
 		String canton = textfieldCanton.getText();
 		String adress = textfieldaddress.getText();
 		String customer = comboboxOwnerAdministration.getValue();
 		String facilitymanager = textfieldfacilitymanager.getText();
-		
+
 		// Tab 2
 		String manufactureyearheater = textfieldheateryear.getText();
 		Integer heateryear = Integer.parseInt(manufactureyearheater);
@@ -274,88 +274,88 @@ public class ControllerMain {
 		}else if(radioacceptanceinspection.isSelected() == true){
 			ctype = "Abnahmekontrolle";
 		}
-		
+
 		String manufactureyearblower = textfieldbloweryear.getText();
 		Integer bloweryear = Integer.parseInt(manufactureyearblower);
 		String blowertype = comboboxblowertype.getSelectionModel().getSelectedItem().toString();
 		String performance = textfieldheatinput.getText();
-		
+
 		//Tab 3
 		LocalDate date = measuringdate.getValue();
 		Date utilDate = Date.from( date.atStartOfDay( ZoneId.systemDefault() ).toInstant() );
 		GregorianCalendar gdate = new GregorianCalendar();
 		gdate.setTime(utilDate);
-		
+
 		String smokenumber1 = textfieldsmokenumber1.getText();
 		String smokenumber2 = textfieldsmokenumber1.getText();
 		String smokenumber3 = textfieldsmokenumber1.getText();
 		String smokenumber4 = textfieldsmokenumber1.getText();
-		
+
 		String carbonmonoxide1 = textfielcarbonmonoxide1.getText();
 		String carbonmonoxide2 = textfielcarbonmonoxide2.getText();
 		String carbonmonoxide3 = textfielcarbonmonoxide3.getText();
 		String carbonmonoxide4 = textfielcarbonmonoxide4.getText();
-		
+
 		String nitrogendioxide1 = textfieldnitrogendioxide1.getText();
 		String nitrogendioxide2 = textfieldnitrogendioxide2.getText();
 		String nitrogendioxide3 = textfieldnitrogendioxide3.getText();
 		String nitrogendioxide4 = textfieldnitrogendioxide4.getText();
-		
+
 		String exhaustgastemp1 = textfieldexhaustgastemp1.getText();
 		String exhaustgastemp2 = textfieldexhaustgastemp2.getText();
 		String exhaustgastemp3 = textfieldexhaustgastemp3.getText();
 		String exhaustgastemp4 = textfieldexhaustgastemp4.getText();
-		
+
 		String heatertemp1 = textfieldheatertemp1.getText();
 		String heatertemp2 = textfieldheatertemp2.getText();
 		String heatertemp3 = textfieldheatertemp3.getText();
 		String heatertemp4 = textfieldheatertemp4.getText();
-		
+
 		String blowertemp1 = textfieldblowertemp1.getText();
 		String blowertemp2 = textfieldblowertemp2.getText();
 		String blowertemp3 = textfieldblowertemp3.getText();
 		String blowertemp4 = textfieldblowertemp4.getText();
-		
+
 		String oxygen1 = textfieldoxygen1.getText();
 		String oxygen2 = textfieldoxygen2.getText();
 		String oxygen3 = textfieldoxygen3.getText();
 		String oxygen4 = textfieldoxygen4.getText();
-		
+
 		String exhaustgaslost1 = textfieldexhaustgasloss1.getText();
 		String exhaustgaslost2 = textfieldexhaustgasloss2.getText();
 		String exhaustgaslost3 = textfieldexhaustgasloss3.getText();
 		String exhaustgaslost4 = textfieldexhaustgasloss4.getText();
-		
+
 		Boolean oilpart1 = false;
 		Boolean oilpart2 = false;
 		Boolean oilpart3 = false;
 		Boolean oilpart4 = false;
-		
+
 		if(radiooilpartyes1.isSelected()){
 			oilpart1 = true;
 		} else if(radiooilpartno1.isSelected()){
 			oilpart1 = false;
 		}
-		
+
 		if(radiooilpartyes2.isSelected()){
 			oilpart2 = true;
 		} else if(radiooilpartno2.isSelected()){
 			oilpart2 = false;
 		}
-		
+
 		if(radiooilpartyes3.isSelected()){
 			oilpart3 = true;
 		} else if(radiooilpartno3.isSelected()){
 			oilpart3 = false;
 		}
-		
+
 		if(radiooilpartyes4.isSelected()){
 			oilpart4 = true;
 		} else if(radiooilpartno4.isSelected()){
 			oilpart4 = false;
 		}
-				
-		
+
+
 		//Tab 4
 		Boolean result = false;
 		if(radionotransgression.isSelected()){
@@ -363,13 +363,13 @@ public class ControllerMain {
 		} else if(radiotransgression.isSelected()){
 			result = false;
 		}
-		
+
 		Boolean smokenumber = false;
 		Boolean oilpart = false;
 		Boolean carbonmonoxide = false;
 		Boolean nitrogendioxide = false;
 		Boolean exhaustgaslost = false;
-		
+
 		if(checkboxsmokenumbertransgression.isSelected()){
 			smokenumber = true;
 		} else{
@@ -395,39 +395,39 @@ public class ControllerMain {
 		} else{
 			exhaustgaslost = false;
 		}
-		
+
 		Boolean additionalsteps = false;
-		
+
 		if(radioadditionalstepsyes.isSelected()){
 			additionalsteps = true;
 		}else if (radioadditionalstepsno.isSelected()){
 			additionalsteps = false;
 		}
-		
+
 		String comment = textareacomments.getText();
-		
+
 		String persNumber = textfieldpersonalcode.getText();
-		
-		
-    	try {
+
+
+		try {
 			ClientExternRMI feukora = new ClientExternRMI();
 			Rapport r1 = new Rapport(canton, adress, null, null, null, null, gdate, result, additionalsteps, comment, smokenumber, oilpart, exhaustgaslost, nitrogendioxide, carbonmonoxide);
-			
-			
+
+
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 
 		}
-    	
-//    	customerCompanyNameField.clear();
-//    	radioButtonAdministration.setSelected(false);
-    	AnchorPane pane = new AnchorPane();
-    	pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
+
+		//    	customerCompanyNameField.clear();
+		//    	radioButtonAdministration.setSelected(false);
+		AnchorPane pane = new AnchorPane();
+		pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewInspector.fxml"));
 
 
 	}
-	
+
 	public void initialize() {
 
 		//Togglegroup handling for: Heater/Blower (Controltype)
@@ -485,7 +485,7 @@ public class ControllerMain {
 				customerNames.add(name);			
 				i++;
 			}
-			
+
 			ObservableList<String> heaterNames = FXCollections.observableArrayList();
 			ObservableList<Heater> heaters = feukora.getHeaters();
 			int j = 0;
@@ -494,7 +494,7 @@ public class ControllerMain {
 				heaterNames.add(name);			
 				j++;
 			}
-			
+
 			ObservableList<String> blowerNames = FXCollections.observableArrayList();
 			ObservableList<Blower> blowers = feukora.getBlowers();
 			int k = 0;
