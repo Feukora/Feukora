@@ -27,6 +27,7 @@ public class FeukoraService implements IFeukoraService {
 	private UserRMI userManager;
 	private CustomerRMI customerManager;
 	private RapportRMI rapportManager;
+	public static User currLoggedInUser;
 	
 	private User loggedInUser;
 	
@@ -68,7 +69,8 @@ public class FeukoraService implements IFeukoraService {
 	@Override
 	public boolean login(String username, String password) throws RemoteException {
 		loggedInUser = userManager.findUsersByUsername(username);
-		return loggedInUser.login(password);
+		currLoggedInUser = loggedInUser.login(password);
+		return currLoggedInUser != null;
 	}
 
 	@Override

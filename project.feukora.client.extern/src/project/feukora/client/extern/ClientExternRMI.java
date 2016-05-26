@@ -8,16 +8,6 @@ import org.apache.log4j.Logger;
 
 import project.feukora.webservice.model.FeukoraServiceService;
 import project.feukora.webservice.model.IFeukoraService;
-import projekt.feukora.server.model.Appointment;
-import projekt.feukora.server.model.Blower;
-import projekt.feukora.server.model.Controltype;
-import projekt.feukora.server.model.Customer;
-import projekt.feukora.server.model.Customerheater;
-import projekt.feukora.server.model.Facilitymanager;
-import projekt.feukora.server.model.Heater;
-import projekt.feukora.server.model.Measuringresult;
-import projekt.feukora.server.model.Rapport;
-import projekt.feukora.server.model.User;
 
 public class ClientExternRMI {
 	
