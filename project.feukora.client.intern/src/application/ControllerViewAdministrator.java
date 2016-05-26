@@ -12,6 +12,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
+
+/**
+ * 
+ * Controller for Administratorview
+ * @author Sandro
+ * @version 1.7
+ *
+ */
 public class ControllerViewAdministrator {
 	
 	private static final Logger logger = Logger

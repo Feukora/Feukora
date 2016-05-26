@@ -6,6 +6,13 @@ import projekt.feukora.server.model.Heater;
 import projekt.feukora.server.model.Rapport;
 import projekt.feukora.server.model.User;
 
+ /**
+  * 
+  * Class to cache entities between overview and detailview
+  * @author Sandro
+  * @version 1.6
+  *
+  */
 public class Context {
 	
 	private static Customer customer;

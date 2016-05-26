@@ -1,9 +1,7 @@
 package assistant.controller;
 
 import org.apache.log4j.Logger;
-
 import application.Context;
-import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,12 +12,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.Company;
 import projekt.feukora.server.model.User;
 
+/**
+ * 
+ * Controller for assistants Detailview
+ * @author Sandro
+ * @version 1.7
+ *
+ */
 public class ControllerDetailview {
 	
 	private static final Logger logger = Logger
@@ -91,8 +95,6 @@ public class ControllerDetailview {
 			zip = Integer.parseInt(plz);
 		}
 		
-		
-
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(!lastname.isEmpty() && !adress.isEmpty() && !phone.isEmpty() && zip != null && !firstname.isEmpty() && !email.isEmpty() && !username.isEmpty() && !password.isEmpty() && !company.isEmpty()) {
@@ -121,7 +123,6 @@ public class ControllerDetailview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-
     }
     
     @FXML
@@ -243,6 +244,5 @@ public class ControllerDetailview {
 		assistantPasswordField.setText(assistant.getPassword());
 
 		Context.setNull();
-
 	}
 }

@@ -7,6 +7,13 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
+/**
+ * 
+ * Mainclass for the GUI
+ * @author Sandro
+ * @version 1.7
+ *
+ */
 public class Main extends Application {
 	
 	private static final Logger logger = Logger

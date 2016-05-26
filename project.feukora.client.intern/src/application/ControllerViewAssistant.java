@@ -12,6 +12,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
+/**
+ * 
+ * Controller for Assistantview
+ * @author Pascal
+ * @version 1.6
+ *
+ */
 public class ControllerViewAssistant {
 
 	private static final Logger logger = Logger

@@ -5,9 +5,6 @@ import application.Context;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-/**
- * Sample Skeleton for 'assistantOverview.fxml' Controller Class
- */
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
@@ -20,6 +17,13 @@ import javafx.scene.layout.AnchorPane;
 import projekt.feukora.client.intern.ClientInternRMI;
 import projekt.feukora.server.model.User;
 
+/**
+ * 
+ * Controller for assistants overview
+ * @author Sandro
+ * @version 1.6
+ *
+ */
 public class ControllerOverview {
 	
 	private static final Logger logger = Logger
@@ -113,22 +117,6 @@ public class ControllerOverview {
 	void ActionOverviewTableAssistant(ActionEvent event) {
 		
 	}
-
-	/*@FXML
-	void ActionOverviewDeleteAssistant(ActionEvent event) {
-		ClientInternRMI feukora;
-		try {
-			feukora = new ClientInternRMI();
-	    	User entity = overviewTableAssistant.getSelectionModel().getSelectedItem();
-	    	feukora.deleteUser(entity);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}
-		initialize();
-
-	}*/
 	
     @FXML
     void ActionOverviewDeleteAssistant(ActionEvent event) {

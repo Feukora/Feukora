@@ -12,6 +12,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
+/**
+ * 
+ * Controller for Inspectorview
+ * @author Pascal
+ * @version 1.7
+ *
+ */
 public class ControllerViewInspector {
 
 	private static final Logger logger = Logger
