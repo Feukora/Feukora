@@ -64,40 +64,6 @@ public class ControllerDetailview {
 
 	@FXML
 	private TextField inspectorUsernameField;
-	
-	/**
-	 * method to show an error message
-	 */
-	public void errorInfoNeu(){
-		String titleBar = "Achtung";
-		String headerMessage = "Bitte alle Daten eingeben";
-		String infoMessage = "Eingabe nicht vollständig";
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle(titleBar);
-		alert.setHeaderText(headerMessage);
-		alert.setContentText(infoMessage);
-		alert.showAndWait();
-	}
-
-	/**
-	 * method to get the cityname to the zip
-	 * @param event
-	 */
-	@FXML
-	void ActionInspectorZipField(ActionEvent event) {
-		String plz = inspectorZipField.getText();
-		Integer zip = Integer.parseInt(plz);
-
-		try {
-			ClientInternRMI feukora = new ClientInternRMI();
-			String town = feukora.getTown(zip);
-			inspectorMunicipalityField.setText(town);
-
-		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}
-	}
 
 	@FXML
 	void ActionInspectorMunicipalityField(ActionEvent event) {
@@ -165,26 +131,7 @@ public class ControllerDetailview {
 			Update();
 		} else {
 		}
-		
-	}
 
-	/**
-	 * method to get the data of the selected record
-	 */
-	public void Update(){
-
-		inspector = Context.getUser();
-		inspectorCompanyFieldCombo.setValue(inspector.getCompany());
-		inspectorNameField.setText(inspector.getLastname());
-		inspectorFirstNameField.setText(inspector.getFirstname());
-		inspectorAddressField.setText(inspector.getAdress());
-		inspectorPhoneField.setText(inspector.getPhone());
-		inspectorEmailField.setText(inspector.getEmail());
-		inspectorZipField.setText(inspector.getTown().substring(0, 4));
-		inspectorMunicipalityField.setText(inspector.getTown().substring(5));
-		inspectorUsernameField.setText(inspector.getUsername());
-		inspectorPasswordField.setText(inspector.getPassword());
-		Context.setNull();
 	}
 
 	/**
@@ -212,11 +159,11 @@ public class ControllerDetailview {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip != null && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && company.isEmpty() == false) {
 				if(inspector == null) {
-				feukora.saveInspectorUser(zip, company, firstname, lastname, adress, phone, email, username, password);
-			} else {
-				feukora.updateInspectorUser(inspector, zip, company, firstname, lastname, adress, phone, email, username, password);
-			}
-			
+					feukora.saveInspectorUser(zip, company, firstname, lastname, adress, phone, email, username, password);
+				} else {
+					feukora.updateInspectorUser(inspector, zip, company, firstname, lastname, adress, phone, email, username, password);
+				}
+
 				inspectorNameField.clear();
 				inspectorAddressField.clear();
 				inspectorPhoneField.clear();
@@ -227,7 +174,7 @@ public class ControllerDetailview {
 				inspectorPasswordField.clear();
 				inspectorCompanyFieldCombo.getSelectionModel().clearSelection();
 				inspectorMunicipalityField.clear();
-				
+
 			} else {
 				errorInfoNeu();
 			}
@@ -238,28 +185,77 @@ public class ControllerDetailview {
 	}
 
 	/**
+	 * method to get the data of the selected record
+	 */
+	public void Update(){
+
+		inspector = Context.getUser();
+		inspectorCompanyFieldCombo.setValue(inspector.getCompany());
+		inspectorNameField.setText(inspector.getLastname());
+		inspectorFirstNameField.setText(inspector.getFirstname());
+		inspectorAddressField.setText(inspector.getAdress());
+		inspectorPhoneField.setText(inspector.getPhone());
+		inspectorEmailField.setText(inspector.getEmail());
+		inspectorZipField.setText(inspector.getTown().substring(0, 4));
+		inspectorMunicipalityField.setText(inspector.getTown().substring(5));
+		inspectorUsernameField.setText(inspector.getUsername());
+		inspectorPasswordField.setText(inspector.getPassword());
+		Context.setNull();
+	}
+
+	/**
 	 * method to cancel the action
 	 * @param event
 	 */
 	@FXML
 	void ActionDetailviewCancelInspector(ActionEvent event) {
-		
-		
+
 		BorderPane pane = new BorderPane();
-		
+
 		try {
 			if(Context.getRole().equals("Administrator")) {
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 			} else if (Context.getRole().equals("Sachbearbeiter")) {
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
-			}
-
-			
+			}	
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-
 		detailviewCancelInspector.getScene().setRoot(pane);
+	}
+
+	/**
+	 * method to get the cityname to the zip
+	 * @param event
+	 */
+	@FXML
+	void ActionInspectorZipField(ActionEvent event) {
+		String plz = inspectorZipField.getText();
+		Integer zip = Integer.parseInt(plz);
+
+		try {
+			ClientInternRMI feukora = new ClientInternRMI();
+			String town = feukora.getTown(zip);
+			inspectorMunicipalityField.setText(town);
+
+		} catch (Exception e) {
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+	}
+
+	/**
+	 * method to show an error message
+	 */
+	public void errorInfoNeu(){
+		String titleBar = "Achtung";
+		String headerMessage = "Bitte alle Daten eingeben";
+		String infoMessage = "Eingabe nicht vollständig";
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(titleBar);
+		alert.setHeaderText(headerMessage);
+		alert.setContentText(infoMessage);
+		alert.showAndWait();
 	}
 }

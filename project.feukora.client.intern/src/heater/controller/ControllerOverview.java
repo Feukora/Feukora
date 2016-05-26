@@ -23,95 +23,65 @@ import projekt.feukora.server.model.Heater;
  *
  */
 public class ControllerOverview {
-	
+
 	private static final Logger logger = Logger
 			.getLogger(ControllerOverview.class);
 
-    @FXML // fx:id="overviewRefreshHeater"
-    private Button overviewRefreshHeater; // Value injected by FXMLLoader
-    
-    @FXML // fx:id="overviewUpdateHeater"
-    private Button overviewUpdateHeater; // Value injected by FXMLLoader
+	@FXML // fx:id="overviewRefreshHeater"
+	private Button overviewRefreshHeater; // Value injected by FXMLLoader
 
-    @FXML // fx:id="overviewDeleteHeater"
-    private Button overviewDeleteHeater; // Value injected by FXMLLoader
+	@FXML // fx:id="overviewUpdateHeater"
+	private Button overviewUpdateHeater; // Value injected by FXMLLoader
 
-    @FXML // fx:id="overviewTableHeater"
-    private TableView<Heater> overviewTableHeater; // Value injected by FXMLLoader
+	@FXML // fx:id="overviewDeleteHeater"
+	private Button overviewDeleteHeater; // Value injected by FXMLLoader
 
-    @FXML // fx:id="columnNameHeater"
-    private TableColumn<Heater, String> columnNameHeater; // Value injected by FXMLLoader
-    
-    @FXML
-    public void initialize(){
-    	try{
-    		ClientInternRMI feukora = new ClientInternRMI();
-    		ObservableList<Heater> heaters = feukora.getHeaters();
-    		
-    		columnNameHeater.setCellValueFactory(
-    				new PropertyValueFactory<Heater,String>("name")
-    		);
-    		
-    		overviewTableHeater.setItems(heaters);
-    			
-    	}catch(Exception e){
-    		logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-    	}
-    }
+	@FXML // fx:id="overviewTableHeater"
+	private TableView<Heater> overviewTableHeater; // Value injected by FXMLLoader
 
-    /**
-     * method for the table heaer
-     * @param event
-     */
-    @FXML // Methode für die Tabelle
-    void ActionOverviewTableHeater(ActionEvent event) {
+	@FXML // fx:id="columnNameHeater"
+	private TableColumn<Heater, String> columnNameHeater; // Value injected by FXMLLoader
 
-    }
-    
-    /**
-     * method to delete selected record
-     * @param event
-     */
-    @FXML
-    void ActionOverviewDeleteHeater(ActionEvent event) {
-    	ClientInternRMI feukora;
-		try {
-			feukora = new ClientInternRMI();
-	    	Heater entity = overviewTableHeater.getSelectionModel().getSelectedItem();
-	    	feukora.deleteHeater(entity);
-		} catch (Exception e) {
-			String titleBar = "Achtung";
-			String headerMessage = "Wärmeerzeuger kann nicht gelöscht werden";
-			String infoMessage = "Es bestehen noch Verbindungen diesem Wärmeerzeuger";
-			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle(titleBar);
-	        alert.setHeaderText(headerMessage);
-	        alert.setContentText(infoMessage);
-	        alert.showAndWait();
+	@FXML
+	public void initialize(){
+		try{
+			ClientInternRMI feukora = new ClientInternRMI();
+			ObservableList<Heater> heaters = feukora.getHeaters();
+
+			columnNameHeater.setCellValueFactory(
+					new PropertyValueFactory<Heater,String>("name")
+					);
+
+			overviewTableHeater.setItems(heaters);
+
+		}catch(Exception e){
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-		initialize();
-    }
+	}
 
-    /**
-     * method to refresh overview
-     * @param event
-     */
-    @FXML
-    void ActionOverviewRefreshHeater(ActionEvent event) {
-    	initialize();
-    }
-    
-    /**
-     * method to open the detailview of the selected record
-     * @param event
-     */
-    @FXML
-    void ActionOverviewUpdateHeater(ActionEvent event) {
-    	try {
-    		ClientInternRMI feukora = new ClientInternRMI();
+	@FXML
+	void ActionOverviewTableHeater(ActionEvent event) {
+
+	}
+
+	/**
+	 * method to refresh overview
+	 * @param event
+	 */
+	@FXML
+	void ActionOverviewRefreshHeater(ActionEvent event) {
+		initialize();
+	}
+
+	/**
+	 * method to open the detailview of the selected record
+	 * @param event
+	 */
+	@FXML
+	void ActionOverviewUpdateHeater(ActionEvent event) {
+		try {
+			ClientInternRMI feukora = new ClientInternRMI();
 			Heater heater = overviewTableHeater.getSelectionModel().getSelectedItem();
 			if(heater != null){
 				AnchorPane pane = new AnchorPane();
@@ -123,14 +93,40 @@ public class ControllerOverview {
 				String headerMessage = "Wählen Sie einen Benutzer aus";
 				String infoMessage = "";
 				Alert alert = new Alert(AlertType.INFORMATION);
-		        alert.setTitle(titleBar);
-		        alert.setHeaderText(headerMessage);
-		        alert.setContentText(infoMessage);
-		        alert.showAndWait();
+				alert.setTitle(titleBar);
+				alert.setHeaderText(headerMessage);
+				alert.setContentText(infoMessage);
+				alert.showAndWait();
 			}
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);	
 		}	
-    }
+	}
+
+	/**
+	 * method to delete selected record
+	 * @param event
+	 */
+	@FXML
+	void ActionOverviewDeleteHeater(ActionEvent event) {
+		ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+			Heater entity = overviewTableHeater.getSelectionModel().getSelectedItem();
+			feukora.deleteHeater(entity);
+		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Wärmeerzeuger kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen diesem Wärmeerzeuger";
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle(titleBar);
+			alert.setHeaderText(headerMessage);
+			alert.setContentText(infoMessage);
+			alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+		initialize();
+	}
 }

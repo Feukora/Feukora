@@ -49,7 +49,7 @@ import projekt.feukora.server.rmi.UsergroupRMI;
 
 /**
  * This Class that implements the rmi connection.
- * @author Sandro
+ * @author Sandro and Pascal
  * @version 1.7
  *
  */
@@ -74,14 +74,11 @@ public class ClientInternRMI {
 	FacilitymanagerRMI facilitymanagerRMI;
 	FuelRMI fuelRMI;
 	UsergroupRMI usergroupRMI;
-	
+
 	public static User currLoggedInUser;
 
 	public static void main(String[] args) {
-		System.out
-		.println("======================================================================");
 		try {
-			// Init Application over RMI
 			ClientInternRMI feukora = new ClientInternRMI();
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
@@ -96,9 +93,6 @@ public class ClientInternRMI {
 	 */
 	public ClientInternRMI() throws Exception {
 
-
-		// init rmi connection
-		/* Konfigurationsdaten einlesen */
 		Properties props = new Properties();
 		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("rmiclient.txt");
 		try {
@@ -107,10 +101,10 @@ public class ClientInternRMI {
 			logger.error("Konfigurationsdaten konnten nicht eingelesen werden\'",
 					e);
 		}
+
 		int port = Integer.parseInt(props.getProperty("server_port"));
 		String hostIP = props.getProperty("server_ip");
 		String url = "rmi://" + hostIP + ":" + port + "/";
-		//String url = "rmi://localhost:9009/";
 		String customerRMIName = "customerRMI";
 		String companyRMIName = "companyRMI";
 		String appointmentRMIName = "appointmentRMI";
@@ -144,7 +138,6 @@ public class ClientInternRMI {
 		this.facilitymanagerRMI = (FacilitymanagerRMI) Naming.lookup(url + facilitymanagerRMIName);
 		this.fuelRMI = (FuelRMI) Naming.lookup(url + fuelRMIName);
 		this.usergroupRMI = (UsergroupRMI) Naming.lookup(url + usergroupRMIName);
-
 	}
 
 	/**
@@ -159,7 +152,7 @@ public class ClientInternRMI {
 
 		return currLoggedInUser != null;
 	}
-	
+
 	/**
 	 * method that does the authentification of the username and the password
 	 * @param username
@@ -235,10 +228,10 @@ public class ClientInternRMI {
 			String headerMessage = "Benutzer kann nicht gelöscht werden";
 			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
 			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle(titleBar);
-	        alert.setHeaderText(headerMessage);
-	        alert.setContentText(infoMessage);
-	        alert.showAndWait();
+			alert.setTitle(titleBar);
+			alert.setHeaderText(headerMessage);
+			alert.setContentText(infoMessage);
+			alert.showAndWait();
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		} catch (Exception e) {
@@ -246,47 +239,26 @@ public class ClientInternRMI {
 			String headerMessage = "Benutzer kann nicht gelöscht werden";
 			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
 			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle(titleBar);
-	        alert.setHeaderText(headerMessage);
-	        alert.setContentText(infoMessage);
-	        alert.showAndWait();
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}
-	}
-	
-	/**
-	 * method to delete a rapport
-	 * @param entity
-	 */
-	public void deleteRapport(Rapport entity) {
-		try {
-			rapportRMI.deleteRapport(entity);
-		} catch (RemoteException e) {
-			String titleBar = "Achtung";
-			String headerMessage = "Benutzer kann nicht gelöscht werden";
-			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
-			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle(titleBar);
-	        alert.setHeaderText(headerMessage);
-	        alert.setContentText(infoMessage);
-	        alert.showAndWait();
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		} catch (Exception e) {
-			String titleBar = "Achtung";
-			String headerMessage = "Benutzer kann nicht gelöscht werden";
-			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
-			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle(titleBar);
-	        alert.setHeaderText(headerMessage);
-	        alert.setContentText(infoMessage);
-	        alert.showAndWait();
+			alert.setTitle(titleBar);
+			alert.setHeaderText(headerMessage);
+			alert.setContentText(infoMessage);
+			alert.showAndWait();
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
 	}
 
+	/**
+	 * an list with customer
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<Customer> getCustomers() throws Exception {
+
+		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
+		customerlist.addAll(customerRMI.findAllCustomers());
+		return customerlist;
+	}
 
 	/**
 	 * method to save a blower
@@ -305,7 +277,6 @@ public class ClientInternRMI {
 		} else {
 			fuel = null;
 		}
-
 		if(blower == true) {
 			type = blowertypeRMI.findBlowertypeByName("Gebläse");
 		} else if(atmospheric == true) {
@@ -315,7 +286,6 @@ public class ClientInternRMI {
 		} else {
 			type = null;
 		}
-
 		Blower b1 = new Blower(type, fuel, name);
 		blowerRMI.saveBlower(b1);
 	}
@@ -358,7 +328,6 @@ public class ClientInternRMI {
 			fuel = null;
 		}
 		entity.setFuelid(fuel);
-
 		if(bblower == true) {
 			type = blowertypeRMI.findBlowertypeByName("Gebläse");
 		} else if(atmospheric == true) {
@@ -392,35 +361,15 @@ public class ClientInternRMI {
 	}
 
 	/**
-	 * an list with customer
+	 * method to get a list with blowers
 	 *
 	 * @throws Exception
 	 */
-	public ObservableList<Customer> getCustomers() throws Exception {
+	public ObservableList<Blower> getBlowers() throws Exception {
 
-		ObservableList<Customer> customerlist = FXCollections.observableArrayList();
-		customerlist.addAll(customerRMI.findAllCustomers());
-		return customerlist;
-
-	}
-	
-	/**
-	 * a list with rapports
-	 *
-	 * @throws Exception
-	 */
-	public ObservableList<Rapport> getRapports() throws Exception {
-
-		ObservableList<Rapport> rapportlist1 = FXCollections.observableArrayList();
-		rapportlist1.addAll(rapportRMI.findAllRapports());
-		
-		ObservableList<Rapport> rapportlist = FXCollections.observableArrayList();
-		for (Rapport rapport : rapportlist1) {
-			rapport.getMeasuringdate().toString(); 
-		}
-		//Rückgabe von Measuringdate als String muss noch gemacht werden
-		return rapportlist1;
-
+		ObservableList<Blower> blowerlist = FXCollections.observableArrayList();
+		blowerlist.addAll(blowerRMI.findAllBlowers());
+		return blowerlist;
 	}
 
 	/**
@@ -484,40 +433,6 @@ public class ClientInternRMI {
 	}
 
 	/**
-	 * method to delete users
-	 * @param entity
-	 */
-	public void deleteUser(User entity) {
-		try {
-			userRMI.deleteUsers(entity);
-		} catch (RemoteException e) {
-			String titleBar = "Achtung";
-			String headerMessage = "Feuerungskkontrolleur kann nicht gelöscht werden";
-			String infoMessage = "Es bestehen noch Verbindungen diesem Feuerungskontrolleur";
-			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle(titleBar);
-	        alert.setHeaderText(headerMessage);
-	        alert.setContentText(infoMessage);
-	        alert.showAndWait();
-	        
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		} catch (Exception e) {
-			String titleBar = "Achtung";
-			String headerMessage = "Feuerungskkontrolleur kann nicht gelöscht werden";
-			String infoMessage = "Es bestehen noch Verbindungen diesem Feuerungskontrolleur";
-			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle(titleBar);
-	        alert.setHeaderText(headerMessage);
-	        alert.setContentText(infoMessage);
-	        alert.showAndWait();
-	        
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}
-	}
-
-	/**
 	 * method to update inspector users
 	 * @param entity
 	 */
@@ -570,15 +485,94 @@ public class ClientInternRMI {
 	}
 
 	/**
-	 * 
+	 * method to delete users
+	 * @param entity
+	 */
+	public void deleteUser(User entity) {
+		try {
+			userRMI.deleteUsers(entity);
+		} catch (RemoteException e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Feuerungskkontrolleur kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen diesem Feuerungskontrolleur";
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle(titleBar);
+			alert.setHeaderText(headerMessage);
+			alert.setContentText(infoMessage);
+			alert.showAndWait();
+
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Feuerungskkontrolleur kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen diesem Feuerungskontrolleur";
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle(titleBar);
+			alert.setHeaderText(headerMessage);
+			alert.setContentText(infoMessage);
+			alert.showAndWait();
+
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+	}
+
+	/**
+	 * method to get a list with users
 	 *
 	 * @throws Exception
 	 */
-	public ObservableList<Heater> getHeaters() throws Exception {
+	public ObservableList<User> getUsers() throws Exception {
 
-		ObservableList<Heater> heaterlist = FXCollections.observableArrayList();
-		heaterlist.addAll(heaterRMI.findAllHeaters());
-		return heaterlist;
+		ObservableList<User> userlist = FXCollections.observableArrayList();
+		userlist.addAll(userRMI.findAllUsers());
+
+		return userlist;
+	}
+
+	/**
+	 * method to get a list with inspector users
+	 * @return
+	 * @throws Exception
+	 */
+	public ObservableList<User> getInspectors() throws Exception {
+
+		ObservableList<User> userlist = FXCollections.observableArrayList();
+		userlist.addAll(userRMI.findUserByUsergroup(usergroupRMI.findUsergroupByName("Feuerungskontrolleur")));
+		return userlist;
+	}
+
+
+	/**
+	 * method to get a list with assistant users
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<User> getAssistentUsers() throws Exception {
+
+		ObservableList<User> userlist = FXCollections.observableArrayList();
+		userlist.addAll(userRMI.findAllUsers());
+
+		ObservableList<User> assistentlist = FXCollections.observableArrayList();
+		for (User user : userlist) {
+			if (user.getUsergroupid().equals("Sachbearbeiter")) {
+				assistentlist.add(user);
+			}
+		}
+		return assistentlist;
+	}
+
+	/**
+	 * method to get a list with assistants
+	 * @return
+	 * @throws Exception
+	 */
+	public ObservableList<User> getAssistants() throws Exception {
+
+		ObservableList<User> userlist = FXCollections.observableArrayList();
+		userlist.addAll(userRMI.findUserByUsergroup(usergroupRMI.findUsergroupByName("Sachbearbeiter")));
+		return userlist;
 	}
 
 	/**
@@ -613,84 +607,26 @@ public class ClientInternRMI {
 		try {
 			heaterRMI.deleteHeater(entity);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-			//					e);
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			//			logger.error("Aktion konnte nicht durchgeführt werden\'",
-			//					e);
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
 
 	/**
-	 * method to get a list with blowers
+	 * 
 	 *
 	 * @throws Exception
 	 */
-	public ObservableList<Blower> getBlowers() throws Exception {
+	public ObservableList<Heater> getHeaters() throws Exception {
 
-		ObservableList<Blower> blowerlist = FXCollections.observableArrayList();
-		blowerlist.addAll(blowerRMI.findAllBlowers());
-		return blowerlist;
+		ObservableList<Heater> heaterlist = FXCollections.observableArrayList();
+		heaterlist.addAll(heaterRMI.findAllHeaters());
+		return heaterlist;
 	}
 
-	/**
-	 * method to get a list with users
-	 *
-	 * @throws Exception
-	 */
-	public ObservableList<User> getUsers() throws Exception {
-
-		ObservableList<User> userlist = FXCollections.observableArrayList();
-		userlist.addAll(userRMI.findAllUsers());
-		
-		return userlist;
-	}
-	
-	/**
-	 * method to get a list with assistant users
-	 *
-	 * @throws Exception
-	 */
-	public ObservableList<User> getAssistentUsers() throws Exception {
-		
-		ObservableList<User> userlist = FXCollections.observableArrayList();
-		userlist.addAll(userRMI.findAllUsers());
-		
-		ObservableList<User> assistentlist = FXCollections.observableArrayList();
-		for (User user : userlist) {
-			if (user.getUsergroupid().equals("Sachbearbeiter")) {
-				assistentlist.add(user);
-			}
-		}
-		return assistentlist;
-	}
-	
-	/**
-	 * method to get a list with inspector users
-	 * @return
-	 * @throws Exception
-	 */
-	public ObservableList<User> getInspectors() throws Exception {
-		
-		ObservableList<User> userlist = FXCollections.observableArrayList();
-		userlist.addAll(userRMI.findUserByUsergroup(usergroupRMI.findUsergroupByName("Feuerungskontrolleur")));
-		return userlist;
-	}
-	
-	/**
-	 * method to get a list with assistants
-	 * @return
-	 * @throws Exception
-	 */
-	public ObservableList<User> getAssistants() throws Exception {
-		
-		ObservableList<User> userlist = FXCollections.observableArrayList();
-		userlist.addAll(userRMI.findUserByUsergroup(usergroupRMI.findUsergroupByName("Sachbearbeiter")));
-		return userlist;
-	}
-	
 	/**
 	 * method to get a list with companies
 	 *
@@ -702,26 +638,7 @@ public class ClientInternRMI {
 		companylist.addAll(companyRMI.findAllCompanies());
 		return companylist;
 	}
-	
-	/**
-	 * This Method returns all Appointments for a given inspector
-	 *
-	 * @param inspector - the user to get all appointments for
-	 *
-	 * @return returnValue - the list with all appointments for the given user or an empty list if he doesn't have any
-	 */
-	public List<Appointment> getAppointments(User inspector) 
-	{
-		List<Appointment> returnValue = new ArrayList<Appointment>();
-		try {
-			returnValue = appointmentRMI.findAppointmentsForInspector(inspector);
-		} catch (RemoteException e) {
-			logger.error( "Fehler beim Auslesen der Termine", e );
-		}
-		
-		return returnValue;
-	}
-	
+
 	/**
 	 * This Method returns all {@link Customerheater} for a given customer
 	 *
@@ -737,10 +654,10 @@ public class ClientInternRMI {
 		} catch (RemoteException e) {
 			logger.error("Fehler beim Auslesen der Wärmeerzeuger für Kunden", e);
 		}
-		
+
 		return returnValue;
 	}
-	
+
 	/**
 	 * method to get a town
 	 * @param zip
@@ -750,32 +667,6 @@ public class ClientInternRMI {
 	public String getTown(Integer zip) throws RemoteException {
 		Town town1 = townRMI.findTownByZip(zip);
 		return town1.getName();
-	}
-
-	/**
-	 * method to update a rapport
-	 * @param rapport
-	 * @param canton
-	 * @param adress
-	 * @param customer
-	 * @param facilitymanager
-	 * @param heateryear
-	 * @param bloweryear
-	 * @param performance
-	 * @param date
-	 * @param result
-	 * @param smokenumber
-	 * @param oilpart
-	 * @param carbonmonoxide
-	 * @param nitrogendioxide
-	 * @param exhaustgaslost
-	 * @param additionalsteps
-	 * @param comment
-	 */
-	public void updateRapport(Rapport rapport, String canton, String adress, String customer, String facilitymanager,
-			Integer heateryear, Integer bloweryear, String performance, LocalDate date, Boolean result,
-			Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
-			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {		
 	}
 
 	/**
@@ -860,64 +751,64 @@ public class ClientInternRMI {
 		Heater rapHeater;
 		Blower rapBlower;
 		User rapUser;
-		
+
 		Integer rapPerformance = Integer.parseInt(performance);
-		
+
 		Integer rapSmokenumber1 = Integer.parseInt(smokenumber1);
 		Integer rapSmokenumber2 = Integer.parseInt(smokenumber2);
 		Integer rapSmokenumber3 = Integer.parseInt(smokenumber3);
 		Integer rapSmokenumber4 = Integer.parseInt(smokenumber4);
-		
+
 		Integer rapCarbonmonoxide1 = Integer.parseInt(carbonmonoxide1);
 		Integer rapCarbonmonoxide2 = Integer.parseInt(carbonmonoxide2);
 		Integer rapCarbonmonoxide3 = Integer.parseInt(carbonmonoxide3);
 		Integer rapCarbonmonoxide4 = Integer.parseInt(carbonmonoxide4);
-		
+
 		Integer rapNitrogendioxide1 = Integer.parseInt(nitrogendioxide1);
 		Integer rapNitrogendioxide2 = Integer.parseInt(nitrogendioxide2);
 		Integer rapNitrogendioxide3 = Integer.parseInt(nitrogendioxide3);
 		Integer rapNitrogendioxide4 = Integer.parseInt(nitrogendioxide4);
-		
+
 		Integer rapExhaustgastemp1 = Integer.parseInt(exhaustgastemp1);
 		Integer rapExhaustgastemp2 = Integer.parseInt(exhaustgastemp2);
 		Integer rapExhaustgastemp3 = Integer.parseInt(exhaustgastemp3);
 		Integer rapExhaustgastemp4 = Integer.parseInt(exhaustgastemp4);
-		
+
 		Integer rapHeatertemp1 = Integer.parseInt(heatertemp1);
 		Integer rapHeatertemp2 = Integer.parseInt(heatertemp2);
 		Integer rapHeatertemp3 = Integer.parseInt(heatertemp3);
 		Integer rapHeatertemp4 = Integer.parseInt(heatertemp4);
-		
+
 		Integer rapBlowertemp1 = Integer.parseInt(blowertemp1);
 		Integer rapBlowertemp2 = Integer.parseInt(blowertemp2);
 		Integer rapBlowertemp3 = Integer.parseInt(blowertemp3);
 		Integer rapBlowertemp4 = Integer.parseInt(blowertemp4);
-		
+
 		Double rapOxygen1 = Double.parseDouble(oxygen1);
 		Double rapOxygen2 = Double.parseDouble(oxygen2);
 		Double rapOxygen3 = Double.parseDouble(oxygen3);
 		Double rapOxygen4 = Double.parseDouble(oxygen4);
-		
+
 		Double rapExhaustgaslost1 = Double.parseDouble(exhaustgaslost1);
 		Double rapExhaustgaslost2 = Double.parseDouble(exhaustgaslost2);
 		Double rapExhaustgaslost3 = Double.parseDouble(exhaustgaslost3);
 		Double rapExhaustgaslost4 = Double.parseDouble(exhaustgaslost4);
-		
+
 		Integer rapPersNumber = Integer.parseInt(persNumber);
 		rapUser = userRMI.findUsersByUserid(rapPersNumber);
-		
+
 		String lastname;
 		String[] names = customer.split("\\s+");
 		lastname = names[0];
-		
+
 		rapCustomer = customerRMI.findCustomerByLastname(lastname).get(0);
-		
+
 		rapHeater = heaterRMI.findHeaterByName(heatertype).get(0);
-		
+
 		rapType = controltypeRMI.findControltypeByName(ctype);
-		
+
 		rapBlower = blowerRMI.findBlowerByName(blowertype).get(0);
-		
+
 		Appointment a1 = appointmentRMI.findAllAppointments().get(0);
 		Facilitymanager fm1 = new Facilitymanager(facilitymanager);
 		facilitymanagerRMI.saveFacilitymanager(fm1);
@@ -941,26 +832,89 @@ public class ClientInternRMI {
 				rapExhaustgastemp3, rapHeatertemp3, rapBlowertemp3, rapOxygen3, rapExhaustgaslost3);
 		Measuringresult mr4 = new Measuringresult(r1, 2, 2, rapSmokenumber4, rapCarbonmonoxide4, oilpart4, rapNitrogendioxide4,
 				rapExhaustgastemp4, rapHeatertemp4, rapBlowertemp4, rapOxygen4, rapExhaustgaslost4);
-		
+
 		measuringresultRMI.saveMeasuringresult(mr1);
 		measuringresultRMI.saveMeasuringresult(mr2);
 		measuringresultRMI.saveMeasuringresult(mr3);
 		measuringresultRMI.saveMeasuringresult(mr4);
 	}
-	
+
 	/**
-	 * method to delete a appointment
-	 * @param app
+	 * method to update a rapport
+	 * @param rapport
+	 * @param canton
+	 * @param adress
+	 * @param customer
+	 * @param facilitymanager
+	 * @param heateryear
+	 * @param bloweryear
+	 * @param performance
+	 * @param date
+	 * @param result
+	 * @param smokenumber
+	 * @param oilpart
+	 * @param carbonmonoxide
+	 * @param nitrogendioxide
+	 * @param exhaustgaslost
+	 * @param additionalsteps
+	 * @param comment
 	 */
-	public void deleteAppointment( Appointment app )
-	{
+	public void updateRapport(Rapport rapport, String canton, String adress, String customer, String facilitymanager,
+			Integer heateryear, Integer bloweryear, String performance, LocalDate date, Boolean result,
+			Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
+			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {		
+	}
+
+	/**
+	 * method to delete a rapport
+	 * @param entity
+	 */
+	public void deleteRapport(Rapport entity) {
 		try {
-			appointmentRMI.deleteAppointment( app );
+			rapportRMI.deleteRapport(entity);
+		} catch (RemoteException e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle(titleBar);
+			alert.setHeaderText(headerMessage);
+			alert.setContentText(infoMessage);
+			alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		} catch (Exception e) {
-			logger.error("Fehler beim löschen des Termins (appointmentid = " + app.getAppointmentid(), e);
+			String titleBar = "Achtung";
+			String headerMessage = "Benutzer kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle(titleBar);
+			alert.setHeaderText(headerMessage);
+			alert.setContentText(infoMessage);
+			alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
 		}
 	}
-	
+
+	/**
+	 * a list with rapports
+	 *
+	 * @throws Exception
+	 */
+	public ObservableList<Rapport> getRapports() throws Exception {
+
+		ObservableList<Rapport> rapportlist1 = FXCollections.observableArrayList();
+		rapportlist1.addAll(rapportRMI.findAllRapports());
+
+		ObservableList<Rapport> rapportlist = FXCollections.observableArrayList();
+		for (Rapport rapport : rapportlist1) {
+			rapport.getMeasuringdate().toString(); 
+		}
+		//Rückgabe von Measuringdate als String muss noch gemacht werden
+		return rapportlist1;
+	}
+
 	/**
 	 * method to save a appointment
 	 * @param app
@@ -980,5 +934,37 @@ public class ClientInternRMI {
 		} catch (Exception e) {
 			logger.error( "Fehler beim speichern eines neuen Termines", e );
 		}
+	}
+
+	/**
+	 * method to delete a appointment
+	 * @param app
+	 */
+	public void deleteAppointment( Appointment app )
+	{
+		try {
+			appointmentRMI.deleteAppointment( app );
+		} catch (Exception e) {
+			logger.error("Fehler beim löschen des Termins (appointmentid = " + app.getAppointmentid(), e);
+		}
+	}
+
+	/**
+	 * This Method returns all Appointments for a given inspector
+	 *
+	 * @param inspector - the user to get all appointments for
+	 *
+	 * @return returnValue - the list with all appointments for the given user or an empty list if he doesn't have any
+	 */
+	public List<Appointment> getAppointments(User inspector) 
+	{
+		List<Appointment> returnValue = new ArrayList<Appointment>();
+		try {
+			returnValue = appointmentRMI.findAppointmentsForInspector(inspector);
+		} catch (RemoteException e) {
+			logger.error( "Fehler beim Auslesen der Termine", e );
+		}
+
+		return returnValue;
 	}
 }

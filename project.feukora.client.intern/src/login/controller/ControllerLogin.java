@@ -4,7 +4,6 @@ import org.apache.log4j.Logger;
 
 
 import application.Context;
-import inspector.controller.ControllerDetailview;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -122,7 +121,7 @@ public class ControllerLogin {
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(username.isEmpty() == false && password.isEmpty() == false){
-				
+
 				Boolean successfull = feukora.login(username, password);
 
 				if(successfull == true){

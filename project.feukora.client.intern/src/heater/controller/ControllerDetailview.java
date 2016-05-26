@@ -20,60 +20,55 @@ import projekt.feukora.server.model.Heater;
  *
  */
 public class ControllerDetailview {
-	
+
 	private static final Logger logger = Logger
 			.getLogger(ControllerDetailview.class);
 
 	private Heater heater;
-    @FXML
-    private Button detailviewSaveHeater;
-    
-    @FXML
-    private Button detailviewCancelHeater;
+	@FXML
+	private Button detailviewSaveHeater;
 
-    @FXML
-    private TextField heaterNameField;
-    
-    /**
-     * method to show error message
-     */
-    public void errorInfoNeu(){
-		String titleBar = "Achtung";
-		String headerMessage = "Bitte alle Daten eingeben";
-		String infoMessage = "Eingabe nicht vollständig";
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle(titleBar);
-		alert.setHeaderText(headerMessage);
-		alert.setContentText(infoMessage);
-		alert.showAndWait();
+	@FXML
+	private Button detailviewCancelHeater;
+
+	@FXML
+	private TextField heaterNameField;
+
+	@FXML
+	void ActionHeaterNameField(ActionEvent event) {
+
 	}
 
-    @FXML
-    void ActionHeaterNameField(ActionEvent event) {
+	public void initialize() {
 
-    }
+		if(Context.getHeater() != null) {
+			Update();
+		} else {
 
-    /**
-     * method to save a record
-     * @param event
-     */
-    @FXML
-    void ActionDetailviewSaveHeater(ActionEvent event) {
-    	Heater heater = Context.getHeater();
-    	String heatername = heaterNameField.getText();
-    	try {
+		}
+	}
+
+	/**
+	 * method to save a record
+	 * @param event
+	 */
+	@FXML
+	void ActionDetailviewSaveHeater(ActionEvent event) {
+		Heater heater = Context.getHeater();
+		String heatername = heaterNameField.getText();
+		try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(heatername.isEmpty() == false){
 				if(heater == null) {
 					Heater entity = new Heater(heatername);
 					feukora.saveHeater(entity);
-			} else {
-		    	heater.setName(heatername);
-				feukora.updateHeater(heater);
-			}
-				
-			heaterNameField.clear();
-			
+				} else {
+					heater.setName(heatername);
+					feukora.updateHeater(heater);
+				}
+
+				heaterNameField.clear();
+
 			} else {
 				errorInfoNeu();
 			}
@@ -81,34 +76,27 @@ public class ControllerDetailview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}    
-    }
-    
-    public void initialize() {
-    	
-    	if(Context.getHeater() != null) {
-    		Update();
-    	} else {
-    		
-    	}
-    }
-    
-    /**
+	}
+
+
+
+	/**
 	 * method to get the data of the chosen record
 	 */
-    public void Update(){
-    		heaterNameField.setText(Context.getHeaterName());
-	    	Context.setNull();	
-    }
-    
-    /**
-     * method to cancel the action
-     * @param event
-     */
-    @FXML
-    void ActionDetailviewCancelHeater(ActionEvent event) {
+	public void Update(){
+		heaterNameField.setText(Context.getHeaterName());
+		Context.setNull();	
+	}
+
+	/**
+	 * method to cancel the action
+	 * @param event
+	 */
+	@FXML
+	void ActionDetailviewCancelHeater(ActionEvent event) {
 		BorderPane pane = new BorderPane();
-    	
-    	try {
+
+		try {
 			if(Context.getRole().equals("Administrator")) {
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
 			} else if (Context.getRole().equals("Sachbearbeiter")) {
@@ -119,7 +107,21 @@ public class ControllerDetailview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-		
-    	detailviewCancelHeater.getScene().setRoot(pane);
-    }
+
+		detailviewCancelHeater.getScene().setRoot(pane);
+	}
+
+	/**
+	 * method to show error message
+	 */
+	public void errorInfoNeu(){
+		String titleBar = "Achtung";
+		String headerMessage = "Bitte alle Daten eingeben";
+		String infoMessage = "Eingabe nicht vollständig";
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(titleBar);
+		alert.setHeaderText(headerMessage);
+		alert.setContentText(infoMessage);
+		alert.showAndWait();
+	}
 }

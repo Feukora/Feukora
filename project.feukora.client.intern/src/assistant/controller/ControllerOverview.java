@@ -25,7 +25,7 @@ import projekt.feukora.server.model.User;
  *
  */
 public class ControllerOverview {
-	
+
 	private static final Logger logger = Logger
 			.getLogger(ControllerOverview.class);
 
@@ -45,16 +45,16 @@ public class ControllerOverview {
 
 	@FXML // fx:id="columnEmailAssistant"
 	private TableColumn<User, String> columnEmailAssistant; // Value injected by
-													// FXMLLoader
+	// FXMLLoader
 	@FXML // fx:id="columnUsernameAssistant"
 	private TableColumn<User, String> columnUsernameAssistant; // Value injected by
-														// FXMLLoader
+	// FXMLLoader
 	@FXML // fx:id="columnPhoneAssistant"
 	private TableColumn<User, String> columnPhoneAssistant; // Value injected by
 
 	@FXML // fx:id="columnFirstnameAssistant"
 	private TableColumn<User, String> columnFirstnameAssistant; // Value injected by FXMLLoader
-														
+
 	@FXML // fx:id="columnZIPAssistant"
 	private TableColumn<User, String> columnZIPAssistant; // Value injected by FXMLLoader
 
@@ -63,7 +63,7 @@ public class ControllerOverview {
 
 	@FXML // fx:id="columnAddressAssistant"
 	private TableColumn<User, String> columnAddressAssistant; // Value injected by FXMLLoader
-	
+
 	@FXML // fx:id="columnCompanyIdAssistant"
 	private TableColumn<User, String> columnCompanyIdAssistant; // Value injected by FXMLLoader
 
@@ -75,79 +75,53 @@ public class ControllerOverview {
 
 			columnEmailAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("email")
-			);
-			
+					);
+
 			columnCompanyIdAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("company")
-			);
+					);
 
 			columnUsernameAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("username")
-			);
+					);
 
 			columnPhoneAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("phone")
-			);
+					);
 
 			columnFirstnameAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("firstname")
-			);
+					);
 
 			columnZIPAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("town")
-			);
+					);
 
 			columnNameAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("lastname")
-			);
+					);
 
 			columnAddressAssistant.setCellValueFactory(
 					new PropertyValueFactory<User, String>("adress")
-			);
-			
+					);
+
 			overviewTableAssistant.setItems(users);
-			
+
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
 	}
 
-	@FXML // Methode für die Tabelle
+	@FXML
 	void ActionOverviewTableAssistant(ActionEvent event) {
-		
+
 	}
-	
+
 	/**
-	 * button to delete delete the selected record
+	 * method to refresh the overview
 	 * @param event
 	 */
-    @FXML
-    void ActionOverviewDeleteAssistant(ActionEvent event) {
-    	ClientInternRMI feukora;
-		try {
-			feukora = new ClientInternRMI();
-	    	User entity = overviewTableAssistant.getSelectionModel().getSelectedItem();
-	    	feukora.deleteUser(entity);
-		} catch (Exception e) {
-			String titleBar = "Achtung";
-			String headerMessage = "Sachbearbeiter kann nicht gelöscht werden";
-			String infoMessage = "Es bestehen noch Verbindungen diesem Sachbearbeiter";
-			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle(titleBar);
-	        alert.setHeaderText(headerMessage);
-	        alert.setContentText(infoMessage);
-	        alert.showAndWait();
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}
-		initialize();
-    }
-
-    /**
-     * method to refresh the overview
-     * @param event
-     */
 	@FXML
 	void ActionOverviewRefreshAssistant(ActionEvent event) {
 		initialize();
@@ -160,7 +134,7 @@ public class ControllerOverview {
 	@FXML
 	void ActionOverviewUpdateAssistant(ActionEvent event) {
 		try {
-    		ClientInternRMI feukora = new ClientInternRMI();
+			ClientInternRMI feukora = new ClientInternRMI();
 			User assistant = overviewTableAssistant.getSelectionModel().getSelectedItem();
 			if(assistant != null){
 				AnchorPane pane = new AnchorPane();
@@ -172,14 +146,40 @@ public class ControllerOverview {
 				String headerMessage = "Wählen Sie einen Benutzer aus";
 				String infoMessage = "";
 				Alert alert = new Alert(AlertType.INFORMATION);
-		        alert.setTitle(titleBar);
-		        alert.setHeaderText(headerMessage);
-		        alert.setContentText(infoMessage);
-		        alert.showAndWait();
+				alert.setTitle(titleBar);
+				alert.setHeaderText(headerMessage);
+				alert.setContentText(infoMessage);
+				alert.showAndWait();
 			}
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);	
 		}	
-	}	
+	}
+
+	/**
+	 * button to delete delete the selected record
+	 * @param event
+	 */
+	@FXML
+	void ActionOverviewDeleteAssistant(ActionEvent event) {
+		ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+			User entity = overviewTableAssistant.getSelectionModel().getSelectedItem();
+			feukora.deleteUser(entity);
+		} catch (Exception e) {
+			String titleBar = "Achtung";
+			String headerMessage = "Sachbearbeiter kann nicht gelöscht werden";
+			String infoMessage = "Es bestehen noch Verbindungen diesem Sachbearbeiter";
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle(titleBar);
+			alert.setHeaderText(headerMessage);
+			alert.setContentText(infoMessage);
+			alert.showAndWait();
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+		initialize();
+	}
 }

@@ -19,7 +19,7 @@ import projekt.feukora.server.model.Rapport;
 
 /**
  * Controller for the rapport overview.
- * @author Patrick
+ * @author Pascal and Sandro
  * @version 1.3
  *
  */
@@ -27,9 +27,9 @@ public class ControllerOverview {
 
 	private static final Logger logger = Logger
 			.getLogger(ControllerOverview.class);
-	
+
 	public ObservableList<Rapport> rapport = FXCollections.observableArrayList();
-	
+
 	@FXML
 	private Button overviewDeleteRapport;
 
@@ -56,45 +56,45 @@ public class ControllerOverview {
 
 	@FXML
 	public TableView<Rapport> overviewTableRapport;
-    
+
 	@FXML
 	public void initialize() {
-		 try {
-				ClientInternRMI feukora = new ClientInternRMI();
-				rapport = feukora.getRapports();
-				
-				overviewTableCustomer.setCellValueFactory(
-						new PropertyValueFactory<Rapport, String>("customerheater")
-				);
-				
-				overviewTableDate.setCellValueFactory(
-						new PropertyValueFactory<Rapport, Calendar>("measuringdate")
-				);
-				
-				final DateFormat dateFormat = DateFormat.getDateInstance();
-				overviewTableDate.setCellFactory(col -> new TableCell<Rapport, Calendar>(){
-							@Override
-							public void updateItem(Calendar item, boolean empty) {
-							super.updateItem(item, empty);
-							if (item == null) {
-								setText(null);
-							} else {
-								setText(dateFormat.format(item.getTime()));
-							}
-						}	
-						});
+		try {
+			ClientInternRMI feukora = new ClientInternRMI();
+			rapport = feukora.getRapports();
 
-				overviewTableControlltype.setCellValueFactory(
-						new PropertyValueFactory<Rapport, String>("controltype")
-				);
-				
-				overviewTableResult.setCellValueFactory(
-						new PropertyValueFactory<Rapport, Boolean>("results")
-				);
-				
-				overviewTableResult.setCellFactory(col -> new TableCell<Rapport, Boolean>(){
-					@Override
-					public void updateItem(Boolean result, boolean empty) {
+			overviewTableCustomer.setCellValueFactory(
+					new PropertyValueFactory<Rapport, String>("customerheater")
+					);
+
+			overviewTableDate.setCellValueFactory(
+					new PropertyValueFactory<Rapport, Calendar>("measuringdate")
+					);
+
+			final DateFormat dateFormat = DateFormat.getDateInstance();
+			overviewTableDate.setCellFactory(col -> new TableCell<Rapport, Calendar>(){
+				@Override
+				public void updateItem(Calendar item, boolean empty) {
+					super.updateItem(item, empty);
+					if (item == null) {
+						setText(null);
+					} else {
+						setText(dateFormat.format(item.getTime()));
+					}
+				}	
+			});
+
+			overviewTableControlltype.setCellValueFactory(
+					new PropertyValueFactory<Rapport, String>("controltype")
+					);
+
+			overviewTableResult.setCellValueFactory(
+					new PropertyValueFactory<Rapport, Boolean>("results")
+					);
+
+			overviewTableResult.setCellFactory(col -> new TableCell<Rapport, Boolean>(){
+				@Override
+				public void updateItem(Boolean result, boolean empty) {
 					super.updateItem(result, empty);
 					if (result == null) {
 						setText(null);
@@ -104,25 +104,34 @@ public class ControllerOverview {
 						setText("Nicht bestanden");
 					}
 				}	
-				});
+			});
 
-				overviewTableInspector.setCellValueFactory(
-						new PropertyValueFactory<Rapport, String>("inspector")
-				);
+			overviewTableInspector.setCellValueFactory(
+					new PropertyValueFactory<Rapport, String>("inspector")
+					);
 
-				overviewTableRapport.setItems(rapport);
-				
-			} catch (Exception e) {
-				logger.error("Aktion konnte nicht durchgeführt werden\'",
-						e);
-			}
+			overviewTableRapport.setItems(rapport);
+
+		} catch (Exception e) {
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
 	}
 
 	@FXML
 	void ActionOverviewTableRapport(ActionEvent event) {
 
 	}
-	
+
+	/**
+	 * method to refresh the overview
+	 * @param event
+	 */
+	@FXML
+	void ActionOverviewRefreshRapport(ActionEvent event) {
+		initialize();
+	}
+
 	/**
 	 * method to delete the selected record
 	 * @param event
@@ -132,29 +141,20 @@ public class ControllerOverview {
 		ClientInternRMI feukora;
 		try {
 			feukora = new ClientInternRMI();
-	    	Rapport entity = overviewTableRapport.getSelectionModel().getSelectedItem();
-	    	feukora.deleteRapport(entity);
+			Rapport entity = overviewTableRapport.getSelectionModel().getSelectedItem();
+			feukora.deleteRapport(entity);
 		} catch (Exception e) {
 			String titleBar = "Achtung";
 			String headerMessage = "Benutzer kann nicht gelöscht werden";
 			String infoMessage = "Es bestehen noch Verbindungen dieses Benutzer";
 			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle(titleBar);
-	        alert.setHeaderText(headerMessage);
-	        alert.setContentText(infoMessage);
-	        alert.showAndWait();
+			alert.setTitle(titleBar);
+			alert.setHeaderText(headerMessage);
+			alert.setContentText(infoMessage);
+			alert.showAndWait();
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-		initialize();
-	}
-
-	/**
-	 * method to refresh the overview
-	 * @param event
-	 */
-	@FXML
-	void ActionOverviewRefreshRapport(ActionEvent event) {
 		initialize();
 	}
 

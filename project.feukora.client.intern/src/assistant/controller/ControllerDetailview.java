@@ -25,66 +25,78 @@ import projekt.feukora.server.model.User;
  *
  */
 public class ControllerDetailview {
-	
+
 	private static final Logger logger = Logger
 			.getLogger(ControllerDetailview.class);
 
 	private User assistant;
-    @FXML
-    private Button detailviewSaveAssistant;
-    
-    @FXML
-    private Button detailviewCancelAssistant;
-    
-    @FXML
-    private TextField assistantAddressField;
+	@FXML
+	private Button detailviewSaveAssistant;
 
-    @FXML
-    private TextField assistantEmailField;
+	@FXML
+	private Button detailviewCancelAssistant;
 
-    @FXML
-    private TextField assistantZipField;
-    
-    @FXML
-    private TextField assistantPasswordField;
+	@FXML
+	private TextField assistantAddressField;
 
-    @FXML
-    private TextField assistantPhoneField;
-    
-    @FXML
-    private TextField assistantFirstNameField;
+	@FXML
+	private TextField assistantEmailField;
 
-    @FXML
-    private TextField assistantMunicipalityField;
+	@FXML
+	private TextField assistantZipField;
 
-    @FXML
-    private TextField assistantNameField;
+	@FXML
+	private TextField assistantPasswordField;
 
-    @FXML
-    private TextField assistantUsernameField;
-    
-    @FXML
+	@FXML
+	private TextField assistantPhoneField;
+
+	@FXML
+	private TextField assistantFirstNameField;
+
+	@FXML
+	private TextField assistantMunicipalityField;
+
+	@FXML
+	private TextField assistantNameField;
+
+	@FXML
+	private TextField assistantUsernameField;
+
+	@FXML
 	private ComboBox<String> assistantCompanyFieldCombo;
-    
-    public void errorInfoNeu(){
-		String titleBar = "Achtung";
-		String headerMessage = "Bitte alle Daten eingeben";
-		String infoMessage = "Eingabe nicht vollständig";
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle(titleBar);
-		alert.setHeaderText(headerMessage);
-		alert.setContentText(infoMessage);
-		alert.showAndWait();
-	}
-    
-    /**
-     * method to save the entered data 
-     * @param event
-     */
-    @FXML
-    void ActionDetailviewSaveAssistant(ActionEvent event) {
 
-    	User assistant = Context.getUser();
+	public void initialize() {
+		ClientInternRMI feukora;
+		try {
+			feukora = new ClientInternRMI();
+			ObservableList<String> companyNames = FXCollections.observableArrayList();
+			ObservableList<Company> companies = feukora.getCompanies();
+			int i = 0;
+			while (i < companies.size()) {
+				companyNames.add(companies.get(i).getName());
+				i++;
+			}
+			assistantCompanyFieldCombo.setItems(companyNames);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(Context.getUser() != null && Context.getName().isEmpty() == false) {
+			Update();
+		} else {
+		}
+	}
+
+	/**
+	 * method to save the entered data 
+	 * @param event
+	 */
+	@FXML
+	void ActionDetailviewSaveAssistant(ActionEvent event) {
+
+		User assistant = Context.getUser();
 		String lastname = assistantNameField.getText();
 		String adress = assistantAddressField.getText();
 		String phone = assistantPhoneField.getText();
@@ -98,7 +110,7 @@ public class ControllerDetailview {
 		if (!plz.isEmpty()) {
 			zip = Integer.parseInt(plz);
 		}
-		
+
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
 			if(!lastname.isEmpty() && !adress.isEmpty() && !phone.isEmpty() && zip != null && !firstname.isEmpty() && !email.isEmpty() && !username.isEmpty() && !password.isEmpty() && !company.isEmpty()) {
@@ -127,121 +139,8 @@ public class ControllerDetailview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
-    }
-    
-    /**
-     * button to cancel the current action
-     * @param event
-     */
-    @FXML
-    void ActionDetailviewCancelAssistant(ActionEvent event) {
-		BorderPane pane = new BorderPane();
-    	
-    	try {
-			if(Context.getRole().equals("Administrator")) {
-				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
-			} else if (Context.getRole().equals("Sachbearbeiter")) {
-				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
-			}
-			
-		} catch (Exception e) {
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}	
-		
-    	detailviewCancelAssistant.getScene().setRoot(pane);
-    }
-
-    /** 
-     * method to get the the cityname to to the zip
-     * @param event
-     */
-    @FXML
-    void ActionAssistantZipField(ActionEvent event) {
-		String plz = assistantZipField.getText();
-		Integer zip = Integer.parseInt(plz);
-
-		try {
-			ClientInternRMI feukora = new ClientInternRMI();
-			String town = feukora.getTown(zip);
-			assistantMunicipalityField.setText(town);
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			logger.error("Aktion konnte nicht durchgeführt werden\'",
-					e);
-		}
-	}
-    
-    
-    @FXML
-    void ActionAssistantMunicipalityField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionAssistantNameField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionAssistantFirstNameField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionAssistantAddressField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionAssistantEmailField(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ActionAssistantUsernameField(ActionEvent event) {
-
-    }
-    
-    @FXML
-    void ActionAssistantPasswordField(ActionEvent event) {
-
-    }
-    
-    @FXML
-    void ActionAssistantPhoneField(ActionEvent event) {
-
-    }
-    
-	@FXML
-	void ActionAssistantCompanyFieldCombo(ActionEvent event) {
-
 	}
 
-	public void initialize() {
-		ClientInternRMI feukora;
-		try {
-			feukora = new ClientInternRMI();
-			ObservableList<String> companyNames = FXCollections.observableArrayList();
-			ObservableList<Company> companies = feukora.getCompanies();
-			int i = 0;
-			while (i < companies.size()) {
-				companyNames.add(companies.get(i).getName());
-				i++;
-			}
-			assistantCompanyFieldCombo.setItems(companyNames);
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		if(Context.getUser() != null && Context.getName().isEmpty() == false) {
-			Update();
-		} else {
-		}
-	}
-	
 	/**
 	 * method to get the data of the chosen record
 	 */
@@ -260,5 +159,108 @@ public class ControllerDetailview {
 		assistantPasswordField.setText(assistant.getPassword());
 
 		Context.setNull();
+	}
+
+	/**
+	 * button to cancel the current action
+	 * @param event
+	 */
+	@FXML
+	void ActionDetailviewCancelAssistant(ActionEvent event) {
+		BorderPane pane = new BorderPane();
+
+		try {
+			if(Context.getRole().equals("Administrator")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+			} else if (Context.getRole().equals("Sachbearbeiter")) {
+				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
+			}
+
+		} catch (Exception e) {
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}	
+
+		detailviewCancelAssistant.getScene().setRoot(pane);
+	}
+
+	/**
+	 * Set error info
+	 */
+	public void errorInfoNeu(){
+		String titleBar = "Achtung";
+		String headerMessage = "Bitte alle Daten eingeben";
+		String infoMessage = "Eingabe nicht vollständig";
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(titleBar);
+		alert.setHeaderText(headerMessage);
+		alert.setContentText(infoMessage);
+		alert.showAndWait();
+	}
+
+	/** 
+	 * method to get the the cityname to to the zip
+	 * @param event
+	 */
+	@FXML
+	void ActionAssistantZipField(ActionEvent event) {
+		String plz = assistantZipField.getText();
+		Integer zip = Integer.parseInt(plz);
+
+		try {
+			ClientInternRMI feukora = new ClientInternRMI();
+			String town = feukora.getTown(zip);
+			assistantMunicipalityField.setText(town);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			logger.error("Aktion konnte nicht durchgeführt werden\'",
+					e);
+		}
+	}
+
+	@FXML
+	void ActionAssistantMunicipalityField(ActionEvent event) {
+
+	}
+
+	@FXML
+	void ActionAssistantNameField(ActionEvent event) {
+
+	}
+
+	@FXML
+	void ActionAssistantFirstNameField(ActionEvent event) {
+
+	}
+
+	@FXML
+	void ActionAssistantAddressField(ActionEvent event) {
+
+	}
+
+	@FXML
+	void ActionAssistantEmailField(ActionEvent event) {
+
+	}
+
+	@FXML
+	void ActionAssistantUsernameField(ActionEvent event) {
+
+	}
+
+	@FXML
+	void ActionAssistantPasswordField(ActionEvent event) {
+
+	}
+
+	@FXML
+	void ActionAssistantPhoneField(ActionEvent event) {
+
+	}
+
+	@FXML
+	void ActionAssistantCompanyFieldCombo(ActionEvent event) {
+
 	}
 }
