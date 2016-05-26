@@ -46,7 +46,8 @@ public class Appointment implements Serializable{
 	/**
 	 * Default constructor
 	 */
-	public Appointment(){
+	public Appointment()
+	{
 	}
 	
 	/**
@@ -68,17 +69,15 @@ public class Appointment implements Serializable{
 		this.createdby = createdby;
 		this.user = user;
 	}
-
+	
+	public Appointment( User currLoggedInUser )
+	{
+		this.created = new GregorianCalendar();
+		this.createdby = currLoggedInUser;
+	}
+	
 	public int getAppointmentid() {
 		return appointmentid;
-	}
-
-	public GregorianCalendar getCreated() {
-		return created;
-	}
-
-	public void setCreated(GregorianCalendar created) {
-		this.created = created;
 	}
 
 	public GregorianCalendar getAppointmentdate() {
@@ -105,5 +104,15 @@ public class Appointment implements Serializable{
 	public Customerheater getCustomerHeater()
 	{
 		return costumerheaterid;
+	}
+	
+	public void setUser( User user )
+	{
+		this.user = user;
+	}
+	
+	public void setCustomerHeater ( Customerheater customerHeater )
+	{
+		this.costumerheaterid = customerHeater;
 	}
 }

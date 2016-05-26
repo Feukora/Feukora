@@ -2,6 +2,10 @@ package calendar.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+import javax.management.remote.rmi.RMIServer;
+
 import org.apache.log4j.Logger;
 import application.Context;
 import calendar.util.CalendarConstants;
@@ -61,22 +65,17 @@ public class ControllerDetailview {
 
 	@FXML
 	void ActionAppointmentDateField(ActionEvent event) {
-
+		//do nothing
 	}
 
 	@FXML
 	void ActionAppointmentInspectorField(ActionEvent event) {
-
+		//do nothing
 	}
-
-	@FXML
-	void ActionAppointmentCreatedByField(ActionEvent event) {
-
-	}
-
+	
 	@FXML
 	void ActionAppointmentCommentsField(ActionEvent event) {
-
+		//do nothing
 	}
 
 	@FXML
@@ -115,7 +114,18 @@ public class ControllerDetailview {
 
 		@FXML
 		void ActionDetailviewSaveAppointment(ActionEvent event) {
-
+			if ( appointment == null )
+			{
+				appointment = new Appointment( ClientInternRMI.currLoggedInUser );
+			}
+			appointment.setAppointmentdate( (GregorianCalendar) cal );
+			appointment.setComments( appointmentCommentsField.getText() );
+			appointment.setUser( inspector );
+			appointment.setCustomerHeater( appointmentHeatercomboBox.getValue() );
+			
+			cirmi.saveAppointment( appointment );
+			ActionDetailviewCancelAppointment(event);
+			
 		}
 
 		@FXML
@@ -154,6 +164,7 @@ public class ControllerDetailview {
 		
 					appointmentInspectorField.setText( inspector.toString() );
 					appointmentDateField.setText( sdf.format( cal.getTime() ) );
+					appointmentDateField.getProperties().put( CalendarConstants.PROPERTYNAME_DATE, cal );
 					
 					detailviewDeleteAppointment.setDisable(true);
 				}
@@ -163,8 +174,11 @@ public class ControllerDetailview {
 					Customerheater customerHeater = appointment.getCustomerHeater();
 					customer = customerHeater.getCustomer();
 					
-					appointmentInspectorField.setText( appointment.getUser().toString() );
-					appointmentDateField.setText( sdf.format( appointment.getAppointmentdate().getTime() ) );
+					inspector = appointment.getUser();
+					cal = appointment.getAppointmentdate();
+					
+					appointmentInspectorField.setText( inspector.toString() );
+					appointmentDateField.setText( sdf.format( cal.getTime() ) );
 					appointmentCommentsField.setText( appointment.getComments() );
 					appointmentClientcomboBox.getSelectionModel().select( customer );
 					

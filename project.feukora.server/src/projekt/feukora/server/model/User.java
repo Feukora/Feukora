@@ -154,9 +154,15 @@ public class User implements Serializable {
 		return companyid.toString();
 	}
 	
-	public boolean login( String password )
+	/**
+	 * Returns the currently logged in user or null if the credentials were wrong
+	 * 
+	 * @param password
+	 * @return
+	 */
+	public User login( String password )
 	{
-		return this.password.equals( password );
+		return this.password.equals( password ) ? this : null;
 	}
 
 	public void setUsergroupid(Usergroup usergroupid) {

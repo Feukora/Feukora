@@ -75,6 +75,8 @@ public class ClientInternRMI {
 	FacilitymanagerRMI facilitymanagerRMI;
 	FuelRMI fuelRMI;
 	UsergroupRMI usergroupRMI;
+	
+	public static User currLoggedInUser;
 
 	public static void main(String[] args) {
 		System.out
@@ -156,8 +158,9 @@ public class ClientInternRMI {
 	public boolean login(String username, String password) throws Exception {
 
 		User user = userRMI.findUsersByUsername(username);
+		currLoggedInUser = user.login(password);
 
-		return user.login( password );
+		return currLoggedInUser != null;
 	}
 	
 	public String authentication(String username) throws RemoteException {
@@ -761,6 +764,15 @@ public class ClientInternRMI {
 			appointmentRMI.deleteAppointment( app );
 		} catch (Exception e) {
 			logger.error("Fehler beim löschen des Termins (appointmentid = " + app.getAppointmentid(), e);
+		}
+	}
+	
+	public void saveAppointment( Appointment app )
+	{
+		try {
+			appointmentRMI.saveAppointment( app );
+		} catch (Exception e) {
+			logger.error( "Fehler beim speichern eines neuen Termines", e );
 		}
 	}
 }

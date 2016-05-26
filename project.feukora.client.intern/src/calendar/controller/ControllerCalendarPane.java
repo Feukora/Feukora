@@ -177,6 +177,7 @@ public class ControllerCalendarPane {
 
     private ClientInternRMI feukora;
     private static int weekScroller = 0;
+    private static User selectedInspector = null;
     private List<Button> buttons = new ArrayList<Button>();
 
     @FXML
@@ -215,8 +216,14 @@ public class ControllerCalendarPane {
 			feukora = new ClientInternRMI();
 			ObservableList<User> users = feukora.getUsers();
 			comboBoxSelectCalendar.setItems(users);
-			comboBoxSelectCalendar.getSelectionModel().select(0);
-			
+			if ( selectedInspector != null )
+			{
+				comboBoxSelectCalendar.getSelectionModel().select( selectedInspector );
+			}
+			else
+			{
+				comboBoxSelectCalendar.getSelectionModel().select( 0 );
+			}
 			Calendar cal = Calendar.getInstance();
 			cal.setMinimalDaysInFirstWeek(7);
 			cal.add(Calendar.WEEK_OF_YEAR, weekScroller);
@@ -488,6 +495,7 @@ public class ControllerCalendarPane {
     	
     	try {
     		weekScroller--;
+    		selectedInspector = comboBoxSelectCalendar.getValue();
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/CalendarPane.fxml"));
 
 		} catch (Exception e) {
@@ -504,6 +512,7 @@ public class ControllerCalendarPane {
     	
     	try {
     		weekScroller++;
+    		selectedInspector = comboBoxSelectCalendar.getValue();
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/CalendarPane.fxml"));
 
     	} catch (Exception e) {
