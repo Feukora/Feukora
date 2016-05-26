@@ -52,16 +52,10 @@ public class AppointmentManagerImpl implements AppointmentManager{
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate) {
 		return appointmentPersister.findAppointmentByAppointmentdate(appointmentdate);
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 
 	@Override
 	public List<Appointment> findAppointmentsForInspector(User inspector) {
 		return appointmentPersister.findAppointmentsForInspector(inspector);
 	}
 }
->>>>>>> refs/remotes/origin/master
+

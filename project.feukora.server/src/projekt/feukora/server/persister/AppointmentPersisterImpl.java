@@ -63,9 +63,6 @@ public class AppointmentPersisterImpl implements AppointmentPersister{
 
 		return appointmentdatelist != null ? appointmentdatelist : new ArrayList<Appointment>();
 	}
-<<<<<<< HEAD
-}
-=======
 
 	@Override
 	public List<Appointment> findAppointmentsForInspector(User inspector) {
@@ -80,4 +77,3 @@ public class AppointmentPersisterImpl implements AppointmentPersister{
 	}
 	
 }
->>>>>>> refs/remotes/origin/master

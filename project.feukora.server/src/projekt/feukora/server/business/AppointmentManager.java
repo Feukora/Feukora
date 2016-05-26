@@ -70,13 +70,7 @@ public interface AppointmentManager {
 	 * @return
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
+
 	
 	List<Appointment> findAppointmentsForInspector( User inspector );
 }
->>>>>>> refs/remotes/origin/master

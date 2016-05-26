@@ -1,6 +1,7 @@
 package assistant.controller;
 
 import org.apache.log4j.Logger;
+
 import application.Context;
 import application.Main;
 import javafx.collections.FXCollections;
@@ -90,17 +91,11 @@ public class ControllerDetailview {
 			zip = Integer.parseInt(plz);
 		}
 		
+		
+
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-<<<<<<< HEAD
-<<<<<<< HEAD
-			if(lastname.isEmpty() == false && adress.isEmpty() == false && phone.isEmpty() == false && zip != null && firstname.isEmpty() == false && email.isEmpty() == false && username.isEmpty() == false && password.isEmpty() == false && company.isEmpty() == false) {
-=======
 			if(!lastname.isEmpty() && !adress.isEmpty() && !phone.isEmpty() && zip != null && !firstname.isEmpty() && !email.isEmpty() && !username.isEmpty() && !password.isEmpty() && !company.isEmpty()) {
->>>>>>> refs/remotes/origin/master
-=======
-			if(!lastname.isEmpty() && !adress.isEmpty() && !phone.isEmpty() && zip != null && !firstname.isEmpty() && !email.isEmpty() && !username.isEmpty() && !password.isEmpty() && !company.isEmpty()) {
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 				if(assistant == null) {
 					feukora.saveAssistantUser(zip, company, firstname, lastname, adress, phone, email, username, password);
 				} else {
@@ -126,6 +121,7 @@ public class ControllerDetailview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}
+
     }
     
     @FXML
@@ -143,6 +139,7 @@ public class ControllerDetailview {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
+		
     	detailviewCancelAssistant.getScene().setRoot(pane);
     }
 
@@ -222,6 +219,7 @@ public class ControllerDetailview {
 			assistantCompanyFieldCombo.setItems(companyNames);
 
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(Context.getUser() != null) {
@@ -245,5 +243,6 @@ public class ControllerDetailview {
 		assistantPasswordField.setText(assistant.getPassword());
 
 		Context.setNull();
+
 	}
 }

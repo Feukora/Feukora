@@ -5,22 +5,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-<<<<<<< HEAD
-=======
 
 import org.apache.log4j.Logger;
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
-
-<<<<<<< HEAD
-import org.apache.log4j.Logger;
-<<<<<<< HEAD
-=======
 
 import calendar.util.CalendarConstants;
->>>>>>> refs/remotes/origin/master
-=======
-import calendar.util.CalendarConstants;
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -187,16 +175,10 @@ public class ControllerCalendarPane {
     @FXML
     private Button moveRight;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     private ClientInternRMI feukora;
     private static int weekScroller = 0;
     private List<Button> buttons = new ArrayList<Button>();
 
->>>>>>> refs/remotes/origin/master
     @FXML
     void ActionSetAppointment(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("calendar/view/calendarDetailview.fxml"));
@@ -205,25 +187,19 @@ public class ControllerCalendarPane {
     		origin.getProperties().put( CalendarConstants.PROPERTYNAME_INSPECTOR, comboBoxSelectCalendar.getValue() );
     		origin.getScene().setRoot( loader.load() );
     		ControllerDetailview calendarController = loader.<ControllerDetailview>getController();
-    		calendarController.initData( origin.getProperties() );	
+    		calendarController.initData( origin.getProperties() );
+    		
     		
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
+    	
     }
 
     @FXML
     void ActionComboBoxSelectCalendar(ActionEvent event) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    	User selectedInspector = comboBoxSelectCalendar.getValue();
-=======
     	fillAppointments();
->>>>>>> refs/remotes/origin/master
-=======
-    	fillAppointments();
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     }
 
     @FXML
@@ -252,45 +228,17 @@ public class ControllerCalendarPane {
 			fillAppointments();
 			
 		} catch (Exception e) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-			e.printStackTrace();
-=======
 			logger.error("Aktion konnte nicht durchgeführt werden ", e);
->>>>>>> refs/remotes/origin/master
-=======
-			logger.error("Aktion konnte nicht durchgeführt werden ", e);
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 		}
     }
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // Hier wird bei einer änderung des Activen users in der Combobox der Kalender neu geladen
-    public void initializeNew(String activeUser){
-    	ClientInternRMI feukora;
-		try {
-			feukora = new ClientInternRMI();
-			//Kalenderdaten des activeUser 
-			feukora.getCalendarData(activeUser);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
-    
-	private void initNodes( Calendar cal, User user )
-=======
 	private void initNodes( Calendar cal )
->>>>>>> refs/remotes/origin/master
-=======
-	private void initNodes( Calendar cal )
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     {
     	SimpleDateFormat fmt = new SimpleDateFormat( CalendarConstants.DATEFORMAT_DDMMYYY );
         fmt.setCalendar(cal);
     	for ( Node node : calendarPane.getChildren() )
     	{
+            
     		if ( calendarPane.getColumnIndex(node) != null )
     		{
 				int colIndex = calendarPane.getColumnIndex(node);
@@ -447,6 +395,7 @@ public class ControllerCalendarPane {
 			logger.error("Aktion konnte nicht durchgeführt werden ",
 					e);
 		}	
+    
     }
     
     @FXML
@@ -564,9 +513,6 @@ public class ControllerCalendarPane {
     	
     	moveRight.getScene().setRoot(pane);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     
     private void fillAppointments ()
     {
@@ -597,38 +543,5 @@ public class ControllerCalendarPane {
 			e.printStackTrace();
 		}
     }
->>>>>>> refs/remotes/origin/master
-=======
-    
-    private void fillAppointments ()
-    {
-    	List<Appointment> appointments;
-		try {
-			appointments = feukora.getAppointments(comboBoxSelectCalendar.getValue());
-		
-	    	for ( Appointment app : appointments )
-	    	{
-	    		for( Button btn : buttons )
-	    		{
-	    			//reset all appointments
-	    			btn.getProperties().remove( CalendarConstants.PROPERTYNAME_APPOINTMENT );
-	    			btn.setText("");
-	    			
-	    			Calendar btnDate = (Calendar) btn.getProperties().get( CalendarConstants.PROPERTYNAME_DATE );
-	    			Calendar appDate = app.getAppointmentdate();
-	
-	    			if( btnDate.equals( appDate ) )
-	    			{
-	    				btn.setText(app.toString());
-	    				btn.getProperties().put( CalendarConstants.PROPERTYNAME_APPOINTMENT, app );
-	    			}
-	    		}
-	    	}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    }
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 }
 

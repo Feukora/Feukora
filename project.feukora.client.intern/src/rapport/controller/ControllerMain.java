@@ -1,13 +1,7 @@
 package rapport.controller;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import java.io.IOException;
 import java.net.URL;
->>>>>>> refs/remotes/origin/master
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
@@ -20,14 +14,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
->>>>>>> refs/remotes/origin/master
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -268,11 +256,9 @@ public class ControllerMain {
 
 	@FXML
 	void ActionRapportSave(ActionEvent event) throws IOException {
-<<<<<<< HEAD
-=======
-		
+
 //		Rapport rapport = Context.getRapport();
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
+
 		
 		String canton = textfieldCanton.getText();
 		String adress = textfieldaddress.getText();
@@ -441,9 +427,7 @@ public class ControllerMain {
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
-<<<<<<< HEAD
-		}		
-=======
+
 		}
     	
 //    	customerCompanyNameField.clear();
@@ -457,12 +441,7 @@ public class ControllerMain {
 		} else if (Context.getRole().equals("Sachbearbeiter")) {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
 		}
-    	
-    	
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/master
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
+
 	}
 	
 	public void initialize() {

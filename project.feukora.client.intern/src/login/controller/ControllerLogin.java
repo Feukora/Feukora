@@ -1,12 +1,10 @@
 package login.controller;
 
 import org.apache.log4j.Logger;
-<<<<<<< HEAD
-=======
+
 
 import application.Context;
 import inspector.controller.ControllerDetailview;
->>>>>>> refs/remotes/origin/master
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

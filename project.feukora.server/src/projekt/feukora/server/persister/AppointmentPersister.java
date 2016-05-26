@@ -1,13 +1,6 @@
 package projekt.feukora.server.persister;
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
 import java.rmi.RemoteException;
 import java.util.Date;
->>>>>>> refs/remotes/origin/master
 import java.util.GregorianCalendar;
 import java.util.List;
 import projekt.feukora.server.model.Appointment;
@@ -77,14 +70,7 @@ public interface AppointmentPersister {
 	 * @return
 	 */
 	public List<Appointment> findAppointmentByAppointmentdate(GregorianCalendar appointmentdate);
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
-=======
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
+
 	
 	List<Appointment> findAppointmentsForInspector( User inspector );
 }
-
->>>>>>> refs/remotes/origin/master
