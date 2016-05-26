@@ -48,7 +48,7 @@ public class ControllerLogin {
 
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			if(username.isEmpty() == true || password.isEmpty() == true){
+			if(username.isEmpty() == false && password.isEmpty() == false){
 
 				Boolean successfull = feukora.login(username, password);
 
@@ -107,16 +107,31 @@ public class ControllerLogin {
 
 		try {
 			ClientInternRMI feukora = new ClientInternRMI();
-			Boolean successfull = feukora.login(username, password);
+			if(username.isEmpty() == false && password.isEmpty() == false){
+				
+				Boolean successfull = feukora.login(username, password);
 
-			if(successfull == true){
-				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+				if(successfull == true){
+					pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAdministrator.fxml"));
+				}else{
+					pane = FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
+					usernameLoginTextfield.clear();
+					passwordLoginTextfield.clear();
+					String titleBar = "Uups!! Passwort falsch";
+					String headerMessage = "Passwort oder Benutzename ist falsch";
+					String infoMessage = "-";
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle(titleBar);
+					alert.setHeaderText(headerMessage);
+					alert.setContentText(infoMessage);
+					alert.showAndWait();
+				}
 			}else{
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("login/view/loginPane.fxml"));
 				usernameLoginTextfield.clear();
 				passwordLoginTextfield.clear();
-				String titleBar = "Uups!! Passwort falsch";
-				String headerMessage = "Passwort oder Benutzename ist falsch";
+				String titleBar = "Nichts eingegeben";
+				String headerMessage = "Passwort und Benutzername eingeben";
 				String infoMessage = "-";
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle(titleBar);
@@ -124,7 +139,6 @@ public class ControllerLogin {
 				alert.setContentText(infoMessage);
 				alert.showAndWait();
 			}
-
 		} catch (Exception e) {
 			logger.error("Login fehlgeschlagen\'",
 					e);

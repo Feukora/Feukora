@@ -133,6 +133,7 @@ public class ControllerDetailview {
 	}
 
 	public void initialize() {
+
 		ClientInternRMI feukora;
 		try {
 			feukora = new ClientInternRMI();
@@ -152,6 +153,7 @@ public class ControllerDetailview {
 			Update();
 		} else {
 		}
+		
 	}
 
 	public void Update(){
@@ -167,7 +169,6 @@ public class ControllerDetailview {
 		inspectorMunicipalityField.setText(inspector.getTown().substring(5));
 		inspectorUsernameField.setText(inspector.getUsername());
 		inspectorPasswordField.setText(inspector.getPassword());
-
 		Context.setNull();
 	}
 
@@ -197,16 +198,7 @@ public class ControllerDetailview {
 				feukora.updateInspectorUser(inspector, zip, company, firstname, lastname, adress, phone, email, username, password);
 			}
 				
-				inspectorCompanyFieldCombo.getSelectionModel().clearSelection();
-				inspectorNameField.clear();
-				inspectorAddressField.clear();
-				inspectorPhoneField.clear();
-				inspectorZipField.clear();
-				inspectorMunicipalityField.clear();
-				inspectorFirstNameField.clear();
-				inspectorEmailField.clear();
-				inspectorUsernameField.clear();
-				inspectorPasswordField.clear();
+
 				
 			} else {
 				errorInfoNeu();
@@ -219,6 +211,8 @@ public class ControllerDetailview {
 
 	@FXML
 	void ActionDetailviewCancelInspector(ActionEvent event) {
+		
+		
 		BorderPane pane = new BorderPane();
 		
 		try {
@@ -227,6 +221,7 @@ public class ControllerDetailview {
 			} else if (Context.getRole().equals("Sachbearbeiter")) {
 				pane = FXMLLoader.load(getClass().getClassLoader().getResource("application/MainViewAssistant.fxml"));
 			}
+
 			
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
