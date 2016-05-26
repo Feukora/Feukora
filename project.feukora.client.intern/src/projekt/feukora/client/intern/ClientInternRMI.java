@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
@@ -49,7 +50,7 @@ import projekt.feukora.server.rmi.UsergroupRMI;
 /**
  * This Class implements the rmi connection 
  * 
- * @version 1.6
+ * @version 1.7
  * @author Sandro Fasser
  *
  */
@@ -594,16 +595,45 @@ public class ClientInternRMI {
 		companylist.addAll(companyRMI.findAllCompanies());
 		return companylist;
 	}
+	
 	/**
-	 * 
+	 * This Method returns all Appointments for a given inspector
 	 *
-	 * @throws Exception
+	 * @param inspector - the user to get all appointments for
+	 *
+	 * @return returnValue - the list with all appointments for the given user or an empty list if he doesn't have any
 	 */
-	public List<Appointment> getAppointments(User inspector) throws Exception {
-
-		return appointmentRMI.findAppointmentsForInspector(inspector);
+	public List<Appointment> getAppointments(User inspector) 
+	{
+		List<Appointment> returnValue = new ArrayList<Appointment>();
+		try {
+			returnValue = appointmentRMI.findAppointmentsForInspector(inspector);
+		} catch (RemoteException e) {
+			logger.error( "Fehler beim Auslesen der Termine", e );
+		}
+		
+		return returnValue;
 	}
-
+	
+	/**
+	 * This Method returns all {@link Customerheater} for a given customer
+	 *
+	 * @param customer - the user to get all customerheaters for
+	 *
+	 * @return returnValue - the list with all customerheaters for the given customer or an empty list if he doesn't have any
+	 */
+	public List<Customerheater> getCustomerHeaters( Customer customer )
+	{
+		List<Customerheater> returnValue = new ArrayList<Customerheater>();
+		try {
+			returnValue = customerheaterRMI.findCustomerHeaterForCustomer(customer);
+		} catch (RemoteException e) {
+			logger.error("Fehler beim Auslesen der Wärmeerzeuger für Kunden", e);
+		}
+		
+		return returnValue;
+	}
+	
 	public String getTown(Integer zip) throws RemoteException {
 		Town town1 = townRMI.findTownByZip(zip);
 		return town1.getName();
@@ -723,5 +753,14 @@ public class ClientInternRMI {
 		measuringresultRMI.saveMeasuringresult(mr2);
 		measuringresultRMI.saveMeasuringresult(mr3);
 		measuringresultRMI.saveMeasuringresult(mr4);
-	}	
+	}
+	
+	public void deleteAppointment( Appointment app )
+	{
+		try {
+			appointmentRMI.deleteAppointment( app );
+		} catch (Exception e) {
+			logger.error("Fehler beim löschen des Termins (appointmentid = " + app.getAppointmentid(), e);
+		}
+	}
 }

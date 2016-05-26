@@ -519,14 +519,19 @@ public class ControllerCalendarPane {
     	List<Appointment> appointments;
 		try {
 			appointments = feukora.getAppointments(comboBoxSelectCalendar.getValue());
-		
+			
+			for ( Button btn : buttons )
+			{
+				//reset all appointments
+    			btn.getProperties().remove( CalendarConstants.PROPERTYNAME_APPOINTMENT );
+    			btn.setText("");
+			}
+			
 	    	for ( Appointment app : appointments )
 	    	{
 	    		for( Button btn : buttons )
 	    		{
-	    			//reset all appointments
-	    			btn.getProperties().remove( CalendarConstants.PROPERTYNAME_APPOINTMENT );
-	    			btn.setText("");
+	    			
 	    			
 	    			Calendar btnDate = (Calendar) btn.getProperties().get( CalendarConstants.PROPERTYNAME_DATE );
 	    			Calendar appDate = app.getAppointmentdate();
@@ -539,8 +544,7 @@ public class ControllerCalendarPane {
 	    		}
 	    	}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error( "Fehler beim Auslesen der Termine", e );
 		}
     }
 }

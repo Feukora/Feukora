@@ -121,12 +121,12 @@ public class AppointmentPersisterTest {
 	public void testDelete() throws Exception {
 
 		List<Appointment> appointmentlist = appointmentTest.findAllAppointments();
-		assertTrue(appointmentlist.size() == 2);
+		assertTrue(appointmentlist.size() == 3);
 
 		appointmentTest.deleteAppointment(appointmentlist.get(0));
 
 		appointmentlist = appointmentTest.findAllAppointments();
-		assertTrue(appointmentlist.size() == 1);
+		assertTrue(appointmentlist.size() == 2);
 
 	}
 	

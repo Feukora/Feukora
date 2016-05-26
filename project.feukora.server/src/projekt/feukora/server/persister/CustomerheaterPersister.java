@@ -1,12 +1,14 @@
 package projekt.feukora.server.persister;
 
 import java.util.List;
+
+import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Customerheater;
 
 /**
  * This interface refers to a CustomerheaterPersister
  * 
- * @version 1.5
+ * @version 1.6
  * @author Pascal
  *
  */
@@ -64,7 +66,15 @@ public interface CustomerheaterPersister {
 	 * Return the entity with this performance
 	 * 
 	 * @param performance
-	 * @return List with Customereaters
+	 * @return List with Customerheaters
 	 */
 	public List<Customerheater> findCustomerheaterByPerformance(Integer performance);
+	
+	/**
+	 * This method returns a {@link List<Customerheater>} with all heaters for the given customer
+	 * 
+	 * @param customer
+	 * @return {@link List<Customerheater>} with all {@link Customerheater} for the given customer
+	 */
+	public List<Customerheater> findCustomerHeaterForCustomer( Customer customer );
 }
