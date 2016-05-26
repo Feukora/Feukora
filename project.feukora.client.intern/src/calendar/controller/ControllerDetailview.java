@@ -62,6 +62,7 @@ public class ControllerDetailview {
 	private User inspector;
 	private Calendar cal;
 	private ClientInternRMI cirmi;
+	private boolean newApp = false;
 
 	@FXML
 	void ActionAppointmentDateField(ActionEvent event) {
@@ -122,8 +123,7 @@ public class ControllerDetailview {
 			appointment.setComments( appointmentCommentsField.getText() );
 			appointment.setUser( inspector );
 			appointment.setCustomerHeater( appointmentHeatercomboBox.getValue() );
-			
-			cirmi.saveAppointment( appointment );
+			cirmi.saveAppointment( appointment, newApp );
 			ActionDetailviewCancelAppointment(event);
 			
 		}
@@ -152,6 +152,7 @@ public class ControllerDetailview {
 				
 				if ( appointment == null )
 				{
+					newApp = true;
 					//no appointment exists, create a new one
 					appointmentClientcomboBox.getSelectionModel().select( 0 );
 					customer = appointmentClientcomboBox.getValue();
