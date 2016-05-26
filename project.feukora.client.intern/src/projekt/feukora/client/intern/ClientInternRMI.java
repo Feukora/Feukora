@@ -150,7 +150,7 @@ public class ClientInternRMI {
 	}
 
 	/**
-	 * 
+	 * method that gets the view depending on the user
 	 *
 	 * @throws Exception
 	 */
@@ -162,6 +162,12 @@ public class ClientInternRMI {
 		return currLoggedInUser != null;
 	}
 	
+	/**
+	 * method that does the authentification of the username and the password
+	 * @param username
+	 * @return
+	 * @throws RemoteException
+	 */
 	public String authentication(String username) throws RemoteException {
 		User user = userRMI.findUsersByUsername(username);
 		String role = user.getUsergroupid().toString();
@@ -169,7 +175,7 @@ public class ClientInternRMI {
 	}
 
 	/**
-	 * 
+	 * method to save a customer
 	 *
 	 * @throws Exception
 	 */
@@ -186,6 +192,19 @@ public class ClientInternRMI {
 		customerRMI.saveCustomer(c1);	
 	}
 
+	/**
+	 * method to update a customer
+	 * @param entity
+	 * @param companyname
+	 * @param lastname
+	 * @param adress
+	 * @param phone
+	 * @param zip
+	 * @param firstname
+	 * @param email
+	 * @param isOwner
+	 * @throws Exception
+	 */
 	public void updateCustomer(Customer entity, String companyname, String lastname, String adress, String phone, Integer zip, String firstname, String email, Boolean isOwner) throws Exception {
 		Customerfunction function;
 		if(isOwner == true) {
@@ -206,6 +225,10 @@ public class ClientInternRMI {
 		customerRMI.updateCustomer(entity);
 	}
 
+	/**
+	 * method to delete a customer
+	 * @param entity
+	 */
 	public void deleteCustomer(Customer entity) {
 		try {
 			customerRMI.deleteCustomer(entity);
@@ -234,6 +257,10 @@ public class ClientInternRMI {
 		}
 	}
 	
+	/**
+	 * method to delete a rapport
+	 * @param entity
+	 */
 	public void deleteRapport(Rapport entity) {
 		try {
 			rapportRMI.deleteRapport(entity);
@@ -264,7 +291,7 @@ public class ClientInternRMI {
 
 
 	/**
-	 * 
+	 * method to save a blower
 	 *
 	 * @throws Exception
 	 */
@@ -307,6 +334,18 @@ public class ClientInternRMI {
 		}
 	}
 
+	/**
+	 * method to update a blower
+	 * @param entity
+	 * @param name
+	 * @param oil
+	 * @param gas
+	 * @param liquidGas
+	 * @param bblower
+	 * @param atmospheric
+	 * @param evaporator
+	 * @throws Exception
+	 */
 	public void updateBlower(Blower entity, String name, Boolean oil, Boolean gas, Boolean liquidGas, Boolean bblower, Boolean atmospheric, Boolean evaporator) throws Exception {
 		Blowertype type;
 		Fuel fuel;
@@ -336,6 +375,10 @@ public class ClientInternRMI {
 		blowerRMI.updateBlower(entity);
 	}
 
+	/** 
+	 * method to delete a blower
+	 * @param entity
+	 */
 	public void deleteBlower(Blower entity) {
 		try {
 			blowerRMI.deleteBlower(entity);
@@ -351,7 +394,7 @@ public class ClientInternRMI {
 	}
 
 	/**
-	 * 
+	 * an list with customer
 	 *
 	 * @throws Exception
 	 */
@@ -364,7 +407,7 @@ public class ClientInternRMI {
 	}
 	
 	/**
-	 * 
+	 * a list with rapports
 	 *
 	 * @throws Exception
 	 */
@@ -382,6 +425,10 @@ public class ClientInternRMI {
 
 	}
 
+	/**
+	 * method to save users
+	 * @param entity
+	 */
 	public void saveUser(User entity){
 		try {
 			userRMI.saveUsers(entity);
@@ -392,6 +439,10 @@ public class ClientInternRMI {
 		}
 	}
 
+	/**
+	 * method to save inspector users
+	 * @param entity
+	 */
 	public void saveInspectorUser(Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
 		try{
 			Company company;
@@ -411,6 +462,10 @@ public class ClientInternRMI {
 		}
 	}
 
+	/**
+	 * method to save assistant users
+	 * @param entity
+	 */
 	public void saveAssistantUser(Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password){
 		try{
 			Company company;
@@ -430,6 +485,10 @@ public class ClientInternRMI {
 		}
 	}
 
+	/**
+	 * method to delete users
+	 * @param entity
+	 */
 	public void deleteUser(User entity) {
 		try {
 			userRMI.deleteUsers(entity);
@@ -460,6 +519,10 @@ public class ClientInternRMI {
 		}
 	}
 
+	/**
+	 * method to update inspector users
+	 * @param entity
+	 */
 	public void updateInspectorUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
 
 		Company company;
@@ -482,6 +545,10 @@ public class ClientInternRMI {
 		userRMI.updateUsers(entity);
 	}
 
+	/**
+	 * method to update assistant users
+	 * @param entity
+	 */
 	public void updateAssistantUser(User entity, Integer zip, String companyname, String firstname, String lastname, String adress, String phone, String email, String username, String password) throws Exception {
 
 		Company company;
@@ -516,6 +583,10 @@ public class ClientInternRMI {
 		return heaterlist;
 	}
 
+	/**
+	 * method to save heaters
+	 * @param entity
+	 */
 	public void saveHeater(Heater entity){
 		try {
 			heaterRMI.saveHeater(entity);
@@ -528,10 +599,18 @@ public class ClientInternRMI {
 		}
 	}
 
+	/**
+	 * method to update heaters
+	 * @param entity
+	 */
 	public void updateHeater(Heater entity) throws Exception {
 		heaterRMI.updateHeater(entity);
 	}
 
+	/**
+	 * method to delete heaters
+	 * @param entity
+	 */
 	public void deleteHeater(Heater entity) {
 		try {
 			heaterRMI.deleteHeater(entity);
@@ -547,7 +626,7 @@ public class ClientInternRMI {
 	}
 
 	/**
-	 * 
+	 * method to get a list with blowers
 	 *
 	 * @throws Exception
 	 */
@@ -559,7 +638,7 @@ public class ClientInternRMI {
 	}
 
 	/**
-	 * 
+	 * method to get a list with users
 	 *
 	 * @throws Exception
 	 */
@@ -572,7 +651,7 @@ public class ClientInternRMI {
 	}
 	
 	/**
-	 * 
+	 * method to get a list with assistant users
 	 *
 	 * @throws Exception
 	 */
@@ -590,6 +669,11 @@ public class ClientInternRMI {
 		return assistentlist;
 	}
 	
+	/**
+	 * method to get a list with inspector users
+	 * @return
+	 * @throws Exception
+	 */
 	public ObservableList<User> getInspectors() throws Exception {
 		
 		ObservableList<User> userlist = FXCollections.observableArrayList();
@@ -597,6 +681,11 @@ public class ClientInternRMI {
 		return userlist;
 	}
 	
+	/**
+	 * method to get a list with assistants
+	 * @return
+	 * @throws Exception
+	 */
 	public ObservableList<User> getAssistants() throws Exception {
 		
 		ObservableList<User> userlist = FXCollections.observableArrayList();
@@ -605,7 +694,7 @@ public class ClientInternRMI {
 	}
 	
 	/**
-	 * 
+	 * method to get a list with companies
 	 *
 	 * @throws Exception
 	 */
@@ -654,17 +743,103 @@ public class ClientInternRMI {
 		return returnValue;
 	}
 	
+	/**
+	 * method to get a town
+	 * @param zip
+	 * @return
+	 * @throws RemoteException
+	 */
 	public String getTown(Integer zip) throws RemoteException {
 		Town town1 = townRMI.findTownByZip(zip);
 		return town1.getName();
 	}
 
+	/**
+	 * method to update a rapport
+	 * @param rapport
+	 * @param canton
+	 * @param adress
+	 * @param customer
+	 * @param facilitymanager
+	 * @param heateryear
+	 * @param bloweryear
+	 * @param performance
+	 * @param date
+	 * @param result
+	 * @param smokenumber
+	 * @param oilpart
+	 * @param carbonmonoxide
+	 * @param nitrogendioxide
+	 * @param exhaustgaslost
+	 * @param additionalsteps
+	 * @param comment
+	 */
 	public void updateRapport(Rapport rapport, String canton, String adress, String customer, String facilitymanager,
 			Integer heateryear, Integer bloweryear, String performance, LocalDate date, Boolean result,
 			Boolean smokenumber, Boolean oilpart, Boolean carbonmonoxide, Boolean nitrogendioxide,
 			Boolean exhaustgaslost, Boolean additionalsteps, String comment) {		
 	}
 
+	/**
+	 * method to save a rapport
+	 * @param canton
+	 * @param adress
+	 * @param customer
+	 * @param facilitymanager
+	 * @param heateryear
+	 * @param heatertype
+	 * @param ctype
+	 * @param bloweryear
+	 * @param blowertype
+	 * @param performance
+	 * @param gdate
+	 * @param smokenumber1
+	 * @param smokenumber2
+	 * @param smokenumber3
+	 * @param smokenumber4
+	 * @param carbonmonoxide1
+	 * @param carbonmonoxide2
+	 * @param carbonmonoxide3
+	 * @param carbonmonoxide4
+	 * @param nitrogendioxide1
+	 * @param nitrogendioxide2
+	 * @param nitrogendioxide3
+	 * @param nitrogendioxide4
+	 * @param exhaustgastemp1
+	 * @param exhaustgastemp2
+	 * @param exhaustgastemp3
+	 * @param exhaustgastemp4
+	 * @param heatertemp1
+	 * @param heatertemp2
+	 * @param heatertemp3
+	 * @param heatertemp4
+	 * @param blowertemp1
+	 * @param blowertemp2
+	 * @param blowertemp3
+	 * @param blowertemp4
+	 * @param oxygen1
+	 * @param oxygen2
+	 * @param oxygen3
+	 * @param oxygen4
+	 * @param exhaustgaslost1
+	 * @param exhaustgaslost2
+	 * @param exhaustgaslost3
+	 * @param exhaustgaslost4
+	 * @param oilpart1
+	 * @param oilpart2
+	 * @param oilpart3
+	 * @param oilpart4
+	 * @param result
+	 * @param smokenumber
+	 * @param oilpart
+	 * @param carbonmonoxide
+	 * @param nitrogendioxide
+	 * @param exhaustgaslost
+	 * @param additionalsteps
+	 * @param comment
+	 * @param persNumber
+	 * @throws Exception
+	 */
 	public void saveRapport(String canton, String adress, String customer, String facilitymanager, Integer heateryear,
 			String heatertype, String ctype, Integer bloweryear, String blowertype, String performance,
 			GregorianCalendar gdate, String smokenumber1, String smokenumber2, String smokenumber3, String smokenumber4,
@@ -775,6 +950,10 @@ public class ClientInternRMI {
 		measuringresultRMI.saveMeasuringresult(mr4);
 	}
 	
+	/**
+	 * method to delete a appointment
+	 * @param app
+	 */
 	public void deleteAppointment( Appointment app )
 	{
 		try {
@@ -784,6 +963,11 @@ public class ClientInternRMI {
 		}
 	}
 	
+	/**
+	 * method to save a appointment
+	 * @param app
+	 * @param newApp
+	 */
 	public void saveAppointment( Appointment app, boolean newApp )
 	{
 		try {

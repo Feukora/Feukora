@@ -77,6 +77,10 @@ public class ControllerDetailview {
 		alert.showAndWait();
 	}
     
+    /**
+     * method to save the entered data 
+     * @param event
+     */
     @FXML
     void ActionDetailviewSaveAssistant(ActionEvent event) {
 
@@ -125,6 +129,10 @@ public class ControllerDetailview {
 		}
     }
     
+    /**
+     * button to cancel the current action
+     * @param event
+     */
     @FXML
     void ActionDetailviewCancelAssistant(ActionEvent event) {
 		BorderPane pane = new BorderPane();
@@ -144,6 +152,10 @@ public class ControllerDetailview {
     	detailviewCancelAssistant.getScene().setRoot(pane);
     }
 
+    /** 
+     * method to get the the cityname to to the zip
+     * @param event
+     */
     @FXML
     void ActionAssistantZipField(ActionEvent event) {
 		String plz = assistantZipField.getText();
@@ -160,7 +172,8 @@ public class ControllerDetailview {
 					e);
 		}
 	}
-
+    
+    
     @FXML
     void ActionAssistantMunicipalityField(ActionEvent event) {
 
@@ -229,6 +242,9 @@ public class ControllerDetailview {
 		}
 	}
 	
+	/**
+	 * method to get the data of the chosen record
+	 */
 	public void Update(){
 
 		assistant = Context.getUser();

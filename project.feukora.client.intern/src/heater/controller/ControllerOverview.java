@@ -60,11 +60,19 @@ public class ControllerOverview {
     	}
     }
 
+    /**
+     * method for the table heaer
+     * @param event
+     */
     @FXML // Methode für die Tabelle
     void ActionOverviewTableHeater(ActionEvent event) {
 
     }
     
+    /**
+     * method to delete selected record
+     * @param event
+     */
     @FXML
     void ActionOverviewDeleteHeater(ActionEvent event) {
     	ClientInternRMI feukora;
@@ -87,11 +95,19 @@ public class ControllerOverview {
 		initialize();
     }
 
+    /**
+     * method to refresh overview
+     * @param event
+     */
     @FXML
     void ActionOverviewRefreshHeater(ActionEvent event) {
     	initialize();
     }
     
+    /**
+     * method to open the detailview of the selected record
+     * @param event
+     */
     @FXML
     void ActionOverviewUpdateHeater(ActionEvent event) {
     	try {

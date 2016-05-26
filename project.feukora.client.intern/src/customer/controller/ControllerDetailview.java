@@ -69,6 +69,9 @@ public class ControllerDetailview {
     @FXML
     private TextField customerEmailField;
     
+    /**
+     * method to show error message
+     */
     public void errorInfoNeu(){
 		String titleBar = "Achtung";
 		String headerMessage = "Bitte alle Daten eingeben";
@@ -105,6 +108,10 @@ public class ControllerDetailview {
 
     }
     
+    /**
+     * method to get the cityname to the zip
+     * @param event
+     */
     @FXML
     void ActionCustomerZipField(ActionEvent event) {
     	String plz = customerZipField.getText();
@@ -141,6 +148,9 @@ public class ControllerDetailview {
     	}
     }
     
+    /**
+     * method to bind a group of radiobuttons
+     */
     public void setToggleGroup() {
     	radioButtonOwner.setToggleGroup(group);
     	radioButtonAdministration.setToggleGroup(group);
@@ -148,6 +158,9 @@ public class ControllerDetailview {
     	radioButtonAdministration.setSelected(false);
     }
     
+    /**
+	 * method to get the data of the chosen record
+	 */
     public void Update(){
     
     		customer = Context.getCustomer();
@@ -167,6 +180,10 @@ public class ControllerDetailview {
 	    	Context.setNull();	
     }
 
+    /**
+     * method to save the record
+     * @param event
+     */
     @FXML
     void ActionDetailviewSaveCustomer(ActionEvent event) {
     	
@@ -218,6 +235,10 @@ public class ControllerDetailview {
 		}
 	}    
     
+    /**
+     * method to cancel the action
+     * @param event
+     */
     @FXML
     void ActionDetailviewCancelCustomer(ActionEvent event) {
 		BorderPane pane = new BorderPane();
@@ -237,6 +258,10 @@ public class ControllerDetailview {
     	detailviewCancelCustomer.getScene().setRoot(pane);
     }
     
+    /**
+     * method to delete the selected appointment
+     * @param event
+     */
     @FXML
     void ActionDetailviewDeleteAppointment(ActionEvent event) {
 

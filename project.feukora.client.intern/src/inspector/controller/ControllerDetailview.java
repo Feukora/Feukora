@@ -65,6 +65,9 @@ public class ControllerDetailview {
 	@FXML
 	private TextField inspectorUsernameField;
 	
+	/**
+	 * method to show an error message
+	 */
 	public void errorInfoNeu(){
 		String titleBar = "Achtung";
 		String headerMessage = "Bitte alle Daten eingeben";
@@ -76,6 +79,10 @@ public class ControllerDetailview {
 		alert.showAndWait();
 	}
 
+	/**
+	 * method to get the cityname to the zip
+	 * @param event
+	 */
 	@FXML
 	void ActionInspectorZipField(ActionEvent event) {
 		String plz = inspectorZipField.getText();
@@ -161,6 +168,9 @@ public class ControllerDetailview {
 		
 	}
 
+	/**
+	 * method to get the data of the selected record
+	 */
 	public void Update(){
 
 		inspector = Context.getUser();
@@ -177,6 +187,10 @@ public class ControllerDetailview {
 		Context.setNull();
 	}
 
+	/**
+	 * method to save the record
+	 * @param event
+	 */
 	@FXML
 	void ActionDetailviewSaveInspector(ActionEvent event) {
 		User inspector = Context.getUser();
@@ -223,6 +237,10 @@ public class ControllerDetailview {
 		}
 	}
 
+	/**
+	 * method to cancel the action
+	 * @param event
+	 */
 	@FXML
 	void ActionDetailviewCancelInspector(ActionEvent event) {
 		
