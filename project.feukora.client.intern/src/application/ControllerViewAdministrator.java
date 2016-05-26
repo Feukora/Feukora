@@ -198,19 +198,16 @@ public class ControllerViewAdministrator {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
 					e);
 		}	
-<<<<<<< HEAD
 		
 		//blowerWelcome.getScene().setRoot(pane);
 		}
-=======
-	}
+
     
     @FXML
     void ActionLoginMenuBar(ActionEvent event) {
     	Platform.exit();
     	Main.main(null);
     }
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     
     @FXML
     void ActionCloseMenuBar(ActionEvent event) {

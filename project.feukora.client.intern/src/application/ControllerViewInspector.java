@@ -99,13 +99,10 @@ public class ControllerViewInspector {
 		}
     }
 
-<<<<<<< HEAD
-=======
     @FXML
     void ActionLoginMenuBar(ActionEvent event) {
     }
     
->>>>>>> branch 'master' of https://github.com/Feukora/Feukora.git
     @FXML
     void ActionCloseMenuBar(ActionEvent event) {
     	Platform.exit();
