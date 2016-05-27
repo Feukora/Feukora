@@ -756,43 +756,131 @@ public class ClientInternRMI {
 
 		Integer rapSmokenumber1 = Integer.parseInt(smokenumber1);
 		Integer rapSmokenumber2 = Integer.parseInt(smokenumber2);
-		Integer rapSmokenumber3 = Integer.parseInt(smokenumber3);
-		Integer rapSmokenumber4 = Integer.parseInt(smokenumber4);
+		Integer rapSmokenumber3;
+		if(smokenumber3.isEmpty() == false) {
+			rapSmokenumber3 = Integer.parseInt(smokenumber3);
+		} else {
+			rapSmokenumber3 = 0;
+		}
+		
+		Integer rapSmokenumber4;
+		if(smokenumber4.isEmpty() == false) {
+			rapSmokenumber4 = Integer.parseInt(smokenumber4);
+		} else {
+			rapSmokenumber4 = 0;
+		}
 
 		Integer rapCarbonmonoxide1 = Integer.parseInt(carbonmonoxide1);
 		Integer rapCarbonmonoxide2 = Integer.parseInt(carbonmonoxide2);
-		Integer rapCarbonmonoxide3 = Integer.parseInt(carbonmonoxide3);
-		Integer rapCarbonmonoxide4 = Integer.parseInt(carbonmonoxide4);
+		Integer rapCarbonmonoxide3;
+		if(carbonmonoxide3.isEmpty() == false) {
+			rapCarbonmonoxide3 = Integer.parseInt(carbonmonoxide3);
+		} else {
+			rapCarbonmonoxide3 = 0;
+		}
+		
+		Integer rapCarbonmonoxide4;
+		if(carbonmonoxide4.isEmpty() == false) {
+			rapCarbonmonoxide4 = Integer.parseInt(carbonmonoxide4);
+		} else {
+			rapCarbonmonoxide4 = 0;
+		}
 
 		Integer rapNitrogendioxide1 = Integer.parseInt(nitrogendioxide1);
 		Integer rapNitrogendioxide2 = Integer.parseInt(nitrogendioxide2);
-		Integer rapNitrogendioxide3 = Integer.parseInt(nitrogendioxide3);
-		Integer rapNitrogendioxide4 = Integer.parseInt(nitrogendioxide4);
+		Integer rapNitrogendioxide3;
+		if(nitrogendioxide3.isEmpty() == false) {
+			rapNitrogendioxide3 = Integer.parseInt(nitrogendioxide3);
+		} else {
+			rapNitrogendioxide3 = 0;
+		}
+		
+		Integer rapNitrogendioxide4;
+		if(nitrogendioxide4.isEmpty() == false) {
+			rapNitrogendioxide4 = Integer.parseInt(nitrogendioxide4);
+		} else {
+			rapNitrogendioxide4 = 0;
+		}
 
 		Integer rapExhaustgastemp1 = Integer.parseInt(exhaustgastemp1);
 		Integer rapExhaustgastemp2 = Integer.parseInt(exhaustgastemp2);
-		Integer rapExhaustgastemp3 = Integer.parseInt(exhaustgastemp3);
-		Integer rapExhaustgastemp4 = Integer.parseInt(exhaustgastemp4);
+		Integer rapExhaustgastemp3;
+		if(exhaustgastemp3.isEmpty() == false) {
+			rapExhaustgastemp3 = Integer.parseInt(exhaustgastemp3);
+		} else {
+			rapExhaustgastemp3 = 0;
+		}
+		
+		Integer rapExhaustgastemp4;
+		if(exhaustgastemp4.isEmpty() == false) {
+			rapExhaustgastemp4 = Integer.parseInt(exhaustgastemp4);
+		} else {
+			rapExhaustgastemp4 = 0;
+		}
 
 		Integer rapHeatertemp1 = Integer.parseInt(heatertemp1);
 		Integer rapHeatertemp2 = Integer.parseInt(heatertemp2);
-		Integer rapHeatertemp3 = Integer.parseInt(heatertemp3);
-		Integer rapHeatertemp4 = Integer.parseInt(heatertemp4);
+		Integer rapHeatertemp3;
+		if(heatertemp3.isEmpty() == false) {
+			rapHeatertemp3 = Integer.parseInt(heatertemp3);
+		} else {
+			rapHeatertemp3 = 0;
+		}
+		
+		Integer rapHeatertemp4;
+		if(heatertemp4.isEmpty() == false) {
+			rapHeatertemp4 = Integer.parseInt(heatertemp4);
+		} else {
+			rapHeatertemp4 = 0;
+		}
 
 		Integer rapBlowertemp1 = Integer.parseInt(blowertemp1);
 		Integer rapBlowertemp2 = Integer.parseInt(blowertemp2);
-		Integer rapBlowertemp3 = Integer.parseInt(blowertemp3);
-		Integer rapBlowertemp4 = Integer.parseInt(blowertemp4);
+		Integer rapBlowertemp3;
+		if(blowertemp3.isEmpty() == false) {
+			rapBlowertemp3 = Integer.parseInt(blowertemp3);
+		} else {
+			rapBlowertemp3 = 0;
+		}
+		
+		Integer rapBlowertemp4;
+		if(blowertemp4.isEmpty() == false) {
+			rapBlowertemp4 = Integer.parseInt(blowertemp4);
+		} else {
+			rapBlowertemp4 = 0;
+		}
 
 		Double rapOxygen1 = Double.parseDouble(oxygen1);
 		Double rapOxygen2 = Double.parseDouble(oxygen2);
-		Double rapOxygen3 = Double.parseDouble(oxygen3);
-		Double rapOxygen4 = Double.parseDouble(oxygen4);
+		Double rapOxygen3;
+		if(oxygen3.isEmpty() == false) {
+			rapOxygen3 = Double.parseDouble(oxygen3);
+		} else {
+			rapOxygen3 = 0.0;
+		}
+		
+		Double rapOxygen4;
+		if(oxygen4.isEmpty() == false) {
+			rapOxygen4 = Double.parseDouble(oxygen4);
+		} else {
+			rapOxygen4 = 0.0;
+		}
 
 		Double rapExhaustgaslost1 = Double.parseDouble(exhaustgaslost1);
 		Double rapExhaustgaslost2 = Double.parseDouble(exhaustgaslost2);
-		Double rapExhaustgaslost3 = Double.parseDouble(exhaustgaslost3);
-		Double rapExhaustgaslost4 = Double.parseDouble(exhaustgaslost4);
+		Double rapExhaustgaslost3;
+		if(exhaustgaslost3.isEmpty() == false) {
+			rapExhaustgaslost3 = Double.parseDouble(exhaustgaslost3);
+		} else {
+			rapExhaustgaslost3 = 0.0;
+		}
+		
+		Double rapExhaustgaslost4;
+		if(exhaustgaslost4.isEmpty() == false) {
+			rapExhaustgaslost4 = Double.parseDouble(exhaustgaslost4);
+		} else {
+			rapExhaustgaslost4 = 0.0;
+		}
 
 		Integer rapPersNumber = Integer.parseInt(persNumber);
 		rapUser = userRMI.findUsersByUserid(rapPersNumber);
