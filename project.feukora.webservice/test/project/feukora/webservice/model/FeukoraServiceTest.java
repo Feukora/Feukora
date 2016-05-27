@@ -12,15 +12,15 @@ import projekt.feukora.server.model.Customer;
 import projekt.feukora.server.model.Rapport;
 
 public class FeukoraServiceTest {
-	
+
 	private FeukoraService feukoraService = new FeukoraService();
-	
+
 	@BeforeClass
 	public static void setUp()
 	{
-		
+
 	}
-	
+
 	@Test
 	public void testLogin() {
 		try {
@@ -29,7 +29,7 @@ public class FeukoraServiceTest {
 			fail( "Fehler beim Login: " + e );
 		}
 	}
-	
+
 	@Test
 	public void testCreateRapport()
 	{
@@ -40,7 +40,7 @@ public class FeukoraServiceTest {
 			fail( "Fehler beim Rapport: " + e );
 		}
 	}
-	
+
 	@Test
 	public void testGetCustomers()
 	{

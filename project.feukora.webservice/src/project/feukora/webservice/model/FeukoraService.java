@@ -23,27 +23,27 @@ import projekt.feukora.server.rmi.UserRMI;
 public class FeukoraService implements IFeukoraService {
 
 	private static final Logger logger = Logger.getLogger(FeukoraService.class);
-	
+
 	private UserRMI userManager;
 	private CustomerRMI customerManager;
 	private RapportRMI rapportManager;
 	public static User currLoggedInUser;
-	
+
 	private User loggedInUser;
-	
+
 	public FeukoraService()
 	{
 		String userRMIName = "userRMI";
 		String customerRMIName = "customerRMI";
 		String rapportRMIName = "rapportRMI";
-		
+
 		try {
 
 			/* Properties laden */
 			Properties props = new Properties();
 
 			InputStream is = FeukoraService.class.getClassLoader().getResourceAsStream("ws.properties");
-			
+
 			props.load(is);
 
 			String hostIp = props.getProperty("rmi.host_ip");
@@ -65,7 +65,7 @@ public class FeukoraService implements IFeukoraService {
 			logger.error("Fehler beim Einlesen einer Datei", ioe);
 		}
 	}
-	
+
 	@Override
 	public boolean login(String username, String password) throws RemoteException {
 		loggedInUser = userManager.findUsersByUsername(username);
@@ -77,7 +77,7 @@ public class FeukoraService implements IFeukoraService {
 	public List<Customer> getCustomers() throws RemoteException {
 		return customerManager.findAllCustomers();
 	}
-	
+
 
 	@Override
 	public Rapport createRapport() throws RemoteException {
@@ -91,7 +91,7 @@ public class FeukoraService implements IFeukoraService {
 		} catch (Exception e) {
 			logger.error("Fehler beim speichern des Rapportes", e);
 		}
-		
+
 	}
 
 }

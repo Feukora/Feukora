@@ -12,17 +12,17 @@ import projekt.feukora.server.model.Rapport;
 
 @WebService
 public interface IFeukoraService {
-	
+
 	@WebMethod
 	boolean login(@WebParam(name = "username") String username, @WebParam(name="password")String password ) throws RemoteException;
-	
+
 	@WebMethod
 	List<Customer> getCustomers() throws RemoteException;
-	
+
 	@WebMethod
 	Rapport createRapport() throws RemoteException;
-	
+
 	@WebMethod
 	void saveRapport ( @WebParam(name="rapport")Rapport rapport ) throws RemoteException;
-	
+
 }
