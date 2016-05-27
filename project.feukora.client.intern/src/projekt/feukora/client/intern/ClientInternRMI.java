@@ -761,7 +761,11 @@ public class ClientInternRMI {
 
 		Integer rapCarbonmonoxide1 = Integer.parseInt(carbonmonoxide1);
 		Integer rapCarbonmonoxide2 = Integer.parseInt(carbonmonoxide2);
+		if(carbonmonoxide3.isEmpty() == false) {
 		Integer rapCarbonmonoxide3 = Integer.parseInt(carbonmonoxide3);
+		} else {
+			Integer rapCarbonmonoxide3 = 0;
+		}
 		Integer rapCarbonmonoxide4 = Integer.parseInt(carbonmonoxide4);
 
 		Integer rapNitrogendioxide1 = Integer.parseInt(nitrogendioxide1);
