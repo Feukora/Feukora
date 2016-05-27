@@ -756,10 +756,11 @@ public class ClientInternRMI {
 
 		Integer rapSmokenumber1 = Integer.parseInt(smokenumber1);
 		Integer rapSmokenumber2 = Integer.parseInt(smokenumber2);
+		Integer rapSmokenumber3;
 		if(smokenumber3.isEmpty() == false) {
-			Integer rapSmokenumber3 = Integer.parseInt(smokenumber3);
+			rapSmokenumber3 = Integer.parseInt(smokenumber3);
 		} else {
-			Integer rapSmokenumber3 = 0;
+			rapSmokenumber3 = 0;
 		}
 		
 		if(smokenumber4.isEmpty() == false) {

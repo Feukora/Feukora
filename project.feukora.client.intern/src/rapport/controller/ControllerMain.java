@@ -508,16 +508,14 @@ public class ControllerMain {
 			ClientInternRMI feukora = new ClientInternRMI();
 
 			if(canton.isEmpty() == false && adress.isEmpty() == false && facilitymanager.isEmpty() == false && heateryear != null && ctype.isEmpty() == false &&
-					bloweryear != null && performance.isEmpty() == false && gdate.getTime() != null && smokenumber1.isEmpty() == false && smokenumber2.isEmpty() == false && smokenumber3.isEmpty() == false && smokenumber4.isEmpty() == false &&
-					carbonmonoxide1.isEmpty() == false && carbonmonoxide2.isEmpty() == false && carbonmonoxide3.isEmpty() == false && carbonmonoxide4.isEmpty() == false &&
-					nitrogendioxide1.isEmpty() == false && nitrogendioxide2.isEmpty() == false && nitrogendioxide3.isEmpty() == false && nitrogendioxide4.isEmpty() == false &&
-					exhaustgastemp1.isEmpty() == false && exhaustgastemp2.isEmpty() == false && exhaustgastemp3.isEmpty() == false && exhaustgastemp4.isEmpty() == false &&
-					heatertemp1.isEmpty() == false && heatertemp2.isEmpty() == false && heatertemp4.isEmpty()  == false && heatertemp4.isEmpty() == false &&
-					blowertemp1.isEmpty() == false && blowertemp2.isEmpty() == false && blowertemp3.isEmpty() == false && blowertemp4.isEmpty() == false &&
-					oxygen1.isEmpty() == false && oxygen2.isEmpty() == false && oxygen3.isEmpty() == false && oxygen4.isEmpty() == false &&
-					exhaustgaslost1.isEmpty() == false && exhaustgaslost2.isEmpty() == false && exhaustgaslost3.isEmpty() == false && exhaustgaslost4.isEmpty() == false &&
-					radiooilpartyes1.isSelected() == false || radiooilpartno1.isSelected() == false && radiooilpartyes2.isSelected() == false || radiooilpartno2.isSelected() == false && radiooilpartyes3.isSelected() == false || radiooilpartno3.isSelected() == false && radiooilpartyes4.isSelected() == false || radiooilpartno4.isSelected() == false &&
+					bloweryear != null && performance.isEmpty() == false && gdate.getTime() != null && smokenumber1.isEmpty() == false && smokenumber2.isEmpty() == false && 
+					carbonmonoxide1.isEmpty() == false && carbonmonoxide2.isEmpty() == false && nitrogendioxide1.isEmpty() == false && nitrogendioxide2.isEmpty() == false && 
+					exhaustgastemp1.isEmpty() == false && exhaustgastemp2.isEmpty() == false && heatertemp1.isEmpty() == false && heatertemp2.isEmpty() == false && 
+					blowertemp1.isEmpty() == false && blowertemp2.isEmpty() == false && oxygen1.isEmpty() == false && oxygen2.isEmpty() == false && 
+					exhaustgaslost1.isEmpty() == false && exhaustgaslost2.isEmpty() == false && 
+					radiooilpartyes1.isSelected() == false || radiooilpartno1.isSelected() == false && radiooilpartyes2.isSelected() == false || radiooilpartno2.isSelected() == false &&
 					radionotransgression.isSelected() == false || radiotransgression.isSelected() == false && checkboxsmokenumbertransgression.isSelected() == false || checkbockoilparttransgression.isSelected() == false || checkboxcarbonmonoxidetransgression.isSelected() == false || checkboxnitrogendioxidetransgression.isSelected() == false || checkboxexhaustlosstransgression.isSelected() == false && radioadditionalstepsyes.isSelected() == false || radioadditionalstepsno.isSelected() == false && comment.isEmpty() == false && persNumber.isEmpty() == false) {
+
 
 				if(rapport == null){
 
