@@ -127,7 +127,7 @@ public class ControllerDetailview {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if(Context.getUser() != null && Context.getName().isEmpty() == false) {
+		if(Context.getUser() != null) {
 			Update();
 		} else {
 		}
