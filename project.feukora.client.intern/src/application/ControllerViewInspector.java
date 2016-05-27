@@ -102,7 +102,8 @@ public class ControllerViewInspector {
 		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
-			mainRoot.setTop(pane);
+			mainRoot.setTop(null);
+			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
@@ -122,7 +123,8 @@ public class ControllerViewInspector {
 		try {
 			pane = FXMLLoader.load(getClass().getClassLoader().getResource("calendar/view/calendarPane.fxml"));
 
-			mainRoot.setTop(pane);
+			mainRoot.setTop(null);
+			mainRoot.setCenter(pane);
 
 		} catch (Exception e) {
 			logger.error("Aktion konnte nicht durchgeführt werden\'",
