@@ -8,17 +8,20 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inspector.controller.ControllerOverview">
    <children>
-      <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="209.0" text="Übersicht Feuerungskontrolleur" AnchorPane.leftAnchor="80.0" />
+      <Label layoutX="76.0" layoutY="27.0" prefHeight="42.0" prefWidth="465.0" text="Übersicht Feuerungskontrolleur" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
       <TableView fx:id="overviewTableInspector" layoutX="76.0" layoutY="123.0" onSort="#ActionOverviewTableInspector" prefHeight="440.0" prefWidth="980.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
         <columns>
             <TableColumn fx:id="columnCompanyIdInspector" prefWidth="96.0" text="Firma" />
           <TableColumn fx:id="columnUsernameInspector" prefWidth="109.0" text="Username" />
           <TableColumn fx:id="columnNameInspector" minWidth="0.0" prefWidth="111.0" text="Name" />
             <TableColumn fx:id="columnFirstnameInspector" prefWidth="118.0" text="Vorname" />
-            <TableColumn fx:id="columnAddressInspector" prefWidth="148.0" text="Adresse" />
-            <TableColumn fx:id="columnZIPInspector" minWidth="0.0" prefWidth="134.0" text="PLZ" />
-            <TableColumn fx:id="columnPhoneInspector" minWidth="0.0" prefWidth="125.0" text="Telefon " />
-            <TableColumn fx:id="columnEmailInspector" prefWidth="138.0" text="Email" />
+            <TableColumn fx:id="columnAddressInspector" prefWidth="132.0" text="Adresse" />
+            <TableColumn fx:id="columnZIPInspector" minWidth="0.0" prefWidth="136.0" text="PLZ" />
+            <TableColumn fx:id="columnPhoneInspector" minWidth="0.0" prefWidth="130.0" text="Telefon " />
+            <TableColumn fx:id="columnEmailInspector" prefWidth="147.0" text="Email" />
         </columns>
       </TableView>
       <Button fx:id="overviewDeleteInspector" layoutX="950.0" layoutY="50.0" mnemonicParsing="false" onAction="#ActionOverviewDeleteInspector" prefHeight="20.0" prefWidth="90.0" text="Löschen" />
