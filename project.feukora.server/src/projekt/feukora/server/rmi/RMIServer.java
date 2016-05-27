@@ -18,7 +18,7 @@ import test.project.feukora.server.persister.TestdataDB;
  * This Class starts the RMI-Server on this machine, also it instances Remote Objects, binds and also unbinds them.
  * 
  * @author Sandro 
- * @version 1.2
+ * @version 1.4
  */
 public class RMIServer {
 
@@ -68,8 +68,8 @@ public class RMIServer {
 
 			if (registry != null) {
 
-				TownData.loadTownData();
-				TestdataDB.loadTestdata();
+//				TownData.loadTownData();
+//				TestdataDB.loadTestdata();
 
 				CustomerRMI customerRMI = new CustomerRMIImpl();
 				CompanyRMI companyRMI = new CompanyRMIImpl();

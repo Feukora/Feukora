@@ -12,9 +12,9 @@
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://localhost:5432/feukora_db" />
-			<property name="javax.persistence.jdbc.user" value="postgres" />
-			<property name="javax.persistence.jdbc.password" value="geheim" />
+				value="jdbc:postgresql://localhost:5432/feukora-C-db" />
+			<property name="javax.persistence.jdbc.user" value="feukora-C" />
+			<property name="javax.persistence.jdbc.password" value="passwd-C" />
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="database" />
 				
@@ -36,7 +36,8 @@
 			<!--
 		    <property name="eclipselink.logging.level" value="FINE"/> 
 			-->
-			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> 
+			<!-- <property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> -->
+			<property name="eclipselink.ddl-generation" value="create-tables" /> 
 		
 			
 

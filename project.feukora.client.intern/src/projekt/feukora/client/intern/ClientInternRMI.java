@@ -94,7 +94,7 @@ public class ClientInternRMI {
 	public ClientInternRMI() throws Exception {
 
 		Properties props = new Properties();
-		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("rmiclient.txt");
+		InputStream is = ClientSession.class.getClassLoader().getResourceAsStream("./rmiclient.properties");
 		try {
 			props.load(is);
 		} catch (Exception e) {
